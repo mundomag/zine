@@ -12,7 +12,7 @@
   {
     "fecha": "11 jul",
     "tipo": "noticia",
-	     "destacado": true,
+    "destacado": true,
     "texto": "4º release PURSUE: 19 videos infrarrojos 'no resueltos', el más comentado sobre el Atlántico en 2020 — el archivo supera ya los 300 expedientes desde mayo"
   },
   {
@@ -20,7 +20,6 @@
     "tipo": "aviso",
     "texto": "La otra cara del apagón: la degradación secreta, el jailbreak y el regreso de Fable 5"
   },
-  
   {
     "fecha": "03 jul",
     "tipo": "aviso",
@@ -42,18 +41,17 @@
     "tipo": "noticia",
     "texto": "Anthropic restauró el acceso a Claude Fable 5 y Mythos 5 el 1 de julio, tras el levantamiento de los controles de exportación que forzaron su apagón"
   },
-	{
+  {
     "fecha": "01 jul",
     "tipo": "aviso",
     "texto": "Disponible nueva sección fija: Voyager 1 - Fue diseñada para durar cuatro años. Hoy, casi cincuenta después, transmite desde el espacio interestelar a 160 bits por segundo "
   },
-
   {
     "fecha": "01 jul",
     "tipo": "aviso",
     "texto": "El Observador: un oficial australiano acusó a la CIA de encubrimiento en 1971 — y el documento lleva décadas disponible para quien quiera leerlo"
   },
-	{
+  {
     "fecha": "01 jul",
     "tipo": "aviso",
     "texto": "Doc. Australia 1971: la CIA impulsó en 1953 una campaña de desacreditación sobre OVNIs que duró no dos años, sino dos décadas"
@@ -84,7 +82,6 @@
     "destacado": true,
     "texto": "Homenaje a la mitología salvadoreña: Siguanaba, Cipitío, Cadejo, Carreta Bruja y más — patrimonio oral vivo de El Salvador"
   },
-	
   {
     "fecha": "26 jun",
     "tipo": "noticia",
@@ -105,6 +102,5 @@
     "fecha": "17 jun",
     "tipo": "noticia",
     "texto": "Avi Loeb nombrado jefe del nuevo UAP Science Advisory Council — el consejo asesorará al gobierno de EE.UU. con datos exclusivamente desclasificados"
-  },
-  
+  }
 ]
