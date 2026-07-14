@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8483516296039231"
+       crossorigin="anonymous"></script>
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LRSJ1EYEPD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LRSJ1EYEPD');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto · Mundo Maravilloso</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0b;
+      --surface: #111113;
+      --border: #1e1e22;
+      --accent: #c8f04a;
+      --text: #d4d4d8;
+      --muted: #52525b;
+      --heading: #f4f4f5;
+      --mono: 'Space Mono', monospace;
+      --sans: 'Space Grotesk', sans-serif;
+    }
+
+    html { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.7; }
+    body { min-height: 100vh; display: flex; flex-direction: column; }
+
+    nav {
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky; top: 0;
+      background: rgba(10,10,11,0.92);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+    .nav-brand {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--heading);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+    .hero {
+      border-bottom: 1px solid var(--border);
+      padding: 5rem 2rem 4rem;
+      max-width: 860px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+    h1 {
+      font-family: var(--mono);
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 700;
+      color: var(--heading);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 560px;
+      line-height: 1.8;
+    }
+
+    main {
+      flex: 1;
+      max-width: 860px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 2rem 6rem;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 4rem;
+      padding-top: 3.5rem;
+    }
+
+    .contact-info {}
+    .info-block { margin-bottom: 2.5rem; }
+    .info-label {
+      font-family: var(--mono);
+      font-size: 0.63rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+    .info-value {
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 2rem 0;
+    }
+
+    .topic-list { list-style: none; }
+    .topic-list li {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .topic-list li::before {
+      content: '→';
+      color: var(--accent);
+      font-size: 0.7rem;
+    }
+    .topic-list li:first-child { border-top: 1px solid var(--border); }
+
+    /* FORM */
+    .form-wrap {}
+    .form-group { margin-bottom: 1.5rem; }
+    label {
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      padding: 0.85rem 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+      appearance: none;
+      border-radius: 0;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--accent);
+    }
+    textarea {
+      height: 150px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+    select {
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2352525b' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+    select option { background: var(--surface); }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    button[type="submit"] {
+      width: 100%;
+      background: var(--accent);
+      color: #0a0a0b;
+      border: none;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 1rem;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      margin-top: 0.5rem;
+    }
+    button[type="submit"]:hover { opacity: 0.85; }
+
+    .form-note {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+
+    .success-msg {
+      display: none;
+      background: var(--surface);
+      border: 1px solid var(--accent);
+      padding: 1.5rem;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      line-height: 1.6;
+      margin-top: 1.5rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-brand {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--accent); }
+
+    @media (max-width: 700px) {
+      .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+      nav { padding: 1rem; }
+      .nav-links { gap: 1rem; }
+      .hero { padding: 3rem 1rem 2.5rem; }
+      main { padding: 0 1rem 4rem; }
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="https://mundomag.fyi/" class="nav-brand">Mundo Maravilloso</a>
+  <div class="nav-links">
+    <a href="https://mundomag.fyi/">Inicio</a>
+    <a href="acerca-de.html">Acerca de</a>
+    <a href="contacto.html" class="active">Contacto</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow">// Transmisión abierta</div>
+  <h1>CONTACTO</h1>
+  <p class="hero-sub">Pistas, críticas, colaboraciones o simplemente una observación. Las señales bien formadas se leen.</p>
+</div>
+
+<main>
+  <div class="contact-layout">
+
+    <div class="contact-info">
+      <div class="info-block">
+        <div class="info-label">Estado</div>
+        <div class="info-value">Buzón activo<br>Respuesta en 48–72h</div>
+      </div>
+      <div class="info-block">
+        <div class="info-label">Tipo de publicación</div>
+        <div class="info-value">Independiente<br>Sin patrocinadores</div>
+      </div>
+      <div class="info-block">
+        <div class="info-label">Idioma</div>
+        <div class="info-value">Español</div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="info-label" style="margin-bottom:0.75rem">Nos interesa recibir</div>
+      <ul class="topic-list">
+        <li>Pistas sobre fenómenos anómalos</li>
+        <li>Errores o correcciones</li>
+        <li>Colaboraciones editoriales</li>
+        <li>Documentos o datos de interés</li>
+        <li>Preguntas sobre contenido publicado</li>
+      </ul>
+    </div>
+
+    <div class="form-wrap">
+      <form id="contact-form" action="https://formspree.io/f/xkoaywev" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" />
+          </div>
+          <div class="form-group">
+            <label for="email">Correo electrónico *</label>
+            <input type="email" id="email" name="email" required placeholder="tu@correo.com" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="asunto">Asunto</label>
+          <select id="asunto" name="asunto">
+            <option value="" disabled selected>Selecciona una categoría</option>
+            <option value="pista">Pista o dato de interés</option>
+            <option value="correccion">Corrección o error</option>
+            <option value="colaboracion">Colaboración editorial</option>
+            <option value="pregunta">Pregunta sobre contenido</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje *</label>
+          <textarea id="mensaje" name="mensaje" required placeholder="Describe lo que quieres compartir con el mayor detalle posible. Las señales bien formadas se procesan antes."></textarea>
+        </div>
+
+        <button type="submit">Enviar transmisión →</button>
+
+        <p class="form-note">
+          * Campos obligatorios · No compartimos tu información con terceros.<br>
+          Consulta nuestra <a href="privacidad.html" style="color:var(--muted);text-decoration:underline">política de privacidad</a>.
+        </p>
+      </form>
+
+      <div class="success-msg" id="success-msg">
+        // Transmisión recibida.<br>
+        Revisaremos tu mensaje y responderemos en un plazo de 48–72 horas.
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <span class="footer-brand">Mundo Maravilloso · Publicación independiente · 2026</span>
+  <div class="footer-links">
+    <a href="acerca-de.html">Acerca de</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="privacidad.html">Privacidad</a>
+    <a href="terminos.html">Términos</a>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const successMsg = document.getElementById('success-msg');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        form.style.display = 'none';
+        successMsg.style.display = 'block';
+      } else {
+        btn.textContent = 'Error al enviar. Inténtalo de nuevo.';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Error al enviar. Inténtalo de nuevo.';
+      btn.disabled = false;
+    }
+  });
+</script>
+
+</body>
+</html>

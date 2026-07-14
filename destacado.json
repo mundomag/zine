@@ -1,0 +1,18 @@
+[
+  {
+    "titulo": "PURSUE//4th RELEASE: El Video Que la Comunidad UAP Perseguía Desde Hace Años",
+    "descripcion": "DESTACADO: Un 'cerebro flotante' sobre el Atlántico, un intruso silencioso en una planta de armas nucleares en Texas. La cuarta tanda de war.gov/UFO, completa.",
+    "categoria": "Seguimientos",
+    "fecha": "10 jul 2026",
+    "imagen": "img/destacados/pursue4.jpg",
+    "url": "seguimientos/pursue-releases.html"
+  },
+  {
+    "titulo": "MK-Ultra: Anatomía del Hackeo de la Voluntad",
+    "descripcion": "De Unit 731 al algoritmo de tu teléfono: ochenta años de programas documentados para controlar la mente humana.",
+    "categoria": "Documentos",
+    "fecha": "04 jul 2026",
+    "imagen": "img/destacados/mkultra.jpg",
+    "url": "articulos/mkultra-hackeo-voluntad.html"
+  }
+]

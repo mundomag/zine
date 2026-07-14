@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8483516296039231"
+       crossorigin="anonymous"></script>
+  <meta name="description" content="Todos los artículos de Mundo Maravilloso: ciencia, documentos desclasificados, mitología, cultura y actualidad sobre fenómenos anómalos. Filtra por categoría.">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRSJ1EYEPD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LRSJ1EYEPD');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Artículos · Mundo Maravilloso</title>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=JetBrains+Mono:wght@300;400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink:        #0d0d0f;
+      --ink-mid:    #161619;
+      --ink-soft:   #1e1e23;
+      --paper:      #f5f0e8;
+	  --malt:       #2A2312;
+      --gold:       #c9a84c;
+      --gold-light: #e8c97a;
+      --cyan:       #4ecdc4;
+      --muted:      #6b6b7a;
+      --border:     rgba(201,168,76,0.2);
+
+      /* Colores por categoría */
+      --cat-ciencia:     #4ecdc4;
+      --cat-documentos:  #c9a84c;
+      --cat-mitologia:   #b98fe0;
+      --cat-cultura:     #e08fb0;
+      --cat-actualidad:  #e0954e;
+      --cat-columna:     #7aa8d9;
+    }
+
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--ink);
+      color: var(--paper);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 18px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.5;
+    }
+
+    /* ── NAV (unificada: logo + secciones fijas) ── */
+    .site-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(13,13,15,0.95);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+    .site-nav-inner {
+      max-width: 1400px; margin: 0 auto;
+      padding: 0 3rem;
+      height: 52px;
+      display: flex; align-items: center; gap: 1.5rem;
+    }
+    .site-nav-logo {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .site-nav-tagline { display: none; }
+    @media (min-width: 1024px) {
+      .site-nav-tagline { display: inline; }
+    }
+    .site-nav-sep { width: 1px; height: 18px; background: var(--border); flex-shrink: 0; }
+    .site-nav-articles { display: flex; gap: 1.5rem; margin-left: auto; }
+    .site-nav-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      text-decoration: none; transition: color 0.2s;
+      white-space: nowrap;
+    }
+    .site-nav-link:hover, .site-nav-link.active { color: var(--cyan); }
+
+    /* ── NAV MÓVIL (hamburguesa + drawer) ── */
+    .site-nav-hamburger {
+      display: none;
+      background: none; border: none; cursor: pointer;
+      margin-left: auto; padding: 0.5rem;
+      color: var(--muted); flex-shrink: 0;
+    }
+    .site-nav-hamburger:hover { color: var(--gold); }
+    .site-nav-hamburger svg { display: block; width: 20px; height: 20px; }
+
+    .site-nav-drawer {
+      display: none;
+      flex-direction: column;
+      background: var(--ink-mid);
+      border-top: 1px solid var(--border);
+    }
+    .site-nav-drawer.open { display: flex; }
+    .drawer-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted);
+      text-decoration: none;
+      padding: 0.9rem 1.5rem;
+      display: flex; align-items: center; gap: 0.5rem;
+      border-bottom: 1px solid rgba(201,168,76,0.08);
+      transition: color 0.2s, background 0.2s;
+    }
+    .drawer-link:last-child { border-bottom: none; }
+    .drawer-link:hover, .drawer-link.active { color: var(--cyan); background: rgba(201,168,76,0.05); }
+	  
+	    .nav-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: inline-block;
+      flex-shrink: 0;
+      animation: news-dot-pulse 1.6s ease-in-out infinite;}
+	  
+
+    /* ── TARJETA DE AVISOS (hero-right) ── */
+    .news-box {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.25rem 1.5rem;
+      width: 100%;
+    }
+
+    .news-box-title {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--paper);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.75rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .news-viewport {
+      height: 190px;
+      overflow: hidden;
+      position: relative;
+      cursor: ns-resize;
+    }
+
+    .news-track {
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.4s ease;
+    }
+
+    .news-item {
+      min-height: 56px;
+      padding-bottom: 0.6rem;
+      margin-bottom: 0.6rem;
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .news-item:last-child {
+      border-bottom: none;
+    }
+
+    .news-item.destacado {
+      background: var(--malt);
+      border-left: none;
+      padding: 0.5rem 0.6rem;
+      margin-left: -0.6rem;
+      margin-right: -0.6rem;
+      border-radius: 3px;
+    }
+    .news-item.destacado .news-text {
+      color: #FFEB0B;
+    }
+    .news-item.destacado .news-date,
+    .news-item.destacado .news-tag {
+      color: #FF4103;
+    }
+
+    .news-item-meta {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+    }
+
+    .news-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      color: var(--muted);
+    }
+
+    .news-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .news-tag.noticia { color: var(--cyan); }
+    .news-tag.aviso   { color: var(--gold); }
+
+    .news-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--cyan);
+      display: inline-block;
+      flex-shrink: 0;
+      animation: news-dot-pulse 1.6s ease-in-out infinite;
+    }
+
+    @keyframes news-dot-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: 0.35; transform: scale(0.65); }
+    }
+
+    .news-text {
+      font-size: 0.85rem;
+      color: var(--paper);
+      line-height: 1.4;
+    }
+
+    /* ── HERO (compacto) ── */
+    .hero {
+      padding: 3.5rem 3rem 3rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+    }
+
+    .hero-left {}
+
+    .hero-kicker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-family: 'Audiowide', system-ui, sans-serif;
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1;
+      color: var(--gold);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.22em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .hero-subtitle span { color: var(--gold-light); }
+
+    .hero-mission {
+      font-size: 0.95rem;
+      font-style: italic;
+      color: rgba(245,240,232,0.6);
+      line-height: 1.7;
+      border-left: 2px solid var(--gold);
+      padding-left: 1rem;
+      max-width: 42ch;
+    }
+
+    .hero-right {
+      flex: 1;
+      min-width: 280px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      text-transform: uppercase;
+      display: flex;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    .hero-meta span { color: var(--paper); }
+
+    /* ── EDICIONES (arriba, visible) ── */
+    .section {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 3.5rem 3rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--paper);
+    }
+
+    .section-count {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    /* ── EDITIONS GRID ── */
+    .editions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .edition-card {
+      background: var(--ink-mid);
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: background 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .edition-card a { text-decoration: none; color: inherit; display: block; }
+    .edition-card:hover { background: var(--ink-soft); }
+    .edition-card:hover .ed-cta { opacity: 1; transform: translateX(0); }
+
+    .ed-cover-wrap {
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+    }
+    .ed-cover-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s;
+    }
+    .edition-card:hover .ed-cover-img { transform: scale(1.04); }
+
+    .ed-cover-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,13,15,0.85) 0%, transparent 60%);
+    }
+
+    .ed-badge {
+      position: absolute; top: 1rem; left: 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.52rem; letter-spacing: 0.2em; text-transform: uppercase;
+      background: var(--gold); color: var(--ink);
+      padding: 0.3rem 0.6rem;
+    }
+    .ed-badge.pending {
+      background: transparent;
+      border: 1px solid var(--muted);
+      color: var(--muted);
+    }
+
+    .ed-num {
+      position: absolute; bottom: 1rem; right: 1rem;
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: 3.5rem; font-weight: 700;
+      color: rgba(245,240,232,0.10);
+      line-height: 1;
+      user-select: none;
+    }
+
+    .ed-cta {
+      position: absolute; bottom: 1rem; left: 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0;
+      transform: translateX(-8px);
+      transition: opacity 0.25s, transform 0.25s;
+    }
+
+    .ed-placeholder {
+      width: 100%; aspect-ratio: 3/4;
+      background: linear-gradient(135deg, #1a0a2e 0%, #0d0d1f 100%);
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .ed-placeholder-inner {
+      font-family: 'Audiowide', system-ui, sans-serif;
+      font-size: 2rem;
+      color: rgba(201,168,76,0.08);
+    }
+
+    .ed-info { padding: 1.25rem 1.25rem 1.75rem; }
+    .ed-meta {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      margin-bottom: 0.4rem;
+    }
+    .ed-num-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold);
+    }
+    .ed-meta-leader {
+      display: none;
+    }
+    .ed-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--muted);
+      margin-left: auto;
+      white-space: nowrap;
+    }
+    .ed-title {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: 0.95rem; font-weight: 700;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      color: var(--paper); margin-bottom: 0.4rem; line-height: 1.3;
+    }
+    .ed-blurb {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── EDITIONS GRID: vista de lista ── */
+    .editions-grid.list-view {
+      display: block;
+      background: none;
+      border: none;
+    }
+    .editions-grid.list-view .edition-card {
+      border-bottom: 1px solid var(--border);
+    }
+    .editions-grid.list-view .edition-card:last-child { border-bottom: none; }
+    .editions-grid.list-view .edition-card a {
+      display: block;
+      padding: 0.65rem 0.25rem;
+    }
+    .editions-grid.list-view .ed-info { padding: 0; }
+    .editions-grid.list-view .ed-meta { max-width: 70ch; margin-bottom: 0.2rem; }
+    .editions-grid.list-view .ed-title { margin-bottom: 0.2rem; }
+    .editions-grid.list-view .ed-blurb {
+      color: rgba(245,240,232,0.55);
+      max-width: 70ch;
+    }
+
+    /* ── VIEW TOGGLE (grilla / lista) + ORDEN ── */
+    .section-controls {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+    }
+    .sort-control {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .sort-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .sort-select {
+      background: var(--ink);
+      border: 1px solid var(--border);
+      color: var(--paper);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.05em;
+      padding: 0.4rem 0.5rem;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .sort-select:hover { border-color: var(--gold); }
+    .view-toggle {
+      display: flex;
+      gap: 0.35rem;
+      align-items: center;
+    }
+    .view-toggle-btn {
+      width: 28px; height: 28px;
+      display: flex; align-items: center; justify-content: center;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      color: var(--muted);
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .view-toggle-btn:hover { color: var(--paper); border-color: var(--gold); }
+    .view-toggle-btn.active { color: var(--ink); background: var(--gold); border-color: var(--gold); }
+
+    .articulos-count-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem 1rem;
+      max-width: 1400px;
+      margin: 1.5rem auto 0;
+      padding: 0 3rem;
+    }
+    .articulos-count-row .articulos-count { margin: 0; padding: 0; }
+    @media (max-width: 700px) {
+      .articulos-count-row { padding: 0 1rem; }
+    }
+
+    /* ── SECCIONES FIJAS (grid compacto) ── */
+    .fixed-section {
+      background: var(--ink-mid);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 3.5rem 3rem;
+    }
+
+    .fixed-grid {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .fixed-card {
+      background: var(--ink);
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      padding: 1.75rem 2rem;
+      position: relative;
+      transition: background 0.2s;
+    }
+    .fixed-card:hover { background: var(--ink-soft); }
+    .fixed-card:hover .fixed-card-cta { color: var(--gold-light); transform: translateX(4px); }
+
+    .fixed-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .fixed-card-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cyan);
+    }
+    .fixed-card-live-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--cyan);
+      flex-shrink: 0;
+      animation: livepulse 1.8s ease-in-out infinite;
+    }
+
+    .fixed-card-update {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.48rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .fixed-card-title {
+      font-family: 'Audiowide', system-ui, sans-serif;
+      font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+      font-weight: 400;
+      line-height: 1;
+      color: var(--paper);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.6rem;
+    }
+    .fixed-card-title .accent { color: var(--cyan); }
+
+    .fixed-card-blurb {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 0.85rem;
+      color: rgba(245,240,232,0.55);
+      line-height: 1.55;
+      flex: 1;
+      margin-bottom: 1rem;
+    }
+
+    .fixed-card-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: 0.9rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .fixed-card-stat {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+    }
+    .fixed-card-stat strong {
+      color: var(--gold-light);
+      font-weight: 700;
+    }
+
+    .fixed-card-cta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--gold);
+      transition: color 0.2s, transform 0.2s;
+      white-space: nowrap;
+    }
+    .fixed-card-cta::after { content: '→'; margin-left: 0.4rem; }
+
+    /* ── MANIFESTO ── */
+    .manifesto {
+      background: var(--ink-mid);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 5rem 3rem;
+    }
+    .manifesto-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .manifesto-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1rem;
+    }
+    .manifesto-heading {
+      font-family: 'Audiowide', system-ui, sans-serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      color: var(--paper);
+      line-height: 1;
+    }
+    .manifesto-text {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 1rem;
+      color: rgba(245,240,232,0.65);
+      line-height: 1.8;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .manifesto-text strong { color: var(--paper); font-weight: 600; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2.5rem 3rem;
+      background: var(--ink);
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .footer-logo {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: 1rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .footer-links {
+      display: flex; gap: 1.5rem; flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-copy {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--muted);
+      width: 100%;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      margin-top: 0.5rem;
+    }
+    .footer-nav {
+      display: flex; gap: 3rem; flex-wrap: wrap;
+    }
+    .footer-nav-group {
+      display: flex; flex-direction: column; gap: 0.6rem;
+    }
+    .footer-nav-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.48rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold);
+    }
+    .footer-nav-group .footer-links {
+      flex-direction: column; gap: 0.35rem;
+    }
+
+    /* ── FOOTER BADGES (Powered by / Trusted by) ── */
+    .footer-badges-row {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2.5rem;
+      padding-top: 1.5rem;
+      margin-top: 0.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .footer-badge-group { display: flex; flex-direction: column; gap: 0.7rem; }
+    .footer-badge-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.48rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold);
+    }
+    .badge-list { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.35rem 0.65rem;
+      border: 1px solid var(--border); border-radius: 4px;
+      background: var(--ink-mid);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.54rem; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .badge:hover { border-color: var(--gold); color: var(--gold-light); }
+    .badge svg { width: 13px; height: 13px; flex-shrink: 0; display: block; }
+    .badge svg path, .badge svg circle,
+    .badge svg rect, .badge svg polygon { fill: currentColor; }
+
+    /* ── FOOTER SOCIAL ── */
+    .footer-social { display: flex; flex-direction: column; gap: 0.7rem; }
+    .footer-social-links { display: flex; gap: 0.75rem; }
+    .footer-social-links a {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 28px; height: 28px;
+      border: 1px solid var(--border); border-radius: 50%;
+      color: var(--muted);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .footer-social-links a:hover { border-color: var(--gold); color: var(--gold-light); }
+    .footer-social-links svg { width: 14px; height: 14px; }
+    .footer-social-links svg path,
+    .footer-social-links svg circle,
+    .footer-social-links svg rect { fill: currentColor; }
+
+    /* ── FADE-IN ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 820px) {
+      .site-nav-inner { padding: 0 1.25rem; gap: 0.75rem; }
+      .site-nav-articles, .site-nav-sep { display: none; }
+      .site-nav-hamburger { display: flex; align-items: center; justify-content: center; }
+      .section-controls { flex-basis: 100%; justify-content: space-between; }
+      .hero { flex-direction: column; padding: 2.5rem 1.5rem 2rem; gap: 1.5rem; }
+      .hero-right { max-width: 100%; }
+      .section { padding: 2.5rem 1.5rem; }
+      .fixed-section { padding: 2.5rem 1.5rem; }
+      .fixed-grid { grid-template-columns: 1fr; }
+      .manifesto { padding: 3rem 1.5rem; }
+      .manifesto-inner { grid-template-columns: 1fr; gap: 2rem; }
+      footer { padding: 1.5rem; flex-direction: column; align-items: flex-start; }
+      .footer-nav { gap: 2rem; }
+      .footer-copy { margin-top: 0.25rem; }
+      .footer-badges-row { gap: 1.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .sort-label { display: none; }
+      .section-controls { gap: 0.6rem; }
+      .sort-select { font-size: 0.55rem; padding: 0.35rem 0.4rem; }
+    }
+
+
+    /* ── ARTÍCULOS: hero + filtros ── */
+    .articulos-hero {
+      padding: 3.5rem 3rem 2.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--border);
+    }
+    .articulos-hero-title {
+      font-family: 'Audiowide', system-ui, sans-serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      color: var(--gold);
+      line-height: 1.05;
+      margin-bottom: 0.75rem;
+    }
+    .articulos-hero-sub {
+      font-size: 1rem;
+      color: rgba(245,240,232,0.6);
+      max-width: 60ch;
+      line-height: 1.7;
+    }
+
+    .cat-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      max-width: 1400px;
+      margin: 2rem auto 0;
+      padding: 0 3rem;
+    }
+    .cat-filter-btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 0.55rem 1.1rem;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .cat-filter-btn:hover { color: var(--paper); border-color: var(--gold); }
+    .cat-filter-btn.active { color: var(--ink); background: var(--gold); border-color: var(--gold); }
+
+    /* Colores por categoría: botones de filtro */
+    .cat-filter-btn[data-filter="ciencia"]:hover    { border-color: var(--cat-ciencia); color: var(--cat-ciencia); }
+    .cat-filter-btn[data-filter="documentos"]:hover { border-color: var(--cat-documentos); color: var(--cat-documentos); }
+    .cat-filter-btn[data-filter="mitologia"]:hover  { border-color: var(--cat-mitologia); color: var(--cat-mitologia); }
+    .cat-filter-btn[data-filter="cultura"]:hover     { border-color: var(--cat-cultura); color: var(--cat-cultura); }
+    .cat-filter-btn[data-filter="actualidad"]:hover { border-color: var(--cat-actualidad); color: var(--cat-actualidad); }
+    .cat-filter-btn[data-filter="columna"]:hover    { border-color: var(--cat-columna); color: var(--cat-columna); }
+
+    .cat-filter-btn[data-filter="ciencia"].active    { background: var(--cat-ciencia); border-color: var(--cat-ciencia); }
+    .cat-filter-btn[data-filter="documentos"].active { background: var(--cat-documentos); border-color: var(--cat-documentos); }
+    .cat-filter-btn[data-filter="mitologia"].active  { background: var(--cat-mitologia); border-color: var(--cat-mitologia); }
+    .cat-filter-btn[data-filter="cultura"].active     { background: var(--cat-cultura); border-color: var(--cat-cultura); }
+    .cat-filter-btn[data-filter="actualidad"].active { background: var(--cat-actualidad); border-color: var(--cat-actualidad); }
+    .cat-filter-btn[data-filter="columna"].active    { background: var(--cat-columna); border-color: var(--cat-columna); }
+
+    /* Colores por categoría: tarjetas de artículo (etiqueta + acento) */
+    .edition-card { border-left: 3px solid transparent; }
+    .edition-card[data-cat^="ciencia"]    { border-left-color: var(--cat-ciencia); }
+    .edition-card[data-cat^="documentos"] { border-left-color: var(--cat-documentos); }
+    .edition-card[data-cat^="mitologia"]  { border-left-color: var(--cat-mitologia); }
+    .edition-card[data-cat^="cultura"]     { border-left-color: var(--cat-cultura); }
+    .edition-card[data-cat^="actualidad"] { border-left-color: var(--cat-actualidad); }
+    .edition-card[data-cat^="columna"]    { border-left-color: var(--cat-columna); }
+
+    .edition-card[data-cat^="ciencia"] .ed-num-label    { color: var(--cat-ciencia); }
+    .edition-card[data-cat^="documentos"] .ed-num-label { color: var(--cat-documentos); }
+    .edition-card[data-cat^="mitologia"] .ed-num-label  { color: var(--cat-mitologia); }
+    .edition-card[data-cat^="cultura"] .ed-num-label     { color: var(--cat-cultura); }
+    .edition-card[data-cat^="actualidad"] .ed-num-label { color: var(--cat-actualidad); }
+    .edition-card[data-cat^="columna"] .ed-num-label    { color: var(--cat-columna); }
+
+    .edition-card[data-cat] { display: block; }
+    .edition-card.hidden { display: none; }
+
+    .articulos-count {
+      max-width: 1400px;
+      margin: 1.5rem auto 0;
+      padding: 0 3rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    @media (max-width: 700px) {
+      .articulos-hero { padding: 2.5rem 1rem 1.5rem; }
+      .cat-filters { padding: 0 1rem; }
+      .articulos-count { padding: 0 1rem; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAV (unificada: logo + secciones fijas) -->
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="./" class="site-nav-logo">Mundo Maravilloso</a>
+      <span class="site-nav-tagline">Ciencia · Misterio · Fenómenos · Futuro</span>
+      <div class="site-nav-sep"></div>
+      <div class="site-nav-articles">
+        <a href="articulos.html" class="site-nav-link">Artículos</a>
+        <a href="seguimientos/3i-atlas.html" class="site-nav-link">3I/ATLAS</a>
+        <a href="seguimientos/uap.html" class="site-nav-link">UAP WATCH</a>
+        <a href="seguimientos/pursue-releases.html" class="site-nav-link">PURSUE</a>
+        <a href="seguimientos/voyager-1.html" class="site-nav-link">VOYAGER 1</a>
+        <a href="glosario.html" class="site-nav-link"><span class="nav-dot"></span> Glosario</a>
+      </div>
+      <button class="site-nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navDrawer">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+          <line x1="2" y1="5" x2="18" y2="5"/>
+          <line x1="2" y1="10" x2="18" y2="10"/>
+          <line x1="2" y1="15" x2="18" y2="15"/>
+        </svg>
+      </button>
+    </div>
+    <div class="site-nav-drawer" id="navDrawer">
+      <a href="articulos.html" class="drawer-link">Artículos</a>
+      <a href="seguimientos/3i-atlas.html" class="drawer-link">3I/ATLAS</a>
+      <a href="seguimientos/uap.html" class="drawer-link">UAP WATCH</a>
+      <a href="seguimientos/pursue-releases.html" class="drawer-link">PURSUE</a>
+      <a href="seguimientos/voyager-1.html" class="drawer-link">VOYAGER 1</a>
+      <a href="glosario.html" class="drawer-link"><span class="nav-dot"></span> Glosario</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="articulos-hero">
+    <div class="eyebrow" style="font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--cyan);margin-bottom:0.75rem;">// Archivo completo</div>
+    <h1 class="articulos-hero-title">ARTÍCULOS</h1>
+    <p class="articulos-hero-sub">Todo lo publicado en Mundo Maravilloso, en un solo lugar. Sin ediciones, sin números que expiran: cada artículo vive aquí de forma permanente. Filtra por categoría o explora todo el archivo.</p>
+  </section>
+
+  <!-- FILTROS -->
+  <div class="cat-filters" id="catFilters">
+      <button class="cat-filter-btn active" data-filter="todos">Todos</button>
+      <button class="cat-filter-btn" data-filter="ciencia">Ciencia</button>
+      <button class="cat-filter-btn" data-filter="documentos">Documentos</button>
+      <button class="cat-filter-btn" data-filter="mitologia">Mitología &amp; Cripto</button>
+      <button class="cat-filter-btn" data-filter="cultura">Cultura &amp; Cine</button>
+      <button class="cat-filter-btn" data-filter="actualidad">Actualidad</button>
+      <button class="cat-filter-btn" data-filter="columna">El Observador</button>
+  </div>
+  <div class="articulos-count-row">
+    <div class="articulos-count" id="articulosCount">29 artículos</div>
+    <div class="section-controls">
+      <div class="sort-control">
+        <label for="sortSelect" class="sort-label">Ordenar</label>
+        <select id="sortSelect" class="sort-select">
+          <option value="desc">Recientes primero</option>
+          <option value="asc">Antiguos primero</option>
+        </select>
+      </div>
+      <div class="view-toggle" id="viewToggle" role="group" aria-label="Cambiar vista de artículos">
+        <button class="view-toggle-btn active" data-view="grid" aria-label="Vista de grilla" title="Grilla">
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4">
+            <rect x="1" y="1" width="6" height="6"/><rect x="9" y="1" width="6" height="6"/>
+            <rect x="1" y="9" width="6" height="6"/><rect x="9" y="9" width="6" height="6"/>
+          </svg>
+        </button>
+        <button class="view-toggle-btn" data-view="list" aria-label="Vista de lista" title="Lista">
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+            <line x1="1" y1="2.5" x2="15" y2="2.5"/><line x1="1" y1="8" x2="15" y2="8"/><line x1="1" y1="13.5" x2="15" y2="13.5"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRID -->
+  <section class="section" style="padding-top:1.5rem;">
+    <div class="editions-grid" id="articulosGrid">
+      <!-- MM-GRID-START -->
+      <div class="edition-card" data-cat="actualidad" data-date="2026-07-11">
+        <a href="articulos/dow-uap-pr116-atlantico-2020.html">
+
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">Actualidad</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">11 jul 2026</span>
+            </div>
+            <div class="ed-title">DOW-UAP-PR116: El Video del Atlántico Que Todos Esperaban</div>
+            <div class="ed-blurb">PURSUE Release 04 destapó 19 videos infrarrojos "no resueltos" del Pentágono. El más comentado, PR116, muestra un objeto sobre el Atlántico en 2020. Expediente completo, análisis y nota editorial.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="actualidad" data-date="2026-07-07">
+        <a href="articulos/fable5-mythos5-degradacion-jailbreak-regreso.html">
+
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">Actualidad</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">07 jul 2026</span>
+            </div>
+            <div class="ed-title">La otra cara del apagón: la degradación secreta, el jailbreak y el regreso de Fable 5</div>
+            <div class="ed-blurb">Antes del bloqueo de EE.UU., Fable 5 ya cargaba dos escándalos propios: una degradación silenciosa y un jailbreak con fuga de su prompt. Y ahora volvió.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="documentos" data-date="2026-07-04">
+        <a href="articulos/mkultra-hackeo-voluntad.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">Documentos</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">04 jul 2026</span>
+            </div>
+            <div class="ed-title">MK-Ultra: Anatomía del Hackeo de la Voluntad</div>
+            <div class="ed-blurb">De Unit 731 al algoritmo de tu teléfono: ochenta años de programas documentados para controlar la mente humana. Qué se ha confirmado, qué sigue activo y qué podría venir.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="columna" data-date="2026-07-04">
+        <a href="articulos/observador-ed4.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">El Observador</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">04 jul 2026</span>
+            </div>
+            <div class="ed-title">El Observador: ¿Qué pasa con la verdad?</div>
+            <div class="ed-blurb">Columna de opinión. Del MK-Ultra al algoritmo, del Stargate Project al entrelazamiento cuántico: cómo apagan la voz que golpea la ventana, y qué somos en realidad.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="documentos" data-date="2026-06-29">
+        <a href="articulos/resquebrajamiento-sistema-seguridad-nacional.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">Documentos</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">29 jun 2026</span>
+            </div>
+            <div class="ed-title">El Imperio que se Fisura</div>
+            <div class="ed-blurb">Roswell, JFK, Bob Lazar, Grusch y 12 científicos muertos: cómo ochenta años de secreto están resquebrajando el sistema de seguridad nacional más poderoso del mundo.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="actualidad" data-date="2026-06-29">
+        <a href="articulos/pursue-orbes-cazas.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">Actualidad</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">29 jun 2026</span>
+            </div>
+            <div class="ed-title">Las orbes que persiguieron a los cazas</div>
+            <div class="ed-blurb">Dentro del expediente que más divide al Pentágono: helicóptero, cazas de combate y un objeto sin pupila. Análisis completo de PURSUE con fuentes primarias.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="documentos" data-date="2026-06-29">
+        <a href="articulos/antartida-parte-2.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">Documentos</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">29 jun 2026</span>
+            </div>
+            <div class="ed-title">Antártida: El Fondo del Agujero (Parte II)</div>
+            <div class="ed-blurb">Civilizaciones ocultas, testimonios de trabajadores antárticos, los que no regresaron para contarlo y el Tratado Antártico de 1959.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="documentos" data-date="2026-06-29">
+        <a href="articulos/antartida-parte-1.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">Documentos</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">29 jun 2026</span>
+            </div>
+            <div class="ed-title">Antártida: Lo Que No Se Dice (Parte I)</div>
+            <div class="ed-blurb">Visitas de alto nivel sin explicación en 2016, el detector IceCube, el testimonio del contratista de Raytheon y los archivos desclasificados.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="mitologia" data-date="2026-06-23">
+        <a href="articulos/bestiario-criptozoologico.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">Mitología &amp; Cripto</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">23 jun 2026</span>
+            </div>
+            <div class="ed-title">Bestiario Criptozoológico Global</div>
+            <div class="ed-blurb">Catálogo razonado de 22 criptidos en testimonios y evidencia parcial: animales cuya naturaleza zoológica la ciencia aún no confirma ni descarta.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="mitologia" data-date="2026-06-23">
+        <a href="articulos/mitologia-salvadorena.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">Mitología &amp; Cripto</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">23 jun 2026</span>
+            </div>
+            <div class="ed-title">Mitología Salvadoreña</div>
+            <div class="ed-blurb">La Siguanaba, el Cipitío, el Cadejo y otras entidades de la tradición oral pipil que aún viven en la memoria popular.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="documentos" data-date="2026-06-23">
+        <a href="articulos/australia-1971-p1.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">Documentos</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">23 jun 2026</span>
+            </div>
+            <div class="ed-title">El documento australiano de 1971</div>
+            <div class="ed-blurb">Grusch señaló un documento de inteligencia australiano que acusa a la CIA de encubrir el fenómeno OVNI por décadas.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="documentos" data-date="2026-06-23">
+        <a href="articulos/australia-1971-p2.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">Documentos</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">23 jun 2026</span>
+            </div>
+            <div class="ed-title">Doc. Australia 1971 — Parte II</div>
+            <div class="ed-blurb">El proyecto Avrocar, los 46 programas de antigravedad y la estadística del Special Report No. 14 que la USAF enterró para cerrar el debate.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="columna" data-date="2026-06-24">
+        <a href="articulos/observador-ed3.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">El Observador</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">24 jun 2026</span>
+            </div>
+            <div class="ed-title">El Observador: Verdades a medias</div>
+            <div class="ed-blurb">Columna de opinión sobre el documento australiano de 1971: solo vimos la punta del iceberg de un encubrimiento metódico que dura décadas.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="ciencia" data-date="2026-06-23">
+        <a href="articulos/torio-energia-nuclear.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">Ciencia</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">23 jun 2026</span>
+            </div>
+            <div class="ed-title">El Torio: El Combustible Nuclear del Futuro</div>
+            <div class="ed-blurb">China e India apuestan por el torio como combustible nuclear del futuro: más abundante que el uranio, más seguro y con residuos de menor vida media.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="ciencia" data-date="2026-06-23">
+        <a href="articulos/tunguska-evento-1908.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">Ciencia</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">23 jun 2026</span>
+            </div>
+            <div class="ed-title">Tunguska 1908</div>
+            <div class="ed-blurb">Una explosión aérea devastó 2,000 km² de bosque siberiano. Nuevos datos geoquímicos reescriben el mayor impacto cósmico.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="actualidad" data-date="2026-06-22">
+        <a href="articulos/fable5-mythos5-bloqueo-eeuu.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">Actualidad</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">22 jun 2026</span>
+            </div>
+            <div class="ed-title">90 minutos: la caída de Fable 5 y Mythos 5</div>
+            <div class="ed-blurb">Anthropic lanzó Fable 5 y Mythos 5. 72 horas después, una directiva de exportaciones los apagó para todo el planeta.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="columna" data-date="2026-06-22">
+        <a href="articulos/observador-ed2.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">El Observador</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">22 jun 2026</span>
+            </div>
+            <div class="ed-title">El Observador: El robo más grande de la historia</div>
+            <div class="ed-blurb">Columna de opinión. UMBRA, Grusch y 120 años de cine alienígena vistos juntos no cuentan una historia de secretos. Cuentan una historia de negocio.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="documentos" data-date="2026-06-22">
+        <a href="articulos/grusch-el-hombre-que-cambio-todo.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">Documentos</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">22 jun 2026</span>
+            </div>
+            <div class="ed-title">David Grusch: El hombre que cambió todo</div>
+            <div class="ed-blurb">David Grusch pasó de oficial de inteligencia en las sombras al Capitolio. Sus declaraciones sobre craft no humanos son el punto de no retorno en el debate UAP.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="cultura" data-date="2026-06-22">
+        <a href="articulos/hollywood-et-p1.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">Cultura &amp; Cine</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">22 jun 2026</span>
+            </div>
+            <div class="ed-title">El mito del Primer Contacto — Parte 1</div>
+            <div class="ed-blurb">Hollywood construyó el guión del primer contacto antes que ningún gobierno. De Méliès a Spielberg: cómo el cine programó lo que el mundo espera ver.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="cultura" data-date="2026-06-22">
+        <a href="articulos/hollywood-et-p2.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">Cultura &amp; Cine</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">22 jun 2026</span>
+            </div>
+            <div class="ed-title">El mito del Primer Contacto — Parte 2</div>
+            <div class="ed-blurb">Documentales y series sobre UAPs que moldearon el debate público: desde los pioneros de los 90 hasta Netflix. Guía de dónde ver cada producción.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="cultura" data-date="2026-06-22">
+        <a href="articulos/hollywood-et-p3.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">Cultura &amp; Cine</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">22 jun 2026</span>
+            </div>
+            <div class="ed-title">El mito del Primer Contacto — Parte 3</div>
+            <div class="ed-blurb">Cuatro hipótesis sobre por qué Hollywood y los gobiernos narran los ETs en sincronía. El mito del Primer Contacto como fenómeno político y cultural.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="ciencia" data-date="2026-06-25">
+        <a href="articulos/loeb-galileo.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">Ciencia</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">25 jun 2026</span>
+            </div>
+            <div class="ed-title">Avi Loeb: el astrónomo que apostó por lo imposible</div>
+            <div class="ed-blurb">Avi Loeb apostó por lo imposible: que ʻOumuamua era tecnología alienígena. Así nació el Proyecto Galileo y la voz más incómoda de la astronomía moderna.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="columna" data-date="2026-06-25">
+        <a href="articulos/observador.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">El Observador</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">25 jun 2026</span>
+            </div>
+            <div class="ed-title">El Observador: Mucho humo</div>
+            <div class="ed-blurb">Columna de opinión. Mil millones de personas buscaron los archivos UAP. La pregunta no es qué encontraron — es por qué la revelación nunca termina de llegar.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="actualidad" data-date="2026-06-25">
+        <a href="articulos/pursue.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">Actualidad</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">25 jun 2026</span>
+            </div>
+            <div class="ed-title">PURSUE: El gobierno abrió los archivos. Ahora, ¿qué?</div>
+            <div class="ed-blurb">EE.UU. abrió sus archivos UAP sin contraseñas ni formularios. Mil millones de visitas después, la pregunta central sigue sin respuesta.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="documentos" data-date="2026-06-25">
+        <a href="articulos/roswell-p1.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">Documentos</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">25 jun 2026</span>
+            </div>
+            <div class="ed-title">Roswell, 1947: ¿Por qué seguimos hablando de esto?</div>
+            <div class="ed-blurb">Un ranchero, un campo en Nuevo México y un comunicado que duró 24 horas. Cómo Roswell 1947 se convirtió en el mito fundacional de la ufología.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="documentos" data-date="2026-06-25">
+        <a href="articulos/roswell-p2.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">Documentos</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">25 jun 2026</span>
+            </div>
+            <div class="ed-title">Roswell, 1947 — Parte 2</div>
+            <div class="ed-blurb">La Fuerza Aérea publicó su veredicto: los restos de Roswell eran globos del Proyecto Mogul para detectar pruebas nucleares soviéticas.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="documentos" data-date="2026-06-25">
+        <a href="articulos/roswell-p3.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">Documentos</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">25 jun 2026</span>
+            </div>
+            <div class="ed-title">Roswell, 1947 — Parte 3</div>
+            <div class="ed-blurb">Roswell es hoy más fenómeno social que misterio. Cada generación lo reinterpretó — y sigue siendo sinónimo de encubrimiento OVNI.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="ciencia" data-date="2026-06-25">
+        <a href="articulos/seti-ia.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">Ciencia</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">25 jun 2026</span>
+            </div>
+            <div class="ed-title">SETI en la era de la IA</div>
+            <div class="ed-blurb">La IA transforma la búsqueda de vida extraterrestre: nuevas frecuencias, mayor escala y señales halladas en archivos antiguos. Pero también trae trampas.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="actualidad" data-date="2026-06-25">
+        <a href="articulos/uap-actualidad-2026.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">Actualidad</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">25 jun 2026</span>
+            </div>
+            <div class="ed-title">Actualidad UAP: El semestre que lo cambió todo</div>
+            <div class="ed-blurb">Avistamientos virales, archivos del Pentágono y videos que el mundo analiza. El semestre en que los UAPs salieron de los márgenes.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="documentos" data-date="2026-06-22">
+        <a href="articulos/umbra-resumen.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">Documentos</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">22 jun 2026</span>
+            </div>
+            <div class="ed-title">Hallazgos NSA UMBRA: Lo que dicen las 334 páginas</div>
+            <div class="ed-blurb">Una apelación FOIA obligó a la NSA a entregar 334 páginas UAP clasificadas TOP SECRET UMBRA. Incidentes, patrones y lo que sigue censurado.</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="edition-card" data-cat="documentos" data-date="2026-06-22">
+        <a href="articulos/umbra-topsecret.html">
+          
+          <div class="ed-info">
+            <div class="ed-meta">
+              <span class="ed-num-label">Documentos</span>
+              <span class="ed-meta-leader"></span>
+              <span class="ed-date">22 jun 2026</span>
+            </div>
+            <div class="ed-title">TOP SECRET UMBRA: El archivo más clasificado de la NSA</div>
+            <div class="ed-blurb">TOP SECRET UMBRA fue la clasificación más alta de la NSA para SIGINT. Durante décadas protegió cientos de páginas sobre fenómenos aéreos no identificados.</div>
+          </div>
+        </a>
+      </div>
+      <!-- MM-GRID-END -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="./" class="footer-logo">Mundo Maravilloso</a>
+
+    <div class="footer-nav">
+      <div class="footer-nav-group">
+        <div class="footer-nav-label">Contenido Fijo</div>
+        <div class="footer-links">
+          <a href="articulos.html">Artículos</a>
+          <a href="seguimientos/3i-atlas.html">3I/ATLAS</a>
+          <a href="seguimientos/uap.html">UAP</a>
+          <a href="seguimientos/pursue-releases.html">PURSUE</a>
+          <a href="seguimientos/voyager-1.html">VOYAGER 1</a>
+        </div>
+      </div>
+      <div class="footer-nav-group">
+        <div class="footer-nav-label">Publicación</div>
+        <div class="footer-links">
+          <a href="glosario.html">Glosario</a>
+          <a href="acerca-de.html">Acerca de</a>
+          <a href="contacto.html">Contacto</a>
+          <a href="privacidad.html">Privacidad</a>
+          <a href="terminos.html">Términos</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-badges-row">
+
+      <!-- POWERED BY -->
+      <div class="footer-badge-group">
+        <div class="footer-badge-label">Powered By</div>
+        <div class="badge-list">
+
+          <span class="badge" title="HTML5 — estructura del sitio">
+            <svg viewBox="0 0 16 16"><path d="M1.5 0h13l-1.2 13.4L8 16 2.7 13.4 1.5 0zm10.3 4H4.2l.15 1.7h7.3l-.45 5-3.2 1-3.2-1-.2-2.2h1.7l.1 1 1.6.5 1.6-.5.2-2H4.4L4 2.3h8z"/></svg>
+            HTML5
+          </span>
+
+          <span class="badge" title="CSS3 — diseño y estilos del sitio">
+            <svg viewBox="0 0 16 16"><path d="M1.5 0h13l-1.2 13.4L8 16 2.7 13.4 1.5 0zm9.8 4H4.1l.15 1.7h6.85l-.5 5.5-2.6.8-2.6-.8-.18-2h1.7l.09 1 1 .3 1-.3.2-2.2H4.3L3.9 2.3h7.6l-.1 1.7z"/></svg>
+            CSS3
+          </span>
+
+          <span class="badge" title="Giscus — comentarios vía GitHub Discussions">
+            <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 1.6.47 3.09 1.27 4.34L.34 15.1a.5.5 0 0 0 .62.62l2.76-.93A7.96 7.96 0 0 0 8 16c4.42 0 8-3.58 8-8s-3.58-8-8-8zM4.4 7.2h1.6v1.6H4.4V7.2zm3.2 0h1.6v1.6H7.6V7.2zm3.2 0h1.6v1.6h-1.6V7.2z"/></svg>
+            Giscus
+          </span>
+
+          <span class="badge" title="GitHub — código e infraestructura del sitio">
+            <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+            GitHub
+          </span>
+
+          <span class="badge" title="GLightbox — visor de imágenes del sitio">
+            <svg viewBox="0 0 16 16"><rect x="1" y="2.5" width="14" height="11" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="6" cy="6.5" r="1.1"/><path d="M2.5 11.5 6 8l2 2 3-3.5 2.5 4.5z"/></svg>
+            GLightbox
+          </span>
+
+          <!-- Claude: asterisco radial de 8 rayos (4 largos + 4 cortos alternados) -->
+          <span class="badge" title="Claude (Anthropic) — asistencia editorial con IA">
+            <svg viewBox="0 0 16 16">
+              <g fill="currentColor">
+                <rect x="7.25" y="0.6"  width="1.5" height="14.8" rx="0.75" transform="rotate(0   8 8)"/>
+                <rect x="7.25" y="0.6"  width="1.5" height="14.8" rx="0.75" transform="rotate(45  8 8)"/>
+                <rect x="7.25" y="0.6"  width="1.5" height="14.8" rx="0.75" transform="rotate(90  8 8)"/>
+                <rect x="7.25" y="0.6"  width="1.5" height="14.8" rx="0.75" transform="rotate(135 8 8)"/>
+                <rect x="7.45" y="2.4"  width="1.1" height="11.2" rx="0.55" transform="rotate(22.5  8 8)"/>
+                <rect x="7.45" y="2.4"  width="1.1" height="11.2" rx="0.55" transform="rotate(67.5  8 8)"/>
+                <rect x="7.45" y="2.4"  width="1.1" height="11.2" rx="0.55" transform="rotate(112.5 8 8)"/>
+                <rect x="7.45" y="2.4"  width="1.1" height="11.2" rx="0.55" transform="rotate(157.5 8 8)"/>
+              </g>
+            </svg>
+            Claude
+          </span>
+
+          <!-- ChatGPT: flor de 6 anillos en patrón hexagonal -->
+          <span class="badge" title="ChatGPT (OpenAI) — asistencia editorial con IA">
+            <svg viewBox="0 0 16 16">
+              <g fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="6.2" y="1.7" width="3.6" height="2.7" rx="1.35" transform="rotate(0   8 8)"/>
+                <rect x="6.2" y="1.7" width="3.6" height="2.7" rx="1.35" transform="rotate(60  8 8)"/>
+                <rect x="6.2" y="1.7" width="3.6" height="2.7" rx="1.35" transform="rotate(120 8 8)"/>
+                <rect x="6.2" y="1.7" width="3.6" height="2.7" rx="1.35" transform="rotate(180 8 8)"/>
+                <rect x="6.2" y="1.7" width="3.6" height="2.7" rx="1.35" transform="rotate(240 8 8)"/>
+                <rect x="6.2" y="1.7" width="3.6" height="2.7" rx="1.35" transform="rotate(300 8 8)"/>
+              </g>
+            </svg>
+            ChatGPT
+          </span>
+
+          <span class="badge" title="Meta AI — asistencia editorial con IA">
+            <svg viewBox="0 0 16 16"><path d="M4.2 3.4C2.3 3.4.8 5.4.8 8.1c0 2.2 1 3.6 2.3 3.6.9 0 1.6-.6 2.6-2.2.4-.6.9-1.5 1.2-2.1.4.8.9 1.8 1.4 2.5.9 1.3 1.6 1.8 2.5 1.8 1.5 0 2.4-1.2 2.4-3 0-2.8-1.6-5.1-3.6-5.1-1 0-1.8.6-2.6 1.7C6.3 4 5.5 3.4 4.2 3.4zm.1 1.4c.7 0 1.2.5 1.9 1.6-.5.9-1.2 2.2-1.7 2.9-.5.7-.8.9-1.1.9-.5 0-.9-.7-.9-2.1 0-1.9.8-3.3 1.8-3.3zm6.2.1c1 0 2 1.5 2 3.5 0 1-.4 1.5-.9 1.5-.4 0-.7-.2-1.3-1.1-.5-.7-1.1-1.9-1.6-2.8.7-.9 1.2-1.1 1.8-1.1z"/></svg>
+            Meta AI
+          </span>
+
+        </div>
+      </div>
+
+      <!-- TRUSTED BY -->
+      <div class="footer-badge-group">
+        <div class="footer-badge-label">Trusted By</div>
+        <div class="badge-list">
+
+          <span class="badge" title="Conexión cifrada de extremo a extremo">
+            <svg viewBox="0 0 16 16"><path d="M8 0 1.5 2.5v4.6c0 4.3 2.9 7.2 6.5 8.4 3.6-1.2 6.5-4.1 6.5-8.4V2.5L8 0zm-.8 11-2.4-2.4 1-1 1.4 1.4 3.6-3.6 1 1L7.2 11z"/></svg>
+            SSL / HTTPS Seguro
+          </span>
+
+          <span class="badge" title="Publicador certificado de Google AdSense">
+            <svg viewBox="0 0 16 16"><path d="M2 13 6.5 2h3L14 13h-2.6l-.9-2.3H5.5L4.6 13H2zm4.2-4.3h3.6L8 4.8 6.2 8.7z"/></svg>
+            Google AdSense Certificado
+          </span>
+
+          <span class="badge" title="Medición y tráfico verificados con Google Analytics">
+            <svg viewBox="0 0 16 16"><rect x="2" y="9" width="2.6" height="5.5"/><rect x="6.7" y="5.5" width="2.6" height="9"/><rect x="11.4" y="2" width="2.6" height="12.5"/></svg>
+            Analytics Verificado
+          </span>
+
+          <span class="badge" title="Política de privacidad y manejo de datos publicada">
+            <svg viewBox="0 0 16 16"><path d="M3 2h7l3 3v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm6.5.7V5h2.3L9.5 2.7zM4.5 7h7v1.2h-7V7zm0 2.4h7v1.2h-7V9.4zm0 2.4h5v1.2h-5v-1.2z"/></svg>
+            Política de Privacidad
+          </span>
+
+        </div>
+      </div>
+
+      <!-- SÍGUENOS -->
+      <div class="footer-social">
+        <div class="footer-badge-label">Síguenos</div>
+        <div class="footer-social-links">
+          <!-- TODO: reemplazar # con los enlaces reales -->
+          <a href="#" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg viewBox="0 0 16 16"><path d="M16 8a8 8 0 1 0-9.25 7.9v-5.6H4.9V8h1.85V6.4c0-1.83 1.09-2.84 2.76-2.84.8 0 1.64.14 1.64.14v1.8h-.92c-.91 0-1.19.56-1.19 1.14V8h2.03l-.32 2.3H9.04v5.6A8 8 0 0 0 16 8z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg viewBox="0 0 16 16"><path d="M4.7 0h6.6A4.7 4.7 0 0 1 16 4.7v6.6a4.7 4.7 0 0 1-4.7 4.7H4.7A4.7 4.7 0 0 1 0 11.3V4.7A4.7 4.7 0 0 1 4.7 0zm-.15 1.5A3.05 3.05 0 0 0 1.5 4.55v6.9a3.05 3.05 0 0 0 3.05 3.05h6.9a3.05 3.05 0 0 0 3.05-3.05v-6.9A3.05 3.05 0 0 0 11.45 1.5h-6.9zM8 4.1a3.9 3.9 0 1 1 0 7.8 3.9 3.9 0 0 1 0-7.8zm0 1.5a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8zm4.05-2.65a.95.95 0 1 1 0 1.9.95.95 0 0 1 0-1.9z"/></svg>
+          </a>
+          <a href="#" aria-label="X (Twitter)" target="_blank" rel="noopener">
+            <svg viewBox="0 0 16 16"><path d="M12.6 1h2.45L9.95 6.91 15.7 15h-4.5l-3.52-4.6L3.7 15H1.25l5.4-6.18L1.15 1h4.62l3.19 4.22L12.6 1zm-.86 12.6h1.36L4.32 2.32H2.86l8.88 11.28z"/></svg>
+          </a>
+          <a href="#" aria-label="Substack" target="_blank" rel="noopener">
+            <svg viewBox="0 0 16 16"><path d="M1.5 1.5h13v2.3h-13V1.5zm0 4.1h13v2.1h-13V5.6zm0 4.1 6.5 5.8 6.5-5.8H1.5z"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-copy">Mundo Maravilloso · Publicación independiente · 2026</div>
+  </footer>
+
+  <script>
+    (function(){
+      var buttons = document.querySelectorAll('.cat-filter-btn');
+      var cards = document.querySelectorAll('#articulosGrid .edition-card');
+      var countEl = document.getElementById('articulosCount');
+
+      function applyFilter(cat){
+        var visible = 0;
+        cards.forEach(function(card){
+          var match = (cat === 'todos') || (card.getAttribute('data-cat') === cat);
+          card.classList.toggle('hidden', !match);
+          if(match) visible++;
+        });
+        countEl.textContent = visible + (visible === 1 ? ' artículo' : ' artículos');
+      }
+
+      buttons.forEach(function(btn){
+        btn.addEventListener('click', function(){
+          buttons.forEach(function(b){ b.classList.remove('active'); });
+          btn.classList.add('active');
+          applyFilter(btn.getAttribute('data-filter'));
+        });
+      });
+    })();
+  </script>
+
+  <!-- VIEW TOGGLE: grilla / lista -->
+  <script>
+  (function(){
+    var toggle = document.getElementById('viewToggle');
+    var grid = document.getElementById('articulosGrid');
+    if (!toggle || !grid) return;
+    var buttons = toggle.querySelectorAll('.view-toggle-btn');
+
+    function setView(view){
+      grid.classList.toggle('list-view', view === 'list');
+      buttons.forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-view') === view); });
+      try { localStorage.setItem('mm-vista-articulos', view); } catch(e) {}
+    }
+
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){ setView(btn.getAttribute('data-view')); });
+    });
+
+    var saved = null;
+    try { saved = localStorage.getItem('mm-vista-articulos'); } catch(e) {}
+    if (saved === 'list') setView('list');
+  })();
+  </script>
+
+  <!-- ORDENAR POR FECHA -->
+  <script>
+  (function(){
+    var select = document.getElementById('sortSelect');
+    var grid = document.getElementById('articulosGrid');
+    if (!select || !grid) return;
+
+    function applySort(order){
+      var cards = Array.prototype.slice.call(grid.querySelectorAll('.edition-card'));
+      cards.sort(function(a, b){
+        var da = a.getAttribute('data-date') || '';
+        var db = b.getAttribute('data-date') || '';
+        if (da === db) return 0;
+        return order === 'asc' ? (da > db ? 1 : -1) : (da < db ? 1 : -1);
+      });
+      cards.forEach(function(card){ grid.appendChild(card); });
+      try { localStorage.setItem('mm-orden-articulos', order); } catch(e) {}
+    }
+
+    select.addEventListener('change', function(){ applySort(select.value); });
+
+    var saved = null;
+    try { saved = localStorage.getItem('mm-orden-articulos'); } catch(e) {}
+    if (saved === 'asc') { select.value = 'asc'; }
+    applySort(select.value);
+  })();
+  </script>
+
+  <!-- NAV MÓVIL: toggle hamburguesa -->
+  <script>
+  (function(){
+    var btn = document.getElementById('navHamburger');
+    var drawer = document.getElementById('navDrawer');
+    if (!btn || !drawer) return;
+    btn.addEventListener('click', function(){
+      var isOpen = drawer.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    drawer.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        drawer.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+  </script>
+
+</body>
+</html>

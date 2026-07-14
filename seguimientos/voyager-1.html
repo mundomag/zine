@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="es" data-page="voyager">
+<head>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8483516296039231"
+       crossorigin="anonymous"></script>
+  <meta name="description" content="Historia completa y seguimiento activo de Voyager 1: desde su lanzamiento en 1977 hasta la última señal desde el espacio interestelar.">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRSJ1EYEPD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LRSJ1EYEPD');
+  </script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Voyager 1: La última señal · Mundo Maravilloso</title>
+  <link rel="canonical" href="https://mundomag.fyi/seguimientos/voyager-1.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ══════════════════════════════════════════════
+       VOYAGER 1 — Estilos · Mundo Maravilloso
+    ══════════════════════════════════════════════ */
+
+    :root {
+      --ink: #0d0d0f;
+      --ink-mid: #111114;
+      --ink-soft: #1a1a1e;
+      --paper: #f5f0e8;
+      --cyan: #4ecdc4;
+      --gold: #c9a84c;
+      --gold-light: #e8c96a;
+      --red: #c0392b;
+      --violet: #a78bfa;
+      --green: #4ade80;
+      --muted: #6b6b7a;
+      --border: rgba(201,168,76,0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--ink);
+      color: var(--paper);
+      font-family: 'Space Grotesk', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    .site-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(13,13,15,0.95);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+    .site-nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 2rem;
+      height: 56px;
+      display: flex; align-items: center; gap: 1.5rem;
+    }
+    .site-nav-logo {
+      font-family: 'Audiowide', sans-serif;
+      font-size: 1.1rem; color: var(--paper);
+      text-decoration: none; letter-spacing: 0.08em;
+      flex-shrink: 0;
+    }
+    .site-nav-sep { width: 1px; height: 20px; background: var(--border); flex-shrink: 0; }
+    .site-nav-articles { display: flex; gap: 1.5rem; margin-left: auto; }
+    .site-nav-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.52rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      text-decoration: none; transition: color 0.2s;
+      white-space: nowrap;
+    }
+    .site-nav-link:hover { color: var(--cyan); }
+    .site-nav-link.active { color: var(--cyan); }
+
+    /* ── NAV MÓVIL (hamburguesa / drawer) ── */
+    .site-nav-hamburger {
+      display: none;
+      margin-left: auto;
+      width: 32px; height: 32px;
+      background: none; border: none; cursor: pointer;
+      flex-direction: column; align-items: center; justify-content: center;
+      gap: 4px; padding: 0; flex-shrink: 0;
+    }
+    .site-nav-hamburger span {
+      display: block; width: 20px; height: 2px;
+      background: var(--paper); transition: transform 0.25s ease, opacity 0.2s ease;
+    }
+    .site-nav-hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .site-nav-hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .site-nav-hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    .site-nav-drawer {
+      display: none;
+      flex-direction: column;
+      position: absolute; top: 56px; left: 0; right: 0;
+      background: rgba(13,13,15,0.98);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .site-nav-drawer.open { max-height: 480px; overflow-y: auto; }
+    .drawer-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      text-decoration: none;
+      padding: 0.9rem 1.5rem;
+      border-bottom: 1px solid rgba(245,240,232,0.06);
+    }
+    .drawer-link:hover, .drawer-link.active { color: var(--cyan); }
+
+    @media (max-width: 860px) {
+      .site-nav-articles { display: none; }
+      .site-nav-hamburger { display: flex; }
+      .site-nav-drawer { display: flex; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 88svh;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      background:
+        radial-gradient(ellipse at 75% 25%, rgba(78,205,196,0.05) 0%, transparent 55%),
+        radial-gradient(ellipse at 20% 75%, rgba(201,168,76,0.04) 0%, transparent 50%),
+        var(--ink);
+    }
+    .hero-canvas { position: absolute; inset: 0; z-index: 0; }
+    .hero-inner {
+      position: relative; z-index: 2;
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 4rem 6rem;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 5rem;
+      align-items: end;
+    }
+    .hero-live-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 1.5rem;
+    }
+    .hero-live-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--cyan);
+      animation: cyanpulse 2s ease-in-out infinite;
+    }
+    @keyframes cyanpulse {
+      0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(78,205,196,0.6); }
+      50%      { opacity: 0.5; box-shadow: 0 0 0 5px rgba(78,205,196,0); }
+    }
+    .hero-kicker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .hero-title {
+      font-family: 'Audiowide', sans-serif;
+      font-size: clamp(3rem, 6.5vw, 5.5rem);
+      font-weight: 900; line-height: 0.88;
+      color: var(--paper); margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    .hero-title .accent { color: var(--cyan); }
+    .hero-subtitle {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.2rem; font-weight: 600;
+      color: rgba(245,240,232,0.5); margin-top: 1rem;
+      letter-spacing: -0.01em;
+    }
+    .hero-byline {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold);
+      margin: 1.5rem 0 2rem;
+    }
+    .hero-lead {
+      font-size: 1.1rem;
+      color: rgba(245,240,232,0.72);
+      line-height: 1.75; max-width: 52ch;
+      border-left: 2px solid var(--cyan);
+      padding-left: 1.5rem;
+      font-style: italic;
+    }
+    .topic-nav {
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+      margin-bottom: 1.75rem;
+    }
+    .topic-nav-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 0.45rem 0.8rem;
+      text-decoration: none;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+      display: inline-flex; align-items: center; gap: 0.45rem;
+    }
+    .topic-nav-link:hover {
+      color: var(--cyan); border-color: rgba(78,205,196,0.4);
+      background: rgba(78,205,196,0.05);
+    }
+    .topic-nav-link span { color: var(--gold); font-weight: 700; }
+
+    /* Stat panel hero */
+    .stat-panel {
+      background: rgba(22,22,25,0.9);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      backdrop-filter: blur(8px);
+    }
+    .stat-panel-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 1.5rem; padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(78,205,196,0.2);
+    }
+    .stat-row {
+      display: flex; justify-content: space-between;
+      align-items: baseline; padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(201,168,76,0.06);
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-key {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .stat-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem; font-weight: 700;
+      color: var(--gold-light); text-align: right;
+    }
+    .stat-val.cyan  { color: var(--cyan); }
+    .stat-val.red   { color: var(--red); }
+    .stat-val.green { color: var(--green); }
+    .stat-val.violet{ color: var(--violet); }
+
+    /* ── STATUS BAR ── */
+    .status-bar {
+      background: var(--ink-mid);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden; position: relative;
+    }
+    .status-bar::before, .status-bar::after {
+      content: '';
+      position: absolute; top: 0; bottom: 0; width: 5rem;
+      z-index: 2; pointer-events: none;
+    }
+    .status-bar::before { left: 0; background: linear-gradient(to right, var(--ink-mid), transparent); }
+    .status-bar::after  { right: 0; background: linear-gradient(to left, var(--ink-mid), transparent); }
+    .status-track {
+      display: flex; gap: 3rem; padding: 0.85rem 0;
+      width: max-content;
+      animation: marquee-scroll 60s linear infinite;
+    }
+    .status-bar:hover .status-track { animation-play-state: paused; }
+    @keyframes marquee-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .status-item {
+      display: flex; align-items: center; gap: 0.6rem;
+      white-space: nowrap; flex-shrink: 0; padding: 0 1.5rem;
+    }
+    .status-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.48rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .status-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem; font-weight: 700; color: var(--cyan);
+    }
+    .status-value.gold  { color: var(--gold); }
+    .status-value.red   { color: var(--red); }
+    .status-value.green { color: var(--green); }
+
+    /* ── ARTICLE WRAPPER ── */
+    .article {
+      max-width: 1200px; margin: 0 auto; padding: 0 4rem;
+    }
+
+    /* ── INTRO GRID ── */
+    .intro {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 5rem;
+      padding: 5rem 0 4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .intro-text p {
+      font-size: 1.05rem;
+      color: rgba(245,240,232,0.8);
+      line-height: 1.8; margin-bottom: 1.2rem;
+    }
+    .intro-text p:first-child::first-letter {
+      font-family: 'Audiowide', sans-serif;
+      font-size: 4rem; font-weight: 900;
+      color: var(--cyan); float: left;
+      line-height: 0.8; margin: 0.1em 0.15em 0 0;
+    }
+    .origin-box {
+      background: var(--ink-mid);
+      border: 1px solid var(--border);
+      padding: 1.75rem;
+      position: sticky; top: 80px; align-self: start;
+    }
+    .origin-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.48rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 1rem; padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .origin-item {
+      padding: 0.65rem 0;
+      border-bottom: 1px solid rgba(78,205,196,0.06);
+    }
+    .origin-item:last-child { border-bottom: none; }
+    .origin-key {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.48rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+    .origin-val {
+      font-size: 0.88rem; color: var(--paper);
+      font-weight: 600;
+    }
+
+    /* ── BODY TEXT ── */
+    .body-text {
+      padding: 2rem 0;
+    }
+    .body-text p {
+      font-size: 1.05rem;
+      color: rgba(245,240,232,0.8);
+      line-height: 1.8; margin-bottom: 1.2rem;
+      max-width: 76ch;
+    }
+
+    /* ── SECTION HEAD ── */
+    .section-head {
+      display: flex; align-items: center;
+      gap: 1.5rem; padding: 4rem 0 2rem;
+    }
+    .section-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem; letter-spacing: 0.2em;
+      color: var(--cyan); flex-shrink: 0;
+    }
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem; font-weight: 700; color: var(--paper);
+    }
+    .section-line {
+      flex: 1; height: 1px; background: var(--border);
+    }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote {
+      border-left: 3px solid var(--cyan);
+      padding: 1.5rem 2rem;
+      margin: 2rem 0;
+      background: rgba(78,205,196,0.03);
+      max-width: 70ch;
+    }
+    .pull-quote p {
+      font-size: 1.1rem; font-weight: 600;
+      color: rgba(245,240,232,0.9);
+      line-height: 1.65; margin-bottom: 0.5rem;
+    }
+    .pull-quote cite {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.52rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+    }
+
+    /* ── BLOCKQUOTE OFICIAL ── */
+    .blockquote-oficial {
+      background: var(--ink-mid);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      padding: 1.5rem 1.75rem;
+      margin: 2rem 0;
+      max-width: 76ch;
+    }
+    .bq-tipo {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.48rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .blockquote-oficial p {
+      font-size: 0.95rem; color: rgba(245,240,232,0.8);
+      line-height: 1.75; margin-bottom: 0.5rem;
+    }
+    .blockquote-oficial footer {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.48rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted);
+      margin-top: 0.75rem;
+    }
+
+    /* ── VOICE CARD ── */
+    .voice-card {
+      background: var(--ink-mid);
+      border: 1px solid var(--border);
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+      max-width: 76ch;
+      position: relative;
+    }
+    .voice-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      width: 3px; height: 100%;
+      background: var(--violet);
+    }
+    .voice-icon { font-size: 1.2rem; margin-bottom: 0.5rem; display: block; }
+    .voice-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem; font-weight: 700;
+      color: var(--paper); margin-bottom: 0.15rem;
+    }
+    .voice-role {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.48rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+    .voice-quote {
+      font-size: 0.95rem; font-style: italic;
+      color: rgba(245,240,232,0.75); line-height: 1.7;
+    }
+
+    /* ── TIMELINE ── */
+    .timeline { padding-bottom: 4rem; position: relative; }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 1px; background: var(--border);
+    }
+    .timeline-entry {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 2.5rem;
+      padding: 0 0 2.5rem 0;
+      position: relative;
+    }
+    .timeline-entry::before {
+      content: '';
+      position: absolute; left: -5px; top: 6px;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--ink); border: 2px solid var(--cyan);
+    }
+    .timeline-entry.milestone::before {
+      background: var(--cyan); width: 12px; height: 12px; left: -6px;
+    }
+    .timeline-entry.crisis::before {
+      background: var(--red); border-color: var(--red); width: 12px; height: 12px; left: -6px;
+    }
+    .timeline-entry.active-now::before {
+      background: var(--green); border-color: var(--green); width: 12px; height: 12px; left: -6px;
+      box-shadow: 0 0 8px rgba(74,222,128,0.5);
+      animation: cyanpulse 2s ease-in-out infinite;
+    }
+    .timeline-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--gold);
+      padding-top: 4px; text-align: right;
+      line-height: 1.5;
+    }
+    .timeline-date .tl-agency {
+      display: block; color: var(--muted);
+      font-size: 0.44rem; margin-top: 0.3rem;
+    }
+    .timeline-content {
+      border: 1px solid var(--border);
+      background: var(--ink-mid);
+      padding: 1.5rem;
+      position: relative;
+    }
+    .timeline-content::before {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      width: 3px; height: 100%;
+      background: var(--cyan);
+    }
+    .timeline-content.gold-bar::before  { background: var(--gold); }
+    .timeline-content.red-bar::before   { background: var(--red); }
+    .timeline-content.green-bar::before { background: var(--green); }
+    .timeline-content.violet-bar::before{ background: var(--violet); }
+
+    .tl-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.44rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 0.5rem; display: block;
+    }
+    .tl-tag.gold   { color: var(--gold); }
+    .tl-tag.red    { color: var(--red); }
+    .tl-tag.green  { color: var(--green); }
+    .tl-tag.violet { color: var(--violet); }
+
+    .tl-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      color: var(--paper); margin-bottom: 0.6rem;
+      line-height: 1.3;
+    }
+    .tl-body {
+      font-size: 0.88rem;
+      color: rgba(245,240,232,0.7); line-height: 1.7;
+    }
+    .tl-data {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      margin-top: 1rem; padding-top: 1rem;
+      border-top: 1px solid rgba(201,168,76,0.08);
+    }
+    .tl-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.46rem; letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.65rem;
+      color: var(--muted);
+    }
+    .tl-pill span { color: var(--gold-light); font-weight: 700; margin-left: 0.35rem; }
+
+    /* ── INSTRUMENTOS GRID ── */
+    .inst-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+    .inst-item {
+      background: var(--ink-soft);
+      padding: 1.25rem 1.5rem;
+      display: flex; align-items: center; gap: 1rem;
+      position: relative;
+    }
+    .inst-item::before {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      width: 3px; height: 100%;
+    }
+    .inst-item.on::before  { background: var(--green); }
+    .inst-item.off::before { background: rgba(255,255,255,0.06); }
+    .inst-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .inst-dot.on  { background: var(--green); box-shadow: 0 0 6px rgba(74,222,128,0.6); }
+    .inst-dot.off { background: var(--ink-mid); border: 1px solid var(--border); }
+    .inst-info { flex: 1; }
+    .inst-nombre {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.82rem; font-weight: 600; color: var(--paper);
+      margin-bottom: 0.2rem;
+    }
+    .inst-cuando {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.46rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .inst-cuando.on-text { color: var(--green); }
+
+    /* ── PREGUNTAS ── */
+    .preguntas-bloque {
+      background: var(--ink-mid);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+    .preguntas-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 1.25rem; padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(78,205,196,0.15);
+    }
+    .preguntas-bloque ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+    .preguntas-bloque li {
+      font-size: 0.95rem; color: rgba(245,240,232,0.75);
+      line-height: 1.6; padding-left: 1.5rem; position: relative;
+    }
+    .preguntas-bloque li::before {
+      content: '—';
+      position: absolute; left: 0;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--gold); font-size: 0.8rem;
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 0;
+      margin-top: 5rem;
+    }
+    .site-footer-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 4rem;
+    }
+    .footer-top {
+      display: grid; grid-template-columns: 1fr 2fr;
+      gap: 4rem; padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2rem;
+    }
+    .footer-logo {
+      font-family: 'Audiowide', sans-serif;
+      font-size: 1.1rem; color: var(--paper);
+      text-decoration: none; display: block; margin-bottom: 0.75rem;
+    }
+    .footer-tagline {
+      font-size: 0.8rem;
+      color: var(--muted); line-height: 1.6; margin-bottom: 1rem;
+    }
+    .footer-edition-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.46rem; letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      color: var(--muted); padding: 0.3rem 0.65rem;
+    }
+    .footer-nav-grid {
+      display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem;
+    }
+    .footer-nav-col-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.48rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .footer-nav-list {
+      list-style: none; display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .footer-nav-list a {
+      font-size: 0.8rem; color: var(--muted);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .footer-nav-list a:hover { color: var(--paper); }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-copy {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.46rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .footer-signal {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.46rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--cyan);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; padding: 0 2rem 4rem; gap: 2.5rem; }
+      .article { padding: 0 2rem; }
+      .intro { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .timeline-entry { grid-template-columns: 1fr; gap: 0.5rem; padding-left: 1.5rem; }
+      .timeline-date { text-align: left; }
+    }
+    @media (max-width: 600px) {
+      .hero-title { font-size: 2.8rem; }
+      .footer-nav-grid { grid-template-columns: 1fr; }
+    }
+    .nav-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: inline-block;
+      flex-shrink: 0;
+      animation: nav-dot-pulse 1.6s ease-in-out infinite;
+    }
+
+  @keyframes nav-dot-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: 0.35; transform: scale(0.65); }
+    }
+ </style>
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════ -->
+<!-- ══════════ NAV ══════════ -->
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="../" class="site-nav-logo">MM</a>
+    <div class="site-nav-sep"></div>
+    <div class="site-nav-articles">
+      <a href="../articulos.html" class="site-nav-link">Artículos</a>
+      <a href="../seguimientos/3i-atlas.html" class="site-nav-link">3I/ATLAS</a>
+      <a href="../seguimientos/uap.html" class="site-nav-link">UAP WATCH</a>
+      <a href="../seguimientos/pursue-releases.html" class="site-nav-link">PURSUE</a>
+      <a href="../seguimientos/voyager-1.html" class="site-nav-link active">VOYAGER 1</a>
+      <a href="../seguimientos/hitos-medicos.html" class="site-nav-link">HITOS MÉDICOS</a>
+      <a href="../glosario.html" class="site-nav-link"><span class="nav-dot"></span>&nbsp;Glosario</a>
+    </div>
+    <button class="site-nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navDrawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="site-nav-drawer" id="navDrawer">
+    <a href="../articulos.html" class="drawer-link">Artículos</a>
+    <a href="../seguimientos/3i-atlas.html" class="drawer-link">3I/ATLAS</a>
+    <a href="../seguimientos/uap.html" class="drawer-link">UAP WATCH</a>
+    <a href="../seguimientos/pursue-releases.html" class="drawer-link">PURSUE</a>
+    <a href="../seguimientos/voyager-1.html" class="drawer-link active">VOYAGER 1</a>
+    <a href="../seguimientos/hitos-medicos.html" class="drawer-link">HITOS MÉDICOS</a>
+    <a href="../glosario.html" class="drawer-link"><span class="nav-dot"></span>&nbsp;Glosario</a>
+  </div>
+</nav>
+<script>
+  (function () {
+    var btn = document.getElementById('navHamburger');
+    var drawer = document.getElementById('navDrawer');
+    if (!btn || !drawer) return;
+    btn.addEventListener('click', function () {
+      var isOpen = drawer.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    drawer.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        drawer.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+<!-- ══════════ HERO ══════════ -->
+<section class="hero">
+  <canvas class="hero-canvas" id="starfield"></canvas>
+
+  <div class="hero-inner">
+    <div>
+      <nav class="topic-nav" aria-label="Navegación por temas del artículo">
+        <a href="#sec-historia" class="topic-nav-link"><span>01</span> El plan</a>
+        <a href="#sec-sobrevuelos" class="topic-nav-link"><span>02</span> Júpiter y Saturno</a>
+        <a href="#sec-paleDot" class="topic-nav-link"><span>03</span> Pale Blue Dot</a>
+        <a href="#sec-interestelar" class="topic-nav-link"><span>04</span> Espacio interestelar</a>
+        <a href="#sec-timeline" class="topic-nav-link"><span>05</span> Línea temporal</a>
+        <a href="#sec-ahora" class="topic-nav-link"><span>06</span> Estado actual</a>
+        <a href="#sec-silencio" class="topic-nav-link"><span>07</span> El disco de oro</a>
+      </nav>
+
+      <div class="hero-live-badge">
+        <div class="hero-live-dot"></div>
+        Señal activa · Espacio interestelar · ~25.900 M km
+      </div>
+
+      <p class="hero-kicker">Exploración espacial · Sondas interestelares · Seguimiento activo</p>
+
+      <h1 class="hero-title">
+        <span class="accent">Voyager</span> 1
+      </h1>
+      <p class="hero-subtitle">
+        La última señal.<br>
+        49 años. 25 mil millones de kilómetros.<br>
+        Y sigue hablando.
+      </p>
+
+      <p class="hero-byline">La Redacción · Mundo Maravilloso</p>
+
+      <p class="hero-lead">
+        Fue diseñada para durar cuatro años. Hoy, casi cincuenta después, transmite desde el espacio interestelar a 160 bits por segundo — la velocidad de un módem de 1982 — con una señal que tarda más de 23 horas en llegar. Esta es la historia completa de la nave más lejana que la humanidad ha construido.
+      </p>
+    </div>
+
+    <div class="stat-panel">
+      <p class="stat-panel-label">// Estado actual · Voyager 1 · Jun 2026</p>
+      <div class="stat-row">
+        <span class="stat-key">Estado</span>
+        <span class="stat-val green">Operativa</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-key">Lanzamiento</span>
+        <span class="stat-val cyan">5 sep 1977</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-key">Distancia a la Tierra</span>
+        <span class="stat-val">~25.900 M km</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-key">Tiempo de señal (1 vía)</span>
+        <span class="stat-val">&gt; 23 horas</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-key">Velocidad</span>
+        <span class="stat-val">17 km/s</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-key">Potencia disponible</span>
+        <span class="stat-val red">~250 W (−4 W/año)</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-key">Instrumentos activos</span>
+        <span class="stat-val red">2 de 10</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-key">Próximo hito</span>
+        <span class="stat-val violet">18 nov 2026 · 1 día-luz</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-key">Apagado proyectado</span>
+        <span class="stat-val">~2030–2035</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ STATUS BAR ══════════ -->
+<div class="status-bar">
+  <div class="status-track">
+    <div class="status-item"><span class="status-label">Lanzamiento</span><span class="status-value">5 Sep 1977</span></div>
+    <div class="status-item"><span class="status-label">Distancia a la Tierra</span><span class="status-value">~25.900 M km</span></div>
+    <div class="status-item"><span class="status-label">Tiempo de señal · 1 vía</span><span class="status-value gold">&gt;23 horas</span></div>
+    <div class="status-item"><span class="status-label">Velocidad</span><span class="status-value">17 km/s · 61.200 km/h</span></div>
+    <div class="status-item"><span class="status-label">Potencia disponible</span><span class="status-value red">~250 W · −4 W/año</span></div>
+    <div class="status-item"><span class="status-label">Instrumentos activos</span><span class="status-value red">2 de 10</span></div>
+    <div class="status-item"><span class="status-label">LECP apagado</span><span class="status-value red">17 Abr 2026</span></div>
+    <div class="status-item"><span class="status-label">Próximo hito</span><span class="status-value gold">18 Nov 2026 · 1 día-luz</span></div>
+    <div class="status-item"><span class="status-label">Big Bang · Voyager 2</span><span class="status-value green">Prueba en curso · May–Jun 2026</span></div>
+    <div class="status-item"><span class="status-label">Apagado proyectado</span><span class="status-value">~2030–2035</span></div>
+    <div class="status-item"><span class="status-label">Ubicación</span><span class="status-value">Espacio interestelar</span></div>
+    <!-- duplicado para loop -->
+    <div class="status-item"><span class="status-label">Lanzamiento</span><span class="status-value">5 Sep 1977</span></div>
+    <div class="status-item"><span class="status-label">Distancia a la Tierra</span><span class="status-value">~25.900 M km</span></div>
+    <div class="status-item"><span class="status-label">Tiempo de señal · 1 vía</span><span class="status-value gold">&gt;23 horas</span></div>
+    <div class="status-item"><span class="status-label">Velocidad</span><span class="status-value">17 km/s · 61.200 km/h</span></div>
+    <div class="status-item"><span class="status-label">Potencia disponible</span><span class="status-value red">~250 W · −4 W/año</span></div>
+    <div class="status-item"><span class="status-label">Instrumentos activos</span><span class="status-value red">2 de 10</span></div>
+    <div class="status-item"><span class="status-label">LECP apagado</span><span class="status-value red">17 Abr 2026</span></div>
+    <div class="status-item"><span class="status-label">Próximo hito</span><span class="status-value gold">18 Nov 2026 · 1 día-luz</span></div>
+    <div class="status-item"><span class="status-label">Big Bang · Voyager 2</span><span class="status-value green">Prueba en curso · May–Jun 2026</span></div>
+    <div class="status-item"><span class="status-label">Apagado proyectado</span><span class="status-value">~2030–2035</span></div>
+    <div class="status-item"><span class="status-label">Ubicación</span><span class="status-value">Espacio interestelar</span></div>
+  </div>
+</div>
+
+<!-- ══════════ BODY ══════════ -->
+<main class="article">
+
+  <!-- INTRO -->
+  <div class="intro">
+    <div class="intro-text">
+      <p>
+        El 5 de septiembre de 1977, un cohete Titan IIIE despegó desde Cabo Cañaveral con una carga útil que ningún ingeniero esperaba que todavía funcionara en el siglo XXI. Cuarenta y nueve años después, la Voyager 1 viaja a 17 kilómetros por segundo hacia las afueras de la galaxia, transmitiendo datos a 160 bits por segundo desde una distancia que la luz tarda más de 23 horas en recorrer.
+      </p>
+      <p>
+        Nadie la diseñó para durar tanto. Fue construida para sobrevivir cuatro años y los sobrevuelos de Júpiter y Saturno. Lo que nadie calculó fue que seguiría operando durante casi medio siglo, cruzando la heliopausa, adentrándose en el espacio interestelar, y mandando señales que los ingenieros del Jet Propulsion Laboratory siguen recibiendo — y respondiendo — con una demora de dos días completos por mensaje.
+      </p>
+      <p>
+        Lo que sigue es la crónica completa de esa travesía: el plan que la hizo posible, los descubrimientos que cambió la astronomía planetaria, la frontera del Sistema Solar que cruzó por primera vez en la historia, y la cuenta regresiva hacia el silencio definitivo.
+      </p>
+    </div>
+
+    <div class="origin-box">
+      <p class="origin-label">// Contexto · Programa Voyager</p>
+      <div class="origin-item">
+        <p class="origin-key">Voyager 2 · 20 ago 1977</p>
+        <p class="origin-val">Salió primero. Trayectoria hacia los cuatro planetas exteriores.</p>
+      </div>
+      <div class="origin-item">
+        <p class="origin-key">Voyager 1 · 5 sep 1977</p>
+        <p class="origin-val">Salió 16 días después. Trayectoria más rápida. Llegó antes a Júpiter.</p>
+      </div>
+      <div class="origin-item">
+        <p class="origin-key">Diseño</p>
+        <p class="origin-val">10 instrumentos científicos. Duración prevista: 4 años.</p>
+      </div>
+      <div class="origin-item">
+        <p class="origin-key">Constructor</p>
+        <p class="origin-val">Jet Propulsion Laboratory (JPL) · NASA · Pasadena, California</p>
+      </div>
+      <div class="origin-item">
+        <p class="origin-key">Misión ampliada</p>
+        <p class="origin-val">Voyager Interstellar Mission, desde 1990 hasta el apagado final.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 01 -->
+  <div class="section-head" id="sec-historia">
+    <span class="section-num">01</span>
+    <h2 class="section-title">El plan que cambió la exploración espacial</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="body-text">
+    <p>
+      A finales de los años 60, el astrónomo Gary Flandro, trabajando en el JPL, identificó algo que ocurre una vez cada 175 años: un alineamiento planetario que permitiría a una sola nave visitar Júpiter, Saturno, Urano y Neptuno usando la gravedad de cada planeta para acelerar hacia el siguiente. La ventana se abriría en 1977. La NASA no la dejó pasar.
+    </p>
+    <p>
+      El programa Voyager nació de esa oportunidad. Dos sondas idénticas — con 10 instrumentos científicos cada una — fueron construidas en el JPL. La Voyager 1, con una trayectoria más rápida y directa hacia Júpiter, despegó dieciséis días después que su gemela pero llegó primero al planeta gigante.
+    </p>
+  </div>
+
+  <div class="blockquote-oficial">
+    <p class="bq-tipo">// Programa Voyager · NASA · 1977</p>
+    <p>Misión original: sobrevuelo de Júpiter y Saturno con duración estimada de 4 años. Carga útil: 10 instrumentos científicos. El alineamiento que hizo posible el Grand Tour ocurre una vez cada 175 años.</p>
+    <footer>Fuente: NASA Jet Propulsion Laboratory</footer>
+  </div>
+
+  <!-- SECCIÓN 02 -->
+  <div class="section-head" id="sec-sobrevuelos">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Júpiter, Saturno, y los descubrimientos que cambiaron la astronomía</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="body-text">
+    <p>
+      Cuando la Voyager 1 llegó a Júpiter en marzo de 1979, lo que devolvió cambió la astronomía planetaria para siempre. Las cámaras captaron las tormentas del gigante gaseoso con una resolución nunca vista, revelaron los anillos de Júpiter — cuya existencia apenas se sospechaba — y, sobre todo, fotografiaron Ío: una luna cubierta de volcanes activos. Fue la primera vez que se observaba actividad volcánica fuera de la Tierra.
+    </p>
+    <p>
+      En noviembre de 1980, la sonda llegó a Saturno. Sus imágenes de los anillos mostraron una complejidad estructural que los telescopios terrestres nunca habían podido resolver: cientos de anillos dentro de anillos, bordes afilados, ondas generadas por resonancias gravitacionales. También fotografió Titán, la luna con atmósfera densa. Ese sobrevuelo obligó a la sonda a desviarse de la trayectoria necesaria para visitar Urano y Neptuno — pero la lanzó directamente hacia el espacio interestelar.
+    </p>
+  </div>
+
+  <div class="voice-card">
+    <span class="voice-icon">👤</span>
+    <p class="voice-name">Ed Stone</p>
+    <p class="voice-role">Científico principal del Proyecto Voyager · Caltech / JPL · 1972–2022</p>
+    <p class="voice-quote">"Cada planeta fue un descubrimiento. No sabíamos lo que íbamos a encontrar, y eso es exactamente lo que hace grande a la exploración."</p>
+  </div>
+
+  <!-- SECCIÓN 03 -->
+  <div class="section-head" id="sec-paleDot">
+    <span class="section-num">03</span>
+    <h2 class="section-title">El Pale Blue Dot — la última fotografía</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="body-text">
+    <p>
+      El 14 de febrero de 1990, cuando la Voyager 1 estaba a más de 6 mil millones de kilómetros del Sol, Carl Sagan convenció a la NASA de girar las cámaras hacia atrás. La imagen resultante mostraba la Tierra como un punto de color azul pálido, suspendido en un rayo de luz solar disperso. Sagan escribió sobre esa fotografía las palabras más citadas de la historia de la exploración espacial: que sobre ese punto apenas visible descansa todo lo que la humanidad ha conocido.
+    </p>
+    <p>
+      Tras esa fotografía, las cámaras de la Voyager 1 se apagaron para siempre. No había nada más que fotografiar, y la energía era demasiado escasa para desperdiciarla.
+    </p>
+  </div>
+
+  <div class="pull-quote">
+    <p>"Mira de nuevo ese punto. Eso es aquí. Eso es casa. Eso somos nosotros."</p>
+    <cite>— Carl Sagan · Pale Blue Dot · 1994</cite>
+  </div>
+
+  <!-- SECCIÓN 04 -->
+  <div class="section-head" id="sec-interestelar">
+    <span class="section-num">04</span>
+    <h2 class="section-title">El primer objeto interestelar hecho por humanos</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="body-text">
+    <p>
+      El 25 de agosto de 2012, la Voyager 1 cruzó la heliopausa. No fue un anuncio inmediato: los datos tardaron meses en analizarse, y la NASA lo confirmó oficialmente en septiembre de 2013. La sonda había entrado en el espacio interestelar, la región entre estrellas donde el campo magnético y las partículas del Sol ya no dominan.
+    </p>
+    <p>
+      Era un hito sin precedentes. Ningún objeto construido por la humanidad había estado nunca allí. Los instrumentos de la Voyager 1 midieron lo que nadie había podido medir desde la Tierra: la densidad del plasma interestelar, la dirección del campo magnético, el flujo de rayos cósmicos provenientes de la galaxia. Datos únicos, imposibles de replicar desde ninguna otra misión en operación.
+    </p>
+  </div>
+
+  <div class="blockquote-oficial">
+    <p class="bq-tipo">// Confirmación oficial · NASA · 12 de septiembre de 2013</p>
+    <p>La Voyager 1 es el primer objeto construido por la humanidad en operar en el espacio interestelar — definido como la región fuera de la influencia dominante del viento solar y el campo magnético del Sol.</p>
+    <footer>Fuente: NASA / The Astrophysical Journal Letters</footer>
+  </div>
+
+  <!-- SECCIÓN 05 — TIMELINE -->
+  <div class="section-head" id="sec-timeline">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Línea temporal completa · 1977–2026</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="timeline">
+
+    <div class="timeline-entry milestone">
+      <div class="timeline-date">
+        5 Sep 1977
+        <span class="tl-agency">Cabo Cañaveral · NASA</span>
+      </div>
+      <div class="timeline-content gold-bar">
+        <span class="tl-tag gold">Lanzamiento</span>
+        <p class="tl-title">Despegue en Titan IIIE / Centaur</p>
+        <p class="tl-body">Cohete Titan IIIE con etapa Centaur. Trayectoria calculada para el sobrevuelo de Júpiter y Saturno. Duración estimada de la misión: 4 años. A día de hoy lleva 49 y contando.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Misión prevista <span>4 años</span></span>
+          <span class="tl-pill">Instrumentos <span>10</span></span>
+          <span class="tl-pill">Masa <span>825 kg</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry milestone">
+      <div class="timeline-date">
+        5 Mar 1979
+        <span class="tl-agency">Júpiter · sobrevuelo</span>
+      </div>
+      <div class="timeline-content">
+        <span class="tl-tag">Descubrimiento</span>
+        <p class="tl-title">Vulcanismo en Ío — primera actividad volcánica extraterrestre</p>
+        <p class="tl-body">Descubrimiento de los anillos de Júpiter y de volcanes activos en Ío, primera vez que se observa actividad volcánica fuera de la Tierra. Las imágenes de las tormentas del planeta cambian la astronomía planetaria.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Aproximación <span>349.000 km</span></span>
+          <span class="tl-pill">Anillos de Júpiter <span>descubiertos</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry milestone">
+      <div class="timeline-date">
+        12 Nov 1980
+        <span class="tl-agency">Saturno · sobrevuelo</span>
+      </div>
+      <div class="timeline-content">
+        <span class="tl-tag">Descubrimiento</span>
+        <p class="tl-title">Saturno y Titán — el sobrevuelo que lo cambió todo</p>
+        <p class="tl-body">Imágenes detalladas de los anillos: cientos de anillos dentro de anillos, bordes afilados, ondas gravitacionales. El sobrevuelo de Titán desvía la trayectoria fuera del plano eclíptico, imposibilitando visitar Urano y Neptuno — pero lanzando la sonda hacia el espacio interestelar.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Titán <span>fotografiado</span></span>
+          <span class="tl-pill">Trayectoria <span>cambiada definitivamente</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry milestone">
+      <div class="timeline-date">
+        14 Feb 1990
+        <span class="tl-agency">NASA / Carl Sagan</span>
+      </div>
+      <div class="timeline-content gold-bar">
+        <span class="tl-tag gold">Icónico</span>
+        <p class="tl-title">El "Pale Blue Dot" — última fotografía</p>
+        <p class="tl-body">A petición de Carl Sagan, las cámaras se giran por última vez hacia el Sistema Solar. La Tierra aparece como un punto de 0,12 píxeles. Es la imagen más reproducida de la historia de la exploración espacial. Tras esta fotografía, las cámaras se apagan definitivamente para conservar energía.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Distancia <span>6.054 M km del Sol</span></span>
+          <span class="tl-pill">Cámaras <span>apagadas para siempre</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-date">
+        1 Ene 1990
+        <span class="tl-agency">NASA · Misión extendida</span>
+      </div>
+      <div class="timeline-content">
+        <span class="tl-tag">Nueva misión</span>
+        <p class="tl-title">Comienza la Voyager Interstellar Mission (VIM)</p>
+        <p class="tl-body">Con la exploración planetaria completada, la NASA reformula oficialmente el objetivo de la misión: alcanzar los límites exteriores de la influencia solar y, si la sonda aguanta, cruzar hacia el espacio interestelar. Ya no hay planetas a la vista; sólo el viento solar, el campo magnético y lo desconocido.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Nuevo objetivo <span>límite de la heliosfera</span></span>
+          <span class="tl-pill">Instrumentos activos <span>4</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry milestone">
+      <div class="timeline-date">
+        17 Feb 1998
+        <span class="tl-agency">Récord histórico</span>
+      </div>
+      <div class="timeline-content gold-bar">
+        <span class="tl-tag gold">Récord</span>
+        <p class="tl-title">Supera a Pioneer 10 — el objeto más lejano hecho por humanos</p>
+        <p class="tl-body">A 69,4 UA del Sol, la Voyager 1 adelanta a la sonda Pioneer 10 —lanzada en 1972— y se convierte en el objeto más distante de la Tierra jamás construido por la humanidad. Un título que sigue ostentando hoy, con más de 160 UA a sus espaldas y sin competencia a la vista. La señal ya tardaba más de 9 horas y media en llegar a la Tierra.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Distancia <span>69,4 AU · ~10.400 M km</span></span>
+          <span class="tl-pill">Tiempo de señal <span>9 h 36 min</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-date">
+        16 Dic 2004
+        <span class="tl-agency">Termination shock</span>
+      </div>
+      <div class="timeline-content">
+        <span class="tl-tag">Frontera</span>
+        <p class="tl-title">Cruza el termination shock — el viento solar desacelera</p>
+        <p class="tl-body">La sonda cruza la región donde el viento solar pierde velocidad y pasa de supersónico a subsónico, a unos 94 UA del Sol. Entra en la helioenvuelta (heliosheath), la zona de transición donde el plasma solar pugna contra el medio interestelar. Es la antesala definitiva antes del espacio entre estrellas.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Distancia <span>~94 AU</span></span>
+          <span class="tl-pill">Zona <span>heliosheath</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry milestone">
+      <div class="timeline-date">
+        25 Ago 2012
+        <span class="tl-agency">NASA JPL</span>
+      </div>
+      <div class="timeline-content gold-bar">
+        <span class="tl-tag gold">Histórico</span>
+        <p class="tl-title">Cruce de la heliopausa — entra en el espacio interestelar</p>
+        <p class="tl-body">Primer objeto hecho por humanos en salir de la burbuja magnética del Sol y entrar en el espacio interestelar. Confirmado oficialmente en septiembre de 2013 tras el análisis de datos de plasma. Los instrumentos miden por primera vez el campo magnético y la densidad de plasma del medio interestelar.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Confirmación <span>Sep 2013</span></span>
+          <span class="tl-pill">Objeto interestelar <span>primero de la humanidad</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry milestone">
+      <div class="timeline-date">
+        28 Nov 2017
+        <span class="tl-agency">NASA JPL · Ingeniería</span>
+      </div>
+      <div class="timeline-content">
+        <span class="tl-tag">Hazaña técnica</span>
+        <p class="tl-title">Propulsores TCM encendidos tras 37 años dormidos</p>
+        <p class="tl-body">Los ingenieros del JPL, detectando degradación en los propulsores de orientación activos desde 2014, toman una decisión sin precedentes: encender los propulsores de corrección de trayectoria (TCM) por primera vez desde el sobrevuelo de Saturno en 1980. Los pulsos de prueba de 10 milisegundos responden con total precisión tras 37 años de inactividad. La señal de confirmación tarda 19 horas y 35 minutos en llegar desde el espacio interestelar. El cambio permite extender la vida útil de la misión entre dos y tres años adicionales.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Última vez usados <span>1980 · Saturno</span></span>
+          <span class="tl-pill">Tiempo señal <span>19 h 35 min</span></span>
+          <span class="tl-pill">Vida extendida <span>2–3 años más</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-date">
+        2017–2020
+        <span class="tl-agency">PWS · Cornell / JPL · Publicado 2021</span>
+      </div>
+      <div class="timeline-content violet-bar">
+        <span class="tl-tag violet">Descubrimiento</span>
+        <p class="tl-title">El zumbido del espacio interestelar — señal persistente de plasma</p>
+        <p class="tl-body">Analizando los datos del Plasma Wave Subsystem (PWS) entre 2017 y 2020, la astrónoma Stella Koch Ocker (Cornell) descubre una señal débil pero continua a unos 3 kHz — el "zumbido" del plasma interestelar. A diferencia de las ráfagas causadas por erupciones solares, esta emisión es constante, casi monotonal, y no cesa durante los tres años analizados. Aparece con total claridad a partir de mediados de 2017. El descubrimiento, publicado en Nature Astronomy en mayo de 2021, permite medir la densidad del plasma interestelar de forma continua a lo largo de toda la trayectoria de la sonda —antes sólo era posible durante eventos solares esporádicos. Es el primer mapa continuo de densidad del medio interestelar desde dentro.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Frecuencia <span>~3 kHz</span></span>
+          <span class="tl-pill">Instrumento <span>PWS · antenas de 10 m</span></span>
+          <span class="tl-pill">Publicado <span>Nature Astronomy · May 2021</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-date">
+        Oct–Nov 2023
+        <span class="tl-agency">Crisis técnica</span>
+      </div>
+      <div class="timeline-content red-bar">
+        <span class="tl-tag red">Crisis</span>
+        <p class="tl-title">Chip de memoria dañado — 5 meses sin datos científicos</p>
+        <p class="tl-body">Un bloque de memoria corrupto provoca que la sonda emita datos incomprensibles. El equipo del JPL trabaja durante cinco meses para aislar el daño y reruotear el código fuera del chip averiado, con respuestas que tardaban 22 horas en llegar a la sonda.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Sin datos <span>5 meses</span></span>
+          <span class="tl-pill">Respuesta <span>22 h de ida</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-date">
+        Feb–Abr 2024
+        <span class="tl-agency">NASA JPL</span>
+      </div>
+      <div class="timeline-content">
+        <span class="tl-tag">Recuperación</span>
+        <p class="tl-title">Recuperación total — los cuatro instrumentos activos vuelven a funcionar</p>
+        <p class="tl-body">El JPL logra reruotear el código fuera del bloque de memoria dañado y restaurar la operación normal de los cuatro instrumentos activos. Uno de los episodios de ingeniería remota más extraordinarios de la historia espacial.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Instrumentos <span>4 de 4 recuperados</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry crisis">
+      <div class="timeline-date">
+        27 Feb 2026
+        <span class="tl-agency">Alerta de energía</span>
+      </div>
+      <div class="timeline-content red-bar">
+        <span class="tl-tag red">Alerta</span>
+        <p class="tl-title">Caída inesperada de voltaje durante maniobra de rotación</p>
+        <p class="tl-body">Durante una maniobra de rotación rutinaria, los niveles de energía de la sonda caen por debajo de lo esperado. El equipo actúa antes de que el sistema de protección automático apague componentes críticos sin supervisión.</p>
+      </div>
+    </div>
+
+    <div class="timeline-entry crisis">
+      <div class="timeline-date">
+        17 Abr 2026
+        <span class="tl-agency">NASA JPL</span>
+      </div>
+      <div class="timeline-content red-bar">
+        <span class="tl-tag red">Apagado</span>
+        <p class="tl-title">Se apaga el instrumento LECP — 49 años en servicio</p>
+        <p class="tl-body">La NASA desactiva el experimento de partículas cargadas de baja energía (LECP), que había funcionado casi sin interrupciones desde 1977. El motor del instrumento acumuló más de 8,5 millones de pasos — fue diseñado para 250.000. Su temperatura había caído a −62 °C tras apagarse su calefactor. Quedan dos instrumentos activos.</p>
+        <div class="tl-data">
+          <span class="tl-pill">En servicio <span>49 años</span></span>
+          <span class="tl-pill">Pasos del motor <span>8.500.000</span></span>
+          <span class="tl-pill">Quedan activos <span>2 instrumentos</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry active-now">
+      <div class="timeline-date">
+        May–Jun 2026
+        <span class="tl-agency">En curso · JPL</span>
+      </div>
+      <div class="timeline-content green-bar">
+        <span class="tl-tag green">En curso</span>
+        <p class="tl-title">Prueba del "Big Bang" en Voyager 2</p>
+        <p class="tl-body">El equipo del JPL ensaya en Voyager 2 una maniobra llamada "Big Bang": reemplazar de golpe toda una capa de componentes eléctricos para recuperar margen de potencia. Si funciona, se aplicará a Voyager 1 en julio de 2026. Podría incluso permitir reactivar el LECP.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Prueba <span>Voyager 2 · May–Jun</span></span>
+          <span class="tl-pill">Si OK → Voyager 1 <span>Jul 2026</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-date">
+        18 Nov 2026
+        <span class="tl-agency">Próximo hito</span>
+      </div>
+      <div class="timeline-content violet-bar">
+        <span class="tl-tag violet">Próximo hito</span>
+        <p class="tl-title">1 día-luz de la Tierra — primer objeto humano</p>
+        <p class="tl-body">A las 2:16 a.m. PST, Voyager 1 estará a exactamente 25.900 millones de kilómetros de la Tierra: la distancia que la luz recorre en 24 horas. Será el primer objeto hecho por humanos en alcanzar ese umbral. A partir de ese momento, cada comando enviado tardará más de un día en llegar, y la respuesta un día más en volver.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Distancia <span>25.900 M km</span></span>
+          <span class="tl-pill">Señal <span>1 día por dirección</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-date">
+        ~2030–2035
+        <span class="tl-agency">Proyección JPL</span>
+      </div>
+      <div class="timeline-content red-bar">
+        <span class="tl-tag red">Apagado final</span>
+        <p class="tl-title">Silencio definitivo — la sonda seguirá viajando</p>
+        <p class="tl-body">Con −4 vatios disponibles por año, la potencia caerá por debajo del umbral mínimo para operar cualquier instrumento o mantener el enlace de radio. La sonda no se detendrá: seguirá moviéndose a 17 km/s. El disco de oro irá con ella indefinidamente.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Potencia <span>insuficiente para operar</span></span>
+          <span class="tl-pill">La sonda <span>continúa para siempre</span></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SECCIÓN 06 -->
+  <div class="section-head" id="sec-ahora">
+    <span class="section-num">06</span>
+    <h2 class="section-title">Lo que queda encendido</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="body-text">
+    <p>
+      A junio de 2026, de los 10 instrumentos con los que partió la Voyager 1, sólo dos siguen en funcionamiento. Ambos envían datos únicos desde una región del espacio que ninguna otra sonda ha alcanzado — ni alcanzará durante décadas.
+    </p>
+    <p>
+      El reto no es sólo energético, es de temperatura. Apagar calefactores para ahorrar vatios significa exponer componentes críticos a los −270 °C del espacio interestelar. El motor del LECP fue diseñado para 250.000 pasos y acumuló más de 8,5 millones a lo largo de 49 años, incluso después de que su calefactor se apagara y la temperatura cayera a −62 °C.
+    </p>
+  </div>
+
+  <div class="inst-grid">
+    <div class="inst-item on">
+      <div class="inst-dot on"></div>
+      <div class="inst-info">
+        <p class="inst-nombre">Plasma Wave Subsystem (PWS)</p>
+        <p class="inst-cuando on-text">Activo — Ondas de plasma interestelar</p>
+      </div>
+    </div>
+    <div class="inst-item on">
+      <div class="inst-dot on"></div>
+      <div class="inst-info">
+        <p class="inst-nombre">Magnetómetro (MAG)</p>
+        <p class="inst-cuando on-text">Activo — Campo magnético interestelar</p>
+      </div>
+    </div>
+    <div class="inst-item off">
+      <div class="inst-dot off"></div>
+      <div class="inst-info">
+        <p class="inst-nombre">Low-Energy Charged Particles (LECP)</p>
+        <p class="inst-cuando">Apagado — 17 abr 2026 · 49 años en servicio</p>
+      </div>
+    </div>
+    <div class="inst-item off">
+      <div class="inst-dot off"></div>
+      <div class="inst-info">
+        <p class="inst-nombre">Cosmic Ray Subsystem (CRS)</p>
+        <p class="inst-cuando">Apagado — 2025</p>
+      </div>
+    </div>
+    <div class="inst-item off">
+      <div class="inst-dot off"></div>
+      <div class="inst-info">
+        <p class="inst-nombre">Cámaras (ISS — Imaging Science Subsystem)</p>
+        <p class="inst-cuando">Apagadas — 1990 · tras el Pale Blue Dot</p>
+      </div>
+    </div>
+    <div class="inst-item off">
+      <div class="inst-dot off"></div>
+      <div class="inst-info">
+        <p class="inst-nombre">5 instrumentos adicionales</p>
+        <p class="inst-cuando">Apagados entre 1998 y 2023</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="voice-card">
+    <span class="voice-icon">👤</span>
+    <p class="voice-name">Kareem Badaruddin</p>
+    <p class="voice-role">Voyager Mission Manager · NASA JPL · Abril 2026</p>
+    <p class="voice-quote">"Mientras apagar un instrumento científico no es lo que nadie prefiere, es la mejor opción disponible. Voyager 1 sigue enviando datos desde una región del espacio que ninguna otra nave hecha por el ser humano ha explorado jamás."</p>
+  </div>
+
+  <!-- SECCIÓN 07 -->
+  <div class="section-head" id="sec-silencio">
+    <span class="section-num">07</span>
+    <h2 class="section-title">El disco de oro — cuando la señal se apague</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="body-text">
+    <p>
+      Atornillado al exterior de la sonda hay un disco de cobre bañado en oro. Fue diseñado en 1977 por un equipo encabezado por Carl Sagan, Ann Druyan y Frank Drake. Contiene saludos en 55 idiomas, música de distintas culturas humanas, sonidos naturales de la Tierra, diagramas científicos y un mapa que muestra la posición del Sol respecto a 14 pulsares cercanos — una coordenada galáctica para quien pueda leerla.
+    </p>
+    <p>
+      El disco no tiene fecha de caducidad. Cuando la potencia de la Voyager 1 caiga por debajo del umbral necesario para mantener cualquier enlace de radio — en algún punto entre 2030 y 2035 — la sonda no se detendrá. Seguirá moviéndose a 17 kilómetros por segundo. El disco irá con ella.
+    </p>
+    <p>
+      En aproximadamente 40.000 años, la Voyager 1 pasará a 1,6 años-luz de la estrella Gliese 445. No la alcanzará: sólo pasará cerca. Después, seguirá viajando durante millones — quizás miles de millones — de años, hasta que algún encuentro fortuito interrumpa su trayectoria. Lo que no se interrumpirá es la pregunta que lleva a bordo.
+    </p>
+  </div>
+
+  <div class="preguntas-bloque">
+    <p class="preguntas-label">// Preguntas que siguen abiertas</p>
+    <ul>
+      <li>¿Funcionará el "Big Bang" en Voyager 1? ¿Puede recuperarse el LECP?</li>
+      <li>¿Cuánto resistirán el magnetómetro y el PWS antes del siguiente apagado?</li>
+      <li>¿Cruzará Voyager 1 el día-luz todavía con señal activa el 18 de noviembre de 2026?</li>
+      <li>¿Qué medirán los últimos instrumentos antes del silencio definitivo?</li>
+      <li>¿Existe alguna civilización, en algún punto de la galaxia, con la capacidad de encontrar ese disco y entenderlo?</li>
+    </ul>
+  </div>
+
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="../" class="footer-logo">Mundo Maravilloso</a>
+        <p class="footer-tagline">Una publicación independiente sobre los grandes misterios que la ciencia todavía no ha resuelto.</p>
+      </div>
+      <div class="footer-nav-grid">
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Artículos</p>
+          <ul class="footer-nav-list">
+            <li><a href="../articulos.html">Todos los artículos</a></li>
+            <li><a href="../glosario.html">Glosario</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Seguimientos</p>
+          <ul class="footer-nav-list">
+            <li><a href="../seguimientos/3i-atlas.html">3I/ATLAS</a></li>
+            <li><a href="../seguimientos/uap.html">UAP WATCH</a></li>
+            <li><a href="../seguimientos/pursue-releases.html">PURSUE RELEASES</a></li>
+            <li><a href="../seguimientos/voyager-1.html">VOYAGER 1</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Publicación</p>
+          <ul class="footer-nav-list">
+            <li><a href="../acerca-de.html">Acerca de</a></li>
+            <li><a href="../contacto.html">Contacto</a></li>
+            <li><a href="../privacidad.html">Privacidad</a></li>
+            <li><a href="../terminos.html">Términos</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Mundo Maravilloso · Todos los derechos reservados</p>
+      <p class="footer-signal">// Señal activa · voyager-1</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════ SCRIPTS ══════════ -->
+<script>
+// Starfield animado
+(function(){
+  var canvas = document.getElementById('starfield');
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var stars = [];
+  function resize(){
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+  function initStars(){
+    stars = [];
+    var n = Math.floor((canvas.width * canvas.height) / 3200);
+    for(var i=0;i<n;i++){
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.2 + 0.2,
+        opacity: Math.random() * 0.55 + 0.08,
+        speed: Math.random() * 0.25 + 0.05,
+        tint: Math.random() < 0.06 ? 1 : 0
+      });
+    }
+  }
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    stars.forEach(function(s){
+      ctx.beginPath();
+      ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+      ctx.fillStyle = s.tint
+        ? 'rgba(78,205,196,'+s.opacity+')'
+        : 'rgba(255,255,255,'+s.opacity+')';
+      ctx.fill();
+      s.opacity += (Math.random()-0.5) * s.speed * 0.05;
+      s.opacity = Math.max(0.04, Math.min(0.75, s.opacity));
+    });
+    // Trayectoria tenue de la sonda
+    ctx.beginPath();
+    ctx.moveTo(canvas.width * 0.05, canvas.height * 0.85);
+    ctx.quadraticCurveTo(canvas.width * 0.45, canvas.height * 0.45, canvas.width * 0.92, canvas.height * 0.08);
+    ctx.strokeStyle = 'rgba(78,205,196,0.04)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+    requestAnimationFrame(draw);
+  }
+  resize(); initStars(); draw();
+  window.addEventListener('resize', function(){ resize(); initStars(); });
+})();
+
+// Timeline entries fade in
+(function(){
+  var entries = document.querySelectorAll('.timeline-entry');
+  var obs = new IntersectionObserver(function(entries_){
+    entries_.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateX(0)';
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  entries.forEach(function(en){
+    en.style.opacity = '0';
+    en.style.transform = 'translateX(-8px)';
+    en.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    obs.observe(en);
+  });
+})();
+</script>
+
+</body>
+</html>

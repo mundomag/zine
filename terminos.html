@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8483516296039231"
+       crossorigin="anonymous"></script>
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LRSJ1EYEPD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LRSJ1EYEPD');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Términos de Uso · Mundo Maravilloso</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0b;
+      --surface: #111113;
+      --border: #1e1e22;
+      --accent: #c8f04a;
+      --text: #d4d4d8;
+      --muted: #52525b;
+      --heading: #f4f4f5;
+      --mono: 'Space Mono', monospace;
+      --sans: 'Space Grotesk', sans-serif;
+    }
+
+    html { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.7; }
+    body { min-height: 100vh; display: flex; flex-direction: column; }
+
+    nav {
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky; top: 0;
+      background: rgba(10,10,11,0.92);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+    .nav-brand {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--heading);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    .hero {
+      border-bottom: 1px solid var(--border);
+      padding: 5rem 2rem 3.5rem;
+      max-width: 860px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+    h1 {
+      font-family: var(--mono);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--heading);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .meta {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 0;
+      max-width: 860px;
+      margin: 0 auto;
+      width: 100%;
+      flex: 1;
+    }
+
+    .toc {
+      border-right: 1px solid var(--border);
+      padding: 3rem 2rem;
+      position: sticky;
+      top: 70px;
+      align-self: start;
+      height: fit-content;
+    }
+    .toc-label {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+    .toc-list { list-style: none; }
+    .toc-list li { margin-bottom: 0.1rem; }
+    .toc-list a {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      text-decoration: none;
+      line-height: 1.8;
+      transition: color 0.15s;
+      display: block;
+    }
+    .toc-list a:hover { color: var(--accent); }
+
+    .content { padding: 3rem 2rem 6rem 3rem; }
+
+    .section { margin-bottom: 3.5rem; }
+
+    .section-num {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-family: var(--mono);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--heading);
+      margin-bottom: 1rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    .highlight-box {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      padding: 1.25rem 1.5rem;
+      margin: 0 0 3rem;
+    }
+    .highlight-box p {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-brand {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--accent); }
+
+    @media (max-width: 700px) {
+      .layout { grid-template-columns: 1fr; }
+      .toc { display: none; }
+      nav { padding: 1rem; }
+      .nav-links { gap: 1rem; }
+      .hero { padding: 3rem 1rem 2.5rem; }
+      .content { padding: 2rem 1rem 4rem; }
+      footer { flex-direction: column; align-items: flex-start; padding: 1.5rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="https://mundomag.fyi/" class="nav-brand">Mundo Maravilloso</a>
+  <div class="nav-links">
+    <a href="https://mundomag.fyi/">Inicio</a>
+    <a href="acerca-de.html">Acerca de</a>
+    <a href="contacto.html">Contacto</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow">// Documento legal</div>
+  <h1>TÉRMINOS<br>DE USO</h1>
+  <p class="meta">Última actualización: junio 2026 · Versión 1.0</p>
+</div>
+
+<div class="layout">
+  <aside class="toc">
+    <div class="toc-label">// Índice</div>
+    <ul class="toc-list">
+      <li><a href="#t1">1. Aceptación</a></li>
+      <li><a href="#t2">2. El servicio</a></li>
+      <li><a href="#t3">3. Propiedad intelectual</a></li>
+      <li><a href="#t4">4. Uso permitido</a></li>
+      <li><a href="#t5">5. Exactitud del contenido</a></li>
+      <li><a href="#t6">6. Limitación de responsabilidad</a></li>
+      <li><a href="#t7">7. Disponibilidad</a></li>
+      <li><a href="#t8">8. Contenido de terceros</a></li>
+      <li><a href="#t9">9. Modificaciones</a></li>
+      <li><a href="#t10">10. Ley aplicable</a></li>
+      <li><a href="#t11">11. Contacto</a></li>
+    </ul>
+  </aside>
+
+  <div class="content">
+
+    <div class="highlight-box">
+      <p>Al acceder a mundomag.fyi aceptas estos términos. Si no estás de acuerdo, por favor no utilices el sitio. El uso del sitio es libre y no requiere registro.</p>
+    </div>
+
+    <div class="section" id="t1">
+      <div class="section-num">// 01</div>
+      <h2>Aceptación de los términos</h2>
+      <p>El acceso y uso de este sitio web (<a href="https://mundomag.fyi/">mundomag.fyi</a>) implica la aceptación plena de los presentes Términos de Uso. Estos términos constituyen el acuerdo completo entre el usuario y Mundo Maravilloso en relación con el uso del sitio.</p>
+    </div>
+
+    <div class="section" id="t2">
+      <div class="section-num">// 02</div>
+      <h2>El servicio</h2>
+      <p>Mundo Maravilloso es una revista digital independiente que publica artículos, análisis y seguimientos sobre ciencia, fenómenos anómalos, misterios y temas de frontera del conocimiento. El acceso a los contenidos es gratuito.</p>
+      <p>Nos reservamos el derecho de modificar, ampliar o discontinuar cualquier sección o contenido del sitio en cualquier momento sin previo aviso.</p>
+    </div>
+
+    <div class="section" id="t3">
+      <div class="section-num">// 03</div>
+      <h2>Propiedad intelectual</h2>
+      <p>Todos los textos, diseños, gráficos, logotipos y demás contenidos originales publicados en Mundo Maravilloso son propiedad de la Publicación o de sus autores y están protegidos por las leyes de propiedad intelectual aplicables.</p>
+      <p>Se permite la reproducción parcial de contenidos para fines no comerciales siempre que se cite a Mundo Maravilloso como fuente y se incluya un enlace a la publicación original. La reproducción íntegra de artículos o su uso comercial requiere autorización expresa por escrito.</p>
+    </div>
+
+    <div class="section" id="t4">
+      <div class="section-num">// 04</div>
+      <h2>Uso permitido</h2>
+      <p>El sitio está disponible para uso personal, informativo y educativo. Queda expresamente prohibido:</p>
+      <p>— Reproducir, redistribuir o vender contenidos sin autorización.<br>
+      — Usar técnicas de extracción masiva de datos (scraping) con fines comerciales.<br>
+      — Intentar interferir con el funcionamiento técnico del sitio.<br>
+      — Usar el contenido para difundir desinformación atribuyéndola a esta publicación.</p>
+    </div>
+
+    <div class="section" id="t5">
+      <div class="section-num">// 05</div>
+      <h2>Exactitud del contenido</h2>
+      <p>Mundo Maravilloso se esfuerza por publicar información precisa y verificada. Sin embargo, los temas que tratamos se encuentran frecuentemente en los bordes del conocimiento disponible, donde la certeza es parcial y los datos evolucionan.</p>
+      <p>El contenido publicado tiene carácter informativo y de divulgación. No debe interpretarse como asesoramiento científico, médico, legal o de otro tipo que requiera consulta profesional. El seguimiento continuo de ciertos temas (como 3I/ATLAS o UAPWATCH) puede contener información que resulta desactualizada conforme avanzan los eventos.</p>
+    </div>
+
+    <div class="section" id="t6">
+      <div class="section-num">// 06</div>
+      <h2>Limitación de responsabilidad</h2>
+      <p>Mundo Maravilloso no será responsable de ningún daño directo, indirecto, incidental o consecuente derivado del acceso, uso o imposibilidad de uso del sitio o de su contenido.</p>
+      <p>El sitio se ofrece "tal cual" sin garantías de ningún tipo, ya sean expresas o implícitas.</p>
+    </div>
+
+    <div class="section" id="t7">
+      <div class="section-num">// 07</div>
+      <h2>Disponibilidad del sitio</h2>
+      <p>No garantizamos la disponibilidad ininterrumpida del sitio. Podemos suspender el acceso temporalmente por razones de mantenimiento, actualización o circunstancias fuera de nuestro control.</p>
+    </div>
+
+    <div class="section" id="t8">
+      <div class="section-num">// 08</div>
+      <h2>Contenido de terceros y enlaces externos</h2>
+      <p>El sitio puede incluir enlaces a fuentes externas (estudios científicos, informes oficiales, medios de comunicación). Estos enlaces se proporcionan únicamente como referencia. Mundo Maravilloso no controla ni es responsable del contenido de sitios web de terceros.</p>
+    </div>
+
+    <div class="section" id="t9">
+      <div class="section-num">// 09</div>
+      <h2>Modificaciones de los términos</h2>
+      <p>Podemos actualizar estos términos cuando sea necesario. La fecha de la última modificación se indica en la cabecera del documento. El uso continuado del sitio después de la publicación de cambios implica la aceptación de los términos actualizados.</p>
+    </div>
+
+    <div class="section" id="t10">
+      <div class="section-num">// 10</div>
+      <h2>Ley aplicable</h2>
+      <p>Estos términos se rigen por las leyes aplicables en el territorio desde el cual opera la Publicación. En caso de conflicto o controversia derivados del uso del sitio, las partes se someten a la jurisdicción correspondiente.</p>
+    </div>
+
+    <div class="section" id="t11">
+      <div class="section-num">// 11</div>
+      <h2>Contacto</h2>
+      <p>Si tienes preguntas sobre estos Términos de Uso, puedes escribirnos a través del <a href="contacto.html">formulario de contacto</a>.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <span class="footer-brand">Mundo Maravilloso · Publicación independiente · 2026</span>
+  <div class="footer-links">
+    <a href="acerca-de.html">Acerca de</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="privacidad.html">Privacidad</a>
+    <a href="terminos.html">Términos</a>
+  </div>
+</footer>
+
+</body>
+</html>

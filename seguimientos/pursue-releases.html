@@ -1,0 +1,2276 @@
+<!DOCTYPE html>
+<html lang="es" data-page="pursue">
+<head>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8483516296039231"
+       crossorigin="anonymous"></script>
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LRSJ1EYEPD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LRSJ1EYEPD');
+</script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PURSUE: Los archivos abiertos · Cuatro tandas, 334 documentos, cero respuestas | Mundo Maravilloso</title>
+  <meta name="description" content="PURSUE tanda 04: 40 archivos nuevos, el video viral del &quot;cerebro flotante&quot; en el Atlántico y el caso Pantex. Seguimiento completo en Mundo Maravilloso.">
+  <link rel="canonical" href="https://mundomag.fyi/seguimientos/pursue-releases.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+
+  <style>
+    /* ══════════════════════════════════════════════
+       PURSUE v2 — Estilos propios
+       Actualización continua · Cuatro tandas
+    ══════════════════════════════════════════════ */
+
+    :root {
+      --ink: #0d0d0f;
+      --ink-mid: #111114;
+      --ink-soft: #1a1a1e;
+      --paper: #f5f0e8;
+      --cyan: #4ecdc4;
+      --gold: #c9a84c;
+      --gold-light: #e8c96a;
+      --red: #c0392b;
+      --muted: #6b6b7a;
+      --border: rgba(201,168,76,0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    .release-card { scroll-margin-top: 72px; }
+
+    body {
+      background: var(--ink);
+      color: var(--paper);
+      font-family: 'Space Grotesk', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    .site-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(13,13,15,0.95);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+    .site-nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 2rem;
+      height: 56px;
+      display: flex; align-items: center; gap: 1.5rem;
+    }
+    .site-nav-logo {
+      font-family: 'Audiowide', sans-serif;
+      font-size: 1.1rem; color: var(--paper);
+      text-decoration: none; letter-spacing: 0.08em;
+      flex-shrink: 0;
+    }
+    .site-nav-sep { width: 1px; height: 20px; background: var(--border); flex-shrink: 0; }
+    .site-nav-index {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.52rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--muted);
+      text-decoration: none;
+    }
+    .site-nav-index:hover { color: var(--paper); }
+    .site-nav-articles { display: flex; gap: 1rem; margin-left: auto; }
+    .site-nav-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.52rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      text-decoration: none; transition: color 0.2s;
+      white-space: nowrap;
+    }
+    .site-nav-link:hover, .site-nav-link.active { color: var(--cyan); }
+
+    /* ── NAV MÓVIL (hamburguesa / drawer) ── */
+    .site-nav-hamburger {
+      display: none;
+      margin-left: auto;
+      width: 32px; height: 32px;
+      background: none; border: none; cursor: pointer;
+      flex-direction: column; align-items: center; justify-content: center;
+      gap: 4px; padding: 0; flex-shrink: 0;
+    }
+    .site-nav-hamburger span {
+      display: block; width: 20px; height: 2px;
+      background: var(--paper); transition: transform 0.25s ease, opacity 0.2s ease;
+    }
+    .site-nav-hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .site-nav-hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .site-nav-hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    .site-nav-drawer {
+      display: none;
+      flex-direction: column;
+      position: absolute; top: 56px; left: 0; right: 0;
+      background: rgba(13,13,15,0.98);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .site-nav-drawer.open { max-height: 480px; overflow-y: auto; }
+    .drawer-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      text-decoration: none;
+      padding: 0.9rem 1.5rem;
+      border-bottom: 1px solid rgba(245,240,232,0.06);
+    }
+    .drawer-link:hover, .drawer-link.active { color: var(--cyan); }
+
+    @media (max-width: 860px) {
+      .site-nav-articles { display: none; }
+      .site-nav-hamburger { display: flex; }
+      .site-nav-drawer { display: flex; }
+    }
+
+    /* ── HERO ── */
+    .pursue-hero {
+      min-height: 88svh;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      background:
+        radial-gradient(ellipse at 65% 25%, rgba(201,168,76,0.06) 0%, transparent 55%),
+        radial-gradient(ellipse at 15% 75%, rgba(78,205,196,0.05) 0%, transparent 50%),
+        var(--ink);
+    }
+    .pursue-hero-canvas {
+      position: absolute; inset: 0; z-index: 0;
+    }
+    .pursue-hero-inner {
+      position: relative; z-index: 2;
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 4rem 6rem;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 5rem;
+      align-items: end;
+    }
+    .pursue-live-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .pursue-live-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--gold);
+      animation: goldpulse 2s ease-in-out infinite;
+    }
+    @keyframes goldpulse {
+      0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(201,168,76,0.6); }
+      50% { opacity: 0.5; box-shadow: 0 0 0 5px rgba(201,168,76,0); }
+    }
+    .pursue-hero-kicker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .pursue-hero-title {
+      font-family: 'Audiowide', sans-serif;
+      font-size: clamp(3rem, 6.5vw, 6rem);
+      font-weight: 900; line-height: 0.88;
+      color: var(--paper); margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    .pursue-hero-title .accent { color: var(--gold); }
+
+    .tanda-nav {
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+      margin: 1.1rem 0 0.4rem;
+    }
+    .tanda-nav-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem; letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.85rem;
+      border: 1px solid var(--border);
+      color: rgba(245,240,232,0.6);
+      text-decoration: none;
+      background: rgba(255,255,255,0.02);
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      scroll-behavior: smooth;
+    }
+    .tanda-nav-pill:hover { background: rgba(255,255,255,0.06); color: var(--paper); }
+    .tanda-nav-pill.t1:hover { border-color: var(--cyan); color: var(--cyan); }
+    .tanda-nav-pill.t2:hover { border-color: var(--gold); color: var(--gold); }
+    .tanda-nav-pill.t3:hover { border-color: #a78bfa; color: #a78bfa; }
+    .tanda-nav-pill.t4:hover { border-color: #5fd97a; color: #5fd97a; }
+    .pursue-hero-subtitle {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.35rem; font-weight: 600;
+      color: rgba(245,240,232,0.5); margin-top: 1rem;
+      letter-spacing: -0.01em;
+    }
+    .pursue-hero-byline {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--cyan);
+      margin: 1.5rem 0 2rem;
+    }
+    .pursue-hero-lead {
+      font-size: 1.1rem;
+      color: rgba(245,240,232,0.72);
+      line-height: 1.75; max-width: 52ch;
+      border-left: 2px solid var(--gold);
+      padding-left: 1.5rem;
+      font-style: italic;
+    }
+    /* Stat panel hero */
+    .pursue-stat-panel {
+      background: rgba(22,22,25,0.9);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      backdrop-filter: blur(8px);
+    }
+    .pursue-stat-panel-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1.5rem; padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+    }
+    .pursue-stat-row {
+      display: flex; justify-content: space-between;
+      align-items: baseline; padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(201,168,76,0.06);
+    }
+    .pursue-stat-row:last-child { border-bottom: none; }
+    .pursue-stat-key {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .pursue-stat-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem; font-weight: 700;
+      color: var(--gold-light); text-align: right;
+    }
+    .pursue-stat-val.cyan { color: var(--cyan); }
+    .pursue-stat-val.red { color: var(--red); }
+
+    /* ── STATUS BAR / MARQUESINA ── */
+    .pursue-status-bar {
+      background: var(--ink-mid);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden; position: relative;
+    }
+    .pursue-status-bar::before,
+    .pursue-status-bar::after {
+      content: '';
+      position: absolute; top: 0; bottom: 0; width: 5rem;
+      z-index: 2; pointer-events: none;
+    }
+    .pursue-status-bar::before {
+      left: 0;
+      background: linear-gradient(to right, var(--ink-mid), transparent);
+    }
+    .pursue-status-bar::after {
+      right: 0;
+      background: linear-gradient(to left, var(--ink-mid), transparent);
+    }
+    .pursue-status-track {
+      display: flex; gap: 3rem; padding: 0.85rem 0;
+      width: max-content;
+      animation: marquee-scroll 40s linear infinite;
+    }
+    .pursue-status-bar:hover .pursue-status-track { animation-play-state: paused; }
+    @keyframes marquee-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .pursue-status-item {
+      display: flex; align-items: center; gap: 0.6rem;
+      white-space: nowrap; flex-shrink: 0; padding: 0 1.5rem;
+    }
+    .pursue-status-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.48rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .pursue-status-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem; font-weight: 700; color: var(--gold);
+    }
+    .pursue-status-value.cyan { color: var(--cyan); }
+    .pursue-status-value.red { color: var(--red); }
+
+    /* ── WRAPPER ARTÍCULO ── */
+    .pursue-article {
+      max-width: 1200px; margin: 0 auto; padding: 0 4rem;
+    }
+
+    /* ── INTRO ── */
+    .pursue-intro {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 5rem;
+      padding: 5rem 0 4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .pursue-intro-text p {
+      font-size: 1.05rem;
+      color: rgba(245,240,232,0.8);
+      line-height: 1.8; margin-bottom: 1.2rem;
+    }
+    .pursue-intro-text p:first-child::first-letter {
+      font-family: 'Audiowide', sans-serif;
+      font-size: 4rem; font-weight: 900;
+      color: var(--gold); float: left;
+      line-height: 0.8; margin: 0.1em 0.15em 0 0;
+    }
+    .pursue-origin-box {
+      background: var(--ink-mid);
+      border: 1px solid var(--border);
+      padding: 1.75rem;
+      position: sticky; top: 80px; align-self: start;
+    }
+    .pursue-origin-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.48rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1rem; padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .pursue-origin-item {
+      padding: 0.65rem 0;
+      border-bottom: 1px solid rgba(201,168,76,0.06);
+    }
+    .pursue-origin-item:last-child { border-bottom: none; }
+    .pursue-origin-key {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.48rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+    .pursue-origin-val {
+      font-size: 0.88rem; color: var(--paper);
+      font-weight: 600;
+    }
+
+    /* ── SECCIÓN ENCABEZADO ── */
+    .pursue-section-head {
+      display: flex; align-items: center;
+      gap: 1.5rem; padding: 4rem 0 2rem;
+    }
+    .pursue-section-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem; letter-spacing: 0.2em;
+      color: var(--gold); flex-shrink: 0;
+    }
+    .pursue-section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem; font-weight: 700; color: var(--paper);
+    }
+    .pursue-section-line {
+      flex: 1; height: 1px; background: var(--border);
+    }
+
+    /* ══════════════════════════════
+       TIMELINE DE TANDAS
+    ══════════════════════════════ */
+    .releases-timeline { padding-bottom: 4rem; }
+
+    .release-card {
+      border: 1px solid var(--border);
+      background: var(--ink-mid);
+      margin-bottom: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .release-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      width: 4px; height: 100%;
+    }
+    .release-card.r1::before { background: var(--cyan); }
+    .release-card.r2::before { background: var(--gold); }
+    .release-card.r3::before { background: #a78bfa; }
+    .release-card.r4::before { background: #5fd97a; }
+
+    .release-header {
+      display: flex; align-items: flex-start;
+      justify-content: space-between;
+      padding: 2rem 3.25rem 1.5rem 2.5rem;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap; gap: 1rem;
+      position: relative; cursor: pointer;
+      user-select: none;
+    }
+    .release-chevron {
+      position: absolute; top: 2rem; right: 1.75rem;
+      font-size: 1rem; color: var(--muted);
+      transition: transform 0.25s ease;
+      pointer-events: none;
+    }
+    .release-card.collapsed .release-chevron { transform: rotate(-90deg); }
+    .release-card.collapsed .release-body { display: none; }
+    .release-card.collapsed .release-header { border-bottom-color: transparent; }
+    .release-header:hover .release-chevron { color: var(--paper); }
+    .release-header-left { flex: 1; }
+    .release-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.48rem; letter-spacing: 0.25em;
+      text-transform: uppercase; padding: 0.25rem 0.65rem;
+      border: 1px solid; display: inline-block;
+      margin-bottom: 0.75rem;
+    }
+    .r1 .release-badge { color: var(--cyan); border-color: var(--cyan); }
+    .r2 .release-badge { color: var(--gold); border-color: var(--gold); }
+    .r3 .release-badge { color: #a78bfa; border-color: #a78bfa; }
+    .r4 .release-badge { color: #5fd97a; border-color: #5fd97a; }
+
+    .release-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem; font-weight: 700;
+      color: var(--paper); line-height: 1.2;
+      margin-bottom: 0.4rem;
+    }
+    .release-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .release-stats {
+      display: flex; flex-direction: column; gap: 0.5rem;
+      align-items: flex-end;
+    }
+    .release-stat-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem; letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      padding: 0.3rem 0.75rem;
+      white-space: nowrap;
+    }
+    .release-stat-pill span {
+      font-weight: 700; color: var(--gold-light);
+      margin-left: 0.4rem;
+    }
+
+    .release-body {
+      padding: 2rem 2rem 2rem 2.5rem;
+    }
+    .release-intro {
+      font-size: 1.02rem;
+      color: rgba(245,240,232,0.75);
+      line-height: 1.8; margin-bottom: 1.5rem;
+      max-width: 72ch;
+    }
+
+    /* Highlights grid */
+    .release-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border);
+      margin: 1.5rem 0;
+    }
+    .hl-item {
+      background: var(--ink-soft);
+      padding: 1.25rem 1.5rem;
+      position: relative;
+      transition: background 0.2s;
+    }
+    .hl-item:hover { background: rgba(255,255,255,0.03); }
+    .hl-icon {
+      font-size: 1.4rem; margin-bottom: 0.6rem;
+      display: block;
+    }
+    .hl-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.44rem; letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+    .r1 .hl-label { color: var(--cyan); }
+    .r2 .hl-label { color: var(--gold); }
+    .r3 .hl-label { color: #a78bfa; }
+    .r4 .hl-label { color: #5fd97a; }
+
+    .hl-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.9rem; font-weight: 700;
+      color: var(--paper); margin-bottom: 0.4rem;
+      line-height: 1.3;
+    }
+    .hl-desc {
+      font-size: 0.8rem;
+      color: var(--muted); line-height: 1.6;
+    }
+
+    /* Doc excerpt */
+    .doc-excerpt {
+      background: rgba(13,13,15,0.8);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-left: 3px solid var(--gold);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .doc-excerpt-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.46rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+    .doc-excerpt p {
+      font-size: 0.92rem; font-style: italic;
+      color: rgba(245,240,232,0.8); line-height: 1.7;
+      margin-bottom: 0.5rem;
+    }
+    .doc-excerpt p:last-child { margin-bottom: 0; }
+    .doc-source {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.44rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      margin-top: 0.5rem;
+    }
+
+    /* Media embed simulado */
+    .release-media {
+      margin: 1.5rem 0 0;
+    }
+    .release-media-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.48rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--muted);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .media-card {
+      border: 1px solid var(--border);
+      background: var(--ink);
+      overflow: hidden;
+      position: relative;
+    }
+    .media-card img {
+      width: 100%; aspect-ratio: 16/9;
+      object-fit: cover; display: block;
+      filter: brightness(0.85) saturate(0.9);
+    }
+    .media-card-cap {
+      padding: 0.75rem 1rem;
+    }
+    .media-card-cap p {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted); line-height: 1.5;
+    }
+    .media-play-badge {
+      position: absolute; top: 0.6rem; left: 0.6rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.44rem; letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background: rgba(13,13,15,0.85);
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+      padding: 0.2rem 0.5rem;
+    }
+
+    /* ══════════════════════════════
+       EVENTOS / DESARROLLOS (post-tanda)
+       Variante .ev — no son tandas documentales,
+       son sucesos del proceso de divulgación
+    ══════════════════════════════ */
+    .release-card.ev::before { background: #e8954e; }
+    .ev .release-badge { color: #e8954e; border-color: #e8954e; }
+    .ev .hl-label { color: #e8954e; }
+
+    .event-figure {
+      display: flex; align-items: center; gap: 1rem;
+      background: rgba(232,149,78,0.06);
+      border: 1px solid rgba(232,149,78,0.18);
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+    }
+    .event-figure-initial {
+      flex-shrink: 0;
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      border: 1px solid rgba(232,149,78,0.4);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Audiowide', sans-serif;
+      font-size: 1rem; color: #e8954e;
+    }
+    .event-figure-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700; font-size: 0.92rem;
+      color: var(--paper);
+    }
+    .event-figure-role {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    .event-status-row {
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+      margin: 1.25rem 0;
+    }
+    .event-status-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid rgba(232,149,78,0.3);
+      color: rgba(245,240,232,0.65);
+      padding: 0.3rem 0.7rem;
+    }
+    .event-status-pill.unconfirmed {
+      border-color: rgba(192,57,43,0.4);
+      color: #e08a7d;
+    }
+
+    /* ══════════════════════════════
+       COMPARATIVA DE TANDAS
+    ══════════════════════════════ */
+    .releases-compare {
+      margin: 2rem 0 4rem;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .compare-table {
+      width: 100%;
+      min-width: 620px;
+      border-collapse: collapse;
+      border: 1px solid var(--border);
+    }
+    .compare-table th {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; letter-spacing: 0.2em;
+      text-transform: uppercase; text-align: left;
+      padding: 1rem 1.25rem;
+      background: var(--ink-soft);
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .compare-table th.r1h { color: var(--cyan); }
+    .compare-table th.r2h { color: var(--gold); }
+    .compare-table th.r3h { color: #a78bfa; }
+    .compare-table th.r4h { color: #5fd97a; }
+    .compare-table td {
+      padding: 0.85rem 1.25rem;
+      border-bottom: 1px solid rgba(201,168,76,0.05);
+      font-size: 0.82rem;
+      color: rgba(245,240,232,0.7);
+      vertical-align: top;
+    }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table td:first-child {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.52rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted);
+      white-space: nowrap;
+    }
+    .compare-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .val-hi { color: var(--gold-light) !important; font-weight: 700; }
+    .val-yes { color: var(--cyan) !important; }
+    .val-no { color: var(--muted) !important; }
+
+    /* ══════════════════════════════
+       AGENCIAS SVG
+    ══════════════════════════════ */
+    .agencies-section { margin: 2rem 0 4rem; }
+    .agencies-bar-wrap {
+      border: 1px solid var(--border);
+      background: var(--ink-mid);
+      padding: 2rem;
+    }
+    .agency-row {
+      display: grid;
+      grid-template-columns: 120px 1fr 60px;
+      gap: 1.5rem; align-items: center;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid rgba(201,168,76,0.05);
+    }
+    .agency-row:last-child { border-bottom: none; }
+    .agency-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem; font-weight: 700;
+      color: var(--paper);
+    }
+    .agency-track {
+      background: rgba(255,255,255,0.04); height: 8px;
+      position: relative;
+    }
+    .agency-fill {
+      height: 100%; transition: width 1.2s ease;
+    }
+    .agency-fill.dow { background: var(--cyan); }
+    .agency-fill.fbi { background: #f97316; }
+    .agency-fill.nasa { background: #60a5fa; }
+    .agency-fill.cia { background: #a78bfa; }
+    .agency-fill.state { background: var(--gold); }
+    .agency-fill.doe { background: #5fd97a; }
+    .agency-fill.other { background: var(--muted); }
+    .agency-count {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem; font-weight: 700;
+      color: var(--gold-light); text-align: right;
+    }
+
+    /* ══════════════════════════════
+       VOCES / REACCIONES
+    ══════════════════════════════ */
+    .voices-section { margin: 2rem 0; }
+    .voice-card {
+      display: flex; gap: 1.5rem;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid rgba(201,168,76,0.06);
+    }
+    .voice-card:last-child { border-bottom: none; }
+    .voice-avatar {
+      font-size: 2rem; flex-shrink: 0;
+      width: 48px; height: 48px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+    }
+    .voice-meta { flex: 1; }
+    .voice-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem; font-weight: 700;
+      color: var(--paper); margin-bottom: 0.15rem;
+    }
+    .voice-role {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.46rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .voice-text {
+      font-size: 0.88rem;
+      color: rgba(245,240,232,0.65); line-height: 1.75;
+    }
+
+    /* ══════════════════════════════
+       PULL QUOTE
+    ══════════════════════════════ */
+    .pull-quote {
+      border-left: 3px solid var(--gold);
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      background: rgba(201,168,76,0.04);
+    }
+    .pull-quote p {
+      font-size: 1.15rem; font-style: italic;
+      color: rgba(245,240,232,0.85); line-height: 1.65;
+      margin-bottom: 0.75rem;
+    }
+    .pull-quote cite {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold);
+      font-style: normal;
+    }
+
+    /* ══════════════════════════════
+       DEBATE GRID
+    ══════════════════════════════ */
+    .debate-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+    .debate-col {
+      background: var(--ink-mid);
+      padding: 1.75rem;
+    }
+    .debate-col-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--muted);
+      margin-bottom: 1rem; padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .debate-col ul {
+      list-style: none; display: flex;
+      flex-direction: column; gap: 0.6rem;
+    }
+    .debate-col li {
+      font-size: 0.82rem;
+      color: rgba(245,240,232,0.7);
+      line-height: 1.55; padding-left: 1rem;
+      position: relative;
+    }
+    .debate-col li::before {
+      content: '→';
+      position: absolute; left: 0;
+      color: var(--gold); opacity: 0.5;
+      font-size: 0.65rem;
+    }
+
+    /* ══════════════════════════════
+       OPEN QUESTIONS
+    ══════════════════════════════ */
+    .open-questions {
+      background: var(--ink-mid);
+      border: 1px solid rgba(78,205,196,0.15);
+      padding: 2rem;
+      margin: 3rem 0;
+    }
+    .open-q-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 1.25rem;
+    }
+    .open-q-list {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .open-q-list li {
+      font-size: 0.9rem;
+      color: rgba(245,240,232,0.7); line-height: 1.6;
+      padding-left: 1.25rem; position: relative;
+    }
+    .open-q-list li::before {
+      content: '?';
+      position: absolute; left: 0;
+      color: var(--cyan); opacity: 0.6;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+    }
+
+    /* ══════════════════════════════
+       WHAT'S NEXT
+    ══════════════════════════════ */
+    .whats-next {
+      background: linear-gradient(135deg,
+        rgba(201,168,76,0.06) 0%,
+        rgba(78,205,196,0.04) 100%);
+      border: 1px solid var(--border);
+      padding: 2.5rem; margin: 3rem 0;
+    }
+    .whats-next-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .whats-next h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3rem; font-weight: 700;
+      color: var(--paper); margin-bottom: 1rem;
+    }
+    .whats-next p {
+      font-size: 0.95rem;
+      color: rgba(245,240,232,0.72); line-height: 1.8;
+      margin-bottom: 0.8rem;
+    }
+    .whats-next p:last-child { margin-bottom: 0; }
+
+    /* ── BODY TEXT LIBRE ── */
+    .pursue-body-text {
+      padding: 2rem 0;
+    }
+    .pursue-body-text p {
+      font-size: 1.02rem;
+      color: rgba(245,240,232,0.78);
+      line-height: 1.8; margin-bottom: 1.2rem;
+      max-width: 76ch;
+    }
+    .pursue-body-text h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem; font-weight: 700;
+      color: var(--paper); margin: 3rem 0 1rem;
+    }
+    .pursue-body-text h3 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold);
+      margin: 2rem 0 1rem;
+    }
+    .pursue-body-text strong { color: var(--paper); }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--ink-mid);
+      border-top: 1px solid var(--border);
+      padding: 3rem 0;
+      margin-top: 5rem;
+    }
+    .site-footer-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 4rem;
+    }
+    .footer-top {
+      display: grid; grid-template-columns: 1fr 2fr;
+      gap: 4rem; padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2rem;
+    }
+    .footer-logo {
+      font-family: 'Audiowide', sans-serif;
+      font-size: 1.1rem; color: var(--paper);
+      text-decoration: none; display: block; margin-bottom: 0.75rem;
+    }
+    .footer-tagline {
+      font-size: 0.8rem;
+      color: var(--muted); line-height: 1.6; margin-bottom: 1rem;
+    }
+    .footer-edition-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.46rem; letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      color: var(--muted); padding: 0.3rem 0.65rem;
+    }
+    .footer-nav-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem;
+    }
+    .footer-nav-col-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.48rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .footer-nav-list {
+      list-style: none; display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .footer-nav-list a {
+      font-size: 0.8rem; color: var(--muted);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .footer-nav-list a:hover { color: var(--paper); }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-copy {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.46rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .footer-signal {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.46rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--cyan);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .pursue-hero-inner {
+        grid-template-columns: 1fr;
+        padding: 0 2rem 4rem; gap: 2.5rem;
+      }
+      .pursue-article { padding: 0 2rem; }
+      .pursue-intro { grid-template-columns: 1fr; gap: 2rem; }
+      .debate-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-nav-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+      .release-header { flex-direction: column; padding-right: 2.75rem; }
+      .release-chevron { top: 1.75rem; right: 1.25rem; }
+      .release-stats { align-items: flex-start; flex-direction: row; flex-wrap: wrap; }
+    }
+    @media (max-width: 600px) {
+      .pursue-hero-title { font-size: 2.8rem; }
+      .release-highlights { grid-template-columns: 1fr; }
+      .compare-table { font-size: 0.75rem; }
+      .footer-nav-grid { grid-template-columns: 1fr; }
+    }
+    .nav-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: inline-block;
+      flex-shrink: 0;
+      animation: nav-dot-pulse 1.6s ease-in-out infinite;
+    }
+
+  @keyframes nav-dot-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: 0.35; transform: scale(0.65); }
+    }
+ </style>
+<style>
+  /* ── Comentarios (Giscus) ── */
+  .comments-section {
+    border: 1px solid rgba(245,240,232,0.12);
+    padding: 2.5rem; margin: 4rem 0 2rem; background: rgba(245,240,232,0.02);
+  }
+  .comments-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.6rem;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+    margin-bottom: 1.5rem; padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(245,240,232,0.12);
+  }
+  .giscus-wrap { min-height: 80px; }
+ </style>
+
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════ -->
+<!-- ══════════ NAV ══════════ -->
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="../" class="site-nav-logo">MM</a>
+    <div class="site-nav-sep"></div>
+    <div class="site-nav-articles">
+      <a href="../articulos.html" class="site-nav-link">Artículos</a>
+      <a href="../seguimientos/3i-atlas.html" class="site-nav-link">3I/ATLAS</a>
+      <a href="../seguimientos/uap.html" class="site-nav-link">UAP WATCH</a>
+      <a href="../seguimientos/pursue-releases.html" class="site-nav-link active">PURSUE</a>
+      <a href="../seguimientos/voyager-1.html" class="site-nav-link">VOYAGER 1</a>
+      <a href="../seguimientos/hitos-medicos.html" class="site-nav-link">HITOS MÉDICOS</a>
+      <a href="../glosario.html" class="site-nav-link"><span class="nav-dot"></span>&nbsp;Glosario</a>
+    </div>
+    <button class="site-nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navDrawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="site-nav-drawer" id="navDrawer">
+    <a href="../articulos.html" class="drawer-link">Artículos</a>
+    <a href="../seguimientos/3i-atlas.html" class="drawer-link">3I/ATLAS</a>
+    <a href="../seguimientos/uap.html" class="drawer-link">UAP WATCH</a>
+    <a href="../seguimientos/pursue-releases.html" class="drawer-link active">PURSUE</a>
+    <a href="../seguimientos/voyager-1.html" class="drawer-link">VOYAGER 1</a>
+    <a href="../seguimientos/hitos-medicos.html" class="drawer-link">HITOS MÉDICOS</a>
+    <a href="../glosario.html" class="drawer-link"><span class="nav-dot"></span>&nbsp;Glosario</a>
+  </div>
+</nav>
+<script>
+  (function () {
+    var btn = document.getElementById('navHamburger');
+    var drawer = document.getElementById('navDrawer');
+    if (!btn || !drawer) return;
+    btn.addEventListener('click', function () {
+      var isOpen = drawer.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    drawer.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        drawer.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+<!-- ══════════ HERO ══════════ -->
+<section class="pursue-hero">
+  <canvas class="pursue-hero-canvas" id="starfield"></canvas>
+
+  <div class="pursue-hero-inner">
+    <div>
+      <div class="pursue-live-badge">
+        <div class="pursue-live-dot"></div>
+        Actualización continua · Cuatro tandas publicadas
+      </div>
+
+      <p class="pursue-hero-kicker">Señales · Desclasificación · war.gov/UFO</p>
+
+      <h1 class="pursue-hero-title">
+        <span class="accent">PURSUE</span>
+      </h1>
+
+      <nav class="tanda-nav" aria-label="Ir a una tanda específica">
+        <a href="#tanda-04" class="tanda-nav-pill t4">Tanda 04</a>
+        <a href="#tanda-03" class="tanda-nav-pill t3">Tanda 03</a>
+        <a href="#tanda-02" class="tanda-nav-pill t2">Tanda 02</a>
+        <a href="#tanda-01" class="tanda-nav-pill t1">Tanda 01</a>
+      </nav>
+
+      <p class="pursue-hero-subtitle">Los archivos abiertos.<br>Cuatro tandas. 334 documentos.<br>Cero respuestas definitivas.</p>
+
+      <p class="pursue-hero-byline">La Redacción · Mundo Maravilloso</p>
+
+      <p class="pursue-hero-lead">
+        El gobierno de los Estados Unidos abrió sus archivos UAP al mundo. Más de 1.700 millones de visitas después, la pregunta central sigue sin respuesta. La cuarta tanda trajo el video que la comunidad UAP llevaba años rumoreando: un supuesto "cerebro flotante" sobre el Atlántico.
+      </p>
+    </div>
+
+    <div class="pursue-stat-panel">
+      <p class="pursue-stat-panel-label">// Estado actual del archivo</p>
+      <div class="pursue-stat-row">
+        <span class="pursue-stat-key">Visitas acumuladas</span>
+        <span class="pursue-stat-val cyan">+1,7B</span>
+      </div>
+      <div class="pursue-stat-row">
+        <span class="pursue-stat-key">Tandas publicadas</span>
+        <span class="pursue-stat-val">4 de ?</span>
+      </div>
+      <div class="pursue-stat-row">
+        <span class="pursue-stat-key">Documentos totales</span>
+        <span class="pursue-stat-val">334</span>
+      </div>
+      <div class="pursue-stat-row">
+        <span class="pursue-stat-key">Agencias involucradas</span>
+        <span class="pursue-stat-val">5+</span>
+      </div>
+      <div class="pursue-stat-row">
+        <span class="pursue-stat-key">Arco temporal</span>
+        <span class="pursue-stat-val">82 años</span>
+      </div>
+      <div class="pursue-stat-row">
+        <span class="pursue-stat-key">Videos militares</span>
+        <span class="pursue-stat-val">90+</span>
+      </div>
+      <div class="pursue-stat-row">
+        <span class="pursue-stat-key">Próxima tanda</span>
+        <span class="pursue-stat-val red">Pendiente</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ STATUS BAR ══════════ -->
+<div class="pursue-status-bar">
+  <div class="pursue-status-track">
+    <!-- Set 1 -->
+    <div class="pursue-status-item">
+      <span class="pursue-status-label">Tanda 1 · 8 May 2026</span>
+      <span class="pursue-status-value">158 documentos</span>
+    </div>
+    <div class="pursue-status-item">
+      <span class="pursue-status-label">Tanda 2 · 22 May 2026</span>
+      <span class="pursue-status-value">64 documentos</span>
+    </div>
+    <div class="pursue-status-item">
+      <span class="pursue-status-label">Tanda 3 · 12 Jun 2026</span>
+      <span class="pursue-status-value cyan">72 documentos</span>
+    </div>
+    <div class="pursue-status-item">
+      <span class="pursue-status-label">Tanda 4 · 10 Jul 2026</span>
+      <span class="pursue-status-value" style="color:#5fd97a;">40 documentos</span>
+    </div>
+    <div class="pursue-status-item">
+      <span class="pursue-status-label">Visitas globales</span>
+      <span class="pursue-status-value">+1.700.000.000</span>
+    </div>
+    <div class="pursue-status-item">
+      <span class="pursue-status-label">Videos militares</span>
+      <span class="pursue-status-value">90+</span>
+    </div>
+    <div class="pursue-status-item">
+      <span class="pursue-status-label">Agencias</span>
+      <span class="pursue-status-value">Dep. Guerra · FBI · NASA · CIA · Estado · Energía</span>
+    </div>
+    <div class="pursue-status-item">
+      <span class="pursue-status-label">Arco histórico</span>
+      <span class="pursue-status-value">1944 → 2026</span>
+    </div>
+    <div class="pursue-status-item">
+      <span class="pursue-status-label">Videos F-16 / derribo</span>
+      <span class="pursue-status-value cyan">Primer footage publicado</span>
+    </div>
+    <div class="pursue-status-item">
+      <span class="pursue-status-label">Orbes rojos noreste EE.UU.</span>
+      <span class="pursue-status-value red">Nuevos en R03</span>
+    </div>
+    <div class="pursue-status-item">
+      <span class="pursue-status-label">"Cerebro flotante" Atlántico 2020</span>
+      <span class="pursue-status-value" style="color:#5fd97a;">Viral en R04</span>
+    </div>
+    <!-- Set 2 (duplicado para loop) -->
+    <div class="pursue-status-item">
+      <span class="pursue-status-label">Tanda 1 · 8 May 2026</span>
+      <span class="pursue-status-value">158 documentos</span>
+    </div>
+    <div class="pursue-status-item">
+      <span class="pursue-status-label">Tanda 2 · 22 May 2026</span>
+      <span class="pursue-status-value">64 documentos</span>
+    </div>
+    <div class="pursue-status-item">
+      <span class="pursue-status-label">Tanda 3 · 12 Jun 2026</span>
+      <span class="pursue-status-value cyan">72 documentos</span>
+    </div>
+    <div class="pursue-status-item">
+      <span class="pursue-status-label">Tanda 4 · 10 Jul 2026</span>
+      <span class="pursue-status-value" style="color:#5fd97a;">40 documentos</span>
+    </div>
+    <div class="pursue-status-item">
+      <span class="pursue-status-label">Visitas globales</span>
+      <span class="pursue-status-value">+1.700.000.000</span>
+    </div>
+    <div class="pursue-status-item">
+      <span class="pursue-status-label">Videos militares</span>
+      <span class="pursue-status-value">90+</span>
+    </div>
+    <div class="pursue-status-item">
+      <span class="pursue-status-label">Agencias</span>
+      <span class="pursue-status-value">Dep. Guerra · FBI · NASA · CIA · Estado · Energía</span>
+    </div>
+    <div class="pursue-status-item">
+      <span class="pursue-status-label">Arco histórico</span>
+      <span class="pursue-status-value">1944 → 2026</span>
+    </div>
+    <div class="pursue-status-item">
+      <span class="pursue-status-label">Videos F-16 / derribo</span>
+      <span class="pursue-status-value cyan">Primer footage publicado</span>
+    </div>
+    <div class="pursue-status-item">
+      <span class="pursue-status-label">Orbes rojos noreste EE.UU.</span>
+      <span class="pursue-status-value red">Nuevos en R03</span>
+    </div>
+    <div class="pursue-status-item">
+      <span class="pursue-status-label">"Cerebro flotante" Atlántico 2020</span>
+      <span class="pursue-status-value" style="color:#5fd97a;">Viral en R04</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ BODY ══════════ -->
+<main class="pursue-article">
+
+  <!-- INTRO -->
+  <div class="pursue-intro">
+    <div class="pursue-intro-text">
+      <p>
+        El 8 de mayo de 2026, el gobierno de los Estados Unidos hizo algo que muchos creían imposible: abrió sus archivos sobre fenómenos aéreos no identificados al público general. Sin contraseña. Sin formularios. Sin esperar décadas a través de la Ley de Libertad de Información. Bastaba con ir a una dirección web que ya contenía una declaración implícita: <strong>war.gov/UFO</strong>.
+      </p>
+      <p>
+        Desde entonces, han llegado cuatro tandas de documentos. La primera el 8 de mayo. La segunda el 22. La tercera el 12 de junio. La cuarta, el 10 de julio. En total: 334 archivos que abarcan desde los foo fighters de la Segunda Guerra Mundial hasta el video que la comunidad UAP llevaba años buscando: un objeto con forma de "cerebro flotante" filmado sobre el Atlántico en 2020. Y el Departamento de Guerra ha dejado claro que habrá más.
+      </p>
+      <p>
+        Este artículo es una guía cronológica de lo que contiene cada tanda, lo más significativo de cada una, y lo que su publicación —y sus ausencias— dice sobre el proceso. Porque lo que el gobierno <em>no</em> publica es, posiblemente, tan importante como lo que sí publica.
+      </p>
+    </div>
+
+    <div class="pursue-origin-box">
+      <p class="pursue-origin-label">// Ficha técnica · PURSUE</p>
+      <div class="pursue-origin-item">
+        <p class="pursue-origin-key">Nombre completo</p>
+        <p class="pursue-origin-val">Presidential Unsealing and Reporting System for UAP Encounters</p>
+      </div>
+      <div class="pursue-origin-item">
+        <p class="pursue-origin-key">Alojado en</p>
+        <p class="pursue-origin-val">war.gov/UFO</p>
+      </div>
+      <div class="pursue-origin-item">
+        <p class="pursue-origin-key">Origen</p>
+        <p class="pursue-origin-val">Directiva de Trump, febrero 2026</p>
+      </div>
+      <div class="pursue-origin-item">
+        <p class="pursue-origin-key">Responsable</p>
+        <p class="pursue-origin-val">Dep. de Guerra (Pete Hegseth)</p>
+      </div>
+      <div class="pursue-origin-item">
+        <p class="pursue-origin-key">Metodología</p>
+        <p class="pursue-origin-val">Rolling release · Tandas periódicas</p>
+      </div>
+      <div class="pursue-origin-item">
+        <p class="pursue-origin-key">Tipo de archivos</p>
+        <p class="pursue-origin-val">PDFs, imágenes, vídeos, audio</p>
+      </div>
+      <div class="pursue-origin-item">
+        <p class="pursue-origin-key">Casos publicados</p>
+        <p class="pursue-origin-val">Solo casos no resueltos</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN: CONTEXTO -->
+  <div class="pursue-body-text">
+    <h2>Antes de las tandas: cómo se llegó hasta aquí</h2>
+    <p>
+      El 19 de febrero de 2026, Trump publicó en Truth Social que ordenaría la desclasificación de archivos sobre vida extraterrestre, UAP y OVNIs. "Dios bendiga a América." Tres meses después, el compromiso se materializó en un sitio web alojado en el Departamento de Guerra —el antiguo Departamento de Defensa, renombrado bajo la actual administración—, con una URL que nadie habría predicho: war.gov/UFO.
+    </p>
+    <p>
+      Hay un detalle que pasó casi inadvertido en la cobertura inicial: la elección de qué institución lidera el proceso de desclasificación es también una declaración de intenciones sobre cómo se enmarca el fenómeno. No como un misterio científico. No como una cuestión filosófica. Como un asunto de <strong>guerra y seguridad nacional</strong>. Esa decisión tiene consecuencias sobre qué se publica, qué se retiene y con qué propósito.
+    </p>
+
+    <div class="pull-quote">
+      <p>"Estos archivos, ocultos detrás de clasificaciones, han alimentado durante mucho tiempo una especulación justificada. Es hora de que el pueblo americano los vea por sí mismo."</p>
+      <cite>— Pete Hegseth, Secretario de Guerra · Declaración oficial, mayo 2026</cite>
+    </div>
+
+    <p>
+      Hay un matiz fundamental: todos los archivos publicados bajo PURSUE son, por definición, <em>casos no resueltos</em>. El Departamento de Guerra fue explícito al respecto. Los materiales publicados corresponden a avistamientos sobre los cuales el gobierno no ha podido llegar a una determinación definitiva. Los casos resueltos continúan siendo reportados por canales separados. Lo que el público está viendo no es "lo más interesante que tiene el gobierno". Es lo que el gobierno no ha podido explicar y ha decidido, por primera vez, compartir.
+    </p>
+  </div>
+
+  <!-- SECCIÓN: TANDAS -->
+  <div class="pursue-section-head">
+    <span class="pursue-section-num">01</span>
+    <h2 class="pursue-section-title">Las cuatro tandas, una por una</h2>
+    <div class="pursue-section-line"></div>
+  </div>
+
+  <div class="releases-timeline">
+
+    <!-- ── TANDA 4 ── -->
+    <div class="release-card r4" id="tanda-04">
+      <div class="release-header" onclick="toggleReleaseCard(this)">
+        <span class="release-chevron" aria-hidden="true">▾</span>
+        <div class="release-header-left">
+          <span class="release-badge">Tanda 04 · Publicación más reciente</span>
+          <h3 class="release-title">El "cerebro flotante" del Atlántico<br>y el intruso en Pantex</h3>
+          <p class="release-date">10 de julio de 2026 · Dep. de Guerra, NASA, CIA, FBI, Dep. de Energía</p>
+        </div>
+        <div class="release-stats">
+          <div class="release-stat-pill">Documentos <span>40</span></div>
+          <div class="release-stat-pill">Videos <span>19</span></div>
+          <div class="release-stat-pill">Documentos PDF <span>14</span></div>
+          <div class="release-stat-pill">Audio <span>4</span></div>
+          <div class="release-stat-pill">Imágenes <span>3</span></div>
+        </div>
+      </div>
+
+      <div class="release-body">
+        <p class="release-intro">
+          La cuarta tanda llegó el 10 de julio de 2026 con 40 archivos nuevos —19 videos, 14 documentos, cuatro audios y tres imágenes— procedentes del Departamento de Guerra, la NASA, la CIA, el FBI y, por primera vez con presencia destacada, el Departamento de Energía. El archivo que capturó la atención global fue uno que la comunidad UAP llevaba años rastreando solo por rumores: un objeto con forma de "cerebro flotante" o medusa, filmado sobre el Atlántico en 2020.
+        </p>
+
+        <div class="release-highlights">
+          <div class="hl-item">
+            <span class="hl-icon">🧠</span>
+            <p class="hl-label">El archivo que dio la vuelta al mundo</p>
+            <p class="hl-title">DOW-UAP-PR116 · Unresolved UAP Report, Atlantic Ocean, 2020</p>
+            <p class="hl-desc">El video más comentado de R04: un objeto de color "más oscuro, entre marrón y rojizo", de entre 12 y 15 pies de altura, que viajaba con el viento sin maniobrar ni cambiar de dirección. El testigo lo describió como parecido a "un globo grande y algo deforme". Analistas independientes coinciden en que la dinámica de vuelo es consistente con un objeto inflable —posiblemente un cúmulo de globos—, aunque de forma inusual. Es, según varios observadores, el mismo material que circulaba desde hace años bajo el apodo de "cerebro flotante" o "medusa".</p>
+          </div>
+          <div class="hl-item">
+            <span class="hl-icon">☢️</span>
+            <p class="hl-label">Debut destacado · Dep. de Energía</p>
+            <p class="hl-title">Intrusión en la planta nuclear de Pantex · Amarillo, Texas, sept. 2015</p>
+            <p class="hl-desc">Dos oficiales de seguridad respondieron cuando un objeto no identificado con forma de diamante entró al espacio aéreo de la instalación de armas nucleares de Pantex, obligando un cierre temporal de la planta. El objeto, silencioso y sin sistema de propulsión visible, se desplazaba a entre 10 y 15 millas por hora. Los oficiales lo persiguieron sin lograr acortar la distancia antes de que desapareciera de la vista. El caso fue remitido también al FBI.</p>
+          </div>
+          <div class="hl-item">
+            <span class="hl-icon">🌊</span>
+            <p class="hl-label">Sensor degradado · Mar Amarillo</p>
+            <p class="hl-title">Contraste de seis puntas · 2023</p>
+            <p class="hl-desc">Un sensor militar registró lo que los analistas describieron como "un área de contraste con forma de estrella de seis puntas" sobre el Mar Amarillo, cerca de China y la península coreana. El video, de cuatro minutos con 57 segundos, muestra cómo la imagen se degrada progresivamente a medida que avanza la grabación.</p>
+          </div>
+          <div class="hl-item">
+            <span class="hl-icon">🛰️</span>
+            <p class="hl-label">Indo-Pacífico · 2025</p>
+            <p class="hl-title">Objeto sobre el Mar de China Oriental</p>
+            <p class="hl-desc">Otro sensor de una plataforma militar rastreó durante varios minutos un objeto no identificado sobre el Mar de China Oriental, dentro del área de responsabilidad del Comando Indo-Pacífico de EE.UU. Es uno de varios incidentes recientes en la región incluidos en esta tanda.</p>
+          </div>
+          <div class="hl-item">
+            <span class="hl-icon">🔥</span>
+            <p class="hl-label">Documento histórico · 1949</p>
+            <p class="hl-title">La conferencia de las "bolas de fuego verdes" · Los Álamos</p>
+            <p class="hl-desc">Un documento desclasificado detalla una conferencia de 1949 en el Laboratorio Nacional de Los Álamos, con destacados físicos —varios de ellos veteranos del Proyecto Manhattan— intentando explicar avistamientos de "bolas de fuego verdes" sobre la instalación nuclear. Una teoría apuntaba a meteoros, pero un astrónomo presente advirtió que "nada parecido... se ha observado jamás en la caída de meteoritos".</p>
+          </div>
+          <div class="hl-item">
+            <span class="hl-icon">🌕</span>
+            <p class="hl-label">Archivo NASA · 1996</p>
+            <p class="hl-title">NASA-UAP-D030 · Objeto no identificado, misión STS-80</p>
+            <p class="hl-desc">Una serie de fotografías tomadas por astronautas a bordo del transbordador espacial Columbia durante la misión STS-80 de 1996 muestra un pequeño objeto de forma triangular o cónica, sin explicación consignada en el archivo.</p>
+          </div>
+        </div>
+
+        <div class="doc-excerpt">
+          <p class="doc-excerpt-label">// Declaración oficial · Dep. de Guerra · 10 julio 2026</p>
+          <p>Hoy, el Departamento de Guerra publica la cuarta entrega de archivos históricos y desclasificados de Fenómenos Anómalos No Identificados como parte del Sistema Presidencial de Desclasificación e Información sobre Encuentros UAP (PURSUE). La colección continúa alojada en WAR.GOV/UFO, y el Departamento publicará archivos adicionales de manera continua. El Departamento de Guerra y sus agencias socias están trabajando activamente en la próxima entrega de archivos UAP.</p>
+          <span class="doc-source">Sean Parnell, portavoz del Departamento de Guerra · 10 julio 2026 · vía war.gov</span>
+        </div>
+
+        <div class="release-media">
+          <p class="release-media-label">// Video · DOW-UAP-PR116 · El archivo más comentado de R04</p>
+          <div class="media-grid" style="grid-template-columns: 1fr;">
+            <div class="media-card">
+              <div style="background:linear-gradient(135deg,#00140a 0%,#001a10 100%);aspect-ratio:16/9;position:relative;">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/5xlY-wL01LQ"
+                  title="DOW-UAP-PR116, Unresolved UAP Report, Atlantic Ocean, 2020"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  style="position:absolute;inset:0;">
+                </iframe>
+                <div class="media-play-badge" style="border-color:#5fd97a;color:#5fd97a;">VIDEO PUBLICADO</div>
+              </div>
+              <div class="media-card-cap"><p>Sensor infrarrojo · Plataforma militar de EE.UU. · Océano Atlántico, 2020 · 32 seg. · PURSUE R04 · Reporte del Comando Norte de EE.UU. a AARO</p></div>
+            </div>
+          </div>
+        </div>
+
+        <p style="font-size:0.85rem;color:var(--muted);line-height:1.7;margin-top:1rem;">
+          El resto de los 40 archivos de esta tanda está disponible directamente en <a href="https://www.war.gov/UFO/" style="color:#5fd97a;">war.gov/UFO</a>.
+        </p>
+      </div>
+    </div>
+    <!-- ── TANDA 3 ── -->
+    <div class="release-card r3 collapsed" id="tanda-03">
+      <div class="release-header" onclick="toggleReleaseCard(this)">
+        <span class="release-chevron" aria-hidden="true">▾</span>
+        <div class="release-header-left">
+          <span class="release-badge">Tanda 03 · 12 junio 2026</span>
+          <h3 class="release-title">La CIA entra en el archivo y los orbes<br>rojos aparecen en el noreste de EE.UU.</h3>
+          <p class="release-date">12 de junio de 2026 · Pentágono, FBI, CIA, NASA, Comunidad de Inteligencia</p>
+        </div>
+        <div class="release-stats">
+          <div class="release-stat-pill">Documentos <span>72</span></div>
+          <div class="release-stat-pill">CIA · Primera vez <span>18 archivos</span></div>
+          <div class="release-stat-pill">FBI nuevos <span>29 archivos</span></div>
+          <div class="release-stat-pill">Videos <span>6 nuevos</span></div>
+        </div>
+      </div>
+
+      <div class="release-body">
+        <p class="release-intro">
+          La tercera tanda llegó el 12 de junio de 2026 con un dato que cambia el perfil del archivo: la CIA participa por primera vez. Sus 18 registros incluyen correspondencia del Panel Robertson de 1952–1953 —el grupo asesor científico que durante décadas definió la política oficial de descarte de avistamientos— y registros históricos de la Guerra Fría. Junto a ellos: nuevos videos del FBI de orbes sobre el noreste de los Estados Unidos, un expediente multi-agencia sobre un incidente en Colorado Springs en 2022, y más de dos horas de audio del debrief de la misión Apollo 16, incluyendo un comentario casual de un astronauta sobre una "base estelar alienígena" al discutir datos experimentales.
+        </p>
+
+        <div class="release-highlights">
+          <div class="hl-item">
+            <span class="hl-icon">🕵️</span>
+            <p class="hl-label">Debut histórico</p>
+            <p class="hl-title">La CIA entra en PURSUE · 18 archivos de la Guerra Fría</p>
+            <p class="hl-desc">La CIA contribuye al archivo por primera vez. Sus registros incluyen la correspondencia del Panel Robertson (1952–1953), el panel de asesores científicos que recomendó desclasificar los avistamientos UAP como tema de preocupación pública, y reportes históricos de avistamientos en el exterior durante la Guerra Fría.</p>
+          </div>
+          <div class="hl-item">
+            <span class="hl-icon">🔴</span>
+            <p class="hl-label">El más discutido de R03</p>
+            <p class="hl-title">Orbes rojos brillantes · Noreste de EE.UU. (2024–2025)</p>
+            <p class="hl-desc">Múltiples informes del FBI de esferas rojas brillantes en el noreste de los EE.UU.: una pareja filmó un orbe rojo brillante que cambió de forma y se dividió en varios objetos. Otro video muestra lo que un agente describe como una "esfera de plasma" flotando sobre una charca, y una luz intensa a 25 pies del suelo en una residencia en julio de 2025.</p>
+          </div>
+          <div class="hl-item">
+            <span class="hl-icon">🗂️</span>
+            <p class="hl-label">Expediente multi-agencia</p>
+            <p class="hl-title">Incidente Colorado Springs · 2022</p>
+            <p class="hl-desc">Un raro paquete de caso inter-agencias: entrevista FBI FD-302, narrativa FD-1057, una representación digital y un análisis preparado por un socio de la Comunidad de Inteligencia para el AARO. Es uno de los pocos casos donde múltiples agencias coordinaron su documentación en torno a un mismo evento.</p>
+          </div>
+          <div class="hl-item">
+            <span class="hl-icon">🌍</span>
+            <p class="hl-label">Caso internacional sin precedente</p>
+            <p class="hl-title">Aeropuerto de Harare, Zimbabwe · Julio 2008</p>
+            <p class="hl-desc">Informe nunca antes publicado de la CIA sobre un avistamiento en el Aeropuerto Internacional de Harare: observadores debatieron si el objeto era un dispositivo de reconocimiento extranjero o de origen extraterrestre. El primer archivo internacional en el que la CIA reconoce haber investigado.</p>
+          </div>
+          <div class="hl-item">
+            <span class="hl-icon">🛸</span>
+            <p class="hl-label">Documento más antiguo de R03</p>
+            <p class="hl-title">Estudio del Ejército sobre "Platillos Volantes" · 1949</p>
+            <p class="hl-desc">Evaluación preparada para la División de Planes y Operaciones del Estado Mayor del Ejército para determinar si los avistamientos tenían origen en fenómenos naturales o en actividad de potencias extranjeras. La conclusión fue ambigua. El documento lleva 77 años clasificado.</p>
+          </div>
+          <div class="hl-item">
+            <span class="hl-icon">🎙️</span>
+            <p class="hl-label">Audio histórico · NASA</p>
+            <p class="hl-title">Apollo 16 debrief + Walter Cronkite &amp; Gordon Cooper (1962)</p>
+            <p class="hl-desc">Más de dos horas del debrief de misión de Apollo 16 (1972), incluyendo un comentario sobre una "base estelar alienígena" al discutir datos experimentales. También: un audio de 1962 en el que Walter Cronkite pregunta al astronauta Gordon Cooper sobre OVNIs. Cooper responde que un gran número de personas "excepcionalmente cualificadas" han visto objetos sin "explicación lógica".</p>
+          </div>
+        </div>
+
+        <div class="doc-excerpt">
+          <p class="doc-excerpt-label">// Declaración oficial · Dep. de Guerra · 12 junio 2026</p>
+          <p>El Departamento de Guerra está publicando la tercera entrega de archivos históricos y desclasificados de Fenómenos Anómalos No Identificados como parte del Sistema Presidencial de Desclasificación e Información sobre Encuentros UAP (PURSUE). La colección continúa alojada en WAR.GOV/UFO, y el Departamento publicará archivos adicionales de manera continua. El Departamento de Guerra y sus agencias socias están trabajando activamente en la próxima entrega de archivos UAP.</p>
+          <span class="doc-source">Sean Parnell, portavoz del Departamento de Guerra · 12 junio 2026 · vía FOX News / war.gov</span>
+        </div>
+
+        <div class="release-media">
+          <p class="release-media-label">// Imágenes de la tanda 03 · FBI rendering</p>
+          <div class="media-grid">
+            <div class="media-card">
+              <img src="https://images.foxtv.com/static.livenowfox.com/www.livenowfox.com/content/uploads/2026/06/932/524/fbi-uap-d016_digital-rendering_incident-2-1_western-us-event_2023.jpg" alt="FBI rendering · incidente en zona sensible del oeste de EE.UU., octubre 2023" loading="lazy">
+              <div class="media-card-cap"><p>FBI · Representación artística basada en testimonio de agente federal · Zona sensible de seguridad nacional, oeste de EE.UU., octubre 2023 · PURSUE R03</p></div>
+            </div>
+            <div class="media-card">
+              <img src="https://images.foxtv.com/static.livenowfox.com/www.livenowfox.com/content/uploads/2026/06/764/432/ufo-sighting-july-2025.jpg" alt="UAP avistamiento noreste EE.UU. julio 2025" loading="lazy">
+              <div class="media-card-cap"><p>Imagen incluida en archivo FBI · Avistamiento noreste EE.UU. · Julio 2025 · PURSUE R03</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── TANDA 2 ── -->
+    <div class="release-card r2 collapsed" id="tanda-02">
+      <div class="release-header" onclick="toggleReleaseCard(this)">
+        <span class="release-chevron" aria-hidden="true">▾</span>
+        <div class="release-header-left">
+          <span class="release-badge">Tanda 02 · La más significativa</span>
+          <h3 class="release-title">El derribo del F-16, los transmedium<br>y los orbes que persiguen cazas</h3>
+          <p class="release-date">22 de mayo de 2026 · Pentágono, FBI, NASA</p>
+        </div>
+        <div class="release-stats">
+          <div class="release-stat-pill">Documentos <span>64</span></div>
+          <div class="release-stat-pill">Videos nuevos <span>40+</span></div>
+          <div class="release-stat-pill">Sandia NM <span>116 pág.</span></div>
+          <div class="release-stat-pill">Años cubiertos <span>1948–2025</span></div>
+        </div>
+      </div>
+
+      <div class="release-body">
+        <p class="release-intro">
+          La segunda tanda duplicó el archivo de video y añadió el material más impactante hasta la fecha. Fue la que hizo que la conversación pasara de "¿cuántos documentos hay?" a "¿qué diablos es esto?". Incluía el primer footage publicado jamás de un avión militar estadounidense derribando un UAP, imágenes de objetos entrando y saliendo del agua, 116 páginas sobre 209 avistamientos en una instalación de máxima seguridad, y un relato en primera persona de un alto funcionario de inteligencia que describió cómo un orbe se aproximó a menos de tres metros de su helicóptero antes de dividirse en dos y escapar.
+        </p>
+
+        <div class="release-highlights">
+          <div class="hl-item">
+            <span class="hl-icon">🎯</span>
+            <p class="hl-label">Hito histórico</p>
+            <p class="hl-title">Vídeo del derribo F-16 · Lago Hurón, 12 feb. 2023</p>
+            <p class="hl-desc">Primera vez que se publica footage de un avión militar estadounidense derribando un UAP. El video infrarrojo del F-16 muestra el misil AIM-9X Sidewinder impactando el objeto. En IR, el objeto parece un globo y se fragmenta al impacto. El AARO lo clasifica como "probablemente derivado de un sensor infrarrojo a bordo de una plataforma militar".</p>
+          </div>
+          <div class="hl-item">
+            <span class="hl-icon">🌊</span>
+            <p class="hl-label">Comportamiento transmedium</p>
+            <p class="hl-title">Vídeo submarino · Objetos esféricos, 2022</p>
+            <p class="hl-desc">Video de 2022 que muestra objetos esféricos entrando y saliendo del agua repetidamente cerca de un submarino. El comportamiento transmedium —transición aire-agua sin fricción aparente— es uno de los "Cinco Observables" que desafían la física convencional. El AARO lo ha marcado para análisis adicional.</p>
+          </div>
+          <div class="hl-item">
+            <span class="hl-icon">🟢</span>
+            <p class="hl-label">Investigación histórica más extensa</p>
+            <p class="hl-title">Orbes verdes de Nuevo México · 209 avistamientos (1948–50)</p>
+            <p class="hl-desc">116 páginas sobre 209 informes de "orbes verdes", "discos" y "bolas de fuego" cerca de las instalaciones de Sandia, Nuevo México, entre 1948 y 1950. Se encontró polvo de cobre en varios emplazamientos. Estos casos alimentaron el Proyecto Grudge de la USAF en 1949. El expediente de Guerra Fría más extenso publicado jamás.</p>
+          </div>
+          <div class="hl-item">
+            <span class="hl-icon">🚁</span>
+            <p class="hl-label">Testimonio más perturbador</p>
+            <p class="hl-title">Funcionario de inteligencia · Misión en helicóptero (2025)</p>
+            <p class="hl-desc">Informe de un alto funcionario de inteligencia sobre una misión de finales de 2025: orbes naranja-oval se acercaron al helicóptero antes de perseguir a cazas. Formaron un patrón triangular antes de desaparecer. Un objeto se aproximó a tres metros del rotor, se dividió en dos partes y aceleró más allá de la velocidad de persecución.</p>
+          </div>
+          <div class="hl-item">
+            <span class="hl-icon">🎙️</span>
+            <p class="hl-label">Audio clasificado · 1969</p>
+            <p class="hl-title">Debrief médico Apollo 12 · Conrad, Gordon, Bean</p>
+            <p class="hl-desc">Pete Conrad, Richard Gordon y Alan Bean describen "destellos de luces" observados durante el sueño en la misión de 1969. La NASA concluyó que eran efectos visuales internos, pero la cinta estuvo clasificada hasta ahora. Es la primera vez que se publica.</p>
+          </div>
+          <div class="hl-item">
+            <span class="hl-icon">🌍</span>
+            <p class="hl-label">Teatro de operaciones ampliado</p>
+            <p class="hl-title">Irán 2022, Costa este EE.UU., Golfo Pérsico 2018–23</p>
+            <p class="hl-desc">Cuatro objetos no identificados sobre agua en Irán (2022), Guardacostas con video de objeto sobre el sureste de EE.UU. (2024), y múltiples encuentros en el Golfo Pérsico. El archivo total supera ya los 75 vídeos de sensores militares en CENTCOM, INDOPACOM, AFRICOM y operaciones domésticas.</p>
+          </div>
+        </div>
+
+        <div class="doc-excerpt">
+          <p class="doc-excerpt-label">// Extracto documentado · Informe FBI 302 · Misión en helicóptero · 2025</p>
+          <p>Un objeto se aproximó a menos de tres metros del helicóptero. Se dividió en dos partes y aceleró más allá de la velocidad de persecución. Los objetos formaron una estructura triangular antes de desaparecer del campo visual de todos los sensores disponibles.</p>
+          <span class="doc-source">Fuente: PURSUE Release 02 · Análisis Avi Loeb / Medium · Mayo 2026 · Dep. de Guerra vía war.gov/UFO</span>
+        </div>
+
+        <div class="release-media">
+          <p class="release-media-label">// Secuencias publicadas · Tanda 02</p>
+          <div class="media-grid">
+            <div class="media-card">
+              <div style="background:linear-gradient(135deg,#0d1a0d 0%,#0a150a 100%);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;padding:1rem;text-align:center;position:relative;">
+                <iframe 
+    width="100%" 
+    height="100%" 
+    src="https://www.youtube.com/embed/_hdVkjk_2rI"
+    title="YouTube video player" 
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+</iframe>
+                <div class="media-play-badge">VIDEO PUBLICADO</div>
+              </div>
+              <div class="media-card-cap"><p>Lake Huron Shootdown · F-16 AIM-9X · Feb. 2023 · PURSUE R02</p></div>
+            </div>
+            <div class="media-card">
+              <div style="background:linear-gradient(135deg,#00101a 0%,#001020 100%);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;padding:1rem;text-align:center;position:relative;">
+                <iframe 
+    width="100%" 
+    height="100%" 
+    src="https://www.youtube.com/embed/6GNIsqMB_JY"
+    title="YouTube video player" 
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+</iframe><span style="font-size:0.75rem;color:rgba(245,240,232,0.6);line-height:1.4;">&nbsp;</span>
+<div class="media-play-badge">VIDEO PUBLICADO</div>
+              </div>
+              <div class="media-card-cap"><p>Submarine Footage · 2022 · PURSUE R02 · Para análisis AARO</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── TANDA 1 ── -->
+    <div class="release-card r1 collapsed" id="tanda-01">
+      <div class="release-header" onclick="toggleReleaseCard(this)">
+        <span class="release-chevron" aria-hidden="true">▾</span>
+        <div class="release-header-left">
+          <span class="release-badge">Tanda 01 · Primera publicación</span>
+          <h3 class="release-title">El primer día: 158 archivos,<br>82 años de historia</h3>
+          <p class="release-date">8 de mayo de 2026 · Pentágono, FBI, NASA, Dep. de Estado</p>
+        </div>
+        <div class="release-stats">
+          <div class="release-stat-pill">Documentos <span>158</span></div>
+          <div class="release-stat-pill">Arco temporal <span>1944–2026</span></div>
+          <div class="release-stat-pill">Agencias <span>4</span></div>
+          <div class="release-stat-pill">Videos <span>13+</span></div>
+        </div>
+      </div>
+
+      <div class="release-body">
+        <p class="release-intro">
+          La primera tanda llegó sin previo aviso la mañana del 8 de mayo. En cuestión de horas, el sitio recibió millones de visitas simultáneas. El material abarcaba desde documentos de la Segunda Guerra Mundial hasta informes de misiones recientes: transcripciones de astronautas Apollo, fotografías sobre el horizonte lunar, informes de pilotos militares y memos internos del AARO —la Oficina de Resolución de Anomalías en Todos los Dominios—. Lo que no decían: ninguno concluía que algún UAP fuera de origen no humano.
+        </p>
+
+        <div class="release-highlights">
+          <div class="hl-item">
+            <span class="hl-icon">✈️</span>
+            <p class="hl-label">Documento más antiguo</p>
+            <p class="hl-title">Foo fighters · Escuadrón 415, Alemania 1944–45</p>
+            <p class="hl-desc">Mensajes del SHAEF documentando "fenómenos nocturnos (foofighters)": luces parpadeantes, objetos cilíndricos sin identificar sobre Alemania. Los avistamientos más antiguos del archivo, oficialmente documentados por el ejército.</p>
+          </div>
+          <div class="hl-item">
+            <span class="hl-icon">🚀</span>
+            <p class="hl-label">Audio histórico</p>
+            <p class="hl-title">Gemini 7 · Frank Borman reporta un "bogey" (1965)</p>
+            <p class="hl-desc">El único archivo de audio/video de la primera tanda: el intercambio aire-tierra en el que Borman informa a Houston de un objeto no identificado. Jim Lovell describe "un cuerpo brillante contra el fondo negro con trillones de partículas". La anotación manuscrita en el documento dice: "UFO Sighting by Borman".</p>
+          </div>
+          <div class="hl-item">
+            <span class="hl-icon">🔷</span>
+            <p class="hl-label">Caso técnico más anómalo</p>
+            <p class="hl-title">UAP en forma de diamante · Mar Egeo, enero 2024</p>
+            <p class="hl-desc">Objeto a 499 mph en forma de diamante, con una sonda no maniobrable en la parte inferior. Solo visible mediante sensor infrarrojo de onda corta (SWIR) — invisible a todos los demás sistemas de detección. Dos minutos de observación. Sugiere materiales exóticos o sigilo diseñado.</p>
+          </div>
+          <div class="hl-item">
+            <span class="hl-icon">📄</span>
+            <p class="hl-label">Documento más político</p>
+            <p class="hl-title">Memo de la Casa Blanca · "La pregunta de la raza alienígena" (1963)</p>
+            <p class="hl-desc">Memorándum de la Oficina Ejecutiva del Presidente que discute planes de contingencia ante el descubrimiento de inteligencia extraterrestre. Cubre política diplomática, la posibilidad de vida en Marte, y la expansión del conocimiento científico. No afirma que se hayan encontrado alienígenas —pero prueba que el gobierno de Kennedy desarrollaba estos escenarios activamente.</p>
+          </div>
+          <div class="hl-item">
+            <span class="hl-icon">⚡</span>
+            <p class="hl-label">Caso de físicas imposibles</p>
+            <p class="hl-title">Giros de 90° a 80 mph · Mar Egeo, octubre 2023</p>
+            <p class="hl-desc">Objeto observado volando justo sobre la superficie del mar realizando múltiples giros de 90 grados a velocidad. Aerodinámicamente imposible para cualquier aeronave convencional. Tiene video asociado en el archivo DVIDS.</p>
+          </div>
+          <div class="hl-item">
+            <span class="hl-icon">🌐</span>
+            <p class="hl-label">Documento más revelador</p>
+            <p class="hl-title">Informe COMETA francés + carta de Von Braun (1999)</p>
+            <p class="hl-desc">El informe independiente francés sobre OVNIs y defensa, preparado por el Instituto de Estudios Superiores de Defensa Nacional, publicado ahora a través de canales estadounidenses con la conexión de Carol Rosin, portavoz de Wernher von Braun en sus últimos años.</p>
+          </div>
+        </div>
+
+        <div class="release-media">
+          <p class="release-media-label">// Imágenes del archivo · Tanda 01</p>
+          <div class="media-grid">
+            <div class="media-card">
+              <div style="background: linear-gradient(135deg,#0d1520 0%, #1a2535 100%); aspect-ratio:16/9; display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;padding:1rem;text-align:center;">
+                <img src="edicion-02/images/dow-uap-d55-mission-report-syria-november-2016.jpg" width="100%" height="100%" alt=""/>
+              </div>
+              <div class="media-card-cap"><p>P-8A Tracking · Syria 2016 · Dep. de Guerra</p></div>
+            </div>
+            <div class="media-card">
+              <div style="background: linear-gradient(135deg,#1a1000 0%, #2a1f00 100%); aspect-ratio:16/9; display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;padding:1rem;text-align:center;">
+                <img src="edicion-02/images/nasa-uap-vm5-apollo-12-1969.jpg" width="100%"  alt=""/>
+              </div>
+              <div class="media-card-cap"><p>Misiones Apollo · Transcripciones clasificadas · NASA</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- SECCIÓN: DESPUÉS DE LA TANDA 3 — DESARROLLOS PARALELOS -->
+  <div class="pursue-section-head">
+    <span class="pursue-section-num">02</span>
+    <h2 class="pursue-section-title">Después de la tanda 03: dos desarrollos paralelos</h2>
+    <div class="pursue-section-line"></div>
+  </div>
+
+  <div class="pursue-body-text">
+    <p>
+      La publicación del 12 de junio no cerró el ciclo, lo abrió. En los días siguientes, dos hechos —uno institucional, otro testimonial— se sumaron al archivo sin pasar por war.gov. Ninguno añade documentos nuevos a PURSUE, pero ambos cambian el contexto en el que se leen los que ya existen: por un lado, la Casa Blanca encargó formalmente una estructura científica para evaluar el fenómeno; por otro, la figura que en 2023 destapó las alegaciones de recuperación de vehículos volvió a hablar, en términos más explícitos que antes, sobre lo que dice haber visto.
+    </p>
+  </div>
+
+  <div class="releases-timeline">
+
+    <!-- ── EVENTO: CONSEJO ASESOR LOEB ── -->
+    <div class="release-card ev collapsed">
+      <div class="release-header" onclick="toggleReleaseCard(this)">
+        <span class="release-chevron" aria-hidden="true">▾</span>
+        <div class="release-header-left">
+          <span class="release-badge">Desarrollo institucional</span>
+          <h3 class="release-title">La Casa Blanca encarga a Avi Loeb<br>un consejo científico asesor sobre UAP</h3>
+          <p class="release-date">13 de junio de 2026 · Anunciado por Avi Loeb (Medium) · Sin confirmación agencial pública</p>
+        </div>
+        <div class="release-stats">
+          <div class="release-stat-pill">Miembros iniciales <span>11</span></div>
+          <div class="release-stat-pill">Agencias citadas <span>4+</span></div>
+        </div>
+      </div>
+
+      <div class="release-body">
+        <p class="release-intro">
+          Un día después de la tercera tanda, Avi Loeb anunció en su blog de Medium que la Casa Blanca, junto con AARO, la Oficina del Director Nacional de Inteligencia (ODNI), el FBI y otros miembros de la comunidad de inteligencia, lo encargó —según su propio relato— de formar y liderar un nuevo <strong>Consejo Asesor Científico UAP</strong>. El objetivo declarado: aportar evaluación científica independiente sobre casos sin resolver, mejorar la recolección de datos con mejores sensores y herramientas de IA, y ayudar a determinar si los avistamientos cerca de instalaciones sensibles son drones adversarios, globos, o algo que excede las explicaciones conocidas.
+        </p>
+
+        <div class="event-figure">
+          <div class="event-figure-initial">AL</div>
+          <div>
+            <p class="event-figure-name">Avi Loeb</p>
+            <p class="event-figure-role">Físico, Harvard · Director, Proyecto Galileo · Líder designado del Consejo Asesor UAP</p>
+          </div>
+        </div>
+
+        <div class="release-highlights">
+          <div class="hl-item">
+            <span class="hl-icon">🏛️</span>
+            <p class="hl-label">Origen del encargo</p>
+            <p class="hl-title">Casa Blanca + AARO + ODNI + FBI</p>
+            <p class="hl-desc">Loeb afirma haber sido convocado durante la semana previa al anuncio por estas instancias para ensamblar y dirigir el equipo. Ninguna de las agencias mencionadas ha confirmado públicamente la existencia del consejo a la fecha.</p>
+          </div>
+          <div class="hl-item">
+            <span class="hl-icon">👥</span>
+            <p class="hl-label">Composición</p>
+            <p class="hl-title">De 5 a 11 nombres en días</p>
+            <p class="hl-desc">El anuncio original listaba cinco integrantes —análisis de datos e IA, instrumentación, análisis numérico, psicología—. Días después, mientras prensa especializada pedía precisiones, el mismo post creció hasta 11 nombres, incluyendo al escéptico Michael Shermer, fundador de la revista Skeptic.</p>
+          </div>
+          <div class="hl-item">
+            <span class="hl-icon">🔬</span>
+            <p class="hl-label">Enfoque declarado</p>
+            <p class="hl-title">Sensores y datos, no testimonios</p>
+            <p class="hl-desc">Loeb ha insistido en que el valor del consejo está en construir metodología instrumental —el mismo enfoque del Proyecto Galileo— y no en evaluar relatos de primera mano. Enmarcó el anuncio citando el informe de AARO del 5 de junio sobre una "esfera madre" naranja observada en 2023, con ~40% de los casos del expediente sin explicación.</p>
+          </div>
+        </div>
+
+        <div class="event-status-row">
+          <span class="event-status-pill unconfirmed">Sin confirmación oficial de agencia alguna</span>
+          <span class="event-status-pill">Próxima aparición pública: Disclosure Forum, Washington D.C. · 25 jun 2026</span>
+        </div>
+
+        <div class="doc-excerpt">
+          <p class="doc-excerpt-label">// Avi Loeb · Medium · 13 junio 2026</p>
+          <p>Esto no es un deseo ni una propuesta. Es una realidad.</p>
+          <span class="doc-source">Avi Loeb, al presentar la iniciativa del Consejo Asesor Científico UAP</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── EVENTO: GRUSCH EN FOX NEWS ── -->
+    <div class="release-card ev collapsed">
+      <div class="release-header" onclick="toggleReleaseCard(this)">
+        <span class="release-chevron" aria-hidden="true">▾</span>
+        <div class="release-header-left">
+          <span class="release-badge">Declaración pública · Testimonial</span>
+          <h3 class="release-title">Grusch dice haber visto fotografías clasificadas<br>de vehículos recuperados</h3>
+          <p class="release-date">14 de junio de 2026 · Fox News, "The Big Weekend Show"</p>
+        </div>
+        <div class="release-stats">
+          <div class="release-stat-pill">Evidencia pública aportada <span>Ninguna</span></div>
+        </div>
+      </div>
+
+      <div class="release-body">
+        <p class="release-intro">
+          Dos días después de la tanda 3, David Grusch —el exoficial de inteligencia cuyas alegaciones de 2023 desencadenaron la ola actual de divulgación— concedió una entrevista a Fox News en la que afirmó haber visto fotografías clasificadas de vehículos recuperados de presunto origen no humano. Según describió, las imágenes mostrarían distintas morfologías: discos, estructuras ovaladas y objetos con forma de huevo. No presentó las fotografías ni ninguna otra evidencia pública.
+        </p>
+
+        <div class="event-figure">
+          <div class="event-figure-initial">DG</div>
+          <div>
+            <p class="event-figure-name">David Grusch</p>
+            <p class="event-figure-role">Exoficial de inteligencia, Fuerza Aérea de EE.UU. · Denunciante UAP desde 2023</p>
+          </div>
+        </div>
+
+        <div class="release-highlights">
+          <div class="hl-item">
+            <span class="hl-icon">📸</span>
+            <p class="hl-label">Lo nuevo de esta declaración</p>
+            <p class="hl-title">La referencia más explícita hasta ahora a material visual</p>
+            <p class="hl-desc">Grusch ha hablado de vehículos y biológicos no humanos desde 2023, pero rara vez con este nivel de detalle sobre fotografías concretas. Es una de las descripciones más específicas que ha dado sobre material visual asociado a presuntos programas de recuperación.</p>
+          </div>
+          <div class="hl-item">
+            <span class="hl-icon">🔮</span>
+            <p class="hl-label">Expectativa hacia adelante</p>
+            <p class="hl-title">"La Administración tiene más por liberar"</p>
+            <p class="hl-desc">Grusch expresó su expectativa de que futuras tandas de PURSUE incluyan documentación, imágenes y registros adicionales sobre estos programas, que según él la Administración ya posee pero todavía no ha hecho públicos.</p>
+          </div>
+        </div>
+
+        <div class="event-status-row">
+          <span class="event-status-pill unconfirmed">Sin evidencia visual aportada públicamente</span>
+          <span class="event-status-pill">No ha aparecido en ninguna tanda de PURSUE a la fecha</span>
+        </div>
+
+        <div class="doc-excerpt">
+          <p class="doc-excerpt-label">// David Grusch · Fox News, The Big Weekend Show · 14 junio 2026</p>
+          <p>David Grusch declara haber visto fotografías clasificadas de vehículos recuperados de presunto origen no humano y manifiesta su expectativa de que futuras liberaciones gubernamentales incluyan información relacionada con estos programas de recuperación.</p>
+          <span class="doc-source">Resumen de declaraciones · Fox News · 14 junio 2026</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="pursue-body-text">
+    <p>
+      Los dos hechos están conectados, aunque ninguno lo admita abiertamente. Si el Consejo de Loeb logra instalarse con respaldo agencial real, se convierte en el primer mecanismo científico formal para evaluar justamente el tipo de alegaciones que Grusch sigue haciendo en televisión sin evidencia pública. Y si una futura tanda de PURSUE llegara a incluir documentación de programas de recuperación, sería el primer punto de contacto verificable entre el archivo oficial y la narrativa que Grusch ha sostenido desde 2023. Por ahora, ambos siguen siendo desarrollos paralelos: uno institucional y sin confirmar por las agencias que supuestamente lo respaldan, otro testimonial y sin evidencia aportada. La pregunta que ambos dejan abierta es la misma que cierra cada tanda de PURSUE: qué hay, exactamente, en lo que todavía no se ha publicado.
+    </p>
+  </div>
+
+  <!-- SECCIÓN: COMPARATIVA -->
+  <div class="pursue-section-head">
+    <span class="pursue-section-num">03</span>
+    <h2 class="pursue-section-title">Las cuatro tandas de un vistazo</h2>
+    <div class="pursue-section-line"></div>
+  </div>
+
+  <div class="releases-compare">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="r4h">Tanda 04<br>10 julio</th>
+          <th class="r3h">Tanda 03<br>12 junio</th>
+          <th class="r2h">Tanda 02<br>22 mayo</th>
+          <th class="r1h">Tanda 01<br>8 mayo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Documentos</td>
+          <td>40</td>
+          <td>72</td>
+          <td class="val-hi">64</td>
+          <td>158</td>
+        </tr>
+        <tr>
+          <td>Agencias</td>
+          <td class="val-hi">5 (Guerra, NASA, CIA, FBI, Energía)</td>
+          <td>5+ (Guerra, FBI, CIA, NASA, IC)</td>
+          <td>3 (Guerra, FBI, NASA)</td>
+          <td>4 (Guerra, FBI, NASA, Estado)</td>
+        </tr>
+        <tr>
+          <td>Hito principal</td>
+          <td class="val-hi">"Cerebro flotante" viral · Intrusión en Pantex</td>
+          <td>CIA debuta · Orbes rojos FBI · Apollo 16 audio</td>
+          <td>Derribo F-16 · Transmedium · Orbes persiguiendo cazas</td>
+          <td>Primera desclasificación · memo 1963 "alien race" · Foo fighters WWII</td>
+        </tr>
+        <tr>
+          <td>Videos nuevos</td>
+          <td>19</td>
+          <td>6</td>
+          <td class="val-hi">40+</td>
+          <td>13</td>
+        </tr>
+        <tr>
+          <td>Caso más antiguo</td>
+          <td>1949 · Bolas de fuego verdes, Los Álamos</td>
+          <td>1949 · Estudio "platillos volantes"</td>
+          <td>1948 · Sandia NM</td>
+          <td class="val-hi">1944 · Foo fighters Alemania</td>
+        </tr>
+        <tr>
+          <td>Caso más reciente</td>
+          <td class="val-hi">2025 (Mar de China Oriental)</td>
+          <td>Julio 2025 (Orbe FBI · noreste EE.UU.)</td>
+          <td>2025 (Misión helicóptero)</td>
+          <td>2024 (Egeo)</td>
+        </tr>
+        <tr>
+          <td>Debuta la CIA</td>
+          <td class="val-yes">Contribuye de nuevo</td>
+          <td class="val-yes">Sí · 18 archivos</td>
+          <td class="val-no">No</td>
+          <td class="val-no">No</td>
+        </tr>
+        <tr>
+          <td>Casos con residuo físico</td>
+          <td class="val-no">No documentado</td>
+          <td class="val-no">No documentado</td>
+          <td class="val-yes">Sí · Polvo de cobre en Sandia NM</td>
+          <td class="val-no">No</td>
+        </tr>
+        <tr>
+          <td>Investigación activa DOW</td>
+          <td class="val-no">No especificada</td>
+          <td class="val-yes">Sí · Foto Apollo 17 en investigación</td>
+          <td class="val-no">No especificada</td>
+          <td class="val-no">No especificada</td>
+        </tr>
+        <tr>
+          <td>Testimonios bajo nombre real</td>
+          <td class="val-yes">Sí · Oficiales de seguridad de Pantex</td>
+          <td class="val-yes">Sí · Agentes FBI identificados</td>
+          <td class="val-yes">Sí · Alto funcionario de inteligencia</td>
+          <td>Parciales</td>
+        </tr>
+        <tr>
+          <td>Instalación sensible involucrada</td>
+          <td class="val-yes">Sí · Planta nuclear Pantex, Texas</td>
+          <td class="val-no">No</td>
+          <td class="val-no">No</td>
+          <td class="val-no">No</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECCIÓN: AGENCIAS -->
+  <div class="pursue-section-head">
+    <span class="pursue-section-num">04</span>
+    <h2 class="pursue-section-title">Quién ha publicado qué</h2>
+    <div class="pursue-section-line"></div>
+  </div>
+
+  <div class="agencies-section">
+    <div class="agencies-bar-wrap">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.5rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;padding-bottom:0.75rem;border-bottom:1px solid var(--border);">// Distribución de documentos por agencia · PURSUE R01+R02+R03 · 294 archivos con desglose verificado</p>
+      <div class="agency-row">
+        <span class="agency-name">DEPT. GUERRA</span>
+        <div class="agency-track"><div class="agency-fill dow" style="width:48.6%"></div></div>
+        <span class="agency-count">143</span>
+      </div>
+      <div class="agency-row">
+        <span class="agency-name">FBI</span>
+        <div class="agency-track"><div class="agency-fill fbi" style="width:29.3%"></div></div>
+        <span class="agency-count">86</span>
+      </div>
+      <div class="agency-row">
+        <span class="agency-name">NASA</span>
+        <div class="agency-track"><div class="agency-fill nasa" style="width:11.2%"></div></div>
+        <span class="agency-count">33</span>
+      </div>
+      <div class="agency-row">
+        <span class="agency-name">CIA</span>
+        <div class="agency-track"><div class="agency-fill cia" style="width:6.5%"></div></div>
+        <span class="agency-count">19</span>
+      </div>
+      <div class="agency-row">
+        <span class="agency-name">DEP. ESTADO</span>
+        <div class="agency-track"><div class="agency-fill state" style="width:2.4%"></div></div>
+        <span class="agency-count">7</span>
+      </div>
+      <div class="agency-row">
+        <span class="agency-name">IC / OTROS</span>
+        <div class="agency-track"><div class="agency-fill other" style="width:2%"></div></div>
+        <span class="agency-count">6</span>
+      </div>
+    </div>
+    <p style="font-family:'JetBrains Mono',monospace;font-size:0.46rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-top:0.75rem;opacity:0.7;">Fuente: warufo.com · Análisis independiente de PURSUE R01+R02+R03 · IC = Comunidad de Inteligencia</p>
+    <p style="font-size:0.85rem;color:rgba(245,240,232,0.65);line-height:1.7;margin-top:1.25rem;">
+      La tanda 04 sumó 40 archivos adicionales —procedentes del Dep. de Guerra, NASA, CIA, FBI y, con presencia destacada por primera vez, el <strong>Departamento de Energía</strong>— elevando el total acumulado a <strong style="color:var(--gold-light);">334 archivos</strong>. El Departamento de Guerra no ha publicado un desglose numérico oficial por agencia para esta tanda.
+    </p>
+  </div>
+
+  <!-- SECCIÓN: VOCES -->
+  <div class="pursue-section-head">
+    <span class="pursue-section-num">05</span>
+    <h2 class="pursue-section-title">Las voces que llevan años esperando</h2>
+    <div class="pursue-section-line"></div>
+  </div>
+
+  <div class="voices-section">
+    <div class="voice-card">
+      <div class="voice-avatar">📡</div>
+      <div class="voice-meta">
+        <p class="voice-name">Ross Coulthart</p>
+        <p class="voice-role">Periodista de investigación · NewsNation · Autor de "In Plain Sight"</p>
+        <p class="voice-text">Coulthart calificó la primera tanda como "probablemente una de las noticias más grandes de los últimos tiempos" —para luego hacerse la pregunta que dominaba la conversación en línea: "¿Es un gran nada?" Semanas después, fue más directo: advirtió que sus colegas en la comunidad UAP sospechan que el Pentágono y la comunidad de inteligencia están liberando una avalancha de material mediocre para mantener a la gente alejada de verdades más importantes. Lo llamó un intento de "aburrirnos hasta la sumisión". Tras la tercera tanda, su posición es más cauta: la CIA en el archivo y los nuevos informes del FBI son pasos genuinos, aunque la ausencia de los 46 vídeos solicitados por el Congreso sigue siendo la gran pregunta pendiente.</p>
+      </div>
+    </div>
+
+    <div class="voice-card">
+      <div class="voice-avatar">🎬</div>
+      <div class="voice-meta">
+        <p class="voice-name">Jeremy Corbell &amp; George Knapp</p>
+        <p class="voice-role">Documentalista y periodista · Podcast Weaponized · Documental "Sleeping Dog"</p>
+        <p class="voice-text">Corbell describió la ironía del momento: el mismo día que se estrenó su documental "Sleeping Dog" —filmado en secreto durante años sobre la presión para conseguir transparencia UAP— el gobierno lanzó PURSUE e incluyó siete de los ocho videos que aparecen en su film. "Todo ha sido provocado", afirmó. Corbell y Knapp revelaron que habían proporcionado al Congreso una lista con nombres de archivos vinculados a decenas de videos aún no publicados, incluyendo imágenes relacionadas con investigaciones de la Fuerza Aérea. Muchos de esos videos solicitados siguen sin aparecer tras cuatro tandas. Corbell mantiene su postura: "habrá más publicaciones, pase lo que pase".</p>
+      </div>
+    </div>
+
+    <div class="voice-card">
+      <div class="voice-avatar">🔭</div>
+      <div class="voice-meta">
+        <p class="voice-name">Avi Loeb</p>
+        <p class="voice-role">Astrofísico · Harvard · Director del Proyecto Galileo</p>
+        <p class="voice-text">Loeb fue el más metódico en sus análisis. Publicó evaluaciones detalladas de cada tanda en Medium horas después de cada publicación. Su postura: el mayor impacto de PURSUE es psicológico —el tema merece estar dentro del discurso científico y público mainstream. Sobre el contenido en sí, fue cauteloso: señaló que la mayoría de los avistamientos en zonas de conflicto probablemente se explican por tecnología humana no divulgada. Pero destacó el informe del helicóptero como "un asunto serio que no debe ser descartado por políticos ni científicos". En paralelo, mencionó la conexión potencial con el objeto interestelar 3I/ATLAS, que pasó por el sistema solar a finales de 2025.</p>
+      </div>
+    </div>
+
+    <div class="voice-card">
+      <div class="voice-avatar">🔎</div>
+      <div class="voice-meta">
+        <p class="voice-name">Mick West</p>
+        <p class="voice-role">Analista independiente · Metabunk · Skeptical Inquirer</p>
+        <p class="voice-text">West organizó análisis sistemáticos en Metabunk tras cada lanzamiento. Su veredicto sobre la primera tanda: "cantidad sobre calidad". Señaló que muchos archivos ya eran de dominio público o tenían explicaciones convencionales. Su crítica central se mantiene tras las cuatro tandas: ninguno de los archivos gubernamentales publicados concluye que algún UAP represente inteligencia no humana. Para West, eso es el dato más importante de todo el proceso. Sobre el video de Lago Hurón: "el objeto parece un globo" —y el video, según él, lo confirma.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN: ANÁLISIS -->
+  <div class="pursue-body-text">
+    <h2>Lo que sabemos con certeza. Lo que no.</h2>
+
+    <div class="debate-grid">
+      <div class="debate-col">
+        <p class="debate-col-label">Lo que los archivos establecen</p>
+        <ul>
+          <li>El gobierno documenta objetos con comportamientos aerodinámicamente imposibles desde 1944</li>
+          <li>Giros de 90° a alta velocidad, transición aire-agua, visibilidad solo en SWIR: múltiples sensores, múltiples fechas</li>
+          <li>El Departamento de Guerra ha abierto una investigación activa sobre fotos lunares de Apollo 17 de 1972</li>
+          <li>Un alto funcionario de inteligencia bajo nombre real describió en 2025 un encuentro a tres metros de distancia</li>
+          <li>En 82 años y 334 archivos, ningún caso tiene resolución definitiva publicada</li>
+        </ul>
+      </div>
+      <div class="debate-col">
+        <p class="debate-col-label">Lo que los archivos NO dicen</p>
+        <ul>
+          <li>Ningún documento concluye que algún UAP sea de origen no humano</li>
+          <li>Los casos resueltos no se publican —solo los no resueltos forman el archivo</li>
+          <li>Las redacciones masivas (58% del archivo) impiden verificar las afirmaciones más extraordinarias</li>
+          <li>El video de Lago Hurón muestra un objeto que parece un globo, no tecnología avanzada</li>
+          <li>La política de redacciones protege testigos e instalaciones —no datos UAP, según el gobierno</li>
+        </ul>
+      </div>
+      <div class="debate-col">
+        <p class="debate-col-label">Lo que podemos concluir</p>
+        <ul>
+          <li>Es la desclasificación UAP más amplia de la historia de EE.UU.</li>
+          <li>El proceso continúa —habrá más tandas, y la CIA ya contribuyó en dos publicaciones consecutivas</li>
+          <li>Hay lagunas temporales sospechosas: 1974–84 y 2005–12 siguen vacías</li>
+          <li>El debate ha salido definitivamente de los márgenes del discurso público</li>
+          <li>Lo que el gobierno no publica puede ser tan significativo como lo que sí publica</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>El nombre que nadie menciona suficiente</h2>
+
+    <p>
+      El sitio de desclasificación no se encuentra en defense.gov, ni en intelligence.gov. Está en <strong>war.gov</strong>. El Departamento de Defensa fue renombrado Departamento de Guerra bajo la actual administración, y es ese departamento —con ese nombre— el que ahora custodia y publica los archivos UAP más importantes de la historia. Esa elección no es inocente: define el fenómeno como un asunto de seguridad nacional y de guerra, no de ciencia ni de filosofía.
+    </p>
+
+    <p>
+      Ross Coulthart señaló con frustración un detalle adicional: en los días posteriores al lanzamiento de la segunda tanda, la Casa Blanca lanzó un sitio paralelo sobre inmigración ilegal que utilizaba el lenguaje y la estética del debate UAP para referirse a migrantes. Lo llamó un "esfuerzo pueril" que podría hacer que toda la iniciativa de transparencia "explote en la cara" del presidente. La política, como siempre, complica la búsqueda de la verdad.
+    </p>
+  </div>
+
+  <!-- SECCIÓN: QUÉ VIENE -->
+  <div class="pursue-section-head">
+    <span class="pursue-section-num">06</span>
+    <h2 class="pursue-section-title">¿Qué viene después?</h2>
+    <div class="pursue-section-line"></div>
+  </div>
+
+  <div class="whats-next">
+    <p class="whats-next-label">// Próximas publicaciones · Estado actual</p>
+    <h3>Las tandas seguirán llegando</h3>
+    <p>
+      El Departamento de Guerra ha confirmado que publicará archivos adicionales de manera continua. La CIA, que debutó en R03 con 18 registros, volvió a contribuir en R04 sin un desglose numérico propio —una fracción mínima, en cualquier caso, de lo que presumiblemente tiene—. El Departamento de Energía asomó con presencia destacada por primera vez en la cuarta tanda. El FBI ha publicado informes de orbes en el noreste de EE.UU. con apenas semanas de antigüedad: lo que sugiere que el proceso de revisión para publicación se ha acelerado notablemente.
+    </p>
+    <p>
+      Los 46 vídeos específicos solicitados por la congresista Anna Paulina Luna siguen sin publicarse. Corbell y Knapp afirman tener una lista de decenas de archivos vinculados a investigaciones de la Fuerza Aérea que tampoco han aparecido. Y el Departamento de Guerra ha abierto una investigación activa sobre fotografías lunares de Apollo 17 de 1972 que incluyen lo que parecen ser tres objetos en formación triangular en el cielo lunar —algo sin precedentes en 82 años de documentación.
+    </p>
+    <p>
+      El Proyecto Galileo de Avi Loeb opera actualmente tres observatorios analizando millones de objetos con algoritmos de inteligencia artificial en busca de comportamientos que excedan el rango de capacidades tecnológicas conocidas. A eso se suma, desde el 13 de junio, el recién anunciado Consejo Asesor Científico UAP que Loeb dice liderar por encargo de la Casa Blanca —sin confirmación agencial pública todavía— y que tendrá su primera aparición pública en el Disclosure Forum de Washington D.C. el 25 de junio. Y en algún lugar de los archivos clasificados que aún no han sido liberados, puede que exista —o no— lo que muchos buscan desde hace décadas, lo mismo que David Grusch dice haber visto ya en fotografías que ninguna tanda de PURSUE ha incluido por ahora.
+    </p>
+  </div>
+
+  <div class="open-questions">
+    <p class="open-q-label">// Preguntas que siguen abiertas</p>
+    <ul class="open-q-list">
+      <li>¿Los 46 vídeos solicitados por el Congreso serán publicados, o permanecerán clasificados bajo excepciones de seguridad nacional?</li>
+      <li>¿Por qué los períodos 1974–1984 y 2005–2012 están completamente vacíos en el archivo? ¿No existían registros, o no han sido autorizados?</li>
+      <li>La CIA ya contribuyó en R03 y R04 sin desglose numérico propio en esta última. ¿Cuántos archivos tiene en total?</li>
+      <li>El análisis independiente sobre DOW-UAP-PR116 apunta a un objeto inflable. ¿Coincidirá el Departamento de Guerra con esa conclusión, o el caso seguirá clasificado como "no resuelto" indefinidamente?</li>
+      <li>¿Qué encontró el Departamento de Guerra en las fotografías de Apollo 17 que justificó abrir una investigación activa 50 años después?</li>
+      <li>El objeto que se aproximó a tres metros de un helicóptero y se dividió en dos: ¿es tecnología adversaria humana o algo sin clasificar?</li>
+      <li>¿Cuál es la relación entre el paso del objeto interestelar 3I/ATLAS a finales de 2025 y el aumento documentado de avistamientos en ese período?</li>
+      <li>¿La desclasificación es un ejercicio genuino de transparencia o una estrategia de gestión política del fenómeno?</li>
+      <li>¿Confirmará alguna agencia —AARO, ODNI, FBI o la propia Casa Blanca— la existencia formal del Consejo Asesor Científico que Loeb dice liderar?</li>
+      <li>¿Las fotografías que Grusch dice haber visto llegarán alguna vez a una tanda de PURSUE, o seguirán siendo solo una declaración sin evidencia pública?</li>
+      <li>Y la pregunta de siempre, más vigente que nunca: ¿qué es lo que no están publicando?</li>
+    </ul>
+  </div>
+
+  <div class="pursue-body-text">
+    <p>
+      Lo que PURSUE ha hecho, independientemente de su contenido, es mover el umbral de lo que es aceptable discutir en público. Un gobierno que publica sus archivos no resueltos es un gobierno que admite, implícitamente, que no tiene todas las respuestas. Y eso —después de décadas de negación institucional— es en sí mismo extraordinario. Que 1.700 millones de personas hayan visitado el sitio en poco más de dos meses dice algo sobre el estado de ánimo de nuestro tiempo: desconfianza hacia las instituciones, combinada con una fascinación igualmente profunda por las preguntas que esas instituciones llevan décadas esquivando.
+    </p>
+    <p>
+      El archivo sigue creciendo. La señal, por ahora, sigue activa.
+    </p>
+  </div>
+
+<section class="comments-section">
+  <p class="comments-label">// Comentarios</p>
+  <div class="giscus-wrap">
+    <script src="https://giscus.app/client.js"
+      data-repo="mundomag/mundomag-comentarios"
+      data-repo-id="R_kgDOTErXHw"
+      data-category="Comentarios"
+      data-category-id="DIC_kwDOTErXH84C_2mS"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme="dark"
+      data-lang="es"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="../" class="footer-logo">Mundo Maravilloso</a>
+        <p class="footer-tagline">Una publicación independiente sobre los grandes misterios que la ciencia todavía no ha resuelto.</p>
+      </div>
+      <div class="footer-nav-grid">
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Artículos</p>
+          <ul class="footer-nav-list">
+            <li><a href="../articulos.html">Todos los artículos</a></li>
+            <li><a href="../glosario.html">Glosario</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Seguimientos</p>
+          <ul class="footer-nav-list">
+            <li><a href="../seguimientos/3i-atlas.html">3I/ATLAS</a></li>
+            <li><a href="../seguimientos/uap.html">UAP WATCH</a></li>
+            <li><a href="../seguimientos/pursue-releases.html">PURSUE RELEASES</a></li>
+            <li><a href="../seguimientos/voyager-1.html">VOYAGER 1</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Publicación</p>
+          <ul class="footer-nav-list">
+            <li><a href="../acerca-de.html">Acerca de</a></li>
+            <li><a href="../contacto.html">Contacto</a></li>
+            <li><a href="../privacidad.html">Privacidad</a></li>
+            <li><a href="../terminos.html">Términos</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Mundo Maravilloso · Todos los derechos reservados</p>
+      <p class="footer-signal">// Señal activa · pursue-releases</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════ SCRIPTS ══════════ -->
+<script>
+// Starfield
+(function(){
+  var canvas = document.getElementById('starfield');
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var stars = [];
+  function resize(){
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+  function initStars(){
+    stars = [];
+    var n = Math.floor((canvas.width * canvas.height) / 3500);
+    for(var i=0;i<n;i++){
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.1 + 0.2,
+        opacity: Math.random() * 0.55 + 0.08,
+        speed: Math.random() * 0.25 + 0.05
+      });
+    }
+  }
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    stars.forEach(function(s){
+      ctx.beginPath();
+      ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+      ctx.fillStyle = 'rgba(255,255,255,'+s.opacity+')';
+      ctx.fill();
+      s.opacity += (Math.random()-0.5) * s.speed * 0.05;
+      s.opacity = Math.max(0.04, Math.min(0.75, s.opacity));
+    });
+    requestAnimationFrame(draw);
+  }
+  resize(); initStars(); draw();
+  window.addEventListener('resize', function(){ resize(); initStars(); });
+})();
+
+// Animate agency bars on scroll
+(function(){
+  var fills = document.querySelectorAll('.agency-fill');
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var el = e.target;
+        var w = el.style.width;
+        el.style.width = '0%';
+        setTimeout(function(){ el.style.width = w; }, 150);
+        obs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.3 });
+  fills.forEach(function(b){ obs.observe(b); });
+})();
+
+// Nav active
+(function(){
+  var page = document.documentElement.dataset.page;
+  if(page){
+    document.querySelectorAll('[data-page="'+page+'"]').forEach(function(el){
+      el.classList.add('active');
+    });
+  }
+})();
+// Toggle de tarjetas colapsables (tandas y eventos)
+function toggleReleaseCard(headerEl){
+  var card = headerEl.closest('.release-card');
+  if(!card) return;
+  card.classList.toggle('collapsed');
+  var expanded = !card.classList.contains('collapsed');
+  headerEl.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+}
+
+// Menú de tandas: al saltar a un ancla, expandir la tarjeta destino
+(function(){
+  function expandTarget(hash){
+    if(!hash) return;
+    var card = document.querySelector(hash);
+    if(card && card.classList.contains('release-card')){
+      card.classList.remove('collapsed');
+    }
+  }
+  document.querySelectorAll('.tanda-nav-pill').forEach(function(pill){
+    pill.addEventListener('click', function(){
+      expandTarget(this.getAttribute('href'));
+    });
+  });
+  if(window.location.hash){ expandTarget(window.location.hash); }
+  window.addEventListener('hashchange', function(){ expandTarget(window.location.hash); });
+})();
+</script>
+
+</body>
+</html>

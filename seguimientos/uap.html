@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="es" data-page="uap">
+<head>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8483516296039231"
+       crossorigin="anonymous"></script>
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LRSJ1EYEPD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LRSJ1EYEPD');
+</script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UAP WATCH: Avistamientos globales 2026 · Mundo Maravilloso</title>
+  <link rel="canonical" href="https://mundomag.fyi/seguimientos/uap.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ══════════════════════════════════════════════
+       UAP WATCH — Estilos · Mundo Maravilloso
+    ══════════════════════════════════════════════ */
+
+    :root {
+      --ink: #0d0d0f;
+      --ink-mid: #111114;
+      --ink-soft: #1a1a1e;
+      --paper: #f5f0e8;
+      --cyan: #4ecdc4;
+      --gold: #c9a84c;
+      --gold-light: #e8c96a;
+      --red: #c0392b;
+      --violet: #a78bfa;
+      --green: #4ade80;
+      --muted: #6b6b7a;
+      --border: rgba(201,168,76,0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--ink);
+      color: var(--paper);
+      font-family: 'Space Grotesk', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    .site-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(13,13,15,0.95);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+    .site-nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 2rem;
+      height: 56px;
+      display: flex; align-items: center; gap: 1.5rem;
+    }
+    .site-nav-logo {
+      font-family: 'Audiowide', sans-serif;
+      font-size: 1.1rem; color: var(--paper);
+      text-decoration: none; letter-spacing: 0.08em;
+      flex-shrink: 0;
+    }
+    .site-nav-sep { width: 1px; height: 20px; background: var(--border); flex-shrink: 0; }
+    .site-nav-articles { display: flex; gap: 1.5rem; margin-left: auto; }
+    .site-nav-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.52rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      text-decoration: none; transition: color 0.2s;
+      white-space: nowrap;
+    }
+    .site-nav-link:hover { color: var(--cyan); }
+    .site-nav-link.active { color: var(--cyan); }
+
+    /* ── NAV MÓVIL (hamburguesa / drawer) ── */
+    .site-nav-hamburger {
+      display: none;
+      margin-left: auto;
+      width: 32px; height: 32px;
+      background: none; border: none; cursor: pointer;
+      flex-direction: column; align-items: center; justify-content: center;
+      gap: 4px; padding: 0; flex-shrink: 0;
+    }
+    .site-nav-hamburger span {
+      display: block; width: 20px; height: 2px;
+      background: var(--paper); transition: transform 0.25s ease, opacity 0.2s ease;
+    }
+    .site-nav-hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .site-nav-hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .site-nav-hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    .site-nav-drawer {
+      display: none;
+      flex-direction: column;
+      position: absolute; top: 56px; left: 0; right: 0;
+      background: rgba(13,13,15,0.98);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .site-nav-drawer.open { max-height: 480px; overflow-y: auto; }
+    .drawer-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      text-decoration: none;
+      padding: 0.9rem 1.5rem;
+      border-bottom: 1px solid rgba(245,240,232,0.06);
+    }
+    .drawer-link:hover, .drawer-link.active { color: var(--cyan); }
+
+    @media (max-width: 860px) {
+      .site-nav-articles { display: none; }
+      .site-nav-hamburger { display: flex; }
+      .site-nav-drawer { display: flex; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 80svh;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      background:
+        radial-gradient(ellipse at 70% 20%, rgba(78,205,196,0.07) 0%, transparent 55%),
+        radial-gradient(ellipse at 15% 80%, rgba(201,168,76,0.05) 0%, transparent 50%),
+        var(--ink);
+    }
+    .hero-canvas {
+      position: absolute; inset: 0; z-index: 0;
+    }
+    .hero-inner {
+      position: relative; z-index: 2;
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 4rem 6rem;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 5rem;
+      align-items: end;
+    }
+    .hero-live-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 1.5rem;
+    }
+    .hero-live-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--cyan);
+      animation: cyanpulse 2s ease-in-out infinite;
+    }
+    @keyframes cyanpulse {
+      0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(78,205,196,0.6); }
+      50% { opacity: 0.5; box-shadow: 0 0 0 5px rgba(78,205,196,0); }
+    }
+    .hero-kicker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .hero-title {
+      font-family: 'Audiowide', sans-serif;
+      font-size: clamp(2.4rem, 5.5vw, 4.6rem);
+      font-weight: 900; line-height: 0.98;
+      color: var(--paper); margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+    .hero-title .accent { color: var(--cyan); }
+    .hero-subtitle {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.25rem; font-weight: 600;
+      color: rgba(245,240,232,0.5); margin-top: 1rem;
+      letter-spacing: -0.01em;
+    }
+    .hero-byline {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold);
+      margin: 1.5rem 0 2rem;
+    }
+    .hero-lead {
+      font-size: 1.05rem;
+      color: rgba(245,240,232,0.72);
+      line-height: 1.75; max-width: 56ch;
+      border-left: 2px solid var(--cyan);
+      padding-left: 1.5rem;
+      font-style: italic;
+    }
+
+    /* Stat panel hero */
+    .stat-panel {
+      background: rgba(22,22,25,0.9);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      backdrop-filter: blur(8px);
+    }
+    .stat-panel-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 1.5rem; padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(78,205,196,0.2);
+    }
+    .stat-row {
+      display: flex; justify-content: space-between;
+      align-items: baseline; padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(201,168,76,0.06);
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-key {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .stat-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem; font-weight: 700;
+      color: var(--gold-light); text-align: right;
+    }
+    .stat-val.cyan { color: var(--cyan); }
+    .stat-val.red { color: var(--red); }
+    .stat-val.green { color: var(--green); }
+
+    /* ── STATUS BAR / MARQUESINA ── */
+    .status-bar {
+      background: var(--ink-mid);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden; position: relative;
+    }
+    .status-bar::before,
+    .status-bar::after {
+      content: '';
+      position: absolute; top: 0; bottom: 0; width: 5rem;
+      z-index: 2; pointer-events: none;
+    }
+    .status-bar::before {
+      left: 0;
+      background: linear-gradient(to right, var(--ink-mid), transparent);
+    }
+    .status-bar::after {
+      right: 0;
+      background: linear-gradient(to left, var(--ink-mid), transparent);
+    }
+    .status-track {
+      display: flex; gap: 3rem; padding: 0.85rem 0;
+      width: max-content;
+      animation: marquee-scroll 50s linear infinite;
+    }
+    .status-bar:hover .status-track { animation-play-state: paused; }
+    @keyframes marquee-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .status-item {
+      display: flex; align-items: center; gap: 0.6rem;
+      white-space: nowrap; flex-shrink: 0; padding: 0 1.5rem;
+    }
+    .status-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.48rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .status-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem; font-weight: 700; color: var(--cyan);
+    }
+    .status-value.gold { color: var(--gold); }
+    .status-value.red { color: var(--red); }
+    .status-value.green { color: var(--green); }
+
+    /* ── WRAPPER ARTÍCULO ── */
+    .article {
+      max-width: 1200px; margin: 0 auto; padding: 0 4rem;
+    }
+
+    /* ── INTRO ── */
+    .intro {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 5rem;
+      padding: 5rem 0 4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .intro-text p {
+      font-size: 1.05rem;
+      color: rgba(245,240,232,0.8);
+      line-height: 1.8; margin-bottom: 1.2rem;
+    }
+    .intro-text p:first-child::first-letter {
+      font-family: 'Audiowide', sans-serif;
+      font-size: 4rem; font-weight: 900;
+      color: var(--cyan); float: left;
+      line-height: 0.8; margin: 0.1em 0.15em 0 0;
+    }
+    .origin-box {
+      background: var(--ink-mid);
+      border: 1px solid var(--border);
+      padding: 1.75rem;
+      position: sticky; top: 80px; align-self: start;
+    }
+    .origin-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.48rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 1rem; padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .origin-item {
+      padding: 0.65rem 0;
+      border-bottom: 1px solid rgba(78,205,196,0.06);
+    }
+    .origin-item:last-child { border-bottom: none; }
+    .origin-key {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.48rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+    .origin-val {
+      font-size: 0.88rem; color: var(--paper);
+      font-weight: 600;
+    }
+    .origin-val a { color: var(--cyan); text-decoration: none; }
+    .origin-val a:hover { text-decoration: underline; }
+
+    /* ── SECCIÓN ENCABEZADO ── */
+    .section-head {
+      display: flex; align-items: center;
+      gap: 1.5rem; padding: 4rem 0 2rem;
+    }
+    .section-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem; letter-spacing: 0.2em;
+      color: var(--cyan); flex-shrink: 0;
+    }
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem; font-weight: 700; color: var(--paper);
+    }
+    .section-line {
+      flex: 1; height: 1px; background: var(--border);
+    }
+
+    /* ══════════════════════════════
+       FILTER BAR (estatus)
+    ══════════════════════════════ */
+    .filter-bar {
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+      margin-bottom: 2.5rem;
+    }
+    .filter-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      padding: 0.5rem 0.9rem;
+      color: var(--muted);
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      cursor: default;
+    }
+    .filter-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .filter-dot.open { background: var(--cyan); }
+    .filter-dot.maybe { background: var(--gold); }
+    .filter-dot.closed { background: var(--red); }
+    .filter-dot.official { background: var(--violet); }
+
+    /* ══════════════════════════════
+       TIMELINE
+    ══════════════════════════════ */
+    .timeline { padding-bottom: 2rem; position: relative; }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 1px; background: var(--border);
+    }
+
+    .timeline-entry {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 2.5rem;
+      padding: 0 0 2.5rem 0;
+      position: relative;
+    }
+    .timeline-entry::before {
+      content: '';
+      position: absolute; left: -5px; top: 6px;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--ink); border: 2px solid var(--cyan);
+    }
+    .timeline-entry.milestone::before {
+      background: var(--cyan); width: 12px; height: 12px; left: -6px;
+    }
+    .timeline-entry.closed::before { border-color: var(--red); }
+    .timeline-entry.official::before { border-color: var(--violet); background: var(--violet); width: 12px; height: 12px; left: -6px; }
+
+    .timeline-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--gold);
+      padding-top: 4px; text-align: right;
+      line-height: 1.5;
+    }
+    .timeline-date .tl-agency {
+      display: block; color: var(--muted);
+      font-size: 0.44rem; margin-top: 0.3rem;
+    }
+
+    .timeline-content {
+      border: 1px solid var(--border);
+      background: var(--ink-mid);
+      padding: 1.5rem;
+      position: relative;
+    }
+    .timeline-content::before {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      width: 3px; height: 100%;
+      background: var(--cyan);
+    }
+    .timeline-content.gold-bar::before { background: var(--gold); }
+    .timeline-content.violet-bar::before { background: var(--violet); }
+    .timeline-content.red-bar::before { background: var(--red); }
+    .timeline-content.green-bar::before { background: var(--green); }
+
+    .tl-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.44rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 0.5rem; display: block;
+    }
+    .tl-tag.gold { color: var(--gold); }
+    .tl-tag.violet { color: var(--violet); }
+    .tl-tag.red { color: var(--red); }
+    .tl-tag.green { color: var(--green); }
+
+    .tl-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      color: var(--paper); margin-bottom: 0.6rem;
+      line-height: 1.3;
+    }
+    .tl-body {
+      font-size: 0.88rem;
+      color: rgba(245,240,232,0.7); line-height: 1.7;
+    }
+    .tl-data {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      margin-top: 1rem; padding-top: 1rem;
+      border-top: 1px solid rgba(201,168,76,0.08);
+    }
+    .tl-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.46rem; letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.65rem;
+      color: var(--muted);
+    }
+    .tl-pill span { color: var(--gold-light); font-weight: 700; margin-left: 0.35rem; }
+
+    .tl-sources {
+      display: flex; gap: 0.6rem; flex-wrap: wrap;
+      margin-top: 1rem; padding-top: 1rem;
+      border-top: 1px solid rgba(201,168,76,0.08);
+    }
+    .tl-source-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.48rem; letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      text-decoration: none;
+      border: 1px solid rgba(78,205,196,0.25);
+      padding: 0.35rem 0.7rem;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .tl-source-link:hover {
+      color: var(--gold-light); border-color: var(--gold-light);
+      background: rgba(201,168,76,0.06);
+    }
+    .tl-source-link.video { color: var(--violet); border-color: rgba(167,139,250,0.25); }
+    .tl-source-link.video:hover { color: var(--violet); border-color: var(--violet); background: rgba(167,139,250,0.06); }
+
+    /* ══════════════════════════════
+       REGION GRID
+    ══════════════════════════════ */
+    .region-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+    .region-card {
+      background: var(--ink-soft);
+      padding: 1.5rem;
+      position: relative;
+      transition: background 0.2s;
+    }
+    .region-card:hover { background: rgba(255,255,255,0.03); }
+    .region-flag {
+      font-size: 1.4rem; margin-bottom: 0.75rem; display: block;
+    }
+    .region-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.44rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 0.4rem;
+    }
+    .region-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      color: var(--paper); margin-bottom: 0.35rem;
+    }
+    .region-desc {
+      font-size: 0.78rem; color: var(--muted); line-height: 1.6;
+    }
+
+    /* ══════════════════════════════
+       NOTA METODOLÓGICA / CIERRE
+    ══════════════════════════════ */
+    .open-questions {
+      background: var(--ink-mid);
+      border: 1px solid rgba(78,205,196,0.15);
+      padding: 2rem;
+      margin: 3rem 0;
+    }
+    .open-q-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 1.25rem;
+    }
+    .open-q-list {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .open-q-list li {
+      font-size: 0.9rem;
+      color: rgba(245,240,232,0.7); line-height: 1.6;
+      padding-left: 1.25rem; position: relative;
+    }
+    .open-q-list li::before {
+      content: '?';
+      position: absolute; left: 0;
+      color: var(--cyan); opacity: 0.6;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+    }
+
+    /* ── BODY TEXT ── */
+    .body-text { padding: 2rem 0; }
+    .body-text p {
+      font-size: 1.02rem;
+      color: rgba(245,240,232,0.78);
+      line-height: 1.8; margin-bottom: 1.2rem;
+      max-width: 76ch;
+    }
+    .body-text h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem; font-weight: 700;
+      color: var(--paper); margin: 3rem 0 1rem;
+    }
+    .body-text strong { color: var(--paper); }
+
+    /* ── SUBMIT / CTA BANNER ── */
+    .submit-banner {
+      border: 1px dashed rgba(78,205,196,0.3);
+      background: rgba(78,205,196,0.03);
+      padding: 2rem;
+      margin: 3rem 0;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem;
+    }
+    .submit-banner-text { max-width: 50ch; }
+    .submit-banner-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 0.6rem;
+    }
+    .submit-banner-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.05rem; font-weight: 700; color: var(--paper);
+      margin-bottom: 0.4rem;
+    }
+    .submit-banner-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+    .submit-banner-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold);
+      border: 1px solid var(--border);
+      padding: 0.6rem 1.1rem; white-space: nowrap;
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--ink-mid);
+      border-top: 1px solid var(--border);
+      padding: 3rem 0;
+      margin-top: 5rem;
+    }
+    .site-footer-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 4rem;
+    }
+    .footer-top {
+      display: grid; grid-template-columns: 1fr 2fr;
+      gap: 4rem; padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2rem;
+    }
+    .footer-logo {
+      font-family: 'Audiowide', sans-serif;
+      font-size: 1.1rem; color: var(--paper);
+      text-decoration: none; display: block; margin-bottom: 0.75rem;
+    }
+    .footer-tagline {
+      font-size: 0.8rem;
+      color: var(--muted); line-height: 1.6; margin-bottom: 1rem;
+    }
+    .footer-edition-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.46rem; letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      color: var(--muted); padding: 0.3rem 0.65rem;
+    }
+    .footer-nav-grid {
+      display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem;
+    }
+    .footer-nav-col-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.48rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .footer-nav-list {
+      list-style: none; display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .footer-nav-list a {
+      font-size: 0.8rem; color: var(--muted);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .footer-nav-list a:hover { color: var(--paper); }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-copy {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.46rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .footer-signal {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.46rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--cyan);
+    }
+
+    /* ══════════════════════════════
+       NAVEGACIÓN POR TEMAS (HERO)
+    ══════════════════════════════ */
+    .topic-nav {
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+      margin-bottom: 1.75rem;
+    }
+    .topic-nav-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 0.45rem 0.8rem;
+      text-decoration: none;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+      display: inline-flex; align-items: center; gap: 0.45rem;
+    }
+    .topic-nav-link:hover {
+      color: var(--cyan); border-color: rgba(78,205,196,0.4);
+      background: rgba(78,205,196,0.05);
+    }
+    .topic-nav-link span {
+      color: var(--gold); font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; padding: 0 2rem 4rem; gap: 2.5rem; }
+      .article { padding: 0 2rem; }
+      .intro { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .timeline-entry { grid-template-columns: 1fr; gap: 0.5rem; padding-left: 1.5rem; }
+      .timeline-date { text-align: left; }
+      .submit-banner { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 600px) {
+      .hero-title { font-size: 2.4rem; }
+      .footer-nav-grid { grid-template-columns: 1fr; }
+      .topic-nav { gap: 0.4rem; }
+      .topic-nav-link { font-size: 0.46rem; padding: 0.4rem 0.6rem; }
+      .region-grid { grid-template-columns: 1fr; }
+    }
+    .nav-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: inline-block;
+      flex-shrink: 0;
+      animation: nav-dot-pulse 1.6s ease-in-out infinite;
+    }
+
+  @keyframes nav-dot-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: 0.35; transform: scale(0.65); }
+    }
+ </style>
+<style>
+  /* ── Comentarios (Giscus) ── */
+  .comments-section {
+    border: 1px solid rgba(245,240,232,0.12);
+    padding: 2.5rem; margin: 4rem 0 2rem; background: rgba(245,240,232,0.02);
+  }
+  .comments-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.6rem;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+    margin-bottom: 1.5rem; padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(245,240,232,0.12);
+  }
+  .giscus-wrap { min-height: 80px; }
+ </style>
+
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════ -->
+<!-- ══════════ NAV ══════════ -->
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="../" class="site-nav-logo">MM</a>
+    <div class="site-nav-sep"></div>
+    <div class="site-nav-articles">
+      <a href="../articulos.html" class="site-nav-link">Artículos</a>
+      <a href="../seguimientos/3i-atlas.html" class="site-nav-link">3I/ATLAS</a>
+      <a href="../seguimientos/uap.html" class="site-nav-link active">UAP WATCH</a>
+      <a href="../seguimientos/pursue-releases.html" class="site-nav-link">PURSUE</a>
+      <a href="../seguimientos/voyager-1.html" class="site-nav-link">VOYAGER 1</a>
+      <a href="../seguimientos/hitos-medicos.html" class="site-nav-link">HITOS MÉDICOS</a>
+      <a href="../glosario.html" class="site-nav-link"><span class="nav-dot"></span>&nbsp;Glosario</a>
+    </div>
+    <button class="site-nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navDrawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="site-nav-drawer" id="navDrawer">
+    <a href="../articulos.html" class="drawer-link">Artículos</a>
+    <a href="../seguimientos/3i-atlas.html" class="drawer-link">3I/ATLAS</a>
+    <a href="../seguimientos/uap.html" class="drawer-link active">UAP WATCH</a>
+    <a href="../seguimientos/pursue-releases.html" class="drawer-link">PURSUE</a>
+    <a href="../seguimientos/voyager-1.html" class="drawer-link">VOYAGER 1</a>
+    <a href="../seguimientos/hitos-medicos.html" class="drawer-link">HITOS MÉDICOS</a>
+    <a href="../glosario.html" class="drawer-link"><span class="nav-dot"></span>&nbsp;Glosario</a>
+  </div>
+</nav>
+<script>
+  (function () {
+    var btn = document.getElementById('navHamburger');
+    var drawer = document.getElementById('navDrawer');
+    if (!btn || !drawer) return;
+    btn.addEventListener('click', function () {
+      var isOpen = drawer.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    drawer.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        drawer.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+<!-- ══════════ HERO ══════════ -->
+<section class="hero">
+  <canvas class="hero-canvas" id="starfield"></canvas>
+
+  <div class="hero-inner">
+    <div>
+      <nav class="topic-nav" aria-label="Navegación por temas del artículo">
+        <a href="#sec-timeline" class="topic-nav-link"><span>01</span> Línea temporal en vivo</a>
+        <a href="#sec-regiones" class="topic-nav-link"><span>02</span> Mapa regional</a>
+        <a href="#sec-descartados" class="topic-nav-link"><span>03</span> Casos descartados</a>
+        <a href="#sec-metodologia" class="topic-nav-link"><span>04</span> Metodología</a>
+        <a href="#sec-cierre" class="topic-nav-link"><span>05</span> Seguimiento</a>
+      </nav>
+
+      <div class="hero-live-badge">
+        <div class="hero-live-dot"></div>
+        Cobertura abierta · Actualizado 12 Jun 2026
+      </div>
+
+      <p class="hero-kicker">Fenómenos aéreos no identificados · Cobertura global · 2026</p>
+
+      <h1 class="hero-title">
+        <span class="accent">UAP</span> WATCH
+      </h1>
+      <p class="hero-subtitle">Avistamientos virales y archivos oficiales.<br>Una línea temporal viva, actualizada conforme<br>aparecen nuevos casos en 2026.</p>
+
+      <p class="hero-byline">La Redacción · Mundo Maravilloso · Actualizado 12 Jun 2026</p>
+
+      <p class="hero-lead">
+        De un disco metálico sobre un estadio en la Araucanía chilena a tres tandas sucesivas de archivos UAP desclasificados por el Pentágono: así ha sido la primera mitad de 2026 en materia de fenómenos aéreos no identificados. Este artículo es un registro vivo —se amplía cada vez que surge un nuevo caso relevante.
+      </p>
+    </div>
+
+    <div class="stat-panel">
+      <p class="stat-panel-label">// Resumen · Ene–Jun 2026</p>
+      <div class="stat-row">
+        <span class="stat-key">Casos rastreados</span>
+        <span class="stat-val cyan">9+</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-key">Sin explicación (🟡/🟢)</span>
+        <span class="stat-val gold">5</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-key">Descartados (🔴)</span>
+        <span class="stat-val red">4</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-key">Tandas de archivos UAP</span>
+        <span class="stat-val">3 · EE.UU.</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-key">Última tanda</span>
+        <span class="stat-val">12 Jun 2026 · 72 archivos</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-key">Regiones con casos abiertos</span>
+        <span class="stat-val">América · Europa</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-key">Portal oficial</span>
+        <span class="stat-val cyan">war.gov/UFO</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-key">Última actualización</span>
+        <span class="stat-val green">12 Jun 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ STATUS BAR ══════════ -->
+<div class="status-bar">
+  <div class="status-track">
+    <div class="status-item">
+      <span class="status-label">Última entrada</span>
+      <span class="status-value gold">12 Jun · 3ª tanda PURSUE</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Curarrehue, Chile</span>
+      <span class="status-value">24 Ene · sin explicar</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Junín de los Andes, Arg.</span>
+      <span class="status-value">1 Feb · sin explicar</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Skinningrove, UK</span>
+      <span class="status-value">16 Mar · sin explicar</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Nellis AFB, Nevada</span>
+      <span class="status-value red">19 Abr · descartado</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Eugene, Oregon</span>
+      <span class="status-value red">29 Mar · explicado</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Campo Largo, Brasil</span>
+      <span class="status-value red">31 May · descartado</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Archivos UAP · Pentágono</span>
+      <span class="status-value green">3 tandas · 8 may–12 jun</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">"Northeastern Orb"</span>
+      <span class="status-value">12 Jun · esferas rojas</span>
+    </div>
+    <!-- duplicado para loop -->
+    <div class="status-item">
+      <span class="status-label">Última entrada</span>
+      <span class="status-value gold">12 Jun · 3ª tanda PURSUE</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Curarrehue, Chile</span>
+      <span class="status-value">24 Ene · sin explicar</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Junín de los Andes, Arg.</span>
+      <span class="status-value">1 Feb · sin explicar</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Skinningrove, UK</span>
+      <span class="status-value">16 Mar · sin explicar</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Nellis AFB, Nevada</span>
+      <span class="status-value red">19 Abr · descartado</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Eugene, Oregon</span>
+      <span class="status-value red">29 Mar · explicado</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Campo Largo, Brasil</span>
+      <span class="status-value red">31 May · descartado</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Archivos UAP · Pentágono</span>
+      <span class="status-value green">3 tandas · 8 may–12 jun</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">"Northeastern Orb"</span>
+      <span class="status-value">12 Jun · esferas rojas</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ BODY ══════════ -->
+<main class="article">
+
+  <!-- INTRO -->
+  <div class="intro">
+    <div class="intro-text">
+      <p>
+        Entre enero y junio de 2026, una serie de avistamientos de Objetos Voladores No Identificados (UAP, por sus siglas en inglés) capturó la atención de redes sociales y medios en distintos puntos del planeta. La mayoría resultaron ser fenómenos convencionales —luces de estadio, montajes en video, reflejos o fraudes generados por IA— pero un puñado de casos permanece sin una explicación concluyente, documentados por testigos en video y reportados a centros especializados como el NUFORC.
+      </p>
+      <p>
+        En paralelo, el gobierno de Estados Unidos avanzó con su proceso de desclasificación de archivos UAP, publicando tres tandas sucesivas (8 de mayo, 22 de mayo y 12 de junio) a través del portal <strong>war.gov/UFO</strong>, bajo la iniciativa PURSUE. Estas publicaciones incluyen videos, fotografías, documentos del FBI y la CIA, y testimonios de personal militar y de inteligencia, incluyendo nuevas imágenes de esferas luminosas sobre el noreste de EE.UU.
+      </p>
+      <p>
+        Este artículo funciona como un <strong>registro abierto</strong>: la línea temporal a continuación se actualizará con cada nuevo avistamiento relevante de 2026, manteniendo el formato de "estatus de verificación" para que cualquier lector pueda dar seguimiento a cada caso a medida que evoluciona —o se desmiente.
+      </p>
+    </div>
+
+    <div class="origin-box">
+      <p class="origin-label">// Cómo leer el estatus</p>
+      <div class="origin-item">
+        <p class="origin-key">🟢 / 🟡 Abierto</p>
+        <p class="origin-val">Sin explicación oficial confirmada. El caso permanece activo y puede actualizarse.</p>
+      </div>
+      <div class="origin-item">
+        <p class="origin-key">🔴 Descartado</p>
+        <p class="origin-val">Identificado como montaje, fenómeno conocido o sin fuentes verificables.</p>
+      </div>
+      <div class="origin-item">
+        <p class="origin-key">⚑ Oficial</p>
+        <p class="origin-val">Publicación gubernamental de archivos UAP (Pentágono / PURSUE).</p>
+      </div>
+      <div class="origin-item">
+        <p class="origin-key">Relacionado</p>
+        <p class="origin-val"><a href="3i-atlas.html">→ 3I/ATLAS: el cometa interestelar</a><br><a href="pursue-releases.html">→ Archivos PURSUE, análisis completo</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 01: TIMELINE -->
+  <div class="section-head" id="sec-timeline">
+    <span class="section-num">01</span>
+    <h2 class="section-title">Línea temporal en vivo · 2026</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="filter-bar">
+    <span class="filter-pill"><span class="filter-dot maybe"></span> Sin explicación / abierto</span>
+    <span class="filter-pill"><span class="filter-dot closed"></span> Descartado o explicado</span>
+    <span class="filter-pill"><span class="filter-dot official"></span> Publicación oficial</span>
+  </div>
+
+  <div class="timeline">
+
+    <div class="timeline-entry">
+      <div class="timeline-date">
+        24 Ene 2026
+        <span class="tl-agency">Curarrehue, Chile</span>
+      </div>
+      <div class="timeline-content gold-bar">
+        <span class="tl-tag gold">🟡 Sin explicación definitiva</span>
+        <p class="tl-title">Objeto discoidal metálico sobre un estadio en La Araucanía</p>
+        <p class="tl-body">Al atardecer del 24 de enero, vecinos de Curarrehue observaron un objeto metálico con forma de disco realizando maniobras rápidas e inusuales sobre el estadio local antes de desaparecer. El testigo Joaquín Brevis Morales relató haber visto la nave "a cierta distancia" mientras se encontraba en el recinto. El registro fotográfico principal, captado por Fermín Panguilef, se difundió ampliamente en redes sociales chilenas y fue retomado por medios regionales.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Forma <span>Disco metálico</span></span>
+          <span class="tl-pill">Hora <span>~16:00</span></span>
+          <span class="tl-pill">Testigos <span>Múltiples</span></span>
+        </div>
+        <div class="tl-sources">
+          <a class="tl-source-link" href="https://www.red43.com.ar/nota/2026-1-26-13-24-22-un-ovni-en-la-araucania-sorpresa-por-un-avistamiento-en-curarrehue" target="_blank" rel="noopener">↗ Red43 · Artículo</a>
+          <a class="tl-source-link" href="https://www.pararational.com/metallic-disc-ufo-photographed-over-chilean-stadium/" target="_blank" rel="noopener">↗ ParaRational · Reporte</a>
+          <a class="tl-source-link" href="https://www.elcordillerano.com.ar/noticias/2026/01/26/229128-chile-fotografiaron-un-ovni" target="_blank" rel="noopener">↗ El Cordillerano</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-date">
+        1 Feb 2026
+        <span class="tl-agency">Junín de los Andes, Arg.</span>
+      </div>
+      <div class="timeline-content gold-bar">
+        <span class="tl-tag gold">🟡 Pendiente de explicación</span>
+        <p class="tl-title">Nube giratoria con destellos de color en la ruta al Cerro Piñón</p>
+        <p class="tl-body">La noche del domingo 1 de febrero, alrededor de las 23:00, una familia que viajaba desde Bariloche hacia Junín de los Andes se detuvo en la ruta 234, cerca del Cerrito Piñón. Allí observaron una nube gris luminiscente que realizaba movimientos circulares y mostraba destellos de colores que se reflejaban sobre otra nube blanca alargada. La testigo Andrea Viviana García describió el fenómeno como "muy loco" y "nunca visto antes" en declaraciones a LM Neuquén. Casi a la misma hora, otra usuaria —Nahir Navarro— grabó de forma independiente, desde el puente de La Rinconada, un objeto con forma de "platillo volador".</p>
+        <div class="tl-data">
+          <span class="tl-pill">Duración <span>Varios minutos</span></span>
+          <span class="tl-pill">Testigos <span>2 grupos independientes</span></span>
+        </div>
+        <div class="tl-sources">
+          <a class="tl-source-link" href="https://www.lmneuquen.com/neuquen/impresionantes-imagenes-el-cerro-pinon-un-fenomeno-inexplicable-el-cielo-junin-los-andes-n1226977" target="_blank" rel="noopener">↗ LMNeuquén · Video y nota</a>
+          <a class="tl-source-link" href="https://www.lmneuquen.com/neuquen/filmaron-luces-inexplicables-el-cielo-neuquen-son-las-mismas-que-aparecieron-junin-los-andes-n1227171" target="_blank" rel="noopener">↗ LMNeuquén · Segundo testigo</a>
+          <a class="tl-source-link" href="https://www.infopico.com/2026/02/04/misterio-en-la-patagonia-avistamiento-de-un-supuesto-ovni-conmociona-a-junin-de-los-andes/" target="_blank" rel="noopener">↗ Infopico</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-date">
+        4 Feb 2026
+        <span class="tl-agency">Neuquén capital, Arg.</span>
+      </div>
+      <div class="timeline-content gold-bar">
+        <span class="tl-tag gold">🟡 Sin explicación oficial</span>
+        <p class="tl-title">Luz cerca del ala de un avión, vista desde Neuquén</p>
+        <p class="tl-body">En la madrugada del miércoles 4 de febrero, apenas tres días después del caso de Junín de los Andes, una vecina de Neuquén capital filmó una figura luminosa que aparece cerca del ala de una aeronave durante una tormenta, antes de desplazarse y desaparecer entre las nubes. El video se viralizó rápidamente en plataformas digitales. Algunas hipótesis apuntan a un fenómeno eléctrico atmosférico o un reflejo de la iluminación de cabina, pero hasta la fecha no existe una explicación oficial confirmada. <em>Caso adicional detectado durante el seguimiento de esta cobertura, no incluido en el reporte original.</em></p>
+        <div class="tl-data">
+          <span class="tl-pill">Contexto <span>Tormenta eléctrica</span></span>
+          <span class="tl-pill">Hipótesis <span>Reflejo / fenómeno atmosférico</span></span>
+        </div>
+        <div class="tl-sources">
+          <a class="tl-source-link" href="https://www.lmneuquen.com/neuquen/un-ovni-neuquen-el-extrano-video-captado-pleno-vuelo-n1240419" target="_blank" rel="noopener">↗ LMNeuquén · Video</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry closed">
+      <div class="timeline-date">
+        29 Mar 2026
+        <span class="tl-agency">Eugene, Oregon, EE.UU.</span>
+      </div>
+      <div class="timeline-content red-bar">
+        <span class="tl-tag red">🔴 Explicación terrestre probable</span>
+        <p class="tl-title">Flashes multicolor identificados como pruebas de iluminación de estadio</p>
+        <p class="tl-body">Vecinos de Eugene reportaron destellos de luz multicolor en el cielo nocturno alrededor de las 21:00. La investigación de la comunidad local concluyó que se trataba de pruebas de iluminación del estadio universitario Hayward Field, y no de un fenómeno aéreo nuevo. No existe una fuente oficial que lo confirme, pero el consenso local atribuyó el evento a las luces del recinto deportivo.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Hora <span>~21:00</span></span>
+          <span class="tl-pill">Explicación <span>Luces de Hayward Field</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-date">
+        16 Mar 2026
+        <span class="tl-agency">Skinningrove, North Yorkshire, UK</span>
+      </div>
+      <div class="timeline-content gold-bar">
+        <span class="tl-tag gold">🟡 No explicado</span>
+        <p class="tl-title">Luz naranja parpadeante sobre el Mar del Norte durante tres minutos</p>
+        <p class="tl-body">A las 18:30 del 16 de marzo, un testigo en Skinningrove Beach observó una gran luz naranja brillante aparecer sobre el Mar del Norte, desaparecer y reaparecer repetidamente durante tres minutos completos. El reporte, presentado el mismo día al National UFO Reporting Center (NUFORC #196590), describe un objeto circular de unos 50 metros de diámetro, a unas tres millas de la costa, con un ángulo de elevación de 45° hacia el sur. El testigo pensó inicialmente en un helicóptero, pero el patrón de aparición y desaparición no coincidía. NUFORC catalogó el caso como "Aircraft — Possible", su etiqueta estándar cuando una aeronave convencional no puede descartarse pero tampoco explica todo lo observado.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Duración <span>3 min</span></span>
+          <span class="tl-pill">Distancia <span>~3 millas mar adentro</span></span>
+          <span class="tl-pill">NUFORC <span>#196590</span></span>
+        </div>
+        <div class="tl-sources">
+          <a class="tl-source-link" href="https://www.pararational.com/oorange-ufo-north-yorkshire-coast-for-three-full-minutes/" target="_blank" rel="noopener">↗ ParaRational · Reporte completo</a>
+          <a class="tl-source-link video" href="https://960weli.iheart.com/featured/coast-to-coast-am/content/2026-03-27-watch-bewildering-ufo-filmed-at-british-beach/" target="_blank" rel="noopener">▶ Coast to Coast AM · Video</a>
+          <a class="tl-source-link" href="https://nuforc.org/subndx/?id=lON" target="_blank" rel="noopener">↗ NUFORC · Base de reportes</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry closed">
+      <div class="timeline-date">
+        19 Abr 2026
+        <span class="tl-agency">Nellis AFB, Nevada, EE.UU.</span>
+      </div>
+      <div class="timeline-content red-bar">
+        <span class="tl-tag red">🔴 Descartado · montaje confirmado</span>
+        <p class="tl-title">Video de "platillo" sobre base militar resultó ser un fraude digital</p>
+        <p class="tl-body">Un video que mostraba supuestamente un objeto con forma de platillo sobrevolando la Base Aérea de Nellis se volvió viral en abril. La investigación posterior lo rastreó hasta un canal de YouTube conocido por publicar montajes —ThirdphaseofMoon— que ya había circulado el mismo material con anterioridad. Se confirmó que la grabación es un engaño digital sin relación con actividad real en la base.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Origen <span>ThirdphaseofMoon</span></span>
+          <span class="tl-pill">Veredicto <span>CGI / montaje</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry official">
+      <div class="timeline-date">
+        8 May 2026
+        <span class="tl-agency">Washington DC · Pentágono</span>
+      </div>
+      <div class="timeline-content violet-bar">
+        <span class="tl-tag violet">⚑ Publicación oficial · PURSUE 1</span>
+        <p class="tl-title">Primera tanda de archivos UAP desclasificados</p>
+        <p class="tl-body">El Departamento de Guerra (Pentágono) publicó la primera tanda de archivos sobre Fenómenos Anómalos No Identificados (UAP), parte de un esfuerzo de transparencia de la administración Trump. La publicación incluyó videos, fotografías y documentos originales nunca antes vistos de distintas agencias del gobierno de EE.UU., reunidos en un portal único accesible sin necesidad de autorización. Muchos de los avistamientos reportados se concentran cerca de operaciones militares activas. El Pentágono indicó que continuará publicando archivos "de forma continua".</p>
+        <div class="tl-data">
+          <span class="tl-pill">Portal <span>war.gov/UFO</span></span>
+          <span class="tl-pill">Tipo <span>Documentos, fotos, video</span></span>
+        </div>
+        <div class="tl-sources">
+          <a class="tl-source-link" href="https://abcnews.com/Politics/pentagon-begins-release-decades-unresolved-ufo-files/story?id=132780534" target="_blank" rel="noopener">↗ ABC News</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry official">
+      <div class="timeline-date">
+        22 May 2026
+        <span class="tl-agency">Washington DC · Pentágono</span>
+      </div>
+      <div class="timeline-content violet-bar">
+        <span class="tl-tag violet">⚑ Publicación oficial · PURSUE 2</span>
+        <p class="tl-title">Segunda tanda: 64 archivos, incluye relato de "esferas naranjas" junto a un helicóptero militar</p>
+        <p class="tl-body">La segunda entrega sumó aproximadamente 64 archivos: 51 videos, seis PDFs y siete grabaciones de audio, que abarcan desde incidentes históricos hasta casos recientes. Entre los elementos más comentados está el testimonio de primera mano de un oficial de inteligencia de EE.UU. quien, en una misión de helicóptero durante 2025, describió decenas de objetos naranjas y ovalados emitiendo luz en un encuentro cercano y prolongado —algunos aparentemente estacionarios junto al rotor. La tanda también incluyó metraje infrarrojo de una formación de cuatro UAP cerca de Irán (2022) y registros históricos como los orbes verdes de la Base Sandia (1948-1950) y audio del Apolo 12 (1969).</p>
+        <div class="tl-data">
+          <span class="tl-pill">Archivos <span>~64</span></span>
+          <span class="tl-pill">Caso destacado <span>Orbes naranjas · helicóptero</span></span>
+        </div>
+        <div class="tl-sources">
+          <a class="tl-source-link" href="https://news-nest.com/2026/05/23/pentagon-releases-second-batch-of-declassified-uap-files-and-first-hand-testimony/" target="_blank" rel="noopener">↗ News Nest · Resumen</a>
+          <a class="tl-source-link" href="https://avi-loeb.medium.com/analysis-of-the-second-batch-of-ufo-files-released-by-the-pentagon-1d76e7724073" target="_blank" rel="noopener">↗ Avi Loeb · Análisis</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry closed">
+      <div class="timeline-date">
+        31 May 2026
+        <span class="tl-agency">Campo Largo, Paraná, Brasil</span>
+      </div>
+      <div class="timeline-content red-bar">
+        <span class="tl-tag red">🔴 Descartado / explicado</span>
+        <p class="tl-title">Luces sobre colinas atribuidas a iluminación de pista</p>
+        <p class="tl-body">Un video viral mostró luces sobre colinas cercanas a Campo Largo. El influencer Mayk Leão afirmó que se trataba de actividad inusual, pero análisis independientes señalaron que correspondía a iluminación de pista o reflejos conocidos. No se hallaron fuentes confiables que confirmen una explicación alternativa al fenómeno terrestre identificado.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Difusión <span>Influencer · redes</span></span>
+          <span class="tl-pill">Explicación <span>Iluminación de pista</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-date">
+        11 Jun 2026
+        <span class="tl-agency">México (no localizado)</span>
+      </div>
+      <div class="timeline-content gold-bar">
+        <span class="tl-tag gold">🟡 Sin verificar</span>
+        <p class="tl-title">Publicación viral vincula "inteligencias no humanas" con el inicio del Mundial 2026</p>
+        <p class="tl-body">Una publicación en redes sociales fechada el 11 de junio aseguraba que supuestas inteligencias no humanas o extraterrestres habrían llegado a México durante la madrugada, coincidiendo con la inauguración del Mundial de fútbol. El post acumuló más de 14,600 visualizaciones y decenas de republicaciones en pocas horas. No existe verificación independiente del contenido ni pronunciamiento oficial. <em>Caso adicional, no incluido en el reporte original; se monitorea por su relación con la ola de especulación en torno al Mundial.</em></p>
+        <div class="tl-data">
+          <span class="tl-pill">Alcance <span>14.6K+ vistas</span></span>
+          <span class="tl-pill">Contexto <span>Inauguración Mundial 2026</span></span>
+        </div>
+        <div class="tl-sources">
+          <a class="tl-source-link" href="https://www.aztecaveracruz.com/tendencia/avistamiento-extraterrestres-en-mexico-video-viral" target="_blank" rel="noopener">↗ Azteca Veracruz</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry closed">
+      <div class="timeline-date">
+        ~1–2 Jun 2026
+        <span class="tl-agency">Torreón / Chihuahua, México</span>
+      </div>
+      <div class="timeline-content red-bar">
+        <span class="tl-tag red">🔴 Descartado · ubicación falsa</span>
+        <p class="tl-title">Video "OVNI en Torreón" filmado en realidad en Chihuahua, con edición visible</p>
+        <p class="tl-body">Un clip viral aseguraba mostrar un objeto no identificado sobrevolando Torreón (La Laguna), acumulando más de mil reacciones. El análisis de las calles visibles reveló que la grabación corresponde en realidad al cruce de Av. Independencia y Av. Niños Héroes en Chihuahua —a varios cientos de kilómetros— y presenta un corte de edición evidente antes de mostrar el supuesto objeto. <em>Caso adicional detectado durante el seguimiento de esta cobertura.</em></p>
+        <div class="tl-data">
+          <span class="tl-pill">Veredicto <span>Ubicación falsa + edición</span></span>
+        </div>
+        <div class="tl-sources">
+          <a class="tl-source-link" href="https://www.aztecalaguna.com/viral-y/notas/ovni-torreon-video-viral-del-avistamiento" target="_blank" rel="noopener">↗ Azteca Laguna</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry official milestone">
+      <div class="timeline-date">
+        12 Jun 2026
+        <span class="tl-agency">Washington DC · Pentágono</span>
+      </div>
+      <div class="timeline-content violet-bar">
+        <span class="tl-tag violet">⚑ Publicación oficial · PURSUE 3</span>
+        <p class="tl-title">Tercera tanda: 72 archivos, video "Northeastern Orb Sighting" con dos esferas rojas</p>
+        <p class="tl-body">La tercera entrega del Departamento de Guerra suma 72 archivos —53 documentos, 10 imágenes, seis videos y tres grabaciones de audio de la NASA— y se concentra en una serie de avistamientos de esferas sobre el noreste de Estados Unidos. El video más comentado, "Northeastern Orb Sighting" (julio de 2025), muestra dos luces brillantes moviéndose de forma silenciosa y coordinada, "como si volaran en formación o estuvieran atadas entre sí", según la descripción basada en entrevistas del FBI. Otro clip, "Orbs Over the Pond" (octubre de 2024, a menos de 40 km del primero), describe una "esfera tipo plasma" que cambió de forma mientras permanecía suspendida cerca de 45 minutos. La tanda también incluye un reporte de la CIA de 2008 sobre un objeto discoidal con luces rotatorias sobre el aeropuerto de Harare, Zimbabue, y un caso de 2022 cerca de Colorado Springs descrito como un objeto "tipo papa" de color blanco translúcido. Además, la Casa Blanca repostó uno de los videos de esferas, y el Pentágono confirmó públicamente su autenticidad.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Archivos <span>72</span></span>
+          <span class="tl-pill">Caso principal <span>2 esferas rojas · Jul 2025</span></span>
+          <span class="tl-pill">Caso secundario <span>"Orbs Over the Pond" · Oct 2024</span></span>
+        </div>
+        <div class="tl-sources">
+          <a class="tl-source-link" href="https://www.cbsnews.com/news/ufo-files-pentagon-3rd-release-documents-videos/" target="_blank" rel="noopener">↗ CBS News</a>
+          <a class="tl-source-link" href="https://www.usnews.com/news/top-news/articles/2026-06-12/new-pentagon-ufo-file-reveals-glowing-orbs-in-us-northeast" target="_blank" rel="noopener">↗ Reuters / U.S. News</a>
+          <a class="tl-source-link video" href="https://earthsky.org/human-world/pentagon-uap-files-ufos-pursue/" target="_blank" rel="noopener">▶ EarthSky · Videos</a>
+          <a class="tl-source-link" href="https://www.semana.com/tecnologia/articulo/inquietante-video-difundido-por-ee-uu-fue-reposteado-por-la-casa-blanca-y-el-pentagono-confirmo-que-es-real/202639/" target="_blank" rel="noopener">↗ Semana · Casa Blanca</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="submit-banner">
+    <div class="submit-banner-text">
+      <p class="submit-banner-label">// Registro en construcción</p>
+      <p class="submit-banner-title">Esta línea temporal se sigue actualizando</p>
+      <p class="submit-banner-desc">Cada nuevo avistamiento viral o publicación oficial relevante de 2026 se añade a esta cronología con su fuente original. Si conoces un caso que debería estar aquí, contáctanos a través de nuestras redes.</p>
+    </div>
+    <span class="submit-banner-tag">Próxima revisión · continua</span>
+  </div>
+
+  <!-- SECCIÓN 02: REGIONES -->
+  <div class="section-head" id="sec-regiones">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Mapa regional · Ene–Jun 2026</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="region-grid">
+    <div class="region-card">
+      <span class="region-flag">🌎</span>
+      <p class="region-label">América del Sur</p>
+      <h3 class="region-title">Casos abiertos en Chile, Argentina y Brasil</h3>
+      <p class="region-desc">Chile (Curarrehue, 24 ene) y Argentina (Junín de los Andes y Neuquén, 1–4 feb) registraron los casos sudamericanos con mayor repercusión y sin explicación confirmada. Brasil (Campo Largo, 31 may) y Colombia tuvieron casos virales que terminaron explicados o sin verificación independiente.</p>
+    </div>
+    <div class="region-card">
+      <span class="region-flag">🇺🇸</span>
+      <p class="region-label">América del Norte</p>
+      <h3 class="region-title">EE.UU.: epicentro de la desclasificación oficial</h3>
+      <p class="region-desc">Estados Unidos no reportó un caso "viral" propio destacado en este periodo, pero concentró el evento más relevante: tres tandas de archivos UAP oficiales (8 may, 22 may, 12 jun) con nuevas imágenes de esferas sobre el noreste del país. Nevada (Nellis AFB) y Oregon (Eugene) tuvieron casos virales que fueron desmentidos.</p>
+    </div>
+    <div class="region-card">
+      <span class="region-flag">🇬🇧</span>
+      <p class="region-label">Europa</p>
+      <h3 class="region-title">Reino Unido: luz naranja frente a Yorkshire</h3>
+      <p class="region-desc">El caso de Skinningrove Beach (16 mar) es, junto con los sudamericanos, uno de los pocos avistamientos europeos de 2026 que permanece formalmente abierto según NUFORC, con cobertura amplia en foros de ufología y radio especializada en EE.UU.</p>
+    </div>
+    <div class="region-card">
+      <span class="region-flag">🌏</span>
+      <p class="region-label">Asia / Oceanía</p>
+      <h3 class="region-title">Sin casos virales confirmados como auténticos</h3>
+      <p class="region-desc">Durante este periodo circularon videos en China e India presentados como avistamientos, pero todos los analizados resultaron ser manipulaciones digitales o fenómenos astronómicos conocidos (estelas de cohetes, globos meteorológicos). No se identificaron casos genuinamente abiertos en la región.</p>
+    </div>
+    <div class="region-card">
+      <span class="region-flag">🌍</span>
+      <p class="region-label">África</p>
+      <h3 class="region-title">Sin casos virales recientes</h3>
+      <p class="region-desc">No se registraron avistamientos virales de repercusión en el continente durante el primer semestre de 2026. El único elemento africano en la cobertura proviene de un archivo histórico de la CIA (2008) sobre un caso en Harare, Zimbabue, incluido en la tercera tanda de PURSUE.</p>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 03: DESCARTADOS -->
+  <div class="section-head" id="sec-descartados">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Casos concluidos o desacreditados</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="body-text">
+    <p>
+      No todos los videos virales resisten el escrutinio. De los casos rastreados en 2026, cuatro fueron identificados con relativa rapidez como montajes, fenómenos terrestres conocidos o materiales con metadatos falsos: el "platillo" de Nellis AFB (un reciclaje de contenido de un canal de montajes), las luces de Eugene (pruebas de iluminación de un estadio universitario), las luces sobre colinas en Campo Largo (iluminación de pista) y el video de "OVNI en Torreón" (filmado en otra ciudad, con edición visible). A estos se suman videos virales de Asia y Oceanía, descartados como generados por IA o atribuidos a globos meteorológicos y cohetes.
+    </p>
+    <p>
+      Esta sección también se actualizará: cuando un caso listado como "abierto" reciba una explicación verificable, se moverá aquí con la fuente correspondiente.
+    </p>
+  </div>
+
+  <!-- SECCIÓN 04: METODOLOGÍA -->
+  <div class="section-head" id="sec-metodologia">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Metodología y limitaciones</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="open-questions">
+    <p class="open-q-label">// Notas sobre esta cobertura</p>
+    <ul class="open-q-list">
+      <li>Solo se incluyen casos con al menos una fuente abierta verificable (prensa, post original, o reporte a un centro como NUFORC).</li>
+      <li>El estatus de cada caso refleja el estado del debate público al momento de la última actualización; puede cambiar.</li>
+      <li>Se omiten deliberadamente rumores sin fuente y clips confirmados como contenido generado por IA o CGI, salvo cuando forman parte de la sección de casos descartados.</li>
+      <li>Detalles como el número exacto de testigos o estadísticas de viralización a menudo no pueden confirmarse de forma independiente y se presentan tal como fueron reportados.</li>
+      <li>Las publicaciones oficiales de archivos UAP (PURSUE) se documentan por separado en su propio artículo, con análisis más extenso de cada lote.</li>
+    </ul>
+  </div>
+
+  <!-- CIERRE -->
+  <div class="section-head" id="sec-cierre">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Seguimiento continuo</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="body-text">
+    <p>
+      La primera mitad de 2026 deja un patrón claro: mientras la mayoría de los avistamientos virales locales encuentran explicaciones terrenales en cuestión de semanas, el proceso de desclasificación oficial en Estados Unidos avanza con publicaciones cada vez más específicas —y más difíciles de descartar— sobre fenómenos similares a los que reportan testigos comunes en distintas partes del mundo. La convergencia entre ambos frentes, sobre todo en torno a "esferas" y "orbes" de colores, es uno de los hilos que esta cobertura seguirá de cerca durante el resto del año.
+    </p>
+  </div>
+
+<section class="comments-section">
+  <p class="comments-label">// Comentarios</p>
+  <div class="giscus-wrap">
+    <script src="https://giscus.app/client.js"
+      data-repo="mundomag/mundomag-comentarios"
+      data-repo-id="R_kgDOTErXHw"
+      data-category="Comentarios"
+      data-category-id="DIC_kwDOTErXH84C_2mS"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme="dark"
+      data-lang="es"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="../" class="footer-logo">Mundo Maravilloso</a>
+        <p class="footer-tagline">Una publicación independiente sobre los grandes misterios que la ciencia todavía no ha resuelto.</p>
+      </div>
+      <div class="footer-nav-grid">
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Artículos</p>
+          <ul class="footer-nav-list">
+            <li><a href="../articulos.html">Todos los artículos</a></li>
+            <li><a href="../glosario.html">Glosario</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Seguimientos</p>
+          <ul class="footer-nav-list">
+            <li><a href="../seguimientos/3i-atlas.html">3I/ATLAS</a></li>
+            <li><a href="../seguimientos/uap.html">UAP WATCH</a></li>
+            <li><a href="../seguimientos/pursue-releases.html">PURSUE RELEASES</a></li>
+            <li><a href="../seguimientos/voyager-1.html">VOYAGER 1</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Publicación</p>
+          <ul class="footer-nav-list">
+            <li><a href="../acerca-de.html">Acerca de</a></li>
+            <li><a href="../contacto.html">Contacto</a></li>
+            <li><a href="../privacidad.html">Privacidad</a></li>
+            <li><a href="../terminos.html">Términos</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Mundo Maravilloso · Todos los derechos reservados</p>
+      <p class="footer-signal">// Señal activa · uap</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════ SCRIPTS ══════════ -->
+<script>
+// Starfield animado
+(function(){
+  var canvas = document.getElementById('starfield');
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var stars = [];
+  function resize(){
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+  function initStars(){
+    stars = [];
+    var n = Math.floor((canvas.width * canvas.height) / 3200);
+    for(var i=0;i<n;i++){
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.2 + 0.2,
+        opacity: Math.random() * 0.55 + 0.08,
+        speed: Math.random() * 0.25 + 0.05,
+        tint: Math.random() < 0.08 ? 1 : 0
+      });
+    }
+  }
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    stars.forEach(function(s){
+      ctx.beginPath();
+      ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+      if(s.tint){
+        ctx.fillStyle = 'rgba(78,205,196,'+s.opacity+')';
+      } else {
+        ctx.fillStyle = 'rgba(255,255,255,'+s.opacity+')';
+      }
+      ctx.fill();
+      s.opacity += (Math.random()-0.5) * s.speed * 0.05;
+      s.opacity = Math.max(0.04, Math.min(0.75, s.opacity));
+    });
+    requestAnimationFrame(draw);
+  }
+  resize(); initStars(); draw();
+  window.addEventListener('resize', function(){ resize(); initStars(); });
+})();
+
+// Timeline entries fade in
+(function(){
+  var entries = document.querySelectorAll('.timeline-entry');
+  var obs = new IntersectionObserver(function(entries_){
+    entries_.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateX(0)';
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  entries.forEach(function(en){
+    en.style.opacity = '0';
+    en.style.transform = 'translateX(-8px)';
+    en.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    obs.observe(en);
+  });
+})();
+
+// Region cards fade in
+(function(){
+  var cards = document.querySelectorAll('.region-card');
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  cards.forEach(function(c){
+    c.style.opacity = '0';
+    c.style.transform = 'translateY(10px)';
+    c.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    obs.observe(c);
+  });
+})();
+</script>
+
+</body>
+</html>

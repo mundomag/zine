@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="es" data-page="hitos-medicos">
+<head>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8483516296039231"
+       crossorigin="anonymous"></script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hitos Médicos: Curas y Avances Documentados | Mundo Maravilloso</title>
+  <meta name="description" content="Registro de curas, tratamientos y avances médicos verificados en oncología, neurología, genética y más. ¿Coincidencia o señal? Mundo Maravilloso."/>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRSJ1EYEPD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LRSJ1EYEPD');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=JetBrains+Mono:wght@400;600;700&family=DM+Serif+Text:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;0,8..60,800;1,8..60,400;1,8..60,600;1,8..60,700;1,8..60,800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://mundomag.fyi/seguimientos/hitos-medicos.html">
+  <link rel="stylesheet" href="../styles.css">
+
+  <style>
+    :root {
+      --ink:        #0d0d0f;
+      --ink-mid:    #161619;
+      --ink-soft:   #1e1e23;
+      --paper:      #f5f0e8;
+      --paper-warm: #ede6d6;
+      --gold:       #c9a84c;
+      --gold-light: #e8c97a;
+      --cyan:       #4ecdc4;
+      --cyan-dim:   #2a9d95;
+      --red:        #c0392b;
+      --orange:     #f97316;
+      --muted:      #6b6b7a;
+      --border:     rgba(201,168,76,0.25);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--ink);
+      color: var(--paper);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 18px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.6;
+    }
+
+    /* ── HEADER ── */
+    .gloss-header {
+      max-width: 760px; margin: 0 auto; padding: 5rem 4rem 3rem;
+    }
+    .article-section-label {
+      display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;
+    }
+    .article-section-name {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.58rem;
+      letter-spacing: 0.25em; text-transform: uppercase; color: var(--cyan);
+    }
+    .article-section-line { flex: 1; height: 1px; background: var(--border); }
+    .article-edition {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.55rem;
+      letter-spacing: 0.15em; color: var(--muted);
+    }
+    .gloss-title {
+      font-family: 'DM Serif Text', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.1; color: var(--paper); margin-bottom: 1.25rem;
+    }
+    .gloss-dek {
+      font-size: 1.05rem; color: rgba(245,240,232,0.65);
+      line-height: 1.65; font-style: italic; max-width: 56ch; margin-bottom: 2rem;
+    }
+    .gloss-meta {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.55rem;
+      letter-spacing: 0.15em; color: var(--muted); margin-bottom: 0.4rem;
+    }
+
+    /* ── BLOQUE EDITORIAL OMS ── */
+    .editorial-block {
+      max-width: 760px; margin: 0 auto 0; padding: 0 4rem 3.5rem;
+    }
+    .editorial-inner {
+      border-left: 2px solid var(--gold);
+      padding: 1.5rem 1.75rem;
+      background: rgba(201,168,76,0.04);
+    }
+    .editorial-kicker {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.55rem;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .editorial-body {
+      font-size: 0.95rem; color: rgba(245,240,232,0.75);
+      line-height: 1.7;
+    }
+    .editorial-body p { margin-bottom: 0.9rem; }
+    .editorial-body p:last-child { margin-bottom: 0; }
+    .editorial-body strong { color: var(--paper-warm); }
+    .editorial-disclaimer {
+      margin-top: 1rem;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.5rem;
+      letter-spacing: 0.08em; color: var(--muted); line-height: 1.6;
+      border-top: 1px solid rgba(201,168,76,0.15); padding-top: 0.75rem;
+    }
+
+    /* ── FILTRO ── */
+    .gloss-controls {
+      max-width: 900px; margin: 0 auto; padding: 0 4rem 2rem;
+    }
+    .gloss-filter-bar {
+      display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;
+    }
+    .filter-btn {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.55rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      padding: 0.4rem 0.85rem; border: 1px solid var(--border);
+      background: transparent; color: var(--muted);
+      cursor: pointer; transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      border-color: var(--gold); color: var(--gold);
+      background: rgba(201,168,76,0.06);
+    }
+    .filter-btn.all.active { border-color: var(--cyan); color: var(--cyan); background: rgba(78,205,196,0.06); }
+    .filter-btn.oncologia.active  { border-color: var(--orange); color: var(--orange); background: rgba(249,115,22,0.06); }
+    .filter-btn.metabolicas.active{ border-color: var(--cyan);   color: var(--cyan);   background: rgba(78,205,196,0.06); }
+    .filter-btn.neurologicas.active{ border-color: var(--gold-light); color: var(--gold-light); background: rgba(232,201,122,0.06); }
+    .filter-btn.geneticas.active  { border-color: var(--paper);  color: var(--paper);  background: rgba(245,240,232,0.05); }
+    .filter-btn.regenerativa.active{ border-color: var(--cyan-dim); color: var(--cyan-dim); background: rgba(42,157,149,0.06); }
+    .filter-btn.vacunas.active    { border-color: var(--muted);  color: var(--paper-warm); background: rgba(107,107,122,0.08); }
+
+    /* ── SEARCH ── */
+    .gloss-search-wrap {
+      position: relative; margin-bottom: 0.5rem;
+    }
+    .gloss-search {
+      width: 100%; padding: 0.75rem 1rem 0.75rem 2.5rem;
+      background: var(--ink-mid); border: 1px solid var(--border);
+      color: var(--paper); font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem; letter-spacing: 0.06em;
+      outline: none; transition: border-color 0.2s;
+    }
+    .gloss-search:focus { border-color: var(--gold); }
+    .gloss-search::placeholder { color: var(--muted); }
+    .gloss-search-icon {
+      position: absolute; left: 0.85rem; top: 50%; transform: translateY(-50%);
+      color: var(--muted); font-size: 0.8rem; pointer-events: none;
+    }
+    .gloss-count {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.52rem;
+      letter-spacing: 0.12em; color: var(--muted); margin-top: 0.5rem;
+    }
+
+    /* ── BODY / SECCIONES ── */
+    .gloss-body {
+      max-width: 900px; margin: 0 auto; padding: 0 4rem 8rem;
+    }
+    .gloss-section { margin-bottom: 4rem; }
+    .gloss-section-header {
+      display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;
+      padding-bottom: 0.75rem; border-bottom: 1px solid var(--border);
+    }
+    .gloss-section-tag {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.55rem;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      padding: 0.3rem 0.7rem; border: 1px solid;
+    }
+    .gloss-section-tag.oncologia   { color: var(--orange);    border-color: rgba(249,115,22,0.4); }
+    .gloss-section-tag.metabolicas { color: var(--cyan);      border-color: rgba(78,205,196,0.4); }
+    .gloss-section-tag.neurologicas{ color: var(--gold-light);border-color: rgba(232,201,122,0.35); }
+    .gloss-section-tag.geneticas   { color: var(--paper);     border-color: rgba(245,240,232,0.2); }
+    .gloss-section-tag.regenerativa{ color: var(--cyan-dim);  border-color: rgba(42,157,149,0.4); }
+    .gloss-section-tag.vacunas     { color: var(--muted);     border-color: rgba(107,107,122,0.35); }
+
+    .gloss-section-count {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.5rem;
+      letter-spacing: 0.12em; color: var(--muted);
+    }
+
+    /* ── ENTRIES ── */
+    .gloss-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--border);
+    }
+    .gloss-entry {
+      background: var(--ink-mid); padding: 1.5rem 1.75rem;
+      transition: background 0.15s;
+    }
+    .gloss-entry:hover { background: var(--ink-soft); }
+    .gloss-entry.full { grid-column: 1 / -1; }
+
+    .gloss-entry-sigla {
+      font-family: 'Space Grotesk', sans-serif; font-size: 1.05rem;
+      font-weight: 700; color: var(--paper); letter-spacing: 0.02em;
+      margin-bottom: 0.15rem;
+    }
+    .gloss-entry-nombre {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.55rem;
+      letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.85rem;
+      text-transform: uppercase;
+    }
+    .gloss-entry-desc {
+      font-size: 0.9rem; color: rgba(245,240,232,0.72);
+      line-height: 1.55;
+    }
+    .gloss-entry-desc strong { color: var(--paper-warm); }
+    .gloss-entry-note {
+      margin-top: 0.65rem;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.52rem;
+      letter-spacing: 0.08em; color: rgba(107,107,122,0.7);
+      border-top: 1px solid rgba(201,168,76,0.12); padding-top: 0.5rem;
+      line-height: 1.5;
+    }
+
+    /* Badge de estado */
+    .estado-badge {
+      display: inline-block; margin-bottom: 0.6rem;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.46rem;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      padding: 0.2rem 0.55rem; border: 1px solid;
+    }
+    .estado-badge.aprobado  { color: var(--cyan);   border-color: rgba(78,205,196,0.4);  background: rgba(78,205,196,0.06); }
+    .estado-badge.fase3     { color: var(--gold);   border-color: rgba(201,168,76,0.4);  background: rgba(201,168,76,0.05); }
+    .estado-badge.fase2     { color: var(--orange); border-color: rgba(249,115,22,0.35); background: rgba(249,115,22,0.04); }
+    .estado-badge.breakthrough{ color: var(--paper); border-color: rgba(245,240,232,0.2); background: rgba(245,240,232,0.04); }
+
+    /* Mensaje vacío */
+    .gloss-empty {
+      padding: 3rem 0; text-align: center;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.18em; color: var(--muted);
+    }
+
+    /* Nota de fuentes */
+    .source-note {
+      border: 1px solid rgba(78,205,196,0.15);
+      padding: 1.25rem 1.75rem; margin-bottom: 3rem;
+      background: rgba(78,205,196,0.02);
+      font-family: 'JetBrains Mono', monospace; font-size: 0.56rem;
+      letter-spacing: 0.07em; color: var(--muted); line-height: 1.7;
+    }
+    .source-note strong { color: var(--paper-warm); }
+
+    @media (max-width: 768px) {
+      .gloss-header, .editorial-block, .gloss-controls, .gloss-body {
+        padding-left: 1.5rem; padding-right: 1.5rem;
+      }
+      .gloss-grid { grid-template-columns: 1fr; }
+      .gloss-entry.full { grid-column: 1; }
+      .filter-btn { font-size: 0.5rem; padding: 0.35rem 0.65rem; }
+    }
+
+    /* Footer: clases que no vienen en styles.css */
+    .footer-kicker{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:0.55rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--cyan);margin-bottom:0.85rem;}
+    .footer-desc{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:0.55rem;letter-spacing:0.04em;text-transform:none;color:rgba(107,107,122,0.75);line-height:1.7;max-width:32ch;margin-top:0.85rem;}
+
+    /* ── NAV: refuerzo local (no depender solo de styles.css) ── */
+    .site-nav { position: sticky; top: 0; z-index: 100; background: rgba(13,13,15,0.95); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); }
+    .site-nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; height: 56px; display: flex; align-items: center; gap: 1.5rem; }
+    .site-nav-logo { font-family: 'Audiowide', sans-serif; font-size: 1.1rem; color: var(--paper); text-decoration: none; letter-spacing: 0.08em; flex-shrink: 0; }
+    .site-nav-sep { width: 1px; height: 20px; background: var(--border); flex-shrink: 0; }
+    .site-nav-articles { display: flex; gap: 1.5rem; margin-left: auto; }
+    .site-nav-link { font-family: 'JetBrains Mono', monospace; font-size: 0.52rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; white-space: nowrap; }
+    .site-nav-link:hover, .site-nav-link.active { color: var(--cyan); }
+
+    .site-nav-hamburger {
+      display: none;
+      margin-left: auto;
+      width: 32px; height: 32px;
+      background: none; border: none; cursor: pointer;
+      align-items: center; justify-content: center;
+      color: var(--paper); padding: 0; flex-shrink: 0;
+    }
+    .site-nav-hamburger svg { width: 20px; height: 20px; }
+
+    .site-nav-drawer {
+      display: none;
+      flex-direction: column;
+      position: absolute; top: 56px; left: 0; right: 0;
+      background: rgba(13,13,15,0.98);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .site-nav-drawer.open { max-height: 480px; overflow-y: auto; }
+    .drawer-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      text-decoration: none;
+      padding: 0.9rem 1.5rem;
+      border-bottom: 1px solid rgba(245,240,232,0.06);
+    }
+    .drawer-link:hover, .drawer-link.active { color: var(--cyan); }
+
+    @media (max-width: 860px) {
+      .site-nav-articles { display: none; }
+      .site-nav-hamburger { display: flex; }
+      .site-nav-drawer { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════ NAV ══════════ -->
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../" class="site-nav-logo">MM</a>
+      <div class="site-nav-sep"></div>
+      <div class="site-nav-articles">
+        <a href="../articulos.html" class="site-nav-link">Artículos</a>
+        <a href="3i-atlas.html" class="site-nav-link">3I/ATLAS</a>
+        <a href="uap.html" class="site-nav-link">UAP WATCH</a>
+        <a href="pursue-releases.html" class="site-nav-link">PURSUE</a>
+        <a href="voyager-1.html" class="site-nav-link">VOYAGER 1</a>
+        <a href="hitos-medicos.html" class="site-nav-link active">HITOS MÉDICOS</a>
+        <a href="../glosario.html" class="site-nav-link"><span class="nav-dot"></span>&nbsp;Glosario</a>
+      </div>
+      <button class="site-nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navDrawer">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+          <line x1="2" y1="5" x2="18" y2="5"/>
+          <line x1="2" y1="10" x2="18" y2="10"/>
+          <line x1="2" y1="15" x2="18" y2="15"/>
+        </svg>
+      </button>
+    </div>
+    <div class="site-nav-drawer" id="navDrawer">
+      <a href="../articulos.html" class="drawer-link">Artículos</a>
+      <a href="3i-atlas.html" class="drawer-link">3I/ATLAS</a>
+      <a href="uap.html" class="drawer-link">UAP WATCH</a>
+      <a href="pursue-releases.html" class="drawer-link">PURSUE</a>
+      <a href="voyager-1.html" class="drawer-link">VOYAGER 1</a>
+      <a href="hitos-medicos.html" class="drawer-link active">HITOS MÉDICOS</a>
+      <a href="../glosario.html" class="drawer-link"><span class="nav-dot"></span>&nbsp;Glosario</a>
+    </div>
+  </nav>
+
+  <!-- CABECERA -->
+  <div class="gloss-header">
+    <div class="article-section-label">
+      <span class="article-section-name">// Ciencia · Medicina</span>
+      <span class="article-section-line"></span>
+      <span class="article-edition">Registro en curso · 2024–2026</span>
+    </div>
+    <h1 class="gloss-title">Hitos Médicos</h1>
+    <p class="gloss-dek">Un registro vivo de curas, tratamientos y avances documentados en la ciencia médica contemporánea. Sin anuncios de prensa. Solo hitos con evidencia.</p>
+    <p class="gloss-meta">La Redacción · Mundo Maravilloso</p>
+    <p class="gloss-meta">Actualizado: junio 2026 · Fuentes: FDA, EMA, ensayos clínicos publicados</p>
+  </div>
+
+  <!-- BLOQUE EDITORIAL: TEORÍA OMS -->
+  <div class="editorial-block">
+    <div class="editorial-inner">
+      <p class="editorial-kicker">// El Observador · Una coincidencia que vale la pena rastrear</p>
+      <div class="editorial-body">
+        <p>En enero de 2025, la administración Trump firmó la orden ejecutiva de retirada de Estados Unidos de la Organización Mundial de la Salud. El argumento oficial fue de control político y financiero: EE.UU. aportaba el 15–18% del presupuesto de la OMS y consideraba que su influencia era desproporcionada frente al peso real de la organización en las decisiones sanitarias globales.</p>
+        <p>Lo que vino después no figura en los comunicados de prensa de esa decisión. En los doce meses siguientes al retiro formal, la FDA aprobó o otorgó designaciones de avance a un número inusualmente alto de terapias que llevaban años estancadas: la primera edición genética CRISPR para uso clínico (<strong>Casgevy</strong>), el primer anticuerpo que ralentiza el Alzheimer de forma medible (<strong>donanemab</strong>), un CAR-T alogénico con tasa de respuesta del 90% en leucemia refractaria (<strong>sofi-cel</strong>), y la primera independencia de insulina lograda con terapia celular en diabetes tipo 1.</p>
+        <p>Circula una teoría —todavía sin evidencia causal directa— que plantea que la OMS actuaba, consciente o no, como freno regulatorio coordinado: un marco global que ralentizaba aprobaciones locales en favor de procesos armonizados más lentos. Al desacoplarse EE.UU. de ese sistema, la FDA habría recobrado agilidad para actuar de forma unilateral. No es una teoría conspirativa: es una hipótesis regulatoria. Y la correlación temporal, al menos, existe.</p>
+        <p>Este registro no toma partido sobre la salida de la OMS ni sobre sus consecuencias globales, que son complejas y en muchos aspectos negativas. Lo que sí hace es documentar los hitos tal como son: reales, verificables, y concentrados en un período de tiempo llamativo.</p>
+        <div class="editorial-disclaimer">
+          ⚠ Esta sección es de análisis editorial especulativo. Las correlaciones temporales descritas no establecen causalidad. Todos los hitos médicos listados más abajo están verificados con fuentes primarias (FDA, EMA, publicaciones clínicas peer-reviewed).
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTROLES DE FILTRO -->
+  <div class="gloss-controls">
+    <div class="gloss-filter-bar">
+      <button class="filter-btn all active" data-cat="all">Todos</button>
+      <button class="filter-btn oncologia"   data-cat="oncologia">Oncología</button>
+      <button class="filter-btn metabolicas" data-cat="metabolicas">Metabólicas</button>
+      <button class="filter-btn neurologicas"data-cat="neurologicas">Neurológicas</button>
+      <button class="filter-btn geneticas"   data-cat="geneticas">Genéticas / Raras</button>
+      <button class="filter-btn regenerativa"data-cat="regenerativa">Medicina Regenerativa</button>
+      <button class="filter-btn vacunas"     data-cat="vacunas">Vacunas</button>
+    </div>
+    <div class="gloss-search-wrap">
+      <span class="gloss-search-icon">⌕</span>
+      <input class="gloss-search" id="hitos-search" type="search" placeholder="Buscar enfermedad, terapia o fármaco…" autocomplete="off">
+    </div>
+    <p class="gloss-count" id="hitos-count"></p>
+  </div>
+
+  <!-- CUERPO -->
+  <div class="gloss-body">
+
+    <div class="source-note">
+      <strong>Sobre este registro:</strong> Solo se incluyen terapias con aprobación regulatoria formal (FDA/EMA) o con datos de Fase II/III publicados en revistas revisadas por pares. El estado de cada entrada refleja la situación a junio de 2026. Este es un documento vivo: se actualiza con cada hito documentado.<br>
+      Fuentes: FDA Drug Approvals, EMA Committee Opinions, ClinicalTrials.gov, NEJM, Lancet, Nature Medicine.
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         SECCIÓN: ONCOLOGÍA
+    ══════════════════════════════════════════ -->
+    <section class="gloss-section" data-section="oncologia">
+      <div class="gloss-section-header">
+        <span class="gloss-section-tag oncologia">Oncología</span>
+        <span class="gloss-section-count">6 entradas</span>
+      </div>
+      <div class="gloss-grid">
+
+        <div class="gloss-entry" data-cat="oncologia" data-terms="car-t leucemia linfoma celulas t crispr sofi-cel wu-cart-007 sangre">
+          <span class="estado-badge breakthrough">Breakthrough FDA · Ene 2026</span>
+          <p class="gloss-entry-sigla">sofi-cel (WU-CART-007)</p>
+          <p class="gloss-entry-nombre">CAR-T Alogénico · Leucemia y Linfoma T Refractarios</p>
+          <p class="gloss-entry-desc">El primer CAR-T "off-the-shelf" (sin necesidad de células del propio paciente) editado con CRISPR para linfomas y leucemias T refractarios. En Fase I/II con 11 pacientes, logró una <strong>tasa de respuesta global del 90.9% y remisión completa en el 72.7%</strong> de los casos. La FDA otorgó Breakthrough Therapy Designation en enero de 2026. Acceso inmediato a cualquier paciente, sin las semanas de espera que requieren los CAR-T autólogos.</p>
+          <p class="gloss-entry-note">Estado: Fase I/II · Institución: Washington University · FDA Breakthrough: ene 2026 · Ensayo: NCT05728398</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="oncologia" data-terms="mosunetuzumab epcoritamab glofitamab linfoma B biespecifico anticuerpo CD20 CD3">
+          <span class="estado-badge aprobado">Aprobado FDA/EMA · 2022–2024</span>
+          <p class="gloss-entry-sigla">Anticuerpos Biespecíficos CD3×CD20</p>
+          <p class="gloss-entry-nombre">Mosunetuzumab · Epcoritamab · Glofitamab · Linfoma B Refractario</p>
+          <p class="gloss-entry-desc">Tres anticuerpos que actúan como puente entre las células T del sistema inmune y las células cancerosas B, forzando al cuerpo a destruir su propio tumor. En ensayos de Fase II y III para linfoma B difuso de células grandes refractario lograron <strong>tasas de respuesta completa de alrededor del 60%</strong> en pacientes sin opciones disponibles. Los tres han recibido aprobación o autorización acelerada.</p>
+          <p class="gloss-entry-note">Aprobados: mosunetuzumab (EMA 2022), glofitamab (FDA 2023), epcoritamab (FDA 2023) · Objetivo: CD3-CD20 · Tipo: anticuerpo biespecífico</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="oncologia" data-terms="intismeran vacuna mrna melanoma pembrolizumab keytruda neoantigeno recaida">
+          <span class="estado-badge fase3">Fase III · Datos publicados 2023</span>
+          <p class="gloss-entry-sigla">Intismeran + Pembrolizumab</p>
+          <p class="gloss-entry-nombre">Vacuna Neoantigénica mRNA · Melanoma Resecado</p>
+          <p class="gloss-entry-desc">La primera vacuna personalizada contra el cáncer en mostrar resultados clínicos sólidos. Combina una vacuna de ARN mensajero diseñada con los neoantigenos del tumor individual del paciente, con el inmunoterapéutico pembrolizumab. El ensayo KEYNOTE-942 demostró una <strong>reducción del 49% en el riesgo de recaída o muerte</strong> frente a pembrolizumab solo en melanoma de alto riesgo. Cada vacuna se fabrica a medida para cada paciente.</p>
+          <p class="gloss-entry-note">Ensayo: KEYNOTE-942 · Datos: NEJM 2023 · Desarrolladores: Moderna / MSD · Estado: revisión FDA acelerada en curso</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="oncologia" data-terms="encorafenib cetuximab colorrectal BRAF V600E colon cancer metastasico">
+          <span class="estado-badge aprobado">Aprobado FDA · 2023</span>
+          <p class="gloss-entry-sigla">Encorafenib + Cetuximab</p>
+          <p class="gloss-entry-nombre">Terapia Dirigida · Cáncer Colorrectal Metastásico BRAF V600E</p>
+          <p class="gloss-entry-desc">Para los pacientes con cáncer colorrectal metastásico que portan la mutación BRAF V600E —aproximadamente el 10% de los casos—, esta combinación (inhibidor de BRAF más anticuerpo anti-EGFR) representa un salto medible. El ensayo BREAKWATER reportó una <strong>tasa de respuesta objetiva del 60.9%</strong>, frente al 40% de la quimioterapia estándar. Se trató de la primera terapia dirigida aprobada específicamente para esta mutación en colorrectal.</p>
+          <p class="gloss-entry-note">Ensayo: BREAKWATER · Aprobación FDA: 2023 · Mutación objetivo: BRAF V600E · Prevalencia: ~10% de CRC metastásico</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="oncologia" data-terms="sotorasib adagrasib KRAS G12C pulmón colorrectal páncreas kras mutacion">
+          <span class="estado-badge aprobado">Aprobado FDA · 2021–2023</span>
+          <p class="gloss-entry-sigla">Inhibidores KRAS G12C</p>
+          <p class="gloss-entry-nombre">Sotorasib · Adagrasib · Cáncer de Pulmón, Colon y Páncreas</p>
+          <p class="gloss-entry-desc">La mutación KRAS fue considerada durante décadas "indrogable" —demasiado lisa y sin cavidades para que un fármaco se acoplara. Sotorasib y adagrasib rompieron ese paradigma. Bloquean específicamente la variante G12C de KRAS, presente en el 13% del cáncer de pulmón no microcítico, el 4% del colorrectal y el 1% del pancreático. Las tasas de respuesta en segunda línea son del <strong>37–45%</strong>, con un perfil de toxicidad muy inferior al de la quimioterapia convencional.</p>
+          <p class="gloss-entry-note">Aprobados: sotorasib (FDA 2021), adagrasib (FDA 2022) · Ensayos: CodeBreaK 200, KRYSTAL-1 · Objetivo: KRAS G12C</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="oncologia" data-terms="tecelra afami-cel synovial sarcoma sarcoma sinovial tumor raro t cell">
+          <span class="estado-badge aprobado">Aprobado FDA · Ago 2024</span>
+          <p class="gloss-entry-sigla">Tecelra (afami-cel)</p>
+          <p class="gloss-entry-nombre">Terapia de Células T · Sarcoma Sinovial Refractario</p>
+          <p class="gloss-entry-desc">Primera terapia de células T con receptor de antígeno (TCR) aprobada por la FDA para un tumor sólido. El sarcoma sinovial es un cáncer raro de tejidos blandos con muy pocas opciones en enfermedad avanzada. Tecelra usa células T del paciente reprogramadas para reconocer la proteína MAGE-A4, presente en este tumor. En el ensayo pivotal logró una <strong>tasa de respuesta del 43%</strong> en pacientes sin opciones disponibles, incluyendo remisiones duraderas.</p>
+          <p class="gloss-entry-note">Aprobación FDA: agosto 2024 · Tipo: TCR-T · Objetivo: MAGE-A4 · Desarrollador: Adaptimmune · Ensayo: SPEARHEAD-1</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SECCIÓN: METABÓLICAS
+    ══════════════════════════════════════════ -->
+    <section class="gloss-section" data-section="metabolicas">
+      <div class="gloss-section-header">
+        <span class="gloss-section-tag metabolicas">Metabólicas</span>
+        <span class="gloss-section-count">3 entradas</span>
+      </div>
+      <div class="gloss-grid">
+
+        <div class="gloss-entry" data-cat="metabolicas" data-terms="tirzepatida mounjaro zepbound diabetes tipo 2 obesidad GLP-1 GIP insulina peso">
+          <span class="estado-badge aprobado">Aprobado FDA · 2022–2023</span>
+          <p class="gloss-entry-sigla">Tirzepatida</p>
+          <p class="gloss-entry-nombre">Agonista Dual GLP-1/GIP · Diabetes Tipo 2 y Obesidad</p>
+          <p class="gloss-entry-desc">El fármaco metabólico más eficaz aprobado hasta la fecha. A diferencia de los agonistas GLP-1 clásicos (como semaglutida), tirzepatida activa dos receptores simultáneamente —GLP-1 y GIP— amplificando el control glucémico y la reducción de peso. En los ensayos SURPASS, redujo la HbA1c hasta <strong>2.4 puntos porcentuales</strong> y el peso corporal hasta <strong>11 kg de promedio</strong>. En el programa SURMOUNT para obesidad pura, llegó a reducciones del 22% del peso corporal, cifras históricas para un fármaco no quirúrgico.</p>
+          <p class="gloss-entry-note">Aprobaciones: Mounjaro (diabetes, FDA 2022) · Zepbound (obesidad, FDA 2023) · Ensayos: SURPASS-1 a 6, SURMOUNT-1 a 4</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="metabolicas" data-terms="VX-880 células madre páncreas islotes diabetes tipo 1 insulina independencia vértex">
+          <span class="estado-badge fase2">Fase I/II · Resultados 2024</span>
+          <p class="gloss-entry-sigla">VX-880</p>
+          <p class="gloss-entry-nombre">Terapia Celular · Diabetes Tipo 1 · Independencia de Insulina</p>
+          <p class="gloss-entry-desc">Las personas con diabetes tipo 1 no producen insulina porque su sistema inmune destruyó las células beta del páncreas. VX-880 de Vertex Pharmaceuticals propone reemplazar esas células usando células madre pluripotentes diferenciadas en islotes pancreáticos funcionales. En el ensayo de Fase I/II, <strong>la mitad de los participantes logró independencia completa de insulina</strong> durante el seguimiento. El tratamiento requiere inmunosupresión para evitar rechazo, lo que limita su aplicación inicial a los casos más graves.</p>
+          <p class="gloss-entry-note">Desarrollador: Vertex Pharmaceuticals · Ensayo: NCT04786262 · Tipo: terapia celular · Limitación: inmunosupresión intensiva</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="metabolicas" data-terms="semaglutida ozempic wegovy VRS obesidad cardiovascular corazon">
+          <span class="estado-badge aprobado">Aprobado FDA · 2021–2023</span>
+          <p class="gloss-entry-sigla">Semaglutida</p>
+          <p class="gloss-entry-nombre">Agonista GLP-1 · Diabetes, Obesidad y Protección Cardiovascular</p>
+          <p class="gloss-entry-desc">La molécula que redefinió el tratamiento de la obesidad. Disponible en versión inyectable (Ozempic/Wegovy) y oral (Rybelsus), semaglutida demostró reducciones de peso de hasta el 15% del peso corporal. Más allá del metabolismo, el ensayo SELECT (2023) demostró que reduce los eventos cardiovasculares mayores en un <strong>20% en personas obesas sin diabetes</strong>, lo que amplió su indicación y la posicionó como posible pilar en prevención cardiometabólica. Su popularidad generó desabastecimiento global.</p>
+          <p class="gloss-entry-note">Ensayo cardiovascular: SELECT (2023) · Aprobaciones: Ozempic (FDA 2017), Wegovy (FDA 2021) · Desarrollador: Novo Nordisk</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SECCIÓN: NEUROLÓGICAS
+    ══════════════════════════════════════════ -->
+    <section class="gloss-section" data-section="neurologicas">
+      <div class="gloss-section-header">
+        <span class="gloss-section-tag neurologicas">Neurológicas</span>
+        <span class="gloss-section-count">3 entradas</span>
+      </div>
+      <div class="gloss-grid">
+
+        <div class="gloss-entry" data-cat="neurologicas" data-terms="lecanemab leqembi alzheimer amiloide anticuerpo demencia cognitivo">
+          <span class="estado-badge aprobado">Aprobado FDA · Jul 2023</span>
+          <p class="gloss-entry-sigla">Lecanemab (Leqembi)</p>
+          <p class="gloss-entry-nombre">Anticuerpo Anti-Amiloide · Alzheimer Temprano</p>
+          <p class="gloss-entry-desc">El primero en su clase en lograr una reducción estadísticamente significativa del declive cognitivo en Alzheimer en etapa temprana. Actúa eliminando las placas de beta-amiloide del cerebro —una de las marcas patológicas de la enfermedad— mediante infusiones intravenosas quincenales. El ensayo CLARITY AD mostró una <strong>ralentización del declive cognitivo del 27%</strong> en 18 meses. No revierte el daño ya producido, pero es el primer fármaco que actúa sobre el proceso biológico subyacente con resultado medible. La EMA recomendó su aprobación en 2024.</p>
+          <p class="gloss-entry-note">Aprobación FDA: julio 2023 (acelerada) · EMA: recomendación 2024 · Ensayo: CLARITY AD · Desarrollador: Eisai / Biogen · Ensayo: NCT03887455</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="neurologicas" data-terms="donanemab alzheimer amiloide tau lilly demencia deterioro cognitivo">
+          <span class="estado-badge aprobado">Aprobado FDA · Jul 2024 · EMA · 2025</span>
+          <p class="gloss-entry-sigla">Donanemab (Kisunla)</p>
+          <p class="gloss-entry-nombre">Anticuerpo Anti-Amiloide · Alzheimer Temprano</p>
+          <p class="gloss-entry-desc">La segunda aprobación del ciclo anti-amiloide, y por ahora la más efectiva de las dos. El ensayo TRAILBLAZER-ALZ 2 —el mayor ensayo de Alzheimer en décadas— demostró una <strong>ralentización del declive cognitivo de hasta el 35% en 18 meses</strong> en pacientes en etapa leve con niveles bajos de tau. Una vez que las placas de amiloide se eliminan del cerebro, el tratamiento puede detenerse, lo que lo diferencia de lecanemab. La EMA lo aprobó en 2025.</p>
+          <p class="gloss-entry-note">Aprobación FDA: julio 2024 · EMA: 2025 · Ensayo: TRAILBLAZER-ALZ 2 · Desarrollador: Eli Lilly · Publicado: JAMA 2023</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="neurologicas" data-terms="prasinezumab parkinson alfa-sinucleina anticuerpo PADOVA motor neurodegenracion">
+          <span class="estado-badge fase3">Fase III en planificación · 2024</span>
+          <p class="gloss-entry-sigla">Prasinezumab</p>
+          <p class="gloss-entry-nombre">Anticuerpo Anti-α-Sinucleína · Parkinson de Progresión Rápida</p>
+          <p class="gloss-entry-desc">El Parkinson se caracteriza por la acumulación de alfa-sinucleína en neuronas dopaminérgicas. Prasinezumab es el primer anticuerpo diseñado para eliminarla que muestra señal clínica positiva. El ensayo PADOVA (Fase IIb) no alcanzó su objetivo primario, pero en el subgrupo de pacientes con progresión rápida mostró una <strong>tendencia de ralentización motora significativa (HR=0.84)</strong>. Roche planea una Fase III focalizada en este subgrupo. Es la candidatura más avanzada para una enfermedad que hoy no tiene modificadores de curso disponibles.</p>
+          <p class="gloss-entry-note">Ensayo: PADOVA (Fase IIb) · Resultado: p=0.0657, HR=0.84 en progresores rápidos · Desarrollador: Roche / AC Immune · Fase III: en planificación</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SECCIÓN: GENÉTICAS / ENFERMEDADES RARAS
+    ══════════════════════════════════════════ -->
+    <section class="gloss-section" data-section="geneticas">
+      <div class="gloss-section-header">
+        <span class="gloss-section-tag geneticas">Genéticas / Enfermedades Raras</span>
+        <span class="gloss-section-count">5 entradas</span>
+      </div>
+      <div class="gloss-grid">
+
+        <div class="gloss-entry full" data-cat="geneticas" data-terms="casgevy exagamglogene crispr anemia falciforme talasemia edicion genetica hemoglobina globina cura">
+          <span class="estado-badge aprobado">Aprobado FDA + EMA · Dic 2023</span>
+          <p class="gloss-entry-sigla">Casgevy (exagamglogene autotemcel)</p>
+          <p class="gloss-entry-nombre">Primera Terapia de Edición CRISPR Aprobada · Anemia Falciforme y Talasemia β</p>
+          <p class="gloss-entry-desc">El hito genético más significativo de la última década. Casgevy es el primer medicamento basado en edición genética CRISPR-Cas9 aprobado para uso clínico en el mundo. Funciona extrayendo las células madre de la sangre del paciente, editando el gen BCL11A para reactivar la hemoglobina fetal (que normalmente se apaga tras el nacimiento) y reintroduciéndolas. El resultado: las células producen hemoglobina funcional sin necesidad de la defectuosa. En el ensayo pivotal, <strong>29 de 29 pacientes con anemia falciforme quedaron libres de crisis vasooclusivas durante al menos dos años</strong>. En talasemia β, el 93% logró independencia de transfusiones. Es un tratamiento de una sola aplicación, con potencial curativo. El costo actual (alrededor de 2 millones de dólares) es el principal obstáculo para su distribución global.</p>
+          <p class="gloss-entry-note">Aprobaciones: FDA dic 2023 · EMA dic 2023 · Tecnología: CRISPR-Cas9 · Desarrollador: Vertex Pharmaceuticals / CRISPR Therapeutics · Ensayos: CLIMB-SCD-121, CLIMB-THAL-111</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="geneticas" data-terms="tofersen ELA ALS SOD1 antisense oligonucleotide motor neurona amiotrófica lateral">
+          <span class="estado-badge aprobado">Aprobado FDA · Abr 2023</span>
+          <p class="gloss-entry-sigla">Tofersen (Qalsody)</p>
+          <p class="gloss-entry-nombre">Oligonucleótido Antisentido · ELA con Mutación SOD1</p>
+          <p class="gloss-entry-desc">La ELA (esclerosis lateral amiotrófica) es uniformemente fatal y hasta hace poco no tenía modificadores de curso. Tofersen cambia eso para un subgrupo específico: los pacientes con mutación en el gen SOD1 (alrededor del 2% de todos los casos). Es un oligonucleótido antisentido que reduce la producción de la proteína SOD1 mutada, causante del daño neuronal. Los ensayos mostraron reducción de biomarcadores de daño neuronal y <strong>estabilización o enlentecimiento de la progresión motora</strong> en pacientes en estadios tempranos. La FDA lo aprobó bajo un mecanismo acelerado por su efecto sobre biomarcadores validados.</p>
+          <p class="gloss-entry-note">Aprobación FDA: abril 2023 (acelerada por biomarcador) · Objetivo: SOD1 · Tipo: ASO · Desarrollador: Biogen · Administración: intratecal</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="geneticas" data-terms="nusinersen spinraza AME atrofia muscular espinal SMN1 niños bebe supervivencia">
+          <span class="estado-badge aprobado">Aprobado FDA · 2016 · Pionero ASO</span>
+          <p class="gloss-entry-sigla">Nusinersen (Spinraza)</p>
+          <p class="gloss-entry-nombre">Oligonucleótido Antisentido · Atrofia Muscular Espinal (AME)</p>
+          <p class="gloss-entry-desc">La AME tipo 1 —la forma más severa— mataba a la mayoría de los niños antes de los dos años. Nusinersen lo cambió. Actuando directamente sobre el ARN mensajero para aumentar la producción de la proteína SMN, convirtió una sentencia de muerte en una enfermedad manejable. <strong>Los bebés tratados al nacer o en los primeros meses de vida alcanzan hitos motores que antes eran impensables</strong>: sostener la cabeza, sentarse, incluso caminar. Fue el primer ASO aprobado para una enfermedad hereditaria y abrió la puerta para toda la generación de terapias génicas actuales.</p>
+          <p class="gloss-entry-note">Aprobación FDA: diciembre 2016 · Objetivo: pre-mRNA SMN2 · Tipo: ASO · Desarrollador: Biogen / Ionis · Administración: intratecal cada 4 meses</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="geneticas" data-terms="beqvez fidanacogene elaparvovec hemofilia B factor IX gen terapia viral AAV">
+          <span class="estado-badge aprobado">Aprobado FDA · Jun 2024</span>
+          <p class="gloss-entry-sigla">Beqvez (fidanacogene elaparvovec)</p>
+          <p class="gloss-entry-nombre">Terapia Génica · Hemofilia B en Adultos</p>
+          <p class="gloss-entry-desc">La hemofilia B es causada por la deficiencia del factor IX de coagulación. Beqvez es una terapia génica que utiliza un vector viral (AAV) para introducir una copia funcional del gen del factor IX directamente en las células del hígado. Una sola infusión puede mantener niveles de factor IX cercanos a la normalidad durante años, eliminando la necesidad de las infusiones profilácticas semanales o quincenales que caracterizan el tratamiento actual. En el ensayo pivotal, <strong>el 98.4% de los participantes pudo suspender la profilaxis</strong> con una reducción media del 92% en episodios de sangrado.</p>
+          <p class="gloss-entry-note">Aprobación FDA: junio 2024 · Tipo: terapia génica (AAV · Padua) · Desarrollador: Pfizer · Ensayo: BENEGENE-2 · Una sola administración</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="geneticas" data-terms="ryoncil omidubicel GVHD enfermedad injerto huésped pediátrica corticoides esteroide">
+          <span class="estado-badge aprobado">Aprobado FDA · May 2023</span>
+          <p class="gloss-entry-sigla">Ryoncil (remestemcel-L)</p>
+          <p class="gloss-entry-nombre">Terapia Celular Mesenquimal · Enfermedad Injerto Contra Huésped Pediátrica</p>
+          <p class="gloss-entry-desc">La enfermedad injerto contra huésped (GVHD) aguda resistente a esteroides tiene una mortalidad del 80% en niños. Ryoncil fue el primer tratamiento celular aprobado para esta indicación en pacientes pediátricos. Usa células madre mesenquimales derivadas de médula ósea de donante para suprimir la respuesta inmune descontrolada. En el ensayo pivotal, mostró una <strong>tasa de respuesta global del 70%</strong>, con más de la mitad de los respondedores vivos a los 12 meses. Primer fármaco aprobado por la FDA para GVHD pediátrico refractario.</p>
+          <p class="gloss-entry-note">Aprobación FDA: mayo 2023 · Indicación: GVHD aguda cortico-refractaria, pediátrica · Tipo: células madre mesenquimales alogénicas · Desarrollador: Mesoblast</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SECCIÓN: MEDICINA REGENERATIVA
+    ══════════════════════════════════════════ -->
+    <section class="gloss-section" data-section="regenerativa">
+      <div class="gloss-section-header">
+        <span class="gloss-section-tag regenerativa">Medicina Regenerativa</span>
+        <span class="gloss-section-count">3 entradas</span>
+      </div>
+      <div class="gloss-grid">
+
+        <div class="gloss-entry" data-cat="regenerativa" data-terms="xenotrasplante cerdo corazon rinon GalSafe modificado geneticamente organo humano trasplante">
+          <span class="estado-badge breakthrough">Primer caso clínico documentado · 2022–2024</span>
+          <p class="gloss-entry-sigla">Xenotrasplante Cardíaco</p>
+          <p class="gloss-entry-nombre">Corazón de Cerdo Modificado Genéticamente · Insuficiencia Cardíaca Terminal</p>
+          <p class="gloss-entry-desc">En enero de 2022, David Bennett Sr. recibió en la Universidad de Maryland el primer trasplante cardíaco de un cerdo modificado genéticamente en un humano con corazón latiendo. Los cerdos "GalSafe" utilizados tienen <strong>10 genes editados</strong>: cuatro eliminados para reducir el rechazo inmunológico, y seis humanos añadidos para hacerlo más compatible. El corazón funcionó durante 60 días antes de fallar por razones virales. En 2024, un segundo paciente sobrevivió 47 días. Los ensayos con riñón xenotrasplantado han avanzado más: en 2024 se documentó el primer riñón de cerdo funcionando en un paciente con muerte cerebral durante 32 días sin rechazo.</p>
+          <p class="gloss-entry-note">Institución: Universidad de Maryland · Primer caso: enero 2022 · Cerdos: GalSafe, 10 ediciones genéticas · Tecnología: inmunosupresión + edición CRISPR</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="regenerativa" data-terms="iPSC células madre pluripotentes parkinson dopamina neuronas trasplante regeneracion">
+          <span class="estado-badge fase2">Fase I/II · Datos 2023–2024</span>
+          <p class="gloss-entry-sigla">Neuronas iPSC en Parkinson</p>
+          <p class="gloss-entry-nombre">Células Madre Pluripotentes Inducidas · Reemplazo Neuronal en Parkinson</p>
+          <p class="gloss-entry-desc">La idea de reemplazar las neuronas dopaminérgicas perdidas en el Parkinson con neuronas nuevas es antigua. Lo nuevo es que ahora parece funcionar. Un ensayo Fase I/II japonés (Kyoto University) demostró que neuronas dopaminérgicas derivadas de células iPS de donante, trasplantadas en el estriado, <strong>sobreviven, producen dopamina y generan mejoras clínicas medibles sin tumores ni eventos adversos graves</strong> durante el seguimiento. Es el primer ensayo en humanos que valida este enfoque, y abre la puerta a un reemplazo celular que los fármacos actuales —que solo compensan la pérdida dopaminérgica— no pueden igualar.</p>
+          <p class="gloss-entry-note">Institución: Kyoto University / Sumitomo Pharma · Publicación: Nature 2023 · Tipo: iPSC alogénicas · Seguimiento: 24 meses sin eventos adversos graves</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="regenerativa" data-terms="organoides bioimpresion 3D tejido piel organo laboratorio higado pancreas retina">
+          <span class="estado-badge fase2">Preclínico avanzado · Primeros ensayos 2024</span>
+          <p class="gloss-entry-sigla">Organoides y Bioimpresión 3D</p>
+          <p class="gloss-entry-nombre">Tejidos Funcionales In Vitro · Hígado, Páncreas, Retina, Piel</p>
+          <p class="gloss-entry-desc">No son ciencia ficción: los organoides son mini-órganos tridimensionales cultivados en laboratorio a partir de células madre que preservan la arquitectura y función del tejido original. Se han creado organoides funcionales de hígado, páncreas, intestino y retina usados ya para modelar enfermedades raras y probar fármacos de forma personalizada. La bioimpresión 3D va un paso más allá: ensamblando capas de células con "bio-tintas" para crear estructuras complejas. <strong>En la Clínica Mayo se han impreso estructuras traqueales y de piel</strong> con integración tisular parcial. La barrera actual es la vascularización: crear los capilares que alimenten el tejido desde adentro.</p>
+          <p class="gloss-entry-note">Estado: preclínico avanzado, primeros ensayos en humanos · Instituciones: Mayo Clinic, Wyss Institute (Harvard), RIKEN (Japón) · Barrera principal: vascularización interna</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SECCIÓN: VACUNAS
+    ══════════════════════════════════════════ -->
+    <section class="gloss-section" data-section="vacunas">
+      <div class="gloss-section-header">
+        <span class="gloss-section-tag vacunas">Vacunas</span>
+        <span class="gloss-section-count">3 entradas</span>
+      </div>
+      <div class="gloss-grid">
+
+        <div class="gloss-entry" data-cat="vacunas" data-terms="RSV VRS abrysvo arexvy vacuna respiratoria sincitial embarazo adultos mayores">
+          <span class="estado-badge aprobado">Aprobado FDA · May–Ago 2023</span>
+          <p class="gloss-entry-sigla">Vacunas contra el VRS</p>
+          <p class="gloss-entry-nombre">Abrysvo (Pfizer) · Arexvy (GSK) · Virus Respiratorio Sincitial</p>
+          <p class="gloss-entry-desc">El VRS mata a más de 100,000 personas al año —principalmente recién nacidos y adultos mayores— y hasta 2023 no existía ninguna vacuna aprobada. Ese año cambiaron dos cosas a la vez. Arexvy (GSK), aprobada en mayo de 2023 para mayores de 60 años, demostró una eficacia del <strong>82.6% contra VRS severo</strong>. Abrysvo (Pfizer), aprobada en agosto para embarazadas, <strong>protege al recién nacido transfiriendo anticuerpos maternos</strong> con una eficacia del 81.8% en los primeros 90 días de vida. Ambas usan proteína RSV F estabilizada en su conformación prefusión, enfoque que tardó décadas en cristalizar.</p>
+          <p class="gloss-entry-note">Aprobaciones: Arexvy (FDA may 2023, adultos mayores) · Abrysvo (FDA ago 2023, embarazo) · Eficacia: 82.6% y 81.8% vs VRS severo</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="vacunas" data-terms="malaria BNT165e BioNTech ARN mensajero mRNA plasmodium paludismo trópico">
+          <span class="estado-badge fase2">Fase I/II · En curso 2024–2025</span>
+          <p class="gloss-entry-sigla">BNT165e</p>
+          <p class="gloss-entry-nombre">Vacuna mRNA · Malaria</p>
+          <p class="gloss-entry-desc">La malaria mata a más de 600,000 personas al año. Las vacunas existentes (RTS,S/AS01, R21) ofrecen protección parcial. BioNTech aplica la misma plataforma de ARN mensajero del COVID-19 al parásito <em>Plasmodium falciparum</em>, combinando dos antígenos del parásito para cubrir distintos momentos de su ciclo de vida. El ensayo Fase I/II con 177 voluntarios en EE.UU. entró en pausa regulatoria de la FDA por dudas sobre un excipiente, pero la tecnología sigue activa. Si funciona, será <strong>la primera vacuna mRNA contra un parásito</strong>, y establecería un nuevo estándar de velocidad de respuesta para enfermedades tropicales.</p>
+          <p class="gloss-entry-note">Desarrollador: BioNTech · Ensayo: NCT05735314 · Estado: pausa regulatoria FDA (excipiente) · Plataforma: mRNA bivalente · Objetivo: P. falciparum</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="vacunas" data-terms="COVID mRNA XBB omicron actualizacion Spikevax Comirnaty Moderna Pfizer variante">
+          <span class="estado-badge aprobado">Autorización FDA · Sep 2023</span>
+          <p class="gloss-entry-sigla">Vacunas COVID Actualizadas (XBB.1.5)</p>
+          <p class="gloss-entry-nombre">Plataforma mRNA · Adaptación a Variantes Circulantes</p>
+          <p class="gloss-entry-desc">El legado más duradero de las vacunas COVID no es la vacuna en sí, sino la prueba de concepto que dejó: que la plataforma mRNA puede actualizarse, aprobarse y producirse masivamente en cuestión de meses cuando antes tomaba años. Las versiones XBB.1.5 de Spikevax (Moderna) y Comirnaty (Pfizer-BioNTech), autorizadas en septiembre de 2023, reemplazaron las bivalentes previas apuntando al linaje Omicron dominante. <strong>El proceso desde diseño hasta autorización tomó menos de cuatro meses</strong>. Esto establece el modelo para futuras pandemias: una infraestructura de respuesta rápida que no existía antes de 2020.</p>
+          <p class="gloss-entry-note">Autorización FDA: septiembre 2023 · Plataforma: mRNA monocomponente · Diana: Omicron XBB.1.5 · Desarrolladores: Moderna, Pfizer/BioNTech</p>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="gloss-empty" id="hitos-empty" style="display:none;">
+      // Sin resultados para esa búsqueda
+    </div>
+
+  </div><!-- /gloss-body -->
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <p class="footer-kicker">// Revista de exploración y pensamiento</p>
+          <a href="../" class="footer-logo">Mundo Maravilloso</a>
+          <p class="footer-tagline">Ciencia · Misterio · Fenómenos · Futuro</p>
+          <p class="footer-desc">Una publicación independiente sobre los grandes misterios que la ciencia todavía no ha resuelto.</p>
+          <span class="footer-edition-badge">Registro en curso · Junio 2026</span>
+        </div>
+        <div class="footer-nav-grid">
+          <div class="footer-nav-col">
+            <p class="footer-nav-col-label">// Seguimientos</p>
+            <ul class="footer-nav-list">
+              <li><a href="3i-atlas.html">3I/ATLAS</a></li>
+              <li><a href="uap.html">UAP WATCH</a></li>
+              <li><a href="pursue-releases.html">PURSUE RELEASES</a></li>
+              <li><a href="voyager-1.html">VOYAGER 1</a></li>
+              <li><a href="hitos-medicos.html">HITOS MÉDICOS</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav-col">
+            <p class="footer-nav-col-label">// Publicación</p>
+            <ul class="footer-nav-list">
+              <li><a href="../articulos.html">Todos los artículos</a></li>
+              <li><a href="../glosario.html">Glosario</a></li>
+              <li><a href="../acerca-de.html">Acerca de</a></li>
+              <li><a href="../contacto.html">Contacto</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Mundo Maravilloso · Todos los derechos reservados</p>
+        <p class="footer-signal">// Señal activa · Hitos Médicos</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT DE FILTROS Y BÚSQUEDA -->
+  <script>
+  (function(){
+    var searchEl   = document.getElementById('hitos-search');
+    var countEl    = document.getElementById('hitos-count');
+    var emptyEl    = document.getElementById('hitos-empty');
+    var filterBtns = document.querySelectorAll('.filter-btn');
+    var entries    = document.querySelectorAll('.gloss-entry');
+    var sections   = document.querySelectorAll('.gloss-section');
+    var currentCat = 'all';
+
+    function total(){ return entries.length; }
+
+    function update(){
+      var q = searchEl.value.trim().toLowerCase();
+      var visible = 0;
+
+      entries.forEach(function(e){
+        var cat   = e.dataset.cat;
+        var terms = (e.dataset.terms || '') + ' ' + e.textContent.toLowerCase();
+        var catOk = currentCat === 'all' || cat === currentCat;
+        var qOk   = !q || terms.indexOf(q) !== -1;
+        var show  = catOk && qOk;
+        e.style.display = show ? '' : 'none';
+        if(show) visible++;
+      });
+
+      sections.forEach(function(sec){
+        var secCat = sec.dataset.section;
+        var catMatch = currentCat === 'all' || secCat === currentCat;
+        var hasVisible = Array.from(sec.querySelectorAll('.gloss-entry'))
+          .some(function(e){ return e.style.display !== 'none'; });
+        sec.style.display = (catMatch && hasVisible) ? '' : 'none';
+      });
+
+      countEl.textContent = (q || currentCat !== 'all')
+        ? '// ' + visible + ' de ' + total() + ' hitos'
+        : '// ' + total() + ' hitos documentados';
+
+      emptyEl.style.display = visible === 0 ? '' : 'none';
+    }
+
+    searchEl.addEventListener('input', update);
+
+    filterBtns.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        filterBtns.forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        currentCat = btn.dataset.cat;
+        update();
+      });
+    });
+
+    update();
+  })();
+  </script>
+
+  <!-- SCRIPT DE NAV (hamburguesa / drawer) -->
+  <script>
+  (function(){
+    var btn = document.getElementById('navHamburger');
+    var drawer = document.getElementById('navDrawer');
+    if (!btn || !drawer) return;
+    btn.addEventListener('click', function(){
+      var isOpen = drawer.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    drawer.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        drawer.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="es" data-page="glosario">
+<head>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8483516296039231"
+       crossorigin="anonymous"></script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Glosario: Términos, Agencias y Proyectos | Mundo Maravilloso</title>
+  <link rel="canonical" href="https://mundomag.fyi/glosario.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=JetBrains+Mono:wght@400;600;700&family=DM+Serif+Text:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;0,8..60,800;1,8..60,400;1,8..60,600;1,8..60,700;1,8..60,800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --ink:        #0d0d0f;
+      --ink-mid:    #161619;
+      --ink-soft:   #1e1e23;
+      --paper:      #f5f0e8;
+      --paper-warm: #ede6d6;
+      --gold:       #c9a84c;
+      --gold-light: #e8c97a;
+      --cyan:       #4ecdc4;
+      --cyan-dim:   #2a9d95;
+      --red:        #c0392b;
+      --orange:     #f97316;
+      --muted:      #6b6b7a;
+      --border:     rgba(201,168,76,0.25);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--ink);
+      color: var(--paper);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 18px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.6;
+    }
+
+    /* ── GLOSARIO LAYOUT ── */
+    .gloss-header {
+      max-width: 760px; margin: 0 auto; padding: 5rem 4rem 3rem;
+    }
+    .article-section-label {
+      display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;
+    }
+    .article-section-name {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.58rem;
+      letter-spacing: 0.25em; text-transform: uppercase; color: var(--cyan);
+    }
+    .article-section-line { flex: 1; height: 1px; background: var(--border); }
+    .article-edition {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.55rem;
+      letter-spacing: 0.15em; color: var(--muted);
+    }
+    .gloss-title {
+      font-family: 'DM Serif Text', Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      line-height: 1.1; color: var(--paper); margin-bottom: 1.25rem;
+    }
+    .gloss-dek {
+      font-size: 1.1rem; color: rgba(245,240,232,0.65);
+      line-height: 1.65; font-style: italic; max-width: 56ch; margin-bottom: 2rem;
+    }
+    .gloss-meta {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.55rem;
+      letter-spacing: 0.15em; color: var(--muted); margin-bottom: 0.4rem;
+    }
+
+    /* ── FILTRO / ÍNDICE ── */
+    .gloss-controls {
+      max-width: 900px; margin: 0 auto; padding: 0 4rem 2rem;
+    }
+    .gloss-filter-bar {
+      display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;
+    }
+    .filter-btn {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.55rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      padding: 0.4rem 0.85rem; border: 1px solid var(--border);
+      background: transparent; color: var(--muted);
+      cursor: pointer; transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      border-color: var(--gold); color: var(--gold);
+      background: rgba(201,168,76,0.06);
+    }
+    .filter-btn.all.active { border-color: var(--cyan); color: var(--cyan); background: rgba(78,205,196,0.06); }
+
+    /* ── SEARCH ── */
+    .gloss-search-wrap {
+      position: relative; margin-bottom: 0.5rem;
+    }
+    .gloss-search {
+      width: 100%; padding: 0.75rem 1rem 0.75rem 2.5rem;
+      background: var(--ink-mid); border: 1px solid var(--border);
+      color: var(--paper); font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem; letter-spacing: 0.06em;
+      outline: none; transition: border-color 0.2s;
+    }
+    .gloss-search:focus { border-color: var(--gold); }
+    .gloss-search::placeholder { color: var(--muted); }
+    .gloss-search-icon {
+      position: absolute; left: 0.85rem; top: 50%; transform: translateY(-50%);
+      color: var(--muted); font-size: 0.8rem; pointer-events: none;
+    }
+    .gloss-count {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.52rem;
+      letter-spacing: 0.12em; color: var(--muted); margin-top: 0.5rem;
+    }
+
+    /* ── GLOSARIO BODY ── */
+    .gloss-body {
+      max-width: 900px; margin: 0 auto; padding: 0 4rem 8rem;
+    }
+
+    /* Sección (agencias, proyectos, personas…) */
+    .gloss-section {
+      margin-bottom: 4rem;
+    }
+    .gloss-section-header {
+      display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;
+      padding-bottom: 0.75rem; border-bottom: 1px solid var(--border);
+    }
+    .gloss-section-tag {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.55rem;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      padding: 0.3rem 0.7rem; border: 1px solid;
+    }
+    .gloss-section-tag.agencias  { color: var(--cyan);   border-color: rgba(78,205,196,0.4); }
+    .gloss-section-tag.proyectos { color: var(--gold);   border-color: var(--border); }
+    .gloss-section-tag.personas  { color: var(--orange); border-color: rgba(249,115,22,0.4); }
+    .gloss-section-tag.informes  { color: var(--paper);  border-color: rgba(245,240,232,0.2); }
+    .gloss-section-tag.tecnologia{ color: var(--cyan-dim); border-color: rgba(42,157,149,0.4); }
+    .gloss-section-tag.normas    { color: var(--muted);  border-color: rgba(107,107,122,0.35); }
+    .gloss-section-tag.conceptos { color: var(--gold-light); border-color: rgba(232,201,122,0.35); }
+    .gloss-section-tag.folclore  { color: var(--red);       border-color: rgba(192,57,43,0.4); }
+
+    .gloss-section-count {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.5rem;
+      letter-spacing: 0.12em; color: var(--muted);
+    }
+
+    /* Cada entrada */
+    .gloss-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--border);
+    }
+    .gloss-entry {
+      background: var(--ink-mid); padding: 1.5rem 1.75rem;
+      transition: background 0.15s;
+    }
+    .gloss-entry:hover { background: var(--ink-soft); }
+    .gloss-entry-sigla {
+      font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem;
+      font-weight: 700; color: var(--paper); letter-spacing: 0.02em;
+      margin-bottom: 0.15rem;
+    }
+    .gloss-entry-nombre {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.55rem;
+      letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.85rem;
+      text-transform: uppercase;
+    }
+    .gloss-entry-desc {
+      font-size: 0.9rem; color: rgba(245,240,232,0.72);
+      line-height: 1.55;
+    }
+    .gloss-entry-desc strong { color: var(--paper-warm); }
+    .gloss-entry-note {
+      margin-top: 0.65rem;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.52rem;
+      letter-spacing: 0.08em; color: rgba(107,107,122,0.7);
+      border-top: 1px solid rgba(201,168,76,0.12); padding-top: 0.5rem;
+      line-height: 1.5;
+    }
+    /* Solo una columna para entradas destacadas (personas) */
+    .gloss-entry.full { grid-column: 1 / -1; }
+
+    /* Pill de categoría visible en búsqueda */
+    .entry-cat-pill {
+      display: inline-block; margin-top: 0.6rem;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.46rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    /* Mensaje "sin resultados" */
+    .gloss-empty {
+      padding: 3rem 0; text-align: center;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.18em; color: var(--muted);
+    }
+
+    /* Source note */
+    .source-note {
+      border: 1px solid rgba(78,205,196,0.15);
+      padding: 1.25rem 1.75rem; margin-bottom: 3rem;
+      background: rgba(78,205,196,0.02);
+      font-family: 'JetBrains Mono', monospace; font-size: 0.56rem;
+      letter-spacing: 0.07em; color: var(--muted); line-height: 1.7;
+    }
+    .source-note a { color: var(--cyan); text-decoration: none; }
+    .source-note a:hover { text-decoration: underline; }
+    .source-note strong { color: var(--paper-warm); }
+
+    @media (max-width: 768px) {
+      .gloss-header, .gloss-controls, .gloss-body { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .gloss-grid { grid-template-columns: 1fr; }
+      .gloss-entry.full { grid-column: 1; }
+      .filter-btn { font-size: 0.5rem; padding: 0.35rem 0.65rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <!-- ══════════ NAV ══════════ -->
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="index.html" class="site-nav-logo">MM</a>
+    <div class="site-nav-sep"></div>
+    <div class="site-nav-articles">
+      <a href="articulos.html" class="site-nav-link">Artículos</a>
+      <a href="seguimientos/3i-atlas.html" class="site-nav-link">3I/ATLAS</a>
+      <a href="seguimientos/uap.html" class="site-nav-link">UAP WATCH</a>
+      <a href="seguimientos/pursue-releases.html" class="site-nav-link">PURSUE</a>
+      <a href="seguimientos/voyager-1.html" class="site-nav-link">VOYAGER 1</a>
+    
+    </div>
+  </div>
+</nav>
+
+  <!-- HEADER -->
+  <header class="gloss-header">
+    <div class="article-section-label">
+      <span class="article-section-name">Referencia · Recurso editorial</span>
+      <div class="article-section-line"></div>
+      <span class="article-edition">Documento vivo</span>
+    </div>
+    <h1 class="gloss-title">Glosario UAP</h1>
+    <p class="gloss-dek">Términos, agencias, proyectos, personas clave, tecnologías, informes y figuras del folclore que aparecen en la cobertura de Mundo Maravilloso. Documento vivo: crece con cada nueva entrega.</p>
+    <p class="gloss-meta">// Basado en documentos desclasificados, testimonios ante el Congreso, literatura científica peer-reviewed y fuentes primarias citadas en la cobertura de MM. Actualizado: julio 2026.</p>
+  </header>
+
+  <!-- CONTROLS -->
+  <div class="gloss-controls">
+    <div class="gloss-search-wrap">
+      <span class="gloss-search-icon">⌕</span>
+      <input type="text" class="gloss-search" id="gloss-search" placeholder="Buscar término, sigla o nombre…" autocomplete="off"/>
+    </div>
+    <p class="gloss-count" id="gloss-count"><!-- JS --></p>
+    <div class="gloss-filter-bar" id="filter-bar">
+      <button class="filter-btn all active" data-cat="all">Todos</button>
+      <button class="filter-btn" data-cat="agencias">Agencias</button>
+      <button class="filter-btn" data-cat="proyectos">Proyectos</button>
+      <button class="filter-btn" data-cat="personas">Personas</button>
+      <button class="filter-btn" data-cat="informes">Informes</button>
+      <button class="filter-btn" data-cat="tecnologia">Tecnología</button>
+      <button class="filter-btn" data-cat="normas">Normas</button>
+      <button class="filter-btn" data-cat="conceptos">Conceptos</button>
+      <button class="filter-btn" data-cat="folclore">Mitología &amp; Cripto</button>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="gloss-body" id="gloss-body">
+
+    <div class="source-note">
+      <strong>Fuentes principales:</strong> Documento de evaluación de inteligencia de la RAAF (A13693, 1971) vía <a href="https://theblackvault.com" target="_blank" rel="noopener">The Black Vault</a>; testimonios ante el Congreso de EE.UU. (2022–2026); informes de AARO; archivos PURSUE del Departamento de Guerra (war.gov/ufo); registros NSA desclasificados (UMBRA); literatura científica peer-reviewed; documentación de proyectos SETI y Galileo; recopilaciones de tradición oral salvadoreña y catálogos de criptozoología; y cobertura periodística verificada citada en los artículos de MM. Las definiciones marcadas con ◆ corresponden a términos que aparecen en fuentes primarias citadas en la cobertura de MM.
+    </div>
+
+    <!-- ═══ AGENCIAS (16) ═══ -->
+    <section class="gloss-section" data-section="agencias">
+      <div class="gloss-section-header">
+        <span class="gloss-section-tag agencias">Agencias</span>
+        <span class="gloss-section-count">20 entradas</span>
+      </div>
+      <div class="gloss-grid">
+
+        <div class="gloss-entry" data-cat="agencias" data-terms="cia central intelligence agency langley">
+          <p class="gloss-entry-sigla">CIA</p>
+          <p class="gloss-entry-nombre">Central Intelligence Agency</p>
+          <p class="gloss-entry-desc">Agencia central de inteligencia de Estados Unidos. En el documento de Turner aparece como el organismo que, a través de su <strong>Oficina de Inteligencia Científica</strong>, impulsó la política de desacreditación pública de los OVNIs tras la oleada de avistamientos de 1952. Según el informe, la CIA habría mantenido un interés operacional real en el fenómeno mientras promovía su ridiculización externa.</p>
+          <p class="gloss-entry-note">Aparece en: Doc. Australia 1971, Panel Robertson, JANAP 146 ◆</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="agencias" data-terms="usaf united states air force fuerza aérea">
+          <p class="gloss-entry-sigla">USAF</p>
+          <p class="gloss-entry-nombre">United States Air Force</p>
+          <p class="gloss-entry-desc">Fuerza Aérea de Estados Unidos. La institución más mencionada en el informe de Turner y responsable de todas las investigaciones OVNI oficiales entre 1947 y 1969. Turner argumenta que la USAF actuó principalmente como <strong>fachada pública</strong> para una política de encubrimiento diseñada en otro nivel del gobierno.</p>
+          <p class="gloss-entry-note">Aparece en: Project Sign, Project Grudge, Project Blue Book, Panel Robertson</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="agencias" data-terms="atic air technical intelligence center wright patterson">
+          <p class="gloss-entry-sigla">ATIC</p>
+          <p class="gloss-entry-nombre">Air Technical Intelligence Center</p>
+          <p class="gloss-entry-desc">Centro de Inteligencia Técnica Aérea de la USAF, ubicado en la base Wright-Patterson, Ohio. Fue el organismo encargado de analizar inicialmente los reportes de "platillos voladores" a través de los primeros proyectos de investigación. Bajo su dirección se produjo el <em>Estimate of the Situation</em> de 1948.</p>
+          <p class="gloss-entry-note">Aparece en: Project Sign, Project Grudge</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="agencias" data-terms="amc air materiel command material">
+          <p class="gloss-entry-sigla">AMC</p>
+          <p class="gloss-entry-nombre">Air Materiel Command</p>
+          <p class="gloss-entry-desc">Comando de Material Aéreo de la USAF. Controlaba investigación, desarrollo y evaluación tecnológica. El ATIC dependía de este comando. Su relevancia en el contexto OVNI reside en que los proyectos de investigación sobre propulsión avanzada y control gravitacional fueron coordinados bajo su estructura.</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="agencias" data-terms="raaf royal australian air force australia">
+          <p class="gloss-entry-sigla">RAAF</p>
+          <p class="gloss-entry-nombre">Royal Australian Air Force</p>
+          <p class="gloss-entry-desc">Real Fuerza Aérea Australiana. La institución que generó el documento desclasificado de 1971 que David Grusch señaló en su intervención del 9 de junio de 2026 ante el Congreso de EE.UU. Turner, su autor, critica implícitamente a la RAAF por haber aceptado la versión pública de la USAF sin cuestionarla.</p>
+          <p class="gloss-entry-note">Serie A13693 · Archivo Nacional de Australia · vía The Black Vault</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="agencias" data-terms="aec atomic energy commission nuclear">
+          <p class="gloss-entry-sigla">AEC</p>
+          <p class="gloss-entry-nombre">Atomic Energy Commission</p>
+          <p class="gloss-entry-desc">Comisión de Energía Atómica de Estados Unidos. Aparece en el documento porque varias instalaciones nucleares habrían sido objeto de observaciones OVNI según los reportes citados por Turner, sugiriendo un patrón de interés o vigilancia de estas instalaciones por parte de los fenómenos reportados.</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="agencias" data-terms="aaro all-domain anomaly resolution office pentagon kosloski">
+          <p class="gloss-entry-sigla">AARO</p>
+          <p class="gloss-entry-nombre">All-Domain Anomaly Resolution Office</p>
+          <p class="gloss-entry-desc">Oficina de Resolución de Anomalías de Todos los Dominios del Pentágono. Creada en 2022 para centralizar la investigación de UAP en todos los dominios (aéreo, marítimo, terrestre, espacial). Dirigida por Jon Kosloski desde 2024. Su informe de junio de 2026 reveló que <strong>40% de los fenómenos reportados</strong> carecen de explicación razonable.</p>
+          <p class="gloss-entry-note">Creada por NDAA 2023 · Informes: junio 2025, junio 2026</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="agencias" data-terms="dod department of defense pentagon departamento defensa">
+          <p class="gloss-entry-sigla">DoD</p>
+          <p class="gloss-entry-nombre">Department of Defense</p>
+          <p class="gloss-entry-desc">Departamento de Defensa de Estados Unidos. Agencia superior que supervisa AARO, la Marina, la USAF y todos los programas militares de investigación UAP. Ha sido escenario de las audiencias del Congreso sobre el fenómeno desde 2022.</p>
+          <p class="gloss-entry-note">Aparece en: Actualidad UAP, testimonios Congreso 2022–2026</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="agencias" data-terms="navy marina usn united states navy">
+          <p class="gloss-entry-sigla">Marina / U.S. Navy</p>
+          <p class="gloss-entry-nombre">United States Navy</p>
+          <p class="gloss-entry-desc">Rama naval de las Fuerzas Armadas de EE.UU. Múltiples pilotos de la Marina —incluyendo David Fravor y Ryan Graves— han reportado avistamientos UAP rutinarios. La Marina fue la primera rama en establecer protocolos formales de reporte UAP en 2019.</p>
+          <p class="gloss-entry-note">Incidentes: Tic Tac 2004, Gimbal 2015, múltiples avistamientos 2014–2024</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="agencias" data-terms="nro national reconnaissance office satélites espía">
+          <p class="gloss-entry-sigla">NRO</p>
+          <p class="gloss-entry-nombre">National Reconnaissance Office</p>
+          <p class="gloss-entry-desc">Oficina Nacional de Reconocimiento. Agencia de inteligencia que opera la constelación de satélites espía de EE.UU. Potencialmente involucrada en la detección de UAP desde el espacio, aunque su participación permanece en gran medida clasificada.</p>
+          <p class="gloss-entry-note">Clasificación: SCI / SAP</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="agencias" data-terms="nga national geospatial intelligence agency">
+          <p class="gloss-entry-sigla">NGA</p>
+          <p class="gloss-entry-nombre">National Geospatial-Intelligence Agency</p>
+          <p class="gloss-entry-desc">Agencia Nacional de Inteligencia Geoespacial. Analiza imágenes satelitales, datos geoespaciales y productos de inteligencia visual. Podría estar involucrada en el análisis de imágenes UAP captadas por satélites de reconocimiento.</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="agencias" data-terms="nim-a national intelligence manager aviation">
+          <p class="gloss-entry-sigla">NIM-A</p>
+          <p class="gloss-entry-nombre">National Intelligence Manager for Aviation</p>
+          <p class="gloss-entry-desc">Gestor Nacional de Inteligencia para Aviación. Agencia de inteligencia que supervisa la seguridad aérea y coordina el análisis de informes UAP entre diferentes organismos de inteligencia. Ha emitido reportes sobre la amenaza que los UAP representan para la aviación militar.</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="agencias" data-terms="black vault john greenewald documentos desclasificados foia">
+          <p class="gloss-entry-sigla">The Black Vault</p>
+          <p class="gloss-entry-nombre">Archivo de documentos desclasificados</p>
+          <p class="gloss-entry-desc">Plataforma fundada por John Greenewald Jr. en 1996 dedicada a la obtención y publicación de documentos desclasificados mediante FOIA. Repositorio principal del documento australiano A13693 y cientos de archivos UAP desclasificados de la CIA, FBI y USAF.</p>
+          <p class="gloss-entry-note">Más de 10,000 solicitudes FOIA presentadas · theblackvault.com</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="agencias" data-terms="cneos center near earth object studies nasa meteoros">
+          <p class="gloss-entry-sigla">CNEOS</p>
+          <p class="gloss-entry-nombre">Center for Near Earth Object Studies</p>
+          <p class="gloss-entry-desc">Centro de Estudios de Objetos Cercanos a la Tierra de la NASA. Mantiene el catálogo oficial de meteoros y asteroides detectados. Los datos de CNEOS permitieron identificar a IM1 (2014) como el primer meteoro interestelar confirmado, con propiedades materiales únicas.</p>
+          <p class="gloss-entry-note">Relacionado con: IM1, Galileo Project</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="agencias" data-terms="congreso congress eeuu usa legislativa">
+          <p class="gloss-entry-sigla">Congreso</p>
+          <p class="gloss-entry-nombre">Congreso de Estados Unidos</p>
+          <p class="gloss-entry-desc">Legislatura bicameral de EE.UU. (Senado + Cámara de Representantes). Ha celebrado audiencias públicas sobre UAP en 2022, 2023 y 2026. El Comité de Inteligencia del Senado ha liderado las investigaciones legislativas, incluyendo el testimonio de David Grusch de junio de 2026.</p>
+          <p class="gloss-entry-note">Audiencias: julio 2022, 2023, junio 2026</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="agencias" data-terms="senado senate eeuu usa">
+          <p class="gloss-entry-sigla">Senado</p>
+          <p class="gloss-entry-nombre">Senado de Estados Unidos</p>
+          <p class="gloss-entry-desc">Cámara alta del Congreso estadounidense. El Comité de Inteligencia del Senado, presidido por Marco Rubio, ha sido el principal motor de la transparencia UAP, impulsando la creación de AARO y las audiencias públicas con testigos militares.</p>
+          <p class="gloss-entry-note">Comité de Inteligencia · Audiencias UAP 2022–2026</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="agencias" data-terms="nsa national security agency umbra sigint five eyes">
+          <p class="gloss-entry-sigla">NSA</p>
+          <p class="gloss-entry-nombre">National Security Agency</p>
+          <p class="gloss-entry-desc">Agencia de Seguridad Nacional de EE.UU., encargada de la inteligencia de señales (SIGINT). Utilizó durante décadas la palabra clave <strong>TOP SECRET UMBRA</strong> para proteger los interceptos más sensibles del sistema Five Eyes. En mayo de 2026 liberó 334 páginas de registros UAP bajo esa clasificación tras una apelación FOIA de la Disclosure Foundation.</p>
+          <p class="gloss-entry-note">Liberación: 18 may 2026 · 334 páginas · Clasificación: TOP SECRET UMBRA</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="agencias" data-terms="raytheon polar services contratista nsf antartida hecker">
+          <p class="gloss-entry-sigla">Raytheon</p>
+          <p class="gloss-entry-nombre">Raytheon Polar Services · Contratista NSF</p>
+          <p class="gloss-entry-desc">División de Raytheon que operó como contratista logístico principal del Programa Antártico de EE.UU. para la National Science Foundation entre 2000 y 2011, empleando entre 350 y 1,400 personas en la Antártida. Uno de sus ex-contratistas, Eric Hecker, testificó ante el Congreso con alegaciones no verificadas sobre el observatorio IceCube.</p>
+          <p class="gloss-entry-note">Contrato NSF: 2000–2011 · Relacionado con: IceCube, Eric Hecker</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="agencias" data-terms="anthropic claude ia inteligencia artificial dario amodei">
+          <p class="gloss-entry-sigla">Anthropic</p>
+          <p class="gloss-entry-nombre">Empresa de inteligencia artificial · Fundada 2021</p>
+          <p class="gloss-entry-desc">Compañía de IA fundada en 2021 como escisión de OpenAI, creadora de los modelos Claude. El 9 de junio de 2026 lanzó Fable 5 y Mythos 5, la primera clase de modelo superior a Opus; 72 horas después, una directiva de control de exportaciones del Departamento de Comercio de EE.UU. obligó a apagarlos globalmente en medio de una disputa sobre ciberseguridad y geopolítica.</p>
+          <p class="gloss-entry-note">CEO: Dario Amodei · Fundada: 2021 · Serie H: $965B valoración (may 2026)</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ PROYECTOS (14) ═══ -->
+    <section class="gloss-section" data-section="proyectos">
+      <div class="gloss-section-header">
+        <span class="gloss-section-tag proyectos">Proyectos</span>
+        <span class="gloss-section-count">19 entradas</span>
+      </div>
+      <div class="gloss-grid">
+
+        <div class="gloss-entry" data-cat="proyectos" data-terms="project sign signo 1947 1948 extraterrestre">
+          <p class="gloss-entry-sigla">Project Sign</p>
+          <p class="gloss-entry-nombre">Proyecto Signo · 1947–1949</p>
+          <p class="gloss-entry-desc">Primera investigación oficial de OVNIs realizada por la USAF. Según Turner, consideró seriamente la hipótesis extraterrestre y produjo el <em>Estimate of the Situation</em>, análisis clasificado que concluía que algunos objetos observados podían tener origen no terrestre. Es el proyecto más abierto de la historia oficial antes del viraje institucional.</p>
+          <p class="gloss-entry-note">Relacionado con: ATIC, Estimate of the Situation, Project Grudge</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="proyectos" data-terms="project grudge rencor 1949 1951 desacreditación">
+          <p class="gloss-entry-sigla">Project Grudge</p>
+          <p class="gloss-entry-nombre">Proyecto Rencor · 1949–1951</p>
+          <p class="gloss-entry-desc">Sucesor del Project Sign. Adoptó una postura escéptica y favoreció explicaciones convencionales para todos los casos. Turner interpreta su creación como el inicio de la política de desacreditación pública, posiblemente para dejar espacio a otra agencia —la CIA— que asumiera la investigación real de forma compartimentada.</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="proyectos" data-terms="project blue book libro azul 1952 1969 12000 casos">
+          <p class="gloss-entry-sigla">Project Blue Book</p>
+          <p class="gloss-entry-nombre">Proyecto Libro Azul · 1952–1969</p>
+          <p class="gloss-entry-desc">La investigación OVNI más extensa de la historia oficial: analizó más de <strong>12,000 casos</strong>. La postura oficial: los OVNIs no representaban amenaza y no había evidencia de origen extraterrestre. Turner sostiene que Blue Book actuó principalmente como <strong>fachada pública</strong>: sus datos internos, especialmente el Special Report No. 14, contradecían sus propias conclusiones oficiales.</p>
+          <p class="gloss-entry-note">Cerrado en 1969 tras el Informe Condon · Relacionado con: Hynek, Special Report No. 14</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="proyectos" data-terms="project stork clasificación ibm estadística">
+          <p class="gloss-entry-sigla">Project Stork</p>
+          <p class="gloss-entry-nombre">Proyecto Cigüeña</p>
+          <p class="gloss-entry-desc">Proyecto poco conocido mencionado en el documento de Turner. Relacionado con la clasificación estadística de datos y el procesamiento computacional de casos OVNI mediante tarjetas IBM. Su relevancia radica en que formó parte del aparato técnico que produjo el análisis estadístico del Special Report No. 14.</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="proyectos" data-terms="seti search extraterrestrial intelligence vida inteligencia">
+          <p class="gloss-entry-sigla">SETI</p>
+          <p class="gloss-entry-nombre">Search for Extraterrestrial Intelligence · 1985–presente</p>
+          <p class="gloss-entry-desc">Búsqueda de Inteligencia Extraterrestre. Programa científico dedicado a detectar señales tecnológicas de civilizaciones alienígenas mediante radiotelescopios. Fundado por Frank Drake en 1985. Ha evolucionado para incorporar inteligencia artificial en el análisis de datos masivos, permitiendo detectar patrones que los métodos tradicionales podrían pasar por alto.</p>
+          <p class="gloss-entry-note">Relacionado con: Ecuación de Drake, Breakthrough Listen, Frank Drake</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="proyectos" data-terms="breakthrough listen yuri milner seti 100 millones">
+          <p class="gloss-entry-sigla">Breakthrough Listen</p>
+          <p class="gloss-entry-nombre">Proyecto de búsqueda SETI · 2015–presente</p>
+          <p class="gloss-entry-desc">Iniciativa de <strong>$100 millones</strong> financiada por Yuri Milner para escanear un millón de estrellas cercanas y 100 galaxias en busca de señales tecnológicas. Utiliza los radiotelescopios más grandes del mundo: Parkes (Australia), Green Bank (EE.UU.) y FAST (China). Representa el esfuerzo SETI más ambicioso desde el proyecto original de Drake.</p>
+          <p class="gloss-entry-note">Inversión: $100M · Duración: 10 años (2015–2025, extendido)</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="proyectos" data-terms="breakthrough starshot alpha centauri velas solares">
+          <p class="gloss-entry-sigla">Breakthrough Starshot</p>
+          <p class="gloss-entry-nombre">Proyecto de exploración interestelar · 2016</p>
+          <p class="gloss-entry-desc">Iniciativa de $100 millones para desarrollar naves espaciales miniaturizadas (nanonaves) impulsadas por láser terrestre que podrían alcanzar Alfa Centauri en 20–30 años. Avi Loeb preside su comité asesor. Relacionado con la tecnología de velas solares que podría explicar la aceleración no gravitacional de 'Oumuamua.</p>
+          <p class="gloss-entry-note">Presidido por: Avi Loeb · Objetivo: Alfa Centauri en 20–30 años</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="proyectos" data-terms="galileo project harvard avi loeb telescopios ia uap">
+          <p class="gloss-entry-sigla">Galileo Project</p>
+          <p class="gloss-entry-nombre">Proyecto Galileo · Harvard · 2021–presente</p>
+          <p class="gloss-entry-desc">Iniciativa científica fundada por Avi Loeb en Harvard en 2021 con $1.755 millones en financiación privada. Utiliza redes de telescopios con IA para detectar y analizar UAP e objetos interestelares de forma rigurosa y sistemática. Su lema: <em>'Daring to Look through New Telescopes'</em>. Ha producido ocho papers científicos peer-reviewed y monitoreado ~500,000 trayectorias aéreas.</p>
+          <p class="gloss-entry-note">Financiación: $1.755M · Papers: 8 publicaciones peer-reviewed · Datos: ~500,000 trayectorias</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="proyectos" data-terms="mogul proyecto globos espía alta altitud">
+          <p class="gloss-entry-sigla">Mogul</p>
+          <p class="gloss-entry-nombre">Proyecto Mogul · Globos espía · 1947–1949</p>
+          <p class="gloss-entry-desc">Programa secreto de la USAF que utilizaba globos de alta altitud equipados con micrófonos para detectar pruebas nucleares soviéticas. La versión oficial del gobierno atribuye los restos recuperados en Roswell (1947) a un globo de este proyecto, aunque investigadores independientes han cuestionado esta explicación.</p>
+          <p class="gloss-entry-note">Relacionado con: Incidente Roswell 1947</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="proyectos" data-terms="atlas asteroid terrestrial impact last alert system telescopio">
+          <p class="gloss-entry-sigla">ATLAS</p>
+          <p class="gloss-entry-nombre">Asteroid Terrestrial-impact Last Alert System</p>
+          <p class="gloss-entry-desc">Sistema de alerta temprana de impactos de asteroides financiado por la NASA. Opera telescopios en Hawái, Chile (Río Hurtado), Sudáfrica y Canarias. Descubridor de <strong>3I/ATLAS</strong> el 1 de julio de 2025 en Río Hurtado, Chile — el tercer objeto interestelar confirmado en la historia.</p>
+          <p class="gloss-entry-note">Estaciones: Hawái, Chile, Sudáfrica, Canarias · Descubrimiento: 3I/ATLAS, 1 Jul 2025</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="proyectos" data-terms="maven mars atmosphere volatile evolution nasa">
+          <p class="gloss-entry-sigla">MAVEN</p>
+          <p class="gloss-entry-nombre">Mars Atmosphere and Volatile Evolution</p>
+          <p class="gloss-entry-desc">Misión orbital de la NASA en Marte dedicada a estudiar la atmósfera marciana y su evolución histórica. Lanzada en 2013, finalizó su misión el <strong>3 de junio de 2026</strong>. Participó en observaciones de 3I/ATLAS durante su aproximación al sistema solar, contribuyendo datos sobre su composición.</p>
+          <p class="gloss-entry-note">Misión finalizada: 3 Jun 2026 · Relacionado con: 3I/ATLAS</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="proyectos" data-terms="psyche mission nasa asteroide metal 16 psyche">
+          <p class="gloss-entry-sigla">Psyche</p>
+          <p class="gloss-entry-nombre">Misión Psyche · NASA · 2023</p>
+          <p class="gloss-entry-desc">Misión de la NASA lanzada en octubre de 2023 hacia el asteroide metálico 16 Psyche. En ruta hacia su destino, sus instrumentos han sido utilizados para observaciones científicas de objetos interestelares como 3I/ATLAS, aprovechando su trayectoria y capacidades de detección.</p>
+          <p class="gloss-entry-note">Lanzamiento: Oct 2023 · Destino: Asteroide 16 Psyche</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="proyectos" data-terms="tess transiting exoplanet survey satellite nasa">
+          <p class="gloss-entry-sigla">TESS</p>
+          <p class="gloss-entry-nombre">Transiting Exoplanet Survey Satellite · NASA · 2018</p>
+          <p class="gloss-entry-desc">Satélite de la NASA lanzado en 2018 para detectar exoplanetas mediante el método de tránsito. Detectó <strong>actividad cometaria de 3I/ATLAS desde mayo de 2025</strong>, dos meses antes de su descubrimiento oficial por ATLAS, demostrando la utilidad de los datos de exoplanetas para la astronomía interestelar.</p>
+          <p class="gloss-entry-note">Lanzamiento: 2018 · Detección temprana: 3I/ATLAS, May 2025</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="proyectos" data-terms="pursue presidential unsealing reporting system uap encounters war.gov">
+          <p class="gloss-entry-sigla">PURSUE</p>
+          <p class="gloss-entry-nombre">Presidential Unsealing and Reporting System for UAP Encounters</p>
+          <p class="gloss-entry-desc">Programa de desclasificación UAP que el Departamento de Guerra de EE.UU. mantiene públicamente en war.gov/ufo desde mayo de 2026. Ha publicado tres tandas de documentos —incluyendo el expediente "Western US Event" (Ojo de Sauron, Dark Kite) y el memo del helicóptero perseguido por orbes— con más de mil millones de visitas acumuladas.</p>
+          <p class="gloss-entry-note">war.gov/ufo · Release 01: 8 may 2026 · Release 03: 12 jun 2026</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="proyectos" data-terms="mk ultra mkultra cia control mental lsd gottlieb dulles">
+          <p class="gloss-entry-sigla">MK-Ultra</p>
+          <p class="gloss-entry-nombre">Programa de control mental · CIA · 1953–1964</p>
+          <p class="gloss-entry-desc">Programa encubierto de la CIA, aprobado formalmente en 1953 por el director Allen Dulles y dirigido desde ese año por el químico Sidney Gottlieb. Administró LSD, hipnosis y privación sensorial a sujetos —muchos sin su conocimiento— para investigar el control mental. El director Richard Helms ordenó destruir sus archivos centrales en 1973; el Comité Church lo expuso públicamente en 1975.</p>
+          <p class="gloss-entry-note">Aprobación: 1953 · Destrucción de archivos: 1973 · Comité Church: 1975</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="proyectos" data-terms="stargate project percepción remota remote viewing dia cia 20 millones">
+          <p class="gloss-entry-sigla">Stargate Project</p>
+          <p class="gloss-entry-nombre">Programa de percepción remota · 1975–1995</p>
+          <p class="gloss-entry-desc">Programa de 20 millones de dólares financiado por el gobierno de EE.UU. (DIA/CIA) para investigar la "percepción remota" con fines militares y de inteligencia. La evaluación oficial de cierre concluyó que nunca produjo inteligencia operativa útil, aunque la estadística Jessica Utts —una de sus evaluadoras— documentó un efecto por encima del azar en las pruebas.</p>
+          <p class="gloss-entry-note">Duración: 1975–1995 · Inversión: $20M · Evaluadora: Jessica Utts</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="proyectos" data-terms="operation highjump antartida 1946 1947 byrd marina">
+          <p class="gloss-entry-sigla">Operation Highjump</p>
+          <p class="gloss-entry-nombre">Expedición antártica de la Marina de EE.UU. · 1946–1947</p>
+          <p class="gloss-entry-desc">Mayor expedición antártica de la historia: 4,700 hombres, 13 barcos y 33 aeronaves bajo el mando del almirante Richard E. Byrd. La misión oficial fue de cartografía; registros desclasificados posteriormente indican que también buscaba establecer reclamaciones territoriales y demostrar capacidad estratégica al inicio de la Guerra Fría. Terminó abruptamente en tres meses.</p>
+          <p class="gloss-entry-note">1946–1947 · Comandante: Richard E. Byrd · 4,700 hombres</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="proyectos" data-terms="operation argus antartida 1958 bombas nucleares van allen">
+          <p class="gloss-entry-sigla">Operation Argus</p>
+          <p class="gloss-entry-nombre">Pruebas nucleares · Atlántico Sur · 1958</p>
+          <p class="gloss-entry-desc">EE.UU. detonó tres armas nucleares en el Atlántico Sur, cerca de la Antártida, para estudiar el efecto de explosiones nucleares en los cinturones de radiación de Van Allen. Clasificada Top Secret, fue desclasificada en 1982 y hoy está en dominio público.</p>
+          <p class="gloss-entry-note">1958 · Desclasificada: 1982 · 3 detonaciones nucleares</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ PERSONAS (18) ═══ -->
+    <section class="gloss-section" data-section="personas">
+      <div class="gloss-section-header">
+        <span class="gloss-section-tag personas">Personas</span>
+        <span class="gloss-section-count">25 entradas</span>
+      </div>
+      <div class="gloss-grid">
+
+        <div class="gloss-entry" data-cat="personas" data-terms="hynek allen astrónomo consultor blue book">
+          <p class="gloss-entry-sigla">J. Allen Hynek</p>
+          <p class="gloss-entry-nombre">Astrónomo · Consultor científico de Blue Book</p>
+          <p class="gloss-entry-desc">Astrónomo estadounidense y asesor científico de la USAF durante más de 20 años. Inicialmente escéptico, concluyó que una parte de los casos merecía investigación científica seria. En 1969, su contrato no fue renovado y el proyecto se cerró. Años después declaró públicamente que las conclusiones del Informe Condon contradecían los propios datos del estudio. Turner lo cita como testigo de la contradicción interna del sistema.</p>
+          <p class="gloss-entry-note">Creador de la clasificación CE (Close Encounters) · Fundador del CUFOS ◆</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="personas" data-terms="ruppelt edward director blue book ufo">
+          <p class="gloss-entry-sigla">Edward J. Ruppelt</p>
+          <p class="gloss-entry-nombre">Oficial USAF · Primer director de Blue Book</p>
+          <p class="gloss-entry-desc">Oficial de la Fuerza Aérea y primer director del Proyecto Blue Book. Fue quien popularizó el término <strong>'Unidentified Flying Object' (UFO)</strong> como alternativa técnica a 'platillo volador'. Tras retirarse, hizo declaraciones públicas que sugerían que el gobierno sabía más de lo que revelaba sobre el fenómeno.</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="personas" data-terms="robertson robertson panel físico cia 1953">
+          <p class="gloss-entry-sigla">H.P. Robertson</p>
+          <p class="gloss-entry-nombre">Howard Percy Robertson · Físico estadounidense</p>
+          <p class="gloss-entry-desc">Físico de la CIA que presidió el <em>Panel Robertson</em> de enero de 1953, convocado para definir la política gubernamental frente a los OVNIs. Sus recomendaciones —desacreditación pública sostenida, reducción del interés civil— se convirtieron en política oficial durante más de una década.</p>
+          <p class="gloss-entry-note">Aparece en: Panel Robertson, Project Blue Book, JANAP 146</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="personas" data-terms="condon edward informe colorado universidad 1968">
+          <p class="gloss-entry-sigla">Edward Condon</p>
+          <p class="gloss-entry-nombre">Físico · Director del Estudio Condon</p>
+          <p class="gloss-entry-desc">Físico estadounidense que dirigió el estudio financiado por la USAF en la Universidad de Colorado (1966–1968). Su informe concluyó que no existían beneficios científicos para continuar investigando OVNIs. Fue utilizado para justificar el cierre del Libro Azul. Turner y J. Allen Hynek señalaron que las conclusiones del resumen ejecutivo contradecían los datos detallados del propio estudio.</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="personas" data-terms="keyhoe donald marines extraterrestre hipótesis">
+          <p class="gloss-entry-sigla">Donald Keyhoe</p>
+          <p class="gloss-entry-nombre">Mayor retirado de los Marines · Investigador</p>
+          <p class="gloss-entry-desc">Uno de los primeros defensores públicos de la hipótesis extraterrestre en EE.UU. Sus publicaciones en los años 1950 y 1960 argumentaban que el gobierno conocía el origen no terrestre de los OVNIs. Turner lo cita frecuentemente como fuente de información sobre las contradicciones internas de la política oficial.</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="personas" data-terms="vallée jacques francés base de datos informático">
+          <p class="gloss-entry-sigla">Jacques Vallée</p>
+          <p class="gloss-entry-nombre">Astrónomo e informático · Investigador UAP</p>
+          <p class="gloss-entry-desc">Científico francés que creó una de las bases de datos de casos OVNI más importantes del mundo. El documento de Turner utiliza información compilada por Vallée, lo que lo convierte en una fuente metodológica del análisis estadístico citado en el informe. Autor de múltiples hipótesis alternativas sobre la naturaleza del fenómeno UAP.</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="personas" data-terms="grusch david pentagono informante congreso 2026">
+          <p class="gloss-entry-sigla">David Grusch</p>
+          <p class="gloss-entry-nombre">Ex-oficial de inteligencia · Informante UAP</p>
+          <p class="gloss-entry-desc">Ex-analista de inteligencia del Pentágono que testificó ante el Congreso de EE.UU. el <strong>9 de junio de 2026</strong>. Afirmó bajo juramento que el gobierno estadounidense posee programas de recuperación y ingeniería inversa de tecnología no humana, y que documentos históricos como el australiano de 1971 (A13693) respaldan estas afirmaciones. Su testimonio reactivó el debate público sobre UAP.</p>
+          <p class="gloss-entry-note">Testimonio: 9 Jun 2026 · Congreso EE.UU. · Programas SAP/UAP</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="personas" data-terms="avi loeb harvard astrofísico galileo project oumuamua">
+          <p class="gloss-entry-sigla">Avi Loeb</p>
+          <p class="gloss-entry-nombre">Astrofísico · Harvard · Galileo Project</p>
+          <p class="gloss-entry-desc">Astrofísico teórico de Harvard, ex-director del departamento de astronomía (2011–2020). Fundador del <strong>Galileo Project</strong> y defensor de la hipótesis de que 'Oumuamua podría ser un artefacto tecnológico extraterrestre. Autor de 'Extraterrestrial' (2021) e 'Interstellar' (2024). Preside el comité asesor de Breakthrough Starshot y ha sido una figura controvertida pero influyente en la legitimación científica del estudio UAP.</p>
+          <p class="gloss-entry-note">Galileo Project · Breakthrough Starshot · 'Oumuamua · IM1</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="personas" data-terms="frank drake astrónomo ecuación drake seti">
+          <p class="gloss-entry-sigla">Frank Drake</p>
+          <p class="gloss-entry-nombre">Astrónomo · Creador de la Ecuación de Drake</p>
+          <p class="gloss-entry-desc">Astrónomo estadounidense que fundó el proyecto SETI en 1985 y formuló la famosa <strong>Ecuación de Drake</strong> (1961) para estimar el número de civilizaciones activas en la galaxia. Su trabajo sentó las bases de la astrobiología moderna y la búsqueda científica de vida inteligente extraterrestre.</p>
+          <p class="gloss-entry-note">Ecuación de Drake (1961) · SETI (1985)</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="personas" data-terms="john greenewald black vault foia documentos">
+          <p class="gloss-entry-sigla">John Greenewald Jr.</p>
+          <p class="gloss-entry-nombre">Fundador de The Black Vault</p>
+          <p class="gloss-entry-desc">Investigador independiente que desde 1996 ha presentado más de <strong>10,000 solicitudes FOIA</strong> al gobierno estadounidense. Su archivo en línea (The Black Vault) es la fuente primaria de acceso libre para documentos gubernamentales desclasificados sobre UAP, incluyendo el informe australiano de 1971 (A13693) y cientos de archivos de la CIA, FBI y USAF.</p>
+          <p class="gloss-entry-note">theblackvault.com · >10,000 solicitudes FOIA · Desde 1996</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="personas" data-terms="oh turner oficina inteligencia raaf australia 1971">
+          <p class="gloss-entry-sigla">O.H. Turner</p>
+          <p class="gloss-entry-nombre">Oficial de inteligencia · RAAF · 1971</p>
+          <p class="gloss-entry-desc">Autor del documento de evaluación de inteligencia de la RAAF fechado el <strong>27 de mayo de 1971</strong>. Su análisis de 47 páginas critica la política oficial de desacreditación de OVNIs y sugiere que la USAF actuó como fachada para intereses de otras agencias. El documento fue desclasificado y publicado por The Black Vault, y citado por David Grusch en su testimonio ante el Congreso de 2026.</p>
+          <p class="gloss-entry-note">Documento: A13693 · Fecha: 27 May 1971 · RAAF</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="personas" data-terms="kenneth arnold piloto avistamiento 1947 platillo volante">
+          <p class="gloss-entry-sigla">Kenneth Arnold</p>
+          <p class="gloss-entry-nombre">Piloto · Avistamiento fundador · 1947</p>
+          <p class="gloss-entry-desc">Piloto estadounidense cuyo avistamiento del <strong>24 de junio de 1947</strong> sobre las montañas Cascade (Washington) dio origen al término 'platillo volante'. Vio 9 objetos en formación a aproximadamente 1,900 km/h, describiendo su movimiento como 'un platillo que rebotara sobre el agua'. Su reporte inició la 'summer of the saucers' y la era moderna de los OVNIs.</p>
+          <p class="gloss-entry-note">24 Jun 1947 · Montañas Cascade · Origen del término 'platillo volante'</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="personas" data-terms="jesse marcel mayor inteligencia roswell 1947">
+          <p class="gloss-entry-sigla">Jesse Marcel</p>
+          <p class="gloss-entry-nombre">Mayor · Oficial de inteligencia · Roswell</p>
+          <p class="gloss-entry-desc">Oficial de inteligencia de la USAF que participó en la recuperación de restos en Roswell (1947). Fue quien mostró públicamente los fragmentos recuperados a la prensa, contribuyendo a la controversia sobre la naturaleza del material. Su testimonio ha sido central en las investigaciones independientes del incidente.</p>
+          <p class="gloss-entry-note">Relacionado con: Incidente Roswell 1947</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="personas" data-terms="david fravor comandante piloto tic tac 2004 nimitz">
+          <p class="gloss-entry-sigla">David Fravor</p>
+          <p class="gloss-entry-nombre">Comandante · Incidente Tic Tac · 2004</p>
+          <p class="gloss-entry-desc">Piloto de la Marina de EE.UU. que reportó el famoso <strong>incidente 'Tic Tac'</strong> de noviembre de 2004 frente a la costa de San Diego. Junto con su compañero, observó un objeto blanco en forma de cápsula que realizaba maniobras imposibles para la tecnología conocida, sin alas, rotor o escape visible. Su testimonio ha sido uno de los más convincentes en las audiencias del Congreso.</p>
+          <p class="gloss-entry-note">Incidente: Tic Tac, Nov 2004 · USS Nimitz · Testimonio Congreso</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="personas" data-terms="ryan graves piloto informante uap congreso">
+          <p class="gloss-entry-sigla">Ryan Graves</p>
+          <p class="gloss-entry-nombre">Piloto retirado · Informante UAP</p>
+          <p class="gloss-entry-desc">Ex-piloto de la Marina de EE.UU. que testificó ante el Congreso sobre avistamientos UAP rutinarios durante sus misiones. Reportó que los pilotos de su escuadrón observaban objetos UAP regularmente durante entrenamientos, descritos como 'esferas' o 'cubos dentro de esferas'. Su testimonio contribuyó a la legitimación del tema UAP en el ámbito gubernamental.</p>
+          <p class="gloss-entry-note">Testimonio: Congreso EE.UU. · Avistamientos rutinarios</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="personas" data-terms="jon kosloski director aaro pentagono 2024">
+          <p class="gloss-entry-sigla">Jon Kosloski</p>
+          <p class="gloss-entry-nombre">Director de AARO · 2024–presente</p>
+          <p class="gloss-entry-desc">Director de la All-Domain Anomaly Resolution Office (AARO) desde 2024. Firmó el informe de <strong>junio de 2026</strong> que reveló que el 40% de los fenómenos UAP reportados carecen de explicación razonable y permanecen sin resolver. Su informe mencionó específicamente una 'orbe naranja' madre lanzando orbes rojos más pequeños.</p>
+          <p class="gloss-entry-note">Director AARO · Informe: Jun 2026 · 40% sin explicación</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="personas" data-terms="sean kirkpatrick primer director aaro 2022 2024">
+          <p class="gloss-entry-sigla">Sean Kirkpatrick</p>
+          <p class="gloss-entry-nombre">Primer director de AARO · 2022–2024</p>
+          <p class="gloss-entry-desc">Primer director de AARO (2022–2024). Físico y ex-oficial de inteligencia de defensa. Presentó el informe histórico de AARO al Congreso, estableciendo los primeros protocolos formales de investigación UAP del Pentágono. Su trabajo sentó las bases para la transparencia posterior.</p>
+          <p class="gloss-entry-note">Primer director AARO · 2022–2024</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="personas" data-terms="gennadiy borisov astrónomo descubridor 2i borisov 2019">
+          <p class="gloss-entry-sigla">Gennadiy Borisov</p>
+          <p class="gloss-entry-nombre">Astrónomo aficionado · Descubridor de 2I/Borisov</p>
+          <p class="gloss-entry-desc">Astrónomo aficionado ruso que descubrió el <strong>2I/Borisov</strong> en agosto de 2019 — el segundo objeto interestelar confirmado. Utilizó un telescopio de su propia construcción en el Observatorio de MARGO (Crimea). Su descubrimiento confirmó que 'Oumuamua no era un caso aislado y que los objetos interestelares son más comunes de lo previsto.</p>
+          <p class="gloss-entry-note">Descubrimiento: Ago 2019 · 2I/Borisov · Crimea</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="personas" data-terms="bob lazar robert scott area 51 s4 elemento 115 moscovio">
+          <p class="gloss-entry-sigla">Bob Lazar</p>
+          <p class="gloss-entry-nombre">Robert Scott Lazar · Declarante S-4 / Área 51</p>
+          <p class="gloss-entry-desc">En mayo de 1989 afirmó en televisión haber trabajado en una instalación llamada S-4 cerca del Área 51, analizando naves de origen no humano propulsadas por el "elemento 115". Ese elemento (moscovio) fue sintetizado en 2003 y confirmado en la tabla periódica en 2016, 27 años después de su declaración. Sus títulos académicos en MIT y Caltech no tienen registro verificable.</p>
+          <p class="gloss-entry-note">Declaración: mayo 1989 · Elemento 115/moscovio confirmado: 2016 · Documental: <em>S4: The Bob Lazar Story</em> (2026)</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="personas" data-terms="dario amodei ceo anthropic claude cofundador openai">
+          <p class="gloss-entry-sigla">Dario Amodei</p>
+          <p class="gloss-entry-nombre">CEO y cofundador de Anthropic</p>
+          <p class="gloss-entry-desc">Cofundador y CEO de Anthropic, empresa creada en 2021 como escisión de OpenAI por desacuerdos sobre seguridad frente a velocidad de despliegue. Protagonizó en junio de 2026 la disputa pública con el asesor de la Casa Blanca David Sacks tras la directiva de exportación que apagó Fable 5 y Mythos 5.</p>
+          <p class="gloss-entry-note">Cofundador Anthropic: 2021 · Ex-investigador en Baidu (2014–2015)</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="personas" data-terms="david sacks asesor casa blanca ia ciencia tecnologia">
+          <p class="gloss-entry-sigla">David Sacks</p>
+          <p class="gloss-entry-nombre">Copresidente del Consejo de Asesores en Ciencia y Tecnología del Presidente</p>
+          <p class="gloss-entry-desc">Funcionario de la administración estadounidense que en junio de 2026 publicó en X su versión de la disputa con Dario Amodei sobre el apagón de Fable 5 y Mythos 5, afirmando que Anthropic se negó tanto a corregir el fallo señalado como a retirar los modelos.</p>
+          <p class="gloss-entry-note">Disputa pública: 13 jun 2026 · Relacionado con: Fable 5, Mythos 5, Anthropic</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="personas" data-terms="christopher mellon subsecretario defensa inteligencia pentagono">
+          <p class="gloss-entry-sigla">Christopher Mellon</p>
+          <p class="gloss-entry-nombre">Ex Subsecretario de Defensa para Inteligencia</p>
+          <p class="gloss-entry-desc">Ex funcionario del Pentágono que describe el secretismo UAP no como una conspiración centralizada sino como una burocracia descentralizada en la que cada facción protege su propia parcela de información, de modo que ni siquiera el Congreso tiene el cuadro completo.</p>
+          <p class="gloss-entry-note">Aparece en: El Imperio que se Fisura</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="personas" data-terms="daniel ellsberg papeles del pentagono vietnam filtración 1971">
+          <p class="gloss-entry-sigla">Daniel Ellsberg</p>
+          <p class="gloss-entry-nombre">Analista del Pentágono · Autor de Los Papeles del Pentágono</p>
+          <p class="gloss-entry-desc">Ex-analista militar que en 1971 filtró al New York Times los Papeles del Pentágono, documentos que demostraban que el gobierno de Lyndon Johnson había mentido al Congreso y al pueblo estadounidense sobre el alcance real de la guerra de Vietnam. Es citado como referencia sobre la mecánica institucional del secreto de Estado.</p>
+          <p class="gloss-entry-note">Filtración: 1971 · Relacionado con: patrón de encubrimiento sistémico</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="personas" data-terms="eric hecker raytheon icecube antartida contratista testigo elf">
+          <p class="gloss-entry-sigla">Eric Hecker</p>
+          <p class="gloss-entry-nombre">Ex-contratista de Raytheon Polar Services · Testigo Antártida</p>
+          <p class="gloss-entry-desc">Contratista que trabajó en el Polo Sur en 2010–2011 durante la instalación de IceCube. Desde 2023 ha declarado —incluido testimonio ante el AARO y el Congreso— que el observatorio tendría capacidades de transmisión activa y un sistema ELF paralelo no documentado, afirmaciones no verificadas ni refutadas oficialmente.</p>
+          <p class="gloss-entry-note">Servicio: 2010–2011 · Declaraciones no verificadas · Relacionado con: IceCube</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ INFORMES (5) ═══ -->
+    <section class="gloss-section" data-section="informes">
+      <div class="gloss-section-header">
+        <span class="gloss-section-tag informes">Informes</span>
+        <span class="gloss-section-count">7 entradas</span>
+      </div>
+      <div class="gloss-grid">
+
+        <div class="gloss-entry" data-cat="informes" data-terms="estimate situation 1948 pentágono clasificado">
+          <p class="gloss-entry-sigla">Estimate of the Situation</p>
+          <p class="gloss-entry-nombre">Análisis clasificado · Project Sign · 1948</p>
+          <p class="gloss-entry-desc">Documento secreto elaborado por Project Sign que, según la narrativa histórica UAP, concluía que algunos objetos observados podían tener origen extraterrestre. Habría sido rechazado por altos mandos militares por falta de "evidencia dura". <strong>No se conserva ninguna copia conocida.</strong> Su destrucción es citada por Turner como parte del patrón de eliminación de evidencia inconveniente.</p>
+          <p class="gloss-entry-note">Estado: presumiblemente destruido · Sin copia verificable en archivos públicos</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="informes" data-terms="panel robertson 1953 cia debunking desacreditación">
+          <p class="gloss-entry-sigla">Panel Robertson</p>
+          <p class="gloss-entry-nombre">Comité científico de la CIA · Enero 1953</p>
+          <p class="gloss-entry-desc">Panel convocado por la Oficina de Inteligencia Científica de la CIA. Sus conclusiones recomendaron que el interés público en los OVNIs debía ser activamente reducido mediante una campaña de <strong>desacreditación (debunking)</strong> sostenida durante al menos 18–24 meses. Para Turner, este panel es la prueba documental de que la política de ridiculización fue una decisión deliberada y coordinada, no una postura científica.</p>
+          <p class="gloss-entry-note">Desclasificado en 1966 · Pieza central del documento A13693</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="informes" data-terms="condon report informe 1968 colorado universidad cierre">
+          <p class="gloss-entry-sigla">Condon Report</p>
+          <p class="gloss-entry-nombre">Informe Condon · Universidad de Colorado · 1968</p>
+          <p class="gloss-entry-desc">Estudio de dos años financiado por la USAF. Su conclusión oficial: sin beneficio científico para continuar investigando OVNIs. Fue la justificación formal para cerrar el Proyecto Blue Book en 1969. Turner y J. Allen Hynek señalaron que las conclusiones del resumen ejecutivo contradecían los datos detallados del propio estudio.</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="informes" data-terms="special report 14 blue book 3200 estadística desconocidos probabilidad">
+          <p class="gloss-entry-sigla">Special Report No. 14</p>
+          <p class="gloss-entry-nombre">Informe estadístico · Project Blue Book · 1955</p>
+          <p class="gloss-entry-desc">Análisis estadístico de aproximadamente 3,200 casos del Libro Azul. Su hallazgo más significativo: los casos mejor documentados tenían una <strong>mayor proporción de "desconocidos"</strong> (33.3% en reportes excelentes vs. 16.6% en reportes pobres). El cuerpo principal del informe —316 páginas— nunca fue distribuido públicamente. Solo circuló un resumen de tres páginas que minimizaba estos resultados.</p>
+          <p class="gloss-entry-note">Probabilidad calculada contra explicación convencional: menos de 1 en 10²⁸</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="informes" data-terms="informe aaro junio 2026 pentagono 40%">
+          <p class="gloss-entry-sigla">Informe AARO · Junio 2026</p>
+          <p class="gloss-entry-nombre">All-Domain Anomaly Resolution Office · 2026</p>
+          <p class="gloss-entry-desc">Informe firmado por el director Jon Kosloski que reveló que el <strong>40% de los fenómenos UAP reportados</strong> carecen de explicación razonable y permanecen sin resolver. Mencionó específicamente una "orbe naranja" madre lanzando orbes rojos más pequeños. Es el informe UAP más transparente del Pentágono hasta la fecha.</p>
+          <p class="gloss-entry-note">Fecha: Jun 2026 · Director: Jon Kosloski · 40% sin explicación</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="informes" data-terms="top secret umbra nsa sigint five eyes clasificacion 334 paginas">
+          <p class="gloss-entry-sigla">TOP SECRET UMBRA</p>
+          <p class="gloss-entry-nombre">Clasificación SIGINT · NSA · Five Eyes</p>
+          <p class="gloss-entry-desc">Palabra clave de Información Compartimentada Sensible (SCI) usada por la NSA desde los años 1950 para proteger los interceptos más sensibles de inteligencia de señales en todo el sistema Five Eyes. Formalizada en 1968, protegió durante décadas informes sobre UAP; 334 páginas fueron liberadas el 18 de mayo de 2026 tras una apelación FOIA de la Disclosure Foundation, sin que el resto de las redacciones haya sido levantado.</p>
+          <p class="gloss-entry-note">Formalización: 1968 · Liberación parcial: 18 may 2026 · Ligado a: caso USS Liberty (1967)</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ TECNOLOGÍA (9) ═══ -->
+    <section class="gloss-section" data-section="tecnologia">
+      <div class="gloss-section-header">
+        <span class="gloss-section-tag tecnologia">Tecnología</span>
+        <span class="gloss-section-count">14 entradas</span>
+      </div>
+      <div class="gloss-grid">
+
+        <div class="gloss-entry" data-cat="tecnologia" data-terms="avrocar avro canadá disco prototipo despegue vertical">
+          <p class="gloss-entry-sigla">Avrocar</p>
+          <p class="gloss-entry-nombre">Vehículo experimental · Avro Canada · años 1950–60</p>
+          <p class="gloss-entry-desc">Prototipo de aeronave con <strong>forma de disco</strong>, capacidad de despegue vertical y alta maniobrabilidad, desarrollado por la empresa canadiense Avro bajo supervisión y financiación del ejército de EE.UU. Turner lo presenta como evidencia directa de que el gobierno americano intentó reproducir las características de vuelo descritas en los reportes OVNI, lo que implica que consideraba esas características reales y alcanzables.</p>
+          <p class="gloss-entry-note">El proyecto fue clasificado. Producción controlada por EE.UU. · Relacionado con: control gravitacional</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="tecnologia" data-terms="antigravedad gravitacional propulsión teller oppenheimer dyson wheeler princeton mit">
+          <p class="gloss-entry-sigla">Anti-Gravity Research</p>
+          <p class="gloss-entry-nombre">Investigación sobre control gravitacional · 1955–1966</p>
+          <p class="gloss-entry-desc">Conjunto de al menos <strong>46 proyectos</strong> sobre control gravitacional y propulsión avanzada financiados principalmente durante la década de 1950 (33 bajo supervisión directa de la USAF). Involucraron a científicos de primer nivel —Teller, Oppenheimer, Dyson, Wheeler— en seis centros de investigación: Princeton, Purdue, MIT y otros. Turner los cita como evidencia indirecta de que el gobierno tomaba en serio la propulsión por control gravitacional observada en reportes OVNI.</p>
+          <p class="gloss-entry-note">Los informes de estos proyectos permanecen en su mayor parte clasificados</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="tecnologia" data-terms="fast five hundred meter aperture spherical telescope china">
+          <p class="gloss-entry-sigla">FAST</p>
+          <p class="gloss-entry-nombre">Five-hundred-meter Aperture Spherical Telescope</p>
+          <p class="gloss-entry-desc">Radiotelescopio esférico de <strong>500 metros de apertura</strong>, el más grande del mundo. Ubicado en Guizhou, China. Capaz de detectar señales de radio extremadamente débiles de fuentes extraterrestres. Participa en proyectos SETI internacionales, incluyendo Breakthrough Listen, y ha detectado más de 500 pulsares nuevos.</p>
+          <p class="gloss-entry-note">Ubicación: Guizhou, China · Apertura: 500m · Participa: Breakthrough Listen</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="tecnologia" data-terms="machine learning ia inteligencia artificial seti datos">
+          <p class="gloss-entry-sigla">Machine Learning / IA</p>
+          <p class="gloss-entry-nombre">Aprendizaje automático · Inteligencia Artificial</p>
+          <p class="gloss-entry-desc">Tecnología de inteligencia artificial aplicada al análisis de datos astronómicos masivos. En SETI, permite detectar patrones anómalos en señales de radio que los métodos tradicionales podrían pasar por alto. El Galileo Project utiliza IA para clasificar ~500,000 trayectorias aéreas y identificar casos ambiguos que requieren investigación adicional.</p>
+          <p class="gloss-entry-note">Aplicaciones: SETI, Galileo Project, análisis UAP</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="tecnologia" data-terms="jwst webb james webb space telescope nasa">
+          <p class="gloss-entry-sigla">JWST / Webb</p>
+          <p class="gloss-entry-nombre">James Webb Space Telescope · NASA/ESA/CSA · 2022</p>
+          <p class="gloss-entry-desc">Telescopio espacial de la NASA, ESA y CSA, sucesor de Hubble. Operando desde 2022 en el punto Lagrange L2 a 1.5 millones de km de la Tierra. Ha observado <strong>3I/ATLAS</strong> revelando su composición química exótica: CO₂/H₂O = 7.6:1, una de las ratios más altas jamás observadas en un cometa. También detectó monóxido de carbono, sulfuro de carbonilo y metano.</p>
+          <p class="gloss-entry-note">Lanzamiento: Dic 2021 · Operativo: 2022 · L2 · 3I/ATLAS: CO₂/H₂O = 7.6:1</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="tecnologia" data-terms="spherex spectro photometer history universe nasa 2025">
+          <p class="gloss-entry-sigla">SPHEREx</p>
+          <p class="gloss-entry-nombre">Spectro-Photometer for the History of the Universe · 2025</p>
+          <p class="gloss-entry-desc">Telescopio espacial de la NASA lanzado en marzo de 2025. Realiza mapeo espectroscópico del cielo completo en 102 bandas de infrarrojo. Participó en la caracterización de <strong>3I/ATLAS</strong> y su composición química, contribuyendo datos sobre la presencia de CO₂, CO y compuestos carbonáceos en el objeto interestelar.</p>
+          <p class="gloss-entry-note">Lanzamiento: Mar 2025 · 102 bandas infrarrojo · 3I/ATLAS</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="tecnologia" data-terms="alma atacama large millimeter submillimeter array chile">
+          <p class="gloss-entry-sigla">ALMA</p>
+          <p class="gloss-entry-nombre">Atacama Large Millimeter/submillimeter Array</p>
+          <p class="gloss-entry-desc">Conjunto de <strong>66 antenas de radio</strong> en el desierto de Atacama, Chile, a 5,000 metros de altitud. El interferómetro más potente del mundo para observar el universo en longitudes de onda milimétricas y submilimétricas. Capaz de detectar moléculas complejas en objetos interestelares como 3I/ATLAS.</p>
+          <p class="gloss-entry-note">Ubicación: Atacama, Chile · 66 antenas · Altitud: 5,000m</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="tecnologia" data-terms="hubble space telescope nasa 1990">
+          <p class="gloss-entry-sigla">Hubble</p>
+          <p class="gloss-entry-nombre">Hubble Space Telescope · NASA/ESA · 1990–presente</p>
+          <p class="gloss-entry-desc">Telescopio espacial de la NASA/ESA operando desde 1990 en órbita terrestre baja. A pesar de su edad, sigue siendo una herramienta crucial para la astronomía. Ha observado <strong>3I/ATLAS</strong> proporcionando datos sobre su núcleo (diámetro estimado: 0.32–5.6 km) y la evolución de su coma y cola durante su paso por el sistema solar.</p>
+          <p class="gloss-entry-note">Operativo: 1990–presente · 3I/ATLAS: núcleo 0.32–5.6 km</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="tecnologia" data-terms="vela solar solar sail propulsión fotónica oumuamua">
+          <p class="gloss-entry-sigla">Vela Solar</p>
+          <p class="gloss-entry-nombre">Solar Sail · Propulsión fotónica</p>
+          <p class="gloss-entry-desc">Tecnología de propulsión espacial que utiliza la <strong>presión de la luz solar</strong> (fotones) para acelerar una nave sin necesidad de combustible. Avi Loeb propuso que 'Oumuamua podría ser una vela solar artificial debido a su aceleración no gravitacional (0.0001 cm/s²). El Breakthrough Starshot planea utilizar velas solares impulsadas por láser para alcanzar Alfa Centauri.</p>
+          <p class="gloss-entry-note">Relacionado con: 'Oumuamua, Breakthrough Starshot, propulsión interestelar</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="tecnologia" data-terms="icecube neutrino observatory polo sur antartida hielo detector">
+          <p class="gloss-entry-sigla">IceCube</p>
+          <p class="gloss-entry-nombre">IceCube Neutrino Observatory · Polo Sur</p>
+          <p class="gloss-entry-desc">El detector de neutrinos más grande del mundo: un kilómetro cúbico de hielo antártico instrumentado con 5,160 sensores ópticos entre 1.5 y 2.5 km de profundidad, operado por la Universidad de Wisconsin-Madison y financiado por la NSF. Activo desde diciembre de 2010, detectó en 2023 los primeros neutrinos de origen galáctico. Un ex-contratista de Raytheon (Eric Hecker) ha declarado, sin verificación oficial, que el array tendría capacidades adicionales de transmisión activa.</p>
+          <p class="gloss-entry-note">Completado: dic 2010 · 5,160 sensores · Relacionado con: Eric Hecker, Raytheon</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="tecnologia" data-terms="torio thorium th-232 tmsr reactor sales fundidas china india nuclear">
+          <p class="gloss-entry-sigla">Torio (Th-232)</p>
+          <p class="gloss-entry-nombre">Combustible nuclear alternativo · TMSR-LF1</p>
+          <p class="gloss-entry-desc">Metal 3–4 veces más abundante que el uranio, con residuos de vida media mucho menor. China opera desde 2023 el TMSR-LF1, primer reactor de sales fundidas de torio en medio siglo, en Wuwei; India alcanzó en abril de 2026 la criticidad de su reactor criador rápido PFBR (Kalpakkam), con las mayores reservas mundiales de torio (~25%).</p>
+          <p class="gloss-entry-note">TMSR-LF1: China, 2023 · PFBR: India, criticidad abr 2026</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="tecnologia" data-terms="fable 5 mythos 5 anthropic claude modelo ia opus glasswing">
+          <p class="gloss-entry-sigla">Fable 5 / Mythos 5</p>
+          <p class="gloss-entry-nombre">Modelos de IA · Anthropic · Jun 2026</p>
+          <p class="gloss-entry-desc">Primeros modelos de Anthropic de una clase superior a Opus, lanzados el 9 de junio de 2026. Fable 5 incluye clasificadores de seguridad para uso general; Mythos 5, sin esas restricciones, está reservado a 150–200 organizaciones de infraestructura crítica bajo Project Glasswing. Setenta y dos horas después del lanzamiento, una directiva de control de exportaciones de EE.UU. obligó a suspenderlos globalmente; el acceso se restableció el 1 de julio de 2026.</p>
+          <p class="gloss-entry-note">Lanzamiento: 9 jun 2026 · Suspensión: 12 jun · Restauración: 1 jul 2026</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="tecnologia" data-terms="neuralink elon musk implante cerebral interfaz cerebro computadora">
+          <p class="gloss-entry-sigla">Neuralink</p>
+          <p class="gloss-entry-nombre">Interfaz cerebro-computadora · Elon Musk</p>
+          <p class="gloss-entry-desc">Empresa de Elon Musk que implantó su primer dispositivo cerebral en un humano en enero de 2024. Para mayo de 2026 contaba con 26 pacientes en ensayos activos, con un implante de hasta 3,072 electrodos que permite controlar cursores y jugar videojuegos con el pensamiento. Citada como la frontera tecnológica actual de la "lectura" —aún no "escritura"— de actividad neuronal.</p>
+          <p class="gloss-entry-note">Primer implante: ene 2024 · 26 pacientes (may 2026) · Proyecto Blindsight (visión)</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ NORMAS (7) ═══ -->
+    <section class="gloss-section" data-section="normas">
+      <div class="gloss-section-header">
+        <span class="gloss-section-tag normas">Normas</span>
+        <span class="gloss-section-count">10 entradas</span>
+      </div>
+      <div class="gloss-grid">
+
+        <div class="gloss-entry" data-cat="normas" data-terms="janap 146 prisión multa espionaje silencio reporte">
+          <p class="gloss-entry-sigla">JANAP 146</p>
+          <p class="gloss-entry-nombre">Joint Army-Navy-Air Force Publication 146</p>
+          <p class="gloss-entry-desc">Manual militar estadounidense que regulaba el reporte de fenómenos observados por personal en servicio. Citado frecuentemente en la literatura UAP porque imponía <strong>obligaciones estrictas de confidencialidad</strong>: hablar públicamente sobre OVNIs podía conllevar hasta 10 años de prisión y multas de $10,000. La revisión de 1960 (146E) lo elevó a delito bajo la Ley de Espionaje.</p>
+          <p class="gloss-entry-note">Vigente desde 1953 · Revisión 1960: delito bajo Ley de Espionaje</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="normas" data-terms="afr 200-2 air force regulation reporte procedimiento comunicación">
+          <p class="gloss-entry-sigla">AFR 200-2</p>
+          <p class="gloss-entry-nombre">Air Force Regulation 200-2</p>
+          <p class="gloss-entry-desc">Regulación de la Fuerza Aérea que establecía los procedimientos de reporte OVNI, las responsabilidades de investigación y las formas de comunicación pública autorizadas. Turner la cita como evidencia de que la USAF mantuvo un interés institucional continuado en el fenómeno incluso mientras públicamente lo descartaba.</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="normas" data-terms="foia freedom information act ley libertad información">
+          <p class="gloss-entry-sigla">FOIA</p>
+          <p class="gloss-entry-nombre">Freedom of Information Act · 1966</p>
+          <p class="gloss-entry-desc">Ley de Libertad de Información de EE.UU. (1966). Permite a cualquier ciudadano solicitar documentos del gobierno federal. Ha sido la herramienta principal para la desclasificación de documentos UAP, incluyendo los informes de Project Blue Book, documentos de la CIA y el informe australiano A13693. John Greenewald Jr. ha presentado más de 10,000 solicitudes FOIA.</p>
+          <p class="gloss-entry-note">Aprobada: 1966 · Herramienta clave para desclasificación UAP</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="normas" data-terms="ndaa 2023 national defense authorization act uap">
+          <p class="gloss-entry-sigla">NDAA 2023</p>
+          <p class="gloss-entry-nombre">National Defense Authorization Act · 2023</p>
+          <p class="gloss-entry-desc">Ley de Autorización de Defensa Nacional de EE.UU. La edición de 2023 incluyó por primera vez <strong>disposiciones específicas sobre UAP</strong>, exigiendo transparencia al Pentágono, creando mecanismos de reporte para personal militar y estableciendo la protección de informantes (whistleblowers) que reporten programas UAP no autorizados.</p>
+          <p class="gloss-entry-note">Primera ley con disposiciones UAP específicas · Protección de whistleblowers</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="normas" data-terms="sap special access program acceso especial clasificado">
+          <p class="gloss-entry-sigla">SAP</p>
+          <p class="gloss-entry-nombre">Special Access Program</p>
+          <p class="gloss-entry-desc">Programa de Acceso Especial. Programas de inteligencia altamente compartimentados que requieren autorización específica más allá del nivel de clasificación habitual. Se ha especulado —y David Grusch lo afirmó bajo juramento— que programas de recuperación de tecnología no humana operan como SAPs, con acceso restringido incluso dentro del propio Pentágono.</p>
+          <p class="gloss-entry-note">Compartimentación extrema · Grusch: programas UAP como SAPs</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="normas" data-terms="sci sensitive compartmented information compartimentada">
+          <p class="gloss-entry-sigla">SCI</p>
+          <p class="gloss-entry-nombre">Sensitive Compartmented Information</p>
+          <p class="gloss-entry-desc">Información Compartimentada Sensible. Nivel de clasificación que requiere autorización específica por programa, además del nivel de seguridad general (Top Secret, Secret, etc.). Los programas UAP más sensibles, según testimonios recientes, operan bajo protocolos SCI para limitar el acceso incluso entre altos funcionarios de inteligencia.</p>
+          <p class="gloss-entry-note">Nivel: Top Secret + compartimentación · Programas UAP sensibles</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="normas" data-terms="q clearance autorización seguridad nuclear departamento energía">
+          <p class="gloss-entry-sigla">Q Clearance</p>
+          <p class="gloss-entry-nombre">Autorización de seguridad nuclear</p>
+          <p class="gloss-entry-desc">Nivel de autorización de seguridad del Departamento de Energía de EE.UU. para información relacionada con armas nucleares y tecnología asociada. Relevante en el contexto UAP porque varias instalaciones nucleares han sido objeto de observaciones OVNI reportadas, y se ha especulado sobre programas de ingeniería inversa con componentes nucleares.</p>
+          <p class="gloss-entry-note">Departamento de Energía · Instalaciones nucleares · UAP</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="normas" data-terms="tratado antartico 1959 antartida guerra fria">
+          <p class="gloss-entry-sigla">Tratado Antártico</p>
+          <p class="gloss-entry-nombre">Antarctic Treaty · 1959</p>
+          <p class="gloss-entry-desc">Firmado en plena Guerra Fría, reserva la Antártida para fines pacíficos y científicos, prohíbe actividad militar y establece libertad de investigación científica. El continente más regulado del planeta, con más de 80 bases activas, sigue siendo escenario de visitas y episodios sin explicación pública completa.</p>
+          <p class="gloss-entry-note">Firmado: 1959 · Relacionado con: Operation Highjump, Operation Argus, IceCube</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="normas" data-terms="directiva control exportaciones fable mythos lutnick comercio 2026">
+          <p class="gloss-entry-sigla">Directiva de Control de Exportaciones</p>
+          <p class="gloss-entry-nombre">Departamento de Comercio de EE.UU. · Junio 2026</p>
+          <p class="gloss-entry-desc">Orden emitida el 12 de junio de 2026 por el secretario de Comercio Howard Lutnick a Anthropic, invocando riesgo de seguridad nacional para exigir el cierre de acceso a Fable 5 y Mythos 5 en un plazo aproximado de 90 minutos. Es la primera vez que un gobierno trata el acceso a un modelo de lenguaje de uso general —no chips ni hardware— como un activo de exportación controlado por nacionalidad del usuario.</p>
+          <p class="gloss-entry-note">Emitida: 12 jun 2026 · Emisor: Sec. Howard Lutnick · Relacionado con: Fable 5, Mythos 5</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ CONCEPTOS (21) ═══ -->
+    <section class="gloss-section" data-section="conceptos">
+      <div class="gloss-section-header">
+        <span class="gloss-section-tag conceptos">Conceptos</span>
+        <span class="gloss-section-count">27 entradas</span>
+      </div>
+      <div class="gloss-grid">
+
+        <div class="gloss-entry" data-cat="conceptos" data-terms="debunking desacreditación ridiculización pública estrategia">
+          <p class="gloss-entry-sigla">Debunking</p>
+          <p class="gloss-entry-nombre">Estrategia de desacreditación pública</p>
+          <p class="gloss-entry-desc">Política de reencuadrar o reinterpretar observaciones para reducir el interés público en un fenómeno. En el contexto del documento de Turner, <em>debunking</em> no es una postura científica sino una <strong>estrategia de comunicación deliberada</strong>, recomendada por el Panel Robertson y ejecutada a través del Proyecto Blue Book durante más de una década.</p>
+          <p class="gloss-entry-note">Concepto central del documento A13693 · Distinguir de 'escepticismo científico'</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="conceptos" data-terms="eth extraterrestrial hypothesis hipótesis extraterrestre origen">
+          <p class="gloss-entry-sigla">ETH</p>
+          <p class="gloss-entry-nombre">Extraterrestrial Hypothesis · Hipótesis Extraterrestre</p>
+          <p class="gloss-entry-desc">Propuesta de que algunos OVNIs podrían ser vehículos de <strong>origen no humano</strong> procedentes de otros mundos o sistemas estelares. Es la hipótesis que el documento de Turner considera no refutada por la evidencia disponible, y la que el sistema oficial habría descartado sin justificación científica suficiente según su análisis.</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="conceptos" data-terms="unknowns desconocidos casos sin explicar porcentaje blue book">
+          <p class="gloss-entry-sigla">Unknowns</p>
+          <p class="gloss-entry-nombre">Casos "desconocidos" · Categoría estadística</p>
+          <p class="gloss-entry-desc">Reportes que permanecieron sin explicación satisfactoria después del análisis oficial del Proyecto Blue Book. Constituyen el núcleo del argumento de Turner: el Special Report No. 14 mostró que el porcentaje de casos <em>unknowns</em> <strong>aumentaba con la calidad del reporte</strong>, lo que implica que más y mejores datos producirían más desconocidos, no menos. La probabilidad de que pertenecieran a la misma población que los casos explicados fue calculada en menos de 1 en 10²⁸.</p>
+          <p class="gloss-entry-note">33.3% en reportes "excelentes" vs. 16.6% en reportes "pobres" · Special Report No. 14</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="conceptos" data-terms="uap unidentified anomalous phenomena fenómeno anómalo">
+          <p class="gloss-entry-sigla">UAP</p>
+          <p class="gloss-entry-nombre">Unidentified Anomalous Phenomena</p>
+          <p class="gloss-entry-desc">Sigla oficial que reemplazó a 'UFO' en la nomenclatura gubernamental estadounidense desde 2022. Designa fenómenos observados en cualquier dominio (aéreo, submarino, terrestre, espacial) que no pueden identificarse ni atribuirse a actividad conocida. El cambio de terminología refleja un intento de desestigmatizar el tema y ampliar su alcance más allá de objetos aéreos.</p>
+          <p class="gloss-entry-note">Reemplaza: UFO (Unidentified Flying Object) · Dominios: aire, mar, tierra, espacio</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="conceptos" data-terms="whistleblower informante denunciante congreso uap">
+          <p class="gloss-entry-sigla">Whistleblower</p>
+          <p class="gloss-entry-nombre">Informante / Denunciante</p>
+          <p class="gloss-entry-desc">Persona que revela información clasificada o irregularidades institucionales. En el contexto UAP, se refiere a funcionarios militares o de inteligencia —como David Grusch, David Fravor y Ryan Graves— que han testificado ante el Congreso sobre programas ocultos de recuperación de tecnología no humana. La NDAA 2023 estableció protecciones específicas para whistleblowers UAP.</p>
+          <p class="gloss-entry-note">Ejemplos: David Grusch, David Fravor, Ryan Graves · Protección: NDAA 2023</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="conceptos" data-terms="roswell incidente 1947 nuevo méxico platillo">
+          <p class="gloss-entry-sigla">Roswell</p>
+          <p class="gloss-entry-nombre">Incidente de Roswell · Nuevo México · 1947</p>
+          <p class="gloss-entry-desc">Evento ocurrido en julio de 1947 cerca de Roswell, Nuevo México, donde el ejército estadounidense anunció inicialmente la recuperación de un "platillo volador" y luego retractó la versión alegando que era un globo meteorológico del Proyecto Mogul. Es el caso OVNI más emblemático de la historia, con testimonios de testigos que afirman haber visto cuerpos no humanos entre los restos.</p>
+          <p class="gloss-entry-note">Fecha: Jul 1947 · Testigos: Jesse Marcel, Gerald Anderson · Versión oficial: Proyecto Mogul</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="conceptos" data-terms="oumuamua 1i 2017 u1 primer objeto interestelar">
+          <p class="gloss-entry-sigla">'Oumuamua</p>
+          <p class="gloss-entry-nombre">1I/2017 U1 · Primer objeto interestelar · 2017</p>
+          <p class="gloss-entry-desc">Primer objeto interestelar confirmado, descubierto en octubre de 2017. Designado 1I/'Oumuamua ('mensajero' en hawaiano). Su forma alargada (relación de aspecto 6:1), ausencia de coma cometaria y <strong>aceleración no gravitacional</strong> (0.0001 cm/s²) lo hicieron objeto de intenso debate. Avi Loeb propuso que podría ser una vela solar artificial de origen extraterrestre.</p>
+          <p class="gloss-entry-note">Descubrimiento: Oct 2017 · Aceleración no gravitacional · Hipótesis Loeb: vela solar</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="conceptos" data-terms="2i borisov segundo objeto interestelar 2019">
+          <p class="gloss-entry-sigla">2I/Borisov</p>
+          <p class="gloss-entry-nombre">Segundo objeto interestelar · 2019</p>
+          <p class="gloss-entry-desc">Segundo objeto interestelar confirmado, descubierto por el astrónomo aficionado Gennadiy Borisov en agosto de 2019. A diferencia de 'Oumuamua, mostró <strong>actividad cometaria clara</strong> (coma y cola), confirmando su naturaleza como cometa interestelar. Su composición química es similar a los cometas del Sistema Solar, aunque con algunas diferencias.</p>
+          <p class="gloss-entry-note">Descubrimiento: Ago 2019 · Descubridor: Gennadiy Borisov · Actividad cometaria confirmada</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="conceptos" data-terms="3i atlas c/2025 n1 tercer objeto interestelar cometa">
+          <p class="gloss-entry-sigla">3I/ATLAS</p>
+          <p class="gloss-entry-nombre">C/2025 N1 · Tercer objeto interestelar · 2025–2026</p>
+          <p class="gloss-entry-desc">Tercer objeto interestelar confirmado, descubierto el <strong>1 de julio de 2025</strong> por el telescopio ATLAS en Río Hurtado, Chile. Cometa con órbita hiperbólica (excentricidad 6.14) y composición química radicalmente diferente: dominado por CO₂ (87%) con apenas 4% de agua. Exhibió una anticola prominente que mutó a cola clásica. Edad estimada: 7–10 mil millones de años. Actualmente a ~5.2 UA del Sol, alejándose del sistema solar.</p>
+          <p class="gloss-entry-note">Descubrimiento: 1 Jul 2025 · CO₂: 87% · H₂O: 4% · Edad: 7–10 mil millones de años</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="conceptos" data-terms="im1 interstellar meteor 1 2014 meteoro interestelar">
+          <p class="gloss-entry-sigla">IM1</p>
+          <p class="gloss-entry-nombre">Interstellar Meteor 1 · 2014</p>
+          <p class="gloss-entry-desc">Meteoro interestelar detectado en 2014 que impactó en el Océano Pacífico cerca de Papúa Nueva Guinea. Análisis de datos de NASA CNEOS sugieren que era <strong>más resistente que cualquier otro meteoro</strong> en el catálogo (95 percentil de velocidad relativa al Sol). El Galileo Project realizó una expedición de $1.5M en 2023 para recuperar fragmentos del lecho oceánico.</p>
+          <p class="gloss-entry-note">Impacto: 2014 · Pacífico · Galileo Project: expedición $1.5M (2023)</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="conceptos" data-terms="ecuación drake equation n r fp ne fl fi fc l">
+          <p class="gloss-entry-sigla">Ecuación de Drake</p>
+          <p class="gloss-entry-nombre">Drake Equation · N = R* · fp · ne · fl · fi · fc · L</p>
+          <p class="gloss-entry-desc">Fórmula propuesta por Frank Drake en 1961 para estimar el número de civilizaciones tecnológicas activas en la Vía Láctea. Aunque varios de sus términos son altamente inciertos, sigue siendo el <strong>marco conceptual fundamental</strong> de la búsqueda de vida inteligente. Ha inspirado décadas de investigación SETI y el desarrollo de métodos para detectar señales tecnológicas.</p>
+          <p class="gloss-entry-note">Propuesta: 1961 · Autor: Frank Drake · Marco conceptual SETI</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="conceptos" data-terms="anticoma anti tail cola solar cometa">
+          <p class="gloss-entry-sigla">Anticoma</p>
+          <p class="gloss-entry-nombre">Anti-tail · Cola solar</p>
+          <p class="gloss-entry-desc">Fenómeno cometario en el que la cola de polvo parece <strong>apuntar hacia el Sol</strong> en lugar de alejarse de él. 3I/ATLAS exhibió una anticola prominente durante julio-agosto de 2025, con una elongación de 10:1, antes de mutar a una cola clásica. El fenómeno se explica por el ángulo de visión de la Tierra respecto al plano orbital del cometa.</p>
+          <p class="gloss-entry-note">3I/ATLAS: Jul–Ago 2025 · Elongación: 10:1 · Mutación a cola clásica</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="conceptos" data-terms="ua unidad astronómica distancia tierra sol">
+          <p class="gloss-entry-sigla">UA</p>
+          <p class="gloss-entry-nombre">Unidad Astronómica</p>
+          <p class="gloss-entry-desc">Distancia media entre la Tierra y el Sol (~149.6 millones de km). Unidad estándar de medición en astronomía. 3I/ATLAS se encuentra actualmente a <strong>~5.2 UA del Sol</strong>, alejándose del sistema solar en su trayectoria hiperbólica. El perihelio del cometa fue de 1.356 UA (29 de octubre de 2025).</p>
+          <p class="gloss-entry-note">Valor: ~149.6M km · 3I/ATLAS: ~5.2 UA (Jun 2026) · Perihelio: 1.356 UA</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="conceptos" data-terms="tic tac incidente uap 2004 nimitz fravor">
+          <p class="gloss-entry-sigla">Tic Tac</p>
+          <p class="gloss-entry-nombre">Incidente UAP · USS Nimitz · 2004</p>
+          <p class="gloss-entry-desc">Avistamiento UAP de noviembre de 2004 por pilotos de la USS Princeton y USS Nimitz frente a la costa de San Diego. El objeto tenía forma de cápsula blanca ("Tic Tac"), midió aproximadamente 12 metros, realizó maniobras imposibles para tecnología conocida (aceleración instantánea, desaparición del radar) y no tenía alas, rotor o escape visible. Es el caso UAP más documentado de la historia moderna.</p>
+          <p class="gloss-entry-note">Nov 2004 · USS Nimitz · David Fravor · Video FLIR desclasificado 2020</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="conceptos" data-terms="gimbal video uap 2015 roosevelt pentagono desclasificado">
+          <p class="gloss-entry-sigla">Gimbal</p>
+          <p class="gloss-entry-nombre">Video UAP · USS Roosevelt · 2015</p>
+          <p class="gloss-entry-desc">Video desclasificado de 2015 que muestra un objeto UAP con forma de "gimbal" o rueda giratoria, observado por pilotos de la USS Roosevelt. El objeto parecía rotar sobre su eje mientras mantenía trayectoria estable. Uno de los tres videos oficiales desclasificados por el Pentágono en 2020, junto con GoFast y FLIR.</p>
+          <p class="gloss-entry-note">2015 · USS Roosevelt · Desclasificado: 2020 · Pentagono</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="conceptos" data-terms="gofast video uap 2015 pentagono desclasificado">
+          <p class="gloss-entry-sigla">GoFast</p>
+          <p class="gloss-entry-nombre">Video UAP · 2015</p>
+          <p class="gloss-entry-desc">Video desclasificado de 2015 que muestra un objeto UAP moviéndose a velocidad aparentemente imposible respecto al agua, capturado por cámara infrarroja de un caza F/A-18. Los cálculos sugieren que el objeto viajaba a velocidades que desafían la física conocida. Desclasificado por el Pentágono en 2020 junto con Gimbal y FLIR.</p>
+          <p class="gloss-entry-note">2015 · Desclasificado: 2020 · Pentágono</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="conceptos" data-terms="flir video uap 2004 tic tac infrarrojo">
+          <p class="gloss-entry-sigla">FLIR</p>
+          <p class="gloss-entry-nombre">Video UAP · Incidente Tic Tac · 2004</p>
+          <p class="gloss-entry-desc">Video del incidente Tic Tac capturado por cámara FLIR (infrarrojo) de un caza F/A-18. Muestra el objeto en forma de cápsula blanca realizando maniobras extremas. Desclasificado por el Pentágono en 2020 junto con Gimbal y GoFast, marcando el inicio de la era de transparencia UAP del gobierno estadounidense.</p>
+          <p class="gloss-entry-note">2004 · Incidente Tic Tac · Desclasificado: 2020 · Pentágono</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="conceptos" data-terms="nhi non human intelligence inteligencia no humana">
+          <p class="gloss-entry-sigla">NHI</p>
+          <p class="gloss-entry-nombre">Non-Human Intelligence · Inteligencia No Humana</p>
+          <p class="gloss-entry-desc">Término oficial utilizado en documentos gubernamentales y testimonios del Congreso para referirse a entidades de origen no terrestre o desconocido. Reemplaza progresivamente a "extraterrestre" en la nomenclatura formal del Pentágono y AARO, reflejando una postura más agnóstica sobre la naturaleza exacta de estas entidades.</p>
+          <p class="gloss-entry-note">Término oficial: AARO, Pentágono, Congreso · Reemplaza: "extraterrestre"</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="conceptos" data-terms="ingeniería inversa reverse engineering tecnología no humana">
+          <p class="gloss-entry-sigla">Ingeniería Inversa</p>
+          <p class="gloss-entry-nombre">Reverse Engineering · Tecnología no humana</p>
+          <p class="gloss-entry-desc">Proceso de desmontar y analizar tecnología para comprender su funcionamiento y potencialmente replicarla. David Grusch afirmó bajo juramento ante el Congreso que el gobierno estadounidense realiza <strong>ingeniería inversa de tecnología no humana</strong> recuperada en sitios de accidentes UAP, en programas altamente compartimentados (SAPs) con acceso restringido.</p>
+          <p class="gloss-entry-note">Testimonio: David Grusch, Jun 2026 · Programas: SAP/SCI</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="conceptos" data-terms="crashes accidentes recuperaciones sitios uap">
+          <p class="gloss-entry-sigla">Crashes / Recuperaciones</p>
+          <p class="gloss-entry-nombre">Accidentes UAP · Programas de recuperación</p>
+          <p class="gloss-entry-desc">Eventos de supuestos accidentes de vehículos no humanos. Testigos como David Grusch han afirmado bajo juramento que el gobierno posee programas de recuperación de restos —incluyendo material biológico no humano— en sitios de accidentes UAP. Estos programas, según los testimonios, operan desde la década de 1940 y están compartimentados al más alto nivel.</p>
+          <p class="gloss-entry-note">Testimonio: David Grusch, Jun 2026 · Material: biológico y tecnológico</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="conceptos" data-terms="observador sección editorial mundomag reflexión">
+          <p class="gloss-entry-sigla">El Observador</p>
+          <p class="gloss-entry-nombre">Sección editorial · Mundo Maravilloso</p>
+          <p class="gloss-entry-desc">Sección editorial de Mundo Maravilloso dedicada a reflexiones sobre el fenómeno UAP, la cobertura periodística del tema y la intersección entre ciencia, misterio y narrativa. Ofrece un espacio de análisis crítico sobre cómo se construye y se transmite el conocimiento sobre los grandes misterios no resueltos.</p>
+          <p class="gloss-entry-note">Aparece en: cobertura de Mundo Maravilloso</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="conceptos" data-terms="tunguska 1908 siberia explosion aerea airburst impacto cosmico">
+          <p class="gloss-entry-sigla">Tunguska</p>
+          <p class="gloss-entry-nombre">Evento de Tunguska · Siberia · 1908</p>
+          <p class="gloss-entry-desc">Explosión aérea (airburst) de entre 10 y 20 megatones que el 30 de junio de 1908 derribó 80 millones de árboles en 2,000 km² de bosque siberiano, sin dejar cráter. Simulaciones recientes y microesferas de vidrio halladas en 2025 sostienen la hipótesis de un asteroide o cometa de 50–100 metros que se desintegró entre 5 y 15 km de altitud.</p>
+          <p class="gloss-entry-note">30 jun 1908 · 10–20 Mt · Sin cráter confirmado</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="conceptos" data-terms="orbes ojo de sauron dark kite western us event pursue helicoptero">
+          <p class="gloss-entry-sigla">Orbes</p>
+          <p class="gloss-entry-nombre">Fenómeno orbe · PURSUE / AARO</p>
+          <p class="gloss-entry-desc">Categoría de UAP recurrente en los archivos de PURSUE: objetos esféricos luminosos, entre ellos el apodado "Ojo de Sauron" (una orbe naranja estática descrita por agentes federales) y el incidente "Dark Kite". En un caso documentado, un grupo de orbes igualó la velocidad y trayectoria de dos cazas F/A-18 en una zona de pruebas del oeste de EE.UU.</p>
+          <p class="gloss-entry-note">Expediente: Western US Event · Release 01–02 PURSUE, 2026</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="conceptos" data-terms="antartida hielo icecube tratado antartico visitas 2016 vostok highjump">
+          <p class="gloss-entry-sigla">Antártida (misterios)</p>
+          <p class="gloss-entry-nombre">Anomalías documentadas y especuladas</p>
+          <p class="gloss-entry-desc">Continente más regulado del planeta bajo el Tratado Antártico de 1959, con episodios documentados que carecen de explicación pública completa: la concentración de visitas de alto nivel en 2016 (Kerry, Patriarca Kirill, Buzz Aldrin), el observatorio IceCube, la perforación del Lago Vostok (2012) y operaciones históricas como Highjump y Argus.</p>
+          <p class="gloss-entry-note">Bases activas: 80+ · Profundidad máx. hielo: 4.8 km</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="conceptos" data-terms="jfk kennedy asesinato 1963 comision warren dallas conspiracion">
+          <p class="gloss-entry-sigla">JFK</p>
+          <p class="gloss-entry-nombre">Asesinato de John F. Kennedy · Dallas, 1963</p>
+          <p class="gloss-entry-desc">El 22 de noviembre de 1963, John F. Kennedy fue asesinado en Dallas. La Comisión Warren concluyó en 1964 que Lee Harvey Oswald actuó solo; el Comité Selecto de Asesinatos del Congreso concluyó en 1979 que hubo probable conspiración. Miles de documentos permanecieron clasificados durante décadas; desclasificaciones parciales en 2017, 2021 y 2026 no han cerrado el caso.</p>
+          <p class="gloss-entry-note">22 nov 1963 · Comisión Warren: 1964 · Comité de Asesinatos: 1979</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="conceptos" data-terms="doce cientificos muertos jpl los alamos desapariciones 2022 2026">
+          <p class="gloss-entry-sigla">Los Doce Científicos</p>
+          <p class="gloss-entry-nombre">Muertes y desapariciones · JPL / Los Álamos · 2022–2026</p>
+          <p class="gloss-entry-desc">Desde 2022, al menos doce personas vinculadas a programas nucleares, aeroespaciales o de defensa clasificada en EE.UU. —la mayoría del Laboratorio de Propulsión a Chorro (JPL) y del Laboratorio Nacional de Los Álamos— han muerto o desaparecido en circunstancias que el FBI calificó de suficientemente anómalas como para investigar una posible conexión. El Congreso ha enviado cartas de supervisión a cuatro agencias federales.</p>
+          <p class="gloss-entry-note">Período: 2022–2026 · Instituciones: JPL, LANL · Investigación FBI abierta</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ MITOLOGÍA & CRIPTOZOOLOGÍA (12) ═══ -->
+    <section class="gloss-section" data-section="folclore">
+      <div class="gloss-section-header">
+        <span class="gloss-section-tag folclore">Mitología &amp; Cripto</span>
+        <span class="gloss-section-count">13 entradas</span>
+      </div>
+      <div class="gloss-grid">
+
+        <div class="gloss-entry" data-cat="folclore" data-terms="criptozoologia disciplina animales no confirmados bestiario">
+          <p class="gloss-entry-sigla">Criptozoología</p>
+          <p class="gloss-entry-nombre">Disciplina de estudio de animales no confirmados</p>
+          <p class="gloss-entry-desc">Estudio de animales cuya existencia no ha sido validada por la ciencia convencional pero tampoco descartada de forma definitiva, a partir de testimonios, huellas, ADN ambiguo y crónicas históricas. Algunos criptidos han terminado siendo descubrimientos reales —el okapi, el calamar gigante, el celacanto—, lo que sostiene la disciplina como investigación metódica y no como mito puro.</p>
+          <p class="gloss-entry-note">Aparece en: Bestiario Criptozoológico Global, MM</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="folclore" data-terms="bigfoot sasquatch homínido bosque norteamerica gigantopithecus">
+          <p class="gloss-entry-sigla">Bigfoot / Sasquatch</p>
+          <p class="gloss-entry-nombre">Homínido no catalogado · Norteamérica</p>
+          <p class="gloss-entry-desc">El criptido más documentado del mundo: más de 10,000 avistamientos registrados en Norteamérica, huellas de hasta 50 cm y el controvertido "film Patterson-Gimlin" de 1967. La hipótesis biológica más respaldada propone un descendiente del <em>Gigantopithecus blacki</em>, gran simio extinto hace unos 300,000 años.</p>
+          <p class="gloss-entry-note">Avistamientos: >10,000 · Film Patterson-Gimlin: 1967</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="folclore" data-terms="yeti migoi himalaya abominable hombre de las nieves oso">
+          <p class="gloss-entry-sigla">Yeti</p>
+          <p class="gloss-entry-nombre">Migoi · Himalaya</p>
+          <p class="gloss-entry-desc">Equivalente himalayo del Bigfoot, con estatus casi sagrado en las tradiciones tibetanas y nepalesas. En 2017, el equipo del Prof. Neil Gemmell (Universidad de Otago) analizó ADN de nueve muestras atribuidas al Yeti: la mayoría correspondió a osos del Himalaya, aunque una muestra de pelo quedó sin identificación plena.</p>
+          <p class="gloss-entry-note">Análisis ADN: Neil Gemmell, 2017 · Hipótesis dominante: oso</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="folclore" data-terms="chupacabras puerto rico 1995 sarna cabras vampiro">
+          <p class="gloss-entry-sigla">El Chupacabras</p>
+          <p class="gloss-entry-nombre">Goatsucker · Puerto Rico, 1995</p>
+          <p class="gloss-entry-desc">El único criptido del siglo XX con origen mediático documentado con precisión: Puerto Rico, 1995. El biólogo Barry O'Connor demostró en 2010 que la mayoría de los especímenes físicos presentados eran cánidos con sarna sarcóptica severa, aunque la versión bípeda y escamosa original nunca produjo un espécimen físico.</p>
+          <p class="gloss-entry-note">Origen: Puerto Rico, 1995 · Hipótesis sarna: Barry O'Connor, 2010</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="folclore" data-terms="mapinguari perezoso gigante amazonia megatherium">
+          <p class="gloss-entry-sigla">El Mapinguari</p>
+          <p class="gloss-entry-nombre">Perezoso terrestre relicto · Amazonia</p>
+          <p class="gloss-entry-desc">Criptido sudamericano descrito por comunidades indígenas como un bípedo enorme de piel impenetrable y olor paralizante. En 1993, el paleontólogo Paul Martin y el ornitólogo David Oren propusieron formalmente que podría corresponder a un perezoso terrestre gigante (<em>Megatherium</em>/<em>Nothrotheriops</em>) superviviente en zonas inaccesibles de la Amazonia.</p>
+          <p class="gloss-entry-note">Hipótesis Martin/Oren: 1993 · Extinción del género: hace 8,000–10,000 años</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="folclore" data-terms="lago ness nessie escocia monstruo anguila adn">
+          <p class="gloss-entry-sigla">Monstruo del Lago Ness</p>
+          <p class="gloss-entry-nombre">Nessie · Loch Ness, Escocia</p>
+          <p class="gloss-entry-desc">El criptido lacustre más famoso del mundo, con registros desde el siglo VI. En 2018, el equipo del Prof. Neil Gemmell realizó el análisis de ADN ambiental más exhaustivo del lago (259 muestras): no halló ADN de reptil grande, pero sí una cantidad inusualmente elevada de ADN de anguila europea.</p>
+          <p class="gloss-entry-note">ADN ambiental: 2018 · Hipótesis dominante: anguila gigante</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="folclore" data-terms="nahuelito lago nahuel huapi patagonia argentina">
+          <p class="gloss-entry-sigla">Nahuelito</p>
+          <p class="gloss-entry-nombre">Criatura lacustre · Lago Nahuel Huapi, Patagonia</p>
+          <p class="gloss-entry-desc">Avistamientos de una criatura de cuello largo en el lago Nahuel Huapi (Patagonia argentina, 464 m de profundidad) desde el siglo XVII. La hipótesis "plesiosaurio" es la más popular pero la menos plausible biológicamente; investigadores serios apuntan a un mamífero acuático desconocido adaptado al agua fría andina.</p>
+          <p class="gloss-entry-note">Registros desde: siglo XVII · Profundidad del lago: 464 m</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="folclore" data-terms="siguanaba sihuanaba el salvador mitologia pipil rio">
+          <p class="gloss-entry-sigla">La Siguanaba</p>
+          <p class="gloss-entry-nombre">Entidad femenina · Mitología pipil, El Salvador</p>
+          <p class="gloss-entry-desc">La figura femenina más poderosa del imaginario salvadoreño, de raíz nahua-pipil. Se manifiesta como una mujer hermosa lavando ropa en el agua que, al voltearse, muestra un rostro de yegua o calavera, castigando a hombres infieles o trasnochadores. Ligada al río Lempa y sus afluentes.</p>
+          <p class="gloss-entry-note">Origen: nahua-pipil · Vigencia: reportes rurales contemporáneos</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="folclore" data-terms="cipitio cipote hijo siguanaba el salvador niño eterno">
+          <p class="gloss-entry-sigla">El Cipitío</p>
+          <p class="gloss-entry-nombre">Entidad infantil · El Salvador</p>
+          <p class="gloss-entry-desc">Hijo de la Siguanaba, condenado a la eterna infancia. Niño de vientre prominente, pies al revés y sombrero de palma enorme que vaga por ríos, milpas y cafetales sin poder crecer ni morir. Travieso y melancólico más que malévolo, es la figura más querida del bestiario mítico salvadoreño.</p>
+          <p class="gloss-entry-note">Origen: nahua-pipil, con variante lenca · Vigencia: personaje literario nacional</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="folclore" data-terms="cadejo blanco negro perro el salvador guardian caminos">
+          <p class="gloss-entry-sigla">El Cadejo</p>
+          <p class="gloss-entry-nombre">Canino sagrado dual · El Salvador</p>
+          <p class="gloss-entry-desc">Ser mestizo —fusión de los nahuales indígenas con el demonio canino europeo— que se manifiesta siempre en pareja: el Cadejo Blanco, protector de caminantes y milperos, y el Cadejo Negro, criatura maligna asociada al aguardiente que ataca a quienes regresan ebrios de noche.</p>
+          <p class="gloss-entry-note">Origen: mestizo · Dualidad: blanco (protector) / negro (destructor)</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="folclore" data-terms="mitologia salvadorena pipil lenca folklore tradicion oral">
+          <p class="gloss-entry-sigla">Mitología Salvadoreña</p>
+          <p class="gloss-entry-nombre">Bestiario mítico · Tradición oral pipil y lenca</p>
+          <p class="gloss-entry-desc">Sistema de entidades de la tradición oral de El Salvador —nahua-pipil, lenca y mestiza colonial— que funciona como conocimiento ecológico y moral codificado: cada figura tiene territorio, función y debilidades específicas. Se documenta a partir de las recopilaciones de María de Baratta, Jorge Lardé y Pedro Geoffrey Rivas.</p>
+          <p class="gloss-entry-note">Fuentes: Baratta (1940s), Lardé, Geoffrey Rivas · Naturaleza: mitología viva, no criptozoología</p>
+        </div>
+
+        <div class="gloss-entry" data-cat="folclore" data-terms="bestiario criptozoologico global 22 criptidos catalogo">
+          <p class="gloss-entry-sigla">Bestiario Criptozoológico Global</p>
+          <p class="gloss-entry-nombre">Catálogo razonado · 22 criptidos</p>
+          <p class="gloss-entry-desc">Catálogo de Mundo Maravilloso con 22 criptidos agrupados por categoría zoológica —primates y homínidos, megafauna relicta, criaturas acuáticas, reptiles gigantes y casos aéreos globales—, cada uno con distribución geográfica, tipo de evidencia disponible e hipótesis científicas vigentes. Ninguna entrada está confirmada; siete cuentan con evidencia física parcial.</p>
+          <p class="gloss-entry-note">Entradas: 22 · Confirmados: 0 · Con evidencia física parcial: 7</p>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="gloss-empty" id="gloss-empty" style="display:none;">
+      // Sin resultados para esa búsqueda
+    </div>
+
+  </div><!-- /gloss-body -->
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="" class="footer-logo">Mundo Maravilloso</a>
+        <p class="footer-tagline">Una publicación independiente sobre los grandes misterios que la ciencia todavía no ha resuelto.</p>
+      </div>
+      <div class="footer-nav-grid">
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Artículos</p>
+          <ul class="footer-nav-list">
+            <li><a href="articulos.html">Todos los artículos</a></li>
+           
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Seguimientos</p>
+          <ul class="footer-nav-list">
+            <li><a href="seguimientos/3i-atlas.html">3I/ATLAS</a></li>
+            <li><a href="seguimientos/uap.html">UAP WATCH</a></li>
+            <li><a href="seguimientos/pursue-releases.html">PURSUE RELEASES</a></li>
+            <li><a href="seguimientos/voyager-1.html">VOYAGER 1</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Publicación</p>
+          <ul class="footer-nav-list">
+            <li><a href="acerca-de.html">Acerca de</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="privacidad.html">Privacidad</a></li>
+            <li><a href="terminos.html">Términos</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Mundo Maravilloso · Todos los derechos reservados</p>
+      <p class="footer-signal">// Glosario de términos</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var searchEl  = document.getElementById('gloss-search');
+  var countEl   = document.getElementById('gloss-count');
+  var emptyEl   = document.getElementById('gloss-empty');
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var entries   = document.querySelectorAll('.gloss-entry');
+  var sections  = document.querySelectorAll('.gloss-section');
+  var currentCat = 'all';
+
+  function total(){ return entries.length; }
+
+  function update(){
+    var q = searchEl.value.trim().toLowerCase();
+    var visible = 0;
+
+    entries.forEach(function(e){
+      var cat   = e.dataset.cat;
+      var terms = (e.dataset.terms || '') + ' ' + e.textContent.toLowerCase();
+      var catOk = currentCat === 'all' || cat === currentCat;
+      var qOk   = !q || terms.indexOf(q) !== -1;
+      var show  = catOk && qOk;
+      e.style.display = show ? '' : 'none';
+      if(show) visible++;
+    });
+
+    // Ocultar secciones vacías
+    sections.forEach(function(sec){
+      var secCat = sec.dataset.section;
+      var catMatch = currentCat === 'all' || secCat === currentCat;
+      var hasVisible = Array.from(sec.querySelectorAll('.gloss-entry'))
+        .some(function(e){ return e.style.display !== 'none'; });
+      sec.style.display = (catMatch && hasVisible) ? '' : 'none';
+    });
+
+    countEl.textContent = q || currentCat !== 'all'
+      ? '// ' + visible + ' de ' + total() + ' entradas'
+      : '// ' + total() + ' entradas en total';
+
+    emptyEl.style.display = visible === 0 ? '' : 'none';
+  }
+
+  searchEl.addEventListener('input', update);
+
+  filterBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      filterBtns.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      currentCat = btn.dataset.cat;
+      update();
+    });
+  });
+
+  update();
+})();
+</script>
+
+</body>
+</html>

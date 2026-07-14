@@ -1,0 +1,2382 @@
+<!DOCTYPE html>
+<html lang="es" data-page="atlas">
+<head>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8483516296039231"
+       crossorigin="anonymous"></script>
+	<meta name="description" content="Registro del seguimiento del cometa interestelar 3I/ATLAS: trayectoria, datos actualizados y análisis de su origen más allá del sistema solar.">
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LRSJ1EYEPD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LRSJ1EYEPD');
+</script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>3I/ATLAS: El fósil cósmico interestelar · Mundo Maravilloso</title>
+  <link rel="canonical" href="https://mundomag.fyi/seguimientos/3i-atlas.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ══════════════════════════════════════════════
+       3I/ATLAS — Estilos · Mundo Maravilloso
+    ══════════════════════════════════════════════ */
+
+    :root {
+      --ink: #0d0d0f;
+      --ink-mid: #111114;
+      --ink-soft: #1a1a1e;
+      --paper: #f5f0e8;
+      --cyan: #4ecdc4;
+      --gold: #c9a84c;
+      --gold-light: #e8c96a;
+      --red: #c0392b;
+      --violet: #a78bfa;
+      --muted: #6b6b7a;
+      --border: rgba(201,168,76,0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--ink);
+      color: var(--paper);
+      font-family: 'Space Grotesk', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    .site-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(13,13,15,0.95);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+    .site-nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 2rem;
+      height: 56px;
+      display: flex; align-items: center; gap: 1.5rem;
+    }
+    .site-nav-logo {
+      font-family: 'Audiowide', sans-serif;
+      font-size: 1.1rem; color: var(--paper);
+      text-decoration: none; letter-spacing: 0.08em;
+      flex-shrink: 0;
+    }
+    .site-nav-sep { width: 1px; height: 20px; background: var(--border); flex-shrink: 0; }
+    .site-nav-articles { display: flex; gap: 1.5rem; margin-left: auto; }
+    .site-nav-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.52rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      text-decoration: none; transition: color 0.2s;
+      white-space: nowrap;
+    }
+    .site-nav-link:hover { color: var(--cyan); }
+    .site-nav-link.active { color: var(--cyan); }
+
+    /* ── NAV MÓVIL (hamburguesa / drawer) ── */
+    .site-nav-hamburger {
+      display: none;
+      margin-left: auto;
+      width: 32px; height: 32px;
+      background: none; border: none; cursor: pointer;
+      flex-direction: column; align-items: center; justify-content: center;
+      gap: 4px; padding: 0; flex-shrink: 0;
+    }
+    .site-nav-hamburger span {
+      display: block; width: 20px; height: 2px;
+      background: var(--paper); transition: transform 0.25s ease, opacity 0.2s ease;
+    }
+    .site-nav-hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .site-nav-hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .site-nav-hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    .site-nav-drawer {
+      display: none;
+      flex-direction: column;
+      position: absolute; top: 56px; left: 0; right: 0;
+      background: rgba(13,13,15,0.98);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .site-nav-drawer.open { max-height: 480px; overflow-y: auto; }
+    .drawer-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      text-decoration: none;
+      padding: 0.9rem 1.5rem;
+      border-bottom: 1px solid rgba(245,240,232,0.06);
+    }
+    .drawer-link:hover, .drawer-link.active { color: var(--cyan); }
+
+    @media (max-width: 860px) {
+      .site-nav-articles { display: none; }
+      .site-nav-hamburger { display: flex; }
+      .site-nav-drawer { display: flex; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 88svh;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      background:
+        radial-gradient(ellipse at 70% 20%, rgba(78,205,196,0.07) 0%, transparent 55%),
+        radial-gradient(ellipse at 15% 80%, rgba(201,168,76,0.05) 0%, transparent 50%),
+        var(--ink);
+    }
+    .hero-canvas {
+      position: absolute; inset: 0; z-index: 0;
+    }
+    .hero-inner {
+      position: relative; z-index: 2;
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 4rem 6rem;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 5rem;
+      align-items: end;
+    }
+    .hero-live-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 1.5rem;
+    }
+    .hero-live-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--cyan);
+      animation: cyanpulse 2s ease-in-out infinite;
+    }
+    @keyframes cyanpulse {
+      0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(78,205,196,0.6); }
+      50% { opacity: 0.5; box-shadow: 0 0 0 5px rgba(78,205,196,0); }
+    }
+    .hero-kicker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .hero-title {
+      font-family: 'Audiowide', sans-serif;
+      font-size: clamp(3rem, 6.5vw, 6rem);
+      font-weight: 900; line-height: 0.88;
+      color: var(--paper); margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    .hero-title .accent { color: var(--cyan); }
+    .hero-subtitle {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.35rem; font-weight: 600;
+      color: rgba(245,240,232,0.5); margin-top: 1rem;
+      letter-spacing: -0.01em;
+    }
+    .hero-byline {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold);
+      margin: 1.5rem 0 2rem;
+    }
+    .hero-lead {
+      font-size: 1.1rem;
+      color: rgba(245,240,232,0.72);
+      line-height: 1.75; max-width: 52ch;
+      border-left: 2px solid var(--cyan);
+      padding-left: 1.5rem;
+      font-style: italic;
+    }
+
+    /* Stat panel hero */
+    .stat-panel {
+      background: rgba(22,22,25,0.9);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      backdrop-filter: blur(8px);
+    }
+    .stat-panel-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 1.5rem; padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(78,205,196,0.2);
+    }
+    .stat-row {
+      display: flex; justify-content: space-between;
+      align-items: baseline; padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(201,168,76,0.06);
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-key {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .stat-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem; font-weight: 700;
+      color: var(--gold-light); text-align: right;
+    }
+    .stat-val.cyan { color: var(--cyan); }
+    .stat-val.red { color: var(--red); }
+
+    /* ── STATUS BAR / MARQUESINA ── */
+    .status-bar {
+      background: var(--ink-mid);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden; position: relative;
+    }
+    .status-bar::before,
+    .status-bar::after {
+      content: '';
+      position: absolute; top: 0; bottom: 0; width: 5rem;
+      z-index: 2; pointer-events: none;
+    }
+    .status-bar::before {
+      left: 0;
+      background: linear-gradient(to right, var(--ink-mid), transparent);
+    }
+    .status-bar::after {
+      right: 0;
+      background: linear-gradient(to left, var(--ink-mid), transparent);
+    }
+    .status-track {
+      display: flex; gap: 3rem; padding: 0.85rem 0;
+      width: max-content;
+      animation: marquee-scroll 50s linear infinite;
+    }
+    .status-bar:hover .status-track { animation-play-state: paused; }
+    @keyframes marquee-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .status-item {
+      display: flex; align-items: center; gap: 0.6rem;
+      white-space: nowrap; flex-shrink: 0; padding: 0 1.5rem;
+    }
+    .status-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.48rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .status-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem; font-weight: 700; color: var(--cyan);
+    }
+    .status-value.gold { color: var(--gold); }
+    .status-value.red { color: var(--red); }
+
+    /* ── WRAPPER ARTÍCULO ── */
+    .article {
+      max-width: 1200px; margin: 0 auto; padding: 0 4rem;
+    }
+
+    /* ── INTRO ── */
+    .intro {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 5rem;
+      padding: 5rem 0 4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .intro-text p {
+      font-size: 1.05rem;
+      color: rgba(245,240,232,0.8);
+      line-height: 1.8; margin-bottom: 1.2rem;
+    }
+    .intro-text p:first-child::first-letter {
+      font-family: 'Audiowide', sans-serif;
+      font-size: 4rem; font-weight: 900;
+      color: var(--cyan); float: left;
+      line-height: 0.8; margin: 0.1em 0.15em 0 0;
+    }
+    .origin-box {
+      background: var(--ink-mid);
+      border: 1px solid var(--border);
+      padding: 1.75rem;
+      position: sticky; top: 80px; align-self: start;
+    }
+    .origin-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.48rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 1rem; padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .origin-item {
+      padding: 0.65rem 0;
+      border-bottom: 1px solid rgba(78,205,196,0.06);
+    }
+    .origin-item:last-child { border-bottom: none; }
+    .origin-key {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.48rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+    .origin-val {
+      font-size: 0.88rem; color: var(--paper);
+      font-weight: 600;
+    }
+
+    /* ── SECCIÓN ENCABEZADO ── */
+    .section-head {
+      display: flex; align-items: center;
+      gap: 1.5rem; padding: 4rem 0 2rem;
+    }
+    .section-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem; letter-spacing: 0.2em;
+      color: var(--cyan); flex-shrink: 0;
+    }
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem; font-weight: 700; color: var(--paper);
+    }
+    .section-line {
+      flex: 1; height: 1px; background: var(--border);
+    }
+
+    /* ══════════════════════════════
+       TIMELINE
+    ══════════════════════════════ */
+    .timeline { padding-bottom: 4rem; position: relative; }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 1px; background: var(--border);
+    }
+
+    .timeline-entry {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 2.5rem;
+      padding: 0 0 2.5rem 0;
+      position: relative;
+    }
+    .timeline-entry::before {
+      content: '';
+      position: absolute; left: -5px; top: 6px;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--ink); border: 2px solid var(--cyan);
+    }
+    .timeline-entry.milestone::before {
+      background: var(--cyan); width: 12px; height: 12px; left: -6px;
+    }
+
+    .timeline-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--gold);
+      padding-top: 4px; text-align: right;
+      line-height: 1.5;
+    }
+    .timeline-date .tl-agency {
+      display: block; color: var(--muted);
+      font-size: 0.44rem; margin-top: 0.3rem;
+    }
+
+    .timeline-content {
+      border: 1px solid var(--border);
+      background: var(--ink-mid);
+      padding: 1.5rem;
+      position: relative;
+    }
+    .timeline-content::before {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      width: 3px; height: 100%;
+      background: var(--cyan);
+    }
+    .timeline-content.gold-bar::before { background: var(--gold); }
+    .timeline-content.violet-bar::before { background: var(--violet); }
+    .timeline-content.red-bar::before { background: var(--red); }
+
+    .tl-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.44rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 0.5rem; display: block;
+    }
+    .tl-tag.gold { color: var(--gold); }
+    .tl-tag.violet { color: var(--violet); }
+    .tl-tag.red { color: var(--red); }
+
+    .tl-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      color: var(--paper); margin-bottom: 0.6rem;
+      line-height: 1.3;
+    }
+    .tl-body {
+      font-size: 0.88rem;
+      color: rgba(245,240,232,0.7); line-height: 1.7;
+    }
+    .tl-data {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      margin-top: 1rem; padding-top: 1rem;
+      border-top: 1px solid rgba(201,168,76,0.08);
+    }
+    .tl-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.46rem; letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.65rem;
+      color: var(--muted);
+    }
+    .tl-pill span { color: var(--gold-light); font-weight: 700; margin-left: 0.35rem; }
+
+    /* ══════════════════════════════
+       COMPOSICIÓN QUÍMICA — GRID
+    ══════════════════════════════ */
+    .chem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+    .chem-item {
+      background: var(--ink-soft);
+      padding: 1.5rem;
+      position: relative;
+      transition: background 0.2s;
+    }
+    .chem-item:hover { background: rgba(255,255,255,0.03); }
+    .chem-icon {
+      font-size: 1.6rem; margin-bottom: 0.75rem; display: block;
+    }
+    .chem-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.44rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 0.4rem;
+    }
+    .chem-compound {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      color: var(--paper); margin-bottom: 0.35rem;
+    }
+    .chem-desc {
+      font-size: 0.78rem; color: var(--muted); line-height: 1.55;
+    }
+    .chem-anomaly {
+      display: inline-block; margin-top: 0.6rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.42rem; letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      border: 1px solid var(--red);
+      color: var(--red);
+    }
+
+    /* ══════════════════════════════
+       COMPARATIVA CON COMETAS LOCALES
+    ══════════════════════════════ */
+    .table-scroll {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 2rem 0;
+    }
+    .compare-table {
+      width: 100%;
+      min-width: 560px;
+      border-collapse: collapse;
+      border: 1px solid var(--border);
+    }
+    .compare-table th {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; letter-spacing: 0.2em;
+      text-transform: uppercase; text-align: left;
+      padding: 1rem 1.25rem;
+      background: var(--ink-soft);
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .compare-table th.hi { color: var(--cyan); }
+    .compare-table td {
+      padding: 0.85rem 1.25rem;
+      border-bottom: 1px solid rgba(201,168,76,0.05);
+      font-size: 0.82rem;
+      color: rgba(245,240,232,0.7);
+      vertical-align: top;
+    }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table td:first-child {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.52rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted);
+      white-space: nowrap;
+    }
+    .compare-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .val-hi { color: var(--gold-light) !important; font-weight: 700; }
+    .val-anom { color: var(--red) !important; font-weight: 700; }
+    .val-yes { color: var(--cyan) !important; }
+
+    /* ══════════════════════════════
+       VOCES CIENTÍFICAS
+    ══════════════════════════════ */
+    .voices-section { margin: 2rem 0; }
+    .voice-card {
+      display: flex; gap: 1.5rem;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid rgba(201,168,76,0.06);
+    }
+    .voice-card:last-child { border-bottom: none; }
+    .voice-avatar {
+      font-size: 2rem; flex-shrink: 0;
+      width: 48px; height: 48px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+    }
+    .voice-meta { flex: 1; }
+    .voice-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem; font-weight: 700;
+      color: var(--paper); margin-bottom: 0.15rem;
+    }
+    .voice-role {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.46rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 0.75rem;
+    }
+    .voice-text {
+      font-size: 0.88rem;
+      color: rgba(245,240,232,0.65); line-height: 1.75;
+    }
+
+    /* ══════════════════════════════
+       PULL QUOTE
+    ══════════════════════════════ */
+    .pull-quote {
+      border-left: 3px solid var(--cyan);
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      background: rgba(78,205,196,0.04);
+    }
+    .pull-quote p {
+      font-size: 1.15rem; font-style: italic;
+      color: rgba(245,240,232,0.85); line-height: 1.65;
+      margin-bottom: 0.75rem;
+    }
+    .pull-quote cite {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--cyan);
+      font-style: normal;
+    }
+
+    /* ══════════════════════════════
+       DEBATE GRID (consenso vs anomalías)
+    ══════════════════════════════ */
+    .debate-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+    .debate-col {
+      background: var(--ink-mid);
+      padding: 1.75rem;
+    }
+    .debate-col-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--muted);
+      margin-bottom: 1rem; padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .debate-col-label.cyan { color: var(--cyan); }
+    .debate-col-label.gold { color: var(--gold); }
+    .debate-col ul {
+      list-style: none; display: flex;
+      flex-direction: column; gap: 0.65rem;
+    }
+    .debate-col li {
+      font-size: 0.82rem;
+      color: rgba(245,240,232,0.7);
+      line-height: 1.55; padding-left: 1rem;
+      position: relative;
+    }
+    .debate-col li::before {
+      content: '→';
+      position: absolute; left: 0;
+      color: var(--gold); opacity: 0.5;
+      font-size: 0.65rem;
+    }
+
+    /* ══════════════════════════════
+       PREGUNTAS ABIERTAS
+    ══════════════════════════════ */
+    .open-questions {
+      background: var(--ink-mid);
+      border: 1px solid rgba(78,205,196,0.15);
+      padding: 2rem;
+      margin: 3rem 0;
+    }
+    .open-q-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 1.25rem;
+    }
+    .open-q-list {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .open-q-list li {
+      font-size: 0.9rem;
+      color: rgba(245,240,232,0.7); line-height: 1.6;
+      padding-left: 1.25rem; position: relative;
+    }
+    .open-q-list li::before {
+      content: '?';
+      position: absolute; left: 0;
+      color: var(--cyan); opacity: 0.6;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+    }
+
+    /* ══════════════════════════════
+       MISIONES GRID
+    ══════════════════════════════ */
+    .missions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+    .mission-card {
+      background: var(--ink-soft);
+      padding: 1.25rem 1.5rem;
+      transition: background 0.2s;
+    }
+    .mission-card:hover { background: rgba(255,255,255,0.03); }
+    .mission-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem; font-weight: 700;
+      color: var(--paper); margin-bottom: 0.35rem;
+      letter-spacing: 0.05em;
+    }
+    .mission-agency {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.42rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 0.5rem;
+    }
+    .mission-contrib {
+      font-size: 0.78rem; color: var(--muted); line-height: 1.5;
+    }
+
+    /* ── BODY TEXT ── */
+    .body-text { padding: 2rem 0; }
+    .body-text p {
+      font-size: 1.02rem;
+      color: rgba(245,240,232,0.78);
+      line-height: 1.8; margin-bottom: 1.2rem;
+      max-width: 76ch;
+    }
+    .body-text h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem; font-weight: 700;
+      color: var(--paper); margin: 3rem 0 1rem;
+    }
+    .body-text strong { color: var(--paper); }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--ink-mid);
+      border-top: 1px solid var(--border);
+      padding: 3rem 0;
+      margin-top: 5rem;
+    }
+    .site-footer-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 4rem;
+    }
+    .footer-top {
+      display: grid; grid-template-columns: 1fr 2fr;
+      gap: 4rem; padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2rem;
+    }
+    .footer-logo {
+      font-family: 'Audiowide', sans-serif;
+      font-size: 1.1rem; color: var(--paper);
+      text-decoration: none; display: block; margin-bottom: 0.75rem;
+    }
+    .footer-tagline {
+      font-size: 0.8rem;
+      color: var(--muted); line-height: 1.6; margin-bottom: 1rem;
+    }
+    .footer-edition-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.46rem; letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      color: var(--muted); padding: 0.3rem 0.65rem;
+    }
+    .footer-nav-grid {
+      display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem;
+    }
+    .footer-nav-col-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.48rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .footer-nav-list {
+      list-style: none; display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .footer-nav-list a {
+      font-size: 0.8rem; color: var(--muted);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .footer-nav-list a:hover { color: var(--paper); }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-copy {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.46rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .footer-signal {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.46rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--cyan);
+    }
+
+    /* ══════════════════════════════
+       NAVEGACIÓN POR TEMAS (HERO)
+    ══════════════════════════════ */
+    .topic-nav {
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+      margin-bottom: 1.75rem;
+    }
+    .topic-nav-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 0.45rem 0.8rem;
+      text-decoration: none;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+      display: inline-flex; align-items: center; gap: 0.45rem;
+    }
+    .topic-nav-link:hover {
+      color: var(--cyan); border-color: rgba(78,205,196,0.4);
+      background: rgba(78,205,196,0.05);
+    }
+    .topic-nav-link span {
+      color: var(--gold); font-weight: 700;
+    }
+
+    /* ══════════════════════════════
+       LIGHTBOX / INFOGRAFÍAS
+    ══════════════════════════════ */
+    .lightbox-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 9000;
+      align-items: center; justify-content: center;
+      padding: 2rem;
+      cursor: pointer;
+    }
+    .lightbox-overlay.active { display: flex; }
+    .lightbox-inner {
+      max-width: 900px; width: 100%;
+      position: relative; cursor: default;
+    }
+    .lightbox-close {
+      position: absolute; top: -2.5rem; right: 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--muted);
+      background: none; border: none;
+      cursor: pointer; padding: 0.5rem 0;
+    }
+    .lightbox-close:hover { color: var(--paper); }
+    .lightbox-svg-wrap {
+      background: var(--ink-mid);
+      border: 1px solid var(--border);
+      padding: 2rem;
+    }
+    .lightbox-caption {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.52rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted);
+      padding: 0.75rem 0 0;
+    }
+    .img-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      margin-top: 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--muted);
+      background: none; border: 1px solid rgba(201,168,76,0.2);
+      padding: 0.4rem 0.8rem;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .img-btn:hover { color: var(--gold); border-color: var(--gold); }
+    .img-btn svg { flex-shrink: 0; }
+
+    /* ══════════════════════════════
+       CATÁLOGO DE ANOMALÍAS
+    ══════════════════════════════ */
+    .anomalias-intro {
+      font-size: 1rem; color: rgba(245,240,232,0.7);
+      line-height: 1.8; max-width: 76ch;
+      margin-bottom: 2rem;
+    }
+    .anomalias-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+    .anomalia-card {
+      background: var(--ink-mid);
+      padding: 1.5rem; position: relative;
+      overflow: hidden; transition: background 0.2s;
+    }
+    .anomalia-card:hover { background: var(--ink-soft); }
+    .anomalia-card::before {
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 3px; height: 100%;
+    }
+    .anomalia-card.orbital::before { background: var(--cyan); }
+    .anomalia-card.fisica::before { background: var(--violet); }
+    .anomalia-card.quimica::before { background: #4ade80; }
+    .anomalia-card.morfologica::before { background: #f97316; }
+    .anomalia-card.origen::before { background: var(--red); }
+    .anomalia-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2.75rem; font-weight: 700;
+      color: rgba(201,168,76,0.07);
+      position: absolute; top: 0.4rem; right: 1rem;
+      line-height: 1; user-select: none;
+    }
+    .anomalia-cat {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.44rem; letter-spacing: 0.22em;
+      text-transform: uppercase; margin-bottom: 0.6rem;
+    }
+    .orbital .anomalia-cat { color: var(--cyan); }
+    .fisica .anomalia-cat { color: var(--violet); }
+    .quimica .anomalia-cat { color: #4ade80; }
+    .morfologica .anomalia-cat { color: #f97316; }
+    .origen .anomalia-cat { color: var(--red); }
+    .anomalia-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem; font-weight: 700;
+      color: var(--paper); margin-bottom: 0.6rem; line-height: 1.3;
+    }
+    .anomalia-body {
+      font-size: 0.8rem; color: var(--muted);
+      line-height: 1.65; margin: 0;
+    }
+    .loeb-signal {
+      position: absolute; bottom: 0.75rem; right: 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.42rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--violet);
+      opacity: 0.7;
+    }
+
+
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; padding: 0 2rem 4rem; gap: 2.5rem; }
+      .article { padding: 0 2rem; }
+      .intro { grid-template-columns: 1fr; gap: 2rem; }
+      .debate-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .timeline-entry { grid-template-columns: 1fr; gap: 0.5rem; padding-left: 1.5rem; }
+      .timeline-date { text-align: left; }
+      .anomalias-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .hero-title { font-size: 2.8rem; }
+      .chem-grid { grid-template-columns: 1fr; }
+      .missions-grid { grid-template-columns: 1fr 1fr; }
+      .footer-nav-grid { grid-template-columns: 1fr; }
+      .topic-nav { gap: 0.4rem; }
+      .topic-nav-link { font-size: 0.46rem; padding: 0.4rem 0.6rem; }
+    }
+    .nav-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: inline-block;
+      flex-shrink: 0;
+      animation: nav-dot-pulse 1.6s ease-in-out infinite;
+    }
+
+  @keyframes nav-dot-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: 0.35; transform: scale(0.65); }
+    }
+ </style>
+<style>
+  /* ── Comentarios (Giscus) ── */
+  .comments-section {
+    border: 1px solid rgba(245,240,232,0.12);
+    padding: 2.5rem; margin: 4rem 0 2rem; background: rgba(245,240,232,0.02);
+  }
+  .comments-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.6rem;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+    margin-bottom: 1.5rem; padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(245,240,232,0.12);
+  }
+  .giscus-wrap { min-height: 80px; }
+ </style>
+
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════ -->
+<!-- ══════════ NAV ══════════ -->
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="../" class="site-nav-logo">MM</a>
+    <div class="site-nav-sep"></div>
+    <div class="site-nav-articles">
+      <a href="../articulos.html" class="site-nav-link">Artículos</a>
+      <a href="../seguimientos/3i-atlas.html" class="site-nav-link active">3I/ATLAS</a>
+      <a href="../seguimientos/uap.html" class="site-nav-link">UAP WATCH</a>
+      <a href="../seguimientos/pursue-releases.html" class="site-nav-link">PURSUE</a>
+      <a href="../seguimientos/voyager-1.html" class="site-nav-link">VOYAGER 1</a>
+      <a href="../seguimientos/hitos-medicos.html" class="site-nav-link">HITOS MÉDICOS</a>
+      <a href="../glosario.html" class="site-nav-link"><span class="nav-dot"></span>&nbsp;Glosario</a>
+    </div>
+    <button class="site-nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navDrawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="site-nav-drawer" id="navDrawer">
+    <a href="../articulos.html" class="drawer-link">Artículos</a>
+    <a href="../seguimientos/3i-atlas.html" class="drawer-link active">3I/ATLAS</a>
+    <a href="../seguimientos/uap.html" class="drawer-link">UAP WATCH</a>
+    <a href="../seguimientos/pursue-releases.html" class="drawer-link">PURSUE</a>
+    <a href="../seguimientos/voyager-1.html" class="drawer-link">VOYAGER 1</a>
+    <a href="../seguimientos/hitos-medicos.html" class="drawer-link">HITOS MÉDICOS</a>
+    <a href="../glosario.html" class="drawer-link"><span class="nav-dot"></span>&nbsp;Glosario</a>
+  </div>
+</nav>
+<script>
+  (function () {
+    var btn = document.getElementById('navHamburger');
+    var drawer = document.getElementById('navDrawer');
+    if (!btn || !drawer) return;
+    btn.addEventListener('click', function () {
+      var isOpen = drawer.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    drawer.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        drawer.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+<!-- ══════════ HERO ══════════ -->
+<section class="hero">
+  <canvas class="hero-canvas" id="starfield"></canvas>
+
+  <div class="hero-inner">
+    <div>
+      <nav class="topic-nav" aria-label="Navegación por temas del artículo">
+        <a href="#sec-composicion" class="topic-nav-link"><span>01</span> Química</a>
+        <a href="#sec-comparativa" class="topic-nav-link"><span>02</span> Comparativa</a>
+        <a href="#sec-misiones" class="topic-nav-link"><span>03</span> Misiones</a>
+        <a href="#sec-timeline" class="topic-nav-link"><span>04</span> Línea temporal</a>
+        <a href="#sec-anomalias" class="topic-nav-link"><span>05</span> 22 anomalías</a>
+        <a href="#sec-debate" class="topic-nav-link"><span>06</span> Debate</a>
+        <a href="#sec-voces" class="topic-nav-link"><span>07</span> Voces</a>
+        <a href="#sec-cierre" class="topic-nav-link"><span>08</span> Cierre</a>
+      </nav>
+
+      <div class="hero-live-badge">
+        <div class="hero-live-dot"></div>
+        Objeto activo · Abandonando el sistema solar
+      </div>
+
+      <p class="hero-kicker">Astrofísica · Objetos interestelares · Sistema solar</p>
+
+      <h1 class="hero-title">
+        <span class="accent">3I</span>/ATLAS
+      </h1>
+      <p class="hero-subtitle">El tercer visitante interestelar.<br>10–12 mil millones de años de edad.<br>Química que no conocemos.</p>
+
+      <p class="hero-byline">La Redacción · Mundo Maravilloso · Actualizado 10 Jun 2026</p>
+
+      <p class="hero-lead">
+        Un cometa con más deuterio que cualquier objeto solar, metano detectado por primera vez en un visitante interestelar, y una velocidad de 50 km/s que confirma que viajó desde otro sistema estelar. 3I/ATLAS es el fósil cósmico más antiguo que ha cruzado nuestro vecindario.
+      </p>
+    </div>
+
+    <div class="stat-panel">
+      <p class="stat-panel-label">// Ficha técnica · 3I/ATLAS</p>
+      <div class="stat-row">
+        <span class="stat-key">Descubrimiento</span>
+        <span class="stat-val cyan">1 Jul 2025</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-key">Velocidad</span>
+        <span class="stat-val">&gt; 50 km/s</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-key">Tipo de órbita</span>
+        <span class="stat-val">Hiperbólica</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-key">Diámetro núcleo</span>
+        <span class="stat-val">≤ 5.6 km</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-key">Perihelio</span>
+        <span class="stat-val">~1.4 UA</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-key">Edad estimada</span>
+        <span class="stat-val">10–12 Ga</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-key">D/H vs cometas sol.</span>
+        <span class="stat-val red">×30 mayor</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-key">Distancia al Sol</span>
+        <span class="stat-val">~5.2 UA</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-key">Distancia a la Tierra</span>
+        <span class="stat-val">~5.7 UA</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-key">Estado</span>
+        <span class="stat-val red">Saliendo · rumbo interestelar</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ STATUS BAR ══════════ -->
+<div class="status-bar">
+  <div class="status-track">
+    <div class="status-item">
+      <span class="status-label">Descubierto · ATLAS Chile</span>
+      <span class="status-value">1 Jul 2025</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Velocidad interestelar</span>
+      <span class="status-value">&gt;50 km/s</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Agua semipesada D/H</span>
+      <span class="status-value gold">30× cometas solares</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Metano · Webb</span>
+      <span class="status-value">Primera detección interestelar · ×5–10 vs solar</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Misiones involucradas</span>
+      <span class="status-value">10+</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Paso por Marte</span>
+      <span class="status-value">3 Oct 2025 · 29M km</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Edad estimada</span>
+      <span class="status-value gold">10–12 mil millones de años</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Misión MAVEN</span>
+      <span class="status-value red">Finalizada · 3 Jun 2026</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Distancia al Sol (hoy)</span>
+      <span class="status-value">~5.2 UA · alejándose</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Distancia a la Tierra (hoy)</span>
+      <span class="status-value">~5.7 UA</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Peligro para la Tierra</span>
+      <span class="status-value red">Ninguno</span>
+    </div>
+    <!-- duplicado para loop -->
+    <div class="status-item">
+      <span class="status-label">Descubierto · ATLAS Chile</span>
+      <span class="status-value">1 Jul 2025</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Velocidad interestelar</span>
+      <span class="status-value">&gt;50 km/s</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Agua semipesada D/H</span>
+      <span class="status-value gold">30× cometas solares</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Metano · Webb</span>
+      <span class="status-value">Primera detección interestelar · ×5–10 vs solar</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Misiones involucradas</span>
+      <span class="status-value">10+</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Paso por Marte</span>
+      <span class="status-value">3 Oct 2025 · 29M km</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Edad estimada</span>
+      <span class="status-value gold">10–12 mil millones de años</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Misión MAVEN</span>
+      <span class="status-value red">Finalizada · 3 Jun 2026</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Distancia al Sol (hoy)</span>
+      <span class="status-value">~5.2 UA · alejándose</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Distancia a la Tierra (hoy)</span>
+      <span class="status-value">~5.7 UA</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Peligro para la Tierra</span>
+      <span class="status-value red">Ninguno</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ BODY ══════════ -->
+<main class="article">
+
+  <!-- INTRO -->
+  <div class="intro">
+    <div class="intro-text">
+      <p>
+        El 1 de julio de 2025, el telescopio ATLAS en Chile registró un objeto que se movía de forma inusual a través del cielo. En cuestión de horas, los astrónomos confirmaron lo que ya sospechaban: la órbita era hiperbólica, inconfundiblemente abierta, y la velocidad superaba los 50 km/s. No era nuestro. Venía de afuera.
+      </p>
+      <p>
+        3I/ATLAS se convirtió así en el tercer objeto interestelar confirmado que transita por el Sistema Solar, después de 1I/'Oumuamua en 2017 y 2I/Borisov en 2019. A diferencia de sus predecesores, este llegó con una cola de polvo visible, una coma activa llena de agua, compuestos orgánicos y gases que no se parecen a nada que conozcamos localmente. Los datos que recogieron más de diez misiones espaciales durante los meses siguientes pintaron el retrato de un fósil cósmico: un objeto formado hace 10 a 12 mil millones de años, casi tan antiguo como la propia Vía Láctea.
+      </p>
+      <p>
+        Lo que sigue es la crónica completa de su paso: el descubrimiento, los hallazgos científicos, el debate sobre su naturaleza, y las preguntas que deja abiertas mientras se aleja de nosotros para siempre.
+      </p>
+    </div>
+
+    <div class="origin-box">
+      <p class="origin-label">// Contexto · Objetos interestelares</p>
+      <div class="origin-item">
+        <p class="origin-key">1I/'Oumuamua · 2017</p>
+        <p class="origin-val">El primero. Alargado, sin coma visible. Aceleración no gravitacional inexplicada.</p>
+      </div>
+      <div class="origin-item">
+        <p class="origin-key">2I/Borisov · 2019</p>
+        <p class="origin-val">El segundo. Cometa clásico. Coma activa con CO y H₂O.</p>
+      </div>
+      <div class="origin-item">
+        <p class="origin-key">3I/ATLAS · 2025</p>
+        <p class="origin-val">El tercero. El más complejo. Química extrema, deuterio altísimo, metano detectado.</p>
+      </div>
+      <div class="origin-item">
+        <p class="origin-key">Nombre</p>
+        <p class="origin-val">"I" de Interestelar. ATLAS = telescopio descubridor en Chile.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 01: COMPOSICIÓN -->
+  <div class="section-head" id="sec-composicion">
+    <span class="section-num">01</span>
+    <h2 class="section-title">Una química que no conocemos</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="body-text">
+    <p>
+      Cada telescopio que apuntó a 3I/ATLAS devolvió datos sorprendentes. El perfil químico de este visitante no se parece al de ningún cometa del Sistema Solar. La combinación de agua semipesada en proporciones extremas, metano en abundancia, dióxido de carbono elevado y compuestos orgánicos sugiere que se formó en un entorno mucho más frío y antiguo que los confines de nuestra nube de Oort.
+    </p>
+  </div>
+
+  <div class="chem-grid">
+    <div class="chem-item">
+      <span class="chem-icon">💧</span>
+      <p class="chem-label">Agua semipesada · ALMA</p>
+      <p class="chem-compound">HDO (D₂O)</p>
+      <p class="chem-desc">La proporción deuterio/hidrógeno (D/H) es al menos 30 veces mayor que en los cometas del Sistema Solar. Señal de formación en un entorno extremadamente frío, por debajo de 30 K.</p>
+      <span class="chem-anomaly">×30 vs cometas sol.</span>
+    </div>
+    <div class="chem-item">
+      <span class="chem-icon">🔥</span>
+      <p class="chem-label">Metano · James Webb</p>
+      <p class="chem-compound">CH₄</p>
+      <p class="chem-desc">Detectado por primera vez en un objeto interestelar. Los niveles de metano —junto con CO₂— son 5 a 10 veces superiores a los de cometas locales en relación al agua, lo que indica un historial de formación radicalmente distinto.</p>
+      <span class="chem-anomaly">×5–10 vs cometas sol.</span>
+    </div>
+    <div class="chem-item">
+      <span class="chem-icon">💨</span>
+      <p class="chem-label">Vapor de agua · SPHEREx</p>
+      <p class="chem-compound">H₂O</p>
+      <p class="chem-desc">SPHEREx detectó vapor de agua activo en la coma. La misión Swift confirmó que incluso a 3 UA del Sol el objeto liberaba agua a una tasa de ~40 kg/s, algo inusual en cometas conocidos.</p>
+      <span class="chem-anomaly">40 kg/s a 3 UA</span>
+    </div>
+    <div class="chem-item">
+      <span class="chem-icon">⚗️</span>
+      <p class="chem-label">Dióxido de carbono · Webb</p>
+      <p class="chem-compound">CO₂</p>
+      <p class="chem-desc">Los niveles relativos al agua son muy superiores a la norma cometaria solar. Refuerza la hipótesis de un objeto formado en un entorno primordial, químicamente diferente al nuestro.</p>
+    </div>
+    <div class="chem-item">
+      <span class="chem-icon">🧬</span>
+      <p class="chem-label">Orgánicos · SPHEREx</p>
+      <p class="chem-compound">Compuestos orgánicos</p>
+      <p class="chem-desc">El telescopio SPHEREx descompuso el contenido de la coma en polvo, vapor de agua, compuestos orgánicos y CO₂ mediante observaciones infrarrojas de alta resolución espectral.</p>
+    </div>
+    <div class="chem-item">
+      <span class="chem-icon">🌡️</span>
+      <p class="chem-label">Radical OH · Swift</p>
+      <p class="chem-compound">Hidroxilo (OH)</p>
+      <p class="chem-desc">La Universidad de Auburn detectó una tenue señal UV del radical OH cuando el cometa estaba a ~3 UA del Sol, confirmando actividad de agua a una distancia inusualmente grande.</p>
+    </div>
+  </div>
+
+  <div class="body-text" style="display:flex; gap:1rem; flex-wrap:wrap; padding-top:0;">
+    <button class="img-btn" onclick="openLightbox('lb-chem')">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="1" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1.2"/><path d="M4 6h4M6 4v4" stroke="currentColor" stroke-width="1.2"/></svg>
+      Ver infografía · Composición vs. cometas solares
+    </button>
+    <button class="img-btn" onclick="openLightbox('lb-dh')">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="1" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1.2"/><path d="M4 6h4M6 4v4" stroke="currentColor" stroke-width="1.2"/></svg>
+      Ver infografía · Ratio D/H comparativo
+    </button>
+  </div>
+
+  <div class="pull-quote">
+    <p>Una edad cinemática de 10 a 12 mil millones de años lo convierte en uno de los objetos más antiguos que han cruzado el Sistema Solar. Es, literalmente, un fósil de cuando la galaxia era joven.</p>
+    <cite>— Análisis de edad cinemática · 2025–2026</cite>
+  </div>
+
+  <!-- COMPARATIVA -->
+  <div class="section-head" id="sec-comparativa">
+    <span class="section-num">02</span>
+    <h2 class="section-title">3I/ATLAS vs cometas del Sistema Solar</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="table-scroll">
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Parámetro</th>
+        <th>Cometas típicos S.S.</th>
+        <th class="hi">3I/ATLAS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Origen</td>
+        <td>Nube de Oort / Cinturón Kuiper</td>
+        <td class="val-hi">Sistema estelar desconocido</td>
+      </tr>
+      <tr>
+        <td>Velocidad</td>
+        <td>~20–40 km/s (hiperbólicos)</td>
+        <td class="val-anom">&gt;50 km/s</td>
+      </tr>
+      <tr>
+        <td>Órbita</td>
+        <td>Elíptica o hiperbólica moderada</td>
+        <td class="val-hi">Hiperbólica pronunciada</td>
+      </tr>
+      <tr>
+        <td>Ratio D/H (agua)</td>
+        <td>~300×10⁻⁶ (referencia SMOW)</td>
+        <td class="val-anom">≥30× mayor</td>
+      </tr>
+      <tr>
+        <td>Metano (CH₄)</td>
+        <td>Raro, niveles bajos</td>
+        <td class="val-anom">Niveles muy elevados</td>
+      </tr>
+      <tr>
+        <td>CO₂ relativo a H₂O</td>
+        <td>Moderado</td>
+        <td class="val-anom">Muy superior a la norma</td>
+      </tr>
+      <tr>
+        <td>Actividad a 3 UA</td>
+        <td>Mínima o nula</td>
+        <td class="val-hi">~40 kg/s de agua</td>
+      </tr>
+      <tr>
+        <td>Temperatura formación estimada</td>
+        <td>~30–50 K</td>
+        <td class="val-anom">≲30 K (extremo)</td>
+      </tr>
+      <tr>
+        <td>Edad estimada</td>
+        <td>4.5 Ga (edad S.S.)</td>
+        <td class="val-hi">10–12 Ga</td>
+      </tr>
+      <tr>
+        <td>Diámetro núcleo</td>
+        <td>Variable (1–50 km)</td>
+        <td>≤5.6 km (estimado Hubble)</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <!-- MISIONES -->
+  <div class="section-head" id="sec-misiones">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Las misiones que lo observaron</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="body-text">
+    <p>
+      Nunca antes un objeto interestelar había sido observado por tantos instrumentos simultáneamente. La combinación de datos fue posible porque 3I/ATLAS llegó en un momento en que la flota científica espacial de la humanidad estaba en plena capacidad operativa.
+    </p>
+  </div>
+
+  <div class="missions-grid">
+    <div class="mission-card">
+      <p class="mission-name">ATLAS</p>
+      <p class="mission-agency">ESA / Terrestre · Chile</p>
+      <p class="mission-contrib">Descubrimiento inicial. 1 Jul 2025. Órbita hiperbólica confirmada.</p>
+    </div>
+    <div class="mission-card">
+      <p class="mission-name">Hubble</p>
+      <p class="mission-agency">NASA · Órbita terrestre</p>
+      <p class="mission-contrib">Imágenes del núcleo a 365M km. Estimó diámetro ≤5.6 km. 21 Jul 2025.</p>
+    </div>
+    <div class="mission-card">
+      <p class="mission-name">James Webb</p>
+      <p class="mission-agency">NASA/ESA · L2</p>
+      <p class="mission-contrib">NIRSpec (6 ago) y MIRI (dic 2025): Detectó metano y niveles altos de CO₂ por primera vez en objeto interestelar.</p>
+    </div>
+    <div class="mission-card">
+      <p class="mission-name">SPHEREx</p>
+      <p class="mission-agency">NASA · Órbita terrestre</p>
+      <p class="mission-contrib">Escaneo infrarrojo 7–15 ago. Caracterizó composición completa de la coma.</p>
+    </div>
+    <div class="mission-card">
+      <p class="mission-name">ALMA</p>
+      <p class="mission-agency">ESO · Chile</p>
+      <p class="mission-contrib">Midió ratio D/H del agua semipesada: ≥30× sobre cometas solares. Datos publicados 23 abr 2026.</p>
+    </div>
+    <div class="mission-card">
+      <p class="mission-name">Psyche</p>
+      <p class="mission-agency">NASA · Cinturón asteroides</p>
+      <p class="mission-contrib">4 observaciones en 8 horas los días 8–9 sep 2025.</p>
+    </div>
+    <div class="mission-card">
+      <p class="mission-name">STEREO / Lucy</p>
+      <p class="mission-agency">NASA · Varias órbitas</p>
+      <p class="mission-contrib">Imágenes complementarias primera quincena de septiembre 2025.</p>
+    </div>
+    <div class="mission-card">
+      <p class="mission-name">PUNCH / MAVEN</p>
+      <p class="mission-agency">NASA · Órbita solar / Marte</p>
+      <p class="mission-contrib">PUNCH detectó la cola colorida (sep–oct). MAVEN registró coma de hidrógeno UV en Marte. Misión MAVEN finalizada el 3 jun 2026.</p>
+    </div>
+    <div class="mission-card">
+      <p class="mission-name">MRO / Perseverance</p>
+      <p class="mission-agency">NASA · Marte</p>
+      <p class="mission-contrib">MRO fotografió el cometa desde órbita marciana (2 oct). Perseverance lo capturó desde la superficie (4 oct).</p>
+    </div>
+    <div class="mission-card">
+      <p class="mission-name">Swift</p>
+      <p class="mission-agency">NASA · Órbita terrestre</p>
+      <p class="mission-contrib">Detectó señal UV del radical OH a 3 UA. Confirmó ~40 kg/s de agua incluso lejos del Sol.</p>
+    </div>
+    <div class="mission-card">
+      <p class="mission-name">TESS</p>
+      <p class="mission-agency">NASA · Órbita terrestre</p>
+      <p class="mission-contrib">Reobservación 15–19 ene 2026. Midió actividad y rotación del núcleo.</p>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="section-head" id="sec-timeline">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Línea temporal del paso</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="timeline">
+
+    <div class="timeline-entry milestone">
+      <div class="timeline-date">
+        1 Jul 2025
+        <span class="tl-agency">ATLAS · Chile</span>
+      </div>
+      <div class="timeline-content">
+        <span class="tl-tag">Descubrimiento</span>
+        <p class="tl-title">Primera observación confirmada</p>
+        <p class="tl-body">El telescopio ATLAS en Chile reporta el objeto al Centro de Planetas Menores. La órbita hiperbólica se confirma de inmediato. Es el tercer objeto interestelar de la historia, después de 'Oumuamua y Borisov.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Velocidad <span>&gt;50 km/s</span></span>
+          <span class="tl-pill">Órbita <span>Hiperbólica</span></span>
+        </div>
+        <button class="img-btn" onclick="openLightbox('lb-orbit')">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="1" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1.2"/><path d="M4 6h4M6 4v4" stroke="currentColor" stroke-width="1.2"/></svg>
+          Ver infografía · Trayectoria por el sistema solar
+        </button>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-date">
+        21 Jul 2025
+        <span class="tl-agency">Hubble · NASA</span>
+      </div>
+      <div class="timeline-content gold-bar">
+        <span class="tl-tag gold">Primeras imágenes</span>
+        <p class="tl-title">Hubble fotografía el núcleo</p>
+        <p class="tl-body">El telescopio espacial Hubble captura imágenes del cometa a aproximadamente 365 millones de km de la Tierra. Con base en estas imágenes se estima que el núcleo mide como máximo 5.6 km de diámetro, aunque podría ser mucho menor.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Distancia <span>365 M km</span></span>
+          <span class="tl-pill">Núcleo <span>≤5.6 km</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-date">
+        6–15 Ago 2025
+        <span class="tl-agency">Webb · SPHEREx</span>
+      </div>
+      <div class="timeline-content">
+        <span class="tl-tag">Espectroscopía infrarroja</span>
+        <p class="tl-title">Webb y SPHEREx analizan la coma</p>
+        <p class="tl-body">El James Webb observa con NIRSpec (6 ago). SPHEREx escanea el cometa entre el 7 y el 15 de agosto, descomponiendo el contenido de la coma en polvo, vapor de agua, compuestos orgánicos y CO₂. Los primeros datos ya indican una química inusual.</p>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-date">
+        8–30 Sep 2025
+        <span class="tl-agency">Múltiples misiones</span>
+      </div>
+      <div class="timeline-content gold-bar">
+        <span class="tl-tag gold">Seguimiento ampliado</span>
+        <p class="tl-title">Psyche, STEREO, Lucy, PUNCH, MAVEN</p>
+        <p class="tl-body">La nave Psyche registra cuatro observaciones en ocho horas (8–9 sep). STEREO y Lucy obtienen imágenes (primera quincena sep). PUNCH comienza a capturar la cola colorida (20 sep – 3 oct). MAVEN detecta hidrógeno ultravioleta en la coma (28 sep).</p>
+      </div>
+    </div>
+
+    <div class="timeline-entry milestone">
+      <div class="timeline-date">
+        2–9 Oct 2025
+        <span class="tl-agency">MRO · Perseverance · MAVEN</span>
+      </div>
+      <div class="timeline-content">
+        <span class="tl-tag">Observación desde Marte</span>
+        <p class="tl-title">El cometa visto desde otro planeta</p>
+        <p class="tl-body">El orbitador MRO fotografía el cometa desde Marte el 2 de octubre. El rover Perseverance lo captura en el cielo marciano el 4 de octubre. MAVEN obtiene imágenes de la coma el 9 de octubre. 3I/ATLAS pasó a unos 29 millones de km de Marte el 3 de octubre, según la ESA, lo que mejoró notablemente la precisión orbital.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Distancia a Marte <span>29 M km</span></span>
+          <span class="tl-pill">Fecha paso <span>3 Oct 2025</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry milestone">
+      <div class="timeline-date">
+        29–30 Oct 2025
+        <span class="tl-agency">Perihelio</span>
+      </div>
+      <div class="timeline-content gold-bar">
+        <span class="tl-tag gold">Máxima aproximación al Sol</span>
+        <p class="tl-title">Perihelio: 1.4 UA (~210 M km)</p>
+        <p class="tl-body">El cometa alcanza su punto más cercano al Sol. A 203 millones de km, desarrolla primero una anticola apuntando hacia el Sol y luego una cola normal de polvo. La actividad es máxima. Posteriormente se estima que el brillo máximo llegó a magnitud ~11.5 a mediados de noviembre.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Perihelio <span>~1.4 UA</span></span>
+          <span class="tl-pill">Magnitud máx <span>~11.5</span></span>
+        </div>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+          <button class="img-btn" onclick="openLightbox('lb-perihelio')">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="1" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1.2"/><path d="M4 6h4M6 4v4" stroke="currentColor" stroke-width="1.2"/></svg>
+            Ver infografía · Evolución de la cola en perihelio
+          </button>
+          <button class="img-btn" onclick="openLightbox('lb-cola')">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="1" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1.2"/><path d="M4 6h4M6 4v4" stroke="currentColor" stroke-width="1.2"/></svg>
+            Ver infografía · Estructura de la cola
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-date">
+        19 Dic 2025
+        <span class="tl-agency">Mínimo a la Tierra</span>
+      </div>
+      <div class="timeline-content">
+        <span class="tl-tag">Sin peligro</span>
+        <p class="tl-title">Punto más cercano a la Tierra</p>
+        <p class="tl-body">El cometa permanece muy alejado de la Tierra: a ~1.8 UA (≈270 millones km). No existió en ningún momento peligro de impacto. La trayectoria lo llevó dentro de la órbita de Marte y luego se alejó del Sol sin acercarse al planeta azul.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Distancia Tierra <span>~1.8 UA</span></span>
+          <span class="tl-pill">Riesgo <span>Ninguno</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry milestone">
+      <div class="timeline-date">
+        15 y 27 Dic 2025
+        <span class="tl-agency">James Webb · MIRI</span>
+      </div>
+      <div class="timeline-content violet-bar">
+        <span class="tl-tag violet">Hallazgo histórico</span>
+        <p class="tl-title">Metano detectado por primera vez</p>
+        <p class="tl-body">Webb realiza dos rondas de observaciones con su instrumento MIRI, cuando el cometa estaba entre 234 y 329 millones de km del Sol. Los espectros revelan metano por primera vez en un objeto interestelar, junto con niveles muy elevados de CO₂ en relación al agua. Los resultados se anuncian oficialmente el 4 de junio de 2026.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Instrumento <span>MIRI (Webb)</span></span>
+          <span class="tl-pill">Anuncio <span>4 Jun 2026</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-date">
+        15–19 Ene 2026
+        <span class="tl-agency">TESS · NASA</span>
+      </div>
+      <div class="timeline-content">
+        <span class="tl-tag">Seguimiento largo plazo</span>
+        <p class="tl-title">TESS mide la rotación del núcleo</p>
+        <p class="tl-body">La misión TESS reobserva 3I/ATLAS midiendo su actividad y rotación. Los datos complementan la imagen ya construida de un objeto con aceleraciones no gravitacionales compatibles con la sublimación normal de hielos.</p>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-date">
+        Feb 2026
+        <span class="tl-agency">Swift · Auburn Univ.</span>
+      </div>
+      <div class="timeline-content gold-bar">
+        <span class="tl-tag gold">Radical OH</span>
+        <p class="tl-title">Agua activa a 3 UA del Sol</p>
+        <p class="tl-body">Se publican resultados de la misión Swift: una tenue señal ultravioleta del radical OH (hidroxilo) fue detectada cuando el cometa estaba a ~3 UA del Sol, demostrando que liberaba agua incluso muy alejado de él. La tasa de ~40 kg/s es inusual comparada con cometas conocidos.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Distancia <span>~3 UA del Sol</span></span>
+          <span class="tl-pill">Tasa agua <span>~40 kg/s</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry milestone">
+      <div class="timeline-date">
+        23 Abr 2026
+        <span class="tl-agency">ALMA · ESO Chile</span>
+      </div>
+      <div class="timeline-content violet-bar">
+        <span class="tl-tag violet">Hallazgo histórico</span>
+        <p class="tl-title">D/H: 30 veces el de los cometas solares</p>
+        <p class="tl-body">Un estudio con ALMA revela la altísima proporción de agua semipesada (HDO) en el cometa. La proporción D/H en 3I/ATLAS es al menos 30 veces mayor que en los cometas del Sistema Solar, reflejo de que se formó en un ambiente gélido a temperaturas por debajo de 30 K.</p>
+        <div class="tl-data">
+          <span class="tl-pill">D/H ratio <span>≥30× cometas sol.</span></span>
+          <span class="tl-pill">Temperatura formación <span>≲30 K</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry milestone">
+      <div class="timeline-date">
+        3 Jun 2026
+        <span class="tl-agency">MAVEN · NASA</span>
+      </div>
+      <div class="timeline-content red-bar">
+        <span class="tl-tag red">Fin de misión</span>
+        <p class="tl-title">NASA da por terminada la misión MAVEN</p>
+        <p class="tl-body">NASA anuncia el fin de la misión MAVEN (Mars Atmosphere and Volatile EvolutioN), en operación desde 2014. La sonda fue clave para 3I/ATLAS: desde su órbita marciana detectó en septiembre–octubre de 2025 la nube de hidrógeno ultravioleta de la coma del cometa, cuando este pasó a tan solo 29 millones de km de Marte —su máxima aproximación a cualquier planeta. MAVEN venía reportando anomalías técnicas inexplicadas desde esas observaciones. La NASA no vincula ambos hechos, aunque la coincidencia temporal ha generado comentarios en la comunidad científica; se trata de una hipótesis sin respaldo publicado.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Duración MAVEN <span>2014–2026</span></span>
+          <span class="tl-pill">Dist. a Marte (oct 2025) <span>29 M km</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-entry milestone">
+      <div class="timeline-date">
+        4 Jun 2026
+        <span class="tl-agency">NASA · Anuncio oficial</span>
+      </div>
+      <div class="timeline-content red-bar">
+        <span class="tl-tag red">Anuncio NASA</span>
+        <p class="tl-title">Webb: metano y "química extraña"</p>
+        <p class="tl-body">La NASA anuncia oficialmente que el James Webb ha encontrado metano y una "química extraña" en 3I/ATLAS. La abundancia de metano y CO₂ relativa al agua resulta 5 a 10 veces superior a la normal en cometas locales, indicando un historial de formación radicalmente diferente al de cualquier objeto que hayamos estudiado antes.</p>
+      </div>
+    </div>
+
+    <div class="timeline-entry milestone">
+      <div class="timeline-date">
+        10 Jun 2026
+        <span class="tl-agency">Hoy · Estado actual</span>
+      </div>
+      <div class="timeline-content">
+        <span class="tl-tag">Salida definitiva</span>
+        <p class="tl-title">3I/ATLAS sigue alejándose, rumbo al espacio interestelar</p>
+        <p class="tl-body">El cometa continúa su trayectoria hiperbólica definitiva fuera del Sistema Solar, a unas ~5.2 UA del Sol y ~5.7 UA de la Tierra, todavía visible —con brillo decreciente— en el cielo matutino hasta primavera de 2026. Los datos de ALMA, Webb y MAVEN permanecen en archivos públicos de NASA y ESA. La misión MAVEN, despedida oficialmente el 3 de junio, deja como legado los espectros más cercanos jamás obtenidos de un visitante interestelar desde la órbita de otro planeta. 3I/ATLAS no regresará: una vez fuera de la influencia gravitacional del Sol, seguirá para siempre hacia el espacio interestelar.</p>
+        <div class="tl-data">
+          <span class="tl-pill">Dist. al Sol <span>~5.2 UA</span></span>
+          <span class="tl-pill">Dist. a la Tierra <span>~5.7 UA</span></span>
+          <span class="tl-pill">Rumbo <span>Espacio interestelar</span></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CATÁLOGO DE ANOMALÍAS -->
+  <div class="section-head" id="sec-anomalias">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Catálogo de 22 anomalías</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="body-text">
+    <p>
+      Lo que comenzó como 7 a 12 irregularidades observacionales discutidas informalmente por la comunidad científica ha sido catalogado, tras el análisis sistemático de todos los datos disponibles, en 22 anomalías formales. Cada una está documentada con observaciones instrumentales específicas. La mayoría tienen explicaciones naturalistas plausibles; algunas permanecen abiertas.
+    </p>
+  </div>
+
+  <div class="anomalias-grid">
+
+    <div class="anomalia-card orbital">
+      <span class="anomalia-num">01</span>
+      <p class="anomalia-cat">Orbital</p>
+      <h3 class="anomalia-title">Aceleración no gravitacional atípicamente alta</h3>
+      <p class="anomalia-body">La aceleración extra observada —más allá de la gravedad pura— es mayor que la de cualquier cometa solar en posición equivalente. Coherente con sublimación activa, pero en proporciones estadísticamente en los percentiles superiores.</p>
+    </div>
+
+    <div class="anomalia-card orbital">
+      <span class="anomalia-num">02</span>
+      <p class="anomalia-cat">Orbital</p>
+      <h3 class="anomalia-title">Trayectoria de entrada alineada con el plano eclíptico</h3>
+      <p class="anomalia-body">La inclinación orbital respecto al plano eclíptico es inusualmente baja para un objeto de origen aleatorio extrasolar. Loeb señala que la probabilidad de esta alineación por azar es de una entre varias decenas.</p>
+      <span class="loeb-signal">⚑ Loeb</span>
+    </div>
+
+    <div class="anomalia-card orbital">
+      <span class="anomalia-num">03</span>
+      <p class="anomalia-cat">Orbital</p>
+      <h3 class="anomalia-title">Dirección de entrada próxima a la señal Wow! de 1977</h3>
+      <p class="anomalia-body">La trayectoria proyectada al pasado converge dentro de ~9° con la posición en el cielo de la enigmática señal de radio "¡Wow!" detectada por el observatorio Big Ear en 1977. No existe evidencia de relación causal, pero la coincidencia geométrica es notable.</p>
+      <span class="loeb-signal">⚑ Loeb</span>
+    </div>
+
+    <div class="anomalia-card morfologica">
+      <span class="anomalia-num">04</span>
+      <p class="anomalia-cat">Morfológica</p>
+      <h3 class="anomalia-title">Ausencia de cola de iones bien definida</h3>
+      <p class="anomalia-body">Para su nivel de actividad y distancia heliocéntrica, la cola de plasma (iones) es significativamente más débil de lo esperado. La cola de polvo es normal; la cola iónica —siempre apuntando al Sol— aparece difusa o ausente en varios conjuntos de imágenes.</p>
+      <span class="loeb-signal">⚑ Loeb</span>
+    </div>
+
+    <div class="anomalia-card morfologica">
+      <span class="anomalia-num">05</span>
+      <p class="anomalia-cat">Morfológica</p>
+      <h3 class="anomalia-title">Anticola inusualmente prominente en perihelio</h3>
+      <p class="anomalia-body">La anticola observada en perihelio (filamento de polvo hacia el Sol) fue excepcionalmente brillante y persistente. En cometas solares, la anticola es un efecto geométrico breve; aquí duró más de lo modelado, sugiriendo emisión de partículas grandes de mayor inercia.</p>
+    </div>
+
+    <div class="anomalia-card quimica">
+      <span class="anomalia-num">06</span>
+      <p class="anomalia-cat">Química</p>
+      <h3 class="anomalia-title">Ratio D/H ×30 superior a cometas solares</h3>
+      <p class="anomalia-body">La proporción de agua deuterada (HDO) respecto al agua ordinaria (H₂O) medida por ALMA supera en 30 veces la máxima observada en cometas del sistema solar. Requiere formación en una nube molecular a temperatura inferior a 30 kelvins.</p>
+    </div>
+
+    <div class="anomalia-card quimica">
+      <span class="anomalia-num">07</span>
+      <p class="anomalia-cat">Química</p>
+      <h3 class="anomalia-title">Metano: primer hallazgo en visitante interestelar</h3>
+      <p class="anomalia-body">El CH₄ fue detectado por primera vez en un objeto de origen extrasolar. Su abundancia, 5 a 10 veces la media solar, indica que el cometa se formó o se preservó en condiciones donde el metano no pudo sublimarse durante miles de millones de años.</p>
+    </div>
+
+    <div class="anomalia-card quimica">
+      <span class="anomalia-num">08</span>
+      <p class="anomalia-cat">Química</p>
+      <h3 class="anomalia-title">CO₂ relativo al agua muy superior a cometas locales</h3>
+      <p class="anomalia-body">El dióxido de carbono detectado por Webb (MIRI) muestra una proporción CO₂/H₂O que excede el rango estadístico normal de la nube de Oort. Implica que el cometa nunca se acercó suficientemente a una estrella para perder este compuesto volátil.</p>
+    </div>
+
+    <div class="anomalia-card fisica">
+      <span class="anomalia-num">09</span>
+      <p class="anomalia-cat">Física</p>
+      <h3 class="anomalia-title">Actividad hídrica a 3 UA: imposible en modelo solar estándar</h3>
+      <p class="anomalia-body">La tasa de liberación de agua de ~40 kg/s detectada por Swift a 3 UA del Sol no tiene precedente en cometas conocidos. A esa distancia, la irradiación solar es insuficiente para sublimar agua según los modelos estándar, a menos que haya un mecanismo alternativo de activación.</p>
+    </div>
+
+    <div class="anomalia-card fisica">
+      <span class="anomalia-num">10</span>
+      <p class="anomalia-cat">Física</p>
+      <h3 class="anomalia-title">Brillo intrínseco desproporcionado para el tamaño estimado</h3>
+      <p class="anomalia-body">La luminosidad cometaria de 3I/ATLAS, comparada con el tamaño máximo de su núcleo (5.6 km según Hubble), resulta estadísticamente elevada. O el núcleo es altamente reflectivo, o la actividad superficial es excepcional, o el núcleo real es significativamente más pequeño.</p>
+    </div>
+
+    <div class="anomalia-card fisica">
+      <span class="anomalia-num">11</span>
+      <p class="anomalia-cat">Física</p>
+      <h3 class="anomalia-title">Ausencia de fragmentación en perihelio</h3>
+      <p class="anomalia-body">Cometas de similar tamaño y actividad sufren fragmentación parcial al pasar cerca del Sol. 3I/ATLAS mantuvo su núcleo intacto durante todo el perihelio, lo que sugiere una cohesión estructural inusual para un objeto de su naturaleza y origen.</p>
+    </div>
+
+    <div class="anomalia-card origen">
+      <span class="anomalia-num">12</span>
+      <p class="anomalia-cat">Origen</p>
+      <h3 class="anomalia-title">Edad cinemática de 10–12 Ga: casi tan antiguo como la Vía Láctea</h3>
+      <p class="anomalia-body">La edad cinemática estimada —calculada proyectando la trayectoria hacia atrás— sitúa el origen de 3I/ATLAS entre 10 y 12 mil millones de años atrás. La Vía Láctea tiene ~13.6 Ga. Este objeto pudo haberse formado en una de las primeras generaciones de sistemas planetarios de nuestra galaxia.</p>
+    </div>
+
+    <div class="anomalia-card quimica">
+      <span class="anomalia-num">13</span>
+      <p class="anomalia-cat">Química</p>
+      <h3 class="anomalia-title">Orgánicos complejos detectados por SPHEREx</h3>
+      <p class="anomalia-body">Las observaciones infrarrojas de SPHEREx revelaron la presencia de compuestos orgánicos complejos en la coma cuya naturaleza exacta aún se está caracterizando. La diversidad molecular parece superar la de los cometas solares mejor estudiados.</p>
+    </div>
+
+    <div class="anomalia-card fisica">
+      <span class="anomalia-num">14</span>
+      <p class="anomalia-cat">Física</p>
+      <h3 class="anomalia-title">Coma de hidrógeno más extensa de lo modelado</h3>
+      <p class="anomalia-body">La nube de hidrógeno detectada por MAVEN en ultravioleta se extendía varios radios más allá de lo esperado para la tasa de producción de agua observada. La discrepancia sugiere una fuente adicional de hidrógeno atómico no contemplada en los modelos estándar.</p>
+    </div>
+
+    <div class="anomalia-card morfologica">
+      <span class="anomalia-num">15</span>
+      <p class="anomalia-cat">Morfológica</p>
+      <h3 class="anomalia-title">"Brillo de antemano" antes de la detección inicial</h3>
+      <p class="anomalia-body">Análisis de imágenes de archivo muestran que el objeto era detectablemente más brillante semanas antes del descubrimiento oficial que lo que los modelos de actividad cometaria estándar predicen para esa distancia heliocéntrica. Loeb sugiere ablación superficial de un cuerpo de gran extensión.</p>
+      <span class="loeb-signal">⚑ Loeb</span>
+    </div>
+
+    <div class="anomalia-card orbital">
+      <span class="anomalia-num">16</span>
+      <p class="anomalia-cat">Orbital</p>
+      <h3 class="anomalia-title">Velocidad de entrada ligeramente superior a la estelar local</h3>
+      <p class="anomalia-body">La velocidad hiperbólica excede ligeramente la velocidad típica de dispersión estelar local en el vecindario solar. Podría indicar que el objeto fue acelerado en el sistema de origen (eyección por planeta gigante) o que proviene de un sistema en una órbita galáctica diferente.</p>
+    </div>
+
+    <div class="anomalia-card fisica">
+      <span class="anomalia-num">17</span>
+      <p class="anomalia-cat">Física</p>
+      <h3 class="anomalia-title">Rotación más lenta de lo esperado para este tamaño</h3>
+      <p class="anomalia-body">Los datos de curva de luz de TESS sugieren un período de rotación más largo que el estadístico para núcleos cometarios de tamaño similar. Un cuerpo rotando lentamente bajo estrés de sublimación debería haber experimentado torque rotacional mayor, generando fragmentación u otras señales no observadas.</p>
+    </div>
+
+    <div class="anomalia-card quimica">
+      <span class="anomalia-num">18</span>
+      <p class="anomalia-cat">Química</p>
+      <h3 class="anomalia-title">Ausencia de amoniaco (NH₃) donde se esperaba</h3>
+      <p class="anomalia-body">Dada la riqueza en compuestos volátiles fríos (metano, CO₂), la no detección de amoniaco en los espectros Webb resulta llamativa. Los modelos de formación a baja temperatura predicen correlación entre NH₃ y CH₄; la ausencia de uno con presencia del otro no tiene un modelo satisfactorio.</p>
+    </div>
+
+    <div class="anomalia-card morfologica">
+      <span class="anomalia-num">19</span>
+      <p class="anomalia-cat">Morfológica</p>
+      <h3 class="anomalia-title">Asimetría norte-sur en la coma persistente tras perihelio</h3>
+      <p class="anomalia-body">Las imágenes PUNCH mostraron una asimetría marcada en la distribución del material de la coma respecto al eje nuclear. En cometas solares, estas asimetrías son transitorias; en 3I/ATLAS persistieron durante semanas, lo que apunta a una heterogeneidad de superficie inusual.</p>
+    </div>
+
+    <div class="anomalia-card origen">
+      <span class="anomalia-num">20</span>
+      <p class="anomalia-cat">Origen</p>
+      <h3 class="anomalia-title">Sin contrapartida conocida en catálogos del cinturón de Oort</h3>
+      <p class="anomalia-body">La composición química de 3I/ATLAS no corresponde a ningún tipo espectral conocido en la nube de Oort ni en el cinturón de Kuiper. Su "huella digital" química es genuinamente nueva, lo que complica establecer un análogo local para calibrar los modelos de formación.</p>
+    </div>
+
+    <div class="anomalia-card fisica">
+      <span class="anomalia-num">21</span>
+      <p class="anomalia-cat">Física</p>
+      <h3 class="anomalia-title">Tasa de pérdida de masa inferior a la predicha por los modelos</h3>
+      <p class="anomalia-body">A pesar de la extraordinaria actividad química (agua, metano, CO₂), la pérdida total de masa estimada durante el perihelio es inferior a la que los modelos de sublimación predicen para esa composición y distancia heliocéntrica. El cometa "consume" menos de sí mismo de lo esperado.</p>
+    </div>
+
+    <div class="anomalia-card origen">
+      <span class="anomalia-num">22</span>
+      <p class="anomalia-cat">Origen</p>
+      <h3 class="anomalia-title">Posible origen en disco protoplanetario de estrella de baja masa</h3>
+      <p class="anomalia-body">La combinación de alta abundancia de volátiles fríos, edad cinemática extrema y ratio D/H récord es más consistente con formación en el disco externo de una estrella de tipo M (enana roja) que con un sistema tipo solar. Si esto se confirma, la mayoría de los interestelares serían eyectados por los sistemas más comunes de la galaxia.</p>
+    </div>
+
+  </div>
+
+  <!-- DEBATE -->
+  <div class="section-head" id="sec-debate">
+    <span class="section-num">06</span>
+    <h2 class="section-title">Consenso científico y anomalías</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="body-text">
+    <p>
+      La mayoría de los astrónomos considera que 3I/ATLAS es un cometa natural inusualmente grande y frío, pero no un artefacto tecnológico. Sin embargo, algunas características han generado debate público, en parte impulsado por el astrofísico Avi Loeb (Harvard), conocido por su disposición a considerar explicaciones no convencionales.
+    </p>
+  </div>
+
+  <div class="debate-grid">
+    <div class="debate-col">
+      <p class="debate-col-label cyan">// Consenso mayoritario</p>
+      <ul>
+        <li>Las aceleraciones no gravitacionales observadas son compatibles con la sublimación normal de hielos</li>
+        <li>La coma activa con agua, CO₂ y orgánicos confirma comportamiento cometario</li>
+        <li>El ratio D/H extremo indica formación en un entorno frío, no artificio tecnológico</li>
+        <li>La ausencia de señales artificiales en ondas de radio descarta tecnología activa</li>
+        <li>"Hay mucha evidencia de que estos objetos son completamente naturales" — Ken Gailey, Univ. Iowa</li>
+      </ul>
+    </div>
+    <div class="debate-col">
+      <p class="debate-col-label gold">// Aspectos bajo debate</p>
+      <ul>
+        <li>Falta de cola cometaria visible en ciertas imágenes de Hubble (Loeb)</li>
+        <li>Alineación sorprendente con el plano orbital planetario del Sistema Solar</li>
+        <li>La trayectoria del objeto provino del mismo sector del cielo donde se detectó la señal "¡Wow!" de 1977, dentro de ~9° (sin evidencia de conexión)</li>
+        <li>Química radicalmente diferente a cualquier cometa conocido: ¿implica un entorno estelar muy atípico o algo más?</li>
+        <li>El "brillo de antemano" podría explicarse por ablación superficial, argumenta Loeb</li>
+        <li>El cierre de la misión MAVEN (3 jun 2026), tras reportar anomalías técnicas inexplicadas desde sus observaciones de 3I/ATLAS en 2025, coincide en el tiempo con su máxima aproximación al cometa —sin que NASA establezca relación causal</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- VOCES -->
+  <div class="section-head" id="sec-voces">
+    <span class="section-num">07</span>
+    <h2 class="section-title">Voces de la comunidad científica</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="voices-section">
+    <div class="voice-card">
+      <div class="voice-avatar">🔭</div>
+      <div class="voice-meta">
+        <p class="voice-name">Ken Gailey</p>
+        <p class="voice-role">Universidad de Iowa · Astrofísica</p>
+        <p class="voice-text">
+          Siempre partimos de la suposición de que estos objetos son naturales, estudiándolos bajo esa premisa. Si surgiera evidencia muy poderosa de artificiosidad, habría que reabrir la discusión, pero por ahora hay mucha evidencia de que estos objetos son completamente naturales.
+        </p>
+      </div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-avatar">🌌</div>
+      <div class="voice-meta">
+        <p class="voice-name">Avi Loeb</p>
+        <p class="voice-role">Harvard University · Proyecto Galileo</p>
+        <p class="voice-text">
+          Sería un alivio saber que 3I/ATLAS es un cometa ordinario, pues así la humanidad no enfrentaría ningún riesgo asociado a tecnologías alienígenas. Aun así, no hay que descartar posibilidades sin datos suficientes. Hasta ahora no muestra una cola típica, y su química es extraordinariamente inusual.
+        </p>
+      </div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-avatar">🛸</div>
+      <div class="voice-meta">
+        <p class="voice-name">James Webb Telescope Team</p>
+        <p class="voice-role">NASA/ESA · Anuncio 4 Jun 2026</p>
+        <p class="voice-text">
+          La detección de metano en 3I/ATLAS representa un hito: es la primera vez que encontramos este compuesto en un visitante interestelar. Los niveles de metano y CO₂ en relación al agua son muy superiores a lo que observamos en cometas del Sistema Solar, lo que apunta a un origen en condiciones de formación radicalmente distintas a las nuestras.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PREGUNTAS ABIERTAS -->
+  <div class="open-questions">
+    <p class="open-q-label">// Preguntas que siguen abiertas · Actualizado 10 Jun 2026</p>
+    <ul class="open-q-list">
+      <li>¿De qué sistema estelar proviene 3I/ATLAS? ¿Podemos rastrear su trayectoria hacia atrás hasta identificar su estrella de origen?</li>
+      <li>¿Qué tipo de entorno estelar produce cometas con un ratio D/H 30 veces superior al de los nuestros?</li>
+      <li>¿La abundancia de metano y CO₂ indica que se formó en una región protoplanetaria con química radicalmente diferente, o en un disco circunestelar muy antiguo?</li>
+      <li>¿Cuántos otros objetos como este han cruzado el Sistema Solar sin ser detectados? ¿Cuál es la tasa real de paso de interestelares?</li>
+      <li>¿Podría alguna misión futura alcanzar al cometa antes de que abandone definitivamente el sistema? La ventana se cierra rápidamente.</li>
+      <li>¿Qué nos dice su química sobre la distribución de materiales orgánicos en la galaxia? ¿Es compatible con la panspermia interestelar?</li>
+      <li>¿La señal de agua activa a 3 UA del Sol implica un mecanismo de calentamiento interno desconocido, o simplemente una composición de hielos más volátiles que los nuestros?</li>
+      <li>¿Existe alguna relación real entre las anomalías técnicas de MAVEN y sus observaciones de 3I/ATLAS, o se trata de una coincidencia cronológica sin causalidad?</li>
+    </ul>
+  </div>
+
+  <!-- CIERRE -->
+  <div class="section-head" id="sec-cierre">
+    <span class="section-num">08</span>
+    <h2 class="section-title">El fósil que se marcha</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="body-text">
+    <p>
+      3I/ATLAS llegó sin avisar y se marcha para siempre. En menos de doce meses, más de diez misiones espaciales —algunas diseñadas para otros propósitos— viraron sus instrumentos hacia este visitante y recogieron datos que tardaremos años en digerir por completo. El perfil químico que emerge es el de un objeto primordial, formado cuando la galaxia era mucho más joven, en condiciones que no existen en ningún rincón del Sistema Solar que conozcamos.
+    </p>
+    <p>
+      Lo que resulta más perturbador no es la posibilidad —remota, según el consenso— de que sea artificial. Lo perturbador es lo que implica si es natural: que en la Vía Láctea abundan sistemas planetarios tan antiguos y tan fríos que producen cometas con una química completamente diferente a la nuestra. Y que esos cometas viajan durante miles de millones de años a través del espacio interestelar, cargados de agua semipesada, metano y orgánicos, cruzando sistemas solares a su paso.
+    </p>
+    <p>
+      La señal ha pasado. Los datos quedan. El archivo de NASA y ESA permanece abierto, aunque uno de sus principales contribuyentes ya no está operativo: la sonda MAVEN, que desde Marte obtuvo algunas de las imágenes más cercanas del cometa, cerró su misión el 3 de junio de 2026. Y en algún lugar más allá de la héliopausa, el fósil sigue su camino hacia donde vino —a casi 5.5 UA de nosotros y alejándose— sin saber, si es que algo puede saber, que durante casi un año fue el objeto más estudiado del sistema solar.
+    </p>
+  </div>
+
+<section class="comments-section">
+  <p class="comments-label">// Comentarios</p>
+  <div class="giscus-wrap">
+    <script src="https://giscus.app/client.js"
+      data-repo="mundomag/mundomag-comentarios"
+      data-repo-id="R_kgDOTErXHw"
+      data-category="Comentarios"
+      data-category-id="DIC_kwDOTErXH84C_2mS"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme="dark"
+      data-lang="es"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="../" class="footer-logo">Mundo Maravilloso</a>
+        <p class="footer-tagline">Una publicación independiente sobre los grandes misterios que la ciencia todavía no ha resuelto.</p>
+      </div>
+      <div class="footer-nav-grid">
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Artículos</p>
+          <ul class="footer-nav-list">
+            <li><a href="../articulos.html">Todos los artículos</a></li>
+            <li><a href="../glosario.html">Glosario</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Seguimientos</p>
+          <ul class="footer-nav-list">
+            <li><a href="../seguimientos/3i-atlas.html">3I/ATLAS</a></li>
+            <li><a href="../seguimientos/uap.html">UAP WATCH</a></li>
+            <li><a href="../seguimientos/pursue-releases.html">PURSUE RELEASES</a></li>
+            <li><a href="../seguimientos/voyager-1.html">VOYAGER 1</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Publicación</p>
+          <ul class="footer-nav-list">
+            <li><a href="../acerca-de.html">Acerca de</a></li>
+            <li><a href="../contacto.html">Contacto</a></li>
+            <li><a href="../privacidad.html">Privacidad</a></li>
+            <li><a href="../terminos.html">Términos</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Mundo Maravilloso · Todos los derechos reservados</p>
+      <p class="footer-signal">// Señal activa · 3i-atlas</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════ LIGHTBOX INFOGRAFÍAS SVG ══════════ -->
+
+<!-- Lightbox: Órbita -->
+<div class="lightbox-overlay" id="lb-orbit" onclick="closeLightbox(event,'lb-orbit')">
+  <div class="lightbox-inner" onclick="event.stopPropagation()">
+    <button class="lightbox-close" onclick="closeLightboxById('lb-orbit')">[ ✕ Cerrar ]</button>
+    <div class="lightbox-svg-wrap">
+      <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#0d0d0f;">
+        <circle cx="50" cy="40" r="1" fill="white" opacity="0.4"></circle>
+        <circle cx="150" cy="90" r="1.2" fill="white" opacity="0.5"></circle>
+        <circle cx="700" cy="80" r="0.8" fill="white" opacity="0.3"></circle>
+        <circle cx="750" cy="200" r="1" fill="white" opacity="0.4"></circle>
+        <circle cx="80" cy="400" r="1" fill="white" opacity="0.3"></circle>
+        <circle cx="600" cy="450" r="1.2" fill="white" opacity="0.5"></circle>
+        <circle cx="350" cy="30" r="0.9" fill="white" opacity="0.35"></circle>
+        <circle cx="500" cy="480" r="1" fill="white" opacity="0.4"></circle>
+        <circle cx="400" cy="250" r="18" fill="#fbbf24" opacity="0.9"></circle>
+        <circle cx="400" cy="250" r="30" fill="rgba(251,191,36,0.15)"></circle>
+        <circle cx="400" cy="250" r="50" fill="rgba(251,191,36,0.05)"></circle>
+        <text x="410" y="290" fill="#fbbf24" font-family="JetBrains Mono" font-size="10" opacity="0.7">Sol</text>
+        <ellipse cx="400" cy="250" rx="60" ry="60" fill="none" stroke="rgba(107,107,122,0.25)" stroke-width="1" stroke-dasharray="4,3"></ellipse>
+        <text x="468" y="245" fill="#6b6b7a" font-family="JetBrains Mono" font-size="8" opacity="0.6">Mercurio</text>
+        <ellipse cx="400" cy="250" rx="100" ry="100" fill="none" stroke="rgba(107,107,122,0.22)" stroke-width="1" stroke-dasharray="4,3"></ellipse>
+        <text x="508" y="245" fill="#6b6b7a" font-family="JetBrains Mono" font-size="8" opacity="0.6">Venus</text>
+        <ellipse cx="400" cy="250" rx="140" ry="140" fill="none" stroke="rgba(78,205,196,0.35)" stroke-width="1" stroke-dasharray="4,3"></ellipse>
+        <text x="548" y="245" fill="#4ecdc4" font-family="JetBrains Mono" font-size="9" opacity="0.8">Tierra</text>
+        <ellipse cx="400" cy="250" rx="210" ry="210" fill="none" stroke="rgba(249,115,22,0.3)" stroke-width="1" stroke-dasharray="4,3"></ellipse>
+        <text x="618" y="245" fill="#f97316" font-family="JetBrains Mono" font-size="9" opacity="0.7">Marte</text>
+        <path d="M 80 480 Q 200 350 340 255 Q 420 220 500 185 Q 620 140 780 80" fill="none" stroke="#4ecdc4" stroke-width="2.5" stroke-dasharray="0"></path>
+        <polygon points="775,78 787,82 780,72" fill="#4ecdc4"></polygon>
+        <text x="140" y="440" fill="#4ecdc4" font-family="JetBrains Mono" font-size="11" font-weight="700">3I/ATLAS</text>
+        <text x="140" y="455" fill="#4ecdc4" font-family="JetBrains Mono" font-size="9" opacity="0.7">Trayectoria hiperbólica (e &gt; 1)</text>
+        <circle cx="388" cy="252" r="5" fill="#fbbf24" stroke="#f59e0b" stroke-width="1.5"></circle>
+        <text x="335" y="235" fill="#fbbf24" font-family="JetBrains Mono" font-size="9">Perihelio</text>
+        <text x="332" y="246" fill="#fbbf24" font-family="JetBrains Mono" font-size="8" opacity="0.7">~1.4 UA</text>
+        <circle cx="220" cy="370" r="4" fill="#a78bfa"></circle>
+        <text x="225" y="360" fill="#a78bfa" font-family="JetBrains Mono" font-size="8">Descubrimiento</text>
+        <text x="225" y="372" fill="#a78bfa" font-family="JetBrains Mono" font-size="7" opacity="0.7">1 Jul 2025 · ~3.8 UA</text>
+        <circle cx="525" cy="210" r="4" fill="#f97316"></circle>
+        <text x="530" y="205" fill="#f97316" font-family="JetBrains Mono" font-size="8">Paso Marte</text>
+        <text x="530" y="217" fill="#f97316" font-family="JetBrains Mono" font-size="7" opacity="0.7">3 Oct · 29M km</text>
+        <rect x="20" y="20" width="200" height="45" fill="rgba(22,22,25,0.8)" stroke="rgba(201,168,76,0.3)" stroke-width="1"></rect>
+        <text x="30" y="38" fill="#c9a84c" font-family="JetBrains Mono" font-size="8" letter-spacing="1">VELOCIDAD HIPERBÓLICA</text>
+        <text x="30" y="55" fill="#4ecdc4" font-family="JetBrains Mono" font-size="14" font-weight="700">&gt;50 km/s</text>
+        <text x="400" y="490" fill="#6b6b7a" font-family="JetBrains Mono" font-size="9" text-anchor="middle" opacity="0.6">ÓRBITA DE 3I/ATLAS · SISTEMA SOLAR INTERIOR · ESCALA SIMPLIFICADA</text>
+      </svg>
+    </div>
+    <p class="lightbox-caption">// Infografía · Trayectoria hiperbólica de 3I/ATLAS a través del sistema solar interior · Escala orientativa</p>
+  </div>
+</div>
+
+<!-- Lightbox: Cola -->
+<div class="lightbox-overlay" id="lb-cola" onclick="closeLightbox(event,'lb-cola')">
+  <div class="lightbox-inner" onclick="event.stopPropagation()">
+    <button class="lightbox-close" onclick="closeLightboxById('lb-cola')">[ ✕ Cerrar ]</button>
+    <div class="lightbox-svg-wrap">
+      <svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#0d0d0f;">
+        <circle cx="100" cy="50" r="1" fill="white" opacity="0.3"></circle><circle cx="700" cy="80" r="1" fill="white" opacity="0.4"></circle>
+        <circle cx="300" cy="20" r="0.8" fill="white" opacity="0.3"></circle><circle cx="750" cy="350" r="1" fill="white" opacity="0.35"></circle>
+        <circle cx="-30" cy="210" r="60" fill="rgba(251,191,36,0.12)"></circle>
+        <text x="8" y="215" fill="#fbbf24" font-family="JetBrains Mono" font-size="10" opacity="0.7">☀ Sol</text>
+        <circle cx="400" cy="210" r="12" fill="#4ecdc4" opacity="0.9"></circle>
+        <circle cx="400" cy="210" r="25" fill="rgba(78,205,196,0.15)"></circle>
+        <circle cx="400" cy="210" r="50" fill="rgba(78,205,196,0.07)"></circle>
+        <text x="415" y="206" fill="#4ecdc4" font-family="JetBrains Mono" font-size="11" font-weight="700">Núcleo</text>
+        <text x="415" y="220" fill="#4ecdc4" font-family="JetBrains Mono" font-size="9" opacity="0.7">≤ 5.6 km</text>
+        <path d="M 415 205 Q 560 190 720 160" fill="none" stroke="#c9a84c" stroke-width="4" opacity="0.7"></path>
+        <path d="M 415 215 Q 560 230 720 260" fill="none" stroke="#c9a84c" stroke-width="4" opacity="0.7"></path>
+        <path d="M 415 210 Q 560 210 720 210" fill="none" stroke="#c9a84c" stroke-width="8" opacity="0.2"></path>
+        <text x="640" y="175" fill="#c9a84c" font-family="JetBrains Mono" font-size="10" font-weight="700">Cola de polvo</text>
+        <text x="640" y="188" fill="#c9a84c" font-family="JetBrains Mono" font-size="8" opacity="0.7">(normal · alejándose del Sol)</text>
+        <path d="M 385 205 Q 250 195 130 175" fill="none" stroke="#f97316" stroke-width="2.5" opacity="0.8" stroke-dasharray="6,3"></path>
+        <path d="M 385 215 Q 250 225 130 248" fill="none" stroke="#f97316" stroke-width="2.5" opacity="0.8" stroke-dasharray="6,3"></path>
+        <text x="80" y="165" fill="#f97316" font-family="JetBrains Mono" font-size="10" font-weight="700">Anticola</text>
+        <text x="80" y="178" fill="#f97316" font-family="JetBrains Mono" font-size="8" opacity="0.7">(polvo grueso · hacia Sol)</text>
+        <path d="M 415 208 Q 580 200 740 195" fill="none" stroke="#a78bfa" stroke-width="1.5" opacity="0.4" stroke-dasharray="4,4"></path>
+        <text x="650" y="285" fill="#a78bfa" font-family="JetBrains Mono" font-size="9">Cola iónica</text>
+        <text x="650" y="297" fill="#a78bfa" font-family="JetBrains Mono" font-size="8" opacity="0.6">(débil · anomalía #04)</text>
+        <line x1="70" y1="380" x2="10" y2="380" stroke="#fbbf24" stroke-width="1.5"></line>
+        <text x="75" y="385" fill="#fbbf24" font-family="JetBrains Mono" font-size="9" opacity="0.7">Hacia el Sol</text>
+        <text x="400" y="410" fill="#6b6b7a" font-family="JetBrains Mono" font-size="9" text-anchor="middle" opacity="0.6">ESTRUCTURA DE LA COLA · 3I/ATLAS EN PERIHELIO · OCT–NOV 2025 (PUNCH/Hubble)</text>
+      </svg>
+    </div>
+    <p class="lightbox-caption">// Infografía · Estructura de la cola de 3I/ATLAS: anticola, cola de polvo y cola iónica débil (anomalía #04) · Datos PUNCH y Hubble</p>
+  </div>
+</div>
+
+<!-- Lightbox: Perihelio -->
+<div class="lightbox-overlay" id="lb-perihelio" onclick="closeLightbox(event,'lb-perihelio')">
+  <div class="lightbox-inner" onclick="event.stopPropagation()">
+    <button class="lightbox-close" onclick="closeLightboxById('lb-perihelio')">[ ✕ Cerrar ]</button>
+    <div class="lightbox-svg-wrap">
+      <svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#0d0d0f;">
+        <defs>
+          <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.8"></stop>
+            <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"></stop>
+          </radialGradient>
+        </defs>
+        <rect x="20" y="20" width="220" height="380" fill="rgba(22,22,25,0.5)" stroke="rgba(201,168,76,0.15)" stroke-width="1"></rect>
+        <text x="130" y="45" fill="#6b6b7a" font-family="JetBrains Mono" font-size="9" text-anchor="middle">SEPT 2025</text>
+        <text x="130" y="58" fill="#6b6b7a" font-family="JetBrains Mono" font-size="8" text-anchor="middle" opacity="0.6">~1.6 UA del Sol</text>
+        <circle cx="130" cy="180" r="8" fill="#4ecdc4" opacity="0.8"></circle>
+        <path d="M 140 176 Q 200 160 230 150" fill="none" stroke="#c9a84c" stroke-width="3" opacity="0.6"></path>
+        <path d="M 140 184 Q 200 200 230 210" fill="none" stroke="#c9a84c" stroke-width="3" opacity="0.6"></path>
+        <text x="130" y="230" fill="#c9a84c" font-family="JetBrains Mono" font-size="8" text-anchor="middle">Cola normal</text>
+        <text x="130" y="243" fill="#c9a84c" font-family="JetBrains Mono" font-size="7" text-anchor="middle" opacity="0.6">polvo alejándose</text>
+        <circle cx="30" cy="180" r="15" fill="url(#sunGlow)"></circle>
+        <text x="30" y="220" fill="#fbbf24" font-family="JetBrains Mono" font-size="8" text-anchor="middle" opacity="0.7">☀</text>
+        <rect x="290" y="20" width="220" height="380" fill="rgba(22,22,25,0.7)" stroke="rgba(251,191,36,0.4)" stroke-width="1.5"></rect>
+        <text x="400" y="45" fill="#fbbf24" font-family="JetBrains Mono" font-size="9" text-anchor="middle" font-weight="700">29–30 OCT 2025</text>
+        <text x="400" y="58" fill="#fbbf24" font-family="JetBrains Mono" font-size="8" text-anchor="middle" opacity="0.8">PERIHELIO · 1.4 UA · ~210M km</text>
+        <circle cx="400" cy="180" r="10" fill="#4ecdc4" opacity="0.9"></circle>
+        <circle cx="400" cy="180" r="20" fill="rgba(78,205,196,0.12)"></circle>
+        <path d="M 388 175 Q 330 165 300 158" fill="none" stroke="#f97316" stroke-width="3" opacity="0.85"></path>
+        <path d="M 388 185 Q 330 195 300 202" fill="none" stroke="#f97316" stroke-width="3" opacity="0.85"></path>
+        <text x="298" y="230" fill="#f97316" font-family="JetBrains Mono" font-size="8" text-anchor="middle" font-weight="700">ANTICOLA</text>
+        <text x="298" y="243" fill="#f97316" font-family="JetBrains Mono" font-size="7" text-anchor="middle" opacity="0.7">→ hacia Sol</text>
+        <path d="M 412 175 Q 460 163 510 155" fill="none" stroke="#c9a84c" stroke-width="3" opacity="0.6"></path>
+        <path d="M 412 185 Q 460 197 510 205" fill="none" stroke="#c9a84c" stroke-width="3" opacity="0.6"></path>
+        <circle cx="295" cy="180" r="22" fill="url(#sunGlow)"></circle>
+        <text x="295" y="145" fill="#fbbf24" font-family="JetBrains Mono" font-size="20" text-anchor="middle">☀</text>
+        <text x="295" y="130" fill="#fbbf24" font-family="JetBrains Mono" font-size="8" text-anchor="middle" opacity="0.7">Máx. calor solar</text>
+        <rect x="560" y="20" width="220" height="380" fill="rgba(22,22,25,0.5)" stroke="rgba(201,168,76,0.15)" stroke-width="1"></rect>
+        <text x="670" y="45" fill="#6b6b7a" font-family="JetBrains Mono" font-size="9" text-anchor="middle">NOV 2025</text>
+        <text x="670" y="58" fill="#6b6b7a" font-family="JetBrains Mono" font-size="8" text-anchor="middle" opacity="0.6">~1.5 UA · alejándose</text>
+        <circle cx="670" cy="180" r="8" fill="#4ecdc4" opacity="0.7"></circle>
+        <path d="M 680 174 Q 740 160 790 150" fill="none" stroke="#c9a84c" stroke-width="3.5" opacity="0.7"></path>
+        <path d="M 680 186 Q 740 200 790 210" fill="none" stroke="#c9a84c" stroke-width="3.5" opacity="0.7"></path>
+        <text x="670" y="230" fill="#c9a84c" font-family="JetBrains Mono" font-size="8" text-anchor="middle">Cola máxima</text>
+        <text x="670" y="243" fill="#c9a84c" font-family="JetBrains Mono" font-size="7" text-anchor="middle" opacity="0.6">mag. ~11.5</text>
+        <circle cx="570" cy="180" r="12" fill="url(#sunGlow)"></circle>
+        <path d="M 245 210 L 285 210" fill="none" stroke="#6b6b7a" stroke-width="1" stroke-dasharray="3,2"></path>
+        <polygon points="285,207 293,210 285,213" fill="#6b6b7a"></polygon>
+        <path d="M 515 210 L 555 210" fill="none" stroke="#6b6b7a" stroke-width="1" stroke-dasharray="3,2"></path>
+        <polygon points="555,207 563,210 555,213" fill="#6b6b7a"></polygon>
+        <text x="400" y="408" fill="#6b6b7a" font-family="JetBrains Mono" font-size="9" text-anchor="middle" opacity="0.6">EVOLUCIÓN DE LA COLA EN PERIHELIO · OCT–NOV 2025 · DATOS PUNCH / HUBBLE</text>
+      </svg>
+    </div>
+    <p class="lightbox-caption">// Infografía · Formación de anticola y evolución de la cola cometaria durante el perihelio de 3I/ATLAS</p>
+  </div>
+</div>
+
+<!-- Lightbox: Composición química -->
+<div class="lightbox-overlay" id="lb-chem" onclick="closeLightbox(event,'lb-chem')">
+  <div class="lightbox-inner" onclick="event.stopPropagation()">
+    <button class="lightbox-close" onclick="closeLightboxById('lb-chem')">[ ✕ Cerrar ]</button>
+    <div class="lightbox-svg-wrap">
+      <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#0d0d0f;">
+        <text x="400" y="30" fill="#c9a84c" font-family="JetBrains Mono" font-size="11" text-anchor="middle" font-weight="700" letter-spacing="2">COMPOSICIÓN 3I/ATLAS VS. COMETAS SOLARES</text>
+        <text x="400" y="47" fill="#6b6b7a" font-family="JetBrains Mono" font-size="9" text-anchor="middle" opacity="0.7">Abundancias relativas al agua · Datos Webb MIRI, ALMA, SPHEREx, Swift · 2025–2026</text>
+        <text x="20" y="85" fill="#6b6b7a" font-family="JetBrains Mono" font-size="8" opacity="0.6">×30</text>
+        <text x="20" y="145" fill="#6b6b7a" font-family="JetBrains Mono" font-size="8" opacity="0.6">×20</text>
+        <text x="20" y="205" fill="#6b6b7a" font-family="JetBrains Mono" font-size="8" opacity="0.6">×10</text>
+        <text x="20" y="265" fill="#6b6b7a" font-family="JetBrains Mono" font-size="8" opacity="0.6">×5</text>
+        <text x="20" y="325" fill="#6b6b7a" font-family="JetBrains Mono" font-size="8" opacity="0.6">×1</text>
+        <line x1="50" y1="80" x2="780" y2="80" stroke="rgba(201,168,76,0.08)" stroke-width="1"></line>
+        <line x1="50" y1="140" x2="780" y2="140" stroke="rgba(201,168,76,0.08)" stroke-width="1"></line>
+        <line x1="50" y1="200" x2="780" y2="200" stroke="rgba(201,168,76,0.08)" stroke-width="1"></line>
+        <line x1="50" y1="260" x2="780" y2="260" stroke="rgba(201,168,76,0.08)" stroke-width="1"></line>
+        <line x1="50" y1="320" x2="780" y2="320" stroke="rgba(201,168,76,0.15)" stroke-width="1"></line>
+        <text x="785" y="325" fill="#4ecdc4" font-family="JetBrains Mono" font-size="7" opacity="0.6">Ref.</text>
+        <rect x="65" y="280" width="30" height="40" fill="#4ecdc4" opacity="0.5"></rect>
+        <rect x="100" y="280" width="30" height="40" fill="#4ecdc4" opacity="0.9"></rect>
+        <text x="97" y="342" fill="#4ecdc4" font-family="JetBrains Mono" font-size="9" text-anchor="middle">H₂O</text>
+        <rect x="175" y="318" width="30" height="2" fill="#c0392b" opacity="0.7"></rect>
+        <rect x="210" y="80" width="30" height="240" fill="#c0392b" opacity="0.9"></rect>
+        <text x="207" y="342" fill="#c0392b" font-family="JetBrains Mono" font-size="9" text-anchor="middle">HDO</text>
+        <text x="225" y="75" fill="#c0392b" font-family="JetBrains Mono" font-size="10" font-weight="700" text-anchor="middle">×30!</text>
+        <rect x="285" y="310" width="30" height="10" fill="#a78bfa" opacity="0.5"></rect>
+        <rect x="320" y="140" width="30" height="180" fill="#a78bfa" opacity="0.9"></rect>
+        <text x="317" y="342" fill="#a78bfa" font-family="JetBrains Mono" font-size="9" text-anchor="middle">CH₄</text>
+        <rect x="395" y="300" width="30" height="20" fill="#4ade80" opacity="0.5"></rect>
+        <rect x="430" y="175" width="30" height="145" fill="#4ade80" opacity="0.9"></rect>
+        <text x="427" y="342" fill="#4ade80" font-family="JetBrains Mono" font-size="9" text-anchor="middle">CO₂</text>
+        <rect x="505" y="270" width="30" height="50" fill="#c9a84c" opacity="0.5"></rect>
+        <rect x="540" y="265" width="30" height="55" fill="#c9a84c" opacity="0.8"></rect>
+        <text x="537" y="342" fill="#c9a84c" font-family="JetBrains Mono" font-size="9" text-anchor="middle">Polvo</text>
+        <rect x="615" y="295" width="30" height="25" fill="#60a5fa" opacity="0.5"></rect>
+        <rect x="650" y="250" width="30" height="70" fill="#60a5fa" opacity="0.9"></rect>
+        <text x="647" y="342" fill="#60a5fa" font-family="JetBrains Mono" font-size="9" text-anchor="middle">OH</text>
+        <rect x="55" y="370" width="14" height="14" fill="rgba(78,205,196,0.5)"></rect>
+        <text x="74" y="381" fill="#6b6b7a" font-family="JetBrains Mono" font-size="9">Cometas solares (media)</text>
+        <rect x="245" y="370" width="14" height="14" fill="rgba(78,205,196,0.9)"></rect>
+        <text x="264" y="381" fill="#f5f0e8" font-family="JetBrains Mono" font-size="9">3I/ATLAS</text>
+        <text x="400" y="415" fill="#6b6b7a" font-family="JetBrains Mono" font-size="8" text-anchor="middle" opacity="0.5">* Escala logarítmica simplificada · Datos instrumentales Webb MIRI + ALMA + Swift 2025–2026</text>
+      </svg>
+    </div>
+    <p class="lightbox-caption">// Infografía · Composición molecular de 3I/ATLAS frente a la media de cometas del sistema solar · Datos Webb MIRI, ALMA, SPHEREx</p>
+  </div>
+</div>
+
+<!-- Lightbox: D/H -->
+<div class="lightbox-overlay" id="lb-dh" onclick="closeLightbox(event,'lb-dh')">
+  <div class="lightbox-inner" onclick="event.stopPropagation()">
+    <button class="lightbox-close" onclick="closeLightboxById('lb-dh')">[ ✕ Cerrar ]</button>
+    <div class="lightbox-svg-wrap">
+      <svg viewBox="0 0 800 430" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#0d0d0f;">
+        <text x="400" y="30" fill="#c9a84c" font-family="JetBrains Mono" font-size="11" text-anchor="middle" font-weight="700" letter-spacing="2">RATIO D/H EN AGUA: 3I/ATLAS VS. OBJETOS DEL SISTEMA SOLAR</text>
+        <text x="400" y="47" fill="#6b6b7a" font-family="JetBrains Mono" font-size="9" text-anchor="middle" opacity="0.7">Medido por ALMA (Atacama) · Publicado 23 Abril 2026</text>
+        <rect x="60" y="80" width="55" height="240" fill="#4ecdc4" opacity="0.4"></rect>
+        <text x="87" y="338" fill="#4ecdc4" font-family="JetBrains Mono" font-size="8" text-anchor="middle">Océanos</text>
+        <text x="87" y="350" fill="#4ecdc4" font-family="JetBrains Mono" font-size="7" text-anchor="middle" opacity="0.7">Tierra</text>
+        <text x="87" y="70" fill="#4ecdc4" font-family="JetBrains Mono" font-size="9" text-anchor="middle">D/H = 1×</text>
+        <rect x="145" y="130" width="55" height="190" fill="#c9a84c" opacity="0.5"></rect>
+        <text x="172" y="338" fill="#c9a84c" font-family="JetBrains Mono" font-size="8" text-anchor="middle">Cometas</text>
+        <text x="172" y="350" fill="#c9a84c" font-family="JetBrains Mono" font-size="7" text-anchor="middle" opacity="0.7">Oort ~2–3×</text>
+        <rect x="230" y="100" width="55" height="220" fill="#a78bfa" opacity="0.5"></rect>
+        <text x="257" y="338" fill="#a78bfa" font-family="JetBrains Mono" font-size="8" text-anchor="middle">2I/Borisov</text>
+        <text x="257" y="350" fill="#a78bfa" font-family="JetBrains Mono" font-size="7" text-anchor="middle" opacity="0.7">~5–8×</text>
+        <rect x="335" y="80" width="120" height="240" fill="none" stroke="rgba(192,57,43,0.3)" stroke-width="1" stroke-dasharray="4,3"></rect>
+        <rect x="335" y="80" width="120" height="240" fill="rgba(192,57,43,0.08)"></rect>
+        <rect x="350" y="50" width="90" height="30" fill="rgba(192,57,43,0.15)" stroke="#c0392b" stroke-width="1"></rect>
+        <text x="395" y="40" fill="#c0392b" font-family="JetBrains Mono" font-size="10" text-anchor="middle" font-weight="700">≥ ×30</text>
+        <path d="M 395 50 L 395 80" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="3,2"></path>
+        <text x="395" y="105" fill="#c0392b" font-family="JetBrains Mono" font-size="28" font-weight="900" text-anchor="middle" opacity="0.15">!</text>
+        <text x="395" y="338" fill="#c0392b" font-family="JetBrains Mono" font-size="9" text-anchor="middle" font-weight="700">3I/ATLAS</text>
+        <text x="395" y="350" fill="#c0392b" font-family="JetBrains Mono" font-size="7" text-anchor="middle" opacity="0.7">ALMA · Abr 2026</text>
+        <rect x="520" y="80" width="240" height="240" fill="rgba(22,22,25,0.6)" stroke="rgba(201,168,76,0.2)" stroke-width="1"></rect>
+        <text x="640" y="115" fill="#c9a84c" font-family="JetBrains Mono" font-size="9" text-anchor="middle" letter-spacing="1">TEMPERATURA DE FORMACIÓN</text>
+        <text x="640" y="155" fill="#f5f0e8" font-family="Space Grotesk" font-size="32" font-weight="900" text-anchor="middle">&lt; 30 K</text>
+        <text x="640" y="180" fill="#6b6b7a" font-family="JetBrains Mono" font-size="9" text-anchor="middle">(-243 °C)</text>
+        <line x1="540" y1="200" x2="740" y2="200" stroke="rgba(201,168,76,0.15)" stroke-width="1"></line>
+        <text x="640" y="225" fill="#6b6b7a" font-family="JetBrains Mono" font-size="8" text-anchor="middle">Nube molecular exterior</text>
+        <text x="640" y="240" fill="#6b6b7a" font-family="JetBrains Mono" font-size="8" text-anchor="middle">de una galaxia de 10–12 Ga</text>
+        <text x="640" y="270" fill="#c0392b" font-family="JetBrains Mono" font-size="8" text-anchor="middle" opacity="0.8">Sin equivalente conocido</text>
+        <text x="640" y="283" fill="#c0392b" font-family="JetBrains Mono" font-size="8" text-anchor="middle" opacity="0.8">en el sistema solar</text>
+        <text x="400" y="405" fill="#6b6b7a" font-family="JetBrains Mono" font-size="8" text-anchor="middle" opacity="0.5">D/H = proporción deuterio/hidrógeno en moléculas de agua · Escala indicativa · Barra 3I/ATLAS excede escala del gráfico</text>
+      </svg>
+    </div>
+    <p class="lightbox-caption">// Infografía · Ratio D/H de 3I/ATLAS comparado con objetos del sistema solar · Datos ALMA · Publicado Abril 2026</p>
+  </div>
+</div>
+
+<!-- ══════════ SCRIPTS ══════════ -->
+<script>
+// Starfield animado
+(function(){
+  var canvas = document.getElementById('starfield');
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var stars = [];
+  function resize(){
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+  function initStars(){
+    stars = [];
+    var n = Math.floor((canvas.width * canvas.height) / 3200);
+    for(var i=0;i<n;i++){
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.2 + 0.2,
+        opacity: Math.random() * 0.55 + 0.08,
+        speed: Math.random() * 0.25 + 0.05,
+        // Algunos con tinte cian para evocar el cometa
+        tint: Math.random() < 0.08 ? 1 : 0
+      });
+    }
+  }
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    stars.forEach(function(s){
+      ctx.beginPath();
+      ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+      if(s.tint){
+        ctx.fillStyle = 'rgba(78,205,196,'+s.opacity+')';
+      } else {
+        ctx.fillStyle = 'rgba(255,255,255,'+s.opacity+')';
+      }
+      ctx.fill();
+      s.opacity += (Math.random()-0.5) * s.speed * 0.05;
+      s.opacity = Math.max(0.04, Math.min(0.75, s.opacity));
+    });
+
+    // Dibujar trayectoria del cometa (línea tenue)
+    ctx.beginPath();
+    ctx.moveTo(canvas.width * 0.15, canvas.height * 0.75);
+    ctx.quadraticCurveTo(canvas.width * 0.5, canvas.height * 0.3, canvas.width * 0.88, canvas.height * 0.15);
+    ctx.strokeStyle = 'rgba(78,205,196,0.04)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    requestAnimationFrame(draw);
+  }
+  resize(); initStars(); draw();
+  window.addEventListener('resize', function(){ resize(); initStars(); });
+})();
+
+// Animar las barras de la tabla de misiones al scroll
+(function(){
+  var cards = document.querySelectorAll('.mission-card');
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  cards.forEach(function(c){
+    c.style.opacity = '0';
+    c.style.transform = 'translateY(10px)';
+    c.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    obs.observe(c);
+  });
+})();
+
+// Timeline entries fade in
+(function(){
+  var entries = document.querySelectorAll('.timeline-entry');
+  var obs = new IntersectionObserver(function(entries_){
+    entries_.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateX(0)';
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  entries.forEach(function(en){
+    en.style.opacity = '0';
+    en.style.transform = 'translateX(-8px)';
+    en.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    obs.observe(en);
+  });
+})();
+
+// Lightbox de infografías
+function openLightbox(id){
+  var el = document.getElementById(id);
+  if(el) el.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(e, id){
+  if(e.target === document.getElementById(id)){
+    closeLightboxById(id);
+  }
+}
+function closeLightboxById(id){
+  var el = document.getElementById(id);
+  if(el) el.classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    document.querySelectorAll('.lightbox-overlay.active').forEach(function(el){
+      el.classList.remove('active');
+    });
+    document.body.style.overflow = '';
+  }
+});
+</script>
+
+</body>
+</html>

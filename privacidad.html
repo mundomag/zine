@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8483516296039231"
+       crossorigin="anonymous"></script>
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LRSJ1EYEPD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LRSJ1EYEPD');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad · Mundo Maravilloso</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0b;
+      --surface: #111113;
+      --border: #1e1e22;
+      --accent: #c8f04a;
+      --text: #d4d4d8;
+      --muted: #52525b;
+      --heading: #f4f4f5;
+      --mono: 'Space Mono', monospace;
+      --sans: 'Space Grotesk', sans-serif;
+    }
+
+    html { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.7; }
+    body { min-height: 100vh; display: flex; flex-direction: column; }
+
+    nav {
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky; top: 0;
+      background: rgba(10,10,11,0.92);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+    .nav-brand {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--heading);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    .hero {
+      border-bottom: 1px solid var(--border);
+      padding: 5rem 2rem 3.5rem;
+      max-width: 860px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+    h1 {
+      font-family: var(--mono);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--heading);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .meta {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 0;
+      max-width: 860px;
+      margin: 0 auto;
+      width: 100%;
+      flex: 1;
+    }
+
+    /* SIDEBAR TOC */
+    .toc {
+      border-right: 1px solid var(--border);
+      padding: 3rem 2rem 3rem 2rem;
+      position: sticky;
+      top: 70px;
+      align-self: start;
+      height: fit-content;
+    }
+    .toc-label {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+    .toc-list { list-style: none; }
+    .toc-list li { margin-bottom: 0.1rem; }
+    .toc-list a {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      text-decoration: none;
+      line-height: 1.8;
+      transition: color 0.15s;
+      display: block;
+    }
+    .toc-list a:hover { color: var(--accent); }
+
+    /* CONTENT */
+    .content {
+      padding: 3rem 2rem 6rem 3rem;
+    }
+
+    .section { margin-bottom: 3.5rem; }
+
+    .section-num {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-family: var(--mono);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--heading);
+      margin-bottom: 1rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.25rem 0;
+      font-size: 0.85rem;
+    }
+    .data-table th {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: left;
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .data-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+
+    .highlight-box {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+    .highlight-box p {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-brand {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--accent); }
+
+    @media (max-width: 700px) {
+      .layout { grid-template-columns: 1fr; }
+      .toc { display: none; }
+      nav { padding: 1rem; }
+      .nav-links { gap: 1rem; }
+      .hero { padding: 3rem 1rem 2.5rem; }
+      .content { padding: 2rem 1rem 4rem; }
+      footer { flex-direction: column; align-items: flex-start; padding: 1.5rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="https://mundomag.fyi/" class="nav-brand">Mundo Maravilloso</a>
+  <div class="nav-links">
+    <a href="https://mundomag.fyi/">Inicio</a>
+    <a href="acerca-de.html">Acerca de</a>
+    <a href="contacto.html">Contacto</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow">// Documento legal</div>
+  <h1>POLÍTICA DE<br>PRIVACIDAD</h1>
+  <p class="meta">Última actualización: junio 2026 · Versión 1.0</p>
+</div>
+
+<div class="layout">
+  <aside class="toc">
+    <div class="toc-label">// Índice</div>
+    <ul class="toc-list">
+      <li><a href="#s1">1. Quiénes somos</a></li>
+      <li><a href="#s2">2. Datos que recopilamos</a></li>
+      <li><a href="#s3">3. Cómo los usamos</a></li>
+      <li><a href="#s4">4. Cookies</a></li>
+      <li><a href="#s5">5. Terceros</a></li>
+      <li><a href="#s6">6. Tus derechos</a></li>
+      <li><a href="#s7">7. Retención</a></li>
+      <li><a href="#s8">8. Seguridad</a></li>
+      <li><a href="#s9">9. Menores</a></li>
+      <li><a href="#s10">10. Cambios</a></li>
+      <li><a href="#s11">11. Contacto</a></li>
+    </ul>
+  </aside>
+
+  <div class="content">
+
+    <div class="highlight-box">
+      <p>Resumen: Mundo Maravilloso no vende ni comparte tus datos personales con terceros con fines comerciales. Recopilamos lo mínimo necesario para operar el sitio y responder a tus mensajes.</p>
+    </div>
+
+    <div class="section" id="s1">
+      <div class="section-num">// 01</div>
+      <h2>Quiénes somos</h2>
+      <p>Mundo Maravilloso (en adelante, "la Publicación", "nosotros") es una revista digital independiente accesible en <a href="https://mundomag.fyi/">mundomag.fyi</a>. No somos una empresa constituida formalmente; somos una publicación editorial sin patrocinadores ni inversores externos.</p>
+    </div>
+
+    <div class="section" id="s2">
+      <div class="section-num">// 02</div>
+      <h2>Datos que recopilamos</h2>
+      <p>Dependiendo de cómo interactúes con el sitio, podemos recopilar los siguientes datos:</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Tipo de dato</th>
+            <th>Cuándo se recopila</th>
+            <th>Finalidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nombre y correo electrónico</td>
+            <td>Cuando envías un formulario de contacto</td>
+            <td>Responder a tu consulta</td>
+          </tr>
+          <tr>
+            <td>Contenido del mensaje</td>
+            <td>Cuando envías un formulario de contacto</td>
+            <td>Atender tu solicitud</td>
+          </tr>
+          <tr>
+            <td>Datos de navegación (IP, navegador, páginas visitadas)</td>
+            <td>Automáticamente al visitar el sitio</td>
+            <td>Análisis de rendimiento y seguridad</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>No recopilamos datos de pago, datos de salud ni ninguna categoría especial de datos personales.</p>
+    </div>
+
+    <div class="section" id="s3">
+      <div class="section-num">// 03</div>
+      <h2>Cómo usamos tus datos</h2>
+      <p>Los datos que recopilamos se usan exclusivamente para:</p>
+      <p>— Responder a mensajes que nos envíes a través del formulario de contacto.<br>
+      — Analizar el rendimiento del sitio y detectar problemas técnicos.<br>
+      — Cumplir con obligaciones legales cuando corresponda.</p>
+      <p>No usamos tus datos para publicidad personalizada, marketing directo ni perfilado de usuarios.</p>
+    </div>
+
+    <div class="section" id="s4">
+      <div class="section-num">// 04</div>
+      <h2>Cookies y tecnologías de seguimiento</h2>
+      <p>El sitio puede utilizar cookies técnicas estrictamente necesarias para su funcionamiento. Si utilizamos herramientas de análisis de tráfico (como Plausible o similar), estas operan de forma agregada y sin identificar a usuarios individuales.</p>
+      <p>No usamos cookies de rastreo publicitario ni compartimos datos de comportamiento con redes publicitarias.</p>
+    </div>
+
+    <div class="section" id="s5">
+      <div class="section-num">// 05</div>
+      <h2>Terceros</h2>
+      <p>Para gestionar el formulario de contacto utilizamos <strong style="color:var(--heading)">Formspree</strong> (<a href="https://formspree.io/legal/privacy-policy" target="_blank">política de privacidad de Formspree</a>), que actúa como encargado del tratamiento. Los mensajes que envíes pasan a través de sus servidores.</p>
+      <p>No vendemos, alquilamos ni cedemos tus datos personales a ningún otro tercero con fines comerciales.</p>
+    </div>
+
+    <div class="section" id="s6">
+      <div class="section-num">// 06</div>
+      <h2>Tus derechos</h2>
+      <p>Tienes derecho a acceder, rectificar, suprimir, limitar el tratamiento y oponerte al uso de tus datos personales. Para ejercer cualquiera de estos derechos, escríbenos a través del <a href="contacto.html">formulario de contacto</a> indicando el asunto "Derechos RGPD" o "Protección de datos".</p>
+      <p>Atenderemos tu solicitud en un plazo máximo de 30 días.</p>
+    </div>
+
+    <div class="section" id="s7">
+      <div class="section-num">// 07</div>
+      <h2>Retención de datos</h2>
+      <p>Los datos de los formularios de contacto se conservan durante el tiempo necesario para gestionar la comunicación y, como máximo, 12 meses desde la última interacción. Los datos de navegación agregados no se asocian a personas individuales.</p>
+    </div>
+
+    <div class="section" id="s8">
+      <div class="section-num">// 08</div>
+      <h2>Seguridad</h2>
+      <p>Aplicamos medidas técnicas razonables para proteger la información que gestionamos. Sin embargo, ningún sistema de transmisión de datos por internet es completamente seguro. Si detectas alguna vulnerabilidad relacionada con el sitio, escríbenos.</p>
+    </div>
+
+    <div class="section" id="s9">
+      <div class="section-num">// 09</div>
+      <h2>Menores</h2>
+      <p>Este sitio no está dirigido a personas menores de 14 años y no recopilamos deliberadamente datos de menores. Si detectamos que hemos recibido datos de un menor sin el consentimiento adecuado, los eliminaremos de inmediato.</p>
+    </div>
+
+    <div class="section" id="s10">
+      <div class="section-num">// 10</div>
+      <h2>Cambios en esta política</h2>
+      <p>Podemos actualizar esta política cuando sea necesario. La fecha de la última revisión aparece en la cabecera del documento. Si los cambios son significativos, lo indicaremos de forma destacada en el sitio.</p>
+    </div>
+
+    <div class="section" id="s11">
+      <div class="section-num">// 11</div>
+      <h2>Contacto</h2>
+      <p>Para cualquier consulta relacionada con esta política o con el tratamiento de tus datos, puedes contactarnos a través de nuestro <a href="contacto.html">formulario de contacto</a>.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <span class="footer-brand">Mundo Maravilloso · Publicación independiente · 2026</span>
+  <div class="footer-links">
+    <a href="acerca-de.html">Acerca de</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="privacidad.html">Privacidad</a>
+    <a href="terminos.html">Términos</a>
+  </div>
+</footer>
+
+</body>
+</html>
