@@ -885,6 +885,38 @@
     .cat-filter-btn:hover { color: var(--paper); border-color: var(--gold); }
     .cat-filter-btn.active { color: var(--ink); background: var(--gold); border-color: var(--gold); }
 
+    /* ── BÚSQUEDA (junto a los filtros de categoría) ── */
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid var(--border);
+      background: var(--ink);
+      padding: 0.5rem 0.75rem;
+      border-radius: 3px;
+      margin-left: auto;
+      flex: 0 1 220px;
+      min-width: 140px;
+      transition: border-color 0.2s;
+    }
+    .search-box:focus-within { border-color: var(--gold); }
+    .search-box svg { flex-shrink: 0; color: var(--muted); }
+    .search-box:focus-within svg { color: var(--gold); }
+    .search-input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--paper);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.03em;
+      width: 100%;
+    }
+    .search-input::placeholder { color: var(--muted); }
+    @media (max-width: 700px) {
+      .search-box { flex-basis: 100%; margin-left: 0; order: 10; }
+    }
+
     /* Colores por categoría: botones de filtro */
     .cat-filter-btn[data-filter="ciencia"]:hover    { border-color: var(--cat-ciencia); color: var(--cat-ciencia); }
     .cat-filter-btn[data-filter="documentos"]:hover { border-color: var(--cat-documentos); color: var(--cat-documentos); }
@@ -988,6 +1020,12 @@
       <button class="cat-filter-btn" data-filter="cultura">Cultura &amp; Cine</button>
       <button class="cat-filter-btn" data-filter="actualidad">Actualidad</button>
       <button class="cat-filter-btn" data-filter="columna">El Observador</button>
+      <div class="search-box">
+        <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="6.8" cy="6.8" r="5.3"/><line x1="10.7" y1="10.7" x2="14.5" y2="14.5"/>
+        </svg>
+        <input type="text" id="articulosSearch" class="search-input" placeholder="Buscar artículos…" autocomplete="off">
+      </div>
   </div>
   <div class="articulos-count-row">
     <div class="articulos-count" id="articulosCount">29 artículos</div>
@@ -1644,11 +1682,26 @@
       var buttons = document.querySelectorAll('.cat-filter-btn');
       var cards = document.querySelectorAll('#articulosGrid .edition-card');
       var countEl = document.getElementById('articulosCount');
+      var searchInput = document.getElementById('articulosSearch');
 
-      function applyFilter(cat){
+      var currentCat = 'todos';
+      var currentQuery = '';
+
+      function cardText(card){
+        if (card.__searchText) return card.__searchText;
+        var title = card.querySelector('.ed-title');
+        var blurb = card.querySelector('.ed-blurb');
+        var text = ((title ? title.textContent : '') + ' ' + (blurb ? blurb.textContent : '')).toLowerCase();
+        card.__searchText = text;
+        return text;
+      }
+
+      function applyFilters(){
         var visible = 0;
         cards.forEach(function(card){
-          var match = (cat === 'todos') || (card.getAttribute('data-cat') === cat);
+          var matchCat = (currentCat === 'todos') || (card.getAttribute('data-cat') === currentCat);
+          var matchQuery = !currentQuery || cardText(card).indexOf(currentQuery) !== -1;
+          var match = matchCat && matchQuery;
           card.classList.toggle('hidden', !match);
           if(match) visible++;
         });
@@ -1659,9 +1712,19 @@
         btn.addEventListener('click', function(){
           buttons.forEach(function(b){ b.classList.remove('active'); });
           btn.classList.add('active');
-          applyFilter(btn.getAttribute('data-filter'));
+          currentCat = btn.getAttribute('data-filter');
+          applyFilters();
         });
       });
+
+      if (searchInput) {
+        searchInput.addEventListener('input', function(){
+          currentQuery = searchInput.value.trim().toLowerCase();
+          applyFilters();
+        });
+      }
+
+      applyFilters();
     })();
   </script>
 
