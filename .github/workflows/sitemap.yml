@@ -1,4 +1,4 @@
-name: Actualizar sitemap, datos de artículos y tarjetas del home
+name: Actualizar sitemap, datos de artículos, tarjetas y nav/footer
 
 on:
   schedule:
@@ -26,6 +26,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Actualizar nav y footer de artículos
+        run: python3 actualizar_nav_footer.py
+
       - name: Generar articulos-data.json
         run: python3 generar_articulos_data.py
 
@@ -39,10 +42,10 @@ jobs:
         run: |
           git config user.name "sitemap-bot"
           git config user.email "actions@github.com"
-          git add sitemap.xml articulos-data.json index.html
+          git add sitemap.xml articulos-data.json index.html articulos/
           if git diff --cached --quiet; then
             echo "Sin cambios — nada que subir."
           else
-            git commit -m "chore: actualizar sitemap, datos de artículos y tarjetas del home"
+            git commit -m "chore: actualizar sitemap, datos, tarjetas y nav/footer de artículos"
             git push
           fi
