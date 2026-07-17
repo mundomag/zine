@@ -1,4 +1,4 @@
-name: Actualizar sitemap.xml
+name: Actualizar sitemap y datos de artículos
 
 on:
   # Todos los días a las 6:00 UTC (12:00am aprox. en El Salvador)
@@ -18,7 +18,7 @@ permissions:
   contents: write
 
 jobs:
-  actualizar-sitemap:
+  actualizar:
     runs-on: ubuntu-latest
     steps:
       - name: Descargar el repositorio
@@ -31,6 +31,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Generar articulos-data.json
+        run: python3 generar_articulos_data.py
+
       - name: Generar sitemap.xml
         run: python3 generar_sitemap.py
 
@@ -38,10 +41,10 @@ jobs:
         run: |
           git config user.name "sitemap-bot"
           git config user.email "actions@github.com"
-          if git diff --quiet sitemap.xml; then
-            echo "Sin cambios en sitemap.xml — nada que subir."
+          if git diff --quiet sitemap.xml articulos-data.json; then
+            echo "Sin cambios — nada que subir."
           else
-            git add sitemap.xml
-            git commit -m "chore: actualizar sitemap.xml automáticamente"
+            git add sitemap.xml articulos-data.json
+            git commit -m "chore: actualizar sitemap.xml y articulos-data.json automáticamente"
             git push
           fi
