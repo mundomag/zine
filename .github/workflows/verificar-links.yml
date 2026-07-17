@@ -1,0 +1,21 @@
+name: Chequeo semanal de links rotos
+
+on:
+  schedule:
+    - cron: "0 8 * * 1"   # todos los lunes a las 8:00 UTC
+  workflow_dispatch:        # botón para correrlo manual cuando quieras
+
+jobs:
+  verificar-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verificar links internos
+        run: python3 verificar_links.py
