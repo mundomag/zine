@@ -31,49 +31,6 @@ fecha: 2026-07-11
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../css-articulos.css">
 
-<style>
-/* ── Ajustes propios de este artículo ── */
-.hero-visual-block { grid-template-columns: repeat(4, 1fr); }
-@media (max-width: 768px) { .hero-visual-block { grid-template-columns: 1fr 1fr; } }
-
-/* ── Artículos relacionados (no vive en css-articulos.css global) ── */
-.related-articles{max-width:680px;margin:4rem auto 0;padding:0 4rem;}
-.related-label{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border);}
-.related-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);}
-.related-card{background:var(--ink-mid);padding:1.5rem;border-top:2px solid var(--border);text-decoration:none;display:block;transition:background .2s;}
-.related-card:hover{background:var(--ink-soft);}
-.related-card-cat{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;}
-.related-card-title{font-family:'Space Grotesk',system-ui,sans-serif;font-size:0.92rem;font-weight:600;color:var(--paper);line-height:1.4;}
-.related-card.cat-actualidad{border-top-color:#e0954e;}
-.related-card.cat-actualidad .related-card-cat{color:#e0954e;}
-.related-card.cat-documentos{border-top-color:var(--gold);}
-.related-card.cat-documentos .related-card-cat{color:var(--gold);}
-@media(max-width:768px){.related-articles{padding:0 1.5rem;} .related-grid{grid-template-columns:1fr;}}
-
-.verdict-line{display:flex;align-items:baseline;gap:0.6rem;margin-top:0.4rem;}
-.verdict-tag{font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;}
-
-/* ── Embed de video responsive ── */
-.video-embed-wrap{position:relative;width:100%;padding-top:56.25%;background:#000;overflow:hidden;}
-.video-embed-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
-
-/* ── Infografía embebida ── */
-.infographic-block{max-width:520px;margin:0 auto;}
-.infographic-block img{width:100%;height:auto;display:block;border:1px solid var(--border);}
-</style>
-<style id="footer-social-css">
-.footer-social-links { display: flex; gap: 0.85rem; margin-top: 0.6rem; }
-.footer-social-links a {
-  width: 30px; height: 30px;
-  display: flex; align-items: center; justify-content: center;
-  border: 1px solid var(--border, #2a2a2e);
-  border-radius: 50%;
-  color: var(--muted, #7a7a82);
-  transition: color 0.2s, border-color 0.2s;
-}
-.footer-social-links a:hover { color: var(--gold, #c9a24b); border-color: var(--gold, #c9a24b); }
-.footer-social-links svg { width: 14px; height: 14px; fill: currentColor; }
-</style>
 </head>
 <body>
 
@@ -347,8 +304,35 @@ fecha: 2026-07-11
         <p class="footer-desc">Una publicación independiente sobre los grandes misterios que la ciencia todavía no ha resuelto.</p>
         <span class="footer-edition-badge">Actualidad · Jul 2026</span>
       </div>
-      <div class="footer-social">
-        <p class="footer-nav-col-label">// Síguenos</p><div class="footer-social-links">
+      <div class="footer-nav-grid">
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Artículos</p>
+          <ul class="footer-nav-list">
+            <li><a href="../articulos.html">Todos los artículos</a></li>
+            <li><a href="pursue-orbes-cazas.html">Las orbes que persiguieron a los cazas</a></li>
+            <li><a href="uap-actualidad-2026.html">UAP: la actualidad de 2026</a></li>
+            <li><a href="../glosario.html">Glosario</a></li>
+          </ul>
+        <p class="footer-nav-col-label" style="margin-top:1.5rem;">// Publicación</p>
+          <ul class="footer-nav-list">
+            <li><a href="../acerca-de.html">Acerca de</a></li>
+            <li><a href="../contacto.html">Contacto</a></li>
+            <li><a href="../privacidad.html">Privacidad</a></li>
+            <li><a href="../terminos.html">Términos</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Seguimientos</p>
+          <ul class="footer-nav-list">
+            <li><a href="../seguimientos/3i-atlas.html">3I/ATLAS</a></li>
+            <li><a href="../seguimientos/uap.html">UAP WATCH</a></li>
+            <li><a href="../seguimientos/pursue-releases.html">PURSUE RELEASES</a></li>     <li><a href="../seguimientos/voyager-1.html">VOYAGER 1</a></li>
+     <li><a href="../seguimientos/hitos-medicos.html">HITOS MÉDICOS</a> </li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Síguenos</p>
+          <div class="footer-social-links">
           <a href="https://www.facebook.com/revistamundo" aria-label="Facebook" target="_blank" rel="noopener">
             <svg viewBox="0 0 16 16"><path d="M16 8a8 8 0 1 0-9.25 7.9v-5.6H4.9V8h1.85V6.4c0-1.83 1.09-2.84 2.76-2.84.8 0 1.64.14 1.64.14v1.8h-.92c-.91 0-1.19.56-1.19 1.14V8h2.03l-.32 2.3H9.04v5.6A8 8 0 0 0 16 8z"/></svg>
           </a>
@@ -362,34 +346,6 @@ fecha: 2026-07-11
             <svg viewBox="0 0 16 16"><path d="M1.5 1.5h13v2.3h-13V1.5zm0 4.1h13v2.1h-13V5.6zm0 4.1 6.5 5.8 6.5-5.8H1.5z"/></svg>
           </a>
         </div>
-      </div>
-      <div class="footer-nav-grid">
-        <div class="footer-nav-col">
-          <p class="footer-nav-col-label">// Artículos</p>
-          <ul class="footer-nav-list">
-            <li><a href="../articulos.html">Todos los artículos</a></li>
-            <li><a href="pursue-orbes-cazas.html">Las orbes que persiguieron a los cazas</a></li>
-            <li><a href="uap-actualidad-2026.html">UAP: la actualidad de 2026</a></li>
-            <li><a href="../glosario.html">Glosario</a></li>
-          </ul>
-        </div>
-        <div class="footer-nav-col">
-          <p class="footer-nav-col-label">// Seguimientos</p>
-          <ul class="footer-nav-list">
-            <li><a href="../seguimientos/3i-atlas.html">3I/ATLAS</a></li>
-            <li><a href="../seguimientos/uap.html">UAP WATCH</a></li>
-            <li><a href="../seguimientos/pursue-releases.html">PURSUE RELEASES</a></li>     <li><a href="../seguimientos/voyager-1.html">VOYAGER 1</a></li>
-     <li><a href="../seguimientos/hitos-medicos.html">HITOS MÉDICOS</a> </li>
-          </ul>
-        </div>
-        <div class="footer-nav-col">
-          <p class="footer-nav-col-label">// Publicación</p>
-          <ul class="footer-nav-list">
-            <li><a href="../acerca-de.html">Acerca de</a></li>
-            <li><a href="../contacto.html">Contacto</a></li>
-            <li><a href="../privacidad.html">Privacidad</a></li>
-            <li><a href="../terminos.html">Términos</a></li>
-          </ul>
         </div>
       </div>
     </div>
