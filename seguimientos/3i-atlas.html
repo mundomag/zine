@@ -725,21 +725,37 @@
       border-bottom: 1px solid var(--border);
       margin-bottom: 2rem;
     }
+    .footer-kicker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--cyan); margin-bottom: 0.3rem;
+    }
     .footer-logo {
       font-family: 'Audiowide', sans-serif;
-      font-size: 1.1rem; color: var(--paper);
-      text-decoration: none; display: block; margin-bottom: 0.75rem;
+      font-size: 1.5rem; letter-spacing: 0.04em; text-transform: uppercase;
+      color: var(--gold); text-shadow: 0 2px 10px rgba(0,0,0,0.85);
+      text-decoration: none; display: block; line-height: 1; margin-bottom: 0.3rem;
     }
     .footer-tagline {
-      font-size: 0.8rem;
-      color: var(--muted); line-height: 1.6; margin-bottom: 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--muted); line-height: 1.7; max-width: 100%;
+    }
+    .footer-desc {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem; letter-spacing: 0.04em;
+      color: rgba(107,107,122,0.75); line-height: 1.7; max-width: 100%;
+      margin-top: 0.85rem;
     }
     .footer-edition-badge {
+      display: inline-block;
+      margin-top: 1.25rem;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.46rem; letter-spacing: 0.2em;
+      font-size: 0.5rem; letter-spacing: 0.2em;
       text-transform: uppercase;
-      border: 1px solid var(--border);
-      color: var(--muted); padding: 0.3rem 0.65rem;
+      color: var(--ink);
+      background: var(--gold);
+      padding: 0.3rem 0.75rem;
     }
     .footer-nav-grid {
       display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem;
@@ -1987,8 +2003,11 @@
   <div class="site-footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
+        <p class="footer-kicker">// Revista de exploración y pensamiento</p>
         <a href="../" class="footer-logo">Mundo Maravilloso</a>
-        <p class="footer-tagline">Una publicación independiente sobre los grandes misterios que la ciencia todavía no ha resuelto.</p>
+        <p class="footer-tagline">Ciencia · Misterio · Fenómenos · Futuro</p>
+        <p class="footer-desc">Una publicación independiente sobre los grandes misterios que la ciencia todavía no ha resuelto.</p>
+        <span class="footer-edition-badge">Seguimiento activo · Junio 2026</span>
       </div>
       <div class="footer-nav-grid">
         <div class="footer-nav-col">
@@ -2005,6 +2024,7 @@
             <li><a href="../seguimientos/uap.html">UAP WATCH</a></li>
             <li><a href="../seguimientos/pursue-releases.html">PURSUE RELEASES</a></li>
             <li><a href="../seguimientos/voyager-1.html">VOYAGER 1</a></li>
+            <li><a href="../seguimientos/hitos-medicos.html">HITOS MÉDICOS</a></li>
           </ul>
         </div>
         <div class="footer-nav-col">
