@@ -970,3 +970,71 @@
 
 /* Frame wrapper: clips and styles the Substack iframe */
 
+
+/* ══════════════════════════════
+   LIGHTBOX (imágenes e infografías clicables)
+══════════════════════════════ */
+.lightbox-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 9000;
+  align-items: center; justify-content: center;
+  padding: 2rem;
+  cursor: pointer;
+}
+.lightbox-overlay.active { display: flex; }
+.lightbox-inner {
+  max-width: 900px; width: 100%;
+  position: relative; cursor: default;
+}
+.lightbox-close {
+  position: absolute; top: -2.5rem; right: 0;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.55rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--muted);
+  background: none; border: none;
+  cursor: pointer; padding: 0.5rem 0;
+}
+.lightbox-close:hover { color: var(--paper); }
+.lightbox-svg-wrap {
+  background: var(--ink-mid);
+  border: 1px solid var(--border);
+  padding: 2rem;
+}
+.lightbox-img-wrap {
+  background: var(--ink-mid);
+  border: 1px solid var(--border);
+  line-height: 0;
+}
+.lightbox-img-wrap img {
+  display: block; width: 100%; height: auto;
+}
+.lightbox-caption {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.52rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--muted);
+  padding: 0.75rem 0 0;
+}
+.img-btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  margin-top: 0.75rem;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.5rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--muted);
+  background: none; border: 1px solid rgba(201,168,76,0.2);
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+.img-btn:hover { color: var(--gold); border-color: var(--gold); }
+.img-btn svg { flex-shrink: 0; }
+
+/* Fotos clicables dentro de tarjetas de media (activan el lightbox) */
+.media-card img[data-lightbox] {
+  cursor: zoom-in;
+  transition: opacity 0.2s, filter 0.2s;
+}
+.media-card img[data-lightbox]:hover {
+  opacity: 0.85;
+}
