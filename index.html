@@ -1905,7 +1905,7 @@
 
         section.innerHTML = items.map(cardHTML).join('');
       })
-      .catch(function(){ /* si no hay destacado.json, la sección permanece vacía */ });
+      .catch(function(err){ console.error('No se pudo cargar destacado.json:', err); });
   })();
   </script>
 
