@@ -1,4 +1,5 @@
 [
+ 
   {
     "titulo": "PURSUE//4th RELEASE: El Video Que la Comunidad UAP Perseguía Desde Hace Años",
     "descripcion": "DESTACADO: Un 'cerebro flotante' sobre el Atlántico, un intruso silencioso en una planta de armas nucleares en Texas. La cuarta tanda de war.gov/UFO, completa.",
@@ -14,5 +15,13 @@
     "fecha": "04 jul 2026",
     "imagen": "img/destacados/mkultra.jpg",
     "url": "articulos/mkultra-hackeo-voluntad.html"
+  },
+	 {
+    "titulo": "Mitología Salvadoreña: El Bestiario Que Sobrevive en la Memoria Popular",
+    "descripcion": "La Siguanaba, el Cipitío, el Cadejo y otras entidades de la tradición oral pipil que aún se cuentan en los cantones de El Salvador, generación tras generación.",
+    "categoria": "Mitología",
+    "fecha": "15 jul 2026",
+    "imagen": "img/destacados/mitologia-salvadorena.jpg",
+    "url": "articulos/mitologia-salvadorena.html"
   }
 ]
