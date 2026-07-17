@@ -1,17 +1,12 @@
 name: Actualizar sitemap y datos de artículos
 
 on:
-  # Todos los días a las 6:00 UTC (12:00am aprox. en El Salvador)
   schedule:
     - cron: "0 6 * * *"
-
-  # Cada vez que subas o cambies un HTML
   push:
     branches: [main]
     paths:
       - "**.html"
-
-  # Botón para correrlo manual desde la pestaña Actions en GitHub
   workflow_dispatch:
 
 permissions:
@@ -24,7 +19,7 @@ jobs:
       - name: Descargar el repositorio
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0   # necesario para leer fechas reales de commits
+          fetch-depth: 0
 
       - name: Configurar Python
         uses: actions/setup-python@v5
@@ -41,10 +36,10 @@ jobs:
         run: |
           git config user.name "sitemap-bot"
           git config user.email "actions@github.com"
-          if git diff --quiet sitemap.xml articulos-data.json; then
+          git add sitemap.xml articulos-data.json
+          if git diff --cached --quiet; then
             echo "Sin cambios — nada que subir."
           else
-            git add sitemap.xml articulos-data.json
             git commit -m "chore: actualizar sitemap.xml y articulos-data.json automáticamente"
             git push
           fi
