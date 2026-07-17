@@ -3,10 +3,6 @@
 generar_sitemap.py — Escanea el repo de mundomag.fyi y genera sitemap.xml
 automáticamente. Detecta artículos y páginas nuevas sin que tengas que
 tocar nada a mano.
-
-Se ejecuta solo, todos los días, vía GitHub Actions
-(.github/workflows/sitemap.yml) — pero también lo puedes correr manual:
-    python3 generar_sitemap.py
 """
 
 import subprocess
@@ -18,13 +14,10 @@ from xml.sax.saxutils import escape
 SITE_URL = "https://mundomag.fyi"
 ROOT = Path(__file__).parent
 
-# Carpetas/archivos que NUNCA deben entrar al sitemap
 EXCLUIR_DIRS = {".git", ".github", "node_modules", ".vscode"}
-EXCLUIR_ARCHIVOS = {"404.html"}          # páginas de error, etc.
-EXCLUIR_PREFIJOS = ("_",)                 # _plantilla-articulo.html y similares
+EXCLUIR_ARCHIVOS = {"404.html"}
+EXCLUIR_PREFIJOS = ("_",)
 
-# Reglas de prioridad / frecuencia por ruta.
-# Se evalúan en orden — la primera que haga match, gana.
 REGLAS = [
     (lambda rel: rel == "index.html",                    1.0, "weekly"),
     (lambda rel: rel == "articulos.html",                 0.9, "weekly"),
@@ -48,8 +41,6 @@ def reglas_para(rel: str):
 
 
 def lastmod_git(path: Path) -> str:
-    """Fecha del último commit real que tocó este archivo. Si no hay
-    historial de git (ej. corriendo fuera de un repo), usa hoy."""
     try:
         out = subprocess.run(
             ["git", "log", "-1", "--format=%cd", "--date=short", "--", str(path)],
