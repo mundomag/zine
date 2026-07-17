@@ -1501,11 +1501,11 @@
           <p class="release-media-label">// Imágenes de la tanda 03 · FBI rendering</p>
           <div class="media-grid">
             <div class="media-card">
-              <img src="https://images.foxtv.com/static.livenowfox.com/www.livenowfox.com/content/uploads/2026/06/932/524/fbi-uap-d016_digital-rendering_incident-2-1_western-us-event_2023.jpg" alt="FBI rendering · incidente en zona sensible del oeste de EE.UU., octubre 2023" loading="lazy">
+              <img src="https://images.foxtv.com/static.livenowfox.com/www.livenowfox.com/content/uploads/2026/06/932/524/fbi-uap-d016_digital-rendering_incident-2-1_western-us-event_2023.jpg" alt="FBI rendering · incidente en zona sensible del oeste de EE.UU., octubre 2023" loading="lazy" data-lightbox onclick="openLightbox('lb-img-fbi-r03-1')">
               <div class="media-card-cap"><p>FBI · Representación artística basada en testimonio de agente federal · Zona sensible de seguridad nacional, oeste de EE.UU., octubre 2023 · PURSUE R03</p></div>
             </div>
             <div class="media-card">
-              <img src="https://images.foxtv.com/static.livenowfox.com/www.livenowfox.com/content/uploads/2026/06/764/432/ufo-sighting-july-2025.jpg" alt="UAP avistamiento noreste EE.UU. julio 2025" loading="lazy">
+              <img src="https://images.foxtv.com/static.livenowfox.com/www.livenowfox.com/content/uploads/2026/06/764/432/ufo-sighting-july-2025.jpg" alt="UAP avistamiento noreste EE.UU. julio 2025" loading="lazy" data-lightbox onclick="openLightbox('lb-img-fbi-r03-2')">
               <div class="media-card-cap"><p>Imagen incluida en archivo FBI · Avistamiento noreste EE.UU. · Julio 2025 · PURSUE R03</p></div>
             </div>
           </div>
@@ -1684,13 +1684,13 @@
           <div class="media-grid">
             <div class="media-card">
               <div style="background: linear-gradient(135deg,#0d1520 0%, #1a2535 100%); aspect-ratio:16/9; display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;padding:1rem;text-align:center;">
-                <img src="../articulos/images/dow-uap-d55-mission-report-syria-november-2016.jpg" width="100%" height="100%" alt=""/>
+                <img src="../articulos/images/dow-uap-d55-mission-report-syria-november-2016.jpg" width="100%" height="100%" alt="P-8A Tracking · Syria 2016 · Dep. de Guerra" data-lightbox onclick="openLightbox('lb-img-dow-d55')"/>
               </div>
               <div class="media-card-cap"><p>P-8A Tracking · Syria 2016 · Dep. de Guerra</p></div>
             </div>
             <div class="media-card">
               <div style="background: linear-gradient(135deg,#1a1000 0%, #2a1f00 100%); aspect-ratio:16/9; display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;padding:1rem;text-align:center;">
-                <img src="../articulos/images/nasa-uap-vm5-apollo-12-1969.jpg" width="100%"  alt=""/>
+                <img src="../articulos/images/nasa-uap-vm5-apollo-12-1969.jpg" width="100%" height="100%" alt="Misiones Apollo · Transcripciones clasificadas · NASA" data-lightbox onclick="openLightbox('lb-img-nasa-vm5')"/>
               </div>
               <div class="media-card-cap"><p>Misiones Apollo · Transcripciones clasificadas · NASA</p></div>
             </div>
@@ -2293,7 +2293,74 @@ function toggleReleaseCard(headerEl){
   if(window.location.hash){ expandTarget(window.location.hash); }
   window.addEventListener('hashchange', function(){ expandTarget(window.location.hash); });
 })();
+
+// Lightbox de imágenes
+function openLightbox(id){
+  var el = document.getElementById(id);
+  if(el) el.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(e, id){
+  if(e.target === document.getElementById(id)){
+    closeLightboxById(id);
+  }
+}
+function closeLightboxById(id){
+  var el = document.getElementById(id);
+  if(el) el.classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    document.querySelectorAll('.lightbox-overlay.active').forEach(function(el){
+      el.classList.remove('active');
+    });
+    document.body.style.overflow = '';
+  }
+});
 </script>
+
+<!-- ══════════ LIGHTBOX IMÁGENES ══════════ -->
+
+<div class="lightbox-overlay" id="lb-img-fbi-r03-1" onclick="closeLightbox(event,'lb-img-fbi-r03-1')">
+  <div class="lightbox-inner" onclick="event.stopPropagation()">
+    <button class="lightbox-close" onclick="closeLightboxById('lb-img-fbi-r03-1')">[ ✕ Cerrar ]</button>
+    <div class="lightbox-img-wrap">
+      <img src="https://images.foxtv.com/static.livenowfox.com/www.livenowfox.com/content/uploads/2026/06/932/524/fbi-uap-d016_digital-rendering_incident-2-1_western-us-event_2023.jpg" alt="FBI rendering · incidente en zona sensible del oeste de EE.UU., octubre 2023">
+    </div>
+    <p class="lightbox-caption">// FBI · Representación artística basada en testimonio de agente federal · Zona sensible de seguridad nacional, oeste de EE.UU., octubre 2023 · PURSUE R03</p>
+  </div>
+</div>
+
+<div class="lightbox-overlay" id="lb-img-fbi-r03-2" onclick="closeLightbox(event,'lb-img-fbi-r03-2')">
+  <div class="lightbox-inner" onclick="event.stopPropagation()">
+    <button class="lightbox-close" onclick="closeLightboxById('lb-img-fbi-r03-2')">[ ✕ Cerrar ]</button>
+    <div class="lightbox-img-wrap">
+      <img src="https://images.foxtv.com/static.livenowfox.com/www.livenowfox.com/content/uploads/2026/06/764/432/ufo-sighting-july-2025.jpg" alt="UAP avistamiento noreste EE.UU. julio 2025">
+    </div>
+    <p class="lightbox-caption">// Imagen incluida en archivo FBI · Avistamiento noreste EE.UU. · Julio 2025 · PURSUE R03</p>
+  </div>
+</div>
+
+<div class="lightbox-overlay" id="lb-img-dow-d55" onclick="closeLightbox(event,'lb-img-dow-d55')">
+  <div class="lightbox-inner" onclick="event.stopPropagation()">
+    <button class="lightbox-close" onclick="closeLightboxById('lb-img-dow-d55')">[ ✕ Cerrar ]</button>
+    <div class="lightbox-img-wrap">
+      <img src="../articulos/images/dow-uap-d55-mission-report-syria-november-2016.jpg" alt="P-8A Tracking · Syria 2016 · Dep. de Guerra">
+    </div>
+    <p class="lightbox-caption">// P-8A Tracking · Syria 2016 · Dep. de Guerra</p>
+  </div>
+</div>
+
+<div class="lightbox-overlay" id="lb-img-nasa-vm5" onclick="closeLightbox(event,'lb-img-nasa-vm5')">
+  <div class="lightbox-inner" onclick="event.stopPropagation()">
+    <button class="lightbox-close" onclick="closeLightboxById('lb-img-nasa-vm5')">[ ✕ Cerrar ]</button>
+    <div class="lightbox-img-wrap">
+      <img src="../articulos/images/nasa-uap-vm5-apollo-12-1969.jpg" alt="Misiones Apollo · Transcripciones clasificadas · NASA">
+    </div>
+    <p class="lightbox-caption">// Misiones Apollo · Transcripciones clasificadas · NASA</p>
+  </div>
+</div>
 
 </body>
 </html>
