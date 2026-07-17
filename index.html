@@ -832,6 +832,23 @@
        es que traen imagen de portada (ed-cover-wrap). */
     .featured-feed-block { margin-bottom: 3.5rem; }
 
+    /* Destacados: siempre 3 columnas a todo el ancho (no auto-fill,
+       que dejaba espacio muerto a la derecha cuando el contenedor
+       era más ancho que 3 tarjetas de 260px). */
+    #featuredSection {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    @media (max-width: 720px) {
+      #featuredSection { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 480px) {
+      #featuredSection { grid-template-columns: 1fr; }
+    }
+    /* Sin el acento de color por categoría a la izquierda: en destacados
+       se veía como una línea dorada suelta cuando solo una de las tres
+       tarjetas tenía una categoría con color asignado. */
+    #featuredSection .edition-card { border-left: none; }
+
     /* ── SECCIONES FIJAS dentro de la columna derecha ── */
     .col-right .fixed-section {
       background: transparent;
