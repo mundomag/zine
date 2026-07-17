@@ -275,7 +275,7 @@
       animation: news-dot-pulse 1.6s ease-in-out infinite;}
 
     /* ── ARTÍCULO DESTACADO ── */
-    /* ── ARTÍCULOS DESTACADOS (2 tarjetas, texto sobre la imagen) ──
+    /* ── ARTÍCULOS DESTACADOS (3 tarjetas en fila, texto sobre la imagen) ──
        Control de overlay: ajusta estos 3 valores (0 = transparente, 1 = opaco)
        para oscurecer más o menos arriba / al centro / abajo de la foto. */
     :root {
@@ -928,47 +928,19 @@
     /* ── FEED DE DESTACADOS (columna izquierda) ── */
     .featured-feed-block { margin-bottom: 3.5rem; }
     .featured-feed {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
     }
-    .featured-feed .featured-card { min-height: 420px; }
+    .featured-feed .featured-card { min-height: 300px; }
+    .featured-feed .featured-title { font-size: clamp(0.95rem, 1.4vw, 1.1rem); }
+    .featured-feed .featured-desc { -webkit-line-clamp: 3; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; }
 
-    .featured-feed-item {
-      display: flex;
-      gap: 1rem;
-      text-decoration: none;
-      color: inherit;
-      background: var(--ink-mid);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--gold);
-      padding: 0.9rem;
-      transition: border-color 0.2s, background 0.2s;
+    @media (max-width: 1100px) {
+      .featured-feed { grid-template-columns: repeat(2, 1fr); }
     }
-    .featured-feed-item:hover { background: var(--ink-soft); border-color: var(--gold); }
-    .featured-feed-thumb {
-      width: 92px; height: 92px; flex-shrink: 0;
-      background: linear-gradient(135deg, #1a0a2e 0%, #0d0d1f 100%);
-      overflow: hidden;
-    }
-    .featured-feed-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .featured-feed-body {
-      display: flex; flex-direction: column; justify-content: center;
-      gap: 0.4rem; min-width: 0;
-    }
-    .featured-feed-tags {
-      display: flex; align-items: baseline; gap: 0.6rem;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.5rem; letter-spacing: 0.14em; text-transform: uppercase;
-    }
-    .featured-feed-eyebrow { color: var(--cyan); }
-    .featured-feed-date { color: var(--muted); }
-    .featured-feed-title {
-      font-family: 'Space Grotesk', system-ui, sans-serif;
-      font-size: 0.88rem; font-weight: 700; line-height: 1.35;
-      color: var(--paper);
-      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
-      overflow: hidden;
+    @media (max-width: 640px) {
+      .featured-feed { grid-template-columns: 1fr; }
     }
 
     /* ── SECCIONES FIJAS dentro de la columna derecha ── */
@@ -1009,7 +981,6 @@
       .home-layout {
         padding: 2.5rem 1.5rem 0;
       }
-      .featured-feed .featured-card { min-height: 340px; }
     }
 
     /* ── RESPONSIVE ── */
@@ -2005,8 +1976,8 @@
       return d.innerHTML;
     }
 
-    // Tarjeta grande (hero): el destacado principal
-    function heroHTML(item){
+    // Tarjeta de destacado: mismo formato para las 3, en fila
+    function cardHTML(item){
       var img = item.imagen
         ? '<img src="' + esc(item.imagen) + '" alt="' + esc(item.titulo) + '" loading="lazy" onerror="this.style.display=\'none\'">'
         : '';
@@ -2029,30 +2000,8 @@
       );
     }
 
-    // Tarjeta compacta (feed): el resto de destacados / lo más nuevo
-    function feedItemHTML(item){
-      var img = item.imagen
-        ? '<div class="featured-feed-thumb"><img src="' + esc(item.imagen) + '" alt="' + esc(item.titulo) + '" loading="lazy" onerror="this.parentElement.style.display=\'none\'"></div>'
-        : '';
-      var eyebrow = item.categoria ? esc(item.categoria) : 'Destacado';
-      return (
-        '<a class="featured-feed-item" href="' + esc(item.url) + '">' +
-          img +
-          '<div class="featured-feed-body">' +
-            '<div class="featured-feed-tags">' +
-              '<span class="featured-feed-eyebrow">' + eyebrow + '</span>' +
-              '<span class="featured-feed-date">' + esc(item.fecha) + '</span>' +
-            '</div>' +
-            '<h3 class="featured-feed-title">' + esc(item.titulo) + '</h3>' +
-          '</div>' +
-        '</a>'
-      );
-    }
-
-    // Número máximo de destacados a mostrar en la columna central.
-    // El primero se muestra como tarjeta grande; el resto, como feed compacto
-    // (útil para ir sumando ahí los artículos más nuevos).
-    var MAX_DESTACADOS = 8;
+    // Número de destacados a mostrar, en fila, con el mismo formato de tarjeta.
+    var MAX_DESTACADOS = 3;
 
     fetch('destacado.json')
       .then(function(r){ return r.json(); })
@@ -2061,10 +2010,7 @@
         items = items.filter(function(it){ return it && it.titulo && it.url; }).slice(0, MAX_DESTACADOS);
         if (!items.length) return;
 
-        var html = heroHTML(items[0]);
-        for (var i = 1; i < items.length; i++) html += feedItemHTML(items[i]);
-
-        section.innerHTML = html;
+        section.innerHTML = items.map(cardHTML).join('');
       })
       .catch(function(){ /* si no hay destacado.json, la sección permanece vacía */ });
   })();
