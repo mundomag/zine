@@ -902,49 +902,37 @@
     .edition-card[data-cat^="columna"] .ed-num-label    { color: var(--cat-columna); }
 
     /* ══════════════════════════════════════════
-       HOME · LAYOUT DE TRES COLUMNAS
-       Izquierda: artículos + filtros
-       Centro: destacados (feed con imágenes)
-       Derecha: secciones fijas + suscripción
+       HOME · LAYOUT DE DOS COLUMNAS
+       Izquierda: destacados + artículos/filtros + suscripción
+       Derecha: secciones fijas
        ══════════════════════════════════════════ */
     .home-layout {
       max-width: 1600px;
       margin: 0 auto;
       padding: 3rem 3rem 0;
       display: grid;
-      grid-template-columns: 300px minmax(0,1fr) 300px;
-      grid-template-areas: "left center right";
+      grid-template-columns: minmax(0,1fr) 340px;
+      grid-template-areas: "left right";
       gap: 3rem;
       align-items: start;
     }
     .col-left   { grid-area: left; min-width: 0; }
-    .col-center { grid-area: center; min-width: 0; }
     .col-right  { grid-area: right; min-width: 0; position: sticky; top: 46px; }
 
-    .col-left .section,
-    .col-center .section {
+    .col-left .section {
       max-width: none;
       margin: 0;
       padding: 0;
     }
-    .col-left .section-header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.6rem;
-    }
-    .col-left .section-controls {
-      margin-left: 0;
-      width: 100%;
-      justify-content: space-between;
-    }
 
-    /* ── FEED DE DESTACADOS (columna central) ── */
+    /* ── FEED DE DESTACADOS (columna izquierda) ── */
+    .featured-feed-block { margin-bottom: 3.5rem; }
     .featured-feed {
       display: flex;
       flex-direction: column;
       gap: 1.25rem;
     }
-    .featured-feed .featured-card { min-height: 400px; }
+    .featured-feed .featured-card { min-height: 420px; }
 
     .featured-feed-item {
       display: flex;
@@ -1011,19 +999,15 @@
 
     @media (max-width: 1300px) {
       .home-layout {
-        grid-template-columns: 280px minmax(0,1fr);
-        grid-template-areas:
-          "left center"
-          "right right";
+        grid-template-columns: 1fr;
+        grid-template-areas: "left" "right";
+        gap: 2.5rem;
       }
       .col-right { position: static; margin-top: 1rem; }
     }
     @media (max-width: 900px) {
       .home-layout {
-        grid-template-columns: 1fr;
-        grid-template-areas: "center" "left" "right";
         padding: 2.5rem 1.5rem 0;
-        gap: 2.5rem;
       }
       .featured-feed .featured-card { min-height: 340px; }
     }
@@ -1104,8 +1088,18 @@
 
   <div class="home-layout">
 
-    <!-- IZQUIERDA: ARTÍCULOS + FILTROS -->
+    <!-- IZQUIERDA: DESTACADOS + ARTÍCULOS/FILTROS + SUSCRIPCIÓN -->
     <aside class="col-left">
+
+      <!-- DESTACADOS -->
+      <div class="featured-feed-block">
+        <div class="section-header">
+          <h2 class="section-title">Destacados</h2>
+          <span class="section-count">Selección editorial · lo último</span>
+        </div>
+        <div class="featured-feed" id="featuredSection"></div>
+      </div>
+
       <!-- ARTÍCULOS -->
   <section class="section" id="articulos">
     <div class="section-header">
@@ -1615,18 +1609,22 @@
       <!-- MM-GRID-END -->
     </div>
   </section>
+
+      <!-- SUSCRIPCIÓN SUBSTACK -->
+      <div class="side-card substack-card">
+        <span class="side-card-label">// No te pierdas nuestras próximas ediciones</span>
+        <div class="substack-embed-wrap">
+          <iframe
+            src="https://mundomag.substack.com/embed?transparent=1&light=1"
+            style="width:100%; height:320px; border:0; background:transparent;"
+            frameborder="0"
+            scrolling="no">
+          </iframe>
+        </div>
+      </div>
     </aside>
 
-    <!-- CENTRO: DESTACADOS -->
-    <main class="col-center">
-      <div class="section-header">
-        <h2 class="section-title">Destacados</h2>
-        <span class="section-count">Selección editorial · lo último</span>
-      </div>
-      <div class="featured-feed" id="featuredSection"></div>
-    </main>
-
-    <!-- DERECHA: SECCIONES FIJAS + SUSCRIPCIÓN -->
+    <!-- DERECHA: SECCIONES FIJAS -->
     <aside class="col-right">
       <!-- SECCIONES FIJAS (compacto) -->
   <div class="fixed-section" id="secciones-fijas">
@@ -1709,19 +1707,6 @@
 
     </div>
   </div>
-
-      <!-- SUSCRIPCIÓN SUBSTACK -->
-      <div class="side-card substack-card">
-        <span class="side-card-label">// No te pierdas nuestras próximas ediciones</span>
-        <div class="substack-embed-wrap">
-          <iframe
-            src="https://mundomag.substack.com/embed?transparent=1&light=1"
-            style="width:100%; height:320px; border:0; background:transparent;"
-            frameborder="0"
-            scrolling="no">
-          </iframe>
-        </div>
-      </div>
     </aside>
 
   </div>
