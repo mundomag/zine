@@ -1,419 +1,337 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-page="contacto">
 <head>
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8483516296039231"
        crossorigin="anonymous"></script>
-	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LRSJ1EYEPD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRSJ1EYEPD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LRSJ1EYEPD');
+  </script>
 
-  gtag('config', 'G-LRSJ1EYEPD');
-</script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contacto · Mundo Maravilloso</title>
+  <link rel="canonical" href="https://mundomag.fyi/contacto.html">
+  <meta name="description" content="Escríbenos con pistas, correcciones, colaboraciones o preguntas sobre el contenido publicado en Mundo Maravilloso.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&family=DM+Serif+Text:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Space+Grotesk:wght@400;500;600;700;900&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg: #0a0a0b;
-      --surface: #111113;
-      --border: #1e1e22;
-      --accent: #c8f04a;
-      --text: #d4d4d8;
-      --muted: #52525b;
-      --heading: #f4f4f5;
-      --mono: 'Space Mono', monospace;
-      --sans: 'Space Grotesk', sans-serif;
+      --ink:#0d0d0f; --ink-mid:#111114; --ink-soft:#1a1a1e;
+      --paper:#f5f0e8; --paper-warm:#ede6d6;
+      --gold:#c9a84c; --gold-light:#e8c97a;
+      --cyan:#4ecdc4; --amber:#f59e0b;
+      --red:#c0392b; --violet:#a78bfa;
+      --jade:#34d399; --crimson:#e11d48;
+      --muted:#6b6b7a;
+      --border:rgba(201,168,76,0.12);
+      --border-jade:rgba(52,211,153,0.18);
     }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    img{max-width:100%;height:auto;display:block}
+    body{background:var(--ink);color:var(--paper);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
 
-    html { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.7; }
-    body { min-height: 100vh; display: flex; flex-direction: column; }
+    /* ══ NAV ══ */
+    .site-nav{position:sticky;top:0;z-index:50;background:rgba(13,13,15,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+    .site-nav-inner{max-width:1200px;margin:0 auto;padding:0 2.5rem;height:64px;display:flex;align-items:center}
+    .site-nav-logo{font-family:'Audiowide',sans-serif;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--paper);text-decoration:none}
+    .site-nav-sep{width:1px;height:20px;background:var(--border);margin:0 1.75rem}
+    .site-nav-articles{display:flex;align-items:center;gap:1.75rem;flex:1}
+    .site-nav-link{font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:0.4rem 0;transition:color .2s}
+    .site-nav-link:hover,.site-nav-link.active{color:var(--gold)}
+    .site-nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:0.5rem;color:var(--muted);flex-shrink:0;margin-left:auto}
+    .site-nav-hamburger:hover{color:var(--gold)}
+    .site-nav-hamburger svg{display:block;width:20px;height:20px}
+    .site-nav-drawer{display:none;flex-direction:column;background:var(--ink-mid);border-top:1px solid var(--border)}
+    .site-nav-drawer.open{display:flex}
+    .drawer-link{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:0.85rem 1.5rem;display:flex;align-items:center;gap:0.5rem;border-bottom:1px solid rgba(201,168,76,0.08);transition:color .2s,background .2s}
+    .drawer-link:hover{color:var(--gold);background:rgba(201,168,76,0.04)}
+    .nav-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);display:inline-block;flex-shrink:0;animation:nav-dot-pulse 1.6s ease-in-out infinite}
+    @keyframes nav-dot-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.65)}}
+    @media(max-width:900px){.site-nav-articles{display:none}.site-nav-hamburger{display:flex;align-items:center;justify-content:center}}
+    @media(max-width:600px){.site-nav-inner{padding:0 1.25rem}}
 
-    nav {
-      border-bottom: 1px solid var(--border);
-      padding: 1.25rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky; top: 0;
-      background: rgba(10,10,11,0.92);
-      backdrop-filter: blur(10px);
-      z-index: 10;
-    }
-    .nav-brand {
-      font-family: var(--mono);
-      font-size: 0.8rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--heading);
-      text-decoration: none;
-    }
-    .nav-links { display: flex; gap: 2rem; }
-    .nav-links a {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+    /* ══ HERO ══ */
+    .page-hero{max-width:1000px;margin:0 auto;padding:5rem 2.5rem 3.5rem;width:100%}
+    .hero-kicker{font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--jade);margin-bottom:1.25rem;display:flex;align-items:center;gap:0.75rem}
+    .hero-kicker::before{content:'';display:inline-block;width:28px;height:1px;background:var(--jade)}
+    .page-title{font-family:'Audiowide',sans-serif;font-size:clamp(2.1rem,5.5vw,3.6rem);font-weight:900;line-height:1.02;color:var(--paper);letter-spacing:-0.01em;margin-bottom:1.5rem}
+    .hero-lead{font-family:'DM Serif Text',Georgia,serif;font-size:1.05rem;font-style:italic;color:rgba(245,240,232,0.75);line-height:1.8;max-width:56ch;border-left:2px solid var(--jade);padding-left:1.5rem}
 
-    .hero {
-      border-bottom: 1px solid var(--border);
-      padding: 5rem 2rem 4rem;
-      max-width: 860px;
-      margin: 0 auto;
-      width: 100%;
-    }
-    .eyebrow {
-      font-family: var(--mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
-    }
-    h1 {
-      font-family: var(--mono);
-      font-size: clamp(2.2rem, 5vw, 3.8rem);
-      font-weight: 700;
-      color: var(--heading);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.5rem;
-    }
-    .hero-sub {
-      font-size: 1.1rem;
-      color: var(--muted);
-      max-width: 560px;
-      line-height: 1.8;
-    }
+    /* ══ MAIN ══ */
+    main{flex:1;max-width:1000px;margin:0 auto;padding:0 2.5rem 6rem;width:100%}
+    .contact-layout{display:grid;grid-template-columns:1fr 1.6fr;gap:4rem;padding-top:1rem}
 
-    main {
-      flex: 1;
-      max-width: 860px;
-      margin: 0 auto;
-      width: 100%;
-      padding: 0 2rem 6rem;
-    }
+    /* INFO BOX (estilo toc-box) */
+    .info-box{background:var(--ink-mid);border:1px solid var(--border-jade);padding:1.75rem;align-self:start}
+    .info-box-label{font-family:'JetBrains Mono',monospace;font-size:0.5rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--jade);margin-bottom:1.25rem;padding-bottom:0.75rem;border-bottom:1px solid rgba(52,211,153,0.12)}
+    .info-block{margin-bottom:1.6rem}
+    .info-label{font-family:'JetBrains Mono',monospace;font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem}
+    .info-value{font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:var(--paper-warm);line-height:1.6}
 
-    .contact-layout {
-      display: grid;
-      grid-template-columns: 1fr 1.6fr;
-      gap: 4rem;
-      padding-top: 3.5rem;
-    }
+    .divider{height:1px;background:var(--border);margin:1.75rem 0}
 
-    .contact-info {}
-    .info-block { margin-bottom: 2.5rem; }
-    .info-label {
-      font-family: var(--mono);
-      font-size: 0.63rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.6rem;
-    }
-    .info-value {
-      font-family: var(--mono);
-      font-size: 0.82rem;
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    .divider {
-      height: 1px;
-      background: var(--border);
-      margin: 2rem 0;
-    }
-
-    .topic-list { list-style: none; }
-    .topic-list li {
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      color: var(--muted);
-      padding: 0.5rem 0;
-      border-bottom: 1px solid var(--border);
-      letter-spacing: 0.05em;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .topic-list li::before {
-      content: '→';
-      color: var(--accent);
-      font-size: 0.7rem;
-    }
-    .topic-list li:first-child { border-top: 1px solid var(--border); }
+    .topic-list{list-style:none}
+    .topic-list li{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--muted);padding:0.5rem 0;border-bottom:1px solid var(--border);letter-spacing:0.03em;display:flex;align-items:center;gap:0.6rem;line-height:1.4}
+    .topic-list li::before{content:'›';color:var(--jade);font-weight:700;flex-shrink:0}
+    .topic-list li:last-child{border-bottom:none}
 
     /* FORM */
-    .form-wrap {}
-    .form-group { margin-bottom: 1.5rem; }
-    label {
-      display: block;
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.5rem;
+    .form-group{margin-bottom:1.4rem}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    label{display:block;font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem}
+    input[type="text"],input[type="email"],select,textarea{
+      width:100%;background:var(--ink-mid);border:1px solid var(--border);color:var(--paper);
+      font-family:'Source Serif 4',Georgia,serif;font-size:0.92rem;padding:0.8rem 1rem;outline:none;
+      transition:border-color .2s;-webkit-appearance:none;appearance:none;border-radius:0;
     }
-    input[type="text"],
-    input[type="email"],
-    select,
-    textarea {
-      width: 100%;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      color: var(--text);
-      font-family: var(--sans);
-      font-size: 0.95rem;
-      padding: 0.85rem 1rem;
-      outline: none;
-      transition: border-color 0.2s;
-      -webkit-appearance: none;
-      appearance: none;
-      border-radius: 0;
-    }
-    input:focus, select:focus, textarea:focus {
-      border-color: var(--accent);
-    }
-    textarea {
-      height: 150px;
-      resize: vertical;
-      line-height: 1.6;
-    }
-    select {
-      cursor: pointer;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2352525b' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 1rem center;
-      padding-right: 2.5rem;
-    }
-    select option { background: var(--surface); }
+    input::placeholder,textarea::placeholder{color:var(--muted)}
+    input:focus,select:focus,textarea:focus{border-color:var(--jade)}
+    textarea{height:150px;resize:vertical;line-height:1.6}
+    select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b6b7a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem}
+    select option{background:var(--ink-mid)}
 
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-
-    button[type="submit"] {
-      width: 100%;
-      background: var(--accent);
-      color: #0a0a0b;
-      border: none;
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      padding: 1rem;
-      cursor: pointer;
-      transition: opacity 0.2s;
-      margin-top: 0.5rem;
+    button[type="submit"]{
+      width:100%;background:var(--jade);color:var(--ink);border:none;
+      font-family:'JetBrains Mono',monospace;font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;
+      padding:1rem;cursor:pointer;transition:opacity .2s;margin-top:0.5rem;
     }
-    button[type="submit"]:hover { opacity: 0.85; }
+    button[type="submit"]:hover{opacity:0.85}
+    button[type="submit"]:disabled{opacity:0.6;cursor:default}
 
-    .form-note {
-      font-family: var(--mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-      margin-top: 1rem;
-      line-height: 1.6;
+    .form-note{font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.05em;color:var(--muted);margin-top:1rem;line-height:1.7}
+    .form-note a{color:var(--jade);text-decoration:underline}
+
+    .success-msg{
+      display:none;background:rgba(52,211,153,0.05);border:1px solid var(--border-jade);padding:1.5rem 1.75rem;
+      font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--jade);letter-spacing:0.03em;line-height:1.7;margin-top:1.5rem;
     }
 
-    .success-msg {
-      display: none;
-      background: var(--surface);
-      border: 1px solid var(--accent);
-      padding: 1.5rem;
-      font-family: var(--mono);
-      font-size: 0.8rem;
-      color: var(--accent);
-      letter-spacing: 0.05em;
-      line-height: 1.6;
-      margin-top: 1.5rem;
+    .reveal{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+
+    @media(max-width:700px){
+      .page-hero{padding:3.5rem 1.25rem 2.5rem}
+      main{padding:0 1.25rem 4rem}
+      .contact-layout{grid-template-columns:1fr;gap:2.5rem}
+      .form-row{grid-template-columns:1fr}
     }
 
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .footer-brand {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .footer-links { display: flex; gap: 1.5rem; }
-    .footer-links a {
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-links a:hover { color: var(--accent); }
-
-    @media (max-width: 700px) {
-      .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-      .form-row { grid-template-columns: 1fr; }
-      nav { padding: 1rem; }
-      .nav-links { gap: 1rem; }
-      .hero { padding: 3rem 1rem 2.5rem; }
-      main { padding: 0 1rem 4rem; }
-      footer { flex-direction: column; align-items: flex-start; }
-    }
+    /* ══ FOOTER ══ */
+    .site-footer{border-top:1px solid var(--border);margin-top:auto;padding:0 2.5rem;background:var(--ink-mid)}
+    .site-footer-inner{max-width:1200px;margin:0 auto;padding:4rem 0 2rem}
+    .footer-top{display:grid;grid-template-columns:1fr 2fr;gap:4rem;padding-bottom:3rem;border-bottom:1px solid var(--border);margin-bottom:2rem}
+    .footer-kicker{font-family:'JetBrains Mono',monospace;font-size:0.55rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--cyan);margin-bottom:0.85rem}
+    .footer-logo{font-family:'Audiowide',sans-serif;font-size:1.5rem;font-weight:400;letter-spacing:0.02em;text-transform:uppercase;color:var(--gold);text-decoration:none;display:block;margin-bottom:0.6rem;line-height:1.05}
+    .footer-logo:hover{color:var(--gold-light)}
+    .footer-tagline{font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);max-width:32ch;line-height:1.6}
+    .footer-desc{font-family:'JetBrains Mono',monospace;font-size:0.55rem;letter-spacing:0.04em;color:rgba(107,107,122,0.75);line-height:1.7;max-width:32ch;margin-top:0.85rem}
+    .footer-nav-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+    .footer-nav-col-label{font-family:'JetBrains Mono',monospace;font-size:0.5rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--jade);margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid rgba(52,211,153,0.15)}
+    .footer-nav-list{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
+    .footer-nav-list a{font-family:'JetBrains Mono',monospace;font-size:0.55rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+    .footer-nav-list a:hover{color:var(--jade)}
+    .footer-nav-list a.active{color:var(--gold)}
+    .footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+    .footer-copy,.footer-signal{font-family:'JetBrains Mono',monospace;font-size:0.5rem;letter-spacing:0.12em;text-transform:uppercase}
+    .footer-copy{color:rgba(107,107,122,0.5)}
+    .footer-signal{color:rgba(107,107,122,0.35)}
+    @media(max-width:900px){.footer-top{grid-template-columns:1fr;gap:2rem}.footer-nav-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){.site-footer{padding:0 1.25rem}.footer-nav-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
 
-<nav>
-  <a href="https://mundomag.fyi/" class="nav-brand">Mundo Maravilloso</a>
-  <div class="nav-links">
-    <a href="https://mundomag.fyi/">Inicio</a>
-    <a href="acerca-de.html">Acerca de</a>
-    <a href="contacto.html" class="active">Contacto</a>
-  </div>
-</nav>
+  <!-- NAV -->
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="/" class="site-nav-logo">Mundo Maravilloso</a>
+     </div>
+  </nav>
 
-<div class="hero">
-  <div class="eyebrow">// Transmisión abierta</div>
-  <h1>CONTACTO</h1>
-  <p class="hero-sub">Pistas, críticas, colaboraciones o simplemente una observación. Las señales bien formadas se leen.</p>
-</div>
+  <!-- HERO -->
+  <section class="page-hero">
+    <p class="hero-kicker">// Transmisión abierta</p>
+    <h1 class="page-title">CONTACTO</h1>
+    <p class="hero-lead">Pistas, críticas, colaboraciones o simplemente una observación. Las señales bien formadas se leen.</p>
+  </section>
 
-<main>
-  <div class="contact-layout">
+  <main>
+    <div class="contact-layout">
 
-    <div class="contact-info">
-      <div class="info-block">
-        <div class="info-label">Estado</div>
-        <div class="info-value">Buzón activo<br>Respuesta en 48–72h</div>
-      </div>
-      <div class="info-block">
-        <div class="info-label">Tipo de publicación</div>
-        <div class="info-value">Independiente<br>Sin patrocinadores</div>
-      </div>
-      <div class="info-block">
-        <div class="info-label">Idioma</div>
-        <div class="info-value">Español</div>
-      </div>
+      <aside class="info-box reveal">
+        <p class="info-box-label">// Estado del canal</p>
+        <div class="info-block">
+          <div class="info-label">Estado</div>
+          <div class="info-value">Buzón activo<br>Respuesta en 48–72h</div>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Tipo de publicación</div>
+          <div class="info-value">Independiente<br>Sin patrocinadores</div>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Idioma</div>
+          <div class="info-value">Español</div>
+        </div>
 
-      <div class="divider"></div>
+        <div class="divider"></div>
 
-      <div class="info-label" style="margin-bottom:0.75rem">Nos interesa recibir</div>
-      <ul class="topic-list">
-        <li>Pistas sobre fenómenos anómalos</li>
-        <li>Errores o correcciones</li>
-        <li>Colaboraciones editoriales</li>
-        <li>Documentos o datos de interés</li>
-        <li>Preguntas sobre contenido publicado</li>
-      </ul>
-    </div>
+        <div class="info-label" style="margin-bottom:0.75rem">Nos interesa recibir</div>
+        <ul class="topic-list">
+          <li>Pistas sobre fenómenos anómalos</li>
+          <li>Errores o correcciones</li>
+          <li>Colaboraciones editoriales</li>
+          <li>Documentos o datos de interés</li>
+          <li>Preguntas sobre contenido publicado</li>
+        </ul>
+      </aside>
 
-    <div class="form-wrap">
-      <form id="contact-form" action="https://formspree.io/f/xkoaywev" method="POST">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" />
+      <div class="form-wrap reveal">
+        <form id="contact-form" action="https://formspree.io/f/xkoaywev" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" />
+            </div>
+            <div class="form-group">
+              <label for="email">Correo electrónico *</label>
+              <input type="email" id="email" name="email" required placeholder="tu@correo.com" />
+            </div>
           </div>
+
           <div class="form-group">
-            <label for="email">Correo electrónico *</label>
-            <input type="email" id="email" name="email" required placeholder="tu@correo.com" />
+            <label for="asunto">Asunto</label>
+            <select id="asunto" name="asunto">
+              <option value="" disabled selected>Selecciona una categoría</option>
+              <option value="pista">Pista o dato de interés</option>
+              <option value="correccion">Corrección o error</option>
+              <option value="colaboracion">Colaboración editorial</option>
+              <option value="pregunta">Pregunta sobre contenido</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="mensaje">Mensaje *</label>
+            <textarea id="mensaje" name="mensaje" required placeholder="Describe lo que quieres compartir con el mayor detalle posible. Las señales bien formadas se procesan antes."></textarea>
+          </div>
+
+          <button type="submit">Enviar transmisión →</button>
+
+          <p class="form-note">
+            * Campos obligatorios · No compartimos tu información con terceros.<br>
+            Consulta nuestra <a href="privacidad.html">política de privacidad</a>.
+          </p>
+        </form>
+
+        <div class="success-msg" id="success-msg">
+          // Transmisión recibida.<br>
+          Revisaremos tu mensaje y responderemos en un plazo de 48–72 horas.
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <p class="footer-kicker">// Revista de exploración y pensamiento</p>
+          <a href="/" class="footer-logo">Mundo Maravilloso</a>
+          <p class="footer-tagline">Ciencia · Misterio · Fenómenos · Futuro</p>
+          <p class="footer-desc">Una publicación independiente sobre los grandes misterios que la ciencia todavía no ha resuelto.</p>
+        </div>
+        <div class="footer-nav-grid">
+          <div class="footer-nav-col">
+            <p class="footer-nav-col-label">// Artículos</p>
+            <ul class="footer-nav-list">
+              <li><a href="articulos.html">Todos los artículos</a></li>
+              <li><a href="glosario.html">Glosario</a></li>
+            </ul>
+          </div>
+<div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Publicación</p>
+            <ul class="footer-nav-list">
+              <li><a href="acerca-de.html" class="active">Acerca de</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+              <li><a href="privacidad.html">Privacidad</a></li>
+              <li><a href="terminos.html">Términos</a></li>
+            </ul>
           </div>
         </div>
-
-        <div class="form-group">
-          <label for="asunto">Asunto</label>
-          <select id="asunto" name="asunto">
-            <option value="" disabled selected>Selecciona una categoría</option>
-            <option value="pista">Pista o dato de interés</option>
-            <option value="correccion">Corrección o error</option>
-            <option value="colaboracion">Colaboración editorial</option>
-            <option value="pregunta">Pregunta sobre contenido</option>
-            <option value="otro">Otro</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="mensaje">Mensaje *</label>
-          <textarea id="mensaje" name="mensaje" required placeholder="Describe lo que quieres compartir con el mayor detalle posible. Las señales bien formadas se procesan antes."></textarea>
-        </div>
-
-        <button type="submit">Enviar transmisión →</button>
-
-        <p class="form-note">
-          * Campos obligatorios · No compartimos tu información con terceros.<br>
-          Consulta nuestra <a href="privacidad.html" style="color:var(--muted);text-decoration:underline">política de privacidad</a>.
-        </p>
-      </form>
-
-      <div class="success-msg" id="success-msg">
-        // Transmisión recibida.<br>
-        Revisaremos tu mensaje y responderemos en un plazo de 48–72 horas.
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Mundo Maravilloso · Todos los derechos reservados</p>
+        <p class="footer-signal">// Institucional · acerca-de</p>
       </div>
     </div>
+  </footer>
 
-  </div>
-</main>
 
-<footer>
-  <span class="footer-brand">Mundo Maravilloso · Publicación independiente · 2026</span>
-  <div class="footer-links">
-    <a href="acerca-de.html">Acerca de</a>
-    <a href="contacto.html">Contacto</a>
-    <a href="privacidad.html">Privacidad</a>
-    <a href="terminos.html">Términos</a>
-  </div>
-</footer>
+  <script>
+    const form = document.getElementById('contact-form');
+    const successMsg = document.getElementById('success-msg');
 
-<script>
-  const form = document.getElementById('contact-form');
-  const successMsg = document.getElementById('success-msg');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      btn.textContent = 'Enviando...';
+      btn.disabled = true;
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const btn = form.querySelector('button[type="submit"]');
-    btn.textContent = 'Enviando...';
-    btn.disabled = true;
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
 
-    try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
-
-      if (res.ok) {
-        form.style.display = 'none';
-        successMsg.style.display = 'block';
-      } else {
+        if (res.ok) {
+          form.style.display = 'none';
+          successMsg.style.display = 'block';
+        } else {
+          btn.textContent = 'Error al enviar. Inténtalo de nuevo.';
+          btn.disabled = false;
+        }
+      } catch {
         btn.textContent = 'Error al enviar. Inténtalo de nuevo.';
         btn.disabled = false;
       }
-    } catch {
-      btn.textContent = 'Error al enviar. Inténtalo de nuevo.';
-      btn.disabled = false;
-    }
-  });
-</script>
-
+    });
+  </script>
+  <script>
+  (function(){
+    var btn = document.getElementById('navHamburger');
+    var drawer = document.getElementById('navDrawer');
+    if (!btn || !drawer) return;
+    btn.addEventListener('click', function(){
+      var isOpen = drawer.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    drawer.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        drawer.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+  (function(){
+    var items = document.querySelectorAll('.reveal');
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, {threshold:0.08});
+    items.forEach(function(el){ obs.observe(el); });
+  })();
+  </script>
 </body>
 </html>

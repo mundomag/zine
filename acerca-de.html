@@ -1,345 +1,282 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-page="acerca-de">
 <head>
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8483516296039231"
        crossorigin="anonymous"></script>
-		<meta name="description" content="Mundo Maravilloso es una revista digital independiente sobre ciencia, misterio, tecnología, UAPs, SETI, disclosure y más. Conoce quiénes somos y por qué lo hacemos.">
-	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LRSJ1EYEPD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRSJ1EYEPD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LRSJ1EYEPD');
+  </script>
 
-  gtag('config', 'G-LRSJ1EYEPD');
-</script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Acerca de · Mundo Maravilloso</title>
+  <link rel="canonical" href="https://mundomag.fyi/acerca-de.html">
+  <meta name="description" content="Mundo Maravilloso es una revista digital independiente sobre ciencia, misterio, tecnología, UAPs, SETI, disclosure y más. Conoce quiénes somos y por qué lo hacemos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&family=DM+Serif+Text:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Space+Grotesk:wght@400;500;600;700;900&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg: #0a0a0b;
-      --surface: #111113;
-      --border: #1e1e22;
-      --accent: #c8f04a;
-      --text: #d4d4d8;
-      --muted: #52525b;
-      --heading: #f4f4f5;
-      --mono: 'Space Mono', monospace;
-      --sans: 'Space Grotesk', sans-serif;
+      --ink:#0d0d0f; --ink-mid:#111114; --ink-soft:#1a1a1e;
+      --paper:#f5f0e8; --paper-warm:#ede6d6;
+      --gold:#c9a84c; --gold-light:#e8c97a;
+      --cyan:#4ecdc4; --amber:#f59e0b;
+      --red:#c0392b; --violet:#a78bfa;
+      --jade:#34d399; --crimson:#e11d48;
+      --muted:#6b6b7a;
+      --border:rgba(201,168,76,0.12);
+      --border-jade:rgba(52,211,153,0.18);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    img{max-width:100%;height:auto;display:block}
+    body{background:var(--ink);color:var(--paper);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+
+    /* ══ NAV ══ */
+    .site-nav{position:sticky;top:0;z-index:50;background:rgba(13,13,15,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+    .site-nav-inner{max-width:1200px;margin:0 auto;padding:0 2.5rem;height:64px;display:flex;align-items:center}
+    .site-nav-logo{font-family:'Audiowide',sans-serif;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--paper);text-decoration:none}
+    .site-nav-sep{width:1px;height:20px;background:var(--border);margin:0 1.75rem}
+    .site-nav-articles{display:flex;align-items:center;gap:1.75rem;flex:1}
+    .site-nav-link{font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:0.4rem 0;transition:color .2s}
+    .site-nav-link:hover,.site-nav-link.active{color:var(--gold)}
+    .site-nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:0.5rem;color:var(--muted);flex-shrink:0;margin-left:auto}
+    .site-nav-hamburger:hover{color:var(--gold)}
+    .site-nav-hamburger svg{display:block;width:20px;height:20px}
+    .site-nav-drawer{display:none;flex-direction:column;background:var(--ink-mid);border-top:1px solid var(--border)}
+    .site-nav-drawer.open{display:flex}
+    .drawer-link{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:0.85rem 1.5rem;display:flex;align-items:center;gap:0.5rem;border-bottom:1px solid rgba(201,168,76,0.08);transition:color .2s,background .2s}
+    .drawer-link:hover{color:var(--gold);background:rgba(201,168,76,0.04)}
+    .nav-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);display:inline-block;flex-shrink:0;animation:nav-dot-pulse 1.6s ease-in-out infinite}
+    @keyframes nav-dot-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.65)}}
+    @media(max-width:900px){.site-nav-articles{display:none}.site-nav-hamburger{display:flex;align-items:center;justify-content:center}}
+    @media(max-width:600px){.site-nav-inner{padding:0 1.25rem}}
+
+    /* ══ HERO ══ */
+    .page-hero{max-width:860px;margin:0 auto;padding:5rem 2.5rem 4rem;width:100%}
+    .hero-kicker{font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--jade);margin-bottom:1.25rem;display:flex;align-items:center;gap:0.75rem}
+    .hero-kicker::before{content:'';display:inline-block;width:28px;height:1px;background:var(--jade)}
+    .page-title{font-family:'Audiowide',sans-serif;font-size:clamp(2.1rem,5.5vw,3.6rem);font-weight:900;line-height:1.02;color:var(--paper);letter-spacing:-0.01em;margin-bottom:1.5rem}
+    .page-title .accent{color:var(--jade)}
+    .hero-lead{font-family:'DM Serif Text',Georgia,serif;font-size:1.1rem;font-style:italic;color:rgba(245,240,232,0.75);line-height:1.8;max-width:56ch;border-left:2px solid var(--jade);padding-left:1.5rem}
+
+    /* ══ MAIN ══ */
+    main{flex:1;max-width:860px;margin:0 auto;padding:0 2.5rem 6rem;width:100%}
+
+    .block{padding:3.5rem 0;border-bottom:1px solid var(--border)}
+    .block:last-child{border-bottom:none}
+    .section-head{display:flex;align-items:center;gap:1.25rem;margin-bottom:1.75rem}
+    .section-num{font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.2em;color:var(--jade);flex-shrink:0}
+    .section-title{font-family:'Audiowide',sans-serif;font-size:1.05rem;font-weight:900;color:var(--paper);letter-spacing:0.01em}
+    .section-line{flex:1;height:1px;background:rgba(52,211,153,0.12)}
+
+    p{font-size:0.98rem;color:rgba(245,240,232,0.78);margin-bottom:1.1rem;max-width:64ch;line-height:1.85}
+    p:last-child{margin-bottom:0}
+    .highlight{color:var(--jade);font-family:'JetBrains Mono',monospace;font-size:0.88em}
+
+    .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:2.5rem}
+    .stat{background:var(--ink-mid);padding:1.75rem 1.5rem;display:flex;flex-direction:column;gap:0.4rem}
+    .stat-num{font-family:'Audiowide',sans-serif;font-size:1.9rem;color:var(--jade);line-height:1}
+    .stat-label{font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted)}
+
+    .values-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:2rem}
+    .value-item{background:var(--ink-mid);padding:1.75rem 1.5rem}
+    .value-title{font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--jade);margin-bottom:0.65rem}
+    .value-desc{font-size:0.88rem;color:rgba(245,240,232,0.6);line-height:1.7;margin:0}
+
+    .reveal{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+
+    @media(max-width:700px){
+      .page-hero{padding:3.5rem 1.25rem 3rem}
+      main{padding:0 1.25rem 4rem}
+      .stat-row{grid-template-columns:1fr}
+      .values-grid{grid-template-columns:1fr}
     }
 
-    html { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.7; }
-
-    body { min-height: 100vh; display: flex; flex-direction: column; }
-
-    /* NAV */
-    nav {
-      border-bottom: 1px solid var(--border);
-      padding: 1.25rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky; top: 0;
-      background: rgba(10,10,11,0.92);
-      backdrop-filter: blur(10px);
-      z-index: 10;
-    }
-    .nav-brand {
-      font-family: var(--mono);
-      font-size: 0.8rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--heading);
-      text-decoration: none;
-    }
-    .nav-links { display: flex; gap: 2rem; }
-    .nav-links a {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
-
-    /* HERO */
-    .hero {
-      border-bottom: 1px solid var(--border);
-      padding: 5rem 2rem 4rem;
-      max-width: 860px;
-      margin: 0 auto;
-      width: 100%;
-    }
-    .eyebrow {
-      font-family: var(--mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
-    }
-    h1 {
-      font-family: var(--mono);
-      font-size: clamp(2.2rem, 5vw, 3.8rem);
-      font-weight: 700;
-      color: var(--heading);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.5rem;
-    }
-    .hero-sub {
-      font-size: 1.15rem;
-      color: var(--muted);
-      max-width: 580px;
-      line-height: 1.8;
-    }
-
-    /* CONTENT */
-    main {
-      flex: 1;
-      max-width: 860px;
-      margin: 0 auto;
-      width: 100%;
-      padding: 0 2rem 6rem;
-    }
-
-    .block {
-      padding: 3.5rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .block:last-child { border-bottom: none; }
-
-    .block-label {
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1.25rem;
-    }
-
-    h2 {
-      font-family: var(--mono);
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--heading);
-      margin-bottom: 1.2rem;
-      letter-spacing: -0.01em;
-    }
-
-    p {
-      font-size: 1rem;
-      color: var(--text);
-      margin-bottom: 1.1rem;
-      max-width: 640px;
-      line-height: 1.8;
-    }
-    p:last-child { margin-bottom: 0; }
-
-    .highlight {
-      color: var(--accent);
-      font-family: var(--mono);
-      font-size: 0.85em;
-    }
-
-    .stat-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      margin-top: 2.5rem;
-    }
-    .stat {
-      background: var(--surface);
-      padding: 1.75rem 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-    .stat-num {
-      font-family: var(--mono);
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--heading);
-      line-height: 1;
-    }
-    .stat-label {
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .values-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      margin-top: 2rem;
-    }
-    .value-item {
-      background: var(--surface);
-      padding: 1.75rem 1.5rem;
-    }
-    .value-title {
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.6rem;
-    }
-    .value-desc {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.6;
-      margin: 0;
-      max-width: 100%;
-    }
-
-    /* FOOTER */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .footer-brand {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .footer-links { display: flex; gap: 1.5rem; }
-    .footer-links a {
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-links a:hover { color: var(--accent); }
-
-    @media (max-width: 600px) {
-      nav { padding: 1rem; }
-      .nav-links { gap: 1rem; }
-      .hero { padding: 3rem 1rem 2.5rem; }
-      main { padding: 0 1rem 4rem; }
-      .stat-row { grid-template-columns: 1fr; }
-      .values-grid { grid-template-columns: 1fr; }
-      footer { flex-direction: column; align-items: flex-start; }
-    }
+    /* ══ FOOTER ══ */
+    .site-footer{border-top:1px solid var(--border);margin-top:auto;padding:0 2.5rem;background:var(--ink-mid)}
+    .site-footer-inner{max-width:1200px;margin:0 auto;padding:4rem 0 2rem}
+    .footer-top{display:grid;grid-template-columns:1fr 2fr;gap:4rem;padding-bottom:3rem;border-bottom:1px solid var(--border);margin-bottom:2rem}
+    .footer-kicker{font-family:'JetBrains Mono',monospace;font-size:0.55rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--cyan);margin-bottom:0.85rem}
+    .footer-logo{font-family:'Audiowide',sans-serif;font-size:1.5rem;font-weight:400;letter-spacing:0.02em;text-transform:uppercase;color:var(--gold);text-decoration:none;display:block;margin-bottom:0.6rem;line-height:1.05}
+    .footer-logo:hover{color:var(--gold-light)}
+    .footer-tagline{font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);max-width:32ch;line-height:1.6}
+    .footer-desc{font-family:'JetBrains Mono',monospace;font-size:0.55rem;letter-spacing:0.04em;color:rgba(107,107,122,0.75);line-height:1.7;max-width:32ch;margin-top:0.85rem}
+    .footer-nav-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+    .footer-nav-col-label{font-family:'JetBrains Mono',monospace;font-size:0.5rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--jade);margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid rgba(52,211,153,0.15)}
+    .footer-nav-list{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
+    .footer-nav-list a{font-family:'JetBrains Mono',monospace;font-size:0.55rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+    .footer-nav-list a:hover{color:var(--jade)}
+    .footer-nav-list a.active{color:var(--gold)}
+    .footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+    .footer-copy,.footer-signal{font-family:'JetBrains Mono',monospace;font-size:0.5rem;letter-spacing:0.12em;text-transform:uppercase}
+    .footer-copy{color:rgba(107,107,122,0.5)}
+    .footer-signal{color:rgba(107,107,122,0.35)}
+    @media(max-width:900px){.footer-top{grid-template-columns:1fr;gap:2rem}.footer-nav-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){.site-footer{padding:0 1.25rem}.footer-nav-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
 
-<nav>
-  <a href="https://mundomag.fyi/" class="nav-brand">Mundo Maravilloso</a>
-  <div class="nav-links">
-    <a href="https://mundomag.fyi/">Inicio</a>
-    <a href="acerca-de.html" class="active">Acerca de</a>
-    <a href="contacto.html">Contacto</a>
-  </div>
-</nav>
+  <!-- NAV -->
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="/" class="site-nav-logo">Mundo Maravilloso</a>
+     </div>
+  </nav>
 
-<div class="hero">
-  <div class="eyebrow">// Manifiesto · 2026</div>
-  <h1>ACERCA DE<br>MUNDO MARA<br>VILLOSO</h1>
-  <p class="hero-sub">Una publicación independiente construida sobre una premisa simple: las preguntas más grandes merecen el tratamiento más serio.</p>
-</div>
+  <!-- HERO -->
+  <section class="page-hero">
+    <p class="hero-kicker">// Manifiesto · 2026</p>
+    <h1 class="page-title">ACERCA DE <span class="accent">MUNDO MARAVILLOSO</span></h1>
+    <p class="hero-lead">Una publicación independiente construida sobre una premisa simple: las preguntas más grandes merecen el tratamiento más serio.</p>
+  </section>
 
-<main>
+  <main>
 
-  <div class="block">
-    <div class="block-label">// Origen</div>
-    <h2>POR QUÉ EXISTE ESTA REVISTA</h2>
-    <p>Mundo Maravilloso nació de una incomodidad. Demasiados medios tratan los fenómenos inexplicados con una de dos actitudes igualmente inútiles: el sensacionalismo que infla lo desconocido hasta convertirlo en espectáculo, o el escepticismo reflejo que descarta lo que no encaja sin molestarse en mirar los datos.</p>
-    <p>Ninguna de las dos postura nos sirve. Lo que nos sirve es rigor: ir a las fuentes primarias, entender la metodología detrás de los estudios, sostener la incertidumbre sin convertirla en ansiedad ni en dogma.</p>
-    <p>Esto es lo que intentamos construir: un espacio donde mirar preguntas grandes con curiosidad honesta y sin prisa por cerrarlas.</p>
-
-    <div class="stat-row">
-      <div class="stat">
-        <span class="stat-num">01</span>
-        <span class="stat-label">Ediciones publicadas</span>
+    <div class="block reveal">
+      <div class="section-head">
+        <span class="section-num">01</span>
+        <h2 class="section-title">Por qué existe esta revista</h2>
+        <div class="section-line"></div>
       </div>
-      <div class="stat">
-        <span class="stat-num">07</span>
-        <span class="stat-label">Artículos en circulación</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">2026</span>
-        <span class="stat-label">Año de fundación</span>
-      </div>
-    </div>
-  </div>
+      <p>Mundo Maravilloso nació de una incomodidad. Demasiados medios tratan los fenómenos inexplicados con una de dos actitudes igualmente inútiles: el sensacionalismo que infla lo desconocido hasta convertirlo en espectáculo, o el escepticismo reflejo que descarta lo que no encaja sin molestarse en mirar los datos.</p>
+      <p>Ninguna de las dos postura nos sirve. Lo que nos sirve es rigor: ir a las fuentes primarias, entender la metodología detrás de los estudios, sostener la incertidumbre sin convertirla en ansiedad ni en dogma.</p>
+      <p>Esto es lo que intentamos construir: un espacio donde mirar preguntas grandes con curiosidad honesta y sin prisa por cerrarlas.</p>
 
-  <div class="block">
-    <div class="block-label">// Qué cubrimos</div>
-    <h2>EL TERRITORIO</h2>
-    <p>Nos mueven los bordes del conocimiento: los lugares donde la ciencia tiene datos pero todavía no tiene respuesta, donde los instrumentos detectan algo que los modelos no terminan de explicar.</p>
-    <p>Eso incluye fenómenos anómalos no identificados, objetos interestelares, búsqueda de inteligencia extraterrestre, cosmología de frontera, neurociencia de la conciencia y cualquier otro campo donde la pregunta sea más grande que la certeza disponible.</p>
-    <p>No cubrimos conspiraciones. Cubrimos <span class="highlight">evidencia</span>.</p>
-  </div>
-
-  <div class="block">
-    <div class="block-label">// Principios editoriales</div>
-    <h2>CÓMO TRABAJAMOS</h2>
-
-    <div class="values-grid">
-      <div class="value-item">
-        <div class="value-title">Fuentes primarias</div>
-        <p class="value-desc">Vamos a los papers, a los informes oficiales y a los datos originales. Las interpretaciones son nuestras; los hechos, verificables.</p>
-      </div>
-      <div class="value-item">
-        <div class="value-title">Incertidumbre explícita</div>
-        <p class="value-desc">Si no se sabe, lo decimos. La diferencia entre "no hay evidencia" y "hay evidencia negativa" importa, y la marcamos.</p>
-      </div>
-      <div class="value-item">
-        <div class="value-title">Sin sensacionalismo</div>
-        <p class="value-desc">Lo desconocido no necesita adornos. Los hechos bien presentados son más inquietantes que cualquier titular inflado.</p>
-      </div>
-      <div class="value-item">
-        <div class="value-title">Actualización continua</div>
-        <p class="value-desc">Los seguimientos como 3I/ATLAS o UAPWATCH se actualizan conforme llega nueva información, no según el ciclo editorial.</p>
+      <div class="stat-row">
+        <div class="stat">
+          <span class="stat-num">01</span>
+          <span class="stat-label">Ediciones publicadas</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">07</span>
+          <span class="stat-label">Artículos en circulación</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">2026</span>
+          <span class="stat-label">Año de fundación</span>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="block">
-    <div class="block-label">// Independencia</div>
-    <h2>SIN AGENDA, SIN PATROCINADORES</h2>
-    <p>Mundo Maravilloso es una publicación completamente independiente. No tenemos inversores, no aceptamos publicidad y no respondemos a ninguna organización externa.</p>
-    <p>Lo que publicamos lo publicamos porque lo consideramos importante. Si tienes una historia, una pista o una crítica, nos interesa escuchar.</p>
-  </div>
+    <div class="block reveal">
+      <div class="section-head">
+        <span class="section-num">02</span>
+        <h2 class="section-title">El territorio</h2>
+        <div class="section-line"></div>
+      </div>
+      <p>Nos mueven los bordes del conocimiento: los lugares donde la ciencia tiene datos pero todavía no tiene respuesta, donde los instrumentos detectan algo que los modelos no terminan de explicar.</p>
+      <p>Eso incluye fenómenos anómalos no identificados, objetos interestelares, búsqueda de inteligencia extraterrestre, cosmología de frontera, neurociencia de la conciencia y cualquier otro campo donde la pregunta sea más grande que la certeza disponible.</p>
+      <p>No cubrimos conspiraciones. Cubrimos <span class="highlight">evidencia</span>.</p>
+    </div>
 
-</main>
+    <div class="block reveal">
+      <div class="section-head">
+        <span class="section-num">03</span>
+        <h2 class="section-title">Cómo trabajamos</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="values-grid">
+        <div class="value-item">
+          <div class="value-title">Fuentes primarias</div>
+          <p class="value-desc">Vamos a los papers, a los informes oficiales y a los datos originales. Las interpretaciones son nuestras; los hechos, verificables.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-title">Incertidumbre explícita</div>
+          <p class="value-desc">Si no se sabe, lo decimos. La diferencia entre "no hay evidencia" y "hay evidencia negativa" importa, y la marcamos.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-title">Sin sensacionalismo</div>
+          <p class="value-desc">Lo desconocido no necesita adornos. Los hechos bien presentados son más inquietantes que cualquier titular inflado.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-title">Actualización continua</div>
+          <p class="value-desc">Los seguimientos como 3I/ATLAS o UAPWATCH se actualizan conforme llega nueva información, no según el ciclo editorial.</p>
+        </div>
+      </div>
+    </div>
 
-<footer>
-  <span class="footer-brand">Mundo Maravilloso · Publicación independiente · 2026</span>
-  <div class="footer-links">
-    <a href="acerca-de.html">Acerca de</a>
-    <a href="contacto.html">Contacto</a>
-    <a href="privacidad.html">Privacidad</a>
-    <a href="terminos.html">Términos</a>
-  </div>
-</footer>
+    <div class="block reveal">
+      <div class="section-head">
+        <span class="section-num">04</span>
+        <h2 class="section-title">Sin agenda, sin patrocinadores</h2>
+        <div class="section-line"></div>
+      </div>
+      <p>Mundo Maravilloso es una publicación completamente independiente. No tenemos inversores, no aceptamos publicidad y no respondemos a ninguna organización externa.</p>
+      <p>Lo que publicamos lo publicamos porque lo consideramos importante. Si tienes una historia, una pista o una crítica, nos interesa escuchar.</p>
+    </div>
 
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <p class="footer-kicker">// Revista de exploración y pensamiento</p>
+          <a href="/" class="footer-logo">Mundo Maravilloso</a>
+          <p class="footer-tagline">Ciencia · Misterio · Fenómenos · Futuro</p>
+          <p class="footer-desc">Una publicación independiente sobre los grandes misterios que la ciencia todavía no ha resuelto.</p>
+        </div>
+        <div class="footer-nav-grid">
+          <div class="footer-nav-col">
+            <p class="footer-nav-col-label">// Artículos</p>
+            <ul class="footer-nav-list">
+              <li><a href="articulos.html">Todos los artículos</a></li>
+              <li><a href="glosario.html">Glosario</a></li>
+            </ul>
+          </div>
+<div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Publicación</p>
+            <ul class="footer-nav-list">
+              <li><a href="acerca-de.html" class="active">Acerca de</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+              <li><a href="privacidad.html">Privacidad</a></li>
+              <li><a href="terminos.html">Términos</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Mundo Maravilloso · Todos los derechos reservados</p>
+        <p class="footer-signal">// Institucional · acerca-de</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var btn = document.getElementById('navHamburger');
+    var drawer = document.getElementById('navDrawer');
+    if (!btn || !drawer) return;
+    btn.addEventListener('click', function(){
+      var isOpen = drawer.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    drawer.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        drawer.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+  (function(){
+    var items = document.querySelectorAll('.reveal');
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, {threshold:0.08});
+    items.forEach(function(el){ obs.observe(el); });
+  })();
+  </script>
 </body>
 </html>
