@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<!-- MM-META
+slug: troya
+titulo: Troya: la ciudad que la arqueología le arrancó al mito
+categoria: documentos
+blurb: Hisarlik demostró que Troya fue real. Pero medio siglo de excavaciones —de las dinamitas de Schliemann al rigor de Blegen y Korfmann— reescribió casi todo lo que creíamos saber sobre la ciudad de la Ilíada.
+fecha: 2026-07-20
+formato: hero-documental-v1
+-->
+<html lang="es" data-page="troya">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8483516296039231"
+       crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRSJ1EYEPD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LRSJ1EYEPD');
+  </script>
+
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Troya: la ciudad que la arqueología le arrancó al mito · Mundo Maravilloso</title>
+  <link rel="canonical" href="https://mundomag.fyi/articulos/troya.html">
+  <meta name="description" content="Hisarlik demostró que Troya fue real. Medio siglo de excavaciones —de Schliemann a Korfmann— reescribió lo que creíamos saber sobre la ciudad de la Ilíada.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../css-articulos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+
+  <style>
+    /* ══════════════════════════════════════════════════════════════════
+       TROYA — paleta propia: terracota/bronce en vez de hielo,
+       azul Egeo en vez de violeta. Misma estructura que tierra-extendida.
+       ══════════════════════════════════════════════════════════════════ */
+    html[data-page="troya"]{
+      --ink:        #0b0906;
+      --ink-mid:    #14100a;
+      --ink-soft:   #1c150e;
+      --paper:      #f2ece0;
+      --paper-warm: #ede2cc;
+      --gold:       #c9a24c;
+      --gold-light: #e8c574;
+      --terracotta: #d17a41;
+      --aegean:     #5f92a8;
+      --red:        #b23b2e;
+      --muted:      #7a7062;
+      --border:     rgba(201,162,76,0.16);
+    }
+    html[data-page="troya"] body{ background:var(--ink); color:var(--paper); font-family:"Source Serif 4",Georgia,serif; }
+
+    .hero-doc{ position:relative; min-height:100svh; overflow:hidden; display:flex; align-items:flex-end; background:#0a0806; }
+    .hero-doc-bg{
+      position:absolute; inset:0; z-index:0;
+      background-image:
+      linear-gradient(rgba(10,8,6,0.1), rgba(10,8,6,0.1)),
+        url("hero/troya.jpg");
+      background-size:cover; background-position:center 90%;
+    }
+    .hero-doc-bg.is-placeholder{
+      background-image:
+        radial-gradient(ellipse at 65% 10%, rgba(209,122,65,0.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 12% 22%, rgba(95,146,168,0.12) 0%, transparent 50%),
+        linear-gradient(180deg, #1c150e 0%, #0d0a06 55%, #0a0806 100%);
+    }
+    .hero-doc::after{
+      content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
+      background:
+        linear-gradient(to top, var(--ink) 0%, rgba(11,9,6,0.9) 15%, rgba(11,9,6,0.5) 40%, rgba(11,9,6,0.1) 62%, transparent 80%),
+        linear-gradient(to right, rgba(11,9,6,0.55) 0%, transparent 48%);
+    }
+    .hero-doc-inner{ position:relative; z-index:2; width:100%; max-width:960px; padding:0 clamp(1.5rem,6vw,5rem) 6.5rem; }
+    .hero-doc-eyebrow{ display:inline-flex; align-items:center; gap:0.65rem; font-family:"JetBrains Mono",monospace; font-size:0.62rem; letter-spacing:0.32em; text-transform:uppercase; color:var(--terracotta); margin-bottom:1.25rem; }
+    .hero-doc-eyebrow::before{ content:""; width:22px; height:1px; background:var(--terracotta); }
+    .hero-doc-title{ font-family:"Audiowide",sans-serif; font-size:clamp(2.1rem,7vw,5.1rem); font-weight:900; line-height:0.96; letter-spacing:-0.015em; color:var(--paper); text-shadow:0 4px 40px rgba(0,0,0,0.45); }
+    .hero-doc-title .accent{ color:var(--terracotta); }
+    .hero-doc-subtitle{ font-family:"Space Grotesk",sans-serif; font-weight:500; font-size:clamp(1.02rem,2vw,1.3rem); color:rgba(242,236,224,0.8); max-width:52ch; margin-top:1.1rem; line-height:1.55; }
+    .hero-doc-meta{ display:flex; flex-wrap:wrap; align-items:center; gap:0.9rem; margin-top:1.9rem; font-family:"JetBrains Mono",monospace; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(242,236,224,0.5); }
+    .hero-doc-meta .dot{ width:3px; height:3px; border-radius:50%; background:var(--muted); }
+    .hero-doc-meta .tag{ color:var(--gold-light); border:1px solid rgba(201,162,76,0.35); padding:0.3rem 0.65rem; border-radius:2px; letter-spacing:0.12em; }
+    .hero-doc-scroll{ position:absolute; right:2.5rem; bottom:2.5rem; z-index:2; display:flex; align-items:center; gap:0.6rem; font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(242,236,224,0.45); }
+    .hero-doc-scroll .line{ width:1px; height:26px; background:linear-gradient(to bottom, rgba(242,236,224,0.5), transparent); animation:doc-scroll-pulse 2s ease-in-out infinite; }
+    @keyframes doc-scroll-pulse{ 0%,100%{opacity:0.3;} 50%{opacity:1;} }
+    @media (max-width:720px){ .hero-doc-scroll{ display:none; } .hero-doc-inner{ padding-bottom:4.5rem; } }
+
+    .article{ max-width:760px; margin:0 auto; padding:0 2rem 6rem; }
+    .intro{ display:grid; grid-template-columns: 1fr 280px; gap:3.5rem; padding:4.5rem 0 1rem; max-width:1040px; margin:0 auto; padding-left:2rem; padding-right:2rem; }
+    .intro-text p{ font-size:1.12rem; color:rgba(242,236,224,0.85); line-height:1.85; margin-bottom:1.25rem; }
+    .intro-text p:first-of-type::first-letter{ font-family:"Audiowide",sans-serif; font-size:3.4rem; line-height:0.75; float:left; padding:0.1rem 0.6rem 0 0; color:var(--terracotta); }
+    .sidebar-box{ border:1px solid var(--border); background:var(--ink-mid); padding:1.75rem; align-self:start; }
+    .sidebar-label{ font-family:"JetBrains Mono",monospace; font-size:0.55rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:1.25rem; padding-bottom:0.9rem; border-bottom:1px solid var(--border); }
+    .sidebar-item{ padding:0.7rem 0; border-bottom:1px solid rgba(201,162,76,0.08); }
+    .sidebar-item:last-child{ border-bottom:none; }
+    .sidebar-key{ font-family:"JetBrains Mono",monospace; font-size:0.55rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--terracotta); margin-bottom:0.3rem; }
+    .sidebar-val{ font-size:0.85rem; color:rgba(242,236,224,0.75); line-height:1.4; }
+    @media (max-width:820px){ .intro{ grid-template-columns:1fr; padding-left:1.5rem; padding-right:1.5rem; } }
+
+    .section-head{ display:flex; align-items:center; gap:1.5rem; padding:5rem 0 2.25rem; max-width:760px; margin:0 auto; }
+    .section-num{ font-family:"JetBrains Mono",monospace; font-size:0.75rem; color:var(--gold); }
+    .section-title{ font-family:"Audiowide",sans-serif; font-size:1.35rem; font-weight:900; color:var(--paper); letter-spacing:0.01em; }
+    .section-line{ flex:1; height:1px; background:var(--border); }
+
+    .prose-section{ max-width:760px; margin:0 auto; }
+    .prose-section p{ font-size:1.06rem; line-height:1.85; color:rgba(242,236,224,0.85); margin-bottom:1.25rem; }
+    .prose-section p strong{ color:var(--paper); }
+    .prose-section p em{ color:var(--paper-warm); }
+
+    .alert-box{ max-width:760px; margin:2.5rem auto; border-left:2px solid var(--terracotta); background:var(--ink-mid); padding:1.5rem 1.75rem; }
+    .alert-title{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--terracotta); margin-bottom:0.6rem; }
+    .alert-text{ font-size:0.98rem; color:rgba(242,236,224,0.78); line-height:1.7; }
+
+    .claim-grid{ max-width:760px; margin:2rem auto; display:grid; gap:1.25rem; }
+    .claim-box{ border:1px solid var(--border); padding:1.5rem 1.75rem; background:var(--ink-mid); }
+    .claim-tag{ font-family:"JetBrains Mono",monospace; font-size:0.55rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--aegean); margin-bottom:0.6rem; }
+    .claim-title{ font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:1.02rem; color:var(--paper); margin-bottom:0.6rem; }
+    .claim-body{ font-size:0.95rem; color:rgba(242,236,224,0.72); line-height:1.7; }
+
+    .evidence-grid{ max-width:760px; margin:2rem auto; display:grid; gap:1.1rem; }
+    .evidence-card{ border:1px solid var(--border); border-left:2px solid var(--gold); padding:1.4rem 1.75rem; background:var(--ink-mid); }
+    .evidence-label{ font-family:"JetBrains Mono",monospace; font-size:0.55rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold-light); margin-bottom:0.5rem; }
+    .evidence-body{ font-size:0.96rem; color:rgba(242,236,224,0.78); line-height:1.75; }
+
+    blockquote.persona{ max-width:760px; margin:2.5rem auto; padding:1.75rem 2rem; border:1px solid var(--border); background:var(--ink-mid); display:grid; grid-template-columns:auto 1fr; gap:1.25rem; align-items:start; }
+    blockquote.persona span{ font-size:1.5rem; }
+    blockquote.persona .cargo{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:0.6rem; }
+    blockquote.persona p:not(.cargo){ font-size:0.98rem; color:rgba(242,236,224,0.85); font-style:italic; line-height:1.6; }
+
+    .myth-table{ max-width:760px; margin:2rem auto; width:100%; border-collapse:collapse; font-size:0.85rem; }
+    .myth-table th{ font-family:"JetBrains Mono",monospace; font-size:0.55rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); text-align:left; padding:0.75rem 0.9rem; border-bottom:1px solid var(--border); }
+    .myth-table td{ padding:0.85rem 0.9rem; border-bottom:1px solid rgba(201,162,76,0.08); color:rgba(242,236,224,0.8); vertical-align:top; }
+    .myth-table td.hi{ color:var(--terracotta); }
+    .myth-table td.unkn{ color:var(--gold-light); }
+
+    .timeline-item{ max-width:760px; margin:0 auto 2rem; padding-left:1.75rem; border-left:2px solid var(--border); position:relative; }
+    .timeline-item::before{ content:""; position:absolute; left:-6px; top:0.25rem; width:10px; height:10px; border-radius:50%; background:var(--terracotta); }
+    .timeline-date{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.15em; color:var(--terracotta); margin-bottom:0.3rem; }
+    .timeline-event{ font-family:"Space Grotesk",sans-serif; font-weight:700; color:var(--paper); margin-bottom:0.4rem; }
+    .timeline-desc{ font-size:0.9rem; color:var(--muted); line-height:1.6; }
+
+    .questions-box{ max-width:760px; margin:2.5rem auto; border:1px solid var(--border); padding:2rem; }
+    .questions-box h3{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:1.25rem; }
+    .questions-box ul{ list-style:none; }
+    .questions-box li{ font-size:1rem; color:rgba(242,236,224,0.82); line-height:1.7; padding:0.6rem 0 0.6rem 1.25rem; border-bottom:1px solid rgba(201,162,76,0.08); position:relative; }
+    .questions-box li:last-child{ border-bottom:none; }
+    .questions-box li::before{ content:"?"; position:absolute; left:0; color:var(--terracotta); font-family:"JetBrains Mono",monospace; }
+
+    .article-figure{ max-width:900px; margin:2.5rem auto; }
+    .article-figure img{ width:100%; display:block; border:1px solid var(--border); }
+    .article-figure figcaption{ font-family:"JetBrains Mono",monospace; font-size:0.62rem; letter-spacing:0.05em; color:var(--muted); margin-top:0.75rem; line-height:1.5; }
+    .article-figure figcaption span{ color:var(--gold); margin-right:0.5rem; }
+    .figure-pair{ max-width:900px; margin:2.5rem auto; display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; }
+    .figure-pair .article-figure{ margin:0; max-width:none; }
+    @media (max-width:700px){ .figure-pair{ grid-template-columns:1fr; } }
+
+    .related-articles{ max-width:760px; margin:5rem auto 0; padding:0 2rem; }
+    .related-label{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:1.5rem; padding-bottom:1rem; border-bottom:1px solid var(--border); }
+    .related-grid{ display:grid; gap:1rem; }
+    .related-card{ display:block; border:1px solid var(--border); padding:1.25rem 1.5rem; text-decoration:none; transition:border-color 0.2s; }
+    .related-card:hover{ border-color:var(--gold); }
+    .related-card-cat{ font-family:"JetBrains Mono",monospace; font-size:0.52rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--aegean); margin-bottom:0.6rem; }
+    .related-card-title{ font-family:"Space Grotesk",sans-serif; font-size:0.95rem; font-weight:600; color:var(--paper); line-height:1.4; }
+
+    .sources-list{ max-width:760px; margin:0 auto; }
+    .sources-list ol{ list-style:none; counter-reset:src; }
+    .sources-list li{ counter-increment:src; padding:1rem 0 1rem 2.4rem; border-bottom:1px solid rgba(201,162,76,0.08); position:relative; }
+    .sources-list li:last-child{ border-bottom:none; }
+    .sources-list li::before{ content:counter(src); position:absolute; left:0; top:1.05rem; font-family:"JetBrains Mono",monospace; font-size:0.6rem; color:var(--gold); border:1px solid var(--border); width:1.5rem; height:1.5rem; display:flex; align-items:center; justify-content:center; }
+    .source-outlet{ font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:0.92rem; color:var(--paper); }
+    .source-meta{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted); margin:0.3rem 0 0.5rem; }
+    .source-title{ font-size:0.92rem; color:rgba(242,236,224,0.75); font-style:italic; line-height:1.55; margin-bottom:0.4rem; }
+    .source-note{ font-size:0.86rem; color:var(--muted); line-height:1.6; }
+
+    @media (max-width:600px){
+      .article{ padding:0 1.25rem 4rem; }
+      .section-head, .prose-section, .alert-box, .claim-grid, .evidence-grid, blockquote.persona, .myth-table, .timeline-item, .questions-box, .related-articles{ padding-left:0; padding-right:0; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="../" class="site-nav-logo">Mundo Maravilloso</a>
+    <div class="site-nav-sep"></div>
+    <div class="site-nav-articles">
+      <a href="../articulos.html" class="site-nav-link">Artículos</a>
+      <a href="../seguimientos/3i-atlas.html" class="site-nav-link">3I/ATLAS</a>
+      <a href="../seguimientos/uap.html" class="site-nav-link">UAP WATCH</a>
+      <a href="../seguimientos/pursue-releases.html" class="site-nav-link">PURSUE</a>
+      <a href="../seguimientos/voyager-1.html" class="site-nav-link">VOYAGER 1</a>
+      <a href="../seguimientos/hitos-medicos.html" class="site-nav-link">HITOS MÉDICOS</a>
+      <a href="../glosario.html" class="site-nav-link"><span class="nav-dot"></span>&nbsp;Glosario</a>
+    </div>
+    <button class="site-nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navDrawer">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <line x1="2" y1="5" x2="18" y2="5"/><line x1="2" y1="10" x2="18" y2="10"/><line x1="2" y1="15" x2="18" y2="15"/>
+      </svg>
+    </button>
+  </div>
+  <div class="site-nav-drawer" id="navDrawer">
+    <a href="../articulos.html" class="drawer-link">Artículos</a>
+    <a href="../seguimientos/3i-atlas.html" class="drawer-link">3I/ATLAS</a>
+    <a href="../seguimientos/uap.html" class="drawer-link">UAP WATCH</a>
+    <a href="../seguimientos/pursue-releases.html" class="drawer-link">PURSUE</a>
+    <a href="../seguimientos/voyager-1.html" class="drawer-link">VOYAGER 1</a>
+    <a href="../seguimientos/hitos-medicos.html" class="drawer-link">HITOS MÉDICOS</a>
+    <a href="../glosario.html" class="drawer-link"><span class="nav-dot"></span>&nbsp;Glosario</a>
+  </div>
+</nav>
+
+<!-- ══════════ HERO DOCUMENTAL ══════════ -->
+<!-- Fondo sugerido: ruinas de las murallas de Troya VI/VII en Hisarlik,
+     al atardecer — algo con textura de piedra y profundidad de campo,
+     para que el degradado inferior no compita con detalle.
+     Ver panel de fuentes de imágenes en la respuesta del chat. -->
+<section class="hero-doc">
+  <div class="hero-doc-bg"></div>
+  <div class="hero-doc-inner">
+    <div class="hero-doc-eyebrow">Mundo Maravilloso · Documentos</div>
+        <h1 class="hero-doc-title">TROYA: DEL MITO A LA <span class="accent">REALIDAD</span></h1>
+<p class="hero-doc-subtitle">Un montículo turco, un empresario obsesionado con Homero y ciento cincuenta años de excavaciones que convirtieron un mito griego en un yacimiento real — y en un campo de batalla académico.</p>
+    <div class="hero-doc-meta">
+      <span>La Redacción</span><span class="dot"></span>
+      <span>Julio 2026</span><span class="dot"></span>
+      <span>~14 min de lectura</span>
+      <span class="tag">Documentos</span>
+    </div>
+  </div>
+  <div class="hero-doc-scroll"><span class="line"></span>Desplázate</div>
+</section>
+
+<!-- ══════════ ARTÍCULO ══════════ -->
+<main class="article">
+
+  <div class="intro">
+    <div class="intro-text">
+      <p>Durante casi dos mil años, Troya fue solo poesía: la ciudad que Homero incendió en la <em>Ilíada</em>, escenario de la ira de Aquiles y el caballo de Ulises. Nadie sabía si había existido, ni dónde. Eso cambió en 1870, cuando un comerciante alemán obsesionado con Homero empezó a cavar una zanja de catorce metros en un montículo turco llamado Hisarlik.</p>
+      <p>Lo que encontró —y lo que destruyó en el proceso— desató siglo y medio de excavaciones, escándalos de contrabando y disputas académicas que todavía no terminan. Hoy sabemos que hubo una ciudad real en ese lugar, ocupada casi sin interrupción durante cuatro mil años. Lo que sigue sin estar claro es cuánto de la guerra que describió Homero ocurrió de verdad.</p>
+      <p>Este artículo reconstruye esa historia doble: la de la Troya que canta la épica, y la de la Troya que la arqueología fue —capa por capa, y a veces a dinamitazos— sacando a la luz.</p>
+    </div>
+    <div class="sidebar-box">
+      <div class="sidebar-label">// En este artículo</div>
+      <div class="sidebar-item"><div class="sidebar-key">01</div><div class="sidebar-val">Troya en la épica homérica</div></div>
+      <div class="sidebar-item"><div class="sidebar-key">02</div><div class="sidebar-val">Schliemann y el Tesoro de Príamo</div></div>
+      <div class="sidebar-item"><div class="sidebar-key">03</div><div class="sidebar-val">Dörpfeld, Blegen y el rigor científico</div></div>
+      <div class="sidebar-item"><div class="sidebar-key">04</div><div class="sidebar-val">Korfmann y la ciudad oculta</div></div>
+      <div class="sidebar-item"><div class="sidebar-key">05</div><div class="sidebar-val">Los nueve niveles de Troya</div></div>
+      <div class="sidebar-item"><div class="sidebar-key">06</div><div class="sidebar-val">¿Hubo realmente una guerra?</div></div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 1 -->
+  <div class="section-head" id="sec-epica">
+    <span class="section-num">01</span>
+    <h2 class="section-title">Troya en la épica homérica</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <p>La <strong>Ilíada</strong>, atribuida a Homero (siglo VIII a.C.), narra un fragmento de un asedio de dieciocho meses librado por los aqueos contra Ilión —Troya— por los griegos. El poema se concentra en episodios militares y humanos —la ira de Aquiles, los duelos de héroes— y da por hecho que su audiencia ya conocía el contexto de la guerra completa.</p>
+    <p>La toponimia encaja de forma llamativa con Hisarlik: un monte al sur de una llanura, cerca de rutas comerciales entre el Egeo y el mar Negro. Pero la historicidad exacta del relato sigue en disputa. En el nivel que hoy se asocia con la "Troya homérica" no hay evidencia de un asedio sostenido durante diez años, lo que sugiere que esa cifra es simbólica, no literal. Aun así, la Ilíada fue —literalmente— el mapa del tesoro que llevó a los primeros excavadores hasta el lugar correcto.</p>
+  </div>
+
+  <!-- SECCIÓN 2 -->
+  <div class="section-head" id="sec-schliemann">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Schliemann: el tesoro y el escándalo</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <p>Desde el siglo I a.C., el geógrafo Estrabón ya había propuesto que la Troya real no podía ser Bounarbashi —el sitio tradicionalmente aceptado— sino un montículo más cercano a la llanura. Nadie confirmó esa intuición durante casi dos mil años, hasta que el arqueólogo aficionado británico <strong>Frank Calvert</strong>, dueño de tierras en Hisarlik, convenció al comerciante alemán <strong>Heinrich Schliemann</strong> de financiar una excavación.</p>
+    <p>En abril de 1870, Schliemann inició los trabajos con métodos hoy considerados desastrosos: una zanja a cielo abierto de catorce metros de profundidad, cavada por entre ochenta y ciento sesenta hombres sin formación arqueológica. Descartaba sistemáticamente cualquier capa que consideraba "posterior" a la Troya de Homero, destruyendo estratos enteros sin documentarlos.</p>
+  </div>
+
+  <div class="figure-pair">
+    <div class="article-figure">
+      <a href="images/schliemann.jpg" class="glightbox" data-title="Heinrich Schliemann" data-description="Retrato, década de 1870 · Dominio público">
+        <img class="lb-img" src="images/schliemann.jpg" alt="Retrato fotográfico de Heinrich Schliemann, arqueólogo alemán que excavó Troya a partir de 1870" loading="lazy">
+      </a>
+      <figcaption><span>Fig. 01</span> Heinrich Schliemann, hacia 1870. Comerciante enriquecido y filólogo aficionado, financió con su propia fortuna la primera excavación sistemática de Hisarlik.</figcaption>
+    </div>
+    <div class="article-figure">
+      <a href="images/sofia.jpg" class="glightbox" data-title="Sophia Schliemann con las 'joyas de Helena'" data-description="Fotografía, c. 1874 · Dominio público">
+        <img class="lb-img" src="images/sofia.jpg" alt="Sophia Schliemann fotografiada con las joyas de oro del llamado Tesoro de Príamo, hacia 1874" loading="lazy">
+      </a>
+      <figcaption><span>Fig. 02</span> Sophia Schliemann posando con piezas del "Tesoro de Príamo" (c. 1874) — la imagen que Heinrich usó para convencer al mundo de que había hallado la Troya de Homero.</figcaption>
+    </div>
+  </div>
+
+  <div class="prose-section">
+    <p>En 1873, en el llamado "Nivel II" del montículo, Schliemann encontró un tesoro de oro y objetos de lujo —más de 8.000 piezas: diademas, cadenas, vasos— que bautizó "Tesoro de Príamo". Estaba convencido de que confirmaba la Ilíada. Hoy se sabe que Troya II es mil años anterior a la guerra homérica: el tesoro se dató hacia 2200 a.C., muy anterior a cualquier posible Aquiles o Príamo.</p>
+    <p>Las prácticas de Schliemann generaron escándalo en su propio tiempo. Sacó el tesoro de contrabando a Alemania y el gobierno otomano lo demandó por exportación ilícita; huyó a Grecia, donde continuó excavando en Micenas. Su esposa Sofía —protagonista de la célebre fotografía con la diadema de oro— ni siquiera estaba presente en el sitio durante el hallazgo, algo que el propio Schliemann admitió haber exagerado.</p>
+  </div>
+
+  <div class="alert-box">
+    <div class="alert-title">// Dato clave</div>
+    <div class="alert-text">El "Tesoro de Príamo" no tiene relación con la guerra homérica: es mil años más antiguo. Schliemann encontró oro real, pero en la capa equivocada del yacimiento.</div>
+  </div>
+
+  <!-- SECCIÓN 3 -->
+  <div class="section-head" id="sec-rigor">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Dörpfeld y Blegen: llega el rigor</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <p>Tras la muerte de Schliemann en 1890, su colaborador <strong>Wilhelm Dörpfeld</strong>, arquitecto de formación, corrigió la numeración estratigráfica y aplicó un método más riguroso. Identificó que Troya VI (c. 1700–1300 a.C.) correspondía a una ciudad fortificada con un megaron central y murallas de hasta cinco metros de espesor —y propuso que esa era la ciudad de Príamo, la que Schliemann había atravesado y destruido sin saberlo al buscar demasiado abajo.</p>
+    <p>En los años treinta, la Universidad de Cincinnati, a cargo de <strong>Carl W. Blegen</strong>, retomó las excavaciones con un marco plenamente profesional. Blegen concluyó que la destrucción de Troya VI probablemente se debió a un terremoto hacia 1250 a.C., no a una guerra. Pero al examinar el nivel siguiente —<strong>Troya VIIa</strong> (c. 1300–1180 a.C.)— halló evidencia inequívoca de conflicto bélico: puntas de flecha de influencia micénica incrustadas en los muros, esqueletos humanos sin enterrar, edificios incendiados y refugios improvisados dentro de la ciudadela.</p>
+  </div>
+
+  <div class="evidence-grid">
+    <div class="evidence-card">
+      <div class="evidence-label">// Puntas de flecha</div>
+      <div class="evidence-body">Halladas incrustadas en los muros de Troya VIIa, de tipo micénico — consistentes con un asalto armado, no con un desastre natural.</div>
+    </div>
+    <div class="evidence-card">
+      <div class="evidence-label">// Restos humanos sin enterrar</div>
+      <div class="evidence-body">Esqueletos dejados a la intemperie entre los escombros, señal de una destrucción rápida y violenta, sin tiempo para los ritos funerarios habituales.</div>
+    </div>
+    <div class="evidence-card">
+      <div class="evidence-label">// Edificios incendiados</div>
+      <div class="evidence-body">Capas de ceniza y hogares quemados en toda la ciudadela, datados hacia 1250 a.C. — unos cincuenta años antes de lo que sugería la hipótesis del terremoto.</div>
+    </div>
+    <div class="evidence-card">
+      <div class="evidence-label">// Cementerio extramuros</div>
+      <div class="evidence-body">Blegen encontró un depósito funerario con cremaciones en ánforas fuera de la ciudadela, asociado a los defensores de Troya VIIa.</div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 4 -->
+  <div class="section-head" id="sec-korfmann">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Korfmann: la ciudad quince veces más grande</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <p>Entre 1988 y 2005, un proyecto internacional alemán-turco dirigido por <strong>Manfred O. Korfmann</strong> (Universidad de Tubinga) cambió por completo la escala del problema. Usando sondeos geofísicos y catas extensas en la llanura circundante, el equipo demostró que más allá de la acrópolis —lo único que se había excavado hasta entonces— existía una amplia <strong>ciudad baja</strong>: calles, casas, talleres, rodeados por un foso fortificado en forma de U de 3,5 metros de ancho.</p>
+    <p>El hallazgo fue radical: Troya cubría unas 75 hectáreas, quince veces más de lo que se pensaba. Dejaba de ser una simple fortaleza en la cima de un montículo para convertirse en una ciudad-estado compleja, nodo comercial entre Anatolia, los Balcanes y el Egeo — exactamente el tipo de premio que justificaría una guerra en la tradición homérica.</p>
+  </div>
+
+  <div class="article-figure">
+    <a href="images/DSC_2652.jpg" class="glightbox" data-title="Murallas de Troya en Hisarlik" data-description="Fotografía moderna del yacimiento · Licencia Creative Commons">
+      <img class="lb-img" src="images/DSC_2652.jpg" alt="Murallas de piedra conservadas del yacimiento arqueológico de Troya en Hisarlik, Turquía" loading="lazy">
+    </a>
+    <figcaption><span>Fig. 03</span> Restos de las murallas de Troya VI/VII, visibles hoy en Hisarlik. Estas estructuras de piedra, de varios metros de grosor, son las fortificaciones reales que inspiraron las murallas descritas en la Ilíada.</figcaption>
+  </div>
+
+  <blockquote class="persona">
+    <span>👤</span>
+    <div>
+      <div class="cargo">Debate académico posterior a Korfmann</div>
+      <p>"La reconstrucción de la ciudad baja generó tanto respaldo como una crítica dura: otros investigadores la consideraron una extrapolación 'infundada y ficticia' más allá de lo que sostienen los datos."</p>
+    </div>
+  </blockquote>
+
+  <!-- SECCIÓN 5 -->
+  <div class="section-head" id="sec-niveles">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Los nueve niveles de Troya</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <p>Hisarlik no es una sola ciudad sino nueve, apiladas una sobre otra a lo largo de casi cuatro mil años de ocupación casi continua, desde la Edad del Bronce Temprano hasta la época bizantina.</p>
+  </div>
+
+  <table class="myth-table">
+    <thead>
+      <tr><th>Nivel</th><th>Período aproximado</th><th>Qué representa</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Troya I–III</td><td>3000–2100 a.C.</td><td>Primeras culturas egeo-anatolias</td></tr>
+      <tr><td>Troya IV–V</td><td>2100–1700 a.C.</td><td>Fase intermedia, rasgos de Anatolia central</td></tr>
+      <tr><td class="hi">Troya VI</td><td>1700–1300 a.C.</td><td class="hi">Ciudad fortificada de mayor esplendor — fin por terremoto</td></tr>
+      <tr><td class="hi">Troya VIIa</td><td>1300–1180 a.C.</td><td class="hi">Candidata principal a "Troya homérica" — destruida por guerra</td></tr>
+      <tr><td>Troya VIII</td><td>700–85 a.C.</td><td>Asentamiento griego arcaico y clásico</td></tr>
+      <tr><td>Troya IX</td><td>85 a.C.–500 d.C.</td><td>Presencia romana</td></tr>
+      <tr><td>Troya X</td><td>Siglos XII–XIII d.C.</td><td>Breve ocupación bizantina tardía</td></tr>
+    </tbody>
+  </table>
+
+  <div class="alert-box">
+    <div class="alert-title">// Consenso actual</div>
+    <div class="alert-text">La mayoría de especialistas sitúa la "Troya homérica" en el nivel VIIa (c. 1300–1180 a.C.): una ciudad destruida por fuego, con evidencia clara de combate humano. Troya VI fue más grande y rica, pero su final parece haber sido un terremoto, no una guerra.</div>
+  </div>
+
+  <!-- SECCIÓN 6 -->
+  <div class="section-head" id="sec-debate">
+    <span class="section-num">06</span>
+    <h2 class="section-title">¿Hubo realmente una guerra de Troya?</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <p>La "verdad" del yacimiento no depende de que la guerra homérica haya ocurrido tal como la cuenta la Ilíada: incluso sin Troya VIIa, los hallazgos confirman cuatro mil años de ocupación continua y la importancia estratégica de Hisarlik como enclave entre el Egeo y el mar Negro. Pero la coincidencia entre una destrucción violenta bien documentada y una cronología compatible con la tradición mítica sugiere que sí existe un núcleo histórico detrás del mito.</p>
+    <p>Quedan preguntas abiertas que probablemente nunca se resuelvan del todo: ¿cuánto de la Ilíada es memoria real y cuánto invención poética? ¿Fueron los atacantes micénicos, como sugiere la tradición, o hubo varios ciclos de conflicto menores que la épica fundió en una sola guerra? El mito del caballo de madera, por ejemplo, no deja ningún rastro material — pertenece por completo a la tradición literaria, no al registro arqueológico.</p>
+  </div>
+
+  <div class="claim-grid">
+    <div class="claim-box">
+      <div class="claim-tag">// A favor del núcleo histórico</div>
+      <div class="claim-title">Una destrucción real, en el momento correcto</div>
+      <div class="claim-body">Troya VIIa muestra signos inequívocos de asedio y saqueo hacia 1250 a.C. — una fecha compatible con la tradición griega posterior sobre la guerra.</div>
+    </div>
+    <div class="claim-box">
+      <div class="claim-tag">// En contra de una lectura literal</div>
+      <div class="claim-title">Sin evidencia de un asedio de diez años</div>
+      <div class="claim-body">No hay nada en el registro material que sostenga una guerra tan prolongada como la que describe Homero — probablemente sea una exageración poética.</div>
+    </div>
+    <div class="claim-box">
+      <div class="claim-tag">// Dato adicional</div>
+      <div class="claim-title">Registros hititas mencionan la región</div>
+      <div class="claim-body">Textos hititas hablan de "Wilusa", un topónimo que muchos investigadores identifican con Ilión/Troya — aunque el vínculo directo con la guerra sigue en debate.</div>
+    </div>
+  </div>
+
+  <div class="questions-box">
+    <h3>// Para llevarse de este artículo</h3>
+    <ul>
+      <li>Troya es un yacimiento real, con casi cuatro mil años de ocupación documentada en Hisarlik, Turquía.</li>
+      <li>El "Tesoro de Príamo" que hizo famoso a Schliemann es mil años más antiguo que la guerra que él creía haber confirmado.</li>
+      <li>La evidencia de guerra —flechas, incendios, cuerpos sin enterrar— es real y corresponde al nivel VIIa, hacia 1250 a.C.</li>
+      <li>El caballo de madera, la ira de los dioses y los diez años de asedio pertenecen al terreno de la épica, no al del registro material.</li>
+    </ul>
+  </div>
+
+  <!-- FUENTES -->
+  <div class="section-head" id="sec-fuentes">
+    <span class="section-num">07</span>
+    <h2 class="section-title">Fuentes</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="sources-list">
+    <ol>
+      <li>
+        <div class="source-outlet">Schliemann, H.</div>
+        <div class="source-meta">1874–1875</div>
+        <div class="source-title">Ilios: the city and country of the Trojans</div>
+        <div class="source-note">Memoria de excavación de primera mano del propio Schliemann sobre las campañas iniciales en Hisarlik.</div>
+      </li>
+      <li>
+        <div class="source-outlet">Blegen, C. W.</div>
+        <div class="source-meta">1928–1932</div>
+        <div class="source-title">Troy: results of the first six seasons of excavation</div>
+        <div class="source-note">Informe de las excavaciones de la Universidad de Cincinnati que identificaron la evidencia de guerra en Troya VIIa.</div>
+      </li>
+      <li>
+        <div class="source-outlet">Korfmann, M. O. — <em>Archaeology</em> 57(3)</div>
+        <div class="source-meta">2004</div>
+        <div class="source-title">Was there a Trojan War?</div>
+        <div class="source-note">Síntesis del propio Korfmann sobre los hallazgos de la ciudad baja y su interpretación del yacimiento.</div>
+      </li>
+      <li>
+        <div class="source-outlet">Latacz, J.</div>
+        <div class="source-meta">1990</div>
+        <div class="source-title">Troia und Ilion: Studien zur Stadtgeschichte</div>
+        <div class="source-note">Estudio de referencia sobre la historia urbana de Troya y su relación con la tradición homérica.</div>
+      </li>
+      <li>
+        <div class="source-outlet">UNESCO World Heritage Centre</div>
+        <div class="source-meta">Ficha oficial</div>
+        <div class="source-title">Archaeological Site of Troy</div>
+        <div class="source-note">Cronología y valor patrimonial reconocido del yacimiento, declarado Patrimonio de la Humanidad en 1998.</div>
+      </li>
+      <li>
+        <div class="source-outlet">Museo de Troya, Çanakkale</div>
+        <div class="source-meta">Recurso institucional</div>
+        <div class="source-title">Historia del yacimiento y niveles de ocupación</div>
+        <div class="source-note">Resumen oficial de los nueve niveles arqueológicos de Hisarlik, usado como referencia para la tabla comparativa de este artículo.</div>
+      </li>
+      <li>
+        <div class="source-outlet">Anales CIEC/INCUAPA (Argentina)</div>
+        <div class="source-meta">2020</div>
+        <div class="source-title">La Troya homérica: de Schliemann a Korfmann</div>
+        <div class="source-note">Repaso en español de la historia arqueológica reciente del yacimiento, incluyendo el debate posterior a Korfmann.</div>
+      </li>
+    </ol>
+  </div>
+
+  <div class="related-articles">
+    <p class="related-label">// Artículos relacionados</p>
+    <div class="related-grid">
+      <a href="tierra-extendida.html" class="related-card">
+        <p class="related-card-cat">// Mitología moderna</p>
+        <p class="related-card-title">Tierra Extendida: el mito de los continentes ocultos</p>
+      </a>
+      <a href="antartida-parte-1.html" class="related-card">
+        <p class="related-card-cat">// Antártida · Documentos</p>
+        <p class="related-card-title">Antártida: Lo Que No Se Dice (Parte I)</p>
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-kicker">// Revista de exploración y pensamiento</p>
+        <a href="../" class="footer-logo">Mundo Maravilloso</a>
+        <p class="footer-tagline">Ciencia · Misterio · Fenómenos · Futuro</p>
+        <p class="footer-desc">Una publicación independiente sobre los grandes misterios que la ciencia todavía no ha resuelto.</p>
+        <span class="footer-edition-badge">Documentos · Jul 2026</span>
+      </div>
+      <div class="footer-nav-grid">
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Artículos</p>
+          <ul class="footer-nav-list">
+            <li><a href="../articulos.html">Todos los artículos</a></li>
+            <li><a href="troya.html" class="active">Troya</a></li>
+            <li><a href="tierra-extendida.html">Tierra Extendida</a></li>
+            <li><a href="../glosario.html">Glosario</a></li>
+          </ul>
+          <p class="footer-nav-col-label" style="margin-top:1.5rem;">// Publicación</p>
+          <ul class="footer-nav-list">
+            <li><a href="../acerca-de.html">Acerca de</a></li>
+            <li><a href="../contacto.html">Contacto</a></li>
+            <li><a href="../privacidad.html">Privacidad</a></li>
+            <li><a href="../terminos.html">Términos</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Seguimientos</p>
+          <ul class="footer-nav-list">
+            <li><a href="../seguimientos/3i-atlas.html">3I/ATLAS</a></li>
+            <li><a href="../seguimientos/uap.html">UAP WATCH</a></li>
+            <li><a href="../seguimientos/pursue-releases.html">PURSUE RELEASES</a></li>
+            <li><a href="../seguimientos/voyager-1.html">VOYAGER 1</a></li>
+            <li><a href="../seguimientos/hitos-medicos.html">HITOS MÉDICOS</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Síguenos</p>
+          <div class="footer-social-links">
+            <a href="https://www.facebook.com/revistamundo" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16"><path d="M16 8a8 8 0 1 0-9.25 7.9v-5.6H4.9V8h1.85V6.4c0-1.83 1.09-2.84 2.76-2.84.8 0 1.64.14 1.64.14v1.8h-.92c-.91 0-1.19.56-1.19 1.14V8h2.03l-.32 2.3H9.04v5.6A8 8 0 0 0 16 8z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/mundo.m.mag/" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16"><path d="M4.7 0h6.6A4.7 4.7 0 0 1 16 4.7v6.6a4.7 4.7 0 0 1-4.7 4.7H4.7A4.7 4.7 0 0 1 0 11.3V4.7A4.7 4.7 0 0 1 4.7 0zm-.15 1.5A3.05 3.05 0 0 0 1.5 4.55v6.9a3.05 3.05 0 0 0 3.05 3.05h6.9a3.05 3.05 0 0 0 3.05-3.05v-6.9A3.05 3.05 0 0 0 11.45 1.5h-6.9zM8 4.1a3.9 3.9 0 1 1 0 7.8 3.9 3.9 0 0 1 0-7.8zm0 1.5a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8zm4.05-2.65a.95.95 0 1 1 0 1.9.95.95 0 0 1 0-1.9z"/></svg>
+            </a>
+            <a href="https://x.com/uap_mag" aria-label="X (Twitter)" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16"><path d="M12.6 1h2.45L9.95 6.91 15.7 15h-4.5l-3.52-4.6L3.7 15H1.25l5.4-6.18L1.15 1h4.62l3.19 4.22L12.6 1zm-.86 12.6h1.36L4.32 2.32H2.86l8.88 11.28z"/></svg>
+            </a>
+            <a href="https://substack.com/@mundomag" aria-label="Substack" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16"><path d="M1.5 1.5h13v2.3h-13V1.5zm0 4.1h13v2.1h-13V5.6zm0 4.1 6.5 5.8 6.5-5.8H1.5z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">Mundo Maravilloso · Hecho en El Salvador · 2026</p>
+      <p class="footer-signal">// Artículo · troya</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn = document.getElementById('navHamburger');
+  var drawer = document.getElementById('navDrawer');
+  if (!btn || !drawer) return;
+  btn.addEventListener('click', function(){
+    var isOpen = drawer.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  drawer.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      drawer.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+  const lightbox = GLightbox({ touchNavigation: true, loop: false });
+</script>
+</body>
+</html>
