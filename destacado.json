@@ -1,13 +1,13 @@
-[
-  {
-    "titulo": "Mitología Salvadoreña: El Bestiario Que Sobrevive en la Memoria Popular",
-    "descripcion": "La Siguanaba, el Cipitío, el Cadejo y otras entidades de la tradición oral pipil que aún se cuentan en los cantones de El Salvador, generación tras generación.",
+[ 
+ {
+    "titulo": "Tierra Extendida: el mito de los continentes ocultos",
+    "descripcion": "DESTACADO: Más allá del muro de hielo no hay Atlántida ni Agartha. El mito viral que mezcla Platón, diarios apócrifos de Byrd y algoritmos de YouTube — y por qué la ciencia lo descarta por completo.",
     "categoria": "Mitología",
-    "fecha": "15 jul 2026",
-    "imagen": "img/destacados/mitologia-salvadorena.jpg",
-    "url": "articulos/mitologia-salvadorena.html"
+    "fecha": "19 jul 2026",
+    "imagen": "articulos/images/tierra-extendida-exp-mini.jpg",
+    "url": "articulos/tierra-extendida.html"
   },
-  {
+    {
     "titulo": "PURSUE//4th RELEASE: El Video Que la Comunidad UAP Perseguía Desde Hace Años",
     "descripcion": "DESTACADO: Un 'cerebro flotante' sobre el Atlántico, un intruso silencioso en una planta de armas nucleares en Texas. La cuarta tanda de war.gov/UFO, completa.",
     "categoria": "Seguimientos",
@@ -15,12 +15,12 @@
     "imagen": "img/destacados/pursue4.jpg",
     "url": "seguimientos/pursue-releases.html"
   },
- {
-    "titulo": "Tierra Extendida: el mito de los continentes ocultos",
-    "descripcion": "DESTACADO: Más allá del muro de hielo no hay Atlántida ni Agartha. El mito viral que mezcla Platón, diarios apócrifos de Byrd y algoritmos de YouTube — y por qué la ciencia lo descarta por completo.",
+  {
+    "titulo": "Mitología Salvadoreña: El Bestiario Que Sobrevive en la Memoria Popular",
+    "descripcion": "La Siguanaba, el Cipitío, el Cadejo y otras entidades de la tradición oral pipil que aún se cuentan en los cantones de El Salvador, generación tras generación.",
     "categoria": "Mitología",
-    "fecha": "19 jul 2026",
-    "imagen": "articulos/images/tierra-extendida-mini.jpg",
-    "url": "articulos/tierra-extendida.html"
+    "fecha": "15 jul 2026",
+    "imagen": "img/destacados/mitologia-salvadorena.jpg",
+    "url": "articulos/mitologia-salvadorena.html"
   }
 ]
