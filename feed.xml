@@ -5,8 +5,16 @@
     <link>https://mundomag.fyi/</link>
     <description>Ciencia, misterio, fenómenos y futuro — revista digital independiente.</description>
     <language>es</language>
-    <lastBuildDate>Sun, 19 Jul 2026 10:59:17 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2026 07:39:28 +0000</lastBuildDate>
     <atom:link href="https://mundomag.fyi/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>TIERRA EXTENDIDA</title>
+      <link>https://mundomag.fyi/articulos/tierra-extendida.html</link>
+      <guid isPermaLink="true">https://mundomag.fyi/articulos/tierra-extendida.html</guid>
+      <description></description>
+      <category>General</category>
+      <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>ANTÁRTIDA /// LO QUE NO SE DICE</title>
       <link>https://mundomag.fyi/articulos/antartida-parte-1.html</link>
@@ -236,14 +244,6 @@
       <link>https://mundomag.fyi/articulos/uap-actualidad-2026.html</link>
       <guid isPermaLink="true">https://mundomag.fyi/articulos/uap-actualidad-2026.html</guid>
       <description>Los avistamientos más virales, los archivos desclasificados del Pentágono, y los videos que investigators, youtubers y ciudadanos del mundo entero no pueden dejar de analizar. Un repaso del primer semestre de 2026: el pe</description>
-      <category>General</category>
-      <pubDate>Fri, 17 Jul 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>334 páginas que el mundo no está leyendo</title>
-      <link>https://mundomag.fyi/articulos/umbra-resumen.html</link>
-      <guid isPermaLink="true">https://mundomag.fyi/articulos/umbra-resumen.html</guid>
-      <description>En mayo de 2026, la NSA divulgó cientos de páginas de inteligencia UAP clasificadas al nivel más alto posible. Los medios miraban hacia otro lado. Esto es lo que dicen esos documentos: los incidentes, los números, los pa</description>
       <category>General</category>
       <pubDate>Fri, 17 Jul 2026 00:00:00 +0000</pubDate>
     </item>
