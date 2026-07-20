@@ -176,13 +176,19 @@
   </url>
   <url>
     <loc>https://mundomag.fyi/articulos/tierra-extendida.html</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mundomag.fyi/articulos/torio-energia-nuclear.html</loc>
     <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mundomag.fyi/articulos/troya.html</loc>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

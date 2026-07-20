@@ -5,7 +5,7 @@
     <link>https://mundomag.fyi/</link>
     <description>Ciencia, misterio, fenómenos y futuro — revista digital independiente.</description>
     <language>es</language>
-    <lastBuildDate>Mon, 20 Jul 2026 07:39:28 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2026 07:39:50 +0000</lastBuildDate>
     <atom:link href="https://mundomag.fyi/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>TIERRA EXTENDIDA</title>
@@ -13,7 +13,15 @@
       <guid isPermaLink="true">https://mundomag.fyi/articulos/tierra-extendida.html</guid>
       <description></description>
       <category>General</category>
-      <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>TROYA: DEL MITO A LA REALIDAD</title>
+      <link>https://mundomag.fyi/articulos/troya.html</link>
+      <guid isPermaLink="true">https://mundomag.fyi/articulos/troya.html</guid>
+      <description></description>
+      <category>General</category>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>ANTÁRTIDA /// LO QUE NO SE DICE</title>
@@ -236,14 +244,6 @@
       <link>https://mundomag.fyi/articulos/tunguska-evento-1908.html</link>
       <guid isPermaLink="true">https://mundomag.fyi/articulos/tunguska-evento-1908.html</guid>
       <description>El 30 de junio de 1908, una explosión aérea de 10–15 megatones devastó 2,000 km² de bosque siberiano. Cien años después, nuevos datos geoquímicos y simulaciones supercomputacionales están reescribiendo lo que sabemos sob</description>
-      <category>General</category>
-      <pubDate>Fri, 17 Jul 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Actualidad UAP: un semestre histórico.</title>
-      <link>https://mundomag.fyi/articulos/uap-actualidad-2026.html</link>
-      <guid isPermaLink="true">https://mundomag.fyi/articulos/uap-actualidad-2026.html</guid>
-      <description>Los avistamientos más virales, los archivos desclasificados del Pentágono, y los videos que investigators, youtubers y ciudadanos del mundo entero no pueden dejar de analizar. Un repaso del primer semestre de 2026: el pe</description>
       <category>General</category>
       <pubDate>Fri, 17 Jul 2026 00:00:00 +0000</pubDate>
     </item>
