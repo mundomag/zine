@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<!-- MM-META
+slug: tierra-extendida
+titulo: Tierra Extendida: el mito de los continentes ocultos
+categoria: mitologia-moderna
+blurb: Más allá del muro de hielo antártico no hay Atlántida, ni Agartha, ni tierras prohibidas. Analizamos el mito viral que mezcla Platón, diarios apócrifos de Byrd y algoritmos de YouTube — y por qué la ciencia lo descarta por completo.
+fecha: 2026-07-19
+formato: hero-documental-v1
+-->
+<html lang="es" data-page="tierra-extendida">
+<head>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8483516296039231"
+       crossorigin="anonymous"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRSJ1EYEPD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LRSJ1EYEPD');
+  </script>
+
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tierra Extendida: el mito de los continentes ocultos · Mundo Maravilloso</title>
+  <link rel="canonical" href="https://mundomag.fyi/articulos/tierra-extendida.html">
+  <meta name="description" content="Más allá del muro de hielo antártico no hay Atlántida ni Agartha. Analizamos el mito viral de la Tierra Extendida y por qué la ciencia lo descarta.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../css-articulos.css">
+
+  <!-- GLightbox -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+
+  <style>
+    /* ══════════════════════════════════════════════════════════════════
+       TIERRA EXTENDIDA — variables propias de esta pieza
+       (mismo patrón que antartida/bestiario/mitologia: paleta aislada
+       vía [data-page], nav y footer heredan de styles.css)
+       ══════════════════════════════════════════════════════════════════ */
+    html[data-page="tierra-extendida"]{
+      --ink:        #07080a;
+      --ink-mid:    #0d0f12;
+      --ink-soft:   #14161a;
+      --paper:      #f0ece2;
+      --paper-warm: #ede6d6;
+      --gold:       #c9a84c;
+      --gold-light: #e8c96a;
+      --ice:        #8fd3d8;
+      --violet:     #9a8cf0;
+      --red:        #c0392b;
+      --muted:      #6b6b7a;
+      --border:     rgba(201,168,76,0.16);
+    }
+    html[data-page="tierra-extendida"] body{
+      background:var(--ink); color:var(--paper);
+      font-family:"Source Serif 4",Georgia,serif;
+    }
+
+    /* ══════════════════════════════════════════════════════════════════
+       HERO DOCUMENTAL — nuevo componente reutilizable (.hero-doc)
+       Imagen de fondo estática + degradado + overlay + título.
+       El único dato que cambia por artículo: la imagen de fondo
+       (.hero-doc-bg) y el texto. Todo lo demás es la plantilla.
+       ══════════════════════════════════════════════════════════════════ */
+    .hero-doc{
+      position:relative; min-height:100svh; overflow:hidden;
+      display:flex; align-items:flex-end; background:#050608;
+    }
+    .hero-doc-bg{
+      position:absolute; inset:0; z-index:0;
+      background-image:
+        linear-gradient(rgba(5,6,8,0.1), rgba(5,6,8,0.1)),
+        url("hero/tierra-extendida.jpg");
+      background-size:cover; background-position:center 38%;
+    }
+    .hero-doc::after{
+      content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
+      background:
+        linear-gradient(to top, var(--ink) 0%, rgba(7,8,10,0.9) 15%, rgba(7,8,10,0.5) 40%, rgba(7,8,10,0.1) 62%, transparent 80%),
+        linear-gradient(to right, rgba(7,8,10,0.55) 0%, transparent 48%);
+    }
+    .hero-doc-inner{
+      position:relative; z-index:2; width:100%; max-width:960px;
+      padding:0 clamp(1.5rem,6vw,5rem) 6.5rem;
+    }
+    .hero-doc-eyebrow{
+      display:inline-flex; align-items:center; gap:0.65rem;
+      font-family:"JetBrains Mono",monospace; font-size:0.62rem;
+      letter-spacing:0.32em; text-transform:uppercase; color:var(--ice);
+      margin-bottom:1.25rem;
+    }
+    .hero-doc-eyebrow::before{ content:""; width:22px; height:1px; background:var(--ice); }
+    .hero-doc-title{
+      font-family:"Audiowide",sans-serif;
+      font-size:clamp(2.5rem,7vw,5.6rem);
+      font-weight:900; line-height:0.96; letter-spacing:-0.015em;
+      color:var(--paper); text-shadow:0 4px 40px rgba(0,0,0,0.45);
+    }
+    .hero-doc-title .accent{ color:var(--ice); }
+    .hero-doc-subtitle{
+      font-family:"Space Grotesk",sans-serif; font-weight:500;
+      font-size:clamp(1.02rem,2vw,1.3rem); color:rgba(240,236,226,0.8);
+      max-width:52ch; margin-top:1.1rem; line-height:1.55;
+    }
+    .hero-doc-meta{
+      display:flex; flex-wrap:wrap; align-items:center; gap:0.9rem;
+      margin-top:1.9rem;
+      font-family:"JetBrains Mono",monospace; font-size:0.62rem;
+      letter-spacing:0.1em; text-transform:uppercase; color:rgba(240,236,226,0.5);
+    }
+    .hero-doc-meta .dot{ width:3px; height:3px; border-radius:50%; background:var(--muted); }
+    .hero-doc-meta .tag{
+      color:var(--gold-light); border:1px solid rgba(201,168,76,0.35);
+      padding:0.3rem 0.65rem; border-radius:2px; letter-spacing:0.12em;
+    }
+    .hero-doc-scroll{
+      position:absolute; right:2.5rem; bottom:2.5rem; z-index:2;
+      display:flex; align-items:center; gap:0.6rem;
+      font-family:"JetBrains Mono",monospace; font-size:0.58rem;
+      letter-spacing:0.2em; text-transform:uppercase; color:rgba(240,236,226,0.45);
+    }
+    .hero-doc-scroll .line{
+      width:1px; height:26px;
+      background:linear-gradient(to bottom, rgba(240,236,226,0.5), transparent);
+      animation:doc-scroll-pulse 2s ease-in-out infinite;
+    }
+    @keyframes doc-scroll-pulse{ 0%,100%{opacity:0.3;} 50%{opacity:1;} }
+    @media (max-width:720px){
+      .hero-doc-scroll{ display:none; }
+      .hero-doc-inner{ padding-bottom:4.5rem; }
+    }
+
+    /* ══════════════════════════════════════════════════════════════════
+       CUERPO DEL ARTÍCULO
+       ══════════════════════════════════════════════════════════════════ */
+    .article{ max-width:760px; margin:0 auto; padding:0 2rem 6rem; }
+
+    .intro{ display:grid; grid-template-columns: 1fr 280px; gap:3.5rem; padding:4.5rem 0 1rem; max-width:1040px; margin:0 auto; padding-left:2rem; padding-right:2rem; }
+    .intro-text p{ font-size:1.12rem; color:rgba(240,236,226,0.85); line-height:1.85; margin-bottom:1.25rem; }
+    .intro-text p:first-of-type::first-letter{
+      font-family:"Audiowide",sans-serif; font-size:3.4rem; line-height:0.75;
+      float:left; padding:0.1rem 0.6rem 0 0; color:var(--ice);
+    }
+    .sidebar-box{ border:1px solid var(--border); background:var(--ink-mid); padding:1.75rem; align-self:start; }
+    .sidebar-label{ font-family:"JetBrains Mono",monospace; font-size:0.55rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:1.25rem; padding-bottom:0.9rem; border-bottom:1px solid var(--border); }
+    .sidebar-item{ padding:0.7rem 0; border-bottom:1px solid rgba(201,168,76,0.08); }
+    .sidebar-item:last-child{ border-bottom:none; }
+    .sidebar-key{ font-family:"JetBrains Mono",monospace; font-size:0.55rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--ice); margin-bottom:0.3rem; }
+    .sidebar-val{ font-size:0.85rem; color:rgba(240,236,226,0.75); line-height:1.4; }
+
+    @media (max-width:820px){ .intro{ grid-template-columns:1fr; padding-left:1.5rem; padding-right:1.5rem; } }
+
+    .section-head{ display:flex; align-items:center; gap:1.5rem; padding:5rem 0 2.25rem; max-width:760px; margin:0 auto; }
+    .section-num{ font-family:"JetBrains Mono",monospace; font-size:0.75rem; color:var(--gold); }
+    .section-title{ font-family:"Audiowide",sans-serif; font-size:1.35rem; font-weight:900; color:var(--paper); letter-spacing:0.01em; }
+    .section-line{ flex:1; height:1px; background:var(--border); }
+
+    .prose-section{ max-width:760px; margin:0 auto; padding-top:0; }
+    .prose-section p{ font-size:1.06rem; line-height:1.85; color:rgba(240,236,226,0.85); margin-bottom:1.25rem; }
+    .prose-section p strong{ color:var(--paper); }
+
+    .alert-box{ max-width:760px; margin:2.5rem auto; border-left:2px solid var(--ice); background:var(--ink-mid); padding:1.5rem 1.75rem; }
+    .alert-title{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--ice); margin-bottom:0.6rem; }
+    .alert-text{ font-size:0.98rem; color:rgba(240,236,226,0.78); line-height:1.7; }
+
+    .claim-grid{ max-width:760px; margin:2rem auto; display:grid; gap:1.25rem; }
+    .claim-box{ border:1px solid var(--border); padding:1.5rem 1.75rem; background:var(--ink-mid); }
+    .claim-tag{ font-family:"JetBrains Mono",monospace; font-size:0.55rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--violet); margin-bottom:0.6rem; }
+    .claim-title{ font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:1.02rem; color:var(--paper); margin-bottom:0.6rem; }
+    .claim-body{ font-size:0.95rem; color:rgba(240,236,226,0.72); line-height:1.7; }
+
+    .evidence-grid{ max-width:760px; margin:2rem auto; display:grid; gap:1.1rem; }
+    .evidence-card{ border:1px solid var(--border); border-left:2px solid var(--gold); padding:1.4rem 1.75rem; background:var(--ink-mid); }
+    .evidence-label{ font-family:"JetBrains Mono",monospace; font-size:0.55rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold-light); margin-bottom:0.5rem; }
+    .evidence-body{ font-size:0.96rem; color:rgba(240,236,226,0.78); line-height:1.75; }
+
+    blockquote.persona{
+      max-width:760px; margin:2.5rem auto; padding:1.75rem 2rem;
+      border:1px solid var(--border); background:var(--ink-mid);
+      display:grid; grid-template-columns:auto 1fr; gap:1.25rem; align-items:start;
+    }
+    blockquote.persona span{ font-size:1.5rem; }
+    blockquote.persona .cargo{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:0.6rem; }
+    blockquote.persona p:not(.cargo){ font-size:0.98rem; color:rgba(240,236,226,0.85); font-style:italic; line-height:1.6; }
+
+    .myth-table{ max-width:760px; margin:2rem auto; width:100%; border-collapse:collapse; font-size:0.85rem; }
+    .myth-table th{ font-family:"JetBrains Mono",monospace; font-size:0.55rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); text-align:left; padding:0.75rem 0.9rem; border-bottom:1px solid var(--border); }
+    .myth-table td{ padding:0.85rem 0.9rem; border-bottom:1px solid rgba(201,168,76,0.08); color:rgba(240,236,226,0.8); vertical-align:top; }
+    .myth-table td.real{ color:var(--ice); }
+    .myth-table td.myth{ color:var(--red); }
+    .myth-table td.unkn{ color:var(--gold-light); }
+
+    .timeline-item{ max-width:760px; margin:0 auto 2rem; padding-left:1.75rem; border-left:2px solid var(--border); position:relative; }
+    .timeline-item::before{ content:""; position:absolute; left:-6px; top:0.25rem; width:10px; height:10px; border-radius:50%; background:var(--ice); }
+    .timeline-date{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.15em; color:var(--ice); margin-bottom:0.3rem; }
+    .timeline-event{ font-family:"Space Grotesk",sans-serif; font-weight:700; color:var(--paper); margin-bottom:0.4rem; }
+    .timeline-desc{ font-size:0.9rem; color:var(--muted); line-height:1.6; }
+
+    .questions-box{ max-width:760px; margin:2.5rem auto; border:1px solid var(--border); padding:2rem; }
+    .questions-box h3{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:1.25rem; }
+    .questions-box ul{ list-style:none; }
+    .questions-box li{ font-size:1rem; color:rgba(240,236,226,0.82); line-height:1.7; padding:0.6rem 0 0.6rem 1.25rem; border-bottom:1px solid rgba(201,168,76,0.08); position:relative; }
+    .questions-box li:last-child{ border-bottom:none; }
+    .questions-box li::before{ content:"?"; position:absolute; left:0; color:var(--ice); font-family:"JetBrains Mono",monospace; }
+
+    .article-figure{ max-width:900px; margin:2.5rem auto; }
+    .article-figure img{ width:100%; display:block; border:1px solid var(--border); }
+    .article-figure figcaption{ font-family:"JetBrains Mono",monospace; font-size:0.62rem; letter-spacing:0.05em; color:var(--muted); margin-top:0.75rem; line-height:1.5; }
+    .article-figure figcaption span{ color:var(--gold); margin-right:0.5rem; }
+
+    .sources-list{ max-width:760px; margin:0 auto; }
+    .sources-list ol{ list-style:none; counter-reset:src; }
+    .sources-list li{ counter-increment:src; padding:1rem 0 1rem 2.4rem; border-bottom:1px solid rgba(201,168,76,0.08); position:relative; }
+    .sources-list li:last-child{ border-bottom:none; }
+    .sources-list li::before{ content:counter(src); position:absolute; left:0; top:1.05rem; font-family:"JetBrains Mono",monospace; font-size:0.6rem; color:var(--gold); border:1px solid var(--border); width:1.5rem; height:1.5rem; display:flex; align-items:center; justify-content:center; }
+    .source-outlet{ font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:0.92rem; color:var(--paper); }
+    .source-meta{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted); margin:0.3rem 0 0.5rem; }
+    .source-title{ font-size:0.92rem; color:rgba(240,236,226,0.75); font-style:italic; line-height:1.55; margin-bottom:0.4rem; }
+    .source-note{ font-size:0.86rem; color:var(--muted); line-height:1.6; }
+
+    .related-articles{ max-width:760px; margin:5rem auto 0; padding:0 2rem; }
+    .related-label{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:1.5rem; padding-bottom:1rem; border-bottom:1px solid var(--border); }
+    .related-grid{ display:grid; gap:1rem; }
+    .related-card{ display:block; border:1px solid var(--border); padding:1.25rem 1.5rem; text-decoration:none; transition:border-color 0.2s; }
+    .related-card:hover{ border-color:var(--gold); }
+    .related-card-cat{ font-family:"JetBrains Mono",monospace; font-size:0.52rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--violet); margin-bottom:0.6rem; }
+    .related-card-title{ font-family:"Space Grotesk",sans-serif; font-size:0.95rem; font-weight:600; color:var(--paper); line-height:1.4; }
+
+    @media (max-width:600px){
+      .article{ padding:0 1.25rem 4rem; }
+      .section-head, .prose-section, .alert-box, .claim-grid, .evidence-grid, blockquote.persona, .myth-table, .timeline-item, .questions-box, .related-articles{ padding-left:0; padding-right:0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════ -->
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="../" class="site-nav-logo">Mundo Maravilloso</a>
+    <div class="site-nav-sep"></div>
+    <div class="site-nav-articles">
+      <a href="../articulos.html" class="site-nav-link">Artículos</a>
+      <a href="../seguimientos/3i-atlas.html" class="site-nav-link">3I/ATLAS</a>
+      <a href="../seguimientos/uap.html" class="site-nav-link">UAP WATCH</a>
+      <a href="../seguimientos/pursue-releases.html" class="site-nav-link">PURSUE</a>
+      <a href="../seguimientos/voyager-1.html" class="site-nav-link">VOYAGER 1</a>
+      <a href="../seguimientos/hitos-medicos.html" class="site-nav-link">HITOS MÉDICOS</a>
+      <a href="../glosario.html" class="site-nav-link"><span class="nav-dot"></span>&nbsp;Glosario</a>
+    </div>
+    <button class="site-nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navDrawer">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <line x1="2" y1="5" x2="18" y2="5"/><line x1="2" y1="10" x2="18" y2="10"/><line x1="2" y1="15" x2="18" y2="15"/>
+      </svg>
+    </button>
+  </div>
+  <div class="site-nav-drawer" id="navDrawer">
+    <a href="../articulos.html" class="drawer-link">Artículos</a>
+    <a href="../seguimientos/3i-atlas.html" class="drawer-link">3I/ATLAS</a>
+    <a href="../seguimientos/uap.html" class="drawer-link">UAP WATCH</a>
+    <a href="../seguimientos/pursue-releases.html" class="drawer-link">PURSUE</a>
+    <a href="../seguimientos/voyager-1.html" class="drawer-link">VOYAGER 1</a>
+    <a href="../seguimientos/hitos-medicos.html" class="drawer-link">HITOS MÉDICOS</a>
+    <a href="../glosario.html" class="drawer-link"><span class="nav-dot"></span>&nbsp;Glosario</a>
+  </div>
+</nav>
+
+<!-- ══════════ HERO DOCUMENTAL ══════════ -->
+<!-- Fondo: mapa especulativo "The World Beyond the Ice Wall" (versión
+     con rótulo de Mundo Maravilloso), en ../img/hero/tierra-extendida.jpg -->
+<section class="hero-doc">
+  <div class="hero-doc-bg"></div>
+  <div class="hero-doc-inner">
+    <div class="hero-doc-eyebrow">Mundo Maravilloso · Mitología moderna</div>
+    <h1 class="hero-doc-title">TIERRA <span class="accent">EXTENDIDA</span></h1>
+    <p class="hero-doc-subtitle">Continentes ocultos más allá del muro de hielo, diarios apócrifos y un mito viral que mezcla Platón con YouTube.</p>
+    <div class="hero-doc-meta">
+      <span>La Redacción</span><span class="dot"></span>
+      <span>Julio 2026</span><span class="dot"></span>
+      <span>~12 min de lectura</span>
+      <span class="tag">Investigación</span>
+    </div>
+  </div>
+  <div class="hero-doc-scroll"><span class="line"></span>Desplázate</div>
+</section>
+
+<!-- ══════════ ARTÍCULO ══════════ -->
+<main class="article">
+
+  <div class="intro">
+    <div class="intro-text">
+      <p>En los últimos años ha circulado en internet la idea de que, más allá del muro de hielo antártico, existen continentes ocultos: Atlántida, Hiperbórea, Agartha, reinos egipcios olvidados. Es la <strong>Tierra Extendida</strong>, un mito que combina mitología clásica, diarios apócrifos atribuidos al almirante Richard E. Byrd y una desconfianza genérica hacia los mapas oficiales.</p>
+      <p>No es lo mismo que el terraplanismo, ni que la vieja teoría de la Tierra Hueca del siglo XIX — aunque toma piezas de ambas. Tampoco es un mito antiguo puro, como la Atlántida de Platón. Es un ensamblaje moderno, nacido en foros y algoritmos de video, que viste de secreto geográfico lo que ya fue cartografiado, fotografiado y perforado por la ciencia.</p>
+      <p>Este artículo separa lo verificable de la especulación: qué dice exactamente la teoría, qué evidencia científica la contradice punto por punto, y por qué —a pesar de eso— sigue creciendo.</p>
+    </div>
+    <div class="sidebar-box">
+      <div class="sidebar-label">// En este artículo</div>
+      <div class="sidebar-item"><div class="sidebar-key">01</div><div class="sidebar-val">Qué es la Tierra Extendida y de dónde viene</div></div>
+      <div class="sidebar-item"><div class="sidebar-key">02</div><div class="sidebar-val">Las afirmaciones principales</div></div>
+      <div class="sidebar-item"><div class="sidebar-key">03</div><div class="sidebar-val">La evidencia científica en contra</div></div>
+      <div class="sidebar-item"><div class="sidebar-key">04</div><div class="sidebar-val">De mito geográfico a narrativa ufológica</div></div>
+      <div class="sidebar-item"><div class="sidebar-key">05</div><div class="sidebar-val">Por qué se difunde tan rápido</div></div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 1 -->
+  <div class="section-head" id="sec-definiciones">
+    <span class="section-num">01</span>
+    <h2 class="section-title">Qué es exactamente la Tierra Extendida</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <p>La Tierra Extendida plantea que existen tierras o continentes ocultos más allá de lo cartografiado — normalmente detrás del supuesto muro de hielo antártico. Cubre versiones que mezclan mitología (Atlántida, Hiperbórea, Agartha) con conceptos científicos distorsionados, y a menudo se solapa con la <em>Tierra Hueca</em> (un interior con luz propia) o la <em>Tierra Plana</em> (un disco rodeado de hielo).</p>
+  </div>
+
+  <div class="claim-grid">
+    <div class="claim-box">
+      <div class="claim-tag">// Vs. Tierra Hueca</div>
+      <div class="claim-title">Toma prestada la idea, no la reclama entera</div>
+      <div class="claim-body">La Tierra Hueca del siglo XIX sostiene que el planeta es una cáscara vacía con aberturas polares. La Tierra Extendida no dice que todo el planeta sea cóncavo — solo habla de tierras adicionales accesibles, aunque a menudo mezcla ambos mitos.</div>
+    </div>
+    <div class="claim-box">
+      <div class="claim-tag">// Vs. Tierra Plana</div>
+      <div class="claim-title">Una variante más elaborada del mismo mito</div>
+      <div class="claim-body">El terraplanismo dice que la Tierra es un disco rodeado por un muro de hielo antártico. Algunos proponentes de Tierra Extendida comparten esa premisa, pero añaden que más allá de ese muro hay continentes ocultos — una capa mítica extra.</div>
+    </div>
+    <div class="claim-box">
+      <div class="claim-tag">// Vs. mitos clásicos</div>
+      <div class="claim-title">Atlántida no es evidencia, es literatura</div>
+      <div class="claim-body">Mitos como la Atlántida de Platón o Hiperbórea son leyendas literarias antiguas. La Tierra Extendida los reviste de sentido conspirativo ("Atlantis está bajo el hielo"), pero científicamente no son equivalentes: Atlántida es hoy reconocida como ficción alegórica.</div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 2 -->
+  <div class="section-head" id="sec-origen">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Origen y línea de tiempo</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <p>El concepto de tierras ocultas en los confines del mundo tiene raíces antiguas —Atlantis, Thule— pero como teoría conspirativa moderna, sus primeras apariciones claras son del siglo XX, alimentadas por la era espacial y el auge de los movimientos pseudocientíficos.</p>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-date">1768</div>
+    <div class="timeline-event">James Cook circunnavega la Antártida</div>
+    <div class="timeline-desc">La primera circunnavegación completa demuestra que es un continente rodeado de océano, no un borde infinito.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">1946–1947</div>
+    <div class="timeline-event">Operación Highjump y los diarios apócrifos de Byrd</div>
+    <div class="timeline-desc">Tras la expedición del almirante Richard E. Byrd, circularon diarios falsos atribuidos a él que hablaban de un "muro gigantesco de hielo" y una tierra interior llamada Agartha. Se difundieron después en círculos esotéricos.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">2007</div>
+    <div class="timeline-event">Se publica el mosaico satelital LIMA</div>
+    <div class="timeline-desc">El Landsat Image Mosaic of Antarctica, de USGS, cubre todo el continente con una vista virtualmente sin nubes. No queda espacio en blanco para tierras ocultas.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">2023</div>
+    <div class="timeline-event">Viralización en redes y primeros desmentidos</div>
+    <div class="timeline-desc">La "Tierra Extendida" se viraliza en YouTube y TikTok. Medios de verificación como Chequeado desmienten el mito del muro de hielo con fuentes glaciológicas.</div>
+  </div>
+
+  <div class="article-figure">
+    <img class="lb-img" src="images/LIMA_L7.jpg" alt="Mosaico satelital LIMA de la Antártida completa" loading="lazy">
+<figcaption><span>Fig. 01</span> El mosaico Landsat de la Antártida (LIMA, USGS 2007) cubre el continente completo — sin espacios en blanco donde pudiera "esconderse" una tierra desconocida.</figcaption>
+  </div>
+
+  <!-- SECCIÓN 3 -->
+  <div class="section-head" id="sec-afirmaciones">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Las afirmaciones principales</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <p>Los proponentes de la Tierra Extendida repiten un puñado de reclamos, casi siempre sin fuentes verificables:</p>
+  </div>
+
+  <div class="claim-grid">
+    <div class="claim-box">
+      <div class="claim-tag">// Reclamo 1</div>
+      <div class="claim-title">Tierras míticas ocultas tras el hielo</div>
+      <div class="claim-body">Se afirma que más allá del muro helado existen reinos legendarios con su propio sol interior. Byrd habría anotado "agujeros en los polos" con vida interna — una lectura libre de un diario que nunca escribió.</div>
+    </div>
+    <div class="claim-box">
+      <div class="claim-tag">// Reclamo 2</div>
+      <div class="claim-title">Secretos gubernamentales y censura</div>
+      <div class="claim-body">Se sostiene que el Tratado Antártico oculta evidencia y que las imágenes satelitales públicas están manipuladas. En la práctica, agencias como NASA, ESA y USGS publican libremente sus datos, y miles de personas visitan el continente cada año.</div>
+    </div>
+    <div class="claim-box">
+      <div class="claim-tag">// Reclamo 3</div>
+      <div class="claim-title">Confusión de fenómenos geográficos</div>
+      <div class="claim-body">Se confunden los frentes de las plataformas de hielo (Ross, Filchner) con "muros" inexplicables, ignorando que son glaciares sostenidos por masa terrestre real — no un borde que encierra un mundo interno.</div>
+    </div>
+  </div>
+
+  <div class="article-figure">
+    <a href="images/tierra-extendida-exp.jpg" class="glightbox" data-title="El mundo más allá del muro de hielo" data-description="// Mapa especulativo · Circula en foros y redes de Tierra Extendida">
+      <img class="lb-img" src="images/tierra-extendida-exp-mini.jpg" alt="Mapa especulativo circular que muestra continentes ficticios como Atlantis, Lemuria y Agartha más allá de un muro de hielo que rodea los continentes reales" loading="lazy">
+    </a>
+    <figcaption><span>Fig. 02</span> Uno de los mapas que circulan en comunidades de Tierra Extendida: los continentes reales al centro, rodeados por "murallas de hielo" y tierras inventadas — Atlantis, Lemuria, Agartha, Hiperbórea — sin ninguna correspondencia con datos geográficos, satelitales o sísmicos reales. Toca la imagen para verla completa.</figcaption>
+  </div>
+
+  <div class="alert-box">
+    <div class="alert-title">// Nota editorial</div>
+    <div class="alert-text">En conjunto, estos reclamos se apoyan en anécdotas, interpretaciones libres de mitos antiguos y rumores que se refuerzan entre sí. No hay un solo reporte científico ni registro geográfico serio que sostenga la existencia de tierras más allá de los contornos ya cartografiados.</div>
+  </div>
+
+  <!-- SECCIÓN 4 -->
+  <div class="section-head" id="sec-evidencia">
+    <span class="section-num">04</span>
+    <h2 class="section-title">La evidencia científica en contra</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <p>La geología, la geofísica, la cartografía y la sismología ofrecen información contundente que invalida todas las versiones de la Tierra Extendida.</p>
+  </div>
+
+  <div class="evidence-grid">
+    <div class="evidence-card">
+      <div class="evidence-label">// Imágenes satelitales globales</div>
+      <div class="evidence-body">Landsat, Copernicus y Suomi NPP han cartografiado toda la superficie terrestre en alta resolución. El mosaico LIMA (2007) muestra la Antártida completa: no hay espacios en blanco por los que pudiera "escapar" un continente oculto.</div>
+    </div>
+    <div class="evidence-card">
+      <div class="evidence-label">// Geología y sismología</div>
+      <div class="evidence-body">La literatura geofísica coincide: la Tierra tiene corteza, manto rocoso sólido, núcleo externo líquido y núcleo interno sólido. Un estudio de 2023 en <em>Nature</em> describe ese núcleo como una esfera metálica sólida de 2.442 km de diámetro. Es incompatible con cavidades gigantes o un "sol interior".</div>
+    </div>
+    <div class="evidence-card">
+      <div class="evidence-label">// Gravimetría</div>
+      <div class="evidence-body">Los satélites GRACE y GOCE miden el campo gravitatorio terrestre con gran precisión. Cualquier masa oculta o hueco interno alteraría ese campo. Los mapas actuales son consistentes con un planeta sólido, sin anomalías que sugieran tierras secretas.</div>
+    </div>
+    <div class="evidence-card">
+      <div class="evidence-label">// Exploración histórica</div>
+      <div class="evidence-body">Desde Cook, Bellingshausen y Amundsen hasta hoy, cada circunnavegación encontró un continente delimitado. Ningún navío "desapareció" al intentar ir más allá del hielo — al contrario, hoy existen rutas turísticas y científicas establecidas.</div>
+    </div>
+  </div>
+
+  <blockquote class="persona">
+    <span>👤</span>
+    <div>
+      <div class="cargo">Consenso científico · Glaciología y geofísica polar</div>
+      <p>"Toda fuente oficial —NASA, USGS, BAS, agencias polares— coincide: no hay evidencia de tierras ocultas. La ciencia ha invertido décadas en cartografiar el suelo antártico incluso bajo el hielo."</p>
+    </div>
+  </blockquote>
+
+  <!-- SECCIÓN 5 -->
+  <div class="section-head" id="sec-evolucion">
+    <span class="section-num">05</span>
+    <h2 class="section-title">De teoría geográfica a narrativa ufológica</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <p>Desde alrededor de 2020, la Tierra Extendida dejó de ser solo una hipótesis geográfica. Se fusionó con la ufología contemporánea, la teoría de los antiguos astronautas y los fenómenos aéreos no identificados (UAP), convirtiéndose en una explicación global sobre el origen de inteligencias no humanas.</p>
+    <p>En esta variante, los "extraterrestres" ya no vendrían del espacio: habrían coexistido siempre con la humanidad en regiones ocultas de la Tierra. Se afirma que muchos UAP —y USO, sus equivalentes submarinos— emergerían desde el océano o desde la Antártida. Ninguna investigación oficial ha establecido ese vínculo. Desde 2023, además, imágenes generadas por IA han contribuido a difundir mapas y ciudades ficticias presentadas como evidencia real.</p>
+  </div>
+
+  <div class="alert-box">
+    <div class="alert-title">// Una meta-conspiración</div>
+    <div class="alert-text">Sociológicamente, esta evolución integra Tierra Hueca, Tierra Plana, Atlántida, Hiperbórea, Agartha, antiguos astronautas, UAP y bases secretas antárticas en un solo relato. No hay evidencia científica que la respalde: es un fenómeno cultural propio de la era digital y de la desinformación en redes.</div>
+  </div>
+
+  <!-- SECCIÓN 6 -->
+  <div class="section-head" id="sec-difusion">
+    <span class="section-num">06</span>
+    <h2 class="section-title">Por qué se difunde tan rápido</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <p>La creencia en la Tierra Extendida opera dentro del marco más amplio de las teorías conspirativas: desconfianza en las élites científicas, necesidad de explicaciones dramáticas y el atractivo de sentirse parte de los pocos que "saben la verdad". Se difunde sobre todo en YouTube, TikTok, Instagram y foros como Reddit, donde canales de pseudohistoria en español mezclan mitos antiguos con conspiración contemporánea.</p>
+    <p>Las estrategias retóricas son reconocibles: citas distorsionadas ("Byrd dijo en su diario que…"), imágenes sacadas de contexto presentadas como hallazgos, y argumentos que descalifican a la ciencia de antemano ("los científicos mienten para mantener el poder"). Los algoritmos de recomendación hacen el resto, reforzando la burbuja de quien ya empezó a buscar contenido "alternativo".</p>
+  </div>
+
+  <!-- TABLA COMPARATIVA -->
+  <div class="section-head" id="sec-comparacion">
+    <span class="section-num">07</span>
+    <h2 class="section-title">Cuatro teorías, un mismo patrón</h2>
+    <div class="section-line"></div>
+  </div>
+  <table class="myth-table">
+    <thead>
+      <tr><th>Teoría</th><th>Reclamo central</th><th>Estado científico</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Tierra Extendida</td>
+        <td>Continentes ocultos más allá de la Antártida</td>
+        <td class="myth">✗ Rechazada — sin datos empíricos</td>
+      </tr>
+      <tr>
+        <td>Tierra Hueca</td>
+        <td>Cáscara vacía con civilizaciones internas</td>
+        <td class="myth">✗ Desmentida — sismología muestra interior sólido</td>
+      </tr>
+      <tr>
+        <td>Tierra Plana</td>
+        <td>Disco rodeado por un muro de hielo</td>
+        <td class="myth">✗ Refutada — astronomía y vuelos espaciales</td>
+      </tr>
+      <tr>
+        <td>Atlántida y leyendas clásicas</td>
+        <td>Civilizaciones avanzadas perdidas</td>
+        <td class="unkn">⚠ Mitología — ficción alegórica reconocida como tal</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="questions-box">
+    <h3>// Para llevarse de este artículo</h3>
+    <ul>
+      <li>Toda la superficie terrestre, incluida la Antártida, está cartografiada por satélite desde hace casi dos décadas.</li>
+      <li>La estructura interna de la Tierra —corteza, manto, núcleo— está medida por sismología independiente en todo el planeta.</li>
+      <li>Atlántida es, por reconocimiento histórico propio, una alegoría de Platón — nunca fue presentada como un lugar real por sus creadores.</li>
+      <li>La viralidad de un mito no es evidencia de nada, salvo de qué tan bien viaja una historia en redes sociales.</li>
+    </ul>
+  </div>
+
+  <!-- FUENTES -->
+  <div class="section-head" id="sec-fuentes">
+    <span class="section-num">08</span>
+    <h2 class="section-title">Fuentes</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="sources-list">
+    <ol>
+      <li>
+        <div class="source-outlet">Chequeado</div>
+        <div class="source-meta">8 septiembre 2023 · Fact-check</div>
+        <div class="source-title">Es falso que la Antártida es una "muralla de hielo" alrededor de una Tierra plana</div>
+        <div class="source-note">Analiza el viral del muro de hielo y recoge respuestas de glaciólogos sobre la imposibilidad estructural de dicho muro.</div>
+      </li>
+      <li>
+        <div class="source-outlet">National Geographic Latinoamérica — Douglas Fox</div>
+        <div class="source-meta">2 abril 2025</div>
+        <div class="source-title">Hallazgo impresionante en la Antártida: científicos revelaron un mundo oculto bajo el hielo</div>
+        <div class="source-note">Describe los avances en radar y gravimetría para mapear el subsuelo antártico, con hallazgos reales como ríos subglaciales.</div>
+      </li>
+      <li>
+        <div class="source-outlet">La Nación — Diego Cioccio</div>
+        <div class="source-meta">23 enero 2021</div>
+        <div class="source-title">Richard Byrd: la vida del almirante que originó la insólita teoría de la Tierra hueca</div>
+        <div class="source-note">Repaso periodístico de los rumores sobre Byrd y el origen de las afirmaciones conspirativas atribuidas a él.</div>
+      </li>
+      <li>
+        <div class="source-outlet">NASA Earth Science News — Emily Furfaro</div>
+        <div class="source-meta">11 marzo 2025</div>
+        <div class="source-title">How Do We Know the Earth Isn't Flat? We Asked a NASA Expert</div>
+        <div class="source-note">Entrevista con un experto de la NASA sobre cómo se demostró históricamente la redondez terrestre.</div>
+      </li>
+      <li>
+        <div class="source-outlet">USGS / NASA — Landsat Missions</div>
+        <div class="source-meta">2007</div>
+        <div class="source-title">Landsat Image Mosaic of Antarctica (LIMA)</div>
+        <div class="source-note">Fuente oficial del mosaico satelital que cubre la Antártida completa con más de mil imágenes Landsat.</div>
+      </li>
+      <li>
+        <div class="source-outlet">Matsuoka, K. et al. — Environmental Modelling &amp; Software 140:105015</div>
+        <div class="source-meta">2021 · Artículo académico (acceso abierto)</div>
+        <div class="source-title">Quantarctica, an integrated mapping environment for Antarctica, the Southern Ocean, and sub-Antarctic islands</div>
+        <div class="source-note">Presenta Quantarctica, un paquete GIS gratuito con 265 capas de datos cartográficos antárticos.</div>
+      </li>
+      <li>
+        <div class="source-outlet">NSF — Seismology News</div>
+        <div class="source-meta">10 agosto 2023</div>
+        <div class="source-title">Seismologists peer into Earth's inner core</div>
+        <div class="source-note">Nota de prensa sobre un estudio publicado en <em>Nature</em> acerca del núcleo interno sólido de la Tierra.</div>
+      </li>
+      <li>
+        <div class="source-outlet">Wikipedia</div>
+        <div class="source-meta">Consulta 2026</div>
+        <div class="source-title">Atlantis</div>
+        <div class="source-note">Resumen autorizado de que Atlántida es ficción de Platón, creada como alegoría filosófica.</div>
+      </li>
+    </ol>
+  </div>
+
+  <div class="related-articles">
+    <p class="related-label">// Artículos relacionados</p>
+    <div class="related-grid">
+      <a href="antartida-parte-1.html" class="related-card">
+        <p class="related-card-cat">// Antártida · Documentos</p>
+        <p class="related-card-title">Antártida: Lo Que No Se Dice (Parte I)</p>
+      </a>
+      <a href="antartida-parte-2.html" class="related-card">
+        <p class="related-card-cat">// Antártida · Documentos</p>
+        <p class="related-card-title">Antártida: El Fondo del Agujero (Parte II)</p>
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-kicker">// Revista de exploración y pensamiento</p>
+        <a href="../" class="footer-logo">Mundo Maravilloso</a>
+        <p class="footer-tagline">Ciencia · Misterio · Fenómenos · Futuro</p>
+        <p class="footer-desc">Una publicación independiente sobre los grandes misterios que la ciencia todavía no ha resuelto.</p>
+        <span class="footer-edition-badge">Mitología moderna · Jul 2026</span>
+      </div>
+      <div class="footer-nav-grid">
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Artículos</p>
+          <ul class="footer-nav-list">
+            <li><a href="../articulos.html">Todos los artículos</a></li>
+            <li><a href="tierra-extendida.html" class="active">Tierra Extendida</a></li>
+            <li><a href="antartida-parte-1.html">Antártida · Parte I</a></li>
+            <li><a href="../glosario.html">Glosario</a></li>
+          </ul>
+          <p class="footer-nav-col-label" style="margin-top:1.5rem;">// Publicación</p>
+          <ul class="footer-nav-list">
+            <li><a href="../acerca-de.html">Acerca de</a></li>
+            <li><a href="../contacto.html">Contacto</a></li>
+            <li><a href="../privacidad.html">Privacidad</a></li>
+            <li><a href="../terminos.html">Términos</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Seguimientos</p>
+          <ul class="footer-nav-list">
+            <li><a href="../seguimientos/3i-atlas.html">3I/ATLAS</a></li>
+            <li><a href="../seguimientos/uap.html">UAP WATCH</a></li>
+            <li><a href="../seguimientos/pursue-releases.html">PURSUE RELEASES</a></li>
+            <li><a href="../seguimientos/voyager-1.html">VOYAGER 1</a></li>
+            <li><a href="../seguimientos/hitos-medicos.html">HITOS MÉDICOS</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Síguenos</p>
+          <div class="footer-social-links">
+            <a href="https://www.facebook.com/revistamundo" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16"><path d="M16 8a8 8 0 1 0-9.25 7.9v-5.6H4.9V8h1.85V6.4c0-1.83 1.09-2.84 2.76-2.84.8 0 1.64.14 1.64.14v1.8h-.92c-.91 0-1.19.56-1.19 1.14V8h2.03l-.32 2.3H9.04v5.6A8 8 0 0 0 16 8z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/mundo.m.mag/" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16"><path d="M4.7 0h6.6A4.7 4.7 0 0 1 16 4.7v6.6a4.7 4.7 0 0 1-4.7 4.7H4.7A4.7 4.7 0 0 1 0 11.3V4.7A4.7 4.7 0 0 1 4.7 0zm-.15 1.5A3.05 3.05 0 0 0 1.5 4.55v6.9a3.05 3.05 0 0 0 3.05 3.05h6.9a3.05 3.05 0 0 0 3.05-3.05v-6.9A3.05 3.05 0 0 0 11.45 1.5h-6.9zM8 4.1a3.9 3.9 0 1 1 0 7.8 3.9 3.9 0 0 1 0-7.8zm0 1.5a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8zm4.05-2.65a.95.95 0 1 1 0 1.9.95.95 0 0 1 0-1.9z"/></svg>
+            </a>
+            <a href="https://x.com/uap_mag" aria-label="X (Twitter)" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16"><path d="M12.6 1h2.45L9.95 6.91 15.7 15h-4.5l-3.52-4.6L3.7 15H1.25l5.4-6.18L1.15 1h4.62l3.19 4.22L12.6 1zm-.86 12.6h1.36L4.32 2.32H2.86l8.88 11.28z"/></svg>
+            </a>
+            <a href="https://substack.com/@mundomag" aria-label="Substack" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16"><path d="M1.5 1.5h13v2.3h-13V1.5zm0 4.1h13v2.1h-13V5.6zm0 4.1 6.5 5.8 6.5-5.8H1.5z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">Mundo Maravilloso · Hecho en El Salvador · 2026</p>
+      <p class="footer-signal">// Artículo · tierra-extendida</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn = document.getElementById('navHamburger');
+  var drawer = document.getElementById('navDrawer');
+  if (!btn || !drawer) return;
+  btn.addEventListener('click', function(){
+    var isOpen = drawer.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  drawer.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      drawer.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+  const lightbox = GLightbox({ touchNavigation: true, loop: false });
+</script>
+</body>
+</html>
