@@ -33,21 +33,39 @@ fecha: 2026-07-15
   <link rel="stylesheet" href="../css-articulos.css">
   <base target="_blank">
 
-  
+  <style>
+    /* ── MINI PODCAST — reproductor de audio bajo la descripción ── */
+    .audio-player-box{
+      max-width:900px; margin:2.5rem auto 0;
+      border:1px solid var(--border); background:var(--ink-mid);
+      padding:1.5rem 1.75rem; display:flex; align-items:center; gap:1.25rem;
+    }
+    .audio-player-icon{
+      flex:none; width:2.75rem; height:2.75rem; border-radius:50%;
+      border:1px solid var(--border); display:flex; align-items:center; justify-content:center;
+      color:var(--gold);
+    }
+    .audio-player-icon svg{ width:1.1rem; height:1.1rem; }
+    .audio-player-body{ flex:1; min-width:0; }
+    .audio-player-label{
+      font-family:"JetBrains Mono", monospace; font-size:0.55rem;
+      letter-spacing:0.2em; text-transform:uppercase; color:var(--gold);
+      margin-bottom:0.3rem;
+    }
+    .audio-player-title{
+      font-family:"Space Grotesk", sans-serif; font-size:0.98rem; font-weight:700;
+      color:var(--paper); margin-bottom:0.75rem;
+    }
+    .audio-player-box audio{
+      width:100%; height:2.25rem; display:block;
+      filter:invert(0.88) grayscale(1) contrast(1.1);
+      border-radius:4px;
+    }
+    @media (max-width:640px){
+      .audio-player-box{ margin-left:1.5rem; margin-right:1.5rem; flex-direction:column; align-items:flex-start; }
+    }
+  </style>
 
-<style id="footer-social-css">
-.footer-social-links { display: flex; gap: 0.85rem; margin-top: 0.6rem; }
-.footer-social-links a {
-  width: 30px; height: 30px;
-  display: flex; align-items: center; justify-content: center;
-  border: 1px solid var(--border, #2a2a2e);
-  border-radius: 50%;
-  color: var(--muted, #7a7a82);
-  transition: color 0.2s, border-color 0.2s;
-}
-.footer-social-links a:hover { color: var(--gold, #c9a24b); border-color: var(--gold, #c9a24b); }
-.footer-social-links svg { width: 14px; height: 14px; fill: currentColor; }
-</style>
 </head>
 <body>
 
@@ -95,6 +113,25 @@ fecha: 2026-07-15
       <p class="hero-subtitle">Bestiario mítico de El Salvador: entidades, guardianes y espectros de la tradición oral</p>
       <p class="hero-byline">Mundo Maravilloso &nbsp;·&nbsp; El Salvador 🇸🇻</p>
       <p class="hero-lead">En los caminos de tierra, las orillas de los ríos y los techos de teja de las casas antiguas de El Salvador, la tradición oral mantiene vivo un bestiario de entidades que no son monstruos ni fantasmas: son el sistema regulatorio de una cosmovisión donde el agua, el monte y la noche tienen guardianes propios, donde la moral se castiga y se protege mediante presencias que solo los que saben mirar pueden ver.</p>
+		
+		
+			<div class="audio-player-box">
+  <div class="audio-player-icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 1a4 4 0 0 0-4 4v6a4 4 0 0 0 8 0V5a4 4 0 0 0-4-4z"/>
+      <path d="M19 10v1a7 7 0 0 1-14 0v-1"/>
+      <line x1="12" y1="18" x2="12" y2="22"/>
+    </svg>
+  </div>
+  <div class="audio-player-body">
+    <p class="audio-player-label">// Escúchalo · Mini podcast</p>
+    <p class="audio-player-title">Seres de Cuscatlán: el bestiario vivo</p>
+    <audio controls preload="none" src="audios/Seres_de_Cuscatlan.MP3">
+      Tu navegador no soporta la reproducción de audio.
+    </audio>
+  </div>
+</div>
+		
     </div>
     <aside class="hero-panel">
       <p class="panel-label">// Registro del Artículo</p>
@@ -109,6 +146,8 @@ fecha: 2026-07-15
     </aside>
   </div>
 </section>
+
+
 
 <!-- MARQUEE -->
 <div class="status-bar">
@@ -135,6 +174,8 @@ fecha: 2026-07-15
       <p>En las cosmologías indígenas de El Salvador, la frontera entre un animal, un espíritu y una entidad castigadora no existe de la misma forma que en el pensamiento occidental. Los seres de este catálogo no son "monstruos" ni "leyendas": son parte del orden del mundo, figuras que pertenecen al mismo sistema que los ciclos de lluvia, las cosechas de maíz y los ritos de paso. Separarlos de su contexto cosmológico para estudiarlos como si fueran criaturas físicas —como hace la criptozoología— es un error metodológico. Este artículo los estudia en su propio terreno.</p>
       <p>La mitología zoológica salvadoreña es, además, un sistema de conocimiento ecológico codificado. Los relatos sobre La Siguanaba asociados a ríos y quebradas, el Cadejo como guardián de los caminos nocturnos, el Tata Duende como protector del bosque: estas figuras transmiten conocimiento de riesgo, comportamiento ambiental y normas de convivencia con el ecosistema en una forma que sobrevive siglos de transformaciones culturales. Cada entidad tiene su territorio, su función y —lo que las hace operativas— sus debilidades.</p>
       <p>Este catálogo se basa exclusivamente en las recopilaciones de tradición oral salvadoreña: las obras de María de Baratta, Jorge Lardé y Pedro Geoffrey Rivas, así como en el trabajo de campo etnográfico contemporáneo en comunidades rurales de Chalatenango, Morazán, Cabañas, Sonsonate y Ahuachapán. Las fichas técnicas que acompañan a cada entidad incluyen su zonificación geográfica, su efecto sobre las víctimas y las contramedidas tradicionales para neutralizar su acción.</p>
+			
+		
     </div>
     <aside class="toc-box">
       <p class="toc-label">// Índice</p>
