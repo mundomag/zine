@@ -5,8 +5,24 @@
     <link>https://mundomag.fyi/</link>
     <description>Ciencia, misterio, fenómenos y futuro — revista digital independiente.</description>
     <language>es</language>
-    <lastBuildDate>Tue, 21 Jul 2026 01:34:26 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jul 2026 06:50:38 +0000</lastBuildDate>
     <atom:link href="https://mundomag.fyi/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>SERES DE CUSCATLÁN</title>
+      <link>https://mundomag.fyi/articulos/mitologia-salvadorena.html</link>
+      <guid isPermaLink="true">https://mundomag.fyi/articulos/mitologia-salvadorena.html</guid>
+      <description>Bestiario mítico de El Salvador: entidades, guardianes y espectros de la tradición oral</description>
+      <category>General</category>
+      <pubDate>Tue, 21 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>MK-Ultra: Anatomía del Hackeo de la Voluntad</title>
+      <link>https://mundomag.fyi/articulos/mkultra-hackeo-voluntad.html</link>
+      <guid isPermaLink="true">https://mundomag.fyi/articulos/mkultra-hackeo-voluntad.html</guid>
+      <description>Antecesores, el programa en sí, sus sucesores digitales y la frontera que se abre ahora con la neurotecnología: un recorrido documentado de ochenta años de intentos —confirmados, no especulados— de controlar la mente hum</description>
+      <category>General</category>
+      <pubDate>Tue, 21 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>TIERRA EXTENDIDA</title>
       <link>https://mundomag.fyi/articulos/tierra-extendida.html</link>
@@ -124,22 +140,6 @@
       <link>https://mundomag.fyi/articulos/loeb-galileo.html</link>
       <guid isPermaLink="true">https://mundomag.fyi/articulos/loeb-galileo.html</guid>
       <description>Análisis del Proyecto Galileo y la polémica de 'Oumuamua: cómo un astrofísico de Harvard se convirtió en la voz más incómoda de la astronomía moderna, y por qué su apuesta podría cambiar todo lo que sabemos sobre nuestra</description>
-      <category>General</category>
-      <pubDate>Fri, 17 Jul 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>SERES DE CUSCATLÁN</title>
-      <link>https://mundomag.fyi/articulos/mitologia-salvadorena.html</link>
-      <guid isPermaLink="true">https://mundomag.fyi/articulos/mitologia-salvadorena.html</guid>
-      <description>Bestiario mítico de El Salvador: entidades, guardianes y espectros de la tradición oral</description>
-      <category>General</category>
-      <pubDate>Fri, 17 Jul 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>MK-Ultra: Anatomía del Hackeo de la Voluntad</title>
-      <link>https://mundomag.fyi/articulos/mkultra-hackeo-voluntad.html</link>
-      <guid isPermaLink="true">https://mundomag.fyi/articulos/mkultra-hackeo-voluntad.html</guid>
-      <description>Antecesores, el programa en sí, sus sucesores digitales y la frontera que se abre ahora con la neurotecnología: un recorrido documentado de ochenta años de intentos —confirmados, no especulados— de controlar la mente hum</description>
       <category>General</category>
       <pubDate>Fri, 17 Jul 2026 00:00:00 +0000</pubDate>
     </item>
