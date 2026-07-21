@@ -235,6 +235,19 @@ formato: hero-documental-v1
       .section-head, .prose-section, .alert-box, .claim-grid, .evidence-grid, blockquote.persona, .myth-table, .timeline-item, .questions-box, .related-articles{ padding-left:0; padding-right:0; }
     }
   </style>
+<style id="footer-social-css">
+.footer-social-links { display: flex; gap: 0.85rem; margin-top: 0.6rem; }
+.footer-social-links a {
+  width: 30px; height: 30px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--border, #2a2a2e);
+  border-radius: 50%;
+  color: var(--muted, #7a7a82);
+  transition: color 0.2s, border-color 0.2s;
+}
+.footer-social-links a:hover { color: var(--gold, #c9a24b); border-color: var(--gold, #c9a24b); }
+.footer-social-links svg { width: 14px; height: 14px; fill: currentColor; }
+</style>
 </head>
 <body>
 
@@ -254,7 +267,9 @@ formato: hero-documental-v1
     </div>
     <button class="site-nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navDrawer">
       <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-        <line x1="2" y1="5" x2="18" y2="5"/><line x1="2" y1="10" x2="18" y2="10"/><line x1="2" y1="15" x2="18" y2="15"/>
+        <line x1="2" y1="5" x2="18" y2="5"/>
+        <line x1="2" y1="10" x2="18" y2="10"/>
+        <line x1="2" y1="15" x2="18" y2="15"/>
       </svg>
     </button>
   </div>
