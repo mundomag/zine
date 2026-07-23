@@ -42,6 +42,20 @@
     "fecha": "2026-07-17"
   },
   {
+    "slug": "el-fenomeno-fantasma-mapa",
+    "titulo": "The Phantom Phenomenon — Mapa interactivo completo",
+    "resumen": "",
+    "categoria": "General",
+    "fecha": "2026-07-22"
+  },
+  {
+    "slug": "el-fenomeno-fantasma",
+    "titulo": "THE PHANTOM PHENOMENON",
+    "resumen": "",
+    "categoria": "General",
+    "fecha": "2026-07-22"
+  },
+  {
     "slug": "fable5-mythos5-bloqueo-eeuu",
     "titulo": "90 minutos: la historia completa de cómo Washington apagó al modelo de IA más potente jamás lanzado.",
     "resumen": "El 9 de junio, Anthropic presentó Claude Fable 5 y Claude Mythos 5, los primeros modelos de una clase superior a Opus. Setenta y dos horas después, una directiva de control de exportaciones obligó a apagarlos para todo e",
@@ -186,7 +200,7 @@
     "titulo": "TIERRA EXTENDIDA",
     "resumen": "",
     "categoria": "General",
-    "fecha": "2026-07-21"
+    "fecha": "2026-07-22"
   },
   {
     "slug": "torio-energia-nuclear",

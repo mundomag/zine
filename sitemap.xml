@@ -55,6 +55,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://mundomag.fyi/articulos/el-fenomeno-fantasma-mapa.html</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mundomag.fyi/articulos/el-fenomeno-fantasma.html</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://mundomag.fyi/articulos/fable5-mythos5-bloqueo-eeuu.html</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
@@ -176,7 +188,7 @@
   </url>
   <url>
     <loc>https://mundomag.fyi/articulos/tierra-extendida.html</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
