@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<!-- MM-META
+slug: el-fenomeno-fantasma-mapa
+titulo: The Phantom Phenomenon — Mapa interactivo completo
+categoria: mitologia-moderna
+blurb: Digitalización asistida por visión artificial de todas las marcas de tinta del documento original, cruzada con los sitios emblemáticos verificados. Herramienta complementaria del artículo principal.
+fecha: 2026-07-22
+formato: mapa-utilidad-v1
+-->
+<html lang="es" data-page="fenomeno-fantasma-mapa">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Phantom Phenomenon — Mapa interactivo completo · Mundo Maravilloso</title>
+  <meta name="description" content="Mapa interactivo con la digitalización asistida por visión artificial de todas las marcas de tinta del documento 'The Phantom Phenomenon' (1979), más los 10 sitios emblemáticos verificados.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../css-articulos.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <style>
+    /* Nav y footer heredan de ../styles.css y ../css-articulos.css.
+       Aquí solo vive el diseño propio de esta herramienta de mapa,
+       aislado vía [data-page="fenomeno-fantasma-mapa"]. */
+    html[data-page="fenomeno-fantasma-mapa"]{
+      --ink:        #07080a;
+      --ink-mid:    #0d0f12;
+      --ink-soft:   #14161a;
+      --paper:      #f0ece2;
+      --gold:       #c9a84c;
+      --gold-light: #e8c96a;
+      --ice:        #8fd3d8;
+      --violet:     #9a8cf0;
+      --red:        #c0392b;
+      --muted:      #6b6b7a;
+      --border:     rgba(201,168,76,0.16);
+    }
+    html[data-page="fenomeno-fantasma-mapa"] body{
+      background:var(--ink); color:var(--paper); margin:0;
+      font-family:"Source Serif 4",Georgia,serif;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    .tool-header{
+      max-width:1200px; margin:0 auto; padding:3.5rem 2rem 2rem;
+    }
+    .tool-eyebrow{
+      display:inline-flex; align-items:center; gap:0.65rem;
+      font-family:"JetBrains Mono",monospace; font-size:0.62rem;
+      letter-spacing:0.28em; text-transform:uppercase; color:var(--ice);
+      margin-bottom:1.1rem;
+    }
+    .tool-eyebrow::before{ content:""; width:22px; height:1px; background:var(--ice); }
+    .tool-title{
+      font-family:"Audiowide",sans-serif; font-size:clamp(1.6rem,4vw,2.6rem);
+      font-weight:900; color:var(--paper); letter-spacing:-0.005em; line-height:1.05;
+    }
+    .tool-back{
+      display:inline-flex; align-items:center; gap:0.5rem; margin-top:1.4rem;
+      font-family:"JetBrains Mono",monospace; font-size:0.62rem; letter-spacing:0.1em;
+      text-transform:uppercase; color:var(--muted); text-decoration:none;
+    }
+    .tool-back:hover{ color:var(--ice); }
+
+    .method-box{
+      max-width:1200px; margin:0 auto 2rem; padding:0 2rem;
+    }
+    .method-inner{
+      border:1px solid var(--border); border-left:2px solid var(--ice);
+      background:var(--ink-mid); padding:1.5rem 1.75rem;
+      display:grid; grid-template-columns:1fr 1fr; gap:2rem;
+    }
+    .method-col-title{
+      font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.16em;
+      text-transform:uppercase; color:var(--ice); margin-bottom:0.6rem;
+    }
+    .method-col p{ font-size:0.9rem; color:rgba(240,236,226,0.75); line-height:1.65; margin:0; }
+    @media (max-width:720px){ .method-inner{ grid-template-columns:1fr; } }
+
+    .map-wrap{ max-width:1200px; margin:0 auto; padding:0 2rem 1rem; }
+    .map-controls{
+      display:flex; flex-wrap:wrap; align-items:center; gap:1.5rem;
+      border:1px solid var(--border); border-bottom:none; background:var(--ink-mid);
+      padding:1rem 1.5rem;
+    }
+    .layer-toggle{
+      display:flex; align-items:center; gap:0.55rem; cursor:pointer;
+      font-family:"JetBrains Mono",monospace; font-size:0.65rem; letter-spacing:0.06em;
+      text-transform:uppercase; color:rgba(240,236,226,0.8);
+      user-select:none;
+    }
+    .layer-toggle input{ accent-color: var(--ice); width:14px; height:14px; cursor:pointer; }
+    .layer-toggle .swatch{ width:10px; height:10px; border-radius:50%; display:inline-block; }
+    .map-count{
+      margin-left:auto; font-family:"JetBrains Mono",monospace; font-size:0.6rem;
+      letter-spacing:0.08em; text-transform:uppercase; color:var(--muted);
+    }
+    #full-map{ width:100%; height:78vh; min-height:520px; border:1px solid var(--border); background:#0d0f12; }
+    .map-legend-bottom{
+      display:flex; flex-wrap:wrap; gap:0.6rem 1.6rem;
+      border:1px solid var(--border); border-top:none; background:var(--ink-mid);
+      padding:1rem 1.5rem;
+      font-family:"JetBrains Mono",monospace; font-size:0.6rem; letter-spacing:0.04em; color:rgba(240,236,226,0.7);
+    }
+    .map-legend-bottom span.dotcol{ display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:0.4rem; vertical-align:middle; }
+
+    .leaflet-popup-content-wrapper{ background:var(--ink-mid); color:var(--paper); border:1px solid var(--border); border-radius:2px; }
+    .leaflet-popup-tip{ background:var(--ink-mid); }
+    .leaflet-popup-content{ font-family:"Source Serif 4",Georgia,serif; font-size:0.85rem; line-height:1.55; margin:0.9rem 1rem; }
+    .popup-title{ font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:0.92rem; color:var(--gold-light); margin-bottom:0.4rem; display:block; }
+    .popup-tag{ font-family:"JetBrains Mono",monospace; font-size:0.55rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--ice); display:block; margin-bottom:0.5rem; }
+    .leaflet-container{ font-family:"Source Serif 4",Georgia,serif; }
+
+    .caveat-box{
+      max-width:1200px; margin:2.5rem auto; padding:0 2rem;
+    }
+    .caveat-inner{
+      border:1px solid rgba(192,57,43,0.3); border-left:2px solid var(--red);
+      background:rgba(192,57,43,0.04); padding:1.5rem 1.75rem;
+    }
+    .caveat-title{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--red); margin-bottom:0.6rem; }
+    .caveat-text{ font-size:0.92rem; color:rgba(240,236,226,0.75); line-height:1.7; }
+
+    .cta-row{ max-width:1200px; margin:0 auto 5rem; padding:0 2rem; display:flex; gap:1rem; flex-wrap:wrap; }
+    .cta-link{
+      display:inline-flex; align-items:center; gap:0.6rem;
+      font-family:"JetBrains Mono",monospace; font-size:0.62rem; letter-spacing:0.1em;
+      text-transform:uppercase; color:var(--ink); background:var(--gold);
+      padding:0.85rem 1.4rem; text-decoration:none; transition:background 0.2s;
+    }
+    .cta-link:hover{ background:var(--gold-light); }
+    .cta-link.secondary{ background:transparent; border:1px solid var(--border); color:var(--paper); }
+    .cta-link.secondary:hover{ border-color:var(--gold); color:var(--gold-light); }
+
+    @media (max-width:600px){
+      .tool-header, .method-box, .map-wrap, .caveat-box, .cta-row{ padding-left:1.25rem; padding-right:1.25rem; }
+      #full-map{ height:65vh; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════ -->
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="../" class="site-nav-logo">Mundo Maravilloso</a>
+    <div class="site-nav-sep"></div>
+    <div class="site-nav-articles">
+      <a href="../articulos.html" class="site-nav-link">Artículos</a>
+      <a href="../seguimientos/3i-atlas.html" class="site-nav-link">3I/ATLAS</a>
+      <a href="../seguimientos/uap.html" class="site-nav-link">UAP WATCH</a>
+      <a href="../seguimientos/pursue-releases.html" class="site-nav-link">PURSUE</a>
+      <a href="../seguimientos/voyager-1.html" class="site-nav-link">VOYAGER 1</a>
+      <a href="../seguimientos/hitos-medicos.html" class="site-nav-link">HITOS MÉDICOS</a>
+      <a href="../glosario.html" class="site-nav-link"><span class="nav-dot"></span>&nbsp;Glosario</a>
+    </div>
+    <button class="site-nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navDrawer">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <line x1="2" y1="5" x2="18" y2="5"/><line x1="2" y1="10" x2="18" y2="10"/><line x1="2" y1="15" x2="18" y2="15"/>
+      </svg>
+    </button>
+  </div>
+  <div class="site-nav-drawer" id="navDrawer">
+    <a href="../articulos.html" class="drawer-link">Artículos</a>
+    <a href="../seguimientos/3i-atlas.html" class="drawer-link">3I/ATLAS</a>
+    <a href="../seguimientos/uap.html" class="drawer-link">UAP WATCH</a>
+    <a href="../seguimientos/pursue-releases.html" class="drawer-link">PURSUE</a>
+    <a href="../seguimientos/voyager-1.html" class="drawer-link">VOYAGER 1</a>
+    <a href="../seguimientos/hitos-medicos.html" class="drawer-link">HITOS MÉDICOS</a>
+    <a href="../glosario.html" class="drawer-link"><span class="nav-dot"></span>&nbsp;Glosario</a>
+  </div>
+</nav>
+
+<div class="tool-header">
+  <div class="tool-eyebrow">Mundo Maravilloso · Herramienta complementaria</div>
+  <h1 class="tool-title">The Phantom Phenomenon — Mapa interactivo completo</h1>
+  <a href="el-fenomeno-fantasma.html" class="tool-back">← Volver al artículo completo</a>
+</div>
+
+<div class="method-box">
+  <div class="method-inner">
+    <div class="method-col">
+      <div class="method-col-title">// Qué muestra este mapa</div>
+      <p>Dos capas superponibles: las <strong>~740 marcas de tinta</strong> detectadas automáticamente en todo el documento, ubicadas en su posición aproximada, y los <strong>10 sitios emblemáticos</strong> verificados editorialmente y descritos en el artículo principal.</p>
+    </div>
+    <div class="method-col">
+      <div class="method-col-title">// Metodología y límites</div>
+      <p>Los puntos se generaron con detección automática de contornos (OpenCV) y calibración de coordenadas por OCR sobre el grid del documento. <strong>No distinguen de forma fiable el tipo de símbolo</strong> (mutilación, portal, base, etc.) — cada punto solo indica que allí hubo una marca de tinta en el original, en su ubicación aproximada.</p>
+    </div>
+  </div>
+</div>
+
+<div class="map-wrap">
+  <div class="map-controls">
+    <label class="layer-toggle">
+      <input type="checkbox" id="toggleHeat" checked>
+      <span class="swatch" style="background:var(--red);"></span> Marcas detectadas (posición aproximada)
+    </label>
+    <label class="layer-toggle">
+      <input type="checkbox" id="toggleSites" checked>
+      <span class="swatch" style="background:var(--ice);"></span> Sitios emblemáticos (verificados)
+    </label>
+    <span class="map-count" id="mapCount">— marcas detectadas</span>
+  </div>
+  <div id="full-map"></div>
+  <div class="map-legend-bottom">
+    <span><span class="dotcol" style="background:#8fd3d8;"></span>Portal / vórtice</span>
+    <span><span class="dotcol" style="background:#e8c96a;"></span>Base subterránea</span>
+    <span><span class="dotcol" style="background:#c0392b;"></span>Mutilaciones / actividad OVNI</span>
+    <span><span class="dotcol" style="background:#9a8cf0;"></span>Nodo geométrico central</span>
+  </div>
+</div>
+
+<div class="caveat-box">
+  <div class="caveat-inner">
+    <div class="caveat-title">// Nota metodológica</div>
+    <div class="caveat-text">Cada punto rojo es una marca de tinta detectada automáticamente en el documento original y reubicada según el grid de coordenadas del propio mapa. El propio documento tampoco es una fuente verificada (ver artículo principal). Se ofrece como herramienta exploratoria para ver dónde y con qué frecuencia el mapa de 1979 concentra sus afirmaciones — la posición de cada punto es aproximada, no una transcripción exacta símbolo por símbolo.</div>
+  </div>
+</div>
+
+<div class="cta-row">
+  <a href="el-fenomeno-fantasma.html" class="cta-link">Leer el artículo completo →</a>
+  <a href="el-fenomeno-fantasma.html#sec-documento" class="cta-link secondary">Ver el documento original</a>
+</div>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-kicker">// Revista de exploración y pensamiento</p>
+        <a href="../" class="footer-logo">Mundo Maravilloso</a>
+        <p class="footer-tagline">Ciencia · Misterio · Fenómenos · Futuro</p>
+        <p class="footer-desc">Una publicación independiente sobre los grandes misterios que la ciencia todavía no ha resuelto.</p>
+        <span class="footer-edition-badge">Mitología moderna · Jul 2026</span>
+      </div>
+      <div class="footer-nav-grid">
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Artículos</p>
+          <ul class="footer-nav-list">
+            <li><a href="../articulos.html">Todos los artículos</a></li>
+            <li><a href="el-fenomeno-fantasma.html">The Phantom Phenomenon</a></li>
+            <li><a href="tierra-extendida.html">Tierra Extendida</a></li>
+            <li><a href="../glosario.html">Glosario</a></li>
+          </ul>
+          <p class="footer-nav-col-label" style="margin-top:1.5rem;">// Publicación</p>
+          <ul class="footer-nav-list">
+            <li><a href="../acerca-de.html">Acerca de</a></li>
+            <li><a href="../contacto.html">Contacto</a></li>
+            <li><a href="../privacidad.html">Privacidad</a></li>
+            <li><a href="../terminos.html">Términos</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Seguimientos</p>
+          <ul class="footer-nav-list">
+            <li><a href="../seguimientos/3i-atlas.html">3I/ATLAS</a></li>
+            <li><a href="../seguimientos/uap.html">UAP WATCH</a></li>
+            <li><a href="../seguimientos/pursue-releases.html">PURSUE RELEASES</a></li>
+            <li><a href="../seguimientos/voyager-1.html">VOYAGER 1</a></li>
+            <li><a href="../seguimientos/hitos-medicos.html">HITOS MÉDICOS</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Síguenos</p>
+          <div class="footer-social-links">
+            <a href="https://www.facebook.com/revistamundo" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16"><path d="M16 8a8 8 0 1 0-9.25 7.9v-5.6H4.9V8h1.85V6.4c0-1.83 1.09-2.84 2.76-2.84.8 0 1.64.14 1.64.14v1.8h-.92c-.91 0-1.19.56-1.19 1.14V8h2.03l-.32 2.3H9.04v5.6A8 8 0 0 0 16 8z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/mundo.m.mag/" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16"><path d="M4.7 0h6.6A4.7 4.7 0 0 1 16 4.7v6.6a4.7 4.7 0 0 1-4.7 4.7H4.7A4.7 4.7 0 0 1 0 11.3V4.7A4.7 4.7 0 0 1 4.7 0zm-.15 1.5A3.05 3.05 0 0 0 1.5 4.55v6.9a3.05 3.05 0 0 0 3.05 3.05h6.9a3.05 3.05 0 0 0 3.05-3.05v-6.9A3.05 3.05 0 0 0 11.45 1.5h-6.9zM8 4.1a3.9 3.9 0 1 1 0 7.8 3.9 3.9 0 0 1 0-7.8zm0 1.5a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8zm4.05-2.65a.95.95 0 1 1 0 1.9.95.95 0 0 1 0-1.9z"/></svg>
+            </a>
+            <a href="https://x.com/uap_mag" aria-label="X (Twitter)" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16"><path d="M12.6 1h2.45L9.95 6.91 15.7 15h-4.5l-3.52-4.6L3.7 15H1.25l5.4-6.18L1.15 1h4.62l3.19 4.22L12.6 1zm-.86 12.6h1.36L4.32 2.32H2.86l8.88 11.28z"/></svg>
+            </a>
+            <a href="https://substack.com/@mundomag" aria-label="Substack" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16"><path d="M1.5 1.5h13v2.3h-13V1.5zm0 4.1h13v2.1h-13V5.6zm0 4.1 6.5 5.8 6.5-5.8H1.5z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">Mundo Maravilloso · Hecho en El Salvador · 2026</p>
+      <p class="footer-signal">// Herramienta · el-fenomeno-fantasma-mapa</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn = document.getElementById('navHamburger');
+  var drawer = document.getElementById('navDrawer');
+  if (!btn || !drawer) return;
+  btn.addEventListener('click', function(){
+    var isOpen = drawer.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  drawer.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      drawer.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+// ── Datos: ~740 marcas de tinta detectadas automáticamente (OpenCV) ──
+var DENSITY_POINTS = [{"lat":47.355,"lng":-113.536,"w":1},{"lat":47.375,"lng":-116.279,"w":1},{"lat":47.243,"lng":-117.9,"w":1},{"lat":47.12,"lng":-115.998,"w":1},{"lat":47.127,"lng":-117.76,"w":1},{"lat":46.726,"lng":-114.516,"w":2.0},{"lat":46.555,"lng":-116.179,"w":2.75},{"lat":46.329,"lng":-117.392,"w":1},{"lat":46.314,"lng":-117.063,"w":1},{"lat":46.359,"lng":-116.451,"w":1},{"lat":46.241,"lng":-115.819,"w":1},{"lat":45.831,"lng":-118.028,"w":3},{"lat":46.016,"lng":-67.72,"w":1},{"lat":45.972,"lng":-116.342,"w":1},{"lat":45.852,"lng":-117.167,"w":1},{"lat":45.707,"lng":-116.889,"w":1},{"lat":45.197,"lng":-118.25,"w":1.98},{"lat":45.071,"lng":-116.852,"w":2.5},{"lat":45.08,"lng":-115.935,"w":1.78},{"lat":44.923,"lng":-97.415,"w":2.2},{"lat":45.028,"lng":-79.878,"w":1},{"lat":44.786,"lng":-107.734,"w":2.55},{"lat":44.882,"lng":-71.521,"w":1.82},{"lat":44.973,"lng":-113.426,"w":1},{"lat":44.942,"lng":-109.875,"w":1},{"lat":44.823,"lng":-115.779,"w":1.05},{"lat":44.867,"lng":-106.862,"w":1},{"lat":44.806,"lng":-82.857,"w":1},{"lat":44.841,"lng":-117.34,"w":1},{"lat":44.83,"lng":-80.083,"w":1},{"lat":44.751,"lng":-114.04,"w":1},{"lat":44.585,"lng":-113.054,"w":2.25},{"lat":44.508,"lng":-118.26,"w":1},{"lat":44.415,"lng":-109.871,"w":1.6},{"lat":44.391,"lng":-117.772,"w":1},{"lat":44.285,"lng":-117.082,"w":1.6},{"lat":44.137,"lng":-98.222,"w":2.28},{"lat":44.108,"lng":-111.483,"w":2.1},{"lat":44.231,"lng":-107.921,"w":1},{"lat":44.077,"lng":-106.904,"w":2.72},{"lat":44.268,"lng":-97.53,"w":1},{"lat":44.145,"lng":-73.553,"w":1.2},{"lat":44.286,"lng":-73.358,"w":1},{"lat":44.066,"lng":-114.435,"w":1},{"lat":44.075,"lng":-112.29,"w":1},{"lat":44.077,"lng":-106.152,"w":1},{"lat":43.84,"lng":-74.322,"w":2.1},{"lat":43.773,"lng":-85.82,"w":3},{"lat":43.818,"lng":-117.454,"w":1},{"lat":43.887,"lng":-107.467,"w":1},{"lat":43.916,"lng":-102.388,"w":1},{"lat":43.877,"lng":-86.33,"w":1},{"lat":43.559,"lng":-119.762,"w":1.92},{"lat":43.546,"lng":-114.398,"w":1.95},{"lat":43.721,"lng":-112.143,"w":1},{"lat":43.66,"lng":-106.232,"w":1},{"lat":43.729,"lng":-97.959,"w":1},{"lat":43.65,"lng":-107.242,"w":1},{"lat":43.601,"lng":-113.316,"w":1},{"lat":43.353,"lng":-74.387,"w":2.48},{"lat":43.465,"lng":-106.412,"w":1},{"lat":43.189,"lng":-96.622,"w":1.92},{"lat":43.352,"lng":-91.198,"w":1},{"lat":43.096,"lng":-118.903,"w":2.05},{"lat":43.158,"lng":-105.112,"w":1},{"lat":43.162,"lng":-77.852,"w":1},{"lat":43.154,"lng":-75.383,"w":1},{"lat":43.152,"lng":-110.101,"w":1},{"lat":43.078,"lng":-106.569,"w":1},{"lat":43.005,"lng":-75.592,"w":1.02},{"lat":43.02,"lng":-117.067,"w":1},{"lat":42.809,"lng":-111.925,"w":2.78},{"lat":43.063,"lng":-74.063,"w":1},{"lat":42.964,"lng":-117.496,"w":1},{"lat":42.732,"lng":-74.35,"w":1.85},{"lat":42.864,"lng":-112.77,"w":1},{"lat":42.589,"lng":-94.781,"w":2.02},{"lat":42.499,"lng":-104.007,"w":3},{"lat":42.539,"lng":-108.013,"w":1.4},{"lat":42.684,"lng":-90.57,"w":1},{"lat":42.522,"lng":-81.806,"w":1.25},{"lat":42.419,"lng":-77.076,"w":3},{"lat":42.556,"lng":-111.127,"w":1},{"lat":42.423,"lng":-108.978,"w":1.52},{"lat":42.376,"lng":-102.982,"w":2.82},{"lat":42.396,"lng":-80.697,"w":2.12},{"lat":42.543,"lng":-80.285,"w":1},{"lat":42.549,"lng":-79.786,"w":1},{"lat":42.172,"lng":-112.097,"w":3},{"lat":42.388,"lng":-96.191,"w":1},{"lat":42.181,"lng":-119.57,"w":2.33},{"lat":42.331,"lng":-95.468,"w":1},{"lat":42.131,"lng":-92.106,"w":2.35},{"lat":42.088,"lng":-80.401,"w":1.27},{"lat":42.294,"lng":-80.131,"w":1},{"lat":42.226,"lng":-94.963,"w":1},{"lat":42.014,"lng":-105.079,"w":1.62},{"lat":42.099,"lng":-103.532,"w":1},{"lat":42.101,"lng":-94.399,"w":1},{"lat":41.94,"lng":-89.36,"w":1.92},{"lat":42.042,"lng":-119.208,"w":1},{"lat":41.935,"lng":-114.878,"w":1.82},{"lat":41.821,"lng":-109.128,"w":2.48},{"lat":41.833,"lng":-114.539,"w":1},{"lat":41.96,"lng":-112.983,"w":1},{"lat":42.001,"lng":-90.872,"w":1},{"lat":41.855,"lng":-80.205,"w":1.12},{"lat":41.837,"lng":-79.397,"w":3},{"lat":41.918,"lng":-101.516,"w":1},{"lat":41.901,"lng":-90.104,"w":1},{"lat":41.704,"lng":-85.624,"w":2.35},{"lat":41.732,"lng":-103.399,"w":1.7},{"lat":41.87,"lng":-96.592,"w":1},{"lat":41.852,"lng":-95.548,"w":1},{"lat":41.844,"lng":-93.729,"w":1},{"lat":41.606,"lng":-98.16,"w":2.2},{"lat":41.817,"lng":-91.572,"w":1},{"lat":41.449,"lng":-77.122,"w":3},{"lat":41.705,"lng":-74.971,"w":1.38},{"lat":41.703,"lng":-110.961,"w":1},{"lat":41.704,"lng":-95.031,"w":1},{"lat":41.771,"lng":-79.95,"w":1},{"lat":41.632,"lng":-104.85,"w":1},{"lat":41.639,"lng":-92.095,"w":1},{"lat":41.44,"lng":-114.512,"w":1.72},{"lat":41.618,"lng":-94.22,"w":1},{"lat":41.556,"lng":-93.141,"w":1},{"lat":41.456,"lng":-115.364,"w":1},{"lat":41.408,"lng":-109.492,"w":1},{"lat":41.424,"lng":-108.994,"w":1},{"lat":41.394,"lng":-96.497,"w":1},{"lat":41.377,"lng":-91.055,"w":1},{"lat":41.307,"lng":-113.133,"w":1},{"lat":41.315,"lng":-109.939,"w":1},{"lat":41.254,"lng":-102.847,"w":1},{"lat":41.291,"lng":-92.469,"w":1},{"lat":41.158,"lng":-90.574,"w":2.1},{"lat":41.213,"lng":-107.506,"w":1},{"lat":41.072,"lng":-93.388,"w":1.27},{"lat":41.247,"lng":-80.478,"w":1},{"lat":41.182,"lng":-114.593,"w":1},{"lat":41.205,"lng":-101.462,"w":1},{"lat":41.165,"lng":-98.762,"w":1},{"lat":40.962,"lng":-114.148,"w":1.9},{"lat":41.104,"lng":-111.444,"w":1},{"lat":40.885,"lng":-103.932,"w":3},{"lat":41.002,"lng":-115.352,"w":1.02},{"lat":40.962,"lng":-92.08,"w":1.38},{"lat":40.922,"lng":-76.004,"w":1.82},{"lat":41.065,"lng":-75.122,"w":1},{"lat":40.942,"lng":-114.949,"w":1},{"lat":40.841,"lng":-101.602,"w":1.55},{"lat":40.988,"lng":-96.485,"w":1},{"lat":40.807,"lng":-95.234,"w":1.92},{"lat":40.948,"lng":-93.16,"w":1},{"lat":40.995,"lng":-91.143,"w":1},{"lat":40.968,"lng":-80.626,"w":1},{"lat":40.937,"lng":-110.876,"w":1},{"lat":40.899,"lng":-108.338,"w":1},{"lat":40.883,"lng":-89.139,"w":1},{"lat":40.677,"lng":-103.011,"w":2.42},{"lat":40.633,"lng":-84.943,"w":2.35},{"lat":40.656,"lng":-77.253,"w":1.7},{"lat":40.636,"lng":-121.036,"w":1},{"lat":40.68,"lng":-108.708,"w":1},{"lat":40.536,"lng":-105.488,"w":1.7},{"lat":40.447,"lng":-96.311,"w":3},{"lat":40.51,"lng":-78.296,"w":2.25},{"lat":40.633,"lng":-114.312,"w":1},{"lat":40.423,"lng":-100.943,"w":2.38},{"lat":40.485,"lng":-120.413,"w":1},{"lat":40.426,"lng":-110.964,"w":1.78},{"lat":40.473,"lng":-90.836,"w":1},{"lat":40.39,"lng":-83.788,"w":1.65},{"lat":40.437,"lng":-109.421,"w":1},{"lat":40.381,"lng":-122.432,"w":1},{"lat":40.369,"lng":-121.06,"w":1.12},{"lat":40.417,"lng":-120.792,"w":1},{"lat":40.401,"lng":-117.352,"w":1},{"lat":40.396,"lng":-109.983,"w":1},{"lat":40.299,"lng":-80.526,"w":1.3},{"lat":40.341,"lng":-104.049,"w":1},{"lat":40.215,"lng":-81.181,"w":1.95},{"lat":40.304,"lng":-90.51,"w":1},{"lat":40.125,"lng":-77.774,"w":2.6},{"lat":40.229,"lng":-80.262,"w":1},{"lat":40.17,"lng":-104.978,"w":1},{"lat":40.075,"lng":-90.354,"w":1},{"lat":40.107,"lng":-81.513,"w":1},{"lat":40.033,"lng":-103.819,"w":1},{"lat":39.936,"lng":-91.643,"w":1.62},{"lat":39.81,"lng":-82.131,"w":2.28},{"lat":39.992,"lng":-96.163,"w":1},{"lat":39.793,"lng":-84.058,"w":2.28},{"lat":39.765,"lng":-91.004,"w":2.33},{"lat":39.861,"lng":-104.668,"w":1},{"lat":39.851,"lng":-95.938,"w":1},{"lat":39.661,"lng":-78.425,"w":2.25},{"lat":39.77,"lng":-109.688,"w":1},{"lat":39.602,"lng":-92.476,"w":2.4},{"lat":39.737,"lng":-86.598,"w":1.25},{"lat":39.789,"lng":-77.284,"w":1},{"lat":39.615,"lng":-103.435,"w":1},{"lat":39.463,"lng":-85.902,"w":2.28},{"lat":39.499,"lng":-79.667,"w":1.82},{"lat":39.563,"lng":-77.27,"w":1.23},{"lat":39.524,"lng":-112.11,"w":1},{"lat":39.521,"lng":-85.4,"w":1},{"lat":39.161,"lng":-111.67,"w":3},{"lat":39.429,"lng":-96.13,"w":1},{"lat":39.313,"lng":-82.869,"w":1.58},{"lat":39.254,"lng":-90.794,"w":1.6},{"lat":39.355,"lng":-83.834,"w":1},{"lat":39.096,"lng":-118.597,"w":1.88},{"lat":39.274,"lng":-104.695,"w":1},{"lat":39.318,"lng":-104.419,"w":1},{"lat":39.095,"lng":-103.127,"w":2.38},{"lat":39.324,"lng":-88.753,"w":1},{"lat":39.288,"lng":-67.687,"w":1},{"lat":39.236,"lng":-87.714,"w":1},{"lat":39.147,"lng":-77.446,"w":1.58},{"lat":39.163,"lng":-88.167,"w":1},{"lat":39.162,"lng":-83.744,"w":1},{"lat":39.174,"lng":-83.107,"w":1},{"lat":38.986,"lng":-76.252,"w":3},{"lat":38.955,"lng":-116.72,"w":2.88},{"lat":39.073,"lng":-101.374,"w":1},{"lat":38.757,"lng":-108.451,"w":3},{"lat":38.857,"lng":-99.788,"w":1.55},{"lat":38.954,"lng":-109.957,"w":1},{"lat":38.802,"lng":-103.848,"w":3},{"lat":38.736,"lng":-88.774,"w":2.15},{"lat":38.832,"lng":-117.229,"w":1},{"lat":38.816,"lng":-109.278,"w":1},{"lat":38.663,"lng":-91.511,"w":2.15},{"lat":38.812,"lng":-117.904,"w":1},{"lat":38.823,"lng":-109.01,"w":1},{"lat":38.802,"lng":-100.363,"w":1},{"lat":38.706,"lng":-119.613,"w":1},{"lat":38.681,"lng":-86.268,"w":1},{"lat":38.656,"lng":-103.182,"w":1},{"lat":38.581,"lng":-84.68,"w":1},{"lat":38.402,"lng":-118.9,"w":2.1},{"lat":38.549,"lng":-106.684,"w":1},{"lat":38.534,"lng":-101.906,"w":1},{"lat":38.564,"lng":-99.266,"w":1},{"lat":38.356,"lng":-92.082,"w":2.45},{"lat":38.381,"lng":-82.141,"w":2.33},{"lat":38.453,"lng":-109.592,"w":1},{"lat":38.485,"lng":-103.942,"w":1},{"lat":38.465,"lng":-101.038,"w":1},{"lat":38.454,"lng":-99.822,"w":1},{"lat":38.267,"lng":-90.726,"w":2.62},{"lat":38.429,"lng":-102.907,"w":1},{"lat":38.387,"lng":-102.56,"w":1},{"lat":38.353,"lng":-100.336,"w":1},{"lat":38.277,"lng":-106.721,"w":1},{"lat":38.307,"lng":-98.189,"w":1},{"lat":38.186,"lng":-84.537,"w":1.6},{"lat":37.998,"lng":-105.752,"w":2.85},{"lat":38.207,"lng":-97.063,"w":1},{"lat":38.03,"lng":-103.869,"w":3},{"lat":38.181,"lng":-102.937,"w":1},{"lat":37.992,"lng":-83.593,"w":2.22},{"lat":37.998,"lng":-81.479,"w":2.08},{"lat":38.025,"lng":-112.051,"w":1.12},{"lat":38.089,"lng":-110.96,"w":1},{"lat":38.104,"lng":-104.679,"w":1},{"lat":38.106,"lng":-96.2,"w":1},{"lat":38.065,"lng":-111.721,"w":1},{"lat":38.028,"lng":-101.764,"w":1},{"lat":38.086,"lng":-101.142,"w":1},{"lat":38.058,"lng":-76.993,"w":1},{"lat":37.891,"lng":-98.149,"w":1},{"lat":37.978,"lng":-91.254,"w":1},{"lat":37.919,"lng":-99.917,"w":1},{"lat":37.92,"lng":-98.617,"w":1},{"lat":37.94,"lng":-96.714,"w":1},{"lat":37.986,"lng":-96.431,"w":1},{"lat":37.781,"lng":-111.748,"w":1.27},{"lat":37.88,"lng":-102.86,"w":1},{"lat":37.86,"lng":-101.27,"w":1},{"lat":37.858,"lng":-100.79,"w":1},{"lat":37.889,"lng":-100.33,"w":1},{"lat":37.823,"lng":-97.425,"w":1},{"lat":37.852,"lng":-95.819,"w":1},{"lat":37.686,"lng":-77.912,"w":1.98},{"lat":37.812,"lng":-116.63,"w":1},{"lat":37.647,"lng":-104.94,"w":1.78},{"lat":37.786,"lng":-101.794,"w":1},{"lat":37.731,"lng":-99.278,"w":1},{"lat":37.61,"lng":-94.246,"w":2.1},{"lat":37.606,"lng":-85.842,"w":2.0},{"lat":37.827,"lng":-80.188,"w":1},{"lat":37.702,"lng":-116.351,"w":1},{"lat":37.742,"lng":-102.367,"w":1},{"lat":37.731,"lng":-96.321,"w":1},{"lat":37.656,"lng":-81.076,"w":1.75},{"lat":37.575,"lng":-79.882,"w":3},{"lat":37.684,"lng":-119.042,"w":1},{"lat":37.603,"lng":-116.812,"w":1.23},{"lat":37.643,"lng":-107.784,"w":1},{"lat":37.444,"lng":-104.037,"w":2.9},{"lat":37.643,"lng":-95.502,"w":1},{"lat":37.536,"lng":-82.028,"w":1},{"lat":37.598,"lng":-103.505,"w":1},{"lat":37.454,"lng":-102.856,"w":2.38},{"lat":37.615,"lng":-98.637,"w":1},{"lat":37.459,"lng":-96.08,"w":2.28},{"lat":37.536,"lng":-83.781,"w":1.4},{"lat":37.539,"lng":-80.769,"w":1.08},{"lat":37.545,"lng":-100.442,"w":1},{"lat":37.503,"lng":-99.839,"w":1},{"lat":37.565,"lng":-98.027,"w":1},{"lat":37.575,"lng":-97.085,"w":1},{"lat":37.487,"lng":-95.319,"w":1},{"lat":37.405,"lng":-81.755,"w":1.35},{"lat":37.297,"lng":-101.721,"w":3},{"lat":37.408,"lng":-116.467,"w":1},{"lat":37.414,"lng":-83.129,"w":1},{"lat":37.213,"lng":-118.851,"w":3},{"lat":37.344,"lng":-105.42,"w":1},{"lat":37.403,"lng":-100.658,"w":1},{"lat":37.142,"lng":-120.061,"w":2.88},{"lat":37.274,"lng":-105.93,"w":1},{"lat":37.058,"lng":-100.137,"w":3},{"lat":37.305,"lng":-98.64,"w":1},{"lat":37.2,"lng":-86.775,"w":1.42},{"lat":37.144,"lng":-82.557,"w":2.62},{"lat":37.056,"lng":-116.862,"w":1.88},{"lat":37.179,"lng":-111.554,"w":1},{"lat":37.172,"lng":-100.413,"w":1},{"lat":37.171,"lng":-91.75,"w":1},{"lat":36.999,"lng":-83.984,"w":2.65},{"lat":37.118,"lng":-115.198,"w":1},{"lat":36.985,"lng":-102.95,"w":2.92},{"lat":36.89,"lng":-81.475,"w":2.48},{"lat":37.094,"lng":-74.145,"w":1},{"lat":37.051,"lng":-103.793,"w":1},{"lat":37.099,"lng":-102.338,"w":1},{"lat":37.04,"lng":-97.507,"w":1},{"lat":36.985,"lng":-85.247,"w":1},{"lat":36.926,"lng":-117.105,"w":1},{"lat":36.906,"lng":-104.276,"w":1},{"lat":36.926,"lng":-93.892,"w":1},{"lat":36.879,"lng":-88.147,"w":1},{"lat":36.902,"lng":-106.288,"w":1},{"lat":36.879,"lng":-105.717,"w":1},{"lat":36.862,"lng":-102.529,"w":1},{"lat":36.885,"lng":-95.46,"w":1},{"lat":36.88,"lng":-91.248,"w":1},{"lat":36.85,"lng":-78.089,"w":1},{"lat":36.782,"lng":-114.095,"w":1},{"lat":36.822,"lng":-105.202,"w":1},{"lat":36.779,"lng":-92.394,"w":1},{"lat":36.798,"lng":-78.616,"w":1},{"lat":36.649,"lng":-88.15,"w":1.32},{"lat":36.756,"lng":-82.535,"w":1},{"lat":36.571,"lng":-111.977,"w":1.02},{"lat":36.703,"lng":-97.962,"w":1},{"lat":36.706,"lng":-97.166,"w":1},{"lat":36.667,"lng":-94.644,"w":1},{"lat":36.568,"lng":-86.535,"w":1.3},{"lat":36.496,"lng":-114.547,"w":1.7},{"lat":36.409,"lng":-104.402,"w":2.85},{"lat":36.531,"lng":-105.515,"w":1},{"lat":36.57,"lng":-103.908,"w":1},{"lat":36.465,"lng":-103.357,"w":1.52},{"lat":36.336,"lng":-102.746,"w":3},{"lat":36.562,"lng":-101.562,"w":1},{"lat":36.444,"lng":-84.949,"w":1.52},{"lat":36.238,"lng":-95.986,"w":2.12},{"lat":36.485,"lng":-91.971,"w":1},{"lat":36.352,"lng":-78.389,"w":1.78},{"lat":36.417,"lng":-96.81,"w":1},{"lat":36.376,"lng":-88.901,"w":1},{"lat":36.269,"lng":-84.598,"w":1.32},{"lat":36.355,"lng":-97.911,"w":1},{"lat":36.414,"lng":-94.789,"w":1},{"lat":36.363,"lng":-92.81,"w":1},{"lat":36.328,"lng":-91.407,"w":1},{"lat":36.332,"lng":-85.499,"w":1},{"lat":36.228,"lng":-105.248,"w":1},{"lat":36.15,"lng":-112.227,"w":1},{"lat":36.153,"lng":-102.191,"w":1},{"lat":36.199,"lng":-97.427,"w":1},{"lat":36.19,"lng":-94.751,"w":1},{"lat":35.925,"lng":-106.21,"w":2.68},{"lat":36.092,"lng":-112.504,"w":1},{"lat":36.047,"lng":-107.468,"w":1},{"lat":36.04,"lng":-104.701,"w":1},{"lat":36.076,"lng":-101.292,"w":1},{"lat":36.079,"lng":-92.479,"w":1},{"lat":35.981,"lng":-91.47,"w":1.42},{"lat":35.99,"lng":-112.789,"w":1},{"lat":35.885,"lng":-112.08,"w":1.9},{"lat":35.93,"lng":-110.691,"w":1.62},{"lat":35.984,"lng":-99.154,"w":1},{"lat":35.995,"lng":-97.4,"w":1},{"lat":35.946,"lng":-98.518,"w":1},{"lat":35.973,"lng":-97.952,"w":1},{"lat":35.904,"lng":-90.982,"w":1},{"lat":35.855,"lng":-81.149,"w":1.82},{"lat":35.896,"lng":-102.795,"w":1},{"lat":35.864,"lng":-86.452,"w":1},{"lat":35.822,"lng":-102.069,"w":1},{"lat":35.747,"lng":-112.571,"w":1},{"lat":35.789,"lng":-111.634,"w":1},{"lat":35.696,"lng":-104.0,"w":1.35},{"lat":35.761,"lng":-101.294,"w":1},{"lat":35.722,"lng":-100.247,"w":1},{"lat":35.677,"lng":-98.969,"w":1},{"lat":35.778,"lng":-94.365,"w":1},{"lat":35.64,"lng":-88.738,"w":1.35},{"lat":35.763,"lng":-81.584,"w":1},{"lat":35.642,"lng":-97.697,"w":1},{"lat":35.71,"lng":-93.698,"w":1},{"lat":35.653,"lng":-92.734,"w":1},{"lat":35.635,"lng":-104.794,"w":1},{"lat":35.505,"lng":-103.748,"w":1.15},{"lat":35.649,"lng":-103.292,"w":1},{"lat":35.618,"lng":-86.257,"w":1.35},{"lat":35.468,"lng":-112.879,"w":1.05},{"lat":35.49,"lng":-85.954,"w":1},{"lat":35.412,"lng":-105.295,"w":1},{"lat":35.429,"lng":-102.962,"w":1},{"lat":35.419,"lng":-92.02,"w":1},{"lat":35.329,"lng":-107.232,"w":1},{"lat":35.358,"lng":-106.473,"w":1},{"lat":35.395,"lng":-101.889,"w":1},{"lat":35.356,"lng":-101.006,"w":1},{"lat":35.366,"lng":-92.314,"w":1},{"lat":35.418,"lng":-82.973,"w":1},{"lat":35.323,"lng":-114.896,"w":1},{"lat":35.093,"lng":-100.191,"w":2.5},{"lat":35.333,"lng":-99.604,"w":1},{"lat":35.075,"lng":-113.058,"w":2.08},{"lat":35.134,"lng":-106.967,"w":1},{"lat":35.234,"lng":-104.456,"w":1},{"lat":35.15,"lng":-94.943,"w":1.08},{"lat":35.239,"lng":-93.588,"w":1},{"lat":35.265,"lng":-92.786,"w":1},{"lat":35.151,"lng":-91.847,"w":2.38},{"lat":35.11,"lng":-114.62,"w":1},{"lat":35.165,"lng":-105.036,"w":1},{"lat":35.168,"lng":-103.114,"w":1},{"lat":35.184,"lng":-98.004,"w":1},{"lat":35.025,"lng":-110.782,"w":1.48},{"lat":35.053,"lng":-109.0,"w":1.05},{"lat":35.168,"lng":-108.402,"w":1},{"lat":35.143,"lng":-106.488,"w":1},{"lat":35.144,"lng":-88.841,"w":1},{"lat":35.054,"lng":-87.832,"w":1.2},{"lat":34.984,"lng":-78.317,"w":1.95},{"lat":35.067,"lng":-97.296,"w":1},{"lat":34.945,"lng":-83.377,"w":1.48},{"lat":35.051,"lng":-114.945,"w":1},{"lat":34.84,"lng":-104.72,"w":2.52},{"lat":35.047,"lng":-92.403,"w":1},{"lat":34.805,"lng":-80.145,"w":2.02},{"lat":34.863,"lng":-108.407,"w":1.48},{"lat":34.919,"lng":-93.233,"w":1},{"lat":34.857,"lng":-90.921,"w":1.68},{"lat":34.833,"lng":-109.035,"w":1},{"lat":34.898,"lng":-105.95,"w":1},{"lat":34.868,"lng":-94.69,"w":1},{"lat":34.865,"lng":-92.687,"w":1},{"lat":34.738,"lng":-103.165,"w":1},{"lat":34.729,"lng":-93.257,"w":1},{"lat":34.521,"lng":-86.794,"w":1.95},{"lat":34.672,"lng":-86.057,"w":1},{"lat":34.709,"lng":-79.061,"w":1},{"lat":34.549,"lng":-107.796,"w":1.38},{"lat":34.639,"lng":-88.971,"w":1},{"lat":34.596,"lng":-105.405,"w":1},{"lat":34.554,"lng":-83.883,"w":1},{"lat":34.399,"lng":-78.322,"w":3},{"lat":34.49,"lng":-93.533,"w":1},{"lat":34.445,"lng":-89.172,"w":1},{"lat":34.404,"lng":-85.593,"w":1.6},{"lat":34.276,"lng":-116.592,"w":2.42},{"lat":34.281,"lng":-114.199,"w":2.08},{"lat":34.476,"lng":-105.668,"w":1},{"lat":34.424,"lng":-104.763,"w":1},{"lat":34.448,"lng":-102.083,"w":1},{"lat":34.438,"lng":-98.135,"w":1},{"lat":34.254,"lng":-115.249,"w":2.6},{"lat":34.292,"lng":-110.016,"w":1},{"lat":34.209,"lng":-106.168,"w":1.52},{"lat":34.297,"lng":-105.419,"w":1},{"lat":34.258,"lng":-103.694,"w":1},{"lat":34.183,"lng":-94.664,"w":1.62},{"lat":34.174,"lng":-109.344,"w":1.58},{"lat":34.21,"lng":-100.114,"w":1},{"lat":34.288,"lng":-84.379,"w":1},{"lat":34.216,"lng":-112.094,"w":1},{"lat":34.171,"lng":-92.836,"w":1},{"lat":34.201,"lng":-88.302,"w":1},{"lat":34.113,"lng":-104.651,"w":1},{"lat":33.938,"lng":-103.418,"w":2.2},{"lat":34.125,"lng":-101.035,"w":1},{"lat":34.042,"lng":-92.379,"w":1.3},{"lat":33.964,"lng":-113.677,"w":1},{"lat":34.054,"lng":-96.029,"w":1},{"lat":33.901,"lng":-95.262,"w":2.22},{"lat":34.026,"lng":-114.952,"w":1},{"lat":33.905,"lng":-112.087,"w":1.5},{"lat":33.874,"lng":-110.889,"w":3},{"lat":33.957,"lng":-104.957,"w":1},{"lat":33.961,"lng":-94.373,"w":1},{"lat":33.969,"lng":-93.228,"w":1},{"lat":33.838,"lng":-87.106,"w":1.38},{"lat":33.954,"lng":-85.783,"w":1},{"lat":33.947,"lng":-84.619,"w":1},{"lat":33.87,"lng":-81.024,"w":1.5},{"lat":33.801,"lng":-108.37,"w":1},{"lat":33.743,"lng":-107.843,"w":1.52},{"lat":33.772,"lng":-96.103,"w":1},{"lat":33.529,"lng":-94.695,"w":2.3},{"lat":33.685,"lng":-91.15,"w":2.08},{"lat":33.71,"lng":-80.735,"w":1.12},{"lat":33.602,"lng":-109.923,"w":2.1},{"lat":33.738,"lng":-101.243,"w":1},{"lat":33.749,"lng":-85.088,"w":1},{"lat":33.665,"lng":-104.253,"w":1},{"lat":33.677,"lng":-97.528,"w":1},{"lat":33.635,"lng":-117.821,"w":1},{"lat":33.668,"lng":-103.546,"w":1},{"lat":33.467,"lng":-107.639,"w":1},{"lat":33.558,"lng":-102.14,"w":1},{"lat":33.589,"lng":-95.93,"w":1},{"lat":33.573,"lng":-93.426,"w":1},{"lat":33.572,"lng":-91.348,"w":1},{"lat":33.585,"lng":-87.432,"w":1},{"lat":33.512,"lng":-116.839,"w":1},{"lat":33.46,"lng":-86.22,"w":1.05},{"lat":33.394,"lng":-84.757,"w":1.4},{"lat":33.323,"lng":-84.151,"w":2.08},{"lat":33.448,"lng":-115.28,"w":1},{"lat":33.484,"lng":-107.953,"w":1},{"lat":33.465,"lng":-98.639,"w":1},{"lat":33.448,"lng":-96.462,"w":1},{"lat":33.423,"lng":-92.171,"w":1},{"lat":33.373,"lng":-106.196,"w":1},{"lat":33.175,"lng":-96.055,"w":2.28},{"lat":33.386,"lng":-86.984,"w":1},{"lat":33.29,"lng":-108.014,"w":1},{"lat":33.252,"lng":-106.467,"w":1},{"lat":33.16,"lng":-104.348,"w":2.12},{"lat":33.33,"lng":-101.248,"w":1},{"lat":33.337,"lng":-90.493,"w":1},{"lat":33.235,"lng":-107.061,"w":1},{"lat":33.131,"lng":-102.293,"w":1.38},{"lat":33.233,"lng":-85.828,"w":1},{"lat":33.191,"lng":-117.122,"w":1},{"lat":33.19,"lng":-100.517,"w":1},{"lat":33.188,"lng":-99.8,"w":1},{"lat":33.216,"lng":-94.996,"w":1},{"lat":33.102,"lng":-85.596,"w":1},{"lat":32.953,"lng":-116.829,"w":1.9},{"lat":33.098,"lng":-110.002,"w":1},{"lat":33.107,"lng":-106.164,"w":1},{"lat":32.915,"lng":-113.293,"w":1.85},{"lat":33.08,"lng":-94.123,"w":1},{"lat":33.033,"lng":-106.464,"w":1},{"lat":33.031,"lng":-105.751,"w":1},{"lat":32.996,"lng":-102.085,"w":1},{"lat":32.985,"lng":-93.381,"w":1},{"lat":32.895,"lng":-87.152,"w":1.32},{"lat":32.798,"lng":-109.554,"w":2.08},{"lat":32.896,"lng":-94.773,"w":1},{"lat":32.692,"lng":-104.968,"w":2.33},{"lat":32.777,"lng":-94.577,"w":1},{"lat":32.88,"lng":-85.386,"w":1},{"lat":32.738,"lng":-84.007,"w":2.58},{"lat":32.809,"lng":-80.015,"w":1.45},{"lat":32.707,"lng":-114.683,"w":1.62},{"lat":32.748,"lng":-115.235,"w":1},{"lat":32.59,"lng":-100.499,"w":1.98},{"lat":32.79,"lng":-86.7,"w":1},{"lat":32.686,"lng":-97.552,"w":1},{"lat":32.722,"lng":-86.246,"w":1},{"lat":32.618,"lng":-93.343,"w":1},{"lat":32.611,"lng":-91.967,"w":1},{"lat":32.652,"lng":-80.604,"w":1},{"lat":32.461,"lng":-103.479,"w":1},{"lat":32.385,"lng":-99.387,"w":1},{"lat":32.39,"lng":-99.094,"w":1},{"lat":32.407,"lng":-90.828,"w":1},{"lat":32.314,"lng":-95.618,"w":1},{"lat":32.215,"lng":-86.353,"w":1.1},{"lat":32.352,"lng":-86.187,"w":1},{"lat":32.251,"lng":-94.674,"w":1},{"lat":32.176,"lng":-81.902,"w":1.7},{"lat":32.154,"lng":-102.364,"w":1},{"lat":32.186,"lng":-93.315,"w":1},{"lat":31.932,"lng":-87.137,"w":2.1},{"lat":32.073,"lng":-105.637,"w":1},{"lat":32.074,"lng":-101.137,"w":1},{"lat":31.994,"lng":-97.107,"w":1},{"lat":31.946,"lng":-96.122,"w":1},{"lat":31.941,"lng":-104.712,"w":1},{"lat":31.857,"lng":-99.716,"w":1},{"lat":31.633,"lng":-99.285,"w":2.08},{"lat":31.67,"lng":-96.652,"w":1},{"lat":31.605,"lng":-104.417,"w":1.05},{"lat":31.53,"lng":-104.155,"w":1.55},{"lat":31.604,"lng":-100.984,"w":1},{"lat":31.48,"lng":-95.534,"w":1.55},{"lat":31.416,"lng":-89.887,"w":1},{"lat":31.233,"lng":-85.167,"w":2.25},{"lat":31.372,"lng":-100.111,"w":1},{"lat":31.384,"lng":-96.142,"w":1},{"lat":31.281,"lng":-92.772,"w":1.52},{"lat":31.083,"lng":-105.046,"w":2.2},{"lat":31.261,"lng":-104.442,"w":1},{"lat":31.255,"lng":-96.487,"w":1},{"lat":31.294,"lng":-95.127,"w":1},{"lat":30.981,"lng":-96.957,"w":2.15},{"lat":31.106,"lng":-92.568,"w":1},{"lat":31.001,"lng":-103.206,"w":1.68},{"lat":30.885,"lng":-83.481,"w":2.05},{"lat":31.0,"lng":-98.309,"w":1},{"lat":30.954,"lng":-102.403,"w":1},{"lat":30.879,"lng":-96.232,"w":1},{"lat":30.821,"lng":-94.62,"w":1},{"lat":30.481,"lng":-90.815,"w":1.68},{"lat":30.449,"lng":-88.252,"w":1.42},{"lat":30.443,"lng":-87.108,"w":1.78},{"lat":30.429,"lng":-93.525,"w":1.42},{"lat":30.419,"lng":-83.836,"w":1},{"lat":30.552,"lng":-83.687,"w":1},{"lat":30.3,"lng":-98.374,"w":2.05},{"lat":30.477,"lng":-95.609,"w":1},{"lat":30.321,"lng":-99.16,"w":1},{"lat":30.276,"lng":-91.943,"w":1},{"lat":30.119,"lng":-97.231,"w":1},{"lat":30.05,"lng":-90.113,"w":1},{"lat":29.787,"lng":-80.768,"w":2.05},{"lat":29.826,"lng":-95.85,"w":1},{"lat":29.652,"lng":-94.172,"w":2.12},{"lat":29.504,"lng":-100.2,"w":1.82},{"lat":29.661,"lng":-97.074,"w":1},{"lat":29.677,"lng":-95.063,"w":1},{"lat":29.727,"lng":-91.319,"w":1},{"lat":29.656,"lng":-80.586,"w":1},{"lat":29.434,"lng":-92.127,"w":1.58},{"lat":29.209,"lng":-102.012,"w":1.8},{"lat":29.3,"lng":-95.911,"w":1},{"lat":29.083,"lng":-81.271,"w":2.02},{"lat":29.072,"lng":-100.217,"w":1.78},{"lat":29.126,"lng":-93.853,"w":1},{"lat":29.07,"lng":-96.48,"w":1},{"lat":28.935,"lng":-92.131,"w":1.75},{"lat":28.898,"lng":-90.043,"w":2.12},{"lat":28.869,"lng":-96.965,"w":1.52},{"lat":28.907,"lng":-97.488,"w":1},{"lat":28.684,"lng":-89.302,"w":1.58},{"lat":28.679,"lng":-81.373,"w":1.72},{"lat":28.455,"lng":-97.062,"w":1},{"lat":28.152,"lng":-79.375,"w":2.25},{"lat":28.032,"lng":-97.51,"w":1},{"lat":27.87,"lng":-73.434,"w":2.85},{"lat":27.953,"lng":-94.271,"w":1},{"lat":27.748,"lng":-79.582,"w":1.48},{"lat":27.7,"lng":-96.981,"w":1},{"lat":27.465,"lng":-71.863,"w":2.95},{"lat":27.417,"lng":-80.464,"w":2.52},{"lat":27.414,"lng":-78.917,"w":2.1},{"lat":27.377,"lng":-97.467,"w":1},{"lat":27.36,"lng":-96.5,"w":1},{"lat":27.037,"lng":-100.103,"w":1},{"lat":26.824,"lng":-74.324,"w":3},{"lat":26.989,"lng":-74.699,"w":1},{"lat":27.001,"lng":-72.947,"w":1},{"lat":26.811,"lng":-76.499,"w":3},{"lat":26.778,"lng":-73.152,"w":3},{"lat":26.832,"lng":-79.049,"w":1},{"lat":26.709,"lng":-96.964,"w":1},{"lat":26.561,"lng":-77.923,"w":1.8},{"lat":26.63,"lng":-79.622,"w":1},{"lat":26.5,"lng":-97.341,"w":1},{"lat":26.385,"lng":-76.021,"w":2.48},{"lat":26.405,"lng":-77.722,"w":1.32},{"lat":26.112,"lng":-73.814,"w":3},{"lat":26.206,"lng":-97.305,"w":1},{"lat":25.838,"lng":-77.816,"w":3},{"lat":25.822,"lng":-78.537,"w":3},{"lat":25.777,"lng":-76.118,"w":3},{"lat":25.727,"lng":-74.842,"w":2.9},{"lat":25.853,"lng":-96.934,"w":1},{"lat":25.467,"lng":-76.954,"w":3},{"lat":25.537,"lng":-70.579,"w":3},{"lat":24.73,"lng":-74.775,"w":3}];
+
+// ── Datos: 10 sitios emblemáticos verificados editorialmente ──
+var SITIOS = [
+  { lat: 46.85, lng: -121.76, type:'activity', tag:'Racimo noroeste — Cascadas',
+    title:'Kenneth Arnold y el nacimiento del "flying saucer"',
+    body:'El mapa marca un racimo de actividad OVNI con líneas que escapan hacia el noroeste. Cae sobre la región de las Cascadas, donde en 1947 Kenneth Arnold reportó el avistamiento que originó el término "flying saucer".' },
+  { lat: 41.409, lng: -122.194, type:'portal', tag:'Racimo — Norte de California',
+    title:'Monte Shasta y la ciudad de Telos',
+    body:'Denso racimo de símbolos "Portal Vortex" coincide casi exactamente con el Monte Shasta, montaña asociada desde el siglo XIX a la leyenda de Telos, una supuesta ciudad subterránea de lemurianos.' },
+  { lat: 37.245, lng: -115.793, type:'base', tag:'Racimo — Sur de Nevada',
+    title:'Área 51 / Groom Lake',
+    body:'Racimo de "posibles bases OVNI" en el sur de Nevada, coincidente con la zona de Groom Lake — la base militar más mitificada de la ufología moderna.' },
+  { lat: 36.935, lng: -106.996, type:'base', tag:'Racimo — Four Corners, Nuevo México',
+    title:'La legendaria "Base de Dulce"',
+    body:'Marcas de base subterránea en la esquina de los Four Corners, justo donde la conspiración sitúa la supuesta instalación bajo el Archuleta Mesa.' },
+  { lat: 40.16, lng: -109.85, type:'portal', tag:'Vórtice — Uintah Basin, Utah',
+    title:'Skinwalker Ranch',
+    body:'Vórtice marcado en esta zona de Utah, coincidente con el rancho famoso por décadas de fenómenos paranormales estudiados por NIDS y AAWSAP.' },
+  { lat: 37.47, lng: -105.87, type:'activity', tag:'Zona de alta densidad — Colorado',
+    title:'San Luis Valley: la capital de las mutilaciones',
+    body:'Alta densidad de puntos negros ("animal mutilations"). Es la capital histórica de las mutilaciones de ganado en EE.UU. desde los años 60-70, incluyendo el caso "Snippy" (1967).' },
+  { lat: 38.744, lng: -104.846, type:'base', tag:'Símbolo de base — Colorado Springs',
+    title:'Cheyenne Mountain / NORAD',
+    body:'Corresponde al complejo real NORAD-Cheyenne Mountain, instalación militar subterránea genuina reutilizada por la cultura conspirativa como "prueba" de bases secretas.' },
+  { lat: 38.848, lng: -82.135, type:'activity', tag:'Actividad OVNI — West Virginia',
+    title:'Point Pleasant y el Mothman',
+    body:'Actividad ovni marcada en esta zona centro-este, coincidente con el área del mito del Mothman (1966-67).' },
+  { lat: 25.0, lng: -71.0, type:'portal', tag:'"La anomalía más grande" — Caribe',
+    title:'Triángulo de las Bermudas',
+    body:'El racimo aislado en la esquina inferior derecha, descrito como la anomalía más grande, corresponde al clásico Triángulo de las Bermudas.' },
+  { lat: 39.828, lng: -98.555, type:'node', tag:'Centro geográfico continental — Kansas',
+    title:'El nodo donde convergen las líneas',
+    body:'Punto donde confluyen numerosas líneas rectas ("ley lines"), coincidente con el centro geográfico continental de EE.UU.' }
+];
+
+var colors = { portal:'#8fd3d8', base:'#e8c96a', activity:'#c0392b', node:'#9a8cf0' };
+function makeIcon(color){
+  return L.divIcon({
+    className: '',
+    html: '<div style="width:15px;height:15px;border-radius:50%;background:'+color+';border:2px solid rgba(240,236,226,0.9);box-shadow:0 0 9px '+color+';"></div>',
+    iconSize: [15,15], iconAnchor: [7,7], popupAnchor: [0,-8]
+  });
+}
+
+var map = L.map('full-map', { minZoom: 3, maxZoom: 10 }).setView([37.8, -95], 4);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+  subdomains: 'abcd', maxZoom: 19
+}).addTo(map);
+
+var pointsLayer = L.layerGroup();
+DENSITY_POINTS.forEach(function(p){
+  var r = 2 + Math.min(2, (p.w - 1) * 1.1); // radio leve según tamaño de la marca original
+  L.circleMarker([p.lat, p.lng], {
+    radius: r,
+    color: 'rgba(240,236,226,0.35)',
+    weight: 0.75,
+    fillColor: '#c0392b',
+    fillOpacity: 0.75
+  }).addTo(pointsLayer);
+});
+pointsLayer.addTo(map);
+
+var sitesLayer = L.layerGroup();
+SITIOS.forEach(function(s){
+  var marker = L.marker([s.lat, s.lng], { icon: makeIcon(colors[s.type]) });
+  marker.bindPopup(
+    '<span class="popup-tag">'+s.tag+'</span>' +
+    '<span class="popup-title">'+s.title+'</span>' +
+    '<span>'+s.body+'</span>'
+  );
+  marker.addTo(sitesLayer);
+});
+sitesLayer.addTo(map);
+
+document.getElementById('toggleHeat').addEventListener('change', function(e){
+  if (e.target.checked) { pointsLayer.addTo(map); } else { map.removeLayer(pointsLayer); }
+});
+document.getElementById('toggleSites').addEventListener('change', function(e){
+  if (e.target.checked) { sitesLayer.addTo(map); } else { map.removeLayer(sitesLayer); }
+});
+
+document.getElementById('mapCount').textContent = DENSITY_POINTS.length + ' marcas detectadas · ' + SITIOS.length + ' sitios verificados';
+</script>
+
+</body>
+</html>

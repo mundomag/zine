@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<!-- MM-META
+slug: el-fenomeno-fantasma
+titulo: The Phantom Phenomenon: el mapa que conectó a EE.UU. con una red oculta
+categoria: mitologia-moderna
+blurb: Un diagrama casero de 1979 traza mutilaciones de ganado, bases OVNI, portales y entradas a la Tierra interior sobre el mapa de Estados Unidos. Rastreamos su autoría dudosa, su simbolismo y cruzamos sus nodos con los lugares más célebres de la ufología.
+fecha: 2026-07-22
+formato: hero-documental-v1
+-->
+<html lang="es" data-page="fenomeno-fantasma">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Phantom Phenomenon: el mapa del Fenómeno Fantasma · Mundo Maravilloso</title>
+  <meta name="description" content="Análisis del mapa conspirativo 'The Phantom Phenomenon' (1979): origen, autoría disputada, simbolismo de líneas ley y portales, y un cruce interactivo con los lugares más emblemáticos de la ufología estadounidense.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../css-articulos.css">
+
+  <!-- GLightbox -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <style>
+    /* ══════════════════════════════════════════════════════════════════
+       RESET + BASE (autocontenido — no depende de styles.css externo)
+       ══════════════════════════════════════════════════════════════════ */
+    *{ box-sizing:border-box; }
+    html[data-page="fenomeno-fantasma"]{
+      --ink:        #07080a;
+      --ink-mid:    #0d0f12;
+      --ink-soft:   #14161a;
+      --paper:      #f0ece2;
+      --paper-warm: #ede6d6;
+      --gold:       #c9a84c;
+      --gold-light: #e8c96a;
+      --ice:        #8fd3d8;
+      --violet:     #9a8cf0;
+      --red:        #c0392b;
+      --muted:      #6b6b7a;
+      --border:     rgba(201,168,76,0.16);
+    }
+    html[data-page="fenomeno-fantasma"] body{
+      background:var(--ink); color:var(--paper); margin:0;
+      font-family:"Source Serif 4",Georgia,serif;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{ color:inherit; }
+    img{ max-width:100%; }
+
+    /* Nav y footer heredan de ../styles.css y ../css-articulos.css.
+       Aquí solo vive el diseño propio de esta pieza (hero-doc, secciones,
+       mapa interactivo), aislado vía [data-page="fenomeno-fantasma"]. */
+
+    /* ══════════════════════════════════════════════════════════════════
+       HERO DOCUMENTAL
+       ══════════════════════════════════════════════════════════════════ */
+    .hero-doc{
+      position:relative; min-height:100svh; overflow:hidden;
+      display:flex; align-items:flex-end; background:#050608;
+    }
+    .hero-doc-bg{
+      position:absolute; inset:0; z-index:0;
+      background-image:
+        linear-gradient(rgba(5,6,8,0.15), rgba(5,6,8,0.15)),
+        url("images/phantom-hero.jpg");
+      background-size:cover; background-position:center 50%;
+    }
+    .hero-doc::after{
+      content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
+      background:
+        linear-gradient(to top, var(--ink) 0%, rgba(7,8,10,0.9) 15%, rgba(7,8,10,0.5) 40%, rgba(7,8,10,0.1) 62%, transparent 80%),
+        linear-gradient(to right, rgba(7,8,10,0.55) 0%, transparent 48%);
+    }
+    .hero-doc-inner{
+      position:relative; z-index:2; width:100%; max-width:960px;
+      padding:0 clamp(1.5rem,6vw,5rem) 6.5rem;
+    }
+    .hero-doc-eyebrow{
+      display:inline-flex; align-items:center; gap:0.65rem;
+      font-family:"JetBrains Mono",monospace; font-size:0.62rem;
+      letter-spacing:0.32em; text-transform:uppercase; color:var(--ice);
+      margin-bottom:1.25rem;
+    }
+    .hero-doc-eyebrow::before{ content:""; width:22px; height:1px; background:var(--ice); }
+    .hero-doc-title{
+      font-family:"Audiowide",sans-serif;
+      font-size:clamp(2.2rem,6.4vw,5rem);
+      font-weight:900; line-height:0.98; letter-spacing:-0.01em;
+      color:var(--paper); text-shadow:0 4px 40px rgba(0,0,0,0.45);
+    }
+    .hero-doc-title .accent{ color:var(--ice); }
+    .hero-doc-subtitle{
+      font-family:"Space Grotesk",sans-serif; font-weight:500;
+      font-size:clamp(1.02rem,2vw,1.3rem); color:rgba(240,236,226,0.8);
+      max-width:56ch; margin-top:1.1rem; line-height:1.55;
+    }
+    .hero-doc-meta{
+      display:flex; flex-wrap:wrap; align-items:center; gap:0.9rem;
+      margin-top:1.9rem;
+      font-family:"JetBrains Mono",monospace; font-size:0.62rem;
+      letter-spacing:0.1em; text-transform:uppercase; color:rgba(240,236,226,0.5);
+    }
+    .hero-doc-meta .dot{ width:3px; height:3px; border-radius:50%; background:var(--muted); }
+    .hero-doc-meta .tag{
+      color:var(--gold-light); border:1px solid rgba(201,168,76,0.35);
+      padding:0.3rem 0.65rem; border-radius:2px; letter-spacing:0.12em;
+    }
+    .hero-doc-scroll{
+      position:absolute; right:2.5rem; bottom:2.5rem; z-index:2;
+      display:flex; align-items:center; gap:0.6rem;
+      font-family:"JetBrains Mono",monospace; font-size:0.58rem;
+      letter-spacing:0.2em; text-transform:uppercase; color:rgba(240,236,226,0.45);
+    }
+    .hero-doc-scroll .line{
+      width:1px; height:26px;
+      background:linear-gradient(to bottom, rgba(240,236,226,0.5), transparent);
+      animation:doc-scroll-pulse 2s ease-in-out infinite;
+    }
+    @keyframes doc-scroll-pulse{ 0%,100%{opacity:0.3;} 50%{opacity:1;} }
+    @media (max-width:720px){
+      .hero-doc-scroll{ display:none; }
+      .hero-doc-inner{ padding-bottom:4.5rem; }
+    }
+
+    /* ══════════════════════════════════════════════════════════════════
+       CUERPO
+       ══════════════════════════════════════════════════════════════════ */
+    .article{ max-width:760px; margin:0 auto; padding:0 2rem 6rem; }
+
+    .intro{ display:grid; grid-template-columns: 1fr 280px; gap:3.5rem; padding:4.5rem 0 1rem; max-width:1040px; margin:0 auto; padding-left:2rem; padding-right:2rem; }
+    .intro-text p{ font-size:1.12rem; color:rgba(240,236,226,0.85); line-height:1.85; margin-bottom:1.25rem; }
+    .intro-text p:first-of-type::first-letter{
+      font-family:"Audiowide",sans-serif; font-size:3.4rem; line-height:0.75;
+      float:left; padding:0.1rem 0.6rem 0 0; color:var(--ice);
+    }
+    .sidebar-box{ border:1px solid var(--border); background:var(--ink-mid); padding:1.75rem; align-self:start; }
+    .sidebar-label{ font-family:"JetBrains Mono",monospace; font-size:0.55rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:1.25rem; padding-bottom:0.9rem; border-bottom:1px solid var(--border); }
+    .sidebar-item{ padding:0.7rem 0; border-bottom:1px solid rgba(201,168,76,0.08); }
+    .sidebar-item:last-child{ border-bottom:none; }
+    .sidebar-key{ font-family:"JetBrains Mono",monospace; font-size:0.55rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--ice); margin-bottom:0.3rem; }
+    .sidebar-val{ font-size:0.85rem; color:rgba(240,236,226,0.75); line-height:1.4; }
+
+    @media (max-width:820px){ .intro{ grid-template-columns:1fr; padding-left:1.5rem; padding-right:1.5rem; } }
+
+    .section-head{ display:flex; align-items:center; gap:1.5rem; padding:5rem 0 2.25rem; max-width:760px; margin:0 auto; }
+    .section-num{ font-family:"JetBrains Mono",monospace; font-size:0.75rem; color:var(--gold); }
+    .section-title{ font-family:"Audiowide",sans-serif; font-size:1.35rem; font-weight:900; color:var(--paper); letter-spacing:0.01em; }
+    .section-line{ flex:1; height:1px; background:var(--border); }
+
+    .prose-section{ max-width:760px; margin:0 auto; padding-top:0; }
+    .prose-section p{ font-size:1.06rem; line-height:1.85; color:rgba(240,236,226,0.85); margin-bottom:1.25rem; }
+    .prose-section p strong{ color:var(--paper); }
+
+    .alert-box{ max-width:760px; margin:2.5rem auto; border-left:2px solid var(--ice); background:var(--ink-mid); padding:1.5rem 1.75rem; }
+    .alert-title{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--ice); margin-bottom:0.6rem; }
+    .alert-text{ font-size:0.98rem; color:rgba(240,236,226,0.78); line-height:1.7; }
+
+    .claim-grid{ max-width:760px; margin:2rem auto; display:grid; gap:1.25rem; }
+    .claim-box{ border:1px solid var(--border); padding:1.5rem 1.75rem; background:var(--ink-mid); }
+    .claim-tag{ font-family:"JetBrains Mono",monospace; font-size:0.55rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--violet); margin-bottom:0.6rem; }
+    .claim-title{ font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:1.02rem; color:var(--paper); margin-bottom:0.6rem; }
+    .claim-body{ font-size:0.95rem; color:rgba(240,236,226,0.72); line-height:1.7; }
+
+    .evidence-grid{ max-width:760px; margin:2rem auto; display:grid; gap:1.1rem; }
+    .evidence-card{ border:1px solid var(--border); border-left:2px solid var(--gold); padding:1.4rem 1.75rem; background:var(--ink-mid); }
+    .evidence-label{ font-family:"JetBrains Mono",monospace; font-size:0.55rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold-light); margin-bottom:0.5rem; }
+    .evidence-body{ font-size:0.96rem; color:rgba(240,236,226,0.78); line-height:1.75; }
+
+    blockquote.persona{
+      max-width:760px; margin:2.5rem auto; padding:1.75rem 2rem;
+      border:1px solid var(--border); background:var(--ink-mid);
+      display:grid; grid-template-columns:auto 1fr; gap:1.25rem; align-items:start;
+    }
+    blockquote.persona span{ font-size:1.5rem; }
+    blockquote.persona .cargo{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:0.6rem; }
+    blockquote.persona p:not(.cargo){ font-size:0.98rem; color:rgba(240,236,226,0.85); font-style:italic; line-height:1.6; }
+
+    .legend-table{ max-width:760px; margin:2rem auto; width:100%; border-collapse:collapse; font-size:0.85rem; }
+    .legend-table th{ font-family:"JetBrains Mono",monospace; font-size:0.55rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); text-align:left; padding:0.75rem 0.9rem; border-bottom:1px solid var(--border); }
+    .legend-table td{ padding:0.85rem 0.9rem; border-bottom:1px solid rgba(201,168,76,0.08); color:rgba(240,236,226,0.8); vertical-align:top; }
+    .legend-table td.sym{ font-size:1.1rem; text-align:center; color:var(--gold-light); }
+
+    .timeline-item{ max-width:760px; margin:0 auto 2rem; padding-left:1.75rem; border-left:2px solid var(--border); position:relative; }
+    .timeline-item::before{ content:""; position:absolute; left:-6px; top:0.25rem; width:10px; height:10px; border-radius:50%; background:var(--ice); }
+    .timeline-date{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.15em; color:var(--ice); margin-bottom:0.3rem; }
+    .timeline-event{ font-family:"Space Grotesk",sans-serif; font-weight:700; color:var(--paper); margin-bottom:0.4rem; }
+    .timeline-desc{ font-size:0.9rem; color:var(--muted); line-height:1.6; }
+
+    .questions-box{ max-width:760px; margin:2.5rem auto; border:1px solid var(--border); padding:2rem; }
+    .questions-box h3{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:1.25rem; }
+    .questions-box ul{ list-style:none; margin:0; padding:0; }
+    .questions-box li{ font-size:1rem; color:rgba(240,236,226,0.82); line-height:1.7; padding:0.6rem 0 0.6rem 1.25rem; border-bottom:1px solid rgba(201,168,76,0.08); position:relative; }
+    .questions-box li:last-child{ border-bottom:none; }
+    .questions-box li::before{ content:"?"; position:absolute; left:0; color:var(--ice); font-family:"JetBrains Mono",monospace; }
+
+    .article-figure{ max-width:900px; margin:2.5rem auto; }
+    .article-figure img{ width:100%; display:block; border:1px solid var(--border); }
+    .article-figure figcaption{ font-family:"JetBrains Mono",monospace; font-size:0.62rem; letter-spacing:0.05em; color:var(--muted); margin-top:0.75rem; line-height:1.5; }
+    .article-figure figcaption span{ color:var(--gold); margin-right:0.5rem; }
+
+    /* ── Mapa interactivo ── */
+    .map-figure{ max-width:900px; margin:2.5rem auto; }
+    .map-toolbar{
+      display:flex; align-items:center; justify-content:space-between; gap:1rem;
+      border:1px solid var(--border); border-bottom:none; background:var(--ink-mid);
+      padding:0.85rem 1.25rem;
+      font-family:"JetBrains Mono",monospace; font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase;
+    }
+    .map-toolbar .map-label{ color:var(--ice); }
+    .map-toolbar .map-hint{ color:var(--muted); }
+    #phantom-map{ width:100%; height:520px; border:1px solid var(--border); background:#0d0f12; }
+    .map-legend{
+      display:flex; flex-wrap:wrap; gap:0.6rem 1.4rem;
+      border:1px solid var(--border); border-top:none; background:var(--ink-mid);
+      padding:1rem 1.25rem;
+      font-family:"JetBrains Mono",monospace; font-size:0.6rem; letter-spacing:0.04em; color:rgba(240,236,226,0.7);
+    }
+    .map-legend span.dotcol{ display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:0.4rem; vertical-align:middle; }
+    .leaflet-popup-content-wrapper{ background:var(--ink-mid); color:var(--paper); border:1px solid var(--border); border-radius:2px; }
+    .leaflet-popup-tip{ background:var(--ink-mid); }
+    .leaflet-popup-content{ font-family:"Source Serif 4",Georgia,serif; font-size:0.85rem; line-height:1.55; margin:0.9rem 1rem; }
+    .popup-title{ font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:0.92rem; color:var(--gold-light); margin-bottom:0.4rem; display:block; }
+    .popup-tag{ font-family:"JetBrains Mono",monospace; font-size:0.55rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--ice); display:block; margin-bottom:0.5rem; }
+    .leaflet-container{ font-family:"Source Serif 4",Georgia,serif; }
+
+    .sources-list{ max-width:760px; margin:0 auto; }
+    .sources-list ol{ list-style:none; counter-reset:src; margin:0; padding:0; }
+    .sources-list li{ counter-increment:src; padding:1rem 0 1rem 2.4rem; border-bottom:1px solid rgba(201,168,76,0.08); position:relative; }
+    .sources-list li:last-child{ border-bottom:none; }
+    .sources-list li::before{ content:counter(src); position:absolute; left:0; top:1.05rem; font-family:"JetBrains Mono",monospace; font-size:0.6rem; color:var(--gold); border:1px solid var(--border); width:1.5rem; height:1.5rem; display:flex; align-items:center; justify-content:center; }
+    .source-outlet{ font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:0.92rem; color:var(--paper); }
+    .source-meta{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted); margin:0.3rem 0 0.5rem; }
+    .source-title{ font-size:0.92rem; color:rgba(240,236,226,0.75); font-style:italic; line-height:1.55; margin-bottom:0.4rem; }
+    .source-note{ font-size:0.86rem; color:var(--muted); line-height:1.6; }
+
+    .related-articles{ max-width:760px; margin:5rem auto 0; padding:0 2rem; }
+    .related-label{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:1.5rem; padding-bottom:1rem; border-bottom:1px solid var(--border); }
+    .related-grid{ display:grid; gap:1rem; }
+    .related-card{ display:block; border:1px solid var(--border); padding:1.25rem 1.5rem; text-decoration:none; transition:border-color 0.2s; }
+    .related-card:hover{ border-color:var(--gold); }
+    .related-card-cat{ font-family:"JetBrains Mono",monospace; font-size:0.52rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--violet); margin-bottom:0.6rem; }
+    .related-card-title{ font-family:"Space Grotesk",sans-serif; font-size:0.95rem; font-weight:600; color:var(--paper); line-height:1.4; }
+
+    @media (max-width:600px){
+      .article{ padding:0 1.25rem 4rem; }
+      .section-head, .prose-section, .alert-box, .claim-grid, .evidence-grid, blockquote.persona, .legend-table, .timeline-item, .questions-box, .related-articles{ padding-left:0; padding-right:0; }
+      #phantom-map{ height:420px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════ -->
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="../" class="site-nav-logo">Mundo Maravilloso</a>
+    <div class="site-nav-sep"></div>
+    <div class="site-nav-articles">
+      <a href="../articulos.html" class="site-nav-link">Artículos</a>
+      <a href="../seguimientos/3i-atlas.html" class="site-nav-link">3I/ATLAS</a>
+      <a href="../seguimientos/uap.html" class="site-nav-link">UAP WATCH</a>
+      <a href="../seguimientos/pursue-releases.html" class="site-nav-link">PURSUE</a>
+      <a href="../seguimientos/voyager-1.html" class="site-nav-link">VOYAGER 1</a>
+      <a href="../seguimientos/hitos-medicos.html" class="site-nav-link">HITOS MÉDICOS</a>
+      <a href="../glosario.html" class="site-nav-link"><span class="nav-dot"></span>&nbsp;Glosario</a>
+    </div>
+    <button class="site-nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navDrawer">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <line x1="2" y1="5" x2="18" y2="5"/><line x1="2" y1="10" x2="18" y2="10"/><line x1="2" y1="15" x2="18" y2="15"/>
+      </svg>
+    </button>
+  </div>
+  <div class="site-nav-drawer" id="navDrawer">
+    <a href="../articulos.html" class="drawer-link">Artículos</a>
+    <a href="../seguimientos/3i-atlas.html" class="drawer-link">3I/ATLAS</a>
+    <a href="../seguimientos/uap.html" class="drawer-link">UAP WATCH</a>
+    <a href="../seguimientos/pursue-releases.html" class="drawer-link">PURSUE</a>
+    <a href="../seguimientos/voyager-1.html" class="drawer-link">VOYAGER 1</a>
+    <a href="../seguimientos/hitos-medicos.html" class="drawer-link">HITOS MÉDICOS</a>
+    <a href="../glosario.html" class="drawer-link"><span class="nav-dot"></span>&nbsp;Glosario</a>
+  </div>
+</nav>
+
+<!-- ══════════ HERO DOCUMENTAL ══════════ -->
+<section class="hero-doc">
+  <div class="hero-doc-bg"></div>
+  <div class="hero-doc-inner">
+    <div class="hero-doc-eyebrow">Mundo Maravilloso · Mitología moderna</div>
+    <h1 class="hero-doc-title">THE PHANTOM <span class="accent">PHENOMENON</span></h1>
+    <p class="hero-doc-subtitle">Un diagrama casero de 1979 traza mutilaciones de ganado, bases OVNI, portales dimensionales y entradas a la Tierra interior sobre el mapa de Estados Unidos. Investigamos su origen incierto y cruzamos sus nodos con los lugares más célebres de la ufología.</p>
+    <div class="hero-doc-meta">
+      <span>La Redacción</span><span class="dot"></span>
+      <span>Julio 2026</span><span class="dot"></span>
+      <span>~11 min de lectura</span>
+      <span class="tag">Investigación</span>
+    </div>
+  </div>
+  <div class="hero-doc-scroll"><span class="line"></span>Desplázate</div>
+</section>
+
+<!-- ══════════ ARTÍCULO ══════════ -->
+<main class="article">
+
+  <div class="intro">
+    <div class="intro-text">
+      <p>En los márgenes de la ufología estadounidense circula, desde hace más de cuatro décadas, un mapa dibujado a mano que promete algo mayor que un simple catálogo de avistamientos: una <strong>red geográfica unificada</strong> que conectaría mutilaciones de ganado, bases subterráneas, portales dimensionales y entradas a un supuesto mundo interior. Se le conoce como <strong>“The Phantom Phenomenon”</strong>, firmado con una rúbrica y el año ’79.</p>
+      <p>No hay archivo militar, ni publicación académica, ni cadena de custodia que lo respalde. Su historia vive por completo en foros, blogs de ufología y publicaciones esotéricas de los años ochenta —el terreno exacto donde nacen y mutan este tipo de documentos. Y sin embargo, sus símbolos no son arbitrarios: cada nodo marcado coincide, con sospechosa frecuencia, con un lugar que ya era célebre en el imaginario paranormal antes de que el mapa existiera.</p>
+      <p>Este artículo reconstruye lo que se sabe —y lo que no— sobre el origen del mapa, desentraña su simbolismo y ofrece, al final, un cruce interactivo entre sus nodos más densos y los sitios reales que probablemente los inspiraron.</p>
+    </div>
+    <div class="sidebar-box">
+      <div class="sidebar-label">// En este artículo</div>
+      <div class="sidebar-item"><div class="sidebar-key">01</div><div class="sidebar-val">Origen y autoría en disputa</div></div>
+      <div class="sidebar-item"><div class="sidebar-key">02</div><div class="sidebar-val">Simbolismo: líneas ley, vórtices y bases</div></div>
+      <div class="sidebar-item"><div class="sidebar-key">03</div><div class="sidebar-val">El documento completo</div></div>
+      <div class="sidebar-item"><div class="sidebar-key">04</div><div class="sidebar-val">Mapa interactivo: los nodos y sus lugares reales</div></div>
+      <div class="sidebar-item"><div class="sidebar-key">05</div><div class="sidebar-val">Autenticidad: ¿documento o compendio de folclore?</div></div>
+      <div class="sidebar-item"><div class="sidebar-key">06</div><div class="sidebar-val">Conclusión</div></div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 1 -->
+  <div class="section-head" id="sec-origen">
+    <span class="section-num">01</span>
+    <h2 class="section-title">Origen y autoría en disputa</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <p>No existe una sola referencia al mapa “Phantom Phenomenon” en medios académicos, gubernamentales o periodísticos convencionales. Su circulación ha sido, desde el principio, informal: usuarios de foros de ufología recuerdan haberlo visto reproducido en publicaciones sensacionalistas de los años ochenta, entre ellas una revista conspirativa que lo vinculaba a teorías sobre secuestros y manipulación tecnológica de humanos.</p>
+    <p>Sobre quién lo dibujó, las versiones chocan. Una atribución popular —pero sin sustento— lo asigna al supuesto “insider” de bases subterráneas Phil Schneider. Una fuente más especializada, en cambio, lo atribuye al investigador independiente <strong>Jason Bishop III</strong>, conocido también por el alias <em>Tal Levesque</em>, fechándolo en 1979.</p>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-date">1979</div>
+    <div class="timeline-event">Fecha atribuida al mapa original</div>
+    <div class="timeline-desc">Firmado con una rúbrica y el año ’79 en la esquina inferior. Sin metadatos, sin firma verificable, sin cadena de custodia documental.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">Años 80</div>
+    <div class="timeline-event">Circulación en publicaciones esotéricas</div>
+    <div class="timeline-desc">El mapa —o su concepto— aparece asociado a textos como <em>The Matrix I</em> (1982), que describe una "red de energía" terrestre y portales interdimensionales con el mismo término, "Phantom Phenomenon".</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">Actualidad</div>
+    <div class="timeline-event">Reaparición en foros y blogs de ufología</div>
+    <div class="timeline-desc">Un usuario que compartió el hilo en Reddit expresó su propio escepticismo: le costaba creer que "una sola persona" pudiera manejar tanta información, y lo consideraba probablemente un engaño.</div>
+  </div>
+
+  <div class="alert-box">
+    <div class="alert-title">// Nota editorial</div>
+    <div class="alert-text">Ninguno de los dos nombres propuestos —Phil Schneider o Tal Levesque— cuenta con prueba independiente de autoría. Schneider, fallecido en 1996 en circunstancias que sus seguidores consideran sospechosas, afirmaba haber trabajado en bases subterráneas, pero nunca presentó mapas de este tipo acreditados. Levesque es un investigador aficionado de cultos y ufología: un blog especializado menciona explícitamente "Tal's 1979 'Phantom Phenomenon' map", lo que hace más plausible su autoría que la de una fuente militar.</div>
+  </div>
+
+  <!-- SECCIÓN 2 -->
+  <div class="section-head" id="sec-simbolismo">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Simbolismo: líneas ley, vórtices y bases</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <p>El mapa clasifica sus marcas en cinco categorías, todas rotuladas en inglés en la leyenda original. Bajo esa clasificación aparente hay una tesis más ambiciosa: que ningún fenómeno paranormal está aislado, sino que forma parte de una <strong>red geomagnética invisible</strong> que conecta ovnis, portales y bases subterráneas —una versión "ufológica" del concepto de líneas ley.</p>
+  </div>
+
+  <table class="legend-table">
+    <thead>
+      <tr><th>Símbolo</th><th>Categoría</th><th>Interpretación conspirativa</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="sym">•</td>
+        <td>Animal Mutilations</td>
+        <td>Mutilaciones de ganado — fenómeno investigado seriamente en EE.UU. durante los años 70, con olas de casos reales en Colorado, Nuevo México y otros estados.</td>
+      </tr>
+      <tr>
+        <td class="sym">▲</td>
+        <td>High UFO Activity</td>
+        <td>Zonas de alta actividad OVNI reportada; en la lógica del mapa, corredores de tránsito entre nodos de la red.</td>
+      </tr>
+      <tr>
+        <td class="sym">◎</td>
+        <td>Possible "Portal" Vortex</td>
+        <td>Cruces intensos de "líneas ley" que formarían portales interdimensionales naturales, usados —según esta teoría— por inteligencias no convencionales.</td>
+      </tr>
+      <tr>
+        <td class="sym">⊕</td>
+        <td>Possible UFO Bases</td>
+        <td>Instalaciones subterráneas, militares o extraterrestres, ocultas aprovechando la distorsión magnética de los nodos.</td>
+      </tr>
+      <tr>
+        <td class="sym">○</td>
+        <td>Suspected "Inner Earth" Entrances</td>
+        <td>Accesos a un supuesto mundo interior — variante directa del mito de la Tierra Hueca.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="claim-grid">
+    <div class="claim-box">
+      <div class="claim-tag">// Infraestructura</div>
+      <div class="claim-title">Líneas y vórtices</div>
+      <div class="claim-body">Las líneas rectas representarían vectores magnéticos terrestres o "líneas ley". Donde se cruzan con intensidad, se forman los vórtices marcados como "Portal Vortex": portales interdimensionales naturales conectados por la red energética.</div>
+    </div>
+    <div class="claim-box">
+      <div class="claim-tag">// Bases y accesos</div>
+      <div class="claim-title">Instalaciones ocultas</div>
+      <div class="claim-body">En las zonas de mayor distorsión magnética se ubican "posibles bases OVNI" y "entradas a la Tierra interior" — ecos directos de teorías clásicas como la base de Dulce y el mito de la Tierra Hueca.</div>
+    </div>
+    <div class="claim-box">
+      <div class="claim-tag">// Operaciones</div>
+      <div class="claim-title">Rutas y mutilaciones</div>
+      <div class="claim-body">Las rutas triangulares indicarían trayectorias OVNI de baja resistencia entre nodos. Los puntos de mutilación de ganado aparecen cerca de bases o rutas, como si facilitaran la recolección de muestras biológicas sin dejar rastro.</div>
+    </div>
+  </div>
+
+  <blockquote class="persona">
+    <span>👤</span>
+    <div>
+      <div class="cargo">Autor del hilo original en Reddit</div>
+      <p>"Me cuesta creer que una sola persona pudiera manejar tanta información" — expresando su propia sospecha de que el mapa fuera, en el fondo, un engaño elaborado.</p>
+    </div>
+  </blockquote>
+
+  <!-- SECCIÓN 3 -->
+  <div class="section-head" id="sec-documento">
+    <span class="section-num">03</span>
+    <h2 class="section-title">El documento completo</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <p>Esta es la versión del mapa que circula con mayor nitidez, incluyendo el grid de coordenadas que permite ubicar sus símbolos sobre el territorio real de Estados Unidos —la base que usamos más adelante para el cruce interactivo con sitios emblemáticos.</p>
+  </div>
+
+  <div class="article-figure">
+    <a href="images/phantom-map-v0.webp" class="glightbox" data-title="The Phantom Phenomenon (1979)" data-description="// Mapa conspirativo · Circula en foros y archivos de ufología desde los años 80">
+      <img class="lb-img" src="images/phantom-map-v0.webp" alt="Mapa 'The Phantom Phenomenon' de 1979, con grid de coordenadas, mostrando mutilaciones de ganado, actividad OVNI, vórtices portal, posibles bases OVNI y entradas a la Tierra interior sobre el territorio de Estados Unidos" loading="lazy">
+    </a>
+    <figcaption><span>Fig. 01</span> "The Phantom Phenomenon" (1979), versión con grid de coordenadas georreferenciado a escala 1:7.500.000. Documento sin autoría verificada ni cadena de custodia oficial — analizado aquí como artefacto de la cultura conspirativa, no como evidencia. Toca la imagen para verla completa.</figcaption>
+  </div>
+
+  <div class="alert-box">
+    <div class="alert-title">// Sobre esta versión</div>
+    <div class="alert-text">El grid de coordenadas (paralelos de 25° a 45°N, meridianos de 70° a 120°W) no forma parte necesariamente del documento original de 1979 tal como circuló en foros: aparece en reconstrucciones más recientes hechas para facilitar su lectura geográfica. Lo usamos aquí exclusivamente como referencia de ubicación aproximada, no como prueba de precisión cartográfica del documento.</div>
+  </div>
+
+  <!-- SECCIÓN 4 — MAPA INTERACTIVO -->
+  <div class="section-head" id="sec-interactivo">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Mapa interactivo: los nodos y sus lugares reales</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <p>Cruzando el grid de coordenadas del documento con los racimos de símbolos más densos, casi todos los "nodos fuertes" del mapa caen sobre lugares que <strong>ya eran célebres en la ufología</strong> antes o durante los años setenta: Monte Shasta, Área 51, Dulce, el Valle de San Luis, el Triángulo de las Bermudas. Explora el mapa para ver cada sitio y su conexión con el folclore paranormal estadounidense.</p>
+  </div>
+
+  <div class="map-figure">
+    <div class="map-toolbar">
+      <span class="map-label">// Fig. 02 · Cruce de nodos con sitios emblemáticos</span>
+      <span class="map-hint">Toca un marcador ↴</span>
+    </div>
+    <div id="phantom-map"></div>
+    <div class="map-legend">
+      <span><span class="dotcol" style="background:#8fd3d8;"></span>Portal / vórtice</span>
+      <span><span class="dotcol" style="background:#e8c96a;"></span>Base subterránea</span>
+      <span><span class="dotcol" style="background:#c0392b;"></span>Mutilaciones / actividad OVNI</span>
+      <span><span class="dotcol" style="background:#9a8cf0;"></span>Nodo geométrico central</span>
+    </div>
+  </div>
+
+  <div class="prose-section">
+    <p>Lo interesante no es que el mapa "acierte" —no hay forma de verificar eso—, sino que su autor, quienquiera que fuese, organizó el imaginario conspirativo ya circulante en 1979 como si fuera una red geomagnética unificada. Shasta aporta la Tierra Hueca; Dulce y Área 51, las bases; el Valle de San Luis, las mutilaciones reales documentadas por investigaciones oficiales de la época; las Bermudas, los portales y desapariciones. El mapa es, en ese sentido, menos un documento de hechos y más un atlas resumen del folclore ovni estadounidense de la década.</p>
+  </div>
+
+  <div class="alert-box">
+    <div class="alert-title">// Herramienta complementaria</div>
+    <div class="alert-text">También construimos un <a href="el-fenomeno-fantasma-mapa.html" style="color:var(--ice); text-decoration:underline;">mapa interactivo completo</a> con las cerca de 740 marcas de tinta del documento original, ubicadas en su posición aproximada mediante visión artificial, superpuestas a los 10 sitios verificados de esta sección. Es una lectura exploratoria y aproximada —no una transcripción exacta símbolo por símbolo—, pero permite ver de un vistazo dónde concentra sus afirmaciones el mapa completo.</div>
+  </div>
+
+  <!-- SECCIÓN 5 -->
+  <div class="section-head" id="sec-autenticidad">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Autenticidad: ¿documento o compendio de folclore?</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <p>No se ha encontrado evidencia empírica de que el mapa sea genuino más allá de la ufología informal. Solo aparece en medios alternativos —nunca en archivos oficiales, académicos o periodísticos verificables—, y hasta dentro de la propia comunidad OVNI persiste el escepticismo sobre su origen.</p>
+    <p>En cuanto a composición, el documento parece confeccionado a mano o con herramientas de computación primitiva: un gráfico sencillo, sin metadatos ni firma verificable más allá de la rúbrica y el año. La comparación con textos conspirativos contemporáneos —como <em>The Matrix I</em> (1982), que usa el mismo término "Phantom Phenomenon" para hablar de redes energéticas y niveles de densidad— muestra coincidencias estilísticas y conceptuales, pero no confirma autenticidad histórica del mapa como documento aislado.</p>
+  </div>
+
+  <div class="evidence-grid">
+    <div class="evidence-card">
+      <div class="evidence-label">// Ausencia de respaldo oficial</div>
+      <div class="evidence-body">No hay referencias en medios académicos, gubernamentales, ni archivos militares desclasificados que mencionen el mapa por su nombre o su autor.</div>
+    </div>
+    <div class="evidence-card">
+      <div class="evidence-label">// Autoría contradictoria</div>
+      <div class="evidence-body">Dos nombres circulan como posibles autores —Schneider y Levesque— sin que ninguno cuente con prueba documental independiente que confirme la atribución.</div>
+    </div>
+    <div class="evidence-card">
+      <div class="evidence-label">// Contenido verificable parcialmente</div>
+      <div class="evidence-body">Las mutilaciones de ganado sí fueron objeto de investigaciones oficiales reales en los años 70 en EE.UU. Los portales, bases y entradas a la Tierra interior no cuentan con ningún tipo de respaldo científico o documental.</div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 6 -->
+  <div class="section-head" id="sec-conclusion">
+    <span class="section-num">06</span>
+    <h2 class="section-title">Conclusión</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <p>No hay base verificable de que "The Phantom Phenomenon" sea un documento militar o institucional real de 1979. Todo indica que se trata de un esquema conspirativo elaborado por un investigador privado —posiblemente Tal Levesque— que mezcla leyendas OVIN, mutilaciones de ganado reales y teorías de líneas ley en un solo mosaico visual.</p>
+    <p>Si es falso en sentido literal —y todo apunta a que lo es—, su valor no está en la precisión de sus coordenadas, sino en lo que revela sobre cómo se conectaban, hacia finales del siglo XX, ciertas ideas paranoides: portales, bases secretas, Tierra Hueca, el Triángulo de las Bermudas. Como compendio visual del folclore OVNI de la época, el mapa ofrece pistas simbólicas genuinamente interesantes para el estudio de la cultura conspirativa — aunque ninguna de ellas deba tomarse como evidencia de una red geomagnética real.</p>
+  </div>
+
+  <div class="questions-box">
+    <h3>// Para llevarse de este artículo</h3>
+    <ul>
+      <li>No existe ninguna fuente oficial, académica o periodística que confirme la autenticidad del mapa "The Phantom Phenomenon" como documento militar de 1979.</li>
+      <li>Su autoría se disputa entre Phil Schneider y Tal Levesque, sin prueba independiente que confirme a ninguno de los dos.</li>
+      <li>Casi todos sus nodos de mayor densidad coinciden con lugares que ya eran célebres en la ufología antes de 1979: Shasta, Dulce, Área 51, el Valle de San Luis, las Bermudas.</li>
+      <li>El único elemento verificable del mapa son las mutilaciones de ganado, un fenómeno que sí fue objeto de investigaciones oficiales reales en EE.UU. durante los años 70.</li>
+    </ul>
+  </div>
+
+  <!-- FUENTES -->
+  <div class="section-head" id="sec-fuentes">
+    <span class="section-num">07</span>
+    <h2 class="section-title">Fuentes</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="sources-list">
+    <ol>
+      <li>
+        <div class="source-outlet">Foros y archivos de ufología (Reddit y blogs especializados)</div>
+        <div class="source-meta">Consulta 2026</div>
+        <div class="source-title">Discusiones sobre el origen y la autoría del mapa "Phantom Phenomenon"</div>
+        <div class="source-note">Fuente principal de la circulación informal del mapa; incluye el testimonio del usuario original que expresó dudas sobre su autenticidad.</div>
+      </li>
+      <li>
+        <div class="source-outlet">Blog especializado en ufología</div>
+        <div class="source-meta">Consulta 2026</div>
+        <div class="source-title">Referencia a "Tal's 1979 'Phantom Phenomenon' map"</div>
+        <div class="source-note">Atribuye el mapa al investigador Jason Bishop III (alias Tal Levesque), la fuente más específica disponible sobre su autoría.</div>
+      </li>
+      <li>
+        <div class="source-outlet"><em>The Matrix I</em></div>
+        <div class="source-meta">1982 · Publicación conspirativa</div>
+        <div class="source-title">Descripción de la "red de energía" terrestre y el término "Phantom Phenomenon"</div>
+        <div class="source-note">Muestra que el concepto de red geomagnética con portales dimensionales ya circulaba en el ambiente conspirativo de la época.</div>
+      </li>
+      <li>
+        <div class="source-outlet">Wikipedia / FBI</div>
+        <div class="source-meta">Consulta 2026</div>
+        <div class="source-title">Mutilaciones de ganado en Estados Unidos durante los años 70</div>
+        <div class="source-note">Documenta las olas reales de casos investigados oficialmente en Colorado, Nuevo México y otros estados, incluyendo el caso "Snippy" de 1967.</div>
+      </li>
+      <li>
+        <div class="source-outlet">Wikipedia</div>
+        <div class="source-meta">Consulta 2026</div>
+        <div class="source-title">Hollow Earth (Tierra Hueca)</div>
+        <div class="source-note">Contextualiza el mito de la Tierra Hueca y su lugar recurrente en la cultura conspirativa estadounidense.</div>
+      </li>
+    </ol>
+  </div>
+
+  <div class="related-articles">
+    <p class="related-label">// Artículos relacionados</p>
+    <div class="related-grid">
+      <a href="tierra-extendida.html" class="related-card">
+        <p class="related-card-cat">// Mitología moderna</p>
+        <p class="related-card-title">Tierra Extendida: el mito de los continentes ocultos</p>
+      </a>
+      <a href="antartida-parte-1.html" class="related-card">
+        <p class="related-card-cat">// Antártida · Documentos</p>
+        <p class="related-card-title">Antártida: Lo Que No Se Dice (Parte I)</p>
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-kicker">// Revista de exploración y pensamiento</p>
+        <a href="../" class="footer-logo">Mundo Maravilloso</a>
+        <p class="footer-tagline">Ciencia · Misterio · Fenómenos · Futuro</p>
+        <p class="footer-desc">Una publicación independiente sobre los grandes misterios que la ciencia todavía no ha resuelto.</p>
+        <span class="footer-edition-badge">Mitología moderna · Jul 2026</span>
+      </div>
+      <div class="footer-nav-grid">
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Artículos</p>
+          <ul class="footer-nav-list">
+            <li><a href="../articulos.html">Todos los artículos</a></li>
+            <li><a href="el-fenomeno-fantasma.html" class="active">The Phantom Phenomenon</a></li>
+            <li><a href="tierra-extendida.html">Tierra Extendida</a></li>
+            <li><a href="../glosario.html">Glosario</a></li>
+          </ul>
+          <p class="footer-nav-col-label" style="margin-top:1.5rem;">// Publicación</p>
+          <ul class="footer-nav-list">
+            <li><a href="../acerca-de.html">Acerca de</a></li>
+            <li><a href="../contacto.html">Contacto</a></li>
+            <li><a href="../privacidad.html">Privacidad</a></li>
+            <li><a href="../terminos.html">Términos</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Seguimientos</p>
+          <ul class="footer-nav-list">
+            <li><a href="../seguimientos/3i-atlas.html">3I/ATLAS</a></li>
+            <li><a href="../seguimientos/uap.html">UAP WATCH</a></li>
+            <li><a href="../seguimientos/pursue-releases.html">PURSUE RELEASES</a></li>
+            <li><a href="../seguimientos/voyager-1.html">VOYAGER 1</a></li>
+            <li><a href="../seguimientos/hitos-medicos.html">HITOS MÉDICOS</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Síguenos</p>
+          <div class="footer-social-links">
+            <a href="https://www.facebook.com/revistamundo" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16"><path d="M16 8a8 8 0 1 0-9.25 7.9v-5.6H4.9V8h1.85V6.4c0-1.83 1.09-2.84 2.76-2.84.8 0 1.64.14 1.64.14v1.8h-.92c-.91 0-1.19.56-1.19 1.14V8h2.03l-.32 2.3H9.04v5.6A8 8 0 0 0 16 8z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/mundo.m.mag/" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16"><path d="M4.7 0h6.6A4.7 4.7 0 0 1 16 4.7v6.6a4.7 4.7 0 0 1-4.7 4.7H4.7A4.7 4.7 0 0 1 0 11.3V4.7A4.7 4.7 0 0 1 4.7 0zm-.15 1.5A3.05 3.05 0 0 0 1.5 4.55v6.9a3.05 3.05 0 0 0 3.05 3.05h6.9a3.05 3.05 0 0 0 3.05-3.05v-6.9A3.05 3.05 0 0 0 11.45 1.5h-6.9zM8 4.1a3.9 3.9 0 1 1 0 7.8 3.9 3.9 0 0 1 0-7.8zm0 1.5a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8zm4.05-2.65a.95.95 0 1 1 0 1.9.95.95 0 0 1 0-1.9z"/></svg>
+            </a>
+            <a href="https://x.com/uap_mag" aria-label="X (Twitter)" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16"><path d="M12.6 1h2.45L9.95 6.91 15.7 15h-4.5l-3.52-4.6L3.7 15H1.25l5.4-6.18L1.15 1h4.62l3.19 4.22L12.6 1zm-.86 12.6h1.36L4.32 2.32H2.86l8.88 11.28z"/></svg>
+            </a>
+            <a href="https://substack.com/@mundomag" aria-label="Substack" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16"><path d="M1.5 1.5h13v2.3h-13V1.5zm0 4.1h13v2.1h-13V5.6zm0 4.1 6.5 5.8 6.5-5.8H1.5z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">Mundo Maravilloso · Hecho en El Salvador · 2026</p>
+      <p class="footer-signal">// Artículo · el-fenomeno-fantasma</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn = document.getElementById('navHamburger');
+  var drawer = document.getElementById('navDrawer');
+  if (!btn || !drawer) return;
+  btn.addEventListener('click', function(){
+    var isOpen = drawer.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  drawer.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      drawer.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+  const lightbox = GLightbox({ touchNavigation: true, loop: false });
+</script>
+
+<!-- Leaflet -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function(){
+  var map = L.map('phantom-map', { scrollWheelZoom: false, minZoom: 3, maxZoom: 12 })
+    .setView([37.5, -96], 4);
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(map);
+
+  function makeIcon(color){
+    return L.divIcon({
+      className: '',
+      html: '<div style="width:14px;height:14px;border-radius:50%;background:'+color+';border:2px solid rgba(240,236,226,0.85);box-shadow:0 0 8px '+color+';"></div>',
+      iconSize: [14,14],
+      iconAnchor: [7,7],
+      popupAnchor: [0,-8]
+    });
+  }
+
+  var colors = {
+    portal: '#8fd3d8',
+    base: '#e8c96a',
+    activity: '#c0392b',
+    node: '#9a8cf0'
+  };
+
+  var sitios = [
+    {
+      lat: 46.85, lng: -121.76, type:'activity',
+      tag:'Racimo noroeste — Cascadas',
+      title:'Kenneth Arnold y el nacimiento del "flying saucer"',
+      body:'El mapa marca un racimo de actividad OVNI con líneas que escapan hacia el noroeste. Cae sobre la región de las Cascadas, donde en 1947 Kenneth Arnold reportó el avistamiento que originó el término "flying saucer".'
+    },
+    {
+      lat: 41.409, lng: -122.194, type:'portal',
+      tag:'Racimo — Norte de California',
+      title:'Monte Shasta y la ciudad de Telos',
+      body:'Denso racimo de símbolos "Portal Vortex" coincide casi exactamente con el Monte Shasta, montaña asociada desde el siglo XIX a la leyenda de Telos, una supuesta ciudad subterránea de lemurianos — el mito de Tierra Hueca más citado en EE.UU.'
+    },
+    {
+      lat: 37.245, lng: -115.793, type:'base',
+      tag:'Racimo — Sur de Nevada',
+      title:'Área 51 / Groom Lake',
+      body:'Racimo de "posibles bases OVNI" en el sur de Nevada, coincidente con la zona de Groom Lake — la base militar más mitificada de la ufología moderna.'
+    },
+    {
+      lat: 36.935, lng: -106.996, type:'base',
+      tag:'Racimo — Four Corners, Nuevo México',
+      title:'La legendaria "Base de Dulce"',
+      body:'Marcas de base subterránea en la esquina de los Four Corners, justo donde la conspiración sitúa la supuesta instalación conjunta humano-alienígena bajo el Archuleta Mesa — mencionada en la tradición de Phil Schneider.'
+    },
+    {
+      lat: 40.16, lng: -109.85, type:'portal',
+      tag:'Vórtice — Uintah Basin, Utah',
+      title:'Skinwalker Ranch',
+      body:'Vórtice marcado en esta zona de Utah, coincidente con el rancho famoso por décadas de fenómenos paranormales estudiados por organizaciones privadas como NIDS y AAWSAP.'
+    },
+    {
+      lat: 37.47, lng: -105.87, type:'activity',
+      tag:'Zona de alta densidad — Colorado',
+      title:'San Luis Valley: la capital de las mutilaciones',
+      body:'Alta densidad de puntos negros ("animal mutilations"). Es literalmente la capital histórica de las mutilaciones de ganado en EE.UU. desde los años 60-70, incluyendo el caso "Snippy" (Alamosa, 1967).'
+    },
+    {
+      lat: 38.744, lng: -104.846, type:'base',
+      tag:'Símbolo de base — Colorado Springs',
+      title:'Cheyenne Mountain / NORAD',
+      body:'Corresponde al complejo real NORAD-Cheyenne Mountain, instalación militar subterránea genuina que la cultura conspirativa reutiliza constantemente como "prueba" de bases secretas.'
+    },
+    {
+      lat: 38.848, lng: -82.135, type:'activity',
+      tag:'Actividad OVNI — West Virginia',
+      title:'Point Pleasant y el Mothman',
+      body:'Actividad ovni marcada en esta zona centro-este, coincidente con el área del mito del Mothman (1966-67), otro ícono "fantasma" de la cultura paranormal estadounidense.'
+    },
+    {
+      lat: 25.0, lng: -71.0, type:'portal',
+      tag:'"La anomalía más grande" — Caribe',
+      title:'Triángulo de las Bermudas',
+      body:'El racimo aislado en la esquina inferior derecha del mapa, descrito como la anomalía más grande, corresponde al clásico Triángulo de las Bermudas, con toda su mitología de bases submarinas y desapariciones.'
+    },
+    {
+      lat: 39.828, lng: -98.555, type:'node',
+      tag:'Centro geográfico continental — Kansas',
+      title:'El nodo donde convergen las líneas',
+      body:'Punto donde confluyen numerosas líneas rectas ("ley lines"), casi como un hub geométrico. Coincide con el centro geográfico continental de EE.UU. — un recurso típico de la cartografía de líneas ley, que ancla la red en el centro del país para que las líneas irradien de forma simétrica hacia las costas.'
+    }
+  ];
+
+  sitios.forEach(function(s){
+    var marker = L.marker([s.lat, s.lng], { icon: makeIcon(colors[s.type]) }).addTo(map);
+    marker.bindPopup(
+      '<span class="popup-tag">'+s.tag+'</span>' +
+      '<span class="popup-title">'+s.title+'</span>' +
+      '<span>'+s.body+'</span>'
+    );
+  });
+
+  map.on('focus', function(){ map.scrollWheelZoom.enable(); });
+  map.on('blur', function(){ map.scrollWheelZoom.disable(); });
+})();
+</script>
+
+</body>
+</html>
