@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<!-- MM-META
+slug: pursue-nda-mito-realidad
+titulo: PURSUE y los NDAs: qué cambió de verdad el 21 de julio (y qué sigue siendo mito)
+categoria: documentos
+blurb: Trump ordenó condonar los NDAs de exfuncionarios sobre UAP, pero solo si hablan con AARO o PURSUE — no con la prensa. Separamos la directiva real del 21 de julio de 2026 del mito de la "amnistía general" que circula en redes.
+fecha: 2026-07-25
+formato: hero-documental-v1
+actualizado: 2026-07-25 — incorpora la directiva de condonación de NDAs reportada el 21 de julio de 2026
+-->
+<html lang="es" data-page="pursue-nda">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>No, no hay amnistía para hablar de OVNIs (todavía) · Mundo Maravilloso</title>
+  <meta name="description" content="Trump ordenó condonar NDAs a exfuncionarios de UAP, pero solo si hablan con AARO o PURSUE — no es la amnistía general que circula en redes. Qué dice la directiva del 21 de julio de 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../css-articulos.css">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8483516296039231"
+       crossorigin="anonymous"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRSJ1EYEPD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LRSJ1EYEPD');
+  </script>
+
+  <style>
+    /* ══════════════════════════════════════════════════════════════════
+       RESET + BASE (autocontenido — no depende de imágenes externas)
+       ══════════════════════════════════════════════════════════════════ */
+    *{ box-sizing:border-box; }
+    html[data-page="pursue-nda"]{
+      --ink:        #0d0d0f;
+      --ink-mid:    #161619;
+      --ink-soft:   #1e1e23;
+      --paper:      #f5f0e8;
+      --gold:       #c9a84c;
+      --gold-light: #e8c97a;
+      --ice:        #8fd3d8;
+      --violet:     #9a8cf0;
+      --red:        #c0392b;
+      --muted:      #6b6b7a;
+      --border:     rgba(201,168,76,0.16);
+    }
+    html[data-page="pursue-nda"] body{
+      background:var(--ink); color:var(--paper); margin:0;
+      font-family:"Source Serif 4",Georgia,serif;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{ color:inherit; }
+
+    /* Nav y footer heredan de ../styles.css y ../css-articulos.css.
+       Aquí solo vive el diseño propio de esta pieza. */
+
+    /* ══════════════════════════════════════════════════════════════════
+       HERO DOCUMENTAL (sin foto — textura de documento clasificado)
+       ══════════════════════════════════════════════════════════════════ */
+    .hero-doc{
+      position:relative; min-height:78svh; overflow:hidden;
+      display:flex; align-items:flex-end; background:#08090a;
+    }
+    .hero-doc-bg{
+      position:absolute; inset:0; z-index:0;
+      background:
+        repeating-linear-gradient(115deg, rgba(201,168,76,0.035) 0px, rgba(201,168,76,0.035) 1px, transparent 1px, transparent 64px),
+        radial-gradient(ellipse at 20% 15%, rgba(143,211,216,0.08) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 85%, rgba(154,140,240,0.07) 0%, transparent 55%),
+        linear-gradient(180deg, #0a0b0d 0%, #0d0f12 100%);
+    }
+    .hero-doc-stamp{
+      position:absolute; top:2.5rem; right:2.5rem; z-index:2;
+      font-family:"JetBrains Mono",monospace; font-size:0.6rem; letter-spacing:0.15em;
+      color:rgba(192,57,43,0.55); border:1px solid rgba(192,57,43,0.45);
+      padding:0.4rem 0.75rem; transform:rotate(6deg); text-transform:uppercase;
+    }
+    .hero-doc::after{
+      content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
+      background:linear-gradient(to top, var(--ink) 0%, rgba(13,13,15,0.85) 25%, rgba(13,13,15,0.35) 55%, transparent 80%);
+    }
+    .hero-doc-inner{
+      position:relative; z-index:2; width:100%; max-width:960px;
+      padding:0 clamp(1.5rem,6vw,5rem) 5rem;
+    }
+    .hero-doc-eyebrow{
+      display:inline-flex; align-items:center; gap:0.65rem;
+      font-family:"JetBrains Mono",monospace; font-size:0.62rem;
+      letter-spacing:0.32em; text-transform:uppercase; color:var(--ice);
+      margin-bottom:1.25rem;
+    }
+    .hero-doc-eyebrow::before{ content:""; width:22px; height:1px; background:var(--ice); }
+    .hero-doc-title{
+      font-family:"Audiowide",sans-serif;
+      font-size:clamp(2rem,5.6vw,4.2rem);
+      font-weight:900; line-height:1.05; letter-spacing:-0.01em;
+      color:var(--paper); text-shadow:0 4px 40px rgba(0,0,0,0.45);
+    }
+    .hero-doc-title .accent{ color:var(--ice); }
+    .hero-doc-subtitle{
+      font-family:"Space Grotesk",sans-serif; font-weight:500;
+      font-size:clamp(1rem,1.9vw,1.25rem); color:rgba(245,240,232,0.8);
+      max-width:60ch; margin-top:1.1rem; line-height:1.55;
+    }
+    .hero-doc-meta{
+      display:flex; flex-wrap:wrap; align-items:center; gap:0.9rem;
+      margin-top:1.9rem;
+      font-family:"JetBrains Mono",monospace; font-size:0.62rem;
+      letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,240,232,0.5);
+    }
+    .hero-doc-meta .dot{ width:3px; height:3px; border-radius:50%; background:var(--muted); }
+    .hero-doc-meta .tag{
+      color:var(--gold-light); border:1px solid rgba(201,168,76,0.35);
+      padding:0.3rem 0.65rem; border-radius:2px; letter-spacing:0.12em;
+    }
+    @media (max-width:600px){ .hero-doc-stamp{ display:none; } }
+
+    /* ══════════════════════════════════════════════════════════════════
+       CUERPO
+       ══════════════════════════════════════════════════════════════════ */
+    .article{ max-width:760px; margin:0 auto; padding:0 2rem 6rem; }
+
+    .intro{ display:grid; grid-template-columns: 1fr 280px; gap:3.5rem; padding:4.5rem 0 1rem; max-width:1040px; margin:0 auto; padding-left:2rem; padding-right:2rem; }
+    .intro-text p{ font-size:1.12rem; color:rgba(245,240,232,0.85); line-height:1.85; margin-bottom:1.25rem; }
+    .intro-text p:first-of-type::first-letter{
+      font-family:"Audiowide",sans-serif; font-size:3.4rem; line-height:0.75;
+      float:left; padding:0.1rem 0.6rem 0 0; color:var(--ice);
+    }
+    .sidebar-box{ border:1px solid var(--border); background:var(--ink-mid); padding:1.75rem; align-self:start; }
+    .sidebar-label{ font-family:"JetBrains Mono",monospace; font-size:0.55rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:1.25rem; padding-bottom:0.9rem; border-bottom:1px solid var(--border); }
+    .sidebar-item{ padding:0.7rem 0; border-bottom:1px solid rgba(201,168,76,0.08); }
+    .sidebar-item:last-child{ border-bottom:none; }
+    .sidebar-key{ font-family:"JetBrains Mono",monospace; font-size:0.55rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--ice); margin-bottom:0.3rem; }
+    .sidebar-val{ font-size:0.85rem; color:rgba(245,240,232,0.75); line-height:1.4; }
+
+    @media (max-width:820px){ .intro{ grid-template-columns:1fr; padding-left:1.5rem; padding-right:1.5rem; } }
+
+    .section-head{ display:flex; align-items:center; gap:1.5rem; padding:5rem 0 2.25rem; max-width:760px; margin:0 auto; }
+    .section-num{ font-family:"JetBrains Mono",monospace; font-size:0.75rem; color:var(--gold); }
+    .section-title{ font-family:"Audiowide",sans-serif; font-size:1.3rem; font-weight:900; color:var(--paper); letter-spacing:0.01em; }
+    .section-line{ flex:1; height:1px; background:var(--border); }
+
+    .prose-section{ max-width:760px; margin:0 auto; padding-top:0; }
+    .prose-section p{ font-size:1.06rem; line-height:1.85; color:rgba(245,240,232,0.85); margin-bottom:1.25rem; }
+    .prose-section p strong{ color:var(--paper); }
+
+    .alert-box{ max-width:760px; margin:2.5rem auto; border-left:2px solid var(--ice); background:var(--ink-mid); padding:1.5rem 1.75rem; }
+    .alert-title{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--ice); margin-bottom:0.6rem; }
+    .alert-text{ font-size:0.98rem; color:rgba(245,240,232,0.78); line-height:1.7; }
+
+    .alert-box.warn{ border-left-color:var(--red); }
+    .alert-box.warn .alert-title{ color:#e0776a; }
+    .alert-text ul{ margin:0.85rem 0 0 0; padding-left:1.15rem; }
+    .alert-text li{ margin-bottom:0.55rem; }
+    .alert-text li:last-child{ margin-bottom:0; }
+
+    .claim-grid{ max-width:760px; margin:2rem auto; display:grid; gap:1.25rem; }
+    .claim-box{ border:1px solid var(--border); padding:1.5rem 1.75rem; background:var(--ink-mid); }
+    .claim-tag{ font-family:"JetBrains Mono",monospace; font-size:0.55rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--violet); margin-bottom:0.6rem; }
+    .claim-title{ font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:1.02rem; color:var(--paper); margin-bottom:0.6rem; }
+    .claim-body{ font-size:0.95rem; color:rgba(245,240,232,0.72); line-height:1.7; }
+
+    /* ── Mito vs. Realidad ── */
+    .compare-wrap{ max-width:900px; margin:2.5rem auto; border:1px solid var(--border); }
+    .compare-head{
+      display:grid; grid-template-columns:1fr 1fr;
+      font-family:"JetBrains Mono",monospace; font-size:0.6rem; letter-spacing:0.14em; text-transform:uppercase;
+    }
+    .compare-head span{ padding:1rem 1.25rem; border-bottom:1px solid var(--border); }
+    .compare-head span:first-child{ color:#e0776a; border-right:1px solid var(--border); background:rgba(192,57,43,0.06); }
+    .compare-head span:last-child{ color:var(--ice); background:rgba(143,211,216,0.06); }
+    .compare-row{ display:grid; grid-template-columns:1fr 1fr; border-bottom:1px solid rgba(201,168,76,0.08); }
+    .compare-row:last-child{ border-bottom:none; }
+    .compare-row div{ padding:1.1rem 1.25rem; font-size:0.92rem; line-height:1.6; color:rgba(245,240,232,0.8); }
+    .compare-row div:first-child{ border-right:1px solid var(--border); }
+    @media (max-width:640px){
+      .compare-head, .compare-row{ grid-template-columns:1fr; }
+      .compare-head span:first-child, .compare-row div:first-child{ border-right:none; }
+    }
+
+    blockquote.persona{
+      max-width:760px; margin:2.5rem auto; padding:1.75rem 2rem;
+      border:1px solid var(--border); background:var(--ink-mid);
+      display:grid; grid-template-columns:auto 1fr; gap:1.25rem; align-items:start;
+    }
+    blockquote.persona span{ font-size:1.5rem; }
+    blockquote.persona .cargo{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:0.6rem; }
+    blockquote.persona p:not(.cargo){ font-size:0.98rem; color:rgba(245,240,232,0.85); font-style:italic; line-height:1.6; }
+
+    .timeline-item{ max-width:760px; margin:0 auto 2rem; padding-left:1.75rem; border-left:2px solid var(--border); position:relative; }
+    .timeline-item::before{ content:""; position:absolute; left:-6px; top:0.25rem; width:10px; height:10px; border-radius:50%; background:var(--ice); }
+    .timeline-date{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.15em; color:var(--ice); margin-bottom:0.3rem; }
+    .timeline-event{ font-family:"Space Grotesk",sans-serif; font-weight:700; color:var(--paper); margin-bottom:0.4rem; }
+    .timeline-desc{ font-size:0.9rem; color:var(--muted); line-height:1.6; }
+
+    .questions-box{ max-width:760px; margin:2.5rem auto; border:1px solid var(--border); padding:2rem; }
+    .questions-box h3{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:1.25rem; }
+    .questions-box ul{ list-style:none; margin:0; padding:0; }
+    .questions-box li{ font-size:1rem; color:rgba(245,240,232,0.82); line-height:1.7; padding:0.6rem 0 0.6rem 1.25rem; border-bottom:1px solid rgba(201,168,76,0.08); position:relative; }
+    .questions-box li:last-child{ border-bottom:none; }
+    .questions-box li::before{ content:"?"; position:absolute; left:0; color:var(--ice); font-family:"JetBrains Mono",monospace; }
+
+    .sources-list{ max-width:760px; margin:0 auto; }
+    .sources-list ol{ list-style:none; counter-reset:src; margin:0; padding:0; }
+    .sources-list li{ counter-increment:src; padding:1rem 0 1rem 2.4rem; border-bottom:1px solid rgba(201,168,76,0.08); position:relative; }
+    .sources-list li:last-child{ border-bottom:none; }
+    .sources-list li::before{ content:counter(src); position:absolute; left:0; top:1.05rem; font-family:"JetBrains Mono",monospace; font-size:0.6rem; color:var(--gold); border:1px solid var(--border); width:1.5rem; height:1.5rem; display:flex; align-items:center; justify-content:center; }
+    .source-outlet{ font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:0.92rem; color:var(--paper); }
+    .source-meta{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted); margin:0.3rem 0 0.5rem; }
+    .source-title{ font-size:0.92rem; color:rgba(245,240,232,0.75); font-style:italic; line-height:1.55; margin-bottom:0.4rem; }
+    .source-note{ font-size:0.86rem; color:var(--muted); line-height:1.6; }
+
+    .related-articles{ max-width:760px; margin:5rem auto 0; padding:0 2rem; }
+    .related-label{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:1.5rem; padding-bottom:1rem; border-bottom:1px solid var(--border); }
+    .related-grid{ display:grid; gap:1rem; }
+    .related-card{ display:block; border:1px solid var(--border); padding:1.25rem 1.5rem; text-decoration:none; transition:border-color 0.2s; }
+    .related-card:hover{ border-color:var(--gold); }
+    .related-card-cat{ font-family:"JetBrains Mono",monospace; font-size:0.52rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--violet); margin-bottom:0.6rem; }
+    .related-card-title{ font-family:"Space Grotesk",sans-serif; font-size:0.95rem; font-weight:600; color:var(--paper); line-height:1.4; }
+
+    @media (max-width:600px){
+      .article{ padding:0 1.25rem 4rem; }
+      .section-head, .prose-section, .alert-box, .claim-grid, .compare-wrap, blockquote.persona, .timeline-item, .questions-box, .related-articles{ padding-left:0; padding-right:0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════ -->
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="../" class="site-nav-logo">Mundo Maravilloso</a>
+    <div class="site-nav-sep"></div>
+    <div class="site-nav-articles">
+      <a href="../articulos.html" class="site-nav-link">Artículos</a>
+      <a href="../seguimientos/3i-atlas.html" class="site-nav-link">3I/ATLAS</a>
+      <a href="../seguimientos/uap.html" class="site-nav-link">UAP WATCH</a>
+      <a href="../seguimientos/pursue-releases.html" class="site-nav-link active">PURSUE</a>
+      <a href="../seguimientos/voyager-1.html" class="site-nav-link">VOYAGER 1</a>
+      <a href="../seguimientos/hitos-medicos.html" class="site-nav-link">HITOS MÉDICOS</a>
+      <a href="../glosario.html" class="site-nav-link"><span class="nav-dot"></span>&nbsp;Glosario</a>
+    </div>
+    <button class="site-nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navDrawer">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <line x1="2" y1="5" x2="18" y2="5"/><line x1="2" y1="10" x2="18" y2="10"/><line x1="2" y1="15" x2="18" y2="15"/>
+      </svg>
+    </button>
+  </div>
+  <div class="site-nav-drawer" id="navDrawer">
+    <a href="../articulos.html" class="drawer-link">Artículos</a>
+    <a href="../seguimientos/3i-atlas.html" class="drawer-link">3I/ATLAS</a>
+    <a href="../seguimientos/uap.html" class="drawer-link">UAP WATCH</a>
+    <a href="../seguimientos/pursue-releases.html" class="drawer-link">PURSUE</a>
+    <a href="../seguimientos/voyager-1.html" class="drawer-link">VOYAGER 1</a>
+    <a href="../seguimientos/hitos-medicos.html" class="drawer-link">HITOS MÉDICOS</a>
+    <a href="../glosario.html" class="drawer-link"><span class="nav-dot"></span>&nbsp;Glosario</a>
+  </div>
+</nav>
+
+<!-- ══════════ HERO DOCUMENTAL ══════════ -->
+<section class="hero-doc">
+  <div class="hero-doc-bg"></div>
+  <div class="hero-doc-stamp">Actualizado 25 jul</div>
+  <div class="hero-doc-inner">
+    <div class="hero-doc-eyebrow">Mundo Maravilloso · PURSUE · Fact-Check</div>
+    <h1 class="hero-doc-title">NO, NO HAY <span class="accent">AMNISTÍA</span> PARA HABLAR DE OVNIS <span class="accent">(TODAVÍA)</span></h1>
+    <p class="hero-doc-subtitle">El 21 de julio de 2026, Trump ordenó que se condonen los acuerdos de confidencialidad de exfuncionarios con información sobre UAP. Es real — pero no es la "amnistía general" que circula en redes: solo aplica si el testigo habla con AARO o PURSUE, no con la prensa. Reconstruimos qué cambió, qué no, y de dónde salió la confusión.</p>
+    <div class="hero-doc-meta">
+      <span>La Redacción</span><span class="dot"></span>
+      <span>Actualizado 25 julio 2026</span><span class="dot"></span>
+      <span>~9 min de lectura</span>
+      <span class="tag">Análisis legal</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ARTÍCULO ══════════ -->
+<main class="article">
+
+  <div class="intro">
+    <div class="intro-text">
+      <p>El 21 de julio de 2026, Fox News reveló en exclusiva que la Casa Blanca había dado una instrucción nueva: el Departamento de Guerra y la comunidad de inteligencia deben permitir que exfuncionarios y excontratistas con información sobre UAP se reúnan con representantes autorizados —de AARO o del propio equipo de PURSUE— y que, en esas reuniones, se les condonen sus acuerdos de confidencialidad previos. Es una noticia real, fechada, confirmada por funcionarios de la administración. No es el mito.</p>
+      <p>El mito es la versión que circuló después en redes sociales y foros de inteligencia: la idea de una <strong>"amnistía general"</strong> que libera a cualquier militar o contratista para hablar con quien quiera, incluida la prensa, sin pasar por ningún filtro. Esa versión no coincide con lo que los propios funcionarios de la administración describieron: un canal cerrado, condicionado y todavía sujeto a revisión de desclasificación antes de que nada se haga público.</p>
+      <p>Este artículo separa las dos capas —la directiva real de julio y la orden de desclasificación de febrero que dio origen a PURSUE— del mito que las combina en un solo "decreto que rompe los NDAs".</p>
+    </div>
+    <div class="sidebar-box">
+      <div class="sidebar-label">// En este artículo</div>
+      <div class="sidebar-item"><div class="sidebar-key">01</div><div class="sidebar-val">Dos directivas, no una: febrero vs. julio</div></div>
+      <div class="sidebar-item"><div class="sidebar-key">02</div><div class="sidebar-val">Lo que la directiva de julio sí autoriza</div></div>
+      <div class="sidebar-item"><div class="sidebar-key">03</div><div class="sidebar-val">Mito vs. realidad, cara a cara</div></div>
+      <div class="sidebar-item"><div class="sidebar-key">04</div><div class="sidebar-val">De dónde salió la confusión</div></div>
+      <div class="sidebar-item"><div class="sidebar-key">05</div><div class="sidebar-val">La paradoja de PURSUE</div></div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 1 -->
+  <div class="section-head" id="sec-timeline">
+    <span class="section-num">01</span>
+    <h2 class="section-title">Dos directivas, no una: febrero vs. julio</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <p>Parte de la confusión viene de tratar como un solo evento algo que en realidad son dos decisiones distintas, separadas por cinco meses. La primera creó PURSUE como mecanismo de publicación de archivos. La segunda, mucho más reciente, es la que realmente toca los NDAs.</p>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-date">19 feb 2026</div>
+    <div class="timeline-event">Trump publica la directiva original en Truth Social</div>
+    <div class="timeline-desc">Instruye al Secretario de Guerra, Pete Hegseth, y a otras agencias a "identificar y liberar" archivos gubernamentales sobre vida extraterrestre y fenómenos aéreos no identificados. No es una orden ejecutiva firmada en el sentido formal: es un mandato presidencial anunciado en redes sociales que desencadena un proceso interno de revisión y desclasificación.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">8 may — 10 jul 2026</div>
+    <div class="timeline-event">Cuatro tandas de PURSUE en war.gov/UFO</div>
+    <div class="timeline-desc">El Departamento de Guerra publica cuatro liberaciones documentales (8 de mayo, 22 de mayo, 12 de junio y 10 de julio), con cientos de PDFs, videos e imágenes de la CIA, el FBI, la NASA y el propio Departamento. Es desclasificación de archivos históricos — no testimonios espontáneos de exfuncionarios.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">21 jul 2026</div>
+    <div class="timeline-event">Nueva directiva: condonar NDAs, pero solo por canal oficial</div>
+    <div class="timeline-desc">Fox News reporta, citando a funcionarios de la administración, que Trump ordenó al Departamento de Guerra y a la comunidad de inteligencia permitir que exfuncionarios y excontratistas con información relevante se reúnan con representantes autorizados de AARO o PURSUE, y que en esas reuniones se les condonen sus NDAs previos. Un funcionario fue explícito: <strong>esto no es una "directiva de desclasificación"</strong>, solo permite que la gente se presente por canales gubernamentales.</div>
+  </div>
+
+  <div class="alert-box warn">
+    <div class="alert-title">// Lo que la propia administración aclaró</div>
+    <div class="alert-text">La condonación de NDAs anunciada el 21 de julio aplica a <strong>exfuncionarios y excontratistas</strong>, no de forma automática a todo el personal militar activo. Solo se activa dentro de una reunión autorizada con AARO o PURSUE — no libera a nadie para hablar con la prensa o en público. Y todo lo que se comparta sigue pasando por el proceso de desclasificación existente antes de publicarse: "cualquier información recibida que arroje luz sobre el misterio UAP eventualmente se hará pública", dijo un funcionario a Fox News, no de inmediato ni sin revisión.</div>
+  </div>
+
+  <!-- SECCIÓN 2 -->
+  <div class="section-head" id="sec-que-autoriza">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Lo que la directiva de julio sí autoriza</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <p>Vale reconocer lo que sí cambió: durante años, congresistas y denunciantes se quejaron de que exfuncionarios con conocimiento directo temían perder su acreditación, su carrera o enfrentar consecuencias legales por hablar, incluso ante comités del Congreso. La directiva de julio responde directamente a esa queja —"estamos eliminando esa fuente de reticencia", dijo un funcionario— habilitando una vía formal donde el NDA deja de ser el obstáculo.</p>
+    <p>Pero sigue siendo una vía, no una puerta abierta. El testigo primero se reúne con personal de AARO o PURSUE que cuenta con las acreditaciones de seguridad correspondientes; solo ahí, en ese contexto, el NDA puede condonarse. Lo que se comparte no sale automáticamente al público: entra al mismo proceso de revisión y desclasificación que ya regía las tandas anteriores de PURSUE.</p>
+  </div>
+
+  <div class="alert-box">
+    <div class="alert-title">// Lo que sí autoriza la directiva del 21 de julio</div>
+    <div class="alert-text">
+      <ul>
+        <li><strong>Reunirse sin miedo al NDA:</strong> exfuncionarios y excontratistas pueden sentarse con personal acreditado de AARO o PURSUE y hablar de lo que saben sin exponerse a una demanda o sanción por incumplir su acuerdo de confidencialidad previo.</li>
+        <li><strong>La condonación es real, no simbólica:</strong> dentro de esa reunión, el NDA deja de operar como obstáculo legal — es la primera vez que Washington lo formaliza por escrito.</li>
+        <li><strong>Responde a un reclamo de años:</strong> legisladores y denunciantes venían señalando que el miedo a violar un NDA, incluso ante comités del Congreso, mantenía callados a testigos con información de primera mano.</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- SECCIÓN 3 — COMPARATIVA -->
+  <div class="section-head" id="sec-comparativa">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Mito vs. realidad, cara a cara</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <p>Puesto en paralelo, el contraste entre lo que circula en redes y lo que efectivamente confirmaron los funcionarios de la administración es nítido:</p>
+  </div>
+
+  <div class="compare-wrap">
+    <div class="compare-head">
+      <span>El mito en redes sociales</span>
+      <span>La realidad confirmada</span>
+    </div>
+    <div class="compare-row">
+      <div>Trump firmó un decreto de amnistía general: cualquier militar o contratista puede hablar libremente con quien quiera, incluida la prensa.</div>
+      <div>La directiva del 21 de julio condona NDAs solo dentro de reuniones autorizadas con AARO o PURSUE — no es una liberación pública ni para todo el personal activo.</div>
+    </div>
+    <div class="compare-row">
+      <div>Es lo mismo que la orden de febrero: un solo "decreto de transparencia total" sobre OVNIs.</div>
+      <div>Son dos decisiones distintas: febrero ordenó desclasificar archivos históricos; julio condona NDAs para testimonios nuevos, por canal cerrado.</div>
+    </div>
+    <div class="compare-row">
+      <div>Un funcionario dijo que se "condonan los NDAs", así que la información se hace pública de inmediato.</div>
+      <div>Otro funcionario aclaró expresamente que esto "no es una directiva de desclasificación": lo compartido pasa primero por revisión oficial.</div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 4 -->
+  <div class="section-head" id="sec-confusion">
+    <span class="section-num">04</span>
+    <h2 class="section-title">De dónde salió la confusión</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <p>La narrativa de la "amnistía general" no salió de la nada. Se alimentó de al menos tres factores que se cruzaron durante el desarrollo de PURSUE.</p>
+  </div>
+
+  <div class="claim-grid">
+    <div class="claim-box">
+      <div class="claim-tag">// Titulares del 21 de julio</div>
+      <div class="claim-title">"NDAs condonados" leído como "NDAs anulados"</div>
+      <div class="claim-body">Los titulares que anunciaron la directiva usaron verbos como "waive" (condonar, dispensar) y "abrogated" (revocados), que en redes se tradujeron sin matices como una anulación total, sin mencionar que solo aplica dentro de reuniones con AARO o PURSUE.</div>
+    </div>
+    <div class="claim-box">
+      <div class="claim-tag">// Congreso</div>
+      <div class="claim-title">Los reclamos previos de "inmunidad total"</div>
+      <div class="claim-body">Congresistas como Eric Burlison habían pedido públicamente "conceder inmunidad a todo el que se presente" y "abrir la puerta". Cuando la administración finalmente actuó, muchos asumieron que había concedido exactamente eso — una puerta abierta, no un canal supervisado.</div>
+    </div>
+    <div class="claim-box">
+      <div class="claim-tag">// Retórica institucional</div>
+      <div class="claim-title">El cambio de nombre al Departamento de Guerra</div>
+      <div class="claim-body">La retórica de "transparencia sin precedentes" de la administración, sumada al rebautizo del Pentágono, alimentó la impresión de una abolición generalizada del secreto militar que ninguna de las dos directivas —ni la de febrero ni la de julio— respalda por sí sola.</div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 5 -->
+  <div class="section-head" id="sec-paradoja">
+    <span class="section-num">05</span>
+    <h2 class="section-title">La paradoja de PURSUE</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <p>Lo que cambió el 21 de julio es real y no es menor: por primera vez, Washington reconoce por escrito que el miedo a violar un NDA ha mantenido callados a testigos con información potencialmente relevante, y abre un canal formal para resolverlo. Eso es distinto de simplemente publicar archivos ya clasificados.</p>
+    <p>Pero sigue siendo el gobierno decidiendo, caso por caso, quién puede hablar, con quién, y qué de eso llega después al público. No hay testigo que pueda invocar la directiva para hablar directamente con un periodista o publicar algo por su cuenta. Es una apertura del embudo de entrada —no del grifo de salida.</p>
+  </div>
+
+  <div class="questions-box">
+    <h3>// Para llevarse de este artículo</h3>
+    <ul>
+      <li>El 21 de julio de 2026, Trump ordenó condonar los NDAs de exfuncionarios y excontratistas con información sobre UAP — pero solo dentro de reuniones autorizadas con AARO o PURSUE.</li>
+      <li>Un funcionario de la administración fue explícito: esto "no es una directiva de desclasificación"; la información sigue pasando por revisión antes de publicarse.</li>
+      <li>Es una decisión distinta —y posterior— a la directiva de febrero de 2026 que dio origen a las cuatro tandas de archivos publicadas en war.gov/UFO.</li>
+      <li>No existe ninguna disposición que permita a un militar activo o un exfuncionario hablar libremente con la prensa citando esta directiva.</li>
+    </ul>
+  </div>
+
+  <!-- FUENTES -->
+  <div class="section-head" id="sec-fuentes">
+    <span class="section-num">06</span>
+    <h2 class="section-title">Fuentes</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="sources-list">
+    <ol>
+      <li>
+        <div class="source-outlet">Fox News · Morgan Phillips</div>
+        <div class="source-meta">21 de julio de 2026</div>
+        <div class="source-title">Reportaje exclusivo sobre la directiva de condonación de NDAs para testigos de UAP</div>
+        <div class="source-note">Primera fuente en reportar la directiva, con declaraciones directas de funcionarios de la administración sobre su alcance y límites.</div>
+      </li>
+      <li>
+        <div class="source-outlet">DefenseScoop</div>
+        <div class="source-meta">20 de febrero de 2026</div>
+        <div class="source-title">Cobertura de la directiva original de Trump en Truth Social sobre desclasificación de archivos UAP</div>
+        <div class="source-note">Reproduce el texto completo del mensaje presidencial que dio origen al proceso interagencial que terminaría llamándose PURSUE.</div>
+      </li>
+      <li>
+        <div class="source-outlet">Departamento de Guerra de EE. UU. (war.gov)</div>
+        <div class="source-meta">Mayo–julio de 2026</div>
+        <div class="source-title">Comunicados oficiales de las cuatro tandas de PURSUE (8 may, 22 may, 12 jun, 10 jul)</div>
+        <div class="source-note">Registro directo de cada liberación documental, incluyendo el número de archivos y su procedencia por agencia.</div>
+      </li>
+      <li>
+        <div class="source-outlet">Wikipedia</div>
+        <div class="source-meta">Consulta julio 2026</div>
+        <div class="source-title">United States UFO files (PURSUE)</div>
+        <div class="source-note">Cronología general del programa y su marco interagencial, usada para verificar fechas y agencias participantes.</div>
+      </li>
+    </ol>
+  </div>
+
+  <div class="related-articles">
+    <p class="related-label">// Seguimiento relacionado</p>
+    <div class="related-grid">
+      <a href="../seguimientos/pursue-releases.html" class="related-card">
+        <p class="related-card-cat">// PURSUE · Seguimiento</p>
+        <p class="related-card-title">PURSUE Releases: registro completo de tandas desclasificadas</p>
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-kicker">// Revista de exploración y pensamiento</p>
+        <a href="../" class="footer-logo">Mundo Maravilloso</a>
+        <p class="footer-tagline">Ciencia · Misterio · Fenómenos · Futuro</p>
+        <p class="footer-desc">Una publicación independiente sobre los grandes misterios que la ciencia todavía no ha resuelto.</p>
+        <span class="footer-edition-badge">Documentos · PURSUE · Actualizado 25 Jul 2026</span>
+      </div>
+      <div class="footer-nav-grid">
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Artículos</p>
+          <ul class="footer-nav-list">
+            <li><a href="../articulos.html">Todos los artículos</a></li>
+            <li><a href="pursue-nda-mito-realidad.html" class="active">No, no hay amnistía para hablar de OVNIs (todavía)</a></li>
+            <li><a href="../glosario.html">Glosario</a></li>
+          </ul>
+          <p class="footer-nav-col-label" style="margin-top:1.5rem;">// Publicación</p>
+          <ul class="footer-nav-list">
+            <li><a href="../acerca-de.html">Acerca de</a></li>
+            <li><a href="../contacto.html">Contacto</a></li>
+            <li><a href="../privacidad.html">Privacidad</a></li>
+            <li><a href="../terminos.html">Términos</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Seguimientos</p>
+          <ul class="footer-nav-list">
+            <li><a href="../seguimientos/3i-atlas.html">3I/ATLAS</a></li>
+            <li><a href="../seguimientos/uap.html">UAP WATCH</a></li>
+            <li><a href="../seguimientos/pursue-releases.html">PURSUE RELEASES</a></li>
+            <li><a href="../seguimientos/voyager-1.html">VOYAGER 1</a></li>
+            <li><a href="../seguimientos/hitos-medicos.html">HITOS MÉDICOS</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Síguenos</p>
+          <div class="footer-social-links">
+            <a href="https://www.facebook.com/revistamundo" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16"><path d="M16 8a8 8 0 1 0-9.25 7.9v-5.6H4.9V8h1.85V6.4c0-1.83 1.09-2.84 2.76-2.84.8 0 1.64.14 1.64.14v1.8h-.92c-.91 0-1.19.56-1.19 1.14V8h2.03l-.32 2.3H9.04v5.6A8 8 0 0 0 16 8z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/mundo.m.mag/" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16"><path d="M4.7 0h6.6A4.7 4.7 0 0 1 16 4.7v6.6a4.7 4.7 0 0 1-4.7 4.7H4.7A4.7 4.7 0 0 1 0 11.3V4.7A4.7 4.7 0 0 1 4.7 0zm-.15 1.5A3.05 3.05 0 0 0 1.5 4.55v6.9a3.05 3.05 0 0 0 3.05 3.05h6.9a3.05 3.05 0 0 0 3.05-3.05v-6.9A3.05 3.05 0 0 0 11.45 1.5h-6.9zM8 4.1a3.9 3.9 0 1 1 0 7.8 3.9 3.9 0 0 1 0-7.8zm0 1.5a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8zm4.05-2.65a.95.95 0 1 1 0 1.9.95.95 0 0 1 0-1.9z"/></svg>
+            </a>
+            <a href="https://x.com/uap_mag" aria-label="X (Twitter)" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16"><path d="M12.6 1h2.45L9.95 6.91 15.7 15h-4.5l-3.52-4.6L3.7 15H1.25l5.4-6.18L1.15 1h4.62l3.19 4.22L12.6 1zm-.86 12.6h1.36L4.32 2.32H2.86l8.88 11.28z"/></svg>
+            </a>
+            <a href="https://substack.com/@mundomag" aria-label="Substack" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16"><path d="M1.5 1.5h13v2.3h-13V1.5zm0 4.1h13v2.1h-13V5.6zm0 4.1 6.5 5.8 6.5-5.8H1.5z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">Mundo Maravilloso · Hecho en El Salvador · 2026</p>
+      <p class="footer-signal">// Artículo · pursue-nda-mito-realidad</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn = document.getElementById('navHamburger');
+  var drawer = document.getElementById('navDrawer');
+  if (!btn || !drawer) return;
+  btn.addEventListener('click', function(){
+    var isOpen = drawer.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  drawer.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      drawer.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
