@@ -12,7 +12,7 @@
   {
     "fecha": "11 jul",
     "tipo": "noticia",
-    "destacado": true,
+	     "destacado": true,
     "texto": "4º release PURSUE: 19 videos infrarrojos 'no resueltos', el más comentado sobre el Atlántico en 2020 — el archivo supera ya los 300 expedientes desde mayo"
   },
   {
@@ -20,6 +20,7 @@
     "tipo": "aviso",
     "texto": "La otra cara del apagón: la degradación secreta, el jailbreak y el regreso de Fable 5"
   },
+  
   {
     "fecha": "03 jul",
     "tipo": "aviso",
@@ -41,17 +42,18 @@
     "tipo": "noticia",
     "texto": "Anthropic restauró el acceso a Claude Fable 5 y Mythos 5 el 1 de julio, tras el levantamiento de los controles de exportación que forzaron su apagón"
   },
-  {
+	{
     "fecha": "01 jul",
     "tipo": "aviso",
     "texto": "Disponible nueva sección fija: Voyager 1 - Fue diseñada para durar cuatro años. Hoy, casi cincuenta después, transmite desde el espacio interestelar a 160 bits por segundo "
   },
+
   {
     "fecha": "01 jul",
     "tipo": "aviso",
     "texto": "El Observador: un oficial australiano acusó a la CIA de encubrimiento en 1971 — y el documento lleva décadas disponible para quien quiera leerlo"
   },
-  {
+	{
     "fecha": "01 jul",
     "tipo": "aviso",
     "texto": "Doc. Australia 1971: la CIA impulsó en 1953 una campaña de desacreditación sobre OVNIs que duró no dos años, sino dos décadas"
@@ -74,6 +76,11 @@
   {
     "fecha": "01 jul",
     "tipo": "aviso",
+    "texto": "Disponible nueva sección fija: Hitos Médicos — registro vivo de curas y tratamientos verificados con fuentes FDA/EMA, 2024-2026"
+  },
+  {
+    "fecha": "01 jul",
+    "tipo": "aviso",
     "texto": "Bestiario Criptozoológico: 22 criptidos documentados — 7 con evidencia física parcial, investigación abierta"
   },
   {
@@ -82,6 +89,7 @@
     "destacado": true,
     "texto": "Homenaje a la mitología salvadoreña: Siguanaba, Cipitío, Cadejo, Carreta Bruja y más — patrimonio oral vivo de El Salvador"
   },
+	
   {
     "fecha": "26 jun",
     "tipo": "noticia",
