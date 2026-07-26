@@ -59,11 +59,10 @@ formato: hero-documental-v1
     }
     .hero-doc-bg{
       position:absolute; inset:0; z-index:0;
-      background:
-        repeating-linear-gradient(0deg, rgba(143,211,216,0.035) 0px, rgba(143,211,216,0.035) 1px, transparent 1px, transparent 3px),
-        radial-gradient(ellipse at 30% 20%, rgba(201,168,76,0.08), transparent 55%),
-        radial-gradient(ellipse at 80% 75%, rgba(143,211,216,0.06), transparent 50%),
-        #050608;
+      background-image:
+        linear-gradient(rgba(5,6,8,0.1), rgba(5,6,8,0.1)),
+       url("hero/transparencia.jpg");
+      background-size:cover; background-position:center 100%; 
     }
     .hero-doc::after{
       content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
@@ -233,19 +232,6 @@ formato: hero-documental-v1
       .terminal-body{ font-size:0.68rem; }
     }
   </style>
-<style id="footer-social-css">
-.footer-social-links { display: flex; gap: 0.85rem; margin-top: 0.6rem; }
-.footer-social-links a {
-  width: 30px; height: 30px;
-  display: flex; align-items: center; justify-content: center;
-  border: 1px solid var(--border, #2a2a2e);
-  border-radius: 50%;
-  color: var(--muted, #7a7a82);
-  transition: color 0.2s, border-color 0.2s;
-}
-.footer-social-links a:hover { color: var(--gold, #c9a24b); border-color: var(--gold, #c9a24b); }
-.footer-social-links svg { width: 14px; height: 14px; fill: currentColor; }
-</style>
 </head>
 <body>
 
@@ -258,16 +244,14 @@ formato: hero-documental-v1
       <a href="../articulos.html" class="site-nav-link">Artículos</a>
       <a href="../seguimientos/3i-atlas.html" class="site-nav-link">3I/ATLAS</a>
       <a href="../seguimientos/uap.html" class="site-nav-link">UAP WATCH</a>
-      <a href="../seguimientos/pursue-releases.html" class="site-nav-link">PURSUE</a>
+      <a href="../seguimientos/pursue-releases.html" class="site-nav-link active">PURSUE</a>
       <a href="../seguimientos/voyager-1.html" class="site-nav-link">VOYAGER 1</a>
       <a href="../seguimientos/hitos-medicos.html" class="site-nav-link">HITOS MÉDICOS</a>
       <a href="../glosario.html" class="site-nav-link"><span class="nav-dot"></span>&nbsp;Glosario</a>
     </div>
     <button class="site-nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navDrawer">
       <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-        <line x1="2" y1="5" x2="18" y2="5"/>
-        <line x1="2" y1="10" x2="18" y2="10"/>
-        <line x1="2" y1="15" x2="18" y2="15"/>
+        <line x1="2" y1="5" x2="18" y2="5"/><line x1="2" y1="10" x2="18" y2="10"/><line x1="2" y1="15" x2="18" y2="15"/>
       </svg>
     </button>
   </div>
