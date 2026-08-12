@@ -1,5 +1,5 @@
 [	 
-{
+ {
     "fecha": "7 ago",
     "tipo": "aviso",
     "texto": "Análisis: 5th Release (war.gov/UFO)"	
@@ -7,8 +7,9 @@
  {
     "fecha": "7 ago",
     "tipo": "aviso",
+	  "destacado": true,
     "texto": "Quinto Release —  El 7 de agosto de 2026 el Departamento de Guerra publicó 41 archivos nuevos en war.gov/UFO. // ver sección de desclasificaciones"
-	 "destacado": true,
+	
   },
   {
     "fecha": "11 jul",
@@ -98,27 +99,5 @@
     "tipo": "aviso",
     "destacado": true,
     "texto": "Homenaje a la mitología salvadoreña: Siguanaba, Cipitío, Cadejo, Carreta Bruja y más — patrimonio oral vivo de El Salvador"
-  },
-	
-  {
-    "fecha": "26 jun",
-    "tipo": "noticia",
-    "destacado": true,
-    "texto": "Foro de Disclosure 2026 en Washington: el Senado promete revivir la Ley de Divulgación UAP con protecciones para denunciantes — se busca amnistía ejecutiva vía Trump"
-  },
-  {
-    "fecha": "26 jun",
-    "tipo": "noticia",
-    "texto": "MIT Lincoln Laboratory acordó entregar al Congreso la grabación clasificada del briefing OVNI que la Fuerza Aérea dio a sus científicos hace 74 años"
-  },
-  {
-    "fecha": "22 jun",
-    "tipo": "noticia",
-    "texto": "3I/ATLAS tiene entre 10 y 12 mil millones de años — casi tres veces la edad del sistema solar — según dos estudios publicados en Nature el 22 de junio"
-  },
-  {
-    "fecha": "17 jun",
-    "tipo": "noticia",
-    "texto": "Avi Loeb nombrado jefe del nuevo UAP Science Advisory Council — el consejo asesorará al gobierno de EE.UU. con datos exclusivamente desclasificados"
   }
 ]
