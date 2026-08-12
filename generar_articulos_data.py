@@ -40,6 +40,40 @@ def extraer_primero(patrones, html):
     return ""
 
 
+def extraer_mm_meta(html: str) -> dict:
+    """
+    Cada plantilla de artículo trae un bloque de comentario al inicio del
+    archivo con los metadatos "de verdad" (slug, titulo, categoria, blurb,
+    fecha, formato), por ejemplo:
+
+        <!-- MM-META
+        slug: el-fenomeno-fantasma
+        titulo: The Phantom Phenomenon: ...
+        categoria: mitologia-moderna
+        blurb: Un diagrama casero de 1979 ...
+        fecha: 2026-07-22
+        formato: hero-documental-v1
+        -->
+
+    Esta es la fuente más confiable para categoria: no depende de qué
+    clase CSS use la plantilla para la etiqueta visual, y evita el bug
+    anterior (regex buscando un link "articulos.html?cat=X" que nunca
+    existió). Se parsea línea por línea dentro del comentario.
+    """
+    datos = {}
+    m = re.search(r"<!--\s*MM-META\s*(.*?)-->", html, re.DOTALL)
+    if not m:
+        return datos
+    bloque = m.group(1)
+    for linea in bloque.splitlines():
+        lm = re.match(r"\s*([a-zA-Z_]+)\s*:\s*(.*?)\s*$", linea)
+        if lm:
+            clave, valor = lm.group(1), lm.group(2)
+            if valor:
+                datos[clave] = limpiar(valor)
+    return datos
+
+
 def extraer_meta_description(html: str) -> str:
     """
     Busca <meta name="description" content="..."> sin importar el orden
@@ -98,7 +132,12 @@ def main():
             continue  # plantillas, no son artículos reales
         html = p.read_text(encoding="utf-8", errors="ignore")
 
-        titulo = extraer_primero([
+        mm_meta = extraer_mm_meta(html)
+
+        # PRIORIDAD 1: bloque <!-- MM-META --> al inicio del archivo.
+        # PRIORIDAD 2 (respaldo, artículos viejos sin el bloque): buscar
+        # el <h1> según la plantilla que use.
+        titulo = mm_meta.get("titulo") or extraer_primero([
             r'<h1 class="article-title">(.*?)</h1>',
             r'<h1 class="hero-title">(.*?)</h1>',
             r'<h1 class="hero-doc-title">(.*?)</h1>',
@@ -106,30 +145,25 @@ def main():
             r'<h1[^>]*>(.*?)</h1>',
         ], html) or p.stem
 
-        # PRIORIDAD 1: meta description — está en el 100% de los artículos
-        # y suele ser más completa que los deks cortos del cuerpo.
-        # PRIORIDAD 2 (respaldo, por si algún artículo no tiene meta tag):
-        # los deks visibles en el cuerpo, según la plantilla que use.
-        resumen = extraer_meta_description(html) or extraer_primero([
-            r'<p class="hero-doc-subtitle">\s*(.*?)\s*</p>',
-            r'<p class="article-dek">\s*(.*?)\s*</p>',
-            r'<p class="hero-subtitle">\s*(.*?)\s*</p>',
-        ], html)
+        # PRIORIDAD 1: "blurb" del bloque MM-META.
+        # PRIORIDAD 2: meta description — está en el 100% de los artículos.
+        # PRIORIDAD 3: deks visibles en el cuerpo, según la plantilla.
+        resumen = (
+            mm_meta.get("blurb")
+            or extraer_meta_description(html)
+            or extraer_primero([
+                r'<p class="hero-doc-subtitle">\s*(.*?)\s*</p>',
+                r'<p class="article-dek">\s*(.*?)\s*</p>',
+                r'<p class="hero-subtitle">\s*(.*?)\s*</p>',
+            ], html)
+        )
 
-        # Categoría: se lee del meta tag explícito <meta name="mm:categoria"
-        # content="...">, que cada plantilla de artículo debe declarar.
-        # No se adivina desde las etiquetas visuales (hero-eyebrow,
-        # hero-doc-eyebrow, article-section-label, hero-kicker...) porque
-        # su texto no es un slug limpio (ej. "PURSUE · Fact-Check"),
-        # así que sin el meta tag el artículo cae en "General".
-        categoria = "General"
-        for m in re.finditer(r"<meta\s+[^>]*>", html, re.IGNORECASE):
-            tag = m.group(0)
-            if re.search(r'name=["\']mm:categoria["\']', tag, re.IGNORECASE):
-                cm = re.search(r'content=(["\'])(.*?)\1', tag, re.DOTALL)
-                if cm:
-                    categoria = limpiar(cm.group(2))
-                break
+        # Categoría: se lee de "categoria" en el bloque MM-META. No se
+        # adivina desde las etiquetas visuales (hero-eyebrow, hero-doc-
+        # eyebrow, article-section-label, hero-kicker...) porque su texto
+        # no es un slug limpio (ej. "PURSUE · Fact-Check"). Si un artículo
+        # viejo no trae el bloque MM-META, cae en "General".
+        categoria = mm_meta.get("categoria") or "General"
 
         articulos.append({
             "slug": p.stem,
