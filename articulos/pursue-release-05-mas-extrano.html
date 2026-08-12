@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<!-- MM-META
+slug: pursue-release-05-mas-extrano
+titulo: Análisis: 5th Release (war.gov/UFO)
+categoria: documentos
+blurb: El 7 de agosto de 2026 el Departamento de Guerra publicó 41 archivos nuevos en war.gov/UFO. Repasamos —con las imágenes oficiales del FBI— los casos que más está comentando la gente: el triángulo de Bagram, el enjambre del Golfo de Omán y la esfera de Brasil de 1963.
+fecha: 2026-08-11
+formato: hero-documental-galeria-v1
+actualizado: 2026-08-11 — cobertura inicial de Release 05 (7 ago 2026)
+-->
+<html lang="es" data-page="pursue-release05">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Análisis: 5th Release (war.gov/UFO) · Mundo Maravilloso</title>
+  <meta name="description" content="El 7 de agosto de 2026 el Departamento de Guerra publicó 41 archivos nuevos en war.gov/UFO. Repasamos, con las imágenes oficiales del FBI, los casos más comentados: el triángulo de Bagram, el enjambre del Golfo de Omán y la esfera de Brasil de 1963.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../css-articulos.css">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8483516296039231"
+       crossorigin="anonymous"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRSJ1EYEPD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LRSJ1EYEPD');
+  </script>
+
+  <style>
+    /* ══════════════════════════════════════════════════════════════════
+       RESET + BASE
+       ══════════════════════════════════════════════════════════════════ */
+    *{ box-sizing:border-box; }
+    html[data-page="pursue-release05"]{
+      --ink:        #0d0d0f;
+      --ink-mid:    #161619;
+      --ink-soft:   #1e1e23;
+      --paper:      #f5f0e8;
+      --gold:       #c9a84c;
+      --gold-light: #e8c97a;
+      --ice:        #8fd3d8;
+      --violet:     #9a8cf0;
+      --red:        #c0392b;
+      --muted:      #6b6b7a;
+      --border:     rgba(201,168,76,0.16);
+    }
+    html[data-page="pursue-release05"] body{
+      background:var(--ink); color:var(--paper); margin:0;
+      font-family:"Source Serif 4",Georgia,serif;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{ color:inherit; }
+
+    /* ══════════════════════════════════════════════════════════════════
+       HERO DOCUMENTAL (con foto — render oficial del FBI de release 05)
+       ══════════════════════════════════════════════════════════════════ */
+    .hero-doc{
+      position:relative; min-height:82svh; overflow:hidden;
+      display:flex; align-items:flex-end; background:#08090a;
+    }
+    .hero-doc-bg{
+      position:absolute; inset:0; z-index:0;
+      background-image:
+        linear-gradient(rgba(3,3,3,0.0), rgba(3,3,3,0.0)),
+        url("https://www.war.gov/portals/1/Interactive/2026/UFO/080726/Slideshow/FBI-UAP-D025_Digital-Rendering_Airborne-Triangle_2002.jpg");
+      background-size:cover; background-position:center 80%;
+    }
+    .hero-doc-stamp{
+      position:absolute; top:2.5rem; right:2.5rem; z-index:2;
+      font-family:"JetBrains Mono",monospace; font-size:0.6rem; letter-spacing:0.15em;
+      color:rgba(192,57,43,0.6); border:1px solid rgba(192,57,43,0.5);
+      padding:0.4rem 0.75rem; transform:rotate(6deg); text-transform:uppercase;
+      background:rgba(8,9,10,0.4);
+    }
+    .hero-doc::after{
+      content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
+      background:linear-gradient(to top, var(--ink) 0%, rgba(13,13,15,0.9) 22%, rgba(13,13,15,0.4) 52%, transparent 78%);
+    }
+    .hero-doc-inner{
+      position:relative; z-index:2; width:100%; max-width:960px;
+      padding:0 clamp(1.5rem,6vw,5rem) 5rem;
+    }
+    .hero-doc-eyebrow{
+      display:inline-flex; align-items:center; gap:0.65rem;
+      font-family:"JetBrains Mono",monospace; font-size:0.62rem;
+      letter-spacing:0.32em; text-transform:uppercase; color:var(--ice);
+      margin-bottom:1.25rem;
+    }
+    .hero-doc-eyebrow::before{ content:""; width:22px; height:1px; background:var(--ice); }
+    .hero-doc-title{
+      font-family:"Audiowide",sans-serif;
+      font-size:clamp(2rem,5.4vw,4rem);
+      font-weight:900; line-height:1.08; letter-spacing:-0.01em;
+      color:var(--paper); text-shadow:0 4px 40px rgba(0,0,0,0.5);
+    }
+    .hero-doc-title .accent{ color:var(--ice); }
+    .hero-doc-subtitle{
+      font-family:"Space Grotesk",sans-serif; font-weight:500;
+      font-size:clamp(1rem,1.9vw,1.25rem); color:rgba(245,240,232,0.82);
+      max-width:62ch; margin-top:1.1rem; line-height:1.55;
+    }
+    .hero-doc-meta{
+      display:flex; flex-wrap:wrap; align-items:center; gap:0.9rem;
+      margin-top:1.9rem;
+      font-family:"JetBrains Mono",monospace; font-size:0.62rem;
+      letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,240,232,0.5);
+    }
+    .hero-doc-meta .dot{ width:3px; height:3px; border-radius:50%; background:var(--muted); }
+    .hero-doc-meta .tag{
+      color:var(--gold-light); border:1px solid rgba(201,168,76,0.35);
+      padding:0.3rem 0.65rem; border-radius:2px; letter-spacing:0.12em;
+    }
+    @media (max-width:600px){ .hero-doc-stamp{ display:none; } }
+
+    /* ══════════════════════════════════════════════════════════════════
+       CUERPO
+       ══════════════════════════════════════════════════════════════════ */
+    .article{ max-width:760px; margin:0 auto; padding:0 2rem 6rem; }
+
+    .intro{ display:grid; grid-template-columns: 1fr 280px; gap:3.5rem; padding:4.5rem 0 1rem; max-width:1040px; margin:0 auto; padding-left:2rem; padding-right:2rem; }
+    .intro-text p{ font-size:1.12rem; color:rgba(245,240,232,0.85); line-height:1.85; margin-bottom:1.25rem; }
+    .intro-text p:first-of-type::first-letter{
+      font-family:"Audiowide",sans-serif; font-size:3.4rem; line-height:0.75;
+      float:left; padding:0.1rem 0.6rem 0 0; color:var(--ice);
+    }
+    .sidebar-box{ border:1px solid var(--border); background:var(--ink-mid); padding:1.75rem; align-self:start; }
+    .sidebar-label{ font-family:"JetBrains Mono",monospace; font-size:0.55rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:1.25rem; padding-bottom:0.9rem; border-bottom:1px solid var(--border); }
+    .sidebar-item{ padding:0.7rem 0; border-bottom:1px solid rgba(201,168,76,0.08); }
+    .sidebar-item:last-child{ border-bottom:none; }
+    .sidebar-key{ font-family:"JetBrains Mono",monospace; font-size:0.55rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--ice); margin-bottom:0.3rem; }
+    .sidebar-val{ font-size:0.85rem; color:rgba(245,240,232,0.75); line-height:1.4; }
+
+    @media (max-width:820px){ .intro{ grid-template-columns:1fr; padding-left:1.5rem; padding-right:1.5rem; } }
+
+    .section-head{ display:flex; align-items:center; gap:1.5rem; padding:5rem 0 2.25rem; max-width:760px; margin:0 auto; }
+    .section-num{ font-family:"JetBrains Mono",monospace; font-size:0.75rem; color:var(--gold); }
+    .section-title{ font-family:"Audiowide",sans-serif; font-size:1.3rem; font-weight:900; color:var(--paper); letter-spacing:0.01em; }
+    .section-line{ flex:1; height:1px; background:var(--border); }
+
+    .prose-section{ max-width:760px; margin:0 auto; padding-top:0; }
+    .prose-section p{ font-size:1.06rem; line-height:1.85; color:rgba(245,240,232,0.85); margin-bottom:1.25rem; }
+    .prose-section p strong{ color:var(--paper); }
+
+    .alert-box{ max-width:760px; margin:2.5rem auto; border-left:2px solid var(--ice); background:var(--ink-mid); padding:1.5rem 1.75rem; }
+    .alert-title{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--ice); margin-bottom:0.6rem; }
+    .alert-text{ font-size:0.98rem; color:rgba(245,240,232,0.78); line-height:1.7; }
+    .alert-box.warn{ border-left-color:var(--red); }
+    .alert-box.warn .alert-title{ color:#e0776a; }
+    .alert-text ul{ margin:0.85rem 0 0 0; padding-left:1.15rem; }
+    .alert-text li{ margin-bottom:0.55rem; }
+    .alert-text li:last-child{ margin-bottom:0; }
+
+    .claim-grid{ max-width:760px; margin:2rem auto; display:grid; gap:1.25rem; }
+    .claim-box{ border:1px solid var(--border); padding:1.5rem 1.75rem; background:var(--ink-mid); }
+    .claim-tag{ font-family:"JetBrains Mono",monospace; font-size:0.55rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--violet); margin-bottom:0.6rem; }
+    .claim-title{ font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:1.02rem; color:var(--paper); margin-bottom:0.6rem; }
+    .claim-body{ font-size:0.95rem; color:rgba(245,240,232,0.72); line-height:1.7; }
+
+    blockquote.persona{
+      max-width:760px; margin:2.5rem auto; padding:1.75rem 2rem;
+      border:1px solid var(--border); background:var(--ink-mid);
+      display:grid; grid-template-columns:auto 1fr; gap:1.25rem; align-items:start;
+    }
+    blockquote.persona span{ font-size:1.5rem; }
+    blockquote.persona .cargo{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:0.6rem; }
+    blockquote.persona p:not(.cargo){ font-size:0.98rem; color:rgba(245,240,232,0.85); font-style:italic; line-height:1.6; }
+
+    .timeline-item{ max-width:760px; margin:0 auto 2rem; padding-left:1.75rem; border-left:2px solid var(--border); position:relative; }
+    .timeline-item::before{ content:""; position:absolute; left:-6px; top:0.25rem; width:10px; height:10px; border-radius:50%; background:var(--ice); }
+    .timeline-date{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.15em; color:var(--ice); margin-bottom:0.3rem; }
+    .timeline-event{ font-family:"Space Grotesk",sans-serif; font-weight:700; color:var(--paper); margin-bottom:0.4rem; }
+    .timeline-desc{ font-size:0.9rem; color:var(--muted); line-height:1.6; }
+    .timeline-item.featured{ border-left-color:var(--gold); padding:1.25rem 1.5rem 1.25rem 1.5rem; margin-left:-1.5rem; background:var(--ink-mid); }
+    .timeline-item.featured::before{ background:var(--gold); width:12px; height:12px; left:-7px; }
+    .timeline-item.featured .timeline-date{ color:var(--gold-light); }
+    .timeline-item.featured .timeline-event{ color:var(--gold-light); font-size:1.05rem; }
+
+    .questions-box{ max-width:760px; margin:2.5rem auto; border:1px solid var(--border); padding:2rem; }
+    .questions-box h3{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:1.25rem; }
+    .questions-box ul{ list-style:none; margin:0; padding:0; }
+    .questions-box li{ font-size:1rem; color:rgba(245,240,232,0.82); line-height:1.7; padding:0.6rem 0 0.6rem 1.25rem; border-bottom:1px solid rgba(201,168,76,0.08); position:relative; }
+    .questions-box li:last-child{ border-bottom:none; }
+    .questions-box li::before{ content:"?"; position:absolute; left:0; color:var(--ice); font-family:"JetBrains Mono",monospace; }
+
+    .sources-list{ max-width:760px; margin:0 auto; }
+    .sources-list ol{ list-style:none; counter-reset:src; margin:0; padding:0; }
+    .sources-list li{ counter-increment:src; padding:1rem 0 1rem 2.4rem; border-bottom:1px solid rgba(201,168,76,0.08); position:relative; }
+    .sources-list li:last-child{ border-bottom:none; }
+    .sources-list li::before{ content:counter(src); position:absolute; left:0; top:1.05rem; font-family:"JetBrains Mono",monospace; font-size:0.6rem; color:var(--gold); border:1px solid var(--border); width:1.5rem; height:1.5rem; display:flex; align-items:center; justify-content:center; }
+    .source-outlet{ font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:0.92rem; color:var(--paper); }
+    .source-meta{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted); margin:0.3rem 0 0.5rem; }
+    .source-title{ font-size:0.92rem; color:rgba(245,240,232,0.75); font-style:italic; line-height:1.55; margin-bottom:0.4rem; }
+    .source-note{ font-size:0.86rem; color:var(--muted); line-height:1.6; }
+
+    .related-articles{ max-width:760px; margin:5rem auto 0; padding:0 2rem; }
+    .related-label{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:1.5rem; padding-bottom:1rem; border-bottom:1px solid var(--border); }
+    .related-grid{ display:grid; gap:1rem; }
+    .related-card{ display:block; border:1px solid var(--border); padding:1.25rem 1.5rem; text-decoration:none; transition:border-color 0.2s; }
+    .related-card:hover{ border-color:var(--gold); }
+    .related-card-cat{ font-family:"JetBrains Mono",monospace; font-size:0.52rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--violet); margin-bottom:0.6rem; }
+    .related-card-title{ font-family:"Space Grotesk",sans-serif; font-size:0.95rem; font-weight:600; color:var(--paper); line-height:1.4; }
+
+    /* ══════════════════════════════════════════════════════════════════
+       COMPONENTE NUEVO: GALERÍA DE EVIDENCIA (renders/fotos oficiales)
+       ══════════════════════════════════════════════════════════════════ */
+    .photo-solo{ max-width:900px; margin:2.5rem auto; }
+    .photo-solo figure{ margin:0; }
+    .photo-solo img{
+      width:100%; display:block; border:1px solid var(--border);
+      background:var(--ink-mid); aspect-ratio:16/10; object-fit:cover;
+    }
+    .photo-caption{
+      font-family:"JetBrains Mono",monospace; font-size:0.68rem; line-height:1.6;
+      color:var(--muted); margin-top:0.85rem; letter-spacing:0.01em;
+    }
+    .photo-caption .file-id{ color:var(--ice); }
+    .photo-caption .src-tag{
+      display:inline-block; margin-top:0.4rem; font-size:0.6rem; letter-spacing:0.1em;
+      text-transform:uppercase; color:var(--gold-light); border:1px solid rgba(201,168,76,0.3);
+      padding:0.2rem 0.55rem;
+    }
+
+    .photo-grid{
+      display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;
+      max-width:900px; margin:2.5rem auto;
+    }
+    .photo-grid img{
+      width:100%; display:block; border:1px solid var(--border);
+      background:var(--ink-mid); aspect-ratio:4/3; object-fit:cover;
+    }
+    .photo-grid .photo-caption{ margin-top:0.65rem; }
+    @media (max-width:640px){ .photo-grid{ grid-template-columns:1fr; } }
+
+    .evidence-tag{
+      display:inline-flex; align-items:center; gap:0.5rem;
+      font-family:"JetBrains Mono",monospace; font-size:0.6rem; letter-spacing:0.16em;
+      text-transform:uppercase; padding:0.35rem 0.75rem; margin-bottom:1rem;
+      border:1px solid rgba(201,168,76,0.35); color:var(--gold-light);
+    }
+    .evidence-tag.strange{ border-color:rgba(154,140,240,0.4); color:var(--violet); }
+    .evidence-tag.viral{ border-color:rgba(143,211,216,0.4); color:var(--ice); }
+    .evidence-tag.new{ border-color:rgba(192,57,43,0.4); color:#e0776a; }
+
+    @media (max-width:600px){
+      .article{ padding:0 1.25rem 4rem; }
+      .section-head, .prose-section, .alert-box, .claim-grid, blockquote.persona, .timeline-item, .questions-box, .related-articles, .photo-solo, .photo-grid{ padding-left:0; padding-right:0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════ -->
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="../" class="site-nav-logo">Mundo Maravilloso</a>
+    <div class="site-nav-sep"></div>
+    <div class="site-nav-articles">
+      <a href="../articulos.html" class="site-nav-link">Artículos</a>
+      <a href="../seguimientos/3i-atlas.html" class="site-nav-link">3I/ATLAS</a>
+      <a href="../seguimientos/uap.html" class="site-nav-link">UAP WATCH</a>
+      <a href="../seguimientos/pursue-releases.html" class="site-nav-link active">PURSUE</a>
+      <a href="../seguimientos/voyager-1.html" class="site-nav-link">VOYAGER 1</a>
+      <a href="../seguimientos/hitos-medicos.html" class="site-nav-link">HITOS MÉDICOS</a>
+      <a href="../glosario.html" class="site-nav-link"><span class="nav-dot"></span>&nbsp;Glosario</a>
+    </div>
+    <button class="site-nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navDrawer">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <line x1="2" y1="5" x2="18" y2="5"/><line x1="2" y1="10" x2="18" y2="10"/><line x1="2" y1="15" x2="18" y2="15"/>
+      </svg>
+    </button>
+  </div>
+  <div class="site-nav-drawer" id="navDrawer">
+    <a href="../articulos.html" class="drawer-link">Artículos</a>
+    <a href="../seguimientos/3i-atlas.html" class="drawer-link">3I/ATLAS</a>
+    <a href="../seguimientos/uap.html" class="drawer-link">UAP WATCH</a>
+    <a href="../seguimientos/pursue-releases.html" class="drawer-link">PURSUE</a>
+    <a href="../seguimientos/voyager-1.html" class="drawer-link">VOYAGER 1</a>
+    <a href="../seguimientos/hitos-medicos.html" class="drawer-link">HITOS MÉDICOS</a>
+    <a href="../glosario.html" class="drawer-link"><span class="nav-dot"></span>&nbsp;Glosario</a>
+  </div>
+</nav>
+
+<!-- ══════════ HERO DOCUMENTAL ══════════ -->
+<section class="hero-doc">
+  <div class="hero-doc-bg"></div>
+  <div class="hero-doc-stamp">Release 05 · 07 ago</div>
+  <div class="hero-doc-inner">
+    <div class="hero-doc-eyebrow">Mundo Maravilloso · PURSUE · Lo más destacado</div>
+    <h1 class="hero-doc-title">ANÁLISIS: <span class="accent">5TH RELEASE</span> (WAR.GOV/UFO)</h1>
+    <p class="hero-doc-subtitle">El 7 de agosto de 2026, el Departamento de Guerra publicó 41 archivos nuevos en WAR.GOV/UFO: la quinta tanda del programa PURSUE. Repasamos, con las imágenes oficiales del FBI, los expedientes que más está comentando la gente — de un triángulo silencioso sobre Bagram a un cable de la CIA de 1963 sobre Brasil.</p>
+    <div class="hero-doc-meta">
+      <span>La Redacción</span><span class="dot"></span>
+      <span>11 agosto 2026</span><span class="dot"></span>
+      <span>~15 min de lectura</span>
+      <span class="tag">Documentos · Ilustrado</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ARTÍCULO ══════════ -->
+<main class="article">
+
+  <div class="intro">
+    <div class="intro-text">
+      <p>El 7 de agosto, el Departamento de Guerra publicó la quinta entrega de PURSUE en war.gov/UFO: 41 archivos nuevos —videos, documentos e imágenes— provenientes del propio Departamento, el FBI, la CIA, el Departamento de Estado y la Oficina Ejecutiva del Presidente, con material que va de 1950 a este mismo año. De ese lote, un puñado se llevó toda la conversación en redes: un triángulo silencioso que "apagó" las estrellas sobre Afganistán en 2002, un enjambre de orbes que aparentemente reaccionó cuando un avión artillado disparó su cañón, y un cable de la CIA de 1963 tan extraño que suena a guion de ciencia ficción.</p>
+      <p>Aquí el repaso de esos casos, con las imágenes oficiales que el propio FBI y el Departamento de Guerra publicaron junto a los documentos —y la aclaración, en cada uno, de qué tan lejos llega realmente la evidencia.</p>
+    </div>
+    <div class="sidebar-box">
+      <div class="sidebar-label">// En este artículo</div>
+      <div class="sidebar-item"><div class="sidebar-key">01</div><div class="sidebar-val">Qué es y qué trae Release 05</div></div>
+      <div class="sidebar-item"><div class="sidebar-key">02</div><div class="sidebar-val">Lo más viral: el triángulo de Bagram</div></div>
+      <div class="sidebar-item"><div class="sidebar-key">03</div><div class="sidebar-val">Lo más extraño: la esfera de Brasil (1963)</div></div>
+      <div class="sidebar-item"><div class="sidebar-key">04</div><div class="sidebar-val">Lo más debatido: el enjambre del Golfo de Omán</div></div>
+      <div class="sidebar-item"><div class="sidebar-key">05</div><div class="sidebar-val">Lo más nuevo: las luces sincronizadas de 2026</div></div>
+      <div class="sidebar-item"><div class="sidebar-key">06</div><div class="sidebar-val">Balance: qué confirma esto en realidad</div></div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 01 -->
+  <div class="section-head" id="sec-contexto">
+    <span class="section-num">01</span>
+    <h2 class="section-title">Qué es y qué trae Release 05</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="timeline-item featured">
+    <div class="timeline-date">07 ago 2026</div>
+    <div class="timeline-event">Release 05 — 41 archivos nuevos</div>
+    <div class="timeline-desc">16 videos, 22 documentos y 3 imágenes. Incluye ocho formularios FD-302 del FBI (interviews a testigos), un informe de inteligencia (IIR) sobre el Golfo de Omán y, por primera vez, un caso histórico de 1963 desde Brasil.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">22 may — 10 jul 2026</div>
+    <div class="timeline-event">Releases 02, 03 y 04</div>
+    <div class="timeline-desc">Se suman el primer video de "engagement" militar, el primer aporte de la CIA (correspondencia del Panel Robertson de 1953) y 19 videos infrarrojos adicionales marcados como "no resueltos" por AARO.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">08 may 2026</div>
+    <div class="timeline-event">Release 01 — lanzamiento del portal</div>
+    <div class="timeline-desc">Primera tanda interagencial (ODNI, NASA, FBI, DOE, AARO), sin necesidad de acreditación de seguridad para consultarla.</div>
+  </div>
+
+  <!-- SECCIÓN 02 -->
+  <div class="section-head" id="sec-bagram">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Lo más viral: el triángulo de Bagram</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <span class="evidence-tag viral">// Lo más compartido en redes</span>
+    <p>El expediente que dominó los titulares —CBS lo usó como título, "¿Viste eso?"— es un formulario FD-302 del FBI: el registro estándar que usa el Buró para documentar entrevistas a testigos. En 2024, un ex piloto militar relató a agentes federales lo que dijo haber visto en Bagram, Afganistán, en junio de 2002.</p>
+    <p>Según el reporte, poco antes de las 4:30 a.m. el piloto notó que las estrellas se "apagaban" sobre la base. Algo enorme cruzaba el cielo de oeste a este: un triángulo equilátero silencioso, sin luces visibles, a velocidad y altitud constantes —estimó unos 150 metros de tamaño—. El piloto que volaba junto a él también lo vio y solo atinó a decir: <em>"¿viste eso?"</em>. El FBI produjo un boceto digital oficial del objeto, que acompañó el expediente.</p>
+  </div>
+
+  <div class="photo-solo">
+    <figure>
+      <img src="https://www.war.gov/portals/1/Interactive/2026/UFO/080726/Slideshow/FBI-UAP-D025_Digital-Rendering_Airborne-Triangle_2002.jpg" alt="Render digital del FBI de un gran triángulo oscuro contra un cielo estrellado, según el testimonio del piloto sobre Bagram en 2002." loading="lazy">
+      <figcaption class="photo-caption">
+        <span class="file-id">FBI-UAP-D025</span> — Render digital oficial del FBI basado en el testimonio del ex piloto sobre el objeto triangular visto en Bagram, Afganistán, en junio de 2002.
+        <br><span class="src-tag">Fuente: war.gov/UFO · Release 05</span>
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="prose-section">
+    <p>El mismo testigo contó algo más, ya en el terreno civil: declaró a los agentes que, desde octubre de 2023, "muchos pilotos han estado viendo el mismo evento" —luces en el cielo que comentan entre ellos por radio—, casi siempre entre medianoche y las 3 a.m. Él las vio por primera vez volando de Boston a Dublín, a 37,000 pies, y las describió como luces blancas que empezaban tenues, se intensificaban y se apagaban en ciclos de 10 segundos a un minuto. Las volvió a ver unas diez veces más, en direcciones tan distintas como Dakota del Norte, la costa oeste y el Atlántico medio —y en febrero de 2024 logró grabar un episodio con el celular desde la cabina de su avión.</p>
+    <p>El triángulo de Bagram no es el único de su tipo en esta entrega. El archivo suma otros tres avistamientos triangulares —de años distintos— y uno de ellos, el de Colorado Springs, tiene un nivel de detalle que ni siquiera la prensa reportó.</p>
+  </div>
+
+  <div class="photo-grid">
+    <figure>
+      <img src="https://www.war.gov/portals/1/Interactive/2026/UFO/080726/Slideshow/FBI-UAP-D029_Digital-Rendering_Dark-Triangle-with-Lights_2011.jpg" alt="Render digital del FBI de una persona mirando un objeto triangular oscuro con tres luces en el cielo nocturno." loading="lazy">
+      <figcaption class="photo-caption"><span class="file-id">FBI-UAP-D029</span> — Triángulo oscuro con tres luces, 2011.</figcaption>
+    </figure>
+    <figure>
+      <img src="https://www.war.gov/portals/1/Interactive/2026/UFO/080726/Slideshow/FBI-UAP-D031_Digital-Rendering_Large-Triangle-with-Red-Lights_2023.jpg" alt="Render digital del FBI de un gran triángulo oscuro con luces rojas sobrevolando un estacionamiento de noche." loading="lazy">
+      <figcaption class="photo-caption"><span class="file-id">FBI-UAP-D031</span> — Triángulo con luces rojas, Colorado Springs, oct. 2023.</figcaption>
+    </figure>
+  </div>
+
+  <div class="prose-section">
+    <p>El expediente D031 —el del boceto de arriba, del tamaño de "un estacionamiento entero" según el testigo— tiene un origen casi cinematográfico. El hombre estaba mirando las estrellas cuando notó algo raro: una nube gris oscura, estacionaria, que <strong>"parecía pixelada o distorsionada de alguna manera"</strong>. De esa nube empezó a emerger, apuntando hacia el sur-sureste, la punta de un triángulo negro sólido con una luz roja difusa —hasta que salió por completo: un triángulo equilátero con una luz roja en cada esquina, del tamaño estimado de "tres a cinco pisos" de grosor.</p>
+    <p>El objeto voló a velocidad de helicóptero, aceleró casi instantáneamente a Mach 1 o 2, y —el detalle que más llamó la atención de los investigadores— <strong>viró 90 grados de una manera "opuesta a como lo haría un avión convencional"</strong> al girar. El testigo notó ondas alrededor del objeto, como el efecto de espejismo que se ve al mirar el asfalto caliente a la distancia. Sesenta segundos después de perder de vista el triángulo, llamó a su esposa para contarle — y ella le dijo que su voz sonaba <strong>"robótica, como si hubiera interferencia electrónica"</strong> en la llamada.</p>
+  </div>
+
+  <div class="alert-box">
+    <div class="alert-title">// Otro triángulo, mismo patrón: "como mirar bajo el agua"</div>
+    <div class="alert-text">Un cuarto expediente (FBI-UAP-D026), de octubre de 2023 también en Colorado Springs, describe un triángulo que apareció "casi transparente", rodeado de una "bruma o distorsión" —el testigo lo comparó con <strong>ver un objeto sumergido en agua</strong>, con "ondulaciones" alrededor. En el borde trasero llevaba una banda de luz azul plateada que, especuló el testigo, podría corresponder a su sistema de propulsión.</div>
+  </div>
+
+  <!-- SECCIÓN 03 -->
+  <div class="section-head" id="sec-brasil">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Lo más extraño: la esfera de Brasil (1963)</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <span class="evidence-tag strange">// Lo más insólito del archivo</span>
+    <p>Si el triángulo de Bagram ganó en viralidad, este es el expediente que más comentarios de incredulidad está generando —y, gracias al zip de documentos originales, ahora podemos citar directamente los tres archivos que arman el caso completo, no solo el resumen que circuló en redes.</p>
+    <p>Todo arranca con un reporte de radio captado por el Foreign Broadcast Information Service (FBIS) de la CIA la noche del 8 de noviembre de 1963, transmitido por Radio Tupi de Río de Janeiro:</p>
+  </div>
+
+  <blockquote class="persona">
+    <span>📡</span>
+    <div>
+      <p class="cargo">EOP-UAP-D001 — FBIS, Radio Tupi, 8 nov. 1963</p>
+      <p>"Reportes desde el municipio de Conde, en Bahía, dicen que una gran esfera metálica cayó en el centro de la ciudad, dejando un agujero de cuatro metros de profundidad. La misteriosa esfera tiene aberturas en forma de ventana cubiertas con vidrio grueso. En su interior hay un cuerpo humano vestido con ropa pesada que lleva inscripciones que no pueden descifrarse. La población de Conde está intrigada, y las autoridades han sido informadas."</p>
+    </div>
+  </blockquote>
+
+  <div class="photo-solo">
+    <figure>
+      <img src="images/esfera-bra.jpg" alt="Ilustración conceptual de una esfera metálica caída en un cráter, con dos ventanillas circulares, ante testigos y edificios coloniales de fondo; incluye vistas del interior con un ocupante con traje y casco." loading="lazy">
+      <figcaption class="photo-caption">
+        Reconstrucción conceptual del objeto descrito en los reportes de 1963: la esfera hallada en el cráter en Conde, Bahía, con sus ventanillas y el supuesto ocupante en su interior.
+        <br><span class="src-tag">Ilustración conceptual · No forma parte del archivo oficial de war.gov/UFO</span>
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="prose-section">
+    <p>Cinco días después, la embajada de EE. UU. en Río de Janeiro envió un cable a Washington pidiendo que le confirmaran o desmintieran un reporte de prensa local casi idéntico: un <strong>"globo metálico tripulado"</strong> hallado cerca de Salvador, con un <strong>"tripulante muerto a bordo, vistiendo uniforme o traje espacial con extrañas marcas"</strong>, y un cráter de impacto. El cable deja constancia de que ya se había especulado con que el objeto avistado en la zona podía ser "un globo meteorológico" —pero que, hasta ese momento, ningún objeto había sido hallado en tierra.</p>
+  </div>
+
+  <div class="alert-box warn">
+    <div class="alert-title">// El propio archivo lo desmiente, con nombre y apellido</div>
+    <div class="alert-text">El tercer documento (DOS-UAP-D002, 20 de noviembre de 1963) resuelve el caso: el cónsul de EE. UU. en Salvador, Harold Midkiff, telegrafió a Washington que la historia era <strong>"aparentemente fabricada en Río"</strong> y que "nadie en la zona vio tales objetos, según reporteros y otros que corrieron al lugar antes de que llegaran los reportes de investigación". El Ministerio de Aeronáutica brasileño <strong>negó categóricamente</strong> que hubiera existido tal "objeto extraño" en Conde. Un periódico local tituló su nota sobre el episodio: <strong>"La aeronave que nunca estuvo ahí"</strong>.</div>
+  </div>
+
+  <div class="prose-section">
+    <p>Es, en cierto sentido, el expediente más "clásico" de ovnilogía de los años 60 que ha aparecido en todo PURSUE hasta ahora: un relato de accidente con supuesto tripulante, transmitido primero por radio y luego por canales diplomáticos, y desmentido por el propio gobierno brasileño casi de inmediato. El Departamento de Guerra decidió publicar los tres documentos juntos —el reporte, la duda, y la desmentida— en vez de solo el más llamativo, lo cual dice bastante sobre el criterio de esta tanda en particular.</p>
+  </div>
+
+  <!-- SECCIÓN 04 -->
+  <div class="section-head" id="sec-oman">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Lo más debatido: el enjambre del Golfo de Omán</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <span class="evidence-tag">// El caso técnicamente más discutido</span>
+    <p>El grueso documental de Release 05 —seis videos distintos— corresponde a un solo incidente: en septiembre de 2021, una tripulación de Operaciones Especiales a bordo de un avión artillado AC-130J grabó con su celular las pantallas de los sensores de a bordo durante un ejercicio de fuego real en el Golfo de Omán.</p>
+  </div>
+
+  <div class="prose-section">
+    <p>El expediente completo —desclasificado con sellos "SECRET//NOFORN" tachados— cuenta la secuencia con un nivel de detalle que no llegó a los titulares. Todo empezó cuando el avión soltó una <strong>bengala activada por agua</strong> para usarla como blanco de práctica. Al reencuadrar el sensor infrarrojo sobre la bengala, el Oficial de Sistemas de Combate (CSO) encontró algo que no esperaba:</p>
+  </div>
+
+  <blockquote class="persona">
+    <span>📄</span>
+    <div>
+      <p class="cargo">DOW-UAP-D101 — Informe de Inteligencia, Golfo de Omán, 8 sept. 2021</p>
+      <p>"[El CSO] observó dos esferas frías de aproximadamente cuatro pies de diámetro, entre 0 y 20 pies sobre la superficie del agua, estacionarias sobre la bengala durante aproximadamente 15 segundos. Pasados esos 15 segundos, el CSO jaló el gatillo disparando el cañón de 105mm de la aeronave. Inmediatamente al jalar el gatillo, durante el breve retraso entre el disparo y el retroceso del cañón, el CSO observó al par de UAP alejarse volando rápidamente de la bengala y salir del campo del sensor, sin cambiar de altitud."</p>
+    </div>
+  </blockquote>
+
+  <div class="prose-section">
+    <p>Lo que vino después es, según el propio informe, lo más difícil de explicar: la tripulación registró <strong>unas 25 instancias de UAP</strong> durante la misión, volando entre 250 y 1,300 mph, en modo "blanco-caliente" y "negro-caliente" al infrarrojo. Dos de los objetos volaron en formación "suelta pero coordinada", subiendo y bajando de altitud <strong>"como una ola"</strong>, maniobrando alrededor, encima y debajo el uno del otro. La fuente que reportó el incidente añadió un comentario que quedó registrado tal cual en el documento: <strong>"Sabían que estaban volando juntos"</strong>. Otros aparecieron en formación de tres, y otros más maniobraron erráticamente y de forma agresiva. No se observó ningún medio de propulsión.</p>
+    <p>Y hay un detalle final que alimenta tanto la sospecha como el escepticismo: la tripulación intentó guardar el metraje infrarrojo completo del incidente, pero <strong>la grabadora de video digital del avión falló de forma inexplicable y los datos del video se corrompieron</strong>. El caso, como casi todos en este archivo, quedó sin resolver por AARO. Es el expediente que más divide a los analistas: para unos, el patrón de reacción al disparo y el "comportamiento coordinado" sugiere maniobra inteligente; para los más escépticos, apunta a un artefacto óptico del sensor infrarrojo generado por el fogonazo del cañón —y la falla del DVR, a simple mala suerte técnica más que a algo más siniestro.</p>
+    <p>Un clip adicional, enviado por el Comando Central de EE. UU. (CENTCOM), muestra un objeto cruzando velozmente el cielo sobre una zona poblada de Medio Oriente en 2025 —también catalogado como no resuelto.</p>
+  </div>
+
+  <!-- SECCIÓN 05 -->
+  <div class="section-head" id="sec-nuevo">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Lo más nuevo: las luces sincronizadas del oeste de EE. UU. (2026)</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <span class="evidence-tag new">// La categoría de evidencia que se estrena en esta tanda</span>
+    <p>Release 05 introdujo un tipo de evidencia que no había aparecido en tandas anteriores: el testimonio directo de un agente especial del FBI que registró él mismo, con su propio sensor, el fenómeno que reportaba. En un incidente de este año en el oeste de EE. UU., el agente detectó una frecuencia de radio inusual, apuntó un sensor infrarrojo portátil en esa dirección y filmó dos áreas de contraste "negro caliente" moviéndose lentamente, en conjunto, durante entre 5 y 10 minutos.</p>
+    <p>Según analistas independientes que siguen el archivo completo de PURSUE, el agente incluso apuntó deliberadamente su cámara hacia un helicóptero Black Hawk que sobrevolaba la zona, para usarlo como referencia de escala —el objeto habría medido, según esa comparación, aproximadamente la mitad de un Black Hawk.</p>
+  </div>
+
+  <div class="photo-grid">
+    <figure>
+      <img src="https://www.war.gov/portals/1/Interactive/2026/UFO/080726/Slideshow/FBI-UAP-D038_Digital-Rendering-1_Multiple-Red-Lights_2026.jpg" alt="Render digital del FBI de una persona junto a un vehículo observando dos luces rojas en el cielo sobre un paisaje montañoso." loading="lazy">
+      <figcaption class="photo-caption"><span class="file-id">FBI-UAP-D038</span> — Luces rojas múltiples, oeste de EE. UU., 2026.</figcaption>
+    </figure>
+    <figure>
+      <img src="https://www.war.gov/portals/1/Interactive/2026/UFO/080726/Slideshow/FBI-UAP-D039_Digital-Rendering-2_Multiple-Red-Lights_2026.jpg" alt="Render digital del FBI de un cielo nocturno con un objeto brillante rodeado de círculos concéntricos, visto por binoculares." loading="lazy">
+      <figcaption class="photo-caption"><span class="file-id">FBI-UAP-D039</span> — Mismo incidente, vista por binoculares.</figcaption>
+    </figure>
+  </div>
+
+  <div class="alert-box">
+    <div class="alert-title">// Por qué importa este caso en particular</div>
+    <div class="alert-text">A diferencia de la mayoría de los expedientes —testimonios recogidos después del hecho—, aquí el propio investigador federal es el testigo y el que capturó la evidencia en tiempo real, con un objeto de referencia conocido (el helicóptero) en el mismo encuadre. Según el FD-302, el objeto voló hacia el sur "de forma consistente con la dirección" de un avistamiento similar registrado la noche anterior en la misma zona.</div>
+  </div>
+
+  <div class="prose-section">
+    <p>Pero el hallazgo más extraño de esta categoría —y de toda la Release 05, a juicio de buena parte de la comunidad que sigue el archivo documento por documento— no es visual: es un reloj. En un expediente separado (FBI-UAP-D037), un testigo describe haber visto luces rojas "en forma de guion" moviéndose junto a una cordillera montañosa, algunas tan bajas como <strong>1.8 metros del suelo</strong>, sin ruido ni rastro de escape. Usó gafas de visión nocturna con más de 25 años de experiencia y descartó que fueran satélites, meteoros o drones conocidos.</p>
+  </div>
+
+  <div class="alert-box warn">
+    <div class="alert-title">// La anomalía del reloj</div>
+    <div class="alert-text">Durante la observación, el testigo revisó la hora en su reloj mecánico —un modelo automático que llevaba cinco años sin fallar más de 60-90 segundos— y notó algo raro: marcaba <strong>25 minutos más</strong> que su teléfono y el reloj digital del vehículo. Comparó la hora con la de su acompañante, cuyo reloj digital sí coincidía con el teléfono. Había revisado su reloj a las 10 p.m. y estaba correcto; nunca lo reajustó, y siguió adelantado esos 25 minutos durante las siguientes 24 horas de seguimiento. El propio testigo remarcó a los agentes que, pese a su entrenamiento y experiencia, "no sintió miedo ni agitación —solo curiosidad" durante todo el encuentro, algo que él mismo calificó de extraño dado el contexto.</div>
+  </div>
+
+  <!-- SECCIÓN 06 -->
+  <div class="section-head" id="sec-balance">
+    <span class="section-num">06</span>
+    <h2 class="section-title">Balance: qué confirma esto en realidad</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="prose-section">
+    <p>Vale cerrar con el mismo marco que aplicamos a cada tanda de PURSUE: nada de lo publicado en Release 05 confirma actividad extraterrestre. El triángulo de Bagram sigue siendo un relato de testigo consignado en un formulario del FBI, no una imagen sensor confirmada. La esfera de Brasil viene con su propia desmentida diplomática adjunta. El enjambre del Golfo de Omán y las luces del oeste de EE. UU. son, formalmente, casos "no resueltos" por falta de datos —no evidencia positiva de origen anómalo.</p>
+    <p>Lo que sí cambia, tanda tras tanda, es el volumen y la calidad del material que el gobierno estadounidense pone a disposición pública sin necesidad de acreditación: de los videos granulados típicos de años anteriores, esta entrega suma por primera vez testimonio en tiempo real de un agente federal con objeto de referencia, y el primer caso latinoamericano —aunque desmentido en su momento— de todo el archivo.</p>
+  </div>
+
+  <div class="claim-grid">
+    <div class="claim-box">
+      <div class="claim-tag">// Extra curioso</div>
+      <div class="claim-title">La foto del transbordador Columbia (1996)</div>
+      <div class="claim-body">Entre las tres imágenes de esta tanda hay una fotografía tomada desde el transbordador espacial Columbia en 1996, durante la misión STS-80, que muestra un objeto no identificado en órbita baja terrestre. Es uno de los pocos casos del archivo con origen espacial, no atmosférico.</div>
+    </div>
+  </div>
+
+  <div class="questions-box">
+    <h3>// Para llevarse de este artículo</h3>
+    <ul>
+      <li>Release 05 (7 ago 2026) sumó 41 archivos nuevos a PURSUE: 16 videos, 22 documentos y 3 imágenes, de agencias que van del FBI a la CIA.</li>
+      <li>El caso más viral es el triángulo silencioso de Bagram (2002), relatado en un FD-302 del FBI e ilustrado con un render oficial.</li>
+      <li>El más extraño es un cable de la CIA de 1963 sobre una esfera con supuesto ocupante en Brasil — desmentido por el propio Consulado de EE. UU. en la época.</li>
+      <li>El más debatido técnicamente es el enjambre de orbes del Golfo de Omán (2021), que aparentemente reaccionó al disparo de un cañón de avión.</li>
+      <li>El más novedoso es el testimonio en tiempo real de un agente del FBI en 2026, con un helicóptero como referencia de escala.</li>
+      <li>El detalle menos difundido —y quizá el más inquietante— es la "anomalía del reloj": el cronómetro mecánico de un testigo se adelantó 25 minutos durante un avistamiento y no volvió a corregirse solo.</li>
+      <li>Todos los casos permanecen oficialmente "no resueltos" — ninguno confirma origen extraterrestre.</li>
+    </ul>
+  </div>
+
+  <!-- FUENTES -->
+  <div class="section-head" id="sec-fuentes">
+    <span class="section-num">07</span>
+    <h2 class="section-title">Fuentes</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="sources-list">
+    <ol>
+      <li>
+        <div class="source-outlet">Departamento de Guerra de EE. UU. (war.gov)</div>
+        <div class="source-meta">7 de agosto de 2026</div>
+        <div class="source-title">Comunicado oficial y portal PURSUE — Release 05, con renders digitales del FBI y descarga de documentos</div>
+        <div class="source-note">Fuente primaria: comunicado de prensa y base de datos interactiva con las imágenes usadas en este artículo.</div>
+      </li>
+      <li>
+        <div class="source-outlet">CBS News · Stefan Becket</div>
+        <div class="source-meta">7 de agosto de 2026</div>
+        <div class="source-title">"Pentagon releases new batch of UFO files: 'Did you see that?'"</div>
+        <div class="source-note">Cobertura detallada del contenido de Release 05, incluyendo el testimonio del piloto sobre Bagram y el informe del Golfo de Omán.</div>
+      </li>
+      <li>
+        <div class="source-outlet">EarthSky</div>
+        <div class="source-meta">8 de agosto de 2026</div>
+        <div class="source-title">"5th batch of Pentagon UAP files: Orbs and triangles"</div>
+        <div class="source-note">Desglose del cable de la CIA de 1963 sobre Brasil y su desmentida diplomática adjunta, además del conteo exacto de archivos por tipo.</div>
+      </li>
+      <li>
+        <div class="source-outlet">Fox News</div>
+        <div class="source-meta">7 de agosto de 2026</div>
+        <div class="source-title">"War Department releases video of what appears to be a UAP in Middle East"</div>
+        <div class="source-note">Detalle del clip de CENTCOM sobre Medio Oriente (2025) y contexto de la orden ejecutiva de Trump.</div>
+      </li>
+      <li>
+        <div class="source-outlet">IBTimes UK</div>
+        <div class="source-meta">9 de agosto de 2026</div>
+        <div class="source-title">"What Is in Trump's New Fifth Batch of UFO Files? Pentagon Releases Bagram Triangle and Mars Reports"</div>
+        <div class="source-note">Contextualiza los límites de la evidencia: ninguno de los casos confirma actividad extraterrestre.</div>
+      </li>
+      <li>
+        <div class="source-outlet">Documentos primarios — war.gov/UFO, Release 05</div>
+        <div class="source-meta">Paquete de documentos, 7 de agosto de 2026</div>
+        <div class="source-title">FBI-UAP-D024, D026, D030, D032, D033, D037 (FD-302); DOW-UAP-D101 (IIR); DOS-UAP-D001/D002 y EOP-UAP-D001 (cables e informe FBIS sobre Brasil, 1963)</div>
+        <div class="source-note">Lectura directa de los PDFs desclasificados descargados del propio portal oficial — base de todas las citas textuales de este artículo.</div>
+      </li>
+    </ol>
+  </div>
+
+  <div class="related-articles">
+    <p class="related-label">// Seguimiento relacionado</p>
+    <div class="related-grid">
+      <a href="../seguimientos/pursue-releases.html" class="related-card">
+        <p class="related-card-cat">// PURSUE · Seguimiento</p>
+        <p class="related-card-title">PURSUE Releases: registro completo de tandas desclasificadas</p>
+      </a>
+      <a href="pursue-nda-mito-realidad.html" class="related-card">
+        <p class="related-card-cat">// PURSUE · Fact-Check</p>
+        <p class="related-card-title">No, no hay amnistía para hablar de OVNIs (todavía)</p>
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-kicker">// Revista de exploración y pensamiento</p>
+        <a href="../" class="footer-logo">Mundo Maravilloso</a>
+        <p class="footer-tagline">Ciencia · Misterio · Fenómenos · Futuro</p>
+        <p class="footer-desc">Una publicación independiente sobre los grandes misterios que la ciencia todavía no ha resuelto.</p>
+        <span class="footer-edition-badge">Documentos · PURSUE · Actualizado 11 Ago 2026</span>
+      </div>
+      <div class="footer-nav-grid">
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Artículos</p>
+          <ul class="footer-nav-list">
+            <li><a href="../articulos.html">Todos los artículos</a></li>
+            <li><a href="pursue-release-05-mas-extrano.html" class="active">Análisis: 5th Release (war.gov/UFO)</a></li>
+            <li><a href="../glosario.html">Glosario</a></li>
+          </ul>
+          <p class="footer-nav-col-label" style="margin-top:1.5rem;">// Publicación</p>
+          <ul class="footer-nav-list">
+            <li><a href="../acerca-de.html">Acerca de</a></li>
+            <li><a href="../contacto.html">Contacto</a></li>
+            <li><a href="../privacidad.html">Privacidad</a></li>
+            <li><a href="../terminos.html">Términos</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Seguimientos</p>
+          <ul class="footer-nav-list">
+            <li><a href="../seguimientos/3i-atlas.html">3I/ATLAS</a></li>
+            <li><a href="../seguimientos/uap.html">UAP WATCH</a></li>
+            <li><a href="../seguimientos/pursue-releases.html">PURSUE RELEASES</a></li>
+            <li><a href="../seguimientos/voyager-1.html">VOYAGER 1</a></li>
+            <li><a href="../seguimientos/hitos-medicos.html">HITOS MÉDICOS</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav-col-label">// Síguenos</p>
+          <div class="footer-social-links">
+            <a href="https://www.facebook.com/revistamundo" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16"><path d="M16 8a8 8 0 1 0-9.25 7.9v-5.6H4.9V8h1.85V6.4c0-1.83 1.09-2.84 2.76-2.84.8 0 1.64.14 1.64.14v1.8h-.92c-.91 0-1.19.56-1.19 1.14V8h2.03l-.32 2.3H9.04v5.6A8 8 0 0 0 16 8z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/mundo.m.mag/" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16"><path d="M4.7 0h6.6A4.7 4.7 0 0 1 16 4.7v6.6a4.7 4.7 0 0 1-4.7 4.7H4.7A4.7 4.7 0 0 1 0 11.3V4.7A4.7 4.7 0 0 1 4.7 0zm-.15 1.5A3.05 3.05 0 0 0 1.5 4.55v6.9a3.05 3.05 0 0 0 3.05 3.05h6.9a3.05 3.05 0 0 0 3.05-3.05v-6.9A3.05 3.05 0 0 0 11.45 1.5h-6.9zM8 4.1a3.9 3.9 0 1 1 0 7.8 3.9 3.9 0 0 1 0-7.8zm0 1.5a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8zm4.05-2.65a.95.95 0 1 1 0 1.9.95.95 0 0 1 0-1.9z"/></svg>
+            </a>
+            <a href="https://x.com/uap_mag" aria-label="X (Twitter)" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16"><path d="M12.6 1h2.45L9.95 6.91 15.7 15h-4.5l-3.52-4.6L3.7 15H1.25l5.4-6.18L1.15 1h4.62l3.19 4.22L12.6 1zm-.86 12.6h1.36L4.32 2.32H2.86l8.88 11.28z"/></svg>
+            </a>
+            <a href="https://substack.com/@mundomag" aria-label="Substack" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16"><path d="M1.5 1.5h13v2.3h-13V1.5zm0 4.1h13v2.1h-13V5.6zm0 4.1 6.5 5.8 6.5-5.8H1.5z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">Mundo Maravilloso · Hecho en El Salvador · 2026</p>
+      <p class="footer-signal">// Artículo · pursue-release-05-mas-extrano</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn = document.getElementById('navHamburger');
+  var drawer = document.getElementById('navDrawer');
+  if (!btn || !drawer) return;
+  btn.addEventListener('click', function(){
+    var isOpen = drawer.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  drawer.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      drawer.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
