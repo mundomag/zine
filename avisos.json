@@ -1,16 +1,14 @@
-[
-	
-	 {
+[	 
+{
     "fecha": "7 ago",
     "tipo": "aviso",
-    "texto": "Análisis: 5th Release (war.gov/UFO)-"
-	
-  },
-	 {
+    "texto": "Análisis: 5th Release (war.gov/UFO)"	
+ },
+ {
     "fecha": "7 ago",
     "tipo": "aviso",
     "texto": "Quinto Release —  El 7 de agosto de 2026 el Departamento de Guerra publicó 41 archivos nuevos en war.gov/UFO. // ver sección de desclasificaciones"
-		 "destacado": true,
+	 "destacado": true,
   },
   {
     "fecha": "11 jul",
