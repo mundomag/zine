@@ -1,4 +1,17 @@
 [
+	
+	 {
+    "fecha": "7 ago",
+    "tipo": "aviso",
+    "texto": "Análisis: 5th Release (war.gov/UFO)-"
+	
+  },
+	 {
+    "fecha": "7 ago",
+    "tipo": "aviso",
+    "texto": "Quinto Release —  El 7 de agosto de 2026 el Departamento de Guerra publicó 41 archivos nuevos en war.gov/UFO. // ver sección de desclasificaciones"
+		 "destacado": true,
+  },
   {
     "fecha": "11 jul",
     "tipo": "aviso",
@@ -12,8 +25,7 @@
   {
     "fecha": "11 jul",
     "tipo": "noticia",
-	     "destacado": true,
-    "texto": "4º release PURSUE: 19 videos infrarrojos 'no resueltos', el más comentado sobre el Atlántico en 2020 — el archivo supera ya los 300 expedientes desde mayo"
+	"texto": "4º release PURSUE: 19 videos infrarrojos 'no resueltos', el más comentado sobre el Atlántico en 2020 — el archivo supera ya los 300 expedientes desde mayo"
   },
   {
     "fecha": "07 jul",
