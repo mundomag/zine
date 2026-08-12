@@ -5,8 +5,16 @@
     <link>https://mundomag.fyi/</link>
     <description>Ciencia, misterio, fenómenos y futuro — revista digital independiente.</description>
     <language>es</language>
-    <lastBuildDate>Tue, 11 Aug 2026 07:11:58 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2026 00:46:53 +0000</lastBuildDate>
     <atom:link href="https://mundomag.fyi/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>ANÁLISIS: 5TH RELEASE (WAR.GOV/UFO)</title>
+      <link>https://mundomag.fyi/articulos/pursue-release-05-mas-extrano.html</link>
+      <guid isPermaLink="true">https://mundomag.fyi/articulos/pursue-release-05-mas-extrano.html</guid>
+      <description>El 7 de agosto de 2026 el Departamento de Guerra publicó 41 archivos nuevos en war.gov/UFO. Repasamos, con las imágenes oficiales del FBI, los casos más comentados: el triángulo de Bagram, el enjambre del Golfo de Omán…</description>
+      <category>General</category>
+      <pubDate>Tue, 11 Aug 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>WAR.GOV/UFO: LA TRANSPARENCIA CON LETRA PEQUEÑA</title>
       <link>https://mundomag.fyi/articulos/pursue-arquitectura-transparencia.html</link>
@@ -236,14 +244,6 @@
       <link>https://mundomag.fyi/articulos/roswell-p1.html</link>
       <guid isPermaLink="true">https://mundomag.fyi/articulos/roswell-p1.html</guid>
       <description>Un ranchero, un campo en Nuevo México y un comunicado que duró 24 horas. Cómo Roswell 1947 se convirtió en el mito fundacional de la ufología. Parte 1 de 3.</description>
-      <category>General</category>
-      <pubDate>Fri, 17 Jul 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Las teorías, los informes y la evidencia</title>
-      <link>https://mundomag.fyi/articulos/roswell-p2.html</link>
-      <guid isPermaLink="true">https://mundomag.fyi/articulos/roswell-p2.html</guid>
-      <description>En 1994, la Fuerza Aérea publicó su veredicto: los restos de Roswell eran globos del Proyecto Mogul para detectar pruebas nucleares soviéticas. Parte 2 de 3.</description>
       <category>General</category>
       <pubDate>Fri, 17 Jul 2026 00:00:00 +0000</pubDate>
     </item>
