@@ -15,7 +15,6 @@ import subprocess
 import sys
 from datetime import date
 from pathlib import Path
-from urllib.parse import unquote
 
 ROOT = Path(__file__).parent
 ARTICULOS_DIR = ROOT / "articulos"
@@ -117,18 +116,20 @@ def main():
             r'<p class="hero-subtitle">\s*(.*?)\s*</p>',
         ], html)
 
-        # NOTA sobre categoría: el link "articulos.html?cat=X" que este
-        # regex busca no existe en ninguna plantilla actual del sitio —
-        # por eso "categoria" siempre cae en "General". Los artículos usan
-        # al menos 5 clases distintas para su etiqueta visual (hero-eyebrow,
-        # hero-doc-eyebrow, article-section-label, hero-kicker...) y el
-        # texto de esa etiqueta no es un slug limpio ("PURSUE · Fact-Check",
-        # "Zookriptología · Edición Global"), así que no es seguro adivinar
-        # la categoría desde ahí sin arriesgar clasificaciones incorrectas.
-        # Fix real: agregar <meta name="mm:categoria" content="documentos">
-        # (u otro tag explícito) a la plantilla de artículo y leer de ahí.
-        cat_m = re.search(r'articulos\.html\?cat=([^"]+)"', html)
-        categoria = unquote(cat_m.group(1)) if cat_m else "General"
+        # Categoría: se lee del meta tag explícito <meta name="mm:categoria"
+        # content="...">, que cada plantilla de artículo debe declarar.
+        # No se adivina desde las etiquetas visuales (hero-eyebrow,
+        # hero-doc-eyebrow, article-section-label, hero-kicker...) porque
+        # su texto no es un slug limpio (ej. "PURSUE · Fact-Check"),
+        # así que sin el meta tag el artículo cae en "General".
+        categoria = "General"
+        for m in re.finditer(r"<meta\s+[^>]*>", html, re.IGNORECASE):
+            tag = m.group(0)
+            if re.search(r'name=["\']mm:categoria["\']', tag, re.IGNORECASE):
+                cm = re.search(r'content=(["\'])(.*?)\1', tag, re.DOTALL)
+                if cm:
+                    categoria = limpiar(cm.group(2))
+                break
 
         articulos.append({
             "slug": p.stem,
