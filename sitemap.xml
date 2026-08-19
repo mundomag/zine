@@ -271,12 +271,6 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://mundomag.fyi/mapa_epicentros_2026.html</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://mundomag.fyi/privacidad.html</loc>
     <lastmod>2026-07-16</lastmod>
     <changefreq>yearly</changefreq>
@@ -317,11 +311,5 @@
     <lastmod>2026-07-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://mundomag.fyi/terremotos-2026-el-mito-del-big-one.html</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
 </urlset>
