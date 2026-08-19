@@ -49,7 +49,9 @@ OPCIONES
     --css-file RUTA        Ruta a la hoja de estilos compartida (default: busca
                            css-articulos.css en la carpeta del primer HTML).
     --top-anchor TEXTO     Cadena literal antes de la cual insertar la barra
-                           superior (default: '<div class="section-head"').
+                           superior (default: prueba '<div class="section-head"',
+                           luego '<div class="article-body"', luego '<div class="intro"',
+                           en ese orden, hasta encontrar una que exista en el archivo).
     --bottom-anchor TEXTO  Cadena literal antes de la cual insertar la barra
                            inferior (default: intenta 'related-articles',
                            luego '</main>', luego '<footer').
@@ -99,6 +101,21 @@ ICON_LINK = '<svg viewBox="0 0 24 24" class="icon-link"><path d="M10.6 13.4a1 1 
 ICON_CHECK = '<svg viewBox="0 0 24 24" class="icon-check" style="display:none"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2Z"/></svg>'
 
 SHARE_BAR_MARK = "data-share-bar"
+
+# Anclas superiores que se prueban en orden cuando no se pasa --top-anchor.
+# '<div class="section-head"' cubre la plantilla Antártida/Bestiario/Mitología.
+# '<div class="article-body"' cubre la plantilla Ed.04 (grusch, hollywood-et-*,
+# roswell-*, fable5-mythos5-*, loeb-galileo, seti-ia, torio, tunguska,
+# uap-actualidad-2026, umbra-*, observador-*, dow-uap-*, pursue*,
+# resquebrajamiento*), que no tiene section-head: la barra queda entre el
+# bloque de stats (.article-hero-visual) y el cuerpo del artículo.
+# '<div class="intro"' cubre alguna variante suelta que no tenga ninguna de
+# las dos anteriores.
+DEFAULT_TOP_ANCHORS = [
+    '<div class="section-head"',
+    '<div class="article-body"',
+    '<div class="intro"',
+]
 
 
 def share_bar_html(footer: bool = False) -> str:
@@ -198,12 +215,18 @@ def process_file(path: pathlib.Path, args) -> None:
             content = content.replace("<!-- SHARE_BAR_TOP -->", share_bar_html(footer=False), 1)
             changed = True
         else:
-            content2, ok = insert_before(content, args.top_anchor, share_bar_html(footer=False))
-            if ok:
-                content = content2
-                changed = True
-            else:
-                warnings.append(f"no encontr\u00e9 el ancla superior ({args.top_anchor!r}) para insertar la barra de arriba")
+            top_anchors = [args.top_anchor] if args.top_anchor else DEFAULT_TOP_ANCHORS
+            done = False
+            for anchor in top_anchors:
+                content2, ok = insert_before(content, anchor, share_bar_html(footer=False))
+                if ok:
+                    content = content2
+                    changed = True
+                    done = True
+                    break
+            if not done:
+                tried = ", ".join(repr(a) for a in top_anchors)
+                warnings.append(f"no encontr\u00e9 ancla superior para insertar la barra de arriba (probu00e9: {tried})")
 
     # --- Barra inferior ---
     if not args.no_footer_bar:
@@ -257,8 +280,10 @@ def main():
     parser.add_argument("files", nargs="+", help="Archivos HTML a procesar (acepta comodines del shell, ej. articulos/*.html)")
     parser.add_argument("--dry-run", action="store_true", help="No escribe nada, solo muestra qu\u00e9 har\u00eda.")
     parser.add_argument("--css-file", default=None, help="Ruta a css-articulos.css (default: la busca junto al primer HTML).")
-    parser.add_argument("--top-anchor", default='<div class="section-head"',
-                         help='Texto antes del cual insertar la barra superior (default: <div class="section-head").')
+    parser.add_argument("--top-anchor", default=None,
+                         help='Texto antes del cual insertar la barra superior (default: prueba varias '
+                              'opciones: <div class="section-head", luego <div class="article-body", '
+                              'luego <div class="intro").')
     parser.add_argument("--bottom-anchor", default=None,
                          help="Texto antes del cual insertar la barra inferior (default: prueba varias opciones).")
     parser.add_argument("--no-top-bar", action="store_true", help="No insertar la barra de arriba.")
