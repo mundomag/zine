@@ -136,6 +136,7 @@ def share_bar_html(footer: bool = False) -> str:
 
 SHARE_JS = '''
 <script>
+/* SHARE_JS_INSERTADO */
 (function(){
   var canonical = document.querySelector('link[rel="canonical"]');
   var url = canonical ? canonical.href : window.location.href;
@@ -172,7 +173,7 @@ SHARE_JS = '''
 </script>
 '''
 
-SHARE_JS_MARK = 'data-share="copy"'  # para detectar si el JS ya está insertado
+SHARE_JS_MARK = "SHARE_JS_INSERTADO"  # marca única dentro del <script>, no coincide con el HTML de los botones
 
 
 def ensure_css(css_path: pathlib.Path, dry_run: bool) -> None:
@@ -203,7 +204,23 @@ def process_file(path: pathlib.Path, args) -> None:
     content = path.read_text(encoding="utf-8")
 
     if SHARE_BAR_MARK in content:
-        print(f"[OK] {path.name} ya tiene la botonera, no se toca.")
+        if SHARE_JS_MARK in content:
+            print(f"[OK] {path.name} ya tiene la botonera completa, no se toca.")
+            return
+        # Caso de reparación: el archivo ya tiene los botones (de una corrida
+        # anterior con el bug de SHARE_JS_MARK) pero le falta el <script> que
+        # les da funcionalidad real. Solo insertamos el script, sin duplicar
+        # las barras.
+        if "</body>" in content:
+            content = content.replace("</body>", SHARE_JS + "\n</body>", 1)
+        else:
+            content += SHARE_JS
+            print(f"[AVISO] {path.name}: no encontr\u00e9 </body>; el script qued\u00f3 pegado al final del archivo, revisalo.")
+        if args.dry_run:
+            print(f"[DRY-RUN] {path.name}: le faltaba el <script> de la botonera, se agregar\u00eda ahora (reparaci\u00f3n).")
+            return
+        path.write_text(content, encoding="utf-8")
+        print(f"[REPARADO] {path.name}: le faltaba el <script> de la botonera (bot\u00f3nes no funcionaban), se agreg\u00f3 ahora.")
         return
 
     changed = False
