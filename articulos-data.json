@@ -105,6 +105,13 @@
     "fecha": "2026-07-17"
   },
   {
+    "slug": "mapa_epicentros_2026",
+    "titulo": "mapa_epicentros_2026",
+    "resumen": "",
+    "categoria": "General",
+    "fecha": "2026-08-18"
+  },
+  {
     "slug": "mitologia-salvadorena",
     "titulo": "Mitología Salvadoreña",
     "resumen": "La Siguanaba, el Cipitío, el Cadejo y otras entidades de la tradición oral pipil que aún viven en la memoria popular.",
@@ -215,6 +222,13 @@
     "resumen": "La IA transforma la búsqueda de vida extraterrestre: nuevas frecuencias, mayor escala y señales halladas en archivos antiguos. Pero también trae trampas.",
     "categoria": "ciencia",
     "fecha": "2026-07-17"
+  },
+  {
+    "slug": "terremotos-2026-el-mito-del-big-one",
+    "titulo": "¿Está temblando más la Tierra? Lo que dice la ciencia sobre los sismos de 2026 y el mito del \"Big One\" global",
+    "resumen": "Diez sismos de magnitud 7+ en lo que va de 2026, un clúster que disparó las alarmas en redes. Repasamos el catálogo completo del USGS, el origen real del término \"Big One\" y por qué la ciencia dice que el clima sísmico…",
+    "categoria": "geociencia",
+    "fecha": "2026-08-18"
   },
   {
     "slug": "tierra-extendida",

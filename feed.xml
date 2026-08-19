@@ -5,8 +5,24 @@
     <link>https://mundomag.fyi/</link>
     <description>Ciencia, misterio, fenómenos y futuro — revista digital independiente.</description>
     <language>es</language>
-    <lastBuildDate>Wed, 19 Aug 2026 05:40:34 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Aug 2026 05:41:06 +0000</lastBuildDate>
     <atom:link href="https://mundomag.fyi/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>mapa_epicentros_2026</title>
+      <link>https://mundomag.fyi/articulos/mapa_epicentros_2026.html</link>
+      <guid isPermaLink="true">https://mundomag.fyi/articulos/mapa_epicentros_2026.html</guid>
+      <description></description>
+      <category>General</category>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>¿Está temblando más la Tierra? Lo que dice la ciencia sobre los sismos de 2026 y el mito del "Big One" global</title>
+      <link>https://mundomag.fyi/articulos/terremotos-2026-el-mito-del-big-one.html</link>
+      <guid isPermaLink="true">https://mundomag.fyi/articulos/terremotos-2026-el-mito-del-big-one.html</guid>
+      <description>Diez sismos de magnitud 7+ en lo que va de 2026, un clúster que disparó las alarmas en redes. Repasamos el catálogo completo del USGS, el origen real del término "Big One" y por qué la ciencia dice que el clima sísmico…</description>
+      <category>geociencia</category>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Análisis: 5th Release (war.gov/UFO)</title>
       <link>https://mundomag.fyi/articulos/pursue-release-05-mas-extrano.html</link>
@@ -229,22 +245,6 @@
       <guid isPermaLink="true">https://mundomag.fyi/articulos/pursue.html</guid>
       <description>EE.UU. abrió sus archivos UAP sin contraseñas ni formularios. Mil millones de visitas después, la pregunta central sigue sin respuesta.</description>
       <category>actualidad</category>
-      <pubDate>Fri, 17 Jul 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>El Imperio que se Fisura</title>
-      <link>https://mundomag.fyi/articulos/resquebrajamiento-sistema-seguridad-nacional.html</link>
-      <guid isPermaLink="true">https://mundomag.fyi/articulos/resquebrajamiento-sistema-seguridad-nacional.html</guid>
-      <description>Roswell, JFK, Bob Lazar, Grusch y 12 científicos muertos: cómo ochenta años de secreto están resquebrajando el sistema de seguridad nacional más poderoso del mundo.</description>
-      <category>documentos</category>
-      <pubDate>Fri, 17 Jul 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Roswell, 1947: ¿Por qué seguimos hablando de esto?</title>
-      <link>https://mundomag.fyi/articulos/roswell-p1.html</link>
-      <guid isPermaLink="true">https://mundomag.fyi/articulos/roswell-p1.html</guid>
-      <description>Un ranchero, un campo en Nuevo México y un comunicado que duró 24 horas. Cómo Roswell 1947 se convirtió en el mito fundacional de la ufología.</description>
-      <category>documentos</category>
       <pubDate>Fri, 17 Jul 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>

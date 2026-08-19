@@ -109,6 +109,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://mundomag.fyi/articulos/mapa_epicentros_2026.html</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://mundomag.fyi/articulos/mitologia-salvadorena.html</loc>
     <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
@@ -201,6 +207,12 @@
   <url>
     <loc>https://mundomag.fyi/articulos/seti-ia.html</loc>
     <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mundomag.fyi/articulos/terremotos-2026-el-mito-del-big-one.html</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
