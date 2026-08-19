@@ -338,5 +338,43 @@ fecha: 2026-07-04
   });
 })();
 </script>
+
+<script>
+/* SHARE_JS_INSERTADO */
+(function(){
+  var canonical = document.querySelector('link[rel="canonical"]');
+  var url = canonical ? canonical.href : window.location.href;
+  var title = document.title;
+  document.querySelectorAll('[data-share="x"]').forEach(function(a){
+    a.href = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(title);
+  });
+  document.querySelectorAll('[data-share="fb"]').forEach(function(a){
+    a.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
+  });
+  document.querySelectorAll('[data-share="wa"]').forEach(function(a){
+    a.href = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(title + ' ' + url);
+  });
+  document.querySelectorAll('[data-share="copy"]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var finish = function(){
+        btn.classList.add('copied');
+        btn.querySelector('.icon-link').style.display = 'none';
+        btn.querySelector('.icon-check').style.display = 'block';
+        setTimeout(function(){
+          btn.classList.remove('copied');
+          btn.querySelector('.icon-link').style.display = 'block';
+          btn.querySelector('.icon-check').style.display = 'none';
+        }, 1800);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(finish).catch(function(){ window.prompt('Copia el enlace:', url); });
+      } else {
+        window.prompt('Copia el enlace:', url);
+      }
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
