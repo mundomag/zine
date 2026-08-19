@@ -1,4 +1,12 @@
-[ 
+[
+ {
+    "titulo": "¿Está temblando más la Tierra? Lo que dice la ciencia sobre los sismos de 2026 y el mito del \"Big One\" global",
+    "descripcion": "Diez sismos de magnitud 7+ en lo que va de 2026, un clúster que disparó las alarmas en redes. Repasamos el catálogo completo del USGS, el origen real del término \"Big One\" y por qué la ciencia dice que el clima sísmico…",
+    "categoria": "geociencia",
+    "fecha": "19 ago 2026",
+    "imagen": "articulos/hero/bigone.jpg",
+    "url": "articulos/terremotos-2026-el-mito-del-big-one.html"
+  },
  {
     "titulo": "Análisis: 5th Release (war.gov/UFO)",
     "descripcion": "DESTACADO: El 7 de agosto de 2026 el Departamento de Guerra publicó 41 archivos nuevos en war.gov/UFO. Repasamos —con las imágenes oficiales del FBI— los casos que más está comentando la gente: el triángulo de Bagram, el enjambre del Golfo de Omán y la esfera de Brasil de 1963.",
@@ -14,13 +22,5 @@
     "fecha": "22 jul 2026",
     "imagen": "articulos/hero/phantom-hero.jpg",
     "url": "articulos/el-fenomeno-fantasma.html"
-  },
-  {
-    "titulo": "Mitología Salvadoreña: El Bestiario Que Sobrevive en la Memoria Popular",
-    "descripcion": "La Siguanaba, el Cipitío, el Cadejo y otras entidades de la tradición oral pipil que aún se cuentan en los cantones de El Salvador, generación tras generación.",
-    "categoria": "Mitología",
-    "fecha": "15 jul 2026",
-    "imagen": "img/destacados/mitologia-salvadorena.jpg",
-    "url": "articulos/mitologia-salvadorena.html"
   }
 ]
