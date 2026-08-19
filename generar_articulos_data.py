@@ -2,8 +2,12 @@
 """
 generar_articulos_data.py — Escanea /articulos/*.html y genera
 articulos-data.json automáticamente, leyendo título, resumen y categoría
-directo del HTML de cada artículo. Nunca hay que mantenerlo a mano ni
-volver a pedírselo a nadie — si el dato está en el artículo, aparece aquí.
+directo del bloque <!-- MM-META --> de cada artículo.
+
+Si un artículo NO trae el bloque MM-META, o le falta alguno de los campos
+obligatorios (titulo, categoria, blurb), se omite del JSON — no se rellena
+adivinando datos desde el HTML (h1, meta description, deks, etc).
+
 Se corre solo vía GitHub Actions (mismo workflow que el sitemap), pero
 también lo puedes correr manual:
     python3 generar_articulos_data.py
@@ -22,6 +26,10 @@ SALIDA = ROOT / "articulos-data.json"
 
 RESUMEN_MAX = 220
 
+# Campos que el bloque MM-META debe traer, sí o sí, para que el artículo
+# se incluya en el JSON.
+CAMPOS_REQUERIDOS = ("titulo", "categoria", "blurb")
+
 
 def limpiar(txt: str) -> str:
     txt = html_lib.unescape(txt)
@@ -30,14 +38,6 @@ def limpiar(txt: str) -> str:
     txt = re.sub(r"<[^>]+>", "", txt)
     txt = re.sub(r"\s+", " ", txt).strip()
     return txt
-
-
-def extraer_primero(patrones, html):
-    for patron in patrones:
-        m = re.search(patron, html, re.DOTALL)
-        if m:
-            return limpiar(m.group(1))
-    return ""
 
 
 def extraer_mm_meta(html: str) -> dict:
@@ -55,10 +55,10 @@ def extraer_mm_meta(html: str) -> dict:
         formato: hero-documental-v1
         -->
 
-    Esta es la fuente más confiable para categoria: no depende de qué
-    clase CSS use la plantilla para la etiqueta visual, y evita el bug
-    anterior (regex buscando un link "articulos.html?cat=X" que nunca
-    existió). Se parsea línea por línea dentro del comentario.
+    Esta es la ÚNICA fuente de metadatos: no depende de qué clase CSS use
+    la plantilla para la etiqueta visual, y evita el bug anterior (regex
+    buscando un link "articulos.html?cat=X" que nunca existió). Se parsea
+    línea por línea dentro del comentario.
     """
     datos = {}
     m = re.search(r"<!--\s*MM-META\s*(.*?)-->", html, re.DOTALL)
@@ -72,28 +72,6 @@ def extraer_mm_meta(html: str) -> dict:
             if valor:
                 datos[clave] = limpiar(valor)
     return datos
-
-
-def extraer_meta_description(html: str) -> str:
-    """
-    Busca <meta name="description" content="..."> sin importar el orden
-    de los atributos ni las comillas usadas. Es la fuente más confiable:
-    está presente en el 100% de los artículos (incluyendo herramientas
-    interactivas sin dek propio, como los mapas) y suele ser más completa
-    que los deks cortos del cuerpo del artículo.
-    """
-    for m in re.finditer(r"<meta\s+[^>]*>", html, re.IGNORECASE):
-        tag = m.group(0)
-        if re.search(r'name=["\']description["\']', tag, re.IGNORECASE):
-            # \1 fuerza a que la comilla de cierre sea del MISMO tipo que la
-            # de apertura. Sin esto, una descripción con comillas simples
-            # adentro (p.ej. 'The Phantom Phenomenon') corta ahí por error,
-            # porque .*? con ["\'] como clase de caracteres para el cierre
-            # se detiene en la PRIMERA comilla de cualquier tipo que encuentra.
-            cm = re.search(r'content=(["\'])(.*?)\1', tag, re.DOTALL)
-            if cm:
-                return limpiar(cm.group(2))
-    return ""
 
 
 def truncar(txt: str, maximo: int = RESUMEN_MAX) -> str:
@@ -126,57 +104,40 @@ def main():
     if not ARTICULOS_DIR.exists():
         print("No existe la carpeta /articulos, no hay nada que generar.")
         return
+
     articulos = []
+    omitidos = 0
+
     for p in sorted(ARTICULOS_DIR.glob("*.html")):
         if p.name.startswith("_"):
             continue  # plantillas, no son artículos reales
-        html = p.read_text(encoding="utf-8", errors="ignore")
 
+        html = p.read_text(encoding="utf-8", errors="ignore")
         mm_meta = extraer_mm_meta(html)
 
-        # PRIORIDAD 1: bloque <!-- MM-META --> al inicio del archivo.
-        # PRIORIDAD 2 (respaldo, artículos viejos sin el bloque): buscar
-        # el <h1> según la plantilla que use.
-        titulo = mm_meta.get("titulo") or extraer_primero([
-            r'<h1 class="article-title">(.*?)</h1>',
-            r'<h1 class="hero-title">(.*?)</h1>',
-            r'<h1 class="hero-doc-title">(.*?)</h1>',
-            r'<h1 class="tool-title">(.*?)</h1>',
-            r'<h1[^>]*>(.*?)</h1>',
-        ], html) or p.stem
-
-        # PRIORIDAD 1: "blurb" del bloque MM-META.
-        # PRIORIDAD 2: meta description — está en el 100% de los artículos.
-        # PRIORIDAD 3: deks visibles en el cuerpo, según la plantilla.
-        resumen = (
-            mm_meta.get("blurb")
-            or extraer_meta_description(html)
-            or extraer_primero([
-                r'<p class="hero-doc-subtitle">\s*(.*?)\s*</p>',
-                r'<p class="article-dek">\s*(.*?)\s*</p>',
-                r'<p class="hero-subtitle">\s*(.*?)\s*</p>',
-            ], html)
-        )
-
-        # Categoría: se lee de "categoria" en el bloque MM-META. No se
-        # adivina desde las etiquetas visuales (hero-eyebrow, hero-doc-
-        # eyebrow, article-section-label, hero-kicker...) porque su texto
-        # no es un slug limpio (ej. "PURSUE · Fact-Check"). Si un artículo
-        # viejo no trae el bloque MM-META, cae en "General".
-        categoria = mm_meta.get("categoria") or "General"
+        # Si falta el bloque MM-META, o le falta algún campo obligatorio,
+        # el artículo se omite por completo del JSON.
+        faltantes = [c for c in CAMPOS_REQUERIDOS if not mm_meta.get(c)]
+        if faltantes:
+            omitidos += 1
+            motivo = ", ".join(faltantes) if mm_meta else "sin bloque MM-META"
+            print(f"  omitido {p.name}: falta {motivo}")
+            continue
 
         articulos.append({
             "slug": p.stem,
-            "titulo": titulo,
-            "resumen": truncar(resumen),
-            "categoria": categoria,
-            "fecha": fecha_git(p),
+            "titulo": mm_meta["titulo"],
+            "resumen": truncar(mm_meta["blurb"]),
+            "categoria": mm_meta["categoria"],
+            "fecha": mm_meta.get("fecha") or fecha_git(p),
         })
+
     SALIDA.write_text(
         json.dumps(articulos, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8"
     )
-    print(f"articulos-data.json generado con {len(articulos)} artículos.")
+    print(f"articulos-data.json generado con {len(articulos)} artículos "
+          f"({omitidos} omitidos por falta de MM-META).")
 
 
 if __name__ == "__main__":
