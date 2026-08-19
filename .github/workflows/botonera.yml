@@ -1,0 +1,49 @@
+name: Insertar botonera de compartir
+
+# Se dispara solo:
+#  1) cuando se sube o modifica un .html dentro de articulos/ en la rama main
+#  2) o manualmente, desde la pestaña "Actions" de GitHub ("Run workflow")
+on:
+  push:
+    branches: [main]
+    paths:
+      - "articulos/**.html"
+      - "scripts/insertar_botonera.py"
+  workflow_dispatch:
+    inputs:
+      pattern:
+        description: 'Patrón de archivos a procesar (útil para una pasada única sobre todo el sitio)'
+        required: false
+        default: "articulos/*.html"
+
+# El bot necesita permiso de escritura para poder commitear los cambios de vuelta al repo
+permissions:
+  contents: write
+
+jobs:
+  botonera:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repo
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Insertar botonera en los artículos
+        run: |
+          PATTERN="${{ github.event.inputs.pattern }}"
+          if [ -z "$PATTERN" ]; then
+            PATTERN="articulos/*.html"
+          fi
+          python3 scripts/insertar_botonera.py --css-file css-articulos.css $PATTERN
+
+      - name: Commitear cambios (si los hay)
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: agrega botonera de compartir (automático)"
+          file_pattern: "articulos/*.html css-articulos.css"
+          commit_user_name: "botonera-bot"
+          commit_user_email: "actions@github.com"
