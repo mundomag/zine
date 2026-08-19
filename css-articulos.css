@@ -4390,3 +4390,19 @@ html[data-page="umbra-topsecret"] .umbra-quote cite{
   html[data-page="umbra-topsecret"] .umbra-stats{ grid-template-columns: 1fr 1fr; }
   html[data-page="umbra-topsecret"] .stat-num{ font-size: 1.6rem; }
 }
+
+/* ==== BOTONERA DE COMPARTIR (bloque compartido — no borrar) ==== */
+.share-bar{ max-width:760px; margin:2.5rem auto; display:flex; align-items:center; gap:1.25rem; flex-wrap:wrap; }
+.share-bar-label{ font-family:"JetBrains Mono",monospace; font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted, #7a7368); white-space:nowrap; }
+.share-buttons{ display:flex; gap:0.6rem; flex-wrap:wrap; }
+.share-btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:2.25rem; height:2.25rem; border:1px solid var(--border, rgba(201,168,76,0.16)); border-radius:2px;
+  color:rgba(241,235,224,0.7); background:var(--ink-mid, #100e0c); cursor:pointer;
+  transition:border-color 0.2s, color 0.2s; padding:0; text-decoration:none;
+}
+.share-btn svg{ width:16px; height:16px; fill:currentColor; }
+.share-btn:hover{ border-color:var(--accent-light, #e8c96a); color:var(--accent-light, #e8c96a); }
+.share-btn.copied{ border-color:var(--gold, #c9a84c); color:var(--gold, #c9a84c); }
+.share-bar.is-footer{ margin-top:4rem; }
+/* ==== FIN BOTONERA DE COMPARTIR ==== */
