@@ -858,28 +858,99 @@
       padding: 0;
     }
 
-    /* Los destacados ahora reutilizan el mismo grid y las mismas
-       tarjetas (.editions-grid / .edition-card) que la sección de
-       Artículos — mismo color, tipografía y tamaño; la única diferencia
-       es que traen imagen de portada (ed-cover-wrap). */
     .featured-feed-block { margin-bottom: 3.5rem; }
 
-    /* Destacados: siempre 3 columnas a todo el ancho (no auto-fill,
-       que dejaba espacio muerto a la derecha cuando el contenedor
-       era más ancho que 3 tarjetas de 260px). */
-    #featuredSection {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+    /* ── DESTACADOS: CARRUSEL ─────────────────────────────
+       Un solo contenedor que va pasando los destacados uno a uno.
+       El texto (categoría, fecha, título, resumen) se dibuja sobre
+       la imagen de portada que trae cada item del JSON (item.imagen),
+       con un degradado para que siga siendo legible. */
+    .featured-carousel {
+      position: relative;
+      aspect-ratio: 16 / 8;
+      overflow: hidden;
+      background: var(--ink-mid);
+      border: 1px solid var(--border);
     }
+    .featured-track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.6s cubic-bezier(.65,.05,.36,1);
+    }
+    .featured-slide {
+      position: relative;
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background-color: var(--ink-mid);
+      background-size: cover;
+      background-position: center;
+    }
+    .featured-slide::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,13,15,0.92) 0%, rgba(13,13,15,0.55) 42%, rgba(13,13,15,0.05) 72%);
+    }
+    .featured-slide-content {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      z-index: 2;
+      padding: 2.5rem 6.5rem 2.25rem 2.5rem;
+    }
+    .featured-slide .ed-meta { margin-bottom: 0.6rem; }
+    .featured-slide .ed-num-label {
+      background: var(--gold); color: var(--ink);
+      padding: 0.25rem 0.55rem;
+    }
+    .featured-slide .ed-date { text-shadow: 0 1px 6px rgba(0,0,0,0.8); }
+    .featured-slide .ed-title {
+      font-size: 1.6rem;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.85);
+      margin-bottom: 0.6rem;
+    }
+    .featured-slide .ed-blurb {
+      color: rgba(245,240,232,0.82);
+      font-size: 0.95rem;
+      max-width: 62ch;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.8);
+    }
+    .featured-dots {
+      position: absolute; bottom: 1.1rem; right: 1.75rem;
+      z-index: 3;
+      display: flex; gap: 0.45rem;
+    }
+    .featured-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(245,240,232,0.35);
+      border: none; padding: 0; cursor: pointer;
+      transition: width 0.25s, background 0.25s;
+    }
+    .featured-dot.active { width: 22px; border-radius: 4px; background: var(--gold); }
+    .featured-arrow {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      z-index: 3;
+      width: 38px; height: 38px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(13,13,15,0.55);
+      border: 1px solid var(--border);
+      color: var(--paper);
+      font-size: 1.3rem; line-height: 1;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.2s, background 0.2s;
+    }
+    .featured-carousel:hover .featured-arrow { opacity: 1; }
+    .featured-arrow:hover { background: rgba(13,13,15,0.85); border-color: var(--gold); }
+    .featured-arrow.prev { left: 1rem; }
+    .featured-arrow.next { right: 1rem; }
     @media (max-width: 720px) {
-      #featuredSection { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .featured-carousel { aspect-ratio: 4 / 5; }
+      .featured-slide-content { padding: 1.75rem 1.5rem 1.5rem; }
+      .featured-slide .ed-title { font-size: 1.25rem; }
+      .featured-arrow { opacity: 1; width: 32px; height: 32px; font-size: 1.1rem; }
     }
-    @media (max-width: 480px) {
-      #featuredSection { grid-template-columns: 1fr; }
-    }
-    /* Sin el acento de color por categoría a la izquierda: en destacados
-       se veía como una línea dorada suelta cuando solo una de las tres
-       tarjetas tenía una categoría con color asignado. */
-    #featuredSection .edition-card { border-left: none; }
 
     /* ── SECCIONES FIJAS dentro de la columna derecha ── */
     .col-right .fixed-section {
@@ -1006,7 +1077,12 @@
           <h2 class="section-title">Destacados</h2>
           <span class="section-count">Selección editorial · lo último</span>
         </div>
-        <div class="editions-grid" id="featuredSection"></div>
+        <div class="featured-carousel" id="featuredCarousel" style="display:none;">
+          <div class="featured-track" id="featuredTrack"></div>
+          <button class="featured-arrow prev" id="featuredPrev" aria-label="Anterior" type="button">‹</button>
+          <button class="featured-arrow next" id="featuredNext" aria-label="Siguiente" type="button">›</button>
+          <div class="featured-dots" id="featuredDots"></div>
+        </div>
       </div>
 
       <!-- ARTÍCULOS -->
@@ -1489,11 +1565,15 @@
   }
   </script>
 
-  <!-- ARTÍCULOS DESTACADOS: destacado.json -->
+  <!-- ARTÍCULOS DESTACADOS: destacado.json (carrusel) -->
   <script>
-  (function(){
-    var section = document.getElementById('featuredSection');
-    if (!section) return;
+  (function () {
+    var carousel = document.getElementById('featuredCarousel');
+    var track    = document.getElementById('featuredTrack');
+    var dotsWrap = document.getElementById('featuredDots');
+    var prevBtn  = document.getElementById('featuredPrev');
+    var nextBtn  = document.getElementById('featuredNext');
+    if (!carousel || !track) return;
 
     function esc(str){
       var d = document.createElement('div');
@@ -1501,36 +1581,52 @@
       return d.innerHTML;
     }
 
-    // Tarjeta de destacado: mismo formato que las tarjetas de artículos
-    // (.edition-card), agregando la imagen como portada arriba.
-    function cardHTML(item){
-      var cover = item.imagen
-        ? '<div class="ed-cover-wrap">' +
-            '<img class="ed-cover-img" src="' + esc(item.imagen) + '" alt="' + esc(item.titulo) + '" loading="lazy" onerror="this.parentElement.style.display=\'none\'">' +
-            '<div class="ed-cover-overlay"></div>' +
-          '</div>'
-        : '';
+    // Cada slide es el contenedor completo con la imagen del JSON como
+    // fondo (background-image) y el texto dibujado encima, con un
+    // degradado debajo para mantenerlo legible.
+    function slideHTML(item){
       var eyebrow = item.categoria ? esc(item.categoria) : 'Destacado';
+      var bg = item.imagen ? ' style="background-image:url(\'' + esc(item.imagen) + '\')"' : '';
       return (
-        '<div class="edition-card fade-in" data-cat="' + esc((item.categoria || '').toLowerCase()) + '">' +
-          '<a href="' + esc(item.url) + '">' +
-            cover +
-            '<div class="ed-info">' +
-              '<div class="ed-meta">' +
-                '<span class="ed-num-label">' + eyebrow + '</span>' +
-                '<span class="ed-meta-leader"></span>' +
-                '<span class="ed-date">' + esc(item.fecha) + '</span>' +
-              '</div>' +
-              '<div class="ed-title">' + esc(item.titulo) + '</div>' +
-              '<div class="ed-blurb">' + esc(item.descripcion) + '</div>' +
+        '<a class="featured-slide" href="' + esc(item.url) + '"' + bg + '>' +
+          '<div class="featured-slide-content">' +
+            '<div class="ed-meta">' +
+              '<span class="ed-num-label">' + eyebrow + '</span>' +
+              '<span class="ed-meta-leader"></span>' +
+              '<span class="ed-date">' + esc(item.fecha) + '</span>' +
             '</div>' +
-          '</a>' +
-        '</div>'
+            '<div class="ed-title">' + esc(item.titulo) + '</div>' +
+            '<div class="ed-blurb">' + esc(item.descripcion) + '</div>' +
+          '</div>' +
+        '</a>'
       );
     }
 
-    // Número de destacados a mostrar, en fila, con el mismo formato de tarjeta.
-    var MAX_DESTACADOS = 3;
+    // Número máximo de destacados en el carrusel.
+    var MAX_DESTACADOS = 6;
+    var AUTOPLAY_MS = 6000;
+    var current = 0;
+    var timer = null;
+    var slideCount = 0;
+
+    function goTo(index){
+      if (!slideCount) return;
+      current = ((index % slideCount) + slideCount) % slideCount;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      var dots = dotsWrap.querySelectorAll('.featured-dot');
+      dots.forEach(function(d, i){ d.classList.toggle('active', i === current); });
+    }
+
+    function next(){ goTo(current + 1); }
+    function prev(){ goTo(current - 1); }
+
+    function startAutoplay(){
+      stopAutoplay();
+      if (slideCount > 1) timer = setInterval(next, AUTOPLAY_MS);
+    }
+    function stopAutoplay(){
+      if (timer) { clearInterval(timer); timer = null; }
+    }
 
     fetch('destacado.json')
       .then(function(r){ return r.json(); })
@@ -1539,25 +1635,33 @@
         items = items.filter(function(it){ return it && it.titulo && it.url; }).slice(0, MAX_DESTACADOS);
         if (!items.length) return;
 
-        section.innerHTML = items.map(cardHTML).join('');
+        slideCount = items.length;
+        track.innerHTML = items.map(slideHTML).join('');
+        carousel.style.display = 'block';
 
-        // El observer global de .fade-in (más arriba en el HTML) ya corrió
-        // antes de que estas tarjetas existieran, así que nunca las iba a
-        // detectar y quedaban con opacity:0 para siempre (el "bloque sólido"
-        // que se veía). Acá creamos un observer propio para activarlas.
-        var fadeObserver = new IntersectionObserver(function(entries){
-          entries.forEach(function(e){
-            if (e.isIntersecting) {
-              e.target.style.opacity = '1';
-              e.target.style.transform = 'translateY(0)';
-              e.target.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-              fadeObserver.unobserve(e.target);
-            }
+        if (slideCount > 1) {
+          dotsWrap.innerHTML = items.map(function(_, i){
+            return '<button class="featured-dot' + (i === 0 ? ' active' : '') + '" type="button" aria-label="Ir al destacado ' + (i + 1) + '" data-index="' + i + '"></button>';
+          }).join('');
+          dotsWrap.querySelectorAll('.featured-dot').forEach(function(dot){
+            dot.addEventListener('click', function(){
+              goTo(parseInt(dot.getAttribute('data-index'), 10));
+              startAutoplay();
+            });
           });
-        }, { threshold: 0.08 });
-        section.querySelectorAll('.fade-in').forEach(function(el){ fadeObserver.observe(el); });
+          prevBtn.addEventListener('click', function(){ prev(); startAutoplay(); });
+          nextBtn.addEventListener('click', function(){ next(); startAutoplay(); });
+          carousel.addEventListener('mouseenter', stopAutoplay);
+          carousel.addEventListener('mouseleave', startAutoplay);
+          startAutoplay();
+        } else {
+          prevBtn.style.display = 'none';
+          nextBtn.style.display = 'none';
+        }
+
+        goTo(0);
       })
-      .catch(function(){ /* si no hay destacado.json, la sección permanece vacía */ });
+      .catch(function(){ /* si no hay destacado.json, la sección permanece oculta */ });
   })();
   </script>
 
