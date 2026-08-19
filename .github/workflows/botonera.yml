@@ -8,7 +8,7 @@ on:
     branches: [main]
     paths:
       - "articulos/**.html"
-      - "scripts/insertar_botonera.py"
+      - "insertar_botonera.py"
   workflow_dispatch:
     inputs:
       pattern:
@@ -38,7 +38,7 @@ jobs:
           if [ -z "$PATTERN" ]; then
             PATTERN="articulos/*.html"
           fi
-          python3 scripts/insertar_botonera.py --css-file css-articulos.css $PATTERN
+          python3 insertar_botonera.py --css-file css-articulos.css $PATTERN
 
       - name: Commitear cambios (si los hay)
         uses: stefanzweifel/git-auto-commit-action@v5
