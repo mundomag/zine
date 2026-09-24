@@ -5,8 +5,16 @@
     <link>https://mundomag.fyi/</link>
     <description>Ciencia, misterio, fenómenos y futuro — revista digital independiente.</description>
     <language>es</language>
-    <lastBuildDate>Wed, 23 Sep 2026 11:02:03 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 00:23:22 +0000</lastBuildDate>
     <atom:link href="https://mundomag.fyi/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>PURSUE Release 06: lo más destacado (war.gov/UFO)</title>
+      <link>https://mundomag.fyi/articulos/pursue-release-06-lo-mas-destacado.html</link>
+      <guid isPermaLink="true">https://mundomag.fyi/articulos/pursue-release-06-lo-mas-destacado.html</guid>
+      <description>El 18 de septiembre de 2026 el Departamento de Guerra sumó 72 archivos a war.gov/UFO. Ordenamos los seis hallazgos que más importan de la sexta tanda: el archivo del programa AAWSAP, el audio de Ruppelt de 1952 y la…</description>
+      <category>documentos</category>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>¿Está temblando más la Tierra? Lo que dice la ciencia sobre los sismos de 2026 y el mito del "Big One" global</title>
       <link>https://mundomag.fyi/articulos/terremotos-2026-el-mito-del-big-one.html</link>
@@ -237,14 +245,6 @@
       <guid isPermaLink="true">https://mundomag.fyi/articulos/hollywood-et-p3.html</guid>
       <description>Cuatro hipótesis sobre por qué Hollywood y los gobiernos narran los ETs en sincronía. El mito del Primer Contacto como fenómeno político y cultural.</description>
       <category>cultura</category>
-      <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Avi Loeb: el astrónomo que apostó por lo imposible</title>
-      <link>https://mundomag.fyi/articulos/loeb-galileo.html</link>
-      <guid isPermaLink="true">https://mundomag.fyi/articulos/loeb-galileo.html</guid>
-      <description>Avi Loeb apostó por lo imposible: que ʻOumuamua era tecnología alienígena. Así nació el Proyecto Galileo y la voz más incómoda de la astronomía moderna.</description>
-      <category>ciencia</category>
       <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
