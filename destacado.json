@@ -1,4 +1,11 @@
-[
+[{
+    "titulo": "PURSUE Release 06: lo más destacado (war.gov/UFO)",
+    "descripcion": "El 18 de septiembre de 2026 el Departamento de Guerra sumó 72 archivos a war.gov/UFO. Ordenamos los seis hallazgos que más importan de la sexta tanda: el archivo del programa AAWSAP, el audio de Ruppelt de 1952 y la primera fuente policial del registro.",
+    "categoria": "documentos",
+    "fecha": "23 sep 2026",
+    "imagen": "articulos/hero/6rel.jpg",
+    "url": "articulos/pursue-release-06-lo-mas-destacado.html"
+  },
  {
     "titulo": "¿Está temblando más la Tierra? Lo que dice la ciencia sobre los sismos de 2026 y el mito del \"Big One\" global",
     "descripcion": "Diez sismos de magnitud 7+ en lo que va de 2026, un clúster que disparó las alarmas en redes. Repasamos el catálogo completo del USGS, el origen real del término \"Big One\" y por qué la ciencia dice que el clima sísmico…",
@@ -14,13 +21,5 @@
     "fecha": "8 ago 2026",
     "imagen": "https://www.war.gov/portals/1/Interactive/2026/UFO/080726/Slideshow/FBI-UAP-D025_Digital-Rendering_Airborne-Triangle_2002.jpg",
     "url": "articulos/pursue-release-05-mas-extrano.html"
-  },
-    {
-   "titulo": "The Phantom Phenomenon: el mapa que conectó a EE.UU. con una red oculta",
-    "descripcion": "DESTACADO: Un diagrama casero de 1979 traza mutilaciones de ganado, bases OVNI, portales y entradas a la Tierra interior sobre el mapa de Estados Unidos. Rastreamos su autoría dudosa, su simbolismo y cruzamos sus nodos con los lugares más célebres de la ufología.",
-    "categoria": "Mitología",
-    "fecha": "22 jul 2026",
-    "imagen": "articulos/hero/phantom-hero.jpg",
-    "url": "articulos/el-fenomeno-fantasma.html"
-  }
+  
 ]
